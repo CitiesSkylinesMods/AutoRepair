@@ -1,12 +1,9 @@
-using AutoRepair.Descriptors;
-using AutoRepair.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+namespace AutoRepair.Catalogs {
+    using AutoRepair.Descriptors;
+    using AutoRepair.Enums;
+    using System.Collections.Generic;
 
-namespace AutoRepair {
-    public class VehicleEffects {
+    public partial class VehicleEffect {
 
         private const ulong _vehicleEffectsMod = 780720853u;
 
@@ -15,28 +12,29 @@ namespace AutoRepair {
         private Dictionary<ulong, Item> list;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VehicleEffects"/> class.
+        /// Initializes a new instance of the <see cref="VehicleEffect"/> class.
         /// </summary>
-        public VehicleEffects() {
+        public VehicleEffect() {
             list = new Dictionary<ulong, Item>();
-            Populate();
+            AddPacksToList();
         }
 
         /// <summary>
-        /// Finalizes an instance of the <see cref="VehicleEffects"/> class.
+        /// Finalizes an instance of the <see cref="VehicleEffect"/> class.
         /// </summary>
-        ~VehicleEffects() {
+        ~VehicleEffect() {
             list.Clear();
         }
 
         /// <summary>
-        /// Adds an item to the list.
+        /// Adds a basic effects pack to the list.
         /// </summary>
         /// 
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Wokrshop.</param>
-        public void AddBasic(ulong workshopId, string workshopName) {
+        public void AddBasicPack(ulong workshopId, string workshopName) {
             list.Add(workshopId, new Item(workshopId, workshopName) {
+                Catalog = "VehicleEffect",
                 ItemType = ItemTypes.Mod,
                 RequiredMods = new List<ulong>() {
                     { _vehicleEffectsMod },
@@ -45,24 +43,20 @@ namespace AutoRepair {
         }
 
         /// <summary>
-        /// Adds an item to the list.
+        /// Adds an extra effects pack to the list (one that requires Extra Vehicle Effects mod).
         /// </summary>
         /// 
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Wokrshop.</param>
-        public void AddExtra(ulong workshopId, string workshopName) {
+        public void AddExtraPack(ulong workshopId, string workshopName) {
             list.Add(workshopId, new Item(workshopId, workshopName) {
+                Catalog = "VehicleEffect",
                 ItemType = ItemTypes.Mod,
                 RequiredMods = new List<ulong>() {
                     { _vehicleEffectsMod },
                     { _extraVehicleEffectsMod },
                 },
             });
-        }
-
-        public void Populate() {
-            // https://drive.google.com/file/d/1ATs9XRlt9oCVOazyqFn5h0S517b7BN1L/view
-            AddExtra(2008325200u, "Vehicle Effects Definition Pack DBAG");
         }
     }
 }

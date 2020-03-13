@@ -58,11 +58,6 @@ namespace AutoRepair.Enums {
         [Description("Some minor bugs")]
         MinorBugs,
 
-        // Long-term broken mod, doesn't work
-        // Note: Not the same as BrokenByUpdate
-        [Description("Long-term broken, unsubscribe")]
-        LongBroken,
-
         // Unmaintained and very badly broken
         // Will always force migration (see below)
         [Description("Game-breaking")]

@@ -26,11 +26,6 @@ namespace AutoRepair.Enums {
         HideIt,
 
         /// <summary>
-        /// Mods tha add starting money.
-        /// </summary>
-        Money,
-
-        /// <summary>
         /// Conflicts with More Vehicles mod.
         /// </summary>
         MoreVehicles,
@@ -41,9 +36,24 @@ namespace AutoRepair.Enums {
         MoveIt,
 
         /// <summary>
+        /// Conflicts with Cities Skylines Multiplayer (CSM) mod
+        /// </summary>
+        Multiplayer,
+
+        /// <summary>
+        /// Mods tha add numbered rectangles.
+        /// </summary>
+        NumberedRectangles,
+
+        /// <summary>
         /// Conflicts between mods relating to PostProcessFX.
         /// </summary>
         PostProcessFX,
+
+        /// <summary>
+        /// Conflicts between road customisation mods.
+        /// </summary>
+        RoadsUnited,
 
         /// <summary>
         /// Conflicts with tile unlock mods (25 Tiles, 81 Tiles, Purchase It, etc).
@@ -51,6 +61,11 @@ namespace AutoRepair.Enums {
         Tiles,
 
         TMPE,
+
+        /// <summary>
+        /// Toolbar changer mods.
+        /// </summary>
+        Toolbar,
 
         /// <summary>
         /// Mods that replace or remove traffic lights (excluding TMPE).

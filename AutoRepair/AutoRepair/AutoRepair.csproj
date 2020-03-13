@@ -36,21 +36,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BuildingThemes.cs" />
+    <Compile Include="Catalogs\AmbientSound.Mods.cs" />
+    <Compile Include="Catalogs\AmbientSound.Packs.cs" />
+    <Compile Include="Catalogs\BuildingTheme.cs" />
+    <Compile Include="Catalogs\Multiplayer.cs" />
+    <Compile Include="Catalogs\Multiplayer.Mods.cs" />
+    <Compile Include="Catalogs\Multiplayer.Obsolete.cs" />
+    <Compile Include="Catalogs\Music.Mods.cs" />
+    <Compile Include="Catalogs\BuildingTheme.Mods.cs" />
+    <Compile Include="Catalogs\BuildingTheme.Packs.cs" />
+    <Compile Include="Catalogs\NumberedRectangle.Mods.cs" />
+    <Compile Include="Catalogs\Music.Packs.cs" />
+    <Compile Include="Catalogs\RoadsUnited.cs" />
+    <Compile Include="Catalogs\RoadsUnited.Mods.cs" />
+    <Compile Include="Catalogs\RoadsUnited.Obsolete.cs" />
+    <Compile Include="Catalogs\RoadsUnited.Packs.cs" />
+    <Compile Include="Catalogs\Skycloth.Mods.cs" />
+    <Compile Include="Catalogs\Skycloth.Packs.cs" />
+    <Compile Include="Catalogs\Tile.Mods.cs" />
+    <Compile Include="Catalogs\TMPE.cs" />
+    <Compile Include="Catalogs\TMPE.Obsolete.cs" />
+    <Compile Include="Catalogs\TMPE.Mods.cs" />
+    <Compile Include="Catalogs\TMPE.Extras.cs" />
+    <Compile Include="Catalogs\VehicleEffect.Packs.cs" />
+    <Compile Include="Conflicts\Conflicts.cs" />
+    <Compile Include="Conflicts\Conflicts.Multiplayer.cs" />
     <Compile Include="Descriptors\Item.cs" />
     <Compile Include="Enums\ConflictGroups.cs" />
     <Compile Include="Enums\ItemFlags.cs" />
     <Compile Include="Enums\ItemTypes.cs" />
-    <Compile Include="Mods.cs" />
-    <Compile Include="Moneys.cs" />
-    <Compile Include="Musics.cs" />
-    <Compile Include="Skycloths.cs" />
-    <Compile Include="Tiles.cs" />
-    <Compile Include="Translations.cs" />
+    <Compile Include="Catalogs\Mods.cs" />
+    <Compile Include="Catalogs\NumberedRectangle.cs" />
+    <Compile Include="Catalogs\Music.cs" />
+    <Compile Include="Catalogs\Roads.cs" />
+    <Compile Include="Catalogs\Skycloth.cs" />
+    <Compile Include="Temp.cs" />
+    <Compile Include="Catalogs\Tile.cs" />
+    <Compile Include="Catalogs\Translations.cs" />
     <Compile Include="UserMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AmbientSounds.cs" />
-    <Compile Include="VehicleEffects.cs" />
+    <Compile Include="Catalogs\AmbientSound.cs" />
+    <Compile Include="Catalogs\VehicleEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ExternalPaths.props" />

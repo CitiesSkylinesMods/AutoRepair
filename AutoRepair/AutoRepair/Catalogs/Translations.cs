@@ -44,6 +44,28 @@ namespace AutoRepair {
             });
         }
 
+        /// <summary>
+        /// Adds a game-breaking (forced migration) translated clone mod item to the list.
+        /// </summary>
+        /// <param name="workshopId">The id of the item in Steam Workshop.</param>
+        /// <param name="workshopName">The name of the item in Steam Workshop.</param>
+        /// <param name="originalId">The Steam Workshop ID of the original item that was translated.</param>
+        /// <param name="locale">The translated language, if known.</param>
+        public void AddGameBreakingClone(ulong workshopId, string workshopName, ulong originalId, string locale = "??") {
+            list.Add(workshopId, new Item(workshopId, workshopName) {
+                ItemType = ItemTypes.Mod,
+                Flags = ItemFlags.Translation
+                      | ItemFlags.Abandonware
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.ForceMigration,
+                IncompatibleMods = new List<ulong>() {
+                    { originalId },
+                },
+                Locale = locale,
+                ReplaceWith = originalId,
+            });
+        }
+
         public void AddGameTranslation(ulong workshopId, string workshopName, string locale = "??") {
             list.Add(workshopId, new Item(workshopId, workshopName) {
                 ItemType = ItemTypes.Mod,
@@ -81,6 +103,9 @@ namespace AutoRepair {
             AddGameTranslation(1684556269u, "ali213_mod_01", "zh-cn");
             AddGameTranslation(1680979061u, "ali213_mod_01", "zh-cn");
             AddGameTranslation(1625610864u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(1548868991u, "ali213_mod_01", "zh-cn"); // https://gist.github.com/anonymous/4e9b615e04366fbba1c10eff57387eab
+            AddGameTranslation(1546750969u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(1546742761u, "ali213_mod_01", "zh-cn");
 
             // Language clone mods
             AddClone(1994431441u, "PostProcessFX", 412146081u);
@@ -95,7 +120,7 @@ namespace AutoRepair {
             //AddClone(1909943267u, "2、解锁25格地图"); // need to find original item
             AddClone(1908242850u, "812125426 Network Extensions 2", 812125426u);
             AddClone(1908238573u, "406723376 Tree Brush", 406723376u);
-            AddClone(1908236993u, "1186900508 DistrictRCI-continued", 1186900508u);
+            AddGameBreakingClone(1908236993u, "1186900508 DistrictRCI-continued", 1186900508u);
             AddClone(1900802168u, "Maintenance Fees汉化", 602336261u, "zh-cn");
             AddClone(1898441366u, "Find It!-汉化版", 837734529u, "zh-cn");
             AddClone(1898084870u, "Watch It!-汉化版", 1643902284u, "zh-cn");
@@ -104,7 +129,7 @@ namespace AutoRepair {
             AddClone(1895912123u, "Roundabout Builder 汉化版", 1625704117u, "zh-cn");
             AddClone(1895443005u, "Fine Road Anarchy 2 汉化版", 1844440354u, "zh-cn");
             AddClone(1895440521u, "Fine Road Tool 2 汉化版", 1844442251u, "zh-cn");
-            AddClone(1894425170u, "Loading Screen Mod 汉化版", 667342976u, "zh-cn");
+            AddGameBreakingClone(1894425170u, "Loading Screen Mod 汉化版", 667342976u, "zh-cn");
             AddClone(1894299113u, "Resize It! 汉化版", 1577882296u, "zh-cn");
             AddClone(1894297972u, "Hide It! 汉化版", 1591417160u, "zh-cn");
             AddClone(1894296637u, "Bulldoze It! 汉化版", 1627986403u, "zh-cn");
@@ -123,12 +148,13 @@ namespace AutoRepair {
             AddClone(1866239503u, "MOVE IT Sakuya16个人汉化版", 1619685021u, "zh-cn");
             AddClone(1860379049u, "加载优化 Loading Screen", 667342976u, "zh-cn");
             AddClone(1859589059u, "Roundabout Builder 汉化版", 1625704117u, "zh-cn");
-            AddClone(1857894421u, "766190099_Move_It_", 1619685021u);
-            AddClone(1856282754u, "MoveIt 汉化版", 1619685021u, "zh-cn");
+            AddGameBreakingClone(1857894421u, "766190099_Move_It_", 1619685021u);
+            AddGameBreakingClone(1856282754u, "MoveIt 汉化版", 1619685021u, "zh-cn");
             AddClone(1841047653u, "Network Extensions 2 汉化版", 812125426u, "zh-cn");
-            AddClone(1840448750u, "FineRoadTool 汉化版", 651322972u, "zh-cn");
+            AddGameBreakingClone(1840448750u, "FineRoadTool 汉化版", 651322972u, "zh-cn");
             AddClone(1751128171u, "种树画笔", 406723376u, "zh-cn"); // Tree Brush
             AddClone(1735828984u, "639486063_Automatic_Bulldoze_v2", 639486063u, "ja");
+            AddGameBreakingClone(1575247594u, "576327847 81 Tiles (Fixed for 1", 576327847u, "zh-cn");
         }
     }
 }

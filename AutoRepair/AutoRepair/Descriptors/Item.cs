@@ -15,9 +15,17 @@ namespace AutoRepair.Descriptors {
         /// <param name="workshopId">The Steam Workshop ID for this item.</param>
         /// <param name="workshopName">The name of this item as it appears in Steam Workshop.</param>
         public Item(ulong workshopId, string workshopName) {
+            if (workshopId == 0 || string.IsNullOrEmpty(workshopName)) {
+                throw new ArgumentNullException("All items must specify both workshop ID and name.");
+            }
             WorkshopId = workshopId;
             WorkshopName = workshopName;
         }
+
+        /// <summary>
+        /// Gets or sets the name of the catalog that defined this item.
+        /// </summary>
+        public string Catalog { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="ItemTypes"/> for this item.
