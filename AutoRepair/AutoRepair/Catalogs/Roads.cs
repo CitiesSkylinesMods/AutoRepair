@@ -40,18 +40,6 @@ namespace AutoRepair {
 
             // Removed from workshop
 
-            Add(new Item(417585852u, "Road Color Changer") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.RoadsUnited
-                              | ConflictGroups.Zoning,
-                ReplaceWith = 932192868u, // Road Options (Road Colors Changer ++)
-            });
-
             Add(new Item(413678178u, "Fine Road Heights") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -81,17 +69,6 @@ namespace AutoRepair {
             });
 
             // Game breaking
-
-            Add(new Item(651610627u, "[DISCONTINUED] Road Color Changer Continued") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.RoadsUnited
-                              | ConflictGroups.Zoning,
-                ReplaceWith = 932192868u, // Road Options (Road Colors Changer ++)
-            });
 
             Add(new Item(478820060u, "Network Extensions Project") {
                 Flags = ItemFlags.Abandonware

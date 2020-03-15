@@ -65,7 +65,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete,
-                SourceCode = "https://github.com/CitiesSkylinesMods/TMPE",
+                SourceCodeURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 ItemType = ItemTypes.Mod,
                 ConflictsWith = ConflictGroups.TMPE
                               | ConflictGroups.MoreVehicles,

@@ -7,7 +7,17 @@ namespace AutoRepair.Enums {
         // none
         None = 0,
 
-        AutoBulldoze,
+        AutoBudget,
+
+        /// <summary>
+        /// Things that alter building level, such as "Control Building Level Up" etc.
+        /// </summary>
+        BuildingLevel,
+
+        /// <summary>
+        /// Auto bulldoze mods.
+        /// </summary>
+        Bulldoze,
 
         EmployOvereducatedWorkers,
 
@@ -16,14 +26,21 @@ namespace AutoRepair.Enums {
         FineRoadTool,
 
         /// <summary>
-        /// Mods that alter costs, etc., to make game harder or easier.
+        /// Difficulty mods (alter money, stats, etc).
         /// </summary>
-        HardMode,
+        Difficulty,
 
         /// <summary>
         /// Mods that are made obsolete by, or conflict with, Hide It.
         /// </summary>
         HideIt,
+
+        /// <summary>
+        /// Conflicts with map theme mods.
+        /// </summary>
+        MapThemes,
+
+        MilestoneUnlocks,
 
         /// <summary>
         /// Conflicts with More Vehicles mod.
@@ -40,15 +57,23 @@ namespace AutoRepair.Enums {
         /// </summary>
         Multiplayer,
 
+        NetworkExtensions,
+
+        NetworkSkins,
+
         /// <summary>
         /// Mods tha add numbered rectangles.
         /// </summary>
         NumberedRectangles,
 
+        PollutionRemovers,
+
         /// <summary>
         /// Conflicts between mods relating to PostProcessFX.
         /// </summary>
         PostProcessFX,
+
+        RoadColorChanger,
 
         /// <summary>
         /// Conflicts between road customisation mods.
@@ -59,6 +84,8 @@ namespace AutoRepair.Enums {
         /// Conflicts with tile unlock mods (25 Tiles, 81 Tiles, Purchase It, etc).
         /// </summary>
         Tiles,
+
+        ThemeMixer,
 
         TMPE,
 

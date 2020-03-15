@@ -42,14 +42,18 @@ namespace AutoRepair.Catalogs {
         /// 
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Wokrshop.</param>
-        private void AddSoundPack(ulong workshopId, string workshopName) {
-            list.Add(workshopId, new Item(workshopId, workshopName) {
+        private Item AddSoundPack(ulong workshopId, string workshopName) {
+            Item item = new Item(workshopId, workshopName) {
                 Catalog = "AmbientSound",
                 ItemType = ItemTypes.Mod,
                 RequiredMods = new List<ulong>() {
                     { 818641631u }, // Ambient Sounds Tuner
                 },
-            });
+            };
+
+            list.Add(workshopId, item);
+
+            return item;
         }
     }
 }

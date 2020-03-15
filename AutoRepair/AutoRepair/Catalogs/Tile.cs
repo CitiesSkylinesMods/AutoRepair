@@ -43,19 +43,23 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopName">The name of the item in Steam Wokrshop.</param>
         /// <param name="replaceWith">Id of applicable replacement mod from Steam Workshop (defualts to Purchase It! mod).</param>
         /// <param name="gameBreaking">Set to <c>true</c> if the mod is game breaking.</param>
-        private void AddMod(ulong workshopId, string workshopName, ulong replaceWith = 1612287735u, bool gameBreaking = false) {
+        ///
+        /// <returns>Returns the item that was added.</returns>
+        private Item AddMod(ulong workshopId, string workshopName, ulong replaceWith = 1612287735u, bool gameBreaking = false) {
             Item item = new Item(workshopId, workshopName) {
                 Catalog = "Tile",
                 ItemType = ItemTypes.Mod,
+                Flags = ItemFlags.SourceUnavailable,
                 ConflictsWith = ConflictGroups.Tiles,
                 ReplaceWith = replaceWith,
             };
 
             if (gameBreaking) {
-                item.Flags = ItemFlags.GameBreaking | ItemFlags.ForceMigration;
+                item.Flags |= ItemFlags.GameBreaking | ItemFlags.ForceMigration;
             }
 
-            list.Add(workshopId, );
+            list.Add(workshopId, item);
+            return item;
         }
 
         private void AddMod(Item item) {

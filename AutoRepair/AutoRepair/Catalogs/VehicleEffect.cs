@@ -39,6 +39,9 @@ namespace AutoRepair.Catalogs {
                 RequiredMods = new List<ulong>() {
                     { _vehicleEffectsMod },
                 },
+                CompatibleWith = new List<ulong>() {
+                    { _vehicleEffectsMod },
+                },
             });
         }
 
@@ -53,6 +56,10 @@ namespace AutoRepair.Catalogs {
                 Catalog = "VehicleEffect",
                 ItemType = ItemTypes.Mod,
                 RequiredMods = new List<ulong>() {
+                    { _vehicleEffectsMod },
+                    { _extraVehicleEffectsMod },
+                },
+                CompatibleWith = new List<ulong>() {
                     { _vehicleEffectsMod },
                     { _extraVehicleEffectsMod },
                 },

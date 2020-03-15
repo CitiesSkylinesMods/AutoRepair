@@ -11,7 +11,13 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1558675585u, "Cities: Skylines Multiplayer (CSM) [Beta]") {
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs,
-                SourceCode = "https://github.com/DominicMaas/Tango",
+                SourceCodeURL = "https://github.com/DominicMaas/Tango",
+            });
+
+            AddMod(new Item(2021598295u, "1558438291 [Beta] CSM - Cities_ Skylines Multiplayer") {
+                Flags = ItemFlags.SourceUnavailable
+                      | ItemFlags.Translation,
+                Locale = "zh-cn",
             });
         }
     }

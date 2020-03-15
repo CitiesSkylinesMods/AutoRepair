@@ -1,3 +1,6 @@
+using AutoRepair.Descriptors;
+using System.Collections.Generic;
+
 namespace AutoRepair.Catalogs {
     /// <summary>
     /// Defines sound packs for the Ambient Sound Tuner mod.
@@ -8,6 +11,8 @@ namespace AutoRepair.Catalogs {
         /// Add sound packs to the list.
         /// </summary>
         private void AddPacksToList() {
+            Item item;
+
             AddSoundPack(1999271351u, "0xyl0nSoundPackUSA");
             AddSoundPack(1982045897u, "(for backup)TwotoolusFLY's Siren mod");
             AddSoundPack(1979269356u, "Swedish Emergency Vehicle Sirens - Sound Pack");
@@ -26,6 +31,16 @@ namespace AutoRepair.Catalogs {
             AddSoundPack(1629745074u, "ÖBB Sound Pack for Ambient Sounds Tuner");
             AddSoundPack(1628985258u, "CFF Sound Pack for Ambient Sounds Tuner");
             AddSoundPack(1624184698u, "SBB Sound Pack for Ambient Sounds Tune");
+            AddSoundPack(1480332470u, "Polish Sirens Pack [V2.2]");
+
+            item = AddSoundPack(1436056719u, "Kaguki's Realistic Akihabara Sounds");
+            item.SuggestedMods = new List<ulong>() {
+                { 1431909554u }, // Kaguki JPN Realistic Sounds v6 (TESTING)
+            };
+
+            AddSoundPack(1398060749u, "Evo's Korean Sound Overhaul [v0.1d]");
+            AddSoundPack(1327734238u, "Deutsche Martinshörner für Ambient Sounds Tuner 2.0");
+            AddSoundPack(1316748022u, "Martinshorn/ vormals V10 Siren");
         }
     }
 }

@@ -31,6 +31,10 @@ namespace AutoRepair.Enums {
         [Description("Item is not in catalog")]
         Unrecognised,
 
+        // reupload of existing mod (common after mods removed from workshop)
+        [Description("Clone of existing mod")]
+        Clone,
+
         /* Source code */
 
         SourceAvailable,
@@ -44,24 +48,24 @@ namespace AutoRepair.Enums {
         /* Reliability status flags */
 
         // Can sometimes break saves (but some users don't have problems)
-        // See Warnings in ModInfo struct
         [Description("Some users report bugs")]
         Unreliable,
 
-        /*
         // Currently broken by game update (awaiting fix)
         [Description("Broken by recent game update")]
         BrokenByUpdate,
-        */
 
         // Bugs that don't break saves
         [Description("Some minor bugs")]
         MinorBugs,
 
-        // Unmaintained and very badly broken
-        // Will always force migration (see below)
+        // Very badly broken, likely to break save games or published content
         [Description("Game-breaking")]
         GameBreaking,
+
+        // Does it break the asset/theme/map editor?
+        [Description("Breaks the asset/theme/map editors")]
+        EditorBreaking,
 
         /* Other status flags */
 
@@ -72,20 +76,22 @@ namespace AutoRepair.Enums {
         [Description("Mandatory migration required")]
         ForceMigration,
 
+        // extends editors
+        EditorMod,
+
         // Eats too much CPU
         // See Warnings in ModInfo struct
         [Description("Can cause lag in-game")]
         Laggy,
+
+        // Filesize is excessively large.
+        LargeFileWarning,
 
         // Mod alters save in such a way that the save won't load if mod not enabled
         // For example, More Vehicles, 81 Tiles
         // See Warnings in ModInfo struct
         [Description("Save games created with this will not load without it")]
         SaveChanging,
-
-        // Does it break the asset/theme/map editor?
-        [Description("Breaks the asset/theme/map editors")]
-        BreaksEditors,
 
         // Just a translation of existing mod, likely unmaintained
         [Description("Translation of an existing mod")]

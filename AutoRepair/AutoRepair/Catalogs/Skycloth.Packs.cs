@@ -14,6 +14,9 @@ namespace AutoRepair.Catalogs {
             AddFlagPack(1652032078u, "Vooperian Flag");
             AddFlagPack(1611090578u, "adsii1970's flags (set A)");
             AddFlagPack(1556479796u, "Polish and Lower Silesian Flags Replacer");
+            AddFlagPack(1408407561u, "Arndorf Flag");
+            AddFlagPack(1308196504u, "Greek Flag Replacer");
+            AddFlagPack(1269317139u, "Malaysian Flags Mod");
         }
     }
 }

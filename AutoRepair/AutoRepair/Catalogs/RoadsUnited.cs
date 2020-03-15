@@ -44,20 +44,21 @@ namespace AutoRepair.Catalogs {
         /// <param name="rucP">Set <c>true</c> if the pack required Roads United: Core+.</param>
         private void AddSkinPack(ulong workshopId, string workshopName, bool ruc2, bool rucP) {
             Item item = new Item(workshopId, workshopName) {
-                Flags = ItemFlags.MinorBugs // error when activated
+                Flags = ItemFlags.MinorBugs 
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.RoadsUnited,
+                ConflictsWith = ConflictGroups.RoadColorChanger
+                              | ConflictGroups.RoadsUnited,
                 CompatibleWith = new List<ulong>(),
                 RequiredMods = new List<ulong>(),
                 IncompatibleMods = new List<ulong>() {
-                    { 633547552u }, // Roads United Core 2.0
-                    { 726005715u }, // Roads United: Core+
-                    { 932192868u }, // Road Options (Road Colors Changer ++)
-                    { 651610627u }, // [DISCONTINUED] Road Color Changer Continued
-                    { 417585852u }, // Road Color Changer (no longer in workshop)
-                    { 1128766708u }, // Remove Road Textures - Blank Roads
                     { 1449429720u }, // Road Color 道路颜色修改中文汉化版
+                    { 1128766708u }, // Remove Road Textures - Blank Roads
+                    { 932192868u }, // Road Options (Road Colors Changer ++)
+                    { 726005715u }, // Roads United: Core+
+                    { 651610627u }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552u }, // Roads United Core 2.0
                     { 478820060u }, // Network Extensions Project (original verison)
+                    { 417585852u }, // Road Color Changer (no longer in workshop)
                 },
             };
 

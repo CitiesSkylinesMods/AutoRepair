@@ -16,6 +16,8 @@ namespace AutoRepair.Catalogs {
             AddThemePack(1747800340u, "Building Theme: University City Districts");
 
             AddThemePack(1632933031u, "Building Theme:Japanese low residential theme");
+
+            AddThemePack(1222415977u, "Christmas Village Building Theme"); // alt: vanilla district style: 1182123078u
         }
     }
 }
