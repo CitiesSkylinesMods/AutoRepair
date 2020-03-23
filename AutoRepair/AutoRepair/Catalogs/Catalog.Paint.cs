@@ -1,0 +1,88 @@
+namespace AutoRepair.Catalogs {
+    using AutoRepair.Descriptors;
+    using AutoRepair.Enums;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+
+    /// <summary>
+    /// Mods that primarily change colour of things.
+    /// </summary>
+    public partial class Catalog {
+
+        /// <summary>
+        /// Add mods to list.
+        /// </summary>
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility")]
+        private void PaintCatalog() {
+
+            string catalog = "Paint";
+
+            AddMod(new Item(1818462177u, "Vehicle Color Expander") {
+                Affect = Factor.Textures,
+                Authors = "Klyte45",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1808439336u, Status.Compatible   }, // Building Color Expander
+                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (Industries DLC ready)
+                    { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/klyte45/VehicleColorExpander",
+            });
+
+            // todo: prolly incompat with painter mod? asked Klyte for confirmation
+            AddMod(new Item(1808439336u, "Building Color Expander") {
+                Affect = Factor.Textures,
+                Authors = "Klyte45",
+                Catalog = catalog,
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/klyte45/BuildingColorExpander",
+            });
+
+            AddMod(new Item(1869561285u, "Prop Painter 2.6.0") {
+                Affect = Factor.Textures
+                       | Factor.TileLimit, // 81 tiles mod sometimes breaks it
+                Authors = "Elektrix",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {                   
+                    // Sometimes breaks if 81 Tiles mod active
+                },
+                Flags = ItemFlags.SourceUnavailable, // linked on workshop page, but github repo deleted
+            });
+
+            AddMod(new Item(1372431101u, "Painter") {
+                Affect = Factor.Textures,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 530771650u, Status.Recommended }, // Prefab hook (enables invert and colorize options)
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/TPBCS/Painter",
+            });
+
+            /*
+            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
+            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
+            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
+            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
+            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
+            */
+
+            // seems broken by one of the game updates, but needs some extra testing
+            // possibly also conflict with prop painter
+            AddMod(new Item(1442713872u, "Detail") {
+                Affect = Factor.Textures,
+                Authors = "Ronyx69",
+                Catalog = catalog,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Obsolete // Prop Painter and Network Skins 2
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable, // multiple existing users stating it doesn't work any more
+                SourceURL = "https://gist.github.com/ronyx69/68d57f77e721dabefaefa864cc29616b",
+            });
+
+        }
+    }
+}

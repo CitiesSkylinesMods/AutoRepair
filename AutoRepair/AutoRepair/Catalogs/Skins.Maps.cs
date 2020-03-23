@@ -1,3 +1,4 @@
+/*
 using AutoRepair.Descriptors;
 using AutoRepair.Enums;
 using System.Collections.Generic;
@@ -31,19 +32,19 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
-            */
+            * /
 
             AddMod(new Item(1445375997u, "Theme Mixer 汉化版2的") {
                 Authors = "TIMIYANG",
                 Catalog = catalog,
-                ConflictsWith = ConflictGroups.ThemeMixer,
+                Affect = Factor.ThemeMixer,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Clone
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable
-                      | ItemFlags.Translation,
+                      | ItemFlags.Localised,
                 IncompatibleMods = new List<ulong>() {
                     { 1899640536u }, // Theme Mixer 2
                     { 1283010953u }, // TerrainTextureReplacer Reupload
@@ -61,7 +62,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1283010953u, "TerrainTextureReplacer Reupload") {
                 Authors = "Patrick Bateman",
                 Catalog = catalog,
-                ConflictsWith = ConflictGroups.ThemeMixer,
+                Affect = Factor.ThemeMixer,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Clone
                       | ItemFlags.ForceMigration
@@ -84,14 +85,14 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(920832749u, "TerrainTextureReplacer") {
                 Authors = "奴はやつはし",
                 Catalog = catalog,
-                ConflictsWith = ConflictGroups.ThemeMixer,
+                Affect = Factor.ThemeMixer,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Clone
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable
-                      | ItemFlags.Translation,
+                      | ItemFlags.Localised,
                 IncompatibleMods = new List<ulong>() {
                     { 1899640536u }, // Theme Mixer 2
                     { 1445375997u }, // Theme Mixer 汉化版2的 
@@ -109,7 +110,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(877394445u, "TerrainTextureReplacer") {
                 Authors = "Roenzi",
                 Catalog = catalog,
-                ConflictsWith = ConflictGroups.ThemeMixer,
+                Affect = Factor.ThemeMixer,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Clone
                       | ItemFlags.ForceMigration
@@ -133,7 +134,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(811664974u, "TTR - Terrain Texture Replacer") {
                 Authors = "Penrose",
                 Catalog = catalog,
-                ConflictsWith = ConflictGroups.ThemeMixer,
+                Affect = Factor.ThemeMixer,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
@@ -156,7 +157,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(775021554u, "Theme Mixer [OBSOLETE (Use Theme Mixer 2)]") {
                 Authors = "TPB",
                 Catalog = catalog,
-                ConflictsWith = ConflictGroups.ThemeMixer,
+                Affect = Factor.ThemeMixer,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.Obsolete
@@ -177,7 +178,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(416966387u, "Terrain Texture Replacer") {
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
-                ConflictsWith = ConflictGroups.ThemeMixer,
+                Affect = Factor.ThemeMixer,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
@@ -199,3 +200,4 @@ namespace AutoRepair.Catalogs {
         }
     }
 }
+*/

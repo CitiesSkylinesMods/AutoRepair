@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair.Catalogs {
     /// <summary>
     /// Defines traffic light prop pack mods. Only one can be used at a time for obvious reasons.
@@ -21,6 +22,17 @@ namespace AutoRepair.Catalogs {
             AddPack(1519049273u, "American Railroad Signal Replacer");
 
             AddPack(1249000709u, "Japanese Railway Crossings 日本風踏切MOD"); // https://github.com/ako-ako/Japanese-Railway-Crossings
+
+            // Broken since August 2018
+            Add(new Item(1108278552u, "Horizontal Traffic Lights") {
+                Authors = "Cristolisto",
+                Affect = Factor.TrafficLights,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate // around Aug 2018
+                      | ItemFlags.SourceUnavailable,
+            });
+
         }
     }
 }
+*/

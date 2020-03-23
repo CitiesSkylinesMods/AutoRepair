@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
@@ -34,7 +35,7 @@ namespace AutoRepair {
         public void AddClone(ulong workshopId, string workshopName, ulong originalId, string locale = "??") {
             list.Add(workshopId, new Item(workshopId, workshopName) {
                 ItemType = ItemTypes.Mod,
-                Flags = ItemFlags.Translation
+                Flags = ItemFlags.Localised
                       | ItemFlags.Abandonware,
                 IncompatibleMods = new List<ulong>() {
                     { originalId },
@@ -54,7 +55,7 @@ namespace AutoRepair {
         public void AddGameBreakingClone(ulong workshopId, string workshopName, ulong originalId, string locale = "??") {
             list.Add(workshopId, new Item(workshopId, workshopName) {
                 ItemType = ItemTypes.Mod,
-                Flags = ItemFlags.Translation
+                Flags = ItemFlags.Localised
                       | ItemFlags.Abandonware
                       | ItemFlags.GameBreaking
                       | ItemFlags.ForceMigration,
@@ -76,7 +77,7 @@ namespace AutoRepair {
         public void AddNamelist(ulong workshopId, string workshopTitle, string locale = "??") {
             Item item = new Item(workshopId, workshopTitle) {
                 ItemType = ItemTypes.Mod,
-                Flags = ItemFlags.Translation,
+                Flags = ItemFlags.Localised,
                 Locale = locale,
                 IncompatibleMods = new List<ulong>() {
                     { 1322787091u }, // Addresses & Names Mod 2.0.1
@@ -94,8 +95,9 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceAvailable,
                 IncompatibleMods = new List<ulong>() {
                     // todo: check if compat with Addresses & Names Mod 2.0.1
+                    { 935350530u }, // CSL Custom Names [1.0.0]
                 },
-                SourceCodeURL = "https://github.com/markusmitbrille/cities-skylines-custom-namelists",
+                SourceURL = "https://github.com/markusmitbrille/cities-skylines-custom-namelists",
             });
 
             // Namelists
@@ -114,6 +116,37 @@ namespace AutoRepair {
             // covers multiple regions: Iran Uzbekistan Turkmenistan Afghanistan Pashtun Pakhtun Pashto
             // Pakhto Kurd Kurdistan O'zbekiston Baluch Balochistan Baluchistan Tajikistan Iranian
             AddNamelist(1255835366u, "Central Asian Names", "*");
+
+            // there is a namelist alternative: 1299863509u, 
+            Add(new Item(937334007u, "Japanese Localization RD") {
+                Authors = "Gansaku",
+                Flags = ItemFlags.SourceAvailable
+                      | ItemFlags.Localised,
+                IncompatibleMods = new List<ulong>() {
+                    // incompat with custom name lists mod?
+                    { 1299863509u }, // CNL Japanese Localization Name Lists
+                },
+                Locale = "ja",
+                SourceURL = "https://github.com/gansaku/JapaneseLocalizationRD",
+            });
+
+            Add(new Item(935356978u, "CSL Names Pack Example [1.0.0]") {
+                Authors = "TGC",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Obsolete // use Custom Name Lists mod instead
+                      | ItemFlags.SourceUnavailable,
+            });
+
+            Add(new Item(935350530u, "CSL Custom Names [1.0.0]") {
+                Authors = "TGC",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                IncompatibleMods = new List<ulong>() {
+                    { 1231957400u }, // Custom Namelists
+                },
+                ReplaceWith = 1231957400u, // Custom Namelists
+            });
 
             // Game translations
             AddGameTranslation(1988319487u, "ali213_mod_01", "zh-cn");
@@ -141,6 +174,33 @@ namespace AutoRepair {
             AddGameTranslation(1290370842u, "ali213_mod_01", "zh-cn");
             AddGameTranslation(1218794439u, "ali213_mod_01", "zh-cn");
             AddGameTranslation(1216481923u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(966361998u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(965590422u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(964727801u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(949461510u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(940398690u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(929222270u, "ali213_mod_01", "zh-cn");
+            AddGameTranslation(929211897u, "ali213_mod_01", "zh-cn");
+
+            // Very well maintained mod, very active author
+            Add(new Item(938512234u, "Traditional Chinese Translation V2 社群正體中文化 V2") {
+                Authors = "alien0512.tw",
+                Flags = ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Locale = "zh-tw",
+                RequiredMods = new List<ulong>() {
+                    { 412149127u }, // Font Selector
+                },
+            });
+
+            // Very well maintained mod, very active author
+            // 100% Turkish Cities Skylines May 2019 by Turkish PATCH & Riza symbol54
+            Add(new Item(936338233u, "%100 TÜRKÇE 2019 Mayıs ayı Cities Skylines TÜRKÇE YAMA by symbol54 & Rıza") {
+                Authors = " byBashkann(symbol54), Riza",
+                Flags = ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Locale = "tr",
+            });
 
             // Language clone mods
             AddClone(1994431441u, "PostProcessFX", 412146081u);
@@ -165,7 +225,6 @@ namespace AutoRepair {
             AddGameBreakingClone(1894425170u, "Loading Screen Mod 汉化版", 667342976u, "zh-cn");
             AddClone(1894299113u, "Resize It! 汉化版", 1577882296u, "zh-cn");
             AddClone(1894297972u, "Hide It! 汉化版", 1591417160u, "zh-cn");
-            AddClone(1894296637u, "Bulldoze It! 汉化版", 1627986403u, "zh-cn");
             AddClone(1893235480u, "[PLT]Prop Line Tool汉化版", 694512541u, "zh-cn");
             AddClone(1893049735u, "Customize It Extended 汉化版", 1806759255u, "zh-cn");
             AddClone(1892205219u, "FPSCamera 汉化版", 650805785u, "zh-cn");
@@ -189,3 +248,4 @@ namespace AutoRepair {
         }
     }
 }
+*/

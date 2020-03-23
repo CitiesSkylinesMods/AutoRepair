@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
@@ -74,9 +75,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.MapThemes,
+                Affect = Factor.MapThemes,
                 ReplaceWith = 1899640536u, // Theme Mixer 2
             });
         }
     }
 }
+*/

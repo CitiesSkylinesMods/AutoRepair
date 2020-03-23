@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
@@ -40,18 +41,64 @@ namespace AutoRepair {
 
             // Removed from workshop
 
-            Add(new Item(413678178u, "Fine Road Heights") {
+            Add(new Item(954034590u, "Road Anarchy V2") {
+                Authors = "Eluminate [NL]",
+                Affect = Factor.RoadsUnited
+                              | Factor.Zoning
+                              | Factor.FineRoadTool
+                              | Factor.FineRoadAnarchy,
+                ContinuationOf = 418556522u, // Road Anarchy
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceAvailable,
+                IncompatibleMods = new List<ulong>() { // will be more
+                    { 1844440354u }, // Fine Road Anarchy 2
+                    { 954034590u }, // Road Anarchy V2
+                    { 802066100u }, // Fine Road Anarchy
+                    { 553184329u }, // Sharp Junction Angles
+                    { 433567230u }, // Advanced Road Anarchy
+                    { 418556522u }, // Road Anarchy
+                },
+                ReplaceWith = 1844440354u, // Fine Road Anarchy 2
+                SourceURL = "https://github.com/LucasMateijsen/City-Skylines-Roads",
+            });
+
+            Add(new Item(553184329u, "Sharp Junction Angles") {
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.RoadsUnited
-                              | ConflictGroups.Zoning
-                              | ConflictGroups.FineRoadTool
-                              | ConflictGroups.FineRoadAnarchy,
-                ReplaceWith = 
+                Affect = Factor.RoadsUnited
+                              | Factor.Zoning
+                              | Factor.FineRoadAnarchy
+                              | Factor.FineRoadTool,
+                IncompatibleMods = new List<ulong>() { // will be more
+                    { 1844440354u }, // Fine Road Anarchy 2
+                    { 954034590u }, // Road Anarchy V2
+                    { 802066100u }, // Fine Road Anarchy
+                    { 553184329u }, // Sharp Junction Angles
+                    { 433567230u }, // Advanced Road Anarchy
+                    { 418556522u }, // Road Anarchy
+                },
+                ReplaceWith = 1844440354u, // Fine Road Anarchy 2
+            });
+
+            Add(new Item(478820060u, "Network Extensions Project") {
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable, // it was replaced with TAM source, then later NExt2 source
+                Affect = Factor.RoadsUnited
+                              | Factor.Zoning
+                              | Factor.FineRoadAnarchy
+                              | Factor.FineRoadTool,
+                IncompatibleMods = new List<ulong>() {
+                    { 625608461u }, // Adaptive Prop Visibility Distance
+                },
+                ReplaceWith = 812125426u, // Network Extensions 2
             });
 
             Add(new Item(433567230u, "Advanced Road Anarchy") {
@@ -61,44 +108,43 @@ namespace AutoRepair {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.RoadsUnited
-                              | ConflictGroups.Zoning
-                              | ConflictGroups.FineRoadTool
-                              | ConflictGroups.FineRoadAnarchy,
-                ReplaceWith = 
-            });
-
-            // Game breaking
-
-            Add(new Item(478820060u, "Network Extensions Project") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable, // it was replaced with TAM source, then later NExt2 source
-                ConflictsWith = ConflictGroups.RoadsUnited
-                              | ConflictGroups.Zoning
-                              | ConflictGroups.FineRoadAnarchy
-                              | ConflictGroups.FineRoadTool,
-                IncompatibleMods = new List<ulong>() {
-                    { 625608461u }, // Adaptive Prop Visibility Distance
+                Affect = Factor.RoadsUnited
+                              | Factor.Zoning
+                              | Factor.FineRoadTool
+                              | Factor.FineRoadAnarchy,
+                IncompatibleMods = new List<ulong>() { // will be more
+                    { 1844440354u }, // Fine Road Anarchy 2
+                    { 954034590u }, // Road Anarchy V2
+                    { 802066100u }, // Fine Road Anarchy
+                    { 553184329u }, // Sharp Junction Angles
+                    { 433567230u }, // Advanced Road Anarchy
+                    { 418556522u }, // Road Anarchy
                 },
-                ReplaceWith = 812125426u, // Network Extensions 2
+                ReplaceWith = 1844440354u, // Fine Road Anarchy 2
             });
 
-            Add(new Item(553184329u, "Sharp Junction Angles") {
+            Add(new Item(413678178u, "Fine Road Heights") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.RoadsUnited
-                              | ConflictGroups.Zoning
-                              | ConflictGroups.FineRoadAnarchy
-                              | ConflictGroups.FineRoadTool,
-                ReplaceWith = 
+                Affect = Factor.RoadsUnited
+                              | Factor.Zoning
+                              | Factor.FineRoadTool
+                              | Factor.FineRoadAnarchy,
+                IncompatibleMods = new List<ulong>() { // will be more
+                    { 1844440354u }, // Fine Road Anarchy 2
+                    { 954034590u }, // Road Anarchy V2
+                    { 802066100u }, // Fine Road Anarchy
+                    { 553184329u }, // Sharp Junction Angles
+                    { 433567230u }, // Advanced Road Anarchy
+                    { 418556522u }, // Road Anarchy
+                },
+                ReplaceWith = 1844440354u, // Fine Road Anarchy 2
             });
-
         }
     }
 }
+*/

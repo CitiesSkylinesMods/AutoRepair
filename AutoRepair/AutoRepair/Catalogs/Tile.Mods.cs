@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
@@ -26,33 +27,33 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
-                SourceCodeURL = "https://github.com/keallu/CSL-PurchaseIt",
+                SourceURL = "https://github.com/keallu/CSL-PurchaseIt",
             });
 
             item = AddMod(1575247594u, "576327847 81 Tiles (Fixed for 1", 576327847u, true);
-            item.ConflictsWith |= ConflictGroups.MoreVehicles;
-            item.Flags |= ItemFlags.SaveChanging | ItemFlags.Translation;
+            item.Affect |= Factor.VehicleLimit;
+            item.Flags |= ItemFlags.SaveChanging | ItemFlags.Localised;
             item.Locale = "zh-cn";
 
             item = AddMod(1560122066u, "81MOD", 576327847u, true);
             item.Flags |= ItemFlags.SaveChanging;
-            item.ConflictsWith |= ConflictGroups.MoreVehicles;
+            item.Affect |= Factor.VehicleLimit;
 
             AddMod(1457742795u, "403798635 All Spaces Unlockable", 403798635u, true);
 
             item = AddMod(1449194984u, "25格汉化版", 405810376u);
-            item.Flags |= ItemFlags.Translation;
+            item.Flags |= ItemFlags.Localised;
             item.Locale = "zh-cn";
 
             Add(new Item(1361478243u, "81 Tiles") {
                 Authors = "限量版好男人",
-                ConflictsWith = ConflictGroups.Tiles,
+                Affect = Factor.TileLimit,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.SaveChanging
                       | ItemFlags.SourceUnavailable
-                      | ItemFlags.Translation,
+                      | ItemFlags.Localised,
                 IncompatibleMods = new List<ulong>() {
                     { 1764208250u }, // More Vehicles
                 },
@@ -71,6 +72,15 @@ namespace AutoRepair.Catalogs {
             AddMod(1223738434u, "422554572", 576327847u, true); // zh-cn translation of original (broken) 81 tiles mod
 
             AddMod(406218372, "All Spaces Unlockable"); // no longer in workshop
+
+            // Multiple user comments stating it doesn't work
+            Add(new Item(1138679561u, "AllSpacesUnlock") {
+                Authors = "The700",
+                Affect = Factor.TileLimit,
+                Flags = ItemFlags.SourceUnavailable,
+            });
+
         }
     }
 }
+*/

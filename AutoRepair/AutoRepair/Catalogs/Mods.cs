@@ -56,48 +56,40 @@ namespace AutoRepair {
         public void Populate() {
 
             Add(new Item(2016920607u, "RICO revisited") {
-                Flags = ItemFlags.Verified,
-                IncompatibleMods = new List<ulong>() {
-                    { 586012417u }, // Ploppable RICO (original)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 586012417u, Status.Incompatible }, // Ploppable RICO (original)
                 },
             });
 
-
             Add(new Item(2009708489u, "Road Arrows Replacer [Spain]") {
-                IncompatibleMods = new List<ulong>() {
-                    { 956707300u }, // Remove Street Arrows
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 956707300u, Status.Incompatible }, // Remove Street Arrows
                     //? { _hideIt },
-                },
-                RequiredAssets = new List<ulong>() {
-                    { 2008960441u }, // Spanish Arrow Decals Pack
+                    { 2008960441u, Status.Required }, // Spanish Arrow Decals Pack
                 },
             });
 
             AddDodgey(2009172305u, "EPTUI TLM Integration (Beta)");
 
             Add(new Item(1962752152u, "Busstop Prop Remover") {
-                IncompatibleMods = new List<ulong>() {
-                    { _hideIt },
-                    { 919020932u }, // Stop Remover
-                    { 545878277u }, // [GBS] German Bus Stop Mod [NC]
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { _hideIt, Status.Incompatible },
+                    { 919020932u, Status.Incompatible }, // Stop Remover
+                    { 545878277u, Status.Incompatible }, // [GBS] German Bus Stop Mod [NC]
                 },
             });
 
             Add(new Item(1959342332u, "CSUR ToolBox") {
-                Flags = ItemFlags.Verified,
-                RequiredMods = new List<ulong>() {
-                    { 1959183067u }, // CSUR Loader
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1959183067u, Status.Required }, // CSUR Loader
                 },
             });
 
             // Todo - list more assets?
             Add(new Item(1959183067u, "CSUR Loader") {
-                Flags = ItemFlags.Verified,
-                RequiredMods = new List<ulong>() {
-                    { 1959342332u }, // CSUR ToolBox
-                },
-                RequiredAssets = new List<ulong>() {
-                    { 1959210164u }, // CSUR Basic Pack [R1]
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1959342332u, Status.Required }, // CSUR ToolBox
+                    { 1959210164u, Status.Required }, // CSUR Basic Pack [R1]
                 },
             });
 
@@ -106,37 +98,24 @@ namespace AutoRepair {
             // todo: probably incompatible with TMPE
             Add(1953042839u, "Unified Railway System");
 
-            // todo: conflict with vanilla
-            Add(1949192313u, "UnlimitedMoney");
-
-
             Add(new Item(1938493221u, "Mini FPS Booster") {
                 Flags = ItemFlags.Recommended,
             });
 
             Add(1927186256u, "Problem Info");
 
-            Add(1925527132u, "Advanced Road Tools"); // for creating intersections
-
             // todo: probably incompatible with multiple other district service mods
             // possibly breaks when used on existing saves
             Add(new Item(1922400472u, "Enhanced District Services") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/chronofanz/EnhancedDistrictServices",
-                SuggestedMods = new List<ulong>() {
-                    { 1721492498u }, // Optimised Outside Connections
-                },
-                IncompatibleMods = new List<ulong>() {
-                    { 1680840913u }, // More Effective Transfer Manager
+                SourceURL = "https://github.com/chronofanz/EnhancedDistrictServices",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1721492498u, Status.Recommended }, // Optimised Outside Connections
+                    { 1680840913u, Status.Incompatible }, // More Effective Transfer Manager
                 },
             });
 
             AddDodgey(1920431318u, "Biogas-pw"); // dafuq?
-
-            Add(1904439843u, "Mayoral City Service Info");
-
-            // map editor mod
-            Add(1902022083u, "TerrainRiverTool");
 
             // replaces bus shelters, likely incompat with similar mods
             Add(1900151000u, "替换为不锈钢公交候车亭");
@@ -146,30 +125,16 @@ namespace AutoRepair {
 
             Add(1899449152, "Game Day Timer");
 
-            // map editor mod, also works in-game
-            Add(1894371878u, "TotalTerrainTool");
-
-            // todo: likely incompat with City Vitals, Export Electricity
-            Add(1893036262u, "Mayor's Dashboard v2");
-
             AddDodgey(1891302387u, "自动推土机");
 
             AddDodgey(1891302187u, "自动推土机");
 
-            // possibly incompat with TM:PE
-            Add(1890830956u, "Undo It!");
-
             Add(new Item(1886877404u, "Custom Effect Loader") {
-                Flags = ItemFlags.Verified,
-                SuggestedAssets = {
-                    { 1889349343u },
-                    { 1886961495u },
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1889349343u, Status.Recommended },
+                    { 1886961495u, Status.Recommended },
                 },
             });
-
-            // Sometimes breaks if 81 Tiles mod active
-            // Same issue as surface painter
-            Add(1869561285u, "Prop Painter 2.6.0");
 
             // likely incompat with Customize It Extended
             Add(1865667356u, "Twitch Citizens");
@@ -184,45 +149,20 @@ namespace AutoRepair {
 
             // weird mod collection manager
             Add(new Item(1842879635u, "SwitchMAD_light") {
-                IncompatibleMods = new List<ulong>() {
-                    { 1838385855u }, // SwitchMAD
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1838385855u, Status.Incompatible }, // SwitchMAD
                 },
             });
 
             // weird mod collection manager
             Add(new Item(1838385855u, "SwitchMAD") {
-                IncompatibleMods = new List<ulong>() {
-                    { 1842879635u }, // SwitchMAD_light
-                },
-            });
-
-            Add(new Item(1831805509, "Dynamic Text Props 2.3.1") {
-                ConflictsWith = ConflictGroups.FineRoadAnarchy
-                              | ConflictGroups.FineRoadTool,
-                CompatibleWith = new List<ulong>() {
-                    { 1844442251u }, // Fine Road Tool 2
-                    { 1844440354u }, // Fine Road Anarchy 2
-                },
-                SuggestedAssets = new List<ulong>() {
-                    { 1833197583u }, // Station Board 6m
-                    { 1833197028u }, // Station Board 12m
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
                 },
             });
 
             // todo: incompatible with hardmode vanilla mod
             Add(1830455071u, "EasyMode");
-
-            Add(new Item(1824757296u, "Procedural Objects Fonts: Montburgh Highways Signage: Highway Shields") {
-                RequiredMods = new List<ulong>() {
-                    { 1094334744u }, // Procedural Objects
-                },
-            });
-
-            Add(new Item(1824749264u, "Procedural Objects Fonts: Montburgh Highway Signage: Arrows") {
-                RequiredMods = new List<ulong>() {
-                    { 1094334744u }, // Procedural Objects
-                },
-            });
 
             // todo: requires Campus DLC
             Add(1824254667u, "Campus Parks");
@@ -237,20 +177,6 @@ namespace AutoRepair {
                       | ItemFlags.Abandonware,
             });
 
-            // todo: incompat/obsolete with Plop the Growables?
-            Add(1806881627u, "Altering History Fix"); // fix bug with historic building despawning
-
-            Add(new Item(1806759255u, "Customize It Extended") {
-                Flags = ItemFlags.Verified,
-                IncompatibleMods = new List<ulong>() {
-                    { 1369729955u }, // Customize It (original mod)
-                },
-            });
-
-            Add(new Item(1803209875u, "Trees' Respiration 1.0.1") {
-                ConflictsWith = ConflictGroups.TMPE,
-            });
-
             Add(1801953480u, "Natural Disasters Overhaul");
 
             Add(1800844556u, "Zone Mixer 0 (Beta)"); // incompat with zone tools?
@@ -259,41 +185,14 @@ namespace AutoRepair {
                 Flags = ItemFlags.Obsolete,
             });
 
-            Add(new Item(1789133988u, "Route Shields for PO") {
-                RequiredMods = new List<ulong>() {
-                    { 1094334744u }, // Procedural Objects
-                },
-            });
-
             AddDodgey(1787941751u, "交通"); // "traffic" ?!
 
             Add(new Item(1782814610u, "Building Variations") {
-                Flags = ItemFlags.Verified,
             });
 
             // todo: check if this causes stuck cims
             Add(new Item(1776052533u, "Stops & Stations") {
                 Flags = ItemFlags.SourceAvailable,
-            });
-
-            // todo: check if source still obfu
-            Add(new Item(1773106708u, "More Advanced OptionsPanel") {
-                Flags = ItemFlags.SourceObfuscated // big warning sign
-                      | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 973512634u }, // Sort Mod Settings
-                    { 1762394554u }, // Wider Options Panel
-                },
-            });
-
-            // todo: Daylight Classic _sometimes_ conflicts - find way to depict that
-            Add(new Item(1771841274u, "HDRI Haven Cubemap Pack 2") {
-                RequiredMods = new List<ulong>() {
-                    { 1183931915u }, // Cubemap replacer
-                },
-                IncompatibleMods = new List<ulong>() {
-                    // { 530871278u }, // Daylight classic
-                },
             });
 
             // sounds like bit of a nightmare
@@ -302,8 +201,7 @@ namespace AutoRepair {
             });
 
             Add(new Item(1768810491u, "Measure It!") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.Abandonware
+                Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
             });
@@ -313,73 +211,23 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1765325082u, "Customizable Education") {
-                Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.MinorBugs // somtimes loses settings
-                      | ItemFlags.Abandonware,
-                IncompatibleMods = new List<ulong>() {
-                    { 654707599u }, // Citizen Lifecycle Rebalance
-                    { 1915645482u }, // Citizen Lifecycle Rebalance v2
-                },
-            });
-
             Add(new Item(1764637396u, "Toggle It!") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.Abandonware
+                Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
             });
 
-            Add(new Item(1764208250u, "More Vehicles") {
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.SaveChanging,
-                ConflictsWith = ConflictGroups.MoreVehicles
-                              | ConflictGroups.TMPE, // v11+ are compatible
-                CompatibleWith = new List<ulong>() {
-                    { 1637663252u }, // TM:PE v11 STABLE
-                    { 1806963141u }, // TM:PE v11 LABS
-                },
-                IncompatibleMods = new List<ulong>() {
-                    { 583429740u }, // TM:PE 10.20 and earlier
-                    { 1548831935u }, // Advanced Vehicle Options (new one; v1.9.0 should fix)
-                    { 442167376u }, // Advanced Vehicle Options (original)
-                    { 576327847u }, // 81 Tiles (BP version)
-                    { 422554572u }, // 81 Tiles (original version)
-                    { 1560122066u }, // 81MOD
-                    { 1575247594u }, // 576327847 81 Tiles (Fixed for 1
-                    { 1361478243u }, // 81 Tiles (prolly a localised version)
-                },
-            });
+
 
             // clone of: Extended Public Transport UI (Obsolete)
             Add(new Item(1763358249u, "411164732") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.GameBreaking
                       | ItemFlags.SourceUnavailable
-                      | ItemFlags.LongBroken
                       | ItemFlags.Obsolete,
-                IncompatibleMods = new List<ulong>() {
-                    { 411164732u }, // Extended Public Transport UI (Obsolete)
-                    { 802489150u }, // Extended Public Transport UI (+DLCs!)
-                },
-            });
-
-            // todo: check if source still obfu
-            Add(new Item(1762394554u, "Wider Options Panel") {
-                Flags = ItemFlags.SourceObfuscated // big warning sign
-                      | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 973512634u }, // Sort Mod Settings
-                    { 1773106708u }, // More Advanced OptionsPanel
-                },
-            });
-
-            // todo: check if source still obfu
-            Add(new Item(1761648213u, "More Advanced District Snapping") {
-                Flags = ItemFlags.SourceObfuscated // big warning sign
-                      | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 510802741u }, // [DEPRECATED] Toggle District Snapping
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 411164732u, Status.Incompatible }, // Extended Public Transport UI (Obsolete)
+                    { 802489150u, Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
                 },
             });
 
@@ -400,14 +248,14 @@ namespace AutoRepair {
             Add(new Item(1749971558u, "Real Time Offline") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 605590542u }, // Rush Hour II
-                    { 629713122u }, // Climate Control
-                    { 702070768u }, // Export Electricity
-                    { 1893036262u }, // Mayor's Dashboard v2 (includes code from Export Electricity)
-                    { 649522495u }, // District Service Limit (oriignal)
-                    { 1729576238u }, // Date Changer
-                    { 1420955187u }, // Real Time (original by dymanoid)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1893036262u, Status.Incompatible }, // Mayor's Dashboard v2 (includes code from Export Electricity)
+                    { 1729576238u, Status.Incompatible }, // Date Changer
+                    { 1420955187u, Status.Incompatible }, // Real Time (original by dymanoid)
+                    { 702070768u , Status.Incompatible }, // Export Electricity
+                    { 649522495u , Status.Incompatible }, // District Service Limit (oriignal)
+                    { 629713122u , Status.Incompatible }, // Climate Control
+                    { 605590542u , Status.Incompatible }, // Rush Hour II
                 },
             });
 
@@ -418,8 +266,7 @@ namespace AutoRepair {
             });
 
             Add(new Item(1741725093u, "Note It!") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.Abandonware
+                Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
             });
@@ -431,20 +278,18 @@ namespace AutoRepair {
 
             // todo: auto subscribe if user has the broken version?
             Add(new Item(1737575423u, "[ Backward Compatibility ]  New Roads For Network Extension 2") {
-                RequiredMods = new List<ulong>() {
-                    { 812125426u },
-                    { 1243740191u },
-                },
-                IncompatibleMods = new List<ulong>() {
-                    { 929114228u },
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 812125426u, Status.Required },
+                    { 1243740191u, Status.Required },
+                    { 929114228u, Status.Incompatible },
                 },
             });
 
             Add(new Item(1729576238u, "Date Changer") {
                 Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong> {
-                    { 1420955187u }, // Real Time (original)
-                    { 1749971558u }, // Real Time Offline
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1420955187u, Status.Incompatible }, // Real Time (original)
+                    { 1749971558u, Status.Incompatible }, // Real Time Offline
                 },
             });
 
@@ -453,8 +298,8 @@ namespace AutoRepair {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.ForceMigration,
-                IncompatibleMods = new List<ulong>() {
-                    { 1541897355u }, // Total Autobudget
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1541897355u, Status.Incompatible }, // Total Autobudget
                 },
                 ReplaceWith = 1541897355u, // Total Autobudget
             });
@@ -475,22 +320,17 @@ namespace AutoRepair {
             Add(1706704781u, "Remove All Animals");
 
             Add(new Item(1706703944u, "More Outside Interaction") {
+                Affect = Factor.Employment
+                              | Factor.ServiceLimit,
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/pcfantasy/MoreOutsideInteraction",
-                IncompatibleMods = {
-                    { 569008960u }, // Employ Overeducated Workers (original)
-                    { 1114249433u }, // Employ Overeducated Workers (1.10+)
-                    { 649522495u }, // District Service Limit (original)
-                    { 1181352643u }, // District Service Limit 3.0
-                    { 1911736890u }, // 1181352643 District Service Limit 3
-                },
-            });
-
-            Add(new Item(1691909129u, "Rotate Brush") {
-                Flags = ItemFlags.SourceUnavailable,
-                SuggestedMods = {
-                    { 502750307u }, // Extra Landscaping Tools
-                    { 689937287u }, // Surface Painter
+                SourceURL = "https://github.com/pcfantasy/MoreOutsideInteraction",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1674732053u, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
+                    { 569008960u , Status.Incompatible }, // Employ Overeducated Workers (original)
+                    { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
+                    { 649522495u , Status.Incompatible }, // District Service Limit (original)
+                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
+                    { 1911736890u, Status.Incompatible }, // 1181352643 District Service Limit 3
                 },
             });
 
@@ -500,158 +340,43 @@ namespace AutoRepair {
 
             Add(new Item(1680840913u, "More Effective Transfer Manager") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/pcfantasy/MoreEffectiveTransfer",
-                ConflictsWith = ConflictGroups.EmployOvereducatedWorkers,
-                CompatibleWith = new List<ulong>() {
-                    { 1674732053u }, // Employ Overeducated Workers V2 (1.11+)
-                },
-                IncompatibleMods = {
-                    { 569008960u }, // Employ Overeducated Workers (original)
-                    { 1114249433u }, // Employ Overeducated Workers (1.10+)
-                    { 649522495u }, // District Service Limit (original)
-                    { 1181352643u }, // District Service Limit 3.0
-                    { 1911736890u }, // 1181352643 District Service Limit 3
-                    { 1922400472u }, // Enhanced District Services
-                },
-            });
-
-            Add(new Item(1677913611u, "Smart Intersection Builder") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/Strdate/SmartIntersections",
-                RequiredMods = new List<ulong>() {
-                    { 1844440354u }, // Fine Road Anarchy 2
-                },
-            });
-
-            Add(new Item(1674732053u, "Employ Overeducated Workers V2 (1.11+)") {
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
-                SourceCodeURL = "https://github.com/pcfantasy/EmployOvereducatedWorkers-v2",
-                ConflictsWith = ConflictGroups.EmployOvereducatedWorkers,
-                CompatibleWith = new List<ulong>() {
-                    { 1192503086u }, // Real City V9.0.03.10
-                    { 1614061108u }, // Real Construction
-                    { 1623509958u }, // Real Gas Station
-                    { 1680840913u }, // More Effective Transfer Manager
+                SourceURL = "https://github.com/pcfantasy/MoreEffectiveTransfer",
+                Affect = Factor.Employment,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1922400472u, Status.Incompatible }, // Enhanced District Services
+                    { 1911736890u, Status.Incompatible }, // 1181352643 District Service Limit 3
+                    { 1674732053u, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
+                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
+                    { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
+                    { 649522495u , Status.Incompatible }, // District Service Limit (original)
+                    { 569008960u , Status.Incompatible }, // Employ Overeducated Workers (original)
                 },
             });
 
             Add(new Item(1664509314u, "Custom Animation Loader (CAL)") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/boformer/CustomAnimationLoader",
-                SuggestedAssets = new List<ulong>() {
-                    { 1706978404u }, // Animated Excavator アニメーションユンボ
-                    { 2010704792u }, // Animated Excavator CAT 365C L
-                },
-            });
-
-            Add(new Item(1661072176u, "Empty It!") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
-                SourceCodeURL = "https://github.com/keallu/CSL-EmptyIt",
-                IncompatibleMods = new List<ulong>() {
-                    { 407873631u }, // Automatic Emptying
-                    { 1182722930u }, // Automatic Empty
-                    { 896806060u }, // 407873631 Automatic Emptying
-                    { 1456061226u }, // Better Cemetery AI
-                    { 686588890u }, // Automatic Emptying: Extended
-                },
-            });
-
-            // Note: Plop the Growables has settings which can override this mod
-            Add(new Item(1658773932u, "Historical Districts") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/boformer/3e01770a0c86cf9273ccdcc33d9bbc42",
-                IncompatibleMods = new List<ulong>() {
-                    { 1403136223u }, // Control Building Level Up v0.5 (Industries)
-                    { 410535198u }, // Control Building Level Up v0.4
-                    { 1275678215u }, // Force Building Level
-                    { 1647722503u }, // Level
-                },
-            });
-
-            Add(new Item(1658679290u, "Forest Brush v1.3") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/TPBCS/ForestBrush",
-                SuggestedAssets = new List<ulong>() {
-                    { 1928787248u }, // Weeds
-                    { 963853793u }, // Ultra low tri trees
-                },
-                IncompatibleMods = new List<ulong>() {
-                    { 1654658173u }, // Random Tree Brush
-                },
-            });
-
-            Add(new Item(1654658173u, "Random Tree Brush") {
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.Abandonware,
-                SourceCodeURL = "https://pastebin.com/8M0gFKZh",
-                IncompatibleMods = new List<ulong>() {
-                    { 1658679290u }, // Forest Brush v1.3
-                },
-            });
-
-            Add(new Item(1651041757u, "Auto Rocket Launch 火箭自动发射") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/mshsheng/CSL-AutoRocketLaunch",
-                SuggestedMods = new List<ulong>() {
-                    { 1327013919u }, // No Time For Caution
+                SourceURL = "https://github.com/boformer/CustomAnimationLoader",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1706978404u, Status.Recommended }, // Animated Excavator アニメーションユンボ
+                    { 2010704792u, Status.Recommended }, // Animated Excavator CAT 365C L
                 },
             });
 
             Add(new Item(1651036644u, "Advanced Traffic Congestion Report") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/pcfantasy/TrafficCongestionReport",
-            });
-
-            // todo: wtf is this really?
-            Add(new Item(1649747813, "1649747813") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/Acc3ssViolation/67c8b829db76e0a81c02ee18995abb2c",
-                IncompatibleMods = new List<ulong>() {
-                    { 815103125u }, // Extra Vehicle Effects (Plugin for Vehicle Effects Mod)
-                },
+                SourceURL = "https://github.com/pcfantasy/TrafficCongestionReport",
             });
 
             Add(new Item(1648585256u, "NoBailOutWarning") {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1647722503u, "Level") {
-                Locale = "ko",
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.Unreliable
-                      | ItemFlags.MinorBugs
-                      | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 1658773932u }, // Historical Districs
-                    { 1403136223u }, // Control Building Level Up v0.5 (Industries)
-                    { 410535198u }, // Control Building Level Up v0.4
-                    { 1275678215u }, // Force Building Level
-                },
-            });
-
-            Add(new Item(1637106958u, "Lock Forestry") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1633580257u, "Vehicle Wealthizer 2") {
-                Flags = ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.TMPE,
-                CompatibleWith = new List<ulong>() {
-                    { 1637663252u }, // TM:PE V11 STABLE
-                    { 1806963141u }, // TM:PE v11 LABS
-                },
-            });
-
             Add(new Item(1632320836u, "Service Vehicles Manager 2.0.1") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/klyte45/ServiceVehiclesManager",
-                IncompatibleMods = new List<ulong>() {
-                    { 934994075u }, // Service Vehicle Selector 2
-                    { 928128676u }, // Improved Public Transport 2
+                SourceURL = "https://github.com/klyte45/ServiceVehiclesManager",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 934994075u, Status.Incompatible }, // Service Vehicle Selector 2
+                    { 928128676u, Status.Incompatible }, // Improved Public Transport 2
                 },
             });
 
@@ -659,23 +384,15 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1625704117u, "Roundabout Builder") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/Strdate/AutomaticRoundaboutBuilder",
-                RequiredMods = new List<ulong>() {
-                    { 1844440354u }, // Fine Road Anarchy 2
-                },
-            });
-
             Add(new Item(1623509958u, "Real Gas Station") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/pcfantasy/RealGasStation",
-                ConflictsWith = ConflictGroups.Difficulty,
-                IncompatibleMods = {
-                    { 1072157697u }, // Cargo Info
-                    { 1739993783u }, // Cargo Info (Fix)
-                    { 1435741602u }, // Snooper
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1785774902u, Status.Compatible }, // Transfer Info (beta)
+                    { 1072157697u, Status.Incompatible }, // Cargo Info
+                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
+                    { 1435741602u, Status.Incompatible }, // Snooper
                 },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/pcfantasy/RealGasStation",
             });
 
             Add(new Item(1614062928u, "Unlock LandScaping") {
@@ -683,28 +400,24 @@ namespace AutoRepair {
             });
 
             Add(new Item(1614061108u, "Real Construction") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/pcfantasy/RealConstruction",
-                ConflictsWith = ConflictGroups.Difficulty
-                              | ConflictGroups.MoreVehicles,
-                IncompatibleMods = new List<ulong>() {
-                    { 1072157697u }, // Cargo Info
-                    { 1739993783u }, // Cargo Info (Fix)
-                    { 1764208250u }, // More Vehicles
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1785774902u, Status.Compatible   }, // Transfer Info (beta)
+                    { 1072157697u, Status.Incompatible }, // Cargo Info
+                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
+                    { 1435741602u, Status.Incompatible }, // Snooper
+                    { 1764208250u, Status.Incompatible }, // More Vehicles
                 },
-            });
-
-            Add(new Item(1603398633u, "Flag Params") {
-                Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.Obsolete,
+                Affect = Factor.VehicleLimit,
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/pcfantasy/RealConstruction",
             });
 
             Add(new Item(1603319148u, "576997275 Remove Need For Pipes") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 576997275u }, // Remove Need For Pipes
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 576997275u, Status.Incompatible }, // Remove Need For Pipes
                 },
                 ReplaceWith = 576997275u, // Remove Need For Pipes
             });
@@ -712,66 +425,32 @@ namespace AutoRepair {
             Add(new Item(1598546349u, "Mary's Mod") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.Difficulty,
-            });
-
-            Add(new Item(1597852915u, "More Advanced Toolbar") {
-                Flags = ItemFlags.SourceObfuscated // checked 12/Mar/2020
-                      | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.Toolbar,
-                IncompatibleMods = new List<ulong>() {
-                    { 563229150u }, // Advanced Toolbar
-                    { 1577882296u }, // Resize It!
-                    { 1383456057u }, // Shicho - Fundamental support mod for hardcore builders
-                    { 451906822u }, // Enhanced Build Panel (WIP)
-                    { 540758804u }, // Search Box Mod
-                    { 586012417u }, // Ploppable RICO
-                },
             });
 
             Add(new Item(1597285962u, "Stream It!") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.Abandonware
+                Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
-                SourceCodeURL = "https://github.com/keallu/CSL-StreamIt",
-            });
-
-            Add(new Item(1596838226u, "Heavy Outside Traffic") {
-                Flags = ItemFlags.SourceUnavailable,
-                IncompatibleMods = {
-                    { 1721492498u }, // Optimised Outside Connections
-                },
+                SourceURL = "https://github.com/keallu/CSL-StreamIt",
             });
 
             Add(new Item(1595663918u, "InfoPanelOnLoad") {
                 Flags = ItemFlags.SourceObfuscated // checked 12/Mar/2020
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 1756787990u }, // More Advanced InfoViews
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1756787990u, Status.Incompatible }, // More Advanced InfoViews
                 },
                 ReplaceWith = 1756787990u, // More Advanced InfoViews
             });
 
-            // todo: Daylight Classic _sometimes_ conflicts - find way to depict that
-            Add(new Item(1591584836u, "HDRI 2K Cubemap Pack") {
-                RequiredMods = new List<ulong>() {
-                    { 1183931915u }, // Cubemap replacer
-                },
-                IncompatibleMods = new List<ulong>() {
-                    // { 530871278u }, // Daylight classic
-                },
-            });
-
             Add(new Item(1591417160u, "Hide It!") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.Abandonware
+                Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
-                SourceCodeURL = "https://github.com/keallu/CSL-HideIt",
-                IncompatibleMods = new List<ulong>() {
-                    { 666425898u }, // No Radioactive Desert And More!
+                SourceURL = "https://github.com/keallu/CSL-HideIt",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 666425898u, Status.Incompatible }, // No Radioactive Desert And More!
                     //{ 1899640536u }. // Theme Mixer 2 (race condition between sprite show/hide)
                 },
             });
@@ -779,136 +458,48 @@ namespace AutoRepair {
             // removes building needs at night
             Add(new Item(1591311030u, "Don't Bulldoze At Night") {
                 Flags = ItemFlags.SourceUnavailable,
-                RequiredMods = new List<ulong>() {
-                    { 1420955187u }, // Real Time
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1420955187u, Status.Required }, // Real Time
                 },
-            });
-
-            // Real population, only one household at low density, high density population becomes larger
-            Add(new Item(1587482024u, "真实人口，低密度只有一户人，高密度人口容量变大") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 426163185u }, // Realistic Population and Consumption Mod v8.4.0
-                },
-                ReplaceWith = 426163185u, // Realistic Population and Consumption Mod v8.4.0
             });
 
             Add(new Item(1586774819u, "Other Rail Track Speed Increaser") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://pastebin.com/sDbefj5J",
-                IncompatibleMods = new List<ulong>() {
-                    { 457516262u }, // Rail Track Speed Increaser 2.2.1
-                },
-            });
-
-            // todo: Daylight Classic _sometimes_ conflicts - find way to depict that
-            Add(new Item(1585691173u, "HDRI Haven Cubemap Pack") {
-                RequiredMods = new List<ulong>() {
-                    { 1183931915u }, // Cubemap replacer
-                },
-                IncompatibleMods = new List<ulong>() {
-                    // { 530871278u }, // Daylight classic
-                },
-            });
-
-            Add(new Item(1577882296u, "Resize It!") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
-                SourceCodeURL = "https://github.com/keallu/CSL-ResizeIt",
-                ConflictsWith = ConflictGroups.Toolbar,
-                IncompatibleMods = new List<ulong>() {
-                    { 563229150u }, // Advanced Toolbar
-                    { 1597852915u }, // More Advanced Toolbar
-                    { 1383456057u }, // Shicho - Fundamental support mod for hardcore builders
-                    { 451906822u }, // Enhanced Build Panel (WIP)
-                    { 540758804u }, // Search Box Mod
+                SourceURL = "https://pastebin.com/sDbefj5J",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 457516262u, Status.Incompatible }, // Rail Track Speed Increaser 2.2.1
                 },
             });
 
             AddDodgey(1570376078u, "自动推土机");
-
-            Add(new Item(1562650024u, "Rebalanced Industries") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/Quboid/CSL_RebalancedIndustries",
-                IncompatibleMods = new List<ulong>() {
-                    { 1369729955u }, // Customize It!
-                },
-                CompatibleWith = new List<ulong>() {
-                    { 1806759255u }, // Customize It Extended
-                },
-            });
 
             AddDodgey(1559479494u, "MyTheme");
             AddDodgey(1558675585u, "MyTheme");
 
             AddDodgey(1555378173u, "410344523"); // translated pop balance mod?
 
-            Add(new Item(1553517176u, "Specialized Industry Fix Redux") {
-                Flags = ItemFlags.Obsolete
-                      | ItemFlags.GameBreaking // broken since Industries DLC
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/Vectorial1024/SpecializedIndustryFixRedux",
-                IncompatibleMods = new List<ulong>() {
-                    { 662386761u }, // Specialised Industry Fix [BUGFIX for Vanilla]
-                    { 1562650024u }, // Rebalanced Industries
-                },
-                ReplaceWith = 1562650024u, // Rebalanced Industries
-            });
 
             // todo: also works in editor
             Add(new Item(1552053911u, "TrailerVariation Loader") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/Acc3ssViolation/a129c802e7e2eaeb2ef566a0f370afc0",
-                SuggestedMods = new List<ulong>() {
-                    { 800820816u }, // Extended Asset Editor 0.4.11
+                SourceURL = "https://gist.github.com/Acc3ssViolation/a129c802e7e2eaeb2ef566a0f370afc0",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 800820816u, Status.Recommended }, // Extended Asset Editor 0.4.11
                 },
             });
 
-            // todo: prolly incompat with WG mods
-            Add(new Item(1551563197u, "EnhancedBuildingCapacity - Fixed") {
-                Flags = ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 410344523u }, // PopBalanceMod
-                    { 408706691u }, // Proper Hardness
-                    { 411190402u }, // Building Simulation Overhaul (no longer in workshop)
-                },
-            });
-
-            AddDodgey(1550281302u, "TransportCapacity");
-
-            // todo: might have more conflicts
-            Add(new Item(1548831935u, "Advanced Vehicle Options AVO (Industries DLC ready)") {
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // https://github.com/CityGecko/CS-AdvancedVehicleOptions/issues
-                SourceCodeURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",
-                IncompatibleMods = new List<ulong>() {
-                    { 442167376u }, // Advanced Vehicle Options (AVO)
-                },
-            });
 
             Add(new Item(1548749050u, "Mark-a-Route Reuploaded") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
-                IncompatibleMods = new List<ulong>() {
-                    { 649674529u }, // Mark-a-route (no longer in workshop)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 649674529u, Status.Incompatible }, // Mark-a-route (no longer in workshop)
                 },
             });
 
             AddDodgey(1547491802, "Chengguanju");
-
-            // todo: suggested assets
-            Add(new Item(1546357276u, "Industries Vehicle Converter") {
-                Flags = ItemFlags.SourceUnavailable,
-                RequiredMods = new List<ulong>() {
-                    { 530771650u }, // Prefab Hook (Mod Dependency)
-                },
-            });
 
             // shows vehicles in tunnels, likely to be removed from workshop
             Add(new Item(1544546832u, "TRMod") {
@@ -923,26 +514,24 @@ namespace AutoRepair {
             Add(new Item(1541897355u, "Total Autobudget") {
                 Flags = ItemFlags.MinorBugs // can sometimes break services
                       | ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/ZenyaIse/Cities-Skylines-Total-Autobudget",
+                SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Total-Autobudget",
                 // todo: incompat with other budget mods
             });
 
             Add(new Item(1540147921u, "Grid be Gone") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/Quboid/298552b4e4787cefe7faa55cf8a6e6be",
-                SuggestedMods = new List<ulong>() {
-                    { 1536223783u }, // Hide Selectors
+                SourceURL = "https://gist.github.com/Quboid/298552b4e4787cefe7faa55cf8a6e6be",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1536223783u, Status.Recommended }, // Hide Selectors
                 },
             });
 
             Add(new Item(1536223783u, "Hide Selectors") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/Quboid/628b69e5f778c57a29cbcc8877e0cd59",
-                SuggestedMods = new List<ulong>() {
-                    { 1540147921u }, // Grid be Gone
-                },
-                CompatibleWith = new List<ulong>() {
-                    { 903347963 }, // Transparent Selectors
+                SourceURL = "https://gist.github.com/Quboid/628b69e5f778c57a29cbcc8877e0cd59",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1540147921u, Status.Recommended }, // Grid be Gone
+                    { 903347963u , Status.Compatible }, // Transparent Selectors
                 },
             });
 
@@ -952,16 +541,12 @@ namespace AutoRepair {
 
             Add(new Item(1526302248u, "Spinny RGB Circle") {
                 Flags = ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 1502721219u }, // [Deprecated] Spinny Red Circle
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1502721219u, Status.Incompatible }, // [Deprecated] Spinny Red Circle
                 },
             });
 
             Add(new Item(1523608557u, "American Sign Replacer") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1522785644u, "Infinite Demand Mod") {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -970,17 +555,12 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1518296436u, "Driving Mod") {
-                Flags = ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.TMPE,
-            });
-
             Add(new Item(1502721219u, "[Deprecated] Spinny Red Circle") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Obsolete,
-                IncompatibleMods = new List<ulong>() {
-                    { 1526302248u }, // Spinny RGB Circle
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1526302248u, Status.Incompatible }, // Spinny RGB Circle
                 },
                 ReplaceWith = 1526302248u, // Spinny RGB Circle
             });
@@ -994,28 +574,15 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1487849798u, "Higher Income Mod 1.2a") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Unreliable,
-                // todo: find replacement
-            });
-
             Add(new Item(1485051886u, "Cimtographer - rebuild for 1.10.1-f3") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs
                       | ItemFlags.Unreliable,
-                SourceCodeURL = "https://github.com/rdiekema/Cities-Skylines-Mapper/commit/4bb1557b97226cd84728593799be2710bb129c19",
-                IncompatibleMods = new List<ulong>() {
-                    { 416064574u }, // Cimtographer
+                SourceURL = "https://github.com/rdiekema/Cities-Skylines-Mapper/commit/4bb1557b97226cd84728593799be2710bb129c19",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 416064574u, Status.Incompatible }, // Cimtographer
                 },
-            });
-
-            Add(new Item(1456061226u, "Better Cemetery AI") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/seanke/BetterCemeteryAI",
             });
 
             // Click the "M" mark in the upper left corner to display each type of functional building in different colors
@@ -1031,21 +598,8 @@ namespace AutoRepair {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
-                IncompatibleMods = new List<ulong>() {
-                    { 793489846u }, // Aedificium - Hotloading workshop items while you play
-                },
-            });
-
-            // Seems possibly broken by Campus update, or NS2... Users reporting it only lays one road.
-            Add(new Item(1440928803u, "Parallel Road Tool") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable,
-                SourceCodeURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
-                IncompatibleMods = new List<ulong>() {
-                    { 1400711138u }, // [BETA] Parallel Road Tool
-                    { 1758376843u }, // Network Skins 2 (Beta)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 793489846u, Status.Incompatible }, // Aedificium - Hotloading workshop items while you play
                 },
             });
 
@@ -1053,9 +607,9 @@ namespace AutoRepair {
             Add(new Item(1425061566u, "V10Speed") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/V10lator/V10Speed",
-                IncompatibleMods = {
-                    { 412292157u }, // More Simulation Speed Options
+                SourceURL = "https://github.com/V10lator/V10Speed",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 412292157u, Status.Incompatible }, // More Simulation Speed Options
                     // real time, and other speed sliders
                 },
             });
@@ -1063,31 +617,26 @@ namespace AutoRepair {
             // todo: chk compat with feature unlockers
             Add(new Item(1424264814u, "YAFU - Yet Another Feature Unlocker") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/Celisuis/YAFU",
+                SourceURL = "https://github.com/Celisuis/YAFU",
             });
 
             Add(new Item(1420955187u, "Real Time") {
-                Flags = ItemFlags.Verified
-                      | ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/dymanoid/RealTime",
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/dymanoid/RealTime",
             });
 
             Add(new Item(1415090282u, "AutoLineColor Redux") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/taradinoc/CitiesSkylinesAutoColorMod",
-                IncompatibleMods = new List<ulong>() {
-                    { 408760323u }, // Auto Line Color
+                SourceURL = "https://github.com/taradinoc/CitiesSkylinesAutoColorMod",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
+                    { 408760323u , Status.Incompatible }, // Auto Line Color
                 },
-            });
-
-            Add(new Item(1412844620u, "Realistic Walking Speed") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/DaEgi01/CitiesSkylines-RealisticWalkingSpeed",
             });
 
             Add(new Item(1410003347u, "Additive Shader") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
+                SourceURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
             });
 
             // editor tool
@@ -1095,51 +644,12 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1403960464u, "Maintenance Fees (Parklife Ready)") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/Xial/Maintenancefee",
-                IncompatibleMods = {
-                    { 602336261u }, // Maintenance Fees
-                },
-            });
-
-            Add(new Item(1403136223u, "Control Building Level Up v0.5 (Industries)") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/boformer/c0a449426ae681bbe4f4e54693df4b8c",
-                IncompatibleMods = new List<ulong>() {
-                    { 410535198u }, // Control Building Level Up v0.4
-                    // todo: prolly others
-                },
-            });
-
-            // Seems possibly broken by Campus update, or NS2... Users reporting it only lays one road.
-            Add(new Item(1400711138u, "[BETA] Parallel Road Tool") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable,
-                SourceCodeURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
-                IncompatibleMods = new List<ulong>() {
-                    { 1440928803u }, // Parallel Road Tool
-                    { 1758376843u }, // Network Skins 2 (Beta)
-                },
-                RequiredMods = new List<ulong>() {
-                    { 1844440354u },
-                },
-            });
-
-            Add(new Item(1398502258u, "Dam Upkeep Scaling") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.SourceUnavailable,
-            });
-
             Add(new Item(1394468624u, "Advanced Stop Selection (ex MTSE)") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/bloodypenguin/Skylines-ImprovedStopSelection",
-                IncompatibleMods = new List<ulong>() {
-                    { 442957897u }, // [Obsolete] Multi-Track Station Enabler
-                    { 532863263u }, // [deprecated] Multi-Track Station Enabler 1.2.0
+                SourceURL = "https://github.com/bloodypenguin/Skylines-ImprovedStopSelection",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 442957897u, Status.Incompatible }, // [Obsolete] Multi-Track Station Enabler
+                    { 532863263u, Status.Incompatible }, // [deprecated] Multi-Track Station Enabler 1.2.0
                     // todo: t++
                 },
             });
@@ -1149,17 +659,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1393820309u, "Ticket Price Customizer") {
-                Flags = ItemFlags.SourceUnavailable,
-                // todo: incompat with similar mods? eg. by klyte
-            });
-
-            Add(new Item(1393797695u, "Touch This! Tool 3") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/klyte45/TouchThisTool",
-                // todo: incompat with older touch tool no longer in workshop
-            });
-
             // require dlc: park life
             Add(new Item(1393452031u, "Parkify") {
                 Flags = ItemFlags.SourceUnavailable,
@@ -1167,21 +666,13 @@ namespace AutoRepair {
 
             AddDodgey(1391679732u, "CS-RP");
 
-            Add(new Item(1388613752u, "Tree Movement Control") {
-                Flags = ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 1383456057u }, // Shicho - Fundamental support mod for hardcore builders
-                    { 842981708u }, // Random Tree Rotation
-                },
-            });
-
             Add(new Item(1386697922u, "Garbage Bin Controller") {
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.MinorBugs, // LSM skipping vanilla garbage bin = game breaks
-                SuggestedAssets = new List<ulong>() {
-                    { 1390252175u }, // Japanese Plastic Bucket
-                    { 1389908178u }, // Wheelie Bin - Color Variation
-                    { 1386088603u }, // Metal bin - 01
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1390252175u, Status.Recommended }, // Japanese Plastic Bucket
+                    { 1389908178u, Status.Recommended }, // Wheelie Bin - Color Variation
+                    { 1386088603u, Status.Recommended }, // Metal bin - 01
                 },
             });
 
@@ -1194,24 +685,16 @@ namespace AutoRepair {
             Add(new Item(1383456057u, "Shicho - Fundamental support mod for hardcore builders") {
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
-                SourceCodeURL = "https://github.com/SETNAHQ/Shicho",
+                SourceURL = "https://github.com/SETNAHQ/Shicho",
                 // tood: big list of incompatibilities
             });
 
             AddDodgey(1379361024u, "bd96432_mod_2"); // likely a translation mod
 
-            Add(new Item(1369729955u, "Customize It!") {
-                Flags = ItemFlags.Obsolete
-                      | ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/TPBCS/CustomizeIt",
-                Authors = "TPB",
-                ReplaceWith = 1806759255u, // Customize It Extended
-            });
-
             // editor mod
             Add(new Item(1364044386u, "Theme Editor Maps") {
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/TPBCS/ThemeEditorMaps",
+                SourceURL = "https://github.com/TPBCS/ThemeEditorMaps",
                 Authors = "TPB",
             });
 
@@ -1221,23 +704,10 @@ namespace AutoRepair {
                 Authors = "TPB",
             });
 
-            Add(new Item(1349895184u, "Tree LOD Fix") {
-                Authors = "TPB",
-                Flags = ItemFlags.SourceUnavailable,
-                // recommend ulod?
-            });
-
             Add(new Item(1348627392u, "Tides") {
                 Authors = "TPB",
                 Flags = ItemFlags.SourceUnavailable,
                 // possibly incompat with rainfall / other water mods?
-            });
-
-            Add(new Item(1330381737u, "Historic Buildings (Make Historical)") {
-                Authors = "CoarzFlovv",
-                Flags = ItemFlags.GameBreaking
-                      | ItemFlags.Obsolete // vanilla game now has this function
-                      | ItemFlags.SourceUnavailable,
             });
 
             // opposite of no abandonment lol
@@ -1246,27 +716,14 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1328542923u, "Choose Your Rocket") {
-                Authors = "BloodyPenguin",
-                Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/bloodypenguin/Skylines-ChooseYourRocket",
-                SuggestedAssets = new List<ulong>() {
-                    { 1328560775u }, // Soyuz/Союз (Functional rocket)
-                    { 1329097226u }, // Saturn V (Functional Rocket)
-                },
-            });
 
-            Add(new Item(1327013919u, "No Time For Caution") {
-                Authors = "BloodyPenguin",
-                Flags = ItemFlags.SourceUnavailable,
-            });
 
             Add(new Item(1324539315u, "Land Ships") {
                 Authors = "BloodyPenguin",
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/bloodypenguin/Skylines-LandShips",
-                SuggestedMods = new List<ulong>() {
-                    { 707759735u }, // Ship Path Anarchy
+                SourceURL = "https://github.com/bloodypenguin/Skylines-LandShips",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 707759735u, Status.Recommended }, // Ship Path Anarchy
                 },
             });
 
@@ -1274,45 +731,39 @@ namespace AutoRepair {
             Add(new Item(1322787091u, "Addresses & Names Mod 2.0.1") {
                 Authors = "Klyte45",
                 Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 1231957400u }, // Custom Namelists
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1231957400u, Status.Incompatible }, // Custom Namelists
                 },
-                SourceCodeURL = "https://github.com/klyte45/AddressesMod",
+                SourceURL = "https://github.com/klyte45/AddressesMod",
             });
 
             Add(new Item(1320575938u, "Hide Traffic Lights") {
                 Authors = "Simon Ryr",
-                ConflictsWith = ConflictGroups.TrafficLights,
+                Affect = Factor.TrafficLights,
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/simon56modder/5fa6c13f751ec97add408ed8c6312ac9",
+                SourceURL = "https://gist.github.com/simon56modder/5fa6c13f751ec97add408ed8c6312ac9",
             });
 
-            // maybe translation?
-            Add(new Item(1317859996u, "650805785 First Person Camera_ Updated") {
-                Authors = "KoLoNyAlı MeNdİL",
-                Flags = ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 650805785u }, // First Person Camera: Updated
-                },
-                ReplaceWith = 650805785u,
-            });
+
 
             Add(new Item(1312767991u, "Transport Lines Manager 13.1") {
                 Authors = "Klyte45",
                 Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
+                    { 408760323u , Status.Incompatible }, // Auto Line Color
+                    // incompatible:
                     // ipt2
                     // svs - svc vehicle sel
-                    // auto line color
                     // more vehicles
                 },
-                SourceCodeURL = "https://github.com/klyte45/TransportLinesManager",
+                SourceURL = "https://github.com/klyte45/TransportLinesManager",
             });
 
             Add(new Item(1312735149u, "Klyte Commons") {
                 Authors = "Klyte45",
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://github.com/klyte45/KlyteCommons",
+                SourceURL = "https://github.com/klyte45/KlyteCommons",
             });
 
             Add(new Item(1304997689u, "Light Trail") {
@@ -1328,7 +779,8 @@ namespace AutoRepair {
             // editor mod
             Add(new Item(1288816430u, "Hex Colors") {
                 Authors = "targa",
-                CompatibleWith = new List<ulong>() {
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // COMPATIBLE:
                     // 81 Tiles
                     // Advanced Buildings Editor
                     // AnimUV Params
@@ -1353,37 +805,26 @@ namespace AutoRepair {
                     // PropSnapping
                     // Transparency LODs Fix
                     // Ultimate Eyecandy
-                },
-                Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 586012417u }, // Ploppable RICO
+
+                    { 586012417u, Status.Incompatible }, // Ploppable RICO
                     // RICO Revisited?
                 },
-                SourceCodeURL = "https://github.com/targettius/cs-hex-colors",
-            });
-
-            Add(new Item(1275678215u, "Force Building Level") {
-                Authors = "CoarzFlovv",
-                ConflictsWith = ConflictGroups.BuildingLevel,
                 Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
-                    // todo
-                },
-                SourceCodeURL = "https://github.com/coarxflow/Skylines-ControlBuildingLevelUpMod",
+                SourceURL = "https://github.com/targettius/cs-hex-colors",
             });
 
             Add(new Item(1274199764u, "Network Tiling") {
                 Authors = "Ronyx69",
                 Flags = ItemFlags.SourceAvailable,
-                SourceCodeURL = "https://gist.github.com/ronyx69/4f06181c8082188418cd0c224f630a09",
+                SourceURL = "https://gist.github.com/ronyx69/4f06181c8082188418cd0c224f630a09",
             });
 
             Add(new Item(1269478692u, "Trains stop on both sides of the station") {
                 Authors = "Jaddy",
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // some users report crashes or that it doesn't work
-                IncompatibleMods = new List<ulong>() {
-                    { 1394468624u }, // Advanced Stop Selection
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1394468624u, Status.Incompatible }, // Advanced Stop Selection
                     // MTSE etc.
                 },
                 ReplaceWith = 1394468624u, // Advanced Stop Selection
@@ -1391,24 +832,24 @@ namespace AutoRepair {
 
             Add(new Item(1263262833u, "Pollution Solution") {
                 Authors = "Shadow Link",
-                ConflictsWith = ConflictGroups.PollutionRemovers,
+                Affect = Factor.Pollution,
                 Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
+                Compatibility = new Dictionary<ulong, Status>() {
                     // todo
                 },
-                SourceCodeURL = "https://github.com/rkanter/PollutionSolution/",
+                SourceURL = "https://github.com/rkanter/PollutionSolution/",
             });
 
             Add(new Item(1242879105u, "Unlock Any Milestone") {
                 Authors = "Ilion",
-                ConflictsWith = ConflictGroups.MilestoneUnlocks,
+                Affect = Factor.Milestones,
                 Flags = ItemFlags.Abandonware // author suggests to use "Extended Game Options" mod
                       //| ItemFlags.Obsolete (still works according to comments)
                       | ItemFlags.SourceUnavailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 1237383751u }, // Extended Game Options
-                    { 410614868u }, // EarlyUnlock
-                    { 407162294u }, // All basic unlocks at the start
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1237383751u, Status.Incompatible }, // Extended Game Options
+                    { 410614868u, Status.Incompatible }, // EarlyUnlock
+                    { 407162294u, Status.Incompatible }, // All basic unlocks at the start
                     // todo: will be more
                 },
             });
@@ -1420,13 +861,13 @@ namespace AutoRepair {
             // Was previously named "Water and Electricity Controller".
             Add(new Item(1239683428u, "Budget Controller") {
                 Authors = "wboler05",
-                ConflictsWith = ConflictGroups.AutoBudget,
+                Affect = Factor.Budget,
                 Flags = ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
+                Compatibility = new Dictionary<ulong, Status>() {
                     // todo
                 },
-                SourceCodeURL = "https://github.com/wboler05/CS-BudgetController",
+                SourceURL = "https://github.com/wboler05/CS-BudgetController",
             });
 
             // Several reported issues with this mod (based on user comment):
@@ -1435,22 +876,18 @@ namespace AutoRepair {
             // * achievement enabler not working
             Add(new Item(1237383751u, "Extended Game Options") {
                 Authors = "Zenya",
-                ConflictsWith = ConflictGroups.MilestoneUnlocks, // will be more
+                Affect = Factor.Milestones, // will be more
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 1242879105u }, // Unlock Any Milestone
-                    { 823348129u }, // Disasters Enabler
-                    { 410614868u }, // EarlyUnlock
-                    { 407162294u }, // All basic unlocks at the start
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1242879105u, Status.Incompatible }, // Unlock Any Milestone
+                    { 823348129u , Status.Incompatible }, // Disasters Enabler
+                    { 410614868u , Status.Incompatible }, // EarlyUnlock
+                    { 407162294u , Status.Incompatible }, // All basic unlocks at the start
                     // todo: will be more
                 },
-                SourceCodeURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
+                SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
             });
-
-            // nobody knows what it does
-            // suspect it increases the passenger/cargo capacity?
-            AddDodgey(1228424498u, "Bzimage VehicleCapacity");
 
             // refund full construction cost when bulldozing
             Add(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
@@ -1462,25 +899,19 @@ namespace AutoRepair {
             // Completely redundant mod as vanilla has auto-save
             Add(new Item(1225712349u, "406123642") {
                 Authors = "丿CK独狼灬",
+                CloneOf = 406123642u, // AutoSave - Configurable
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.Clone // 406123642u: AutoSave - Configurable
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable
-                      | ItemFlags.Translation,
+                      | ItemFlags.Localised,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 406123642u, Status.Incompatible }, // AutoSave - Configurable
+                },
+                Locale = "zh-cn",
             });
 
-            // An update to 406841580u - SimCity Fudged Population, but with better UI.
-            // Dev still responsive as of Feb 2020, confirms mod still works.
-            Add(new Item(1224627683u, "Fudged Population Enhanced") {
-                Authors = "khollenbeck",
-                Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
-                    { 406841580u }, // SimCity Fudged Population
-                    // possibly incompat with anything that changes the game's info bar
-                },
-                SourceCodeURL = "https://github.com/krishollenbeck/cities_skylines_enhanced_fudged_population_mod",
-            });
+
 
             // Based on user comments some major bugs with this:
             // * Causes problems with route creation
@@ -1490,19 +921,246 @@ namespace AutoRepair {
                 Flags = ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
-                IncompatibleMods = new List<ulong>() {
-                    // likely IPT, TLM and maybe others
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // incompat: likely IPT, TLM and maybe others
                 },
-                SourceCodeURL = "https://cld.pt/dl/download/0d0cc60b-6568-4618-90f5-ed687b9d8eed/AutomaticVehicleNumbersAdjuster.zip",
+                SourceURL = "https://cld.pt/dl/download/0d0cc60b-6568-4618-90f5-ed687b9d8eed/AutomaticVehicleNumbersAdjuster.zip",
             });
 
             Add(new Item(1217239330u, "Profitable Offices") {
                 Authors = "Mrnr1",
                 Flags = ItemFlags.SourceAvailable,
-                IncompatibleMods = new List<ulong>() {
+                Compatibility = new Dictionary<ulong, Status>() {
                     // possible conflict with 550479679u (eg. duplicate assembly name)
                 },
-                SourceCodeURL = "https://github.com/mrnr1/CS-Profitable-Offices/",
+                SourceURL = "https://github.com/mrnr1/CS-Profitable-Offices/",
+            });
+
+            // https://github.com/pcfantasy/RealCity/blob/master/Resources/incompatible_mods.txt
+            // https://steamcommunity.com/workshop/filedetails/discussion/1192503086/1488866180603720344/
+            Add(new Item(1192503086u, "Real City V9.0.03.14") {
+                Authors = "pcfantasy, Singlewolf",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
+                    { 1674732053u, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
+                    { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
+                    { 1562650024u, Status.Incompatible }, // Rebalanced Industries
+                    { 1435741602u, Status.Incompatible }, // Snooper
+                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
+                    { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
+                    { 1072157697u, Status.Incompatible }, // Cargo Info
+                    { 569008960u , Status.Incompatible }, // Employ Overeducated Workers
+                    { 519781146u , Status.Incompatible }, // Difficulty Tuning
+                    { 409240984u , Status.Incompatible }, // Difficulty Options
+                    // todo: minor incompat - list money mods here
+                    { 1553517176u, Status.MinorIssues  }, // Specialized Industry Fix Redux
+                    { 702070768u , Status.MinorIssues  }, // Export Electricity
+                },
+                Affect = Factor.Employment
+                       | Factor.Money,
+                Flags = ItemFlags.Laggy // causes lag on big cities
+                      | ItemFlags.SourceAvailable,
+                Languages = new[] { "en", "ru", "zh", "zh-cn" }, // https://github.com/pcfantasy/RealCity/blob/master/Resources
+                Locale = "en",
+                SourceURL = "https://github.com/pcfantasy/RealCity/",
+            });
+
+            Add(new Item(1192250578u, "Emergency Lights Manager") {
+                Authors = "Cryptkeeper",
+                ContinuationOf = 863909323u, // Emergency Lights Changer Plus
+                Flags = ItemFlags.SourceUnavailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 863909323u, Status.Incompatible }, // Emergency Lights Changer Plus
+                    { 559172768u, Status.Incompatible }, // Emergency Light Changer
+                },
+            });
+
+            Add(new Item(1182174575u, "Export Vehicles Positions") {
+                Authors = "Simon Ryr",
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://gist.github.com/simon56modder/78b3ecab27b7829017f327baf0f9652c",
+            });
+
+            Add(new Item(1181352643u, "District Service Limit 3.0") {
+                Authors = "cambrium",
+                Affect = Factor.ServiceLimit,
+                ContinuationOf = 649522495u, // District Service Limit
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorBugs
+                      | ItemFlags.SourceAvailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo - incompat
+                },
+                SourceURL = "https://github.com/TheDogKSP/cs-districts",
+            });
+
+            // Similar thing to Klyte's addresses mod
+            Add(new Item(1179846541u, "Rename buildings") {
+                Authors = "Romanoza",
+                Affect = Factor.Addresses,
+                Flags = ItemFlags.SourceUnavailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo: incompat - klyte addresses, possibly also customize it extended, and custom name lists
+                },
+            });
+
+            Add(new Item(1176756723u, "Increased Pollution Radius") {
+                Authors = "BloodyPenguin",
+                Flags = ItemFlags.SourceAvailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo - incompat: pollution remover mods, but only those that actually remove pollution (eg. pollution solution)
+                },
+                SourceURL = "https://github.com/bloodypenguin/Skylines-IncreasedPollutionRadius",
+            });
+
+            Add(new Item(1174585364u, "Rescue Fullwidth Digits") {
+                Authors = "Gansaku",
+                Flags = ItemFlags.SourceUnavailable,
+            });
+
+            Add(new Item(1147015481u, "No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets") {
+                Authors = "Madgemade",
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 812125426u , Status.Compatible   }, // Network Extensions 2
+                    { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
+                    { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                },
+                Flags = ItemFlags.SlowLoad
+                      | ItemFlags.SourceUnavailable,
+            });
+
+            // "Repeated construction of landmark buildings"
+            // An unaltered clone of Not So Unique Buildings
+            // It's not even translated!
+            Add(new Item(1137224650u, "重复建设地标建筑") {
+                Authors = "回忆时光℡",
+                CloneOf = 466834228u, // Not So Unique Buildings
+                Flags = ItemFlags.SourceUnavailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 466834228u, Status.Incompatible }, // Not So Unique Buildings
+                },
+            });
+
+            Add(new Item(1128766708u, "Remove Road Textures - Blank Roads") {
+                Authors = "Madgemade",
+                Affect = Factor.RoadMarkings,
+                Flags = ItemFlags.SourceUnavailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                    { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
+                    { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                },
+            });
+
+            Add(new Item(1122189715u, "Realtime") {
+                Authors = "Ronyx69, Simon Ryr",
+                Flags = ItemFlags.EditorMod // it's not really, but this will flag it for attention of asset creators
+                      | ItemFlags.SourceAvailable,
+                // todo: possibly assembly nane conflict with Real Time mod by dymanoid
+                SourceURL = "https://gist.github.com/ronyx69/280e5695b3caeac7ef8b356cc36e0a7c",
+            });
+
+            Add(new Item(1117087491u, "Remove Road Props") {
+                Authors = "Simon Ryr",
+                Affect = Factor.HideRemove,
+                Flags = ItemFlags.SourceAvailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 690066392u, Status.Incompatible }, // American RoadSigns v2.2.0
+                    // anything else that removes road props
+                },
+                SourceURL = "https://gist.github.com/simon56modder/e1e15b53d7ca0d4ac76cb5fbccacc279",
+            });
+
+            Add(new Item(1115699323u, "Immersive Water 0.9.0.0 (beta release)") {
+                Authors = "Runaurufu",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SaveChanging // users report broken saves
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable, // lots of users report issues
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo
+                },
+                SourceURL = "https://bitbucket.org/Runaurufu/cities-skylines-immersive-water/src",
+            });
+
+            Add(new Item(959894658u, "Custom Light Effects") {
+                Authors = "Ronyx69, vasimr22",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking // memory leaks = crashes
+                      | ItemFlags.SourceUnavailable,
+                ReplaceWith = 1886877404u, // Custom Effects Loader
+            });
+
+            Add(new Item(958161597u, "Twitch Viewer Integrator") {
+                Authors = "kiwiploetze",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable, // multiple users state it doesn't work
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // likely conflicts with custom name lists
+                    { 1865667356u, Status.Incompatible }, // Twitch Citizens
+                    { 714711792u, Status.Incompatible }, // TwitchTV Viewers
+                    { 414730498u, Status.Incompatible }, // Twitch Chirper Chat
+                },
+                ReplaceWith = 1865667356u, // Twitch Citizens
+                SourceURL = "https://github.com/kiwiploetze/TwitchIntegrator",
+            });
+
+            Add(new Item(956707300u, "Remove Street Arrows") {
+                Authors = "Simon Ryr",
+                Affect = Factor.HideRemove,
+                Flags = ItemFlags.SourceAvailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo
+                },
+                SourceURL = "https://gist.github.com/simon56modder/161f68433ad951b3f6b10ad7c392d277",
+            });
+
+            Add(new Item(954067599u, "PropRotating Params") {
+                Authors = "Ronyx69",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.EditorMod
+                      | ItemFlags.Obsolete // Use instead: https://cslmodding.info/shader/proprotating/
+                      | ItemFlags.SourceUnavailable,
+            });
+
+            Add(new Item(952542692u, "Airport Road Light Remover") {
+                Authors = "vasimr22",
+                Affect = Factor.HideRemove,
+                Flags = ItemFlags.SlowLoad // parses all runway assets
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable, // many users report crashes and other errors
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // Hide It - incompat
+                    { 953381687u, Status.Recommended }, // Basic Airport Road Light Pack
+                },
+            });
+
+            // probably obsolete - custom name lists mod is much better apporach
+            Add(new Item(950011274u, "Japanese Romaji Names [BETA]") {
+                Authors = "Homusubi",
+                Flags = ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 935350530u, Status.Required }, // CSL Custom Names [1.0.0]
+                },
+                Locale = "ja",
+            });
+
+            Add(new Item(949061920u, "No Buoys Mod") {
+                Authors = "noob_vl",
+                Affect = Factor.HideRemove,
+                Flags = ItemFlags.SourceAvailable,
+                Languages = new[] { "en", "pl" },
+                SourceURL = "https://github.com/vonLeebpl/NoBuoysMod/tree/master/NoBuoysMod",
+            });
+
+            // https://cslmodding.info/shader/animuv/
+            Add(new Item(940299505u, "AnimUV Params") {
+                Authors = "Ronyx69",
+                Flags = ItemFlags.SourceUnavailable,
             });
         }
     }

@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
@@ -46,8 +47,8 @@ namespace AutoRepair.Catalogs {
             Item item = new Item(workshopId, workshopName) {
                 Flags = ItemFlags.MinorBugs 
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.RoadColorChanger
-                              | ConflictGroups.RoadsUnited,
+                Affect = Factor.RoadColorChanger
+                              | Factor.RoadsUnited,
                 CompatibleWith = new List<ulong>(),
                 RequiredMods = new List<ulong>(),
                 IncompatibleMods = new List<ulong>() {
@@ -80,3 +81,4 @@ namespace AutoRepair.Catalogs {
         }
     }
 }
+*/

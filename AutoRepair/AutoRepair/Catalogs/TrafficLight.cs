@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
@@ -22,7 +23,7 @@ namespace AutoRepair.Catalogs {
         private Dictionary<ulong, Item> list;
 
         /// <summary>
-        /// Full list of incompatible mods applicable to <see cref="ConflictGroups.TrafficLights"/>.
+        /// Full list of incompatible mods applicable to <see cref="Factor.TrafficLights"/>.
         ///
         /// TODO: this is fucking stupid, centralise and automate it.
         /// </summary>
@@ -102,7 +103,7 @@ namespace AutoRepair.Catalogs {
         private Item AddMod(Item item) {
             item.Catalog = "TrafficLight";
             item.ItemType = ItemTypes.Mod;
-            item.ConflictsWith |= ConflictGroups.TrafficLights;
+            item.Affect |= Factor.TrafficLights;
 
             item = AddIncompatibles(item, incompatibles);
 
@@ -116,7 +117,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = "TrafficLight",
                 Flags = ItemFlags.MinorBugs // all of them are a bit glitchy
                       | ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.TrafficLights,
+                Affect = Factor.TrafficLights,
                 // todo: incompatible with mods that remove/hide traffic lights
             };
 
@@ -128,3 +129,4 @@ namespace AutoRepair.Catalogs {
         }
     }
 }
+*/

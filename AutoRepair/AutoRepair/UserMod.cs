@@ -1,4 +1,5 @@
 namespace AutoRepair {
+    using AutoRepair.Catalogs;
     using ICities;
 
     public class UserMod : IUserMod {
@@ -18,7 +19,7 @@ namespace AutoRepair {
         }
 
         public void OnSettingsUI(UIHelperBase helper) {
-
+            Log.Info($"\n\nNum items in catalog = {Catalog.Instance.Items.Count}");
         }
 
         public void OnDisabled() {

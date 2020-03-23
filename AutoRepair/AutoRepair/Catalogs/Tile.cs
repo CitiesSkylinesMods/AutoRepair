@@ -1,3 +1,4 @@
+/*
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
@@ -50,7 +51,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = "Tile",
                 ItemType = ItemTypes.Mod,
                 Flags = ItemFlags.SourceUnavailable,
-                ConflictsWith = ConflictGroups.Tiles,
+                Affect = Factor.TileLimit,
                 ReplaceWith = replaceWith,
             };
 
@@ -65,9 +66,10 @@ namespace AutoRepair.Catalogs {
         private void AddMod(Item item) {
             item.Catalog = "Tile";
             item.ItemType = ItemTypes.Mod;
-            item.ConflictsWith = ConflictGroups.Tiles;
+            item.Affect = Factor.TileLimit;
 
             list.Add(item.WorkshopId, item);
         }
     }
 }
+*/

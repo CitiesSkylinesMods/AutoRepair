@@ -1,0 +1,66 @@
+namespace AutoRepair.Catalogs {
+    using AutoRepair.Descriptors;
+    using AutoRepair.Enums;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+
+    /// <summary>
+    /// Mods that alter the content manager or options screen.
+    /// </summary>
+    public partial class Catalog {
+
+        /// <summary>
+        /// Add mods to the list.
+        /// </summary>
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
+        private void ContentManagerCatalog() {
+            string catalog = "ContentManager";
+
+            // todo: check if source still obfu
+            AddMod(new Item(1773106708u, "More Advanced OptionsPanel") {
+                Affect = Factor.Other,
+                Authors = "Dendraspis",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
+                    { 1762394554u, Status.Incompatible }, // Wider Options Panel
+                    { 973512634u , Status.Incompatible }, // Sort Mod Settings
+                },
+                Flags = ItemFlags.SourceObfuscated // big warning sign
+                      | ItemFlags.SourceUnavailable,
+                Tags = new[] { "Options", "UI", "Settings", },
+            });
+
+            // todo: check if source still obfu
+            AddMod(new Item(1762394554u, "Wider Options Panel") {
+                Affect = Factor.Other,
+                Authors = "Dendraspis",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
+                    { 1762394554u, Status.Incompatible }, // Wider Options Panel
+                    { 973512634u , Status.Incompatible }, // Sort Mod Settings
+                },
+                Flags = ItemFlags.SourceObfuscated // big warning sign
+                      | ItemFlags.SourceUnavailable,
+                Tags = new[] { "Options", "UI", "Settings", },
+            });
+
+            // todo: check compat with other mod panel mods
+            AddMod(new Item(973512634u, "Sort Mod Settings") {
+                Affect = Factor.Other,
+                Authors = "egi",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
+                    { 1762394554u, Status.Incompatible }, // Wider Options Panel
+                    { 973512634u , Status.Incompatible }, // Sort Mod Settings
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/DaEgi01/CitiesSkylines-SortModSettings",
+                Tags = new[] { "Options", "UI", "Settings", },
+            });
+        }
+    }
+}

@@ -1,3 +1,4 @@
+/*
 using AutoRepair.Descriptors;
 using AutoRepair.Enums;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.LargeFileWarning // 503.136 MB
                       | ItemFlags.MinorBugs // some textures not working, and mirroring of highway textures
                       | ItemFlags.SourceUnavailable,
-                Locale = "us",
+                Locale = "en-us",
                 RequiredMods = new List<ulong>() {
                     { 726005715u }, // Roads United: Core+
                     { 633547552u }, // Roads United Core 2.0
@@ -45,6 +46,22 @@ namespace AutoRepair.Catalogs {
                 RequiredModsSelection = Selection.OnlyOne,
             });
 
+            // Made from mix of: 726004927u and 848896702u
+            Add(new Item(935747460u, "Roads United: US Edition - Concrete Only Highways") {
+                Authors = "B4NK35",
+                Catalog = catalog,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.LargeFileWarning // 547.958 MB
+                      | ItemFlags.SourceUnavailable,
+                IncompatibleMods = new List<ulong>() {
+                    { 633547552u }, // Roads United Core 2.0
+                },
+                Locale = "en-us",
+                RequiredMods = new List<ulong>() {
+                    { 726005715u }, // Roads United: Core+
+                },
+            });
         }
     }
 }
+*/
