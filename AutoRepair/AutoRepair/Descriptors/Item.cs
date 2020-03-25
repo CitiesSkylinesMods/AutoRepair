@@ -1,5 +1,6 @@
 namespace AutoRepair.Descriptors {
     using AutoRepair.Enums;
+    using AutoRepair.Util;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;

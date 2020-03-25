@@ -1,8 +1,11 @@
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
+    using AutoRepair.Util;
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
     using System.Text;
 
     /// <summary>
@@ -25,6 +28,7 @@ namespace AutoRepair.Catalogs {
             AddCatalogs();
             Validate();
             LogTally();
+            DumpCatalog();
         }
 
         /// <summary>
@@ -32,6 +36,8 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         public Dictionary<ulong, Item> Items { get; private set; }
 
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         public Dictionary<Status, int> Tally = new Dictionary<Status, int>() {
             { Status.Unknown     , 0 },
             { Status.Incompatible, 0 },
@@ -41,6 +47,8 @@ namespace AutoRepair.Catalogs {
             { Status.Required    , 0 },
         };
 
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private readonly Dictionary<Status, Status> ValidReciprocalsFor = new Dictionary<Status, Status>() {
             { Status.Unknown     , Status.Unknown },
             { Status.Incompatible, Status.Incompatible },
@@ -63,6 +71,27 @@ namespace AutoRepair.Catalogs {
                     stat.Value,
                     stat.Key);
             }
+
+            Log.Info(log.ToString());
+        }
+
+        [Conditional("DEBUG")]
+        private void DumpCatalog() {
+
+            StringBuilder log = new StringBuilder(1024 * 100);
+
+            log.Append("\nCATALOG:\n");
+
+            foreach (KeyValuePair<ulong, Item> entry in Items) {
+                log.AppendFormat("- {0}\n", entry.Value);
+            }
+
+            /* this throws exception, don't have time right now to investigate or fix
+            List<Item> sortedItems = (List<Item>)Items.Values.OrderBy(i => i.WorkshopId);
+            foreach (Item item in sortedItems) {
+                log.AppendFormat("- {0}\n", item);
+            }
+            */
 
             Log.Info(log.ToString());
         }
@@ -112,39 +141,59 @@ namespace AutoRepair.Catalogs {
         }
 
         private void AddCatalogs() {
-            VanillaCatalog(); // mods bundled with base game
-            UnsortedCatalog(); // currently uncategorised items
+            try {
+                VanillaCatalog(); // mods bundled with base game
+                UnsortedCatalog(); // currently uncategorised items
 
-            AchievementsCatalog();
-            AudioEffectsCatalog();
-            BalanceCatalog();
-            BuildingLevelCatalog();
-            BuildingThemesCatalog();
-            BulldozeCatalog();
-            CameraCatalog();
-            ContentManagerCatalog();
-            DiagnosticCatalog();
-            DoshCatalog();
-            EmptyingCatalog();
-            HideCatalog();
-            LoadingCatalog();
-            MultiplayerCatalog();
-            MusicCatalog();
-            NetworksCatalog();
-            PaintCatalog();
-            PlaceAndMoveCatalog();
-            ProceduralCatalog();
-            PublicTransportCatalog();
-            RepairCatalog();
-            SkyclothCatalog();
-            ToolbarCatalog();
-            TrafficCatalog();
-            TreesCatalog();
-            VehicleEffectsCatalog();
-            VehiclesCatalog();
-            VisualEffectsCatalog();
+                AchievementsCatalog();
+                AudioEffectsCatalog();
+                BalanceCatalog();
+                BuildingLevelCatalog();
+                BuildingThemesCatalog();
+                BulldozeCatalog();
+                CameraCatalog();
+                ContentManagerCatalog();
+                DiagnosticCatalog();
+                DoshCatalog();
+                EmptyingCatalog();
+                HideCatalog();
+                LoadingCatalog();
+                MultiplayerCatalog();
+                MusicCatalog();
+                NetworksCatalog();
+                PaintCatalog();
+                PlaceAndMoveCatalog();
+                ProceduralCatalog();
+                PublicTransportCatalog();
+                RepairCatalog();
+                SkyclothCatalog();
+                ToolbarCatalog();
+                TrafficCatalog();
+                TreesCatalog();
+                UnlimitersCatalog();
+                VehicleEffectsCatalog();
+                VehiclesCatalog();
+                VisualEffectsCatalog();
 
-            CatalogAddendum(); // items affected by recent update
+                CatalogAddendum(); // items affected by recent update
+            }
+            catch (Exception e) {
+                Log.Error(e.ToString());
+            }
+        }
+
+        public bool Has(ulong workshopId) {
+            return Items.ContainsKey(workshopId);
+        }
+
+        public bool TryGetValue(ulong workshopId, out Item item) {
+            if (Items.TryGetValue(workshopId, out var result)) {
+                item = result;
+                return true;
+            } else {
+                item = null;
+                return false;
+            }
         }
 
         /// <summary>
@@ -156,7 +205,7 @@ namespace AutoRepair.Catalogs {
 
             bool problems = false;
 
-            StringBuilder log = new StringBuilder(1024 * 10);
+            StringBuilder log = new StringBuilder(1024 * 50);
 
             foreach (KeyValuePair<ulong, Item> record in Items) {
 
@@ -164,7 +213,7 @@ namespace AutoRepair.Catalogs {
 
                 bool itemProblems = false;
 
-                StringBuilder itemLog = new StringBuilder(1024);
+                StringBuilder itemLog = new StringBuilder(1024 * 5);
 
                 if (HasBasicProblems(item, ref itemLog)) {
                     itemProblems = true;
@@ -200,7 +249,7 @@ namespace AutoRepair.Catalogs {
             bool basicProblems = false;
 
             // if clone, check it's in catalog
-            if (item.CloneOf != 0u && !Items.ContainsKey(item.CloneOf)) {
+            if (item.CloneOf != 0u && !Has(item.CloneOf)) {
                 basicProblems = true;
                 itemLog.AppendFormat(
                     "- CloneOf not in Catalog.Items: {0}\n",
@@ -208,7 +257,7 @@ namespace AutoRepair.Catalogs {
             }
 
             // if continuation, check it's in catalog
-            if (item.ContinuationOf != 0u && !Items.ContainsKey(item.ContinuationOf)) {
+            if (item.ContinuationOf != 0u && !Has(item.ContinuationOf)) {
                 basicProblems = true;
                 itemLog.AppendFormat(
                     "- ContinuationOf not in Catalog.Items: {0}\n",
@@ -216,7 +265,7 @@ namespace AutoRepair.Catalogs {
             }
 
             // if replacement, check it's in catalog
-            if (item.ReplaceWith != 0u && !Items.ContainsKey(item.ReplaceWith)) {
+            if (item.ReplaceWith != 0u && !Has(item.ReplaceWith)) {
                 basicProblems = true;
                 itemLog.AppendFormat(
                     "- ReplaceWith not in Catalog.Items: {0}\n",

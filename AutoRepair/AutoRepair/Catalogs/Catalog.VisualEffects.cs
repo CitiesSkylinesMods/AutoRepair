@@ -142,7 +142,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1209581656u, Status.Recommended }, // Relight
                     { 1183931915u, Status.Compatible  }, // Cubemap Replacer
-                    { 1138510774u, Status.Required    }, // PostProcessFX - Multi-platform
+                    { 1138510774u, Status.Recommended }, // PostProcessFX - Multi-platform
                     { 530871278u , Status.Required    }, // Daylight classic (classic fog efffect option must be enabled)
                     { 412146081u , Status.Compatible  }, // PostProcessFX v1.9.0
                 },

@@ -31,6 +31,7 @@ namespace AutoRepair.Catalogs {
                     { 2025147082u, Status.Recommended  }, // Realistic Population revisited
                     { 1749971558u, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     //Randomize Age Cim Move In (incompat)
                     //Lifespan Changer (incompat)
                     //Slow Citizen Aging (incompat)
@@ -61,6 +62,7 @@ namespace AutoRepair.Catalogs {
                     { 2027161563u, Status.Recommended  }, // Lifecycle Rebalance Revisited
                     { 2016920607u, Status.Compatible   }, // Ploppable RICO revisited
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
@@ -331,6 +333,7 @@ namespace AutoRepair.Catalogs {
                     { 1865667356u, Status.Unknown      }, // Twitch Citizens
                     { 1806759255u, Status.Incompatible }, // Customize It Extended
                     { 1562650024u, Status.Incompatible }, // Rebalanced Industries
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 946550801u , Status.Incompatible }, // Park Rebalance
                 },
                 Flags = ItemFlags.Obsolete // new version avail
@@ -505,6 +508,7 @@ namespace AutoRepair.Catalogs {
                     { 1765325082u, Status.Incompatible }, // Customizable Education
                     { 1749971558u, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
                     //Randomize Age Cim Move In (incompat)
                     //Lifespan Changer (incompat)
@@ -613,6 +617,7 @@ namespace AutoRepair.Catalogs {
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607u, Status.Compatible   }, // RICO revisited
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1204126182u, Status.Compatible   }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
@@ -661,7 +666,7 @@ namespace AutoRepair.Catalogs {
                     // City Statistics Easy Access
                     // City Vitals Watch
                 },
-                CompatibleWith = GameVersion.EuropeBuildings,
+                CompatibleWith = GameVersion.EuropeBiome,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // difficult to say when, but definitely broken
                       | ItemFlags.ForceMigration
@@ -750,7 +755,7 @@ namespace AutoRepair.Catalogs {
 
                     { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
-                CompatibleWith = GameVersion.EuropeBuildings,
+                CompatibleWith = GameVersion.EuropeBiome,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking

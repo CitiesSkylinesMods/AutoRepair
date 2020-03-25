@@ -193,7 +193,8 @@ namespace AutoRepair.Catalogs {
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
                     { 1612012531u, Status.Compatible   }, // Net Picker 2.0
-                    { 1393797695u, Status.Compatible }, // Touch This! Tool 3
+                    { 1393797695u, Status.Compatible   }, // Touch This! Tool 3
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 787611845u , Status.Recommended  }, // Prop Snapping
                     { 766190099u , Status.Incompatible }, // Move It (original)
@@ -365,6 +366,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },
@@ -388,6 +390,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },
@@ -412,6 +415,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },
@@ -440,6 +444,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },
@@ -463,6 +468,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },
@@ -546,6 +552,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Required     }, // Move It (original)
                 },
@@ -566,6 +573,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Compatible   }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },

@@ -1,6 +1,9 @@
 namespace AutoRepair {
     using AutoRepair.Catalogs;
+    using AutoRepair.Util;
     using ICities;
+    using System;
+    using UnityEngine.SceneManagement;
 
     public class UserMod : IUserMod {
 
@@ -19,7 +22,17 @@ namespace AutoRepair {
         }
 
         public void OnSettingsUI(UIHelperBase helper) {
-            Log.Info($"\n\nNum items in catalog = {Catalog.Instance.Items.Count}");
+            if (SceneManager.GetActiveScene().name == "Game") {
+                return;
+            }
+
+            try {
+                Log.Info($"\nNum items in catalog = {Catalog.Instance.Items.Count}");
+                Scanner.PerformScan();
+            } catch (Exception e) {
+                Log.Info("Something went horribly wrong...");
+                Log.Error(e.ToString());
+            }
         }
 
         public void OnDisabled() {

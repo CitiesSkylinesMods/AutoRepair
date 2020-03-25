@@ -251,7 +251,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // Many users not able to exit from fp cam view (Esc not working)
                 ReplaceWith = 650805785u, // First Person Camera: Updated
-                ReleasedDuring = GameVersion.EuropeBuildings,
+                ReleasedDuring = GameVersion.EuropeBiome,
                 SourceURL = "https://github.com/AlexanderDzhoganov/Skylines-FPSCamera/",
             });
         }

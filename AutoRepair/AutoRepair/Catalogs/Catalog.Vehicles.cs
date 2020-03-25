@@ -19,52 +19,6 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Vehicles";
 
-            AddMod(new Item(1764208250u, "More Vehicles") {
-                Affect = Factor.VehicleLimit // mods which don't properly check vehicle limits will break
-                       | Factor.TileLimit // incompat with 81 tiles
-                       | Factor.Toolbar, // date/event display can be broken by toolbar & quartz/sapphire mods
-                Authors = "dymanoid",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1953042839u, Status.Unknown      }, // Unified Railway System
-                    { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
-                    { 1637663252u, Status.Compatible   }, // TM:PE v11 STABLE
-                    { 1614061108u, Status.Incompatible }, // Real Construction
-                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
-                    { 1575247594u, Status.Incompatible }, // 576327847 81 Tiles (Fixed for 1
-                    { 1560122066u, Status.Incompatible }, // 81MOD
-                    { 1550281302u, Status.Incompatible }, // TransportCapacity
-                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options (new one; v1.9.0 should fix)
-                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1361478243u, Status.Incompatible }, // 81 Tiles (prolly a localised version)
-                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
-                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
-                    { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
-                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
-                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3 
-                    { 888017364u , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
-                    { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
-                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
-                    { 576970398u , Status.MinorIssues  }, // Quartz (former Sapphire) - UI skin framework
-                    { 576327847u , Status.Incompatible }, // 81 Tiles (BP version)
-                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
-                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector
-                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
-                    { 422554572u , Status.Incompatible }, // 81 Tiles (original version)
-                    { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (original)
-                    { 421770876u , Status.MinorIssues  }, // Sapphire - UI skin framework
-                    { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
-                },
-                CompatibleWith = GameVersion.Campus,
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.SaveChanging,
-                ReleasedDuring = GameVersion.Campus,
-                SourceURL = "https://github.com/dymanoid/MoreVehicles",
-                Tags = new[] { "Vehicles", "Parked", "Parking", "Limits", "Unlimiter" },
-            });
-
             AddMod(new Item(1651041757u, "Auto Rocket Launch 火箭自动发射") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
@@ -125,6 +79,9 @@ namespace AutoRepair.Catalogs {
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
+                    { 413170870u , Status.Incompatible }, // SuperBigTransport 80 v1.1
+                    { 413146544u , Status.Incompatible }, // SuperBigTransport 60 v1.1
+                    { 413164951u , Status.Incompatible }, // SuperBigTransport Restore v1.1
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 CompatibleWith = GameVersion.Campus,
@@ -214,6 +171,7 @@ namespace AutoRepair.Catalogs {
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
@@ -257,6 +215,7 @@ namespace AutoRepair.Catalogs {
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
@@ -300,6 +259,7 @@ namespace AutoRepair.Catalogs {
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
@@ -310,6 +270,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
             });
+
             AddMod(new Item(414326578u, "Configurable Transport Capacity") {
                 Affect = Factor.Customize
                        | Factor.VehicleCapacity
@@ -329,6 +290,7 @@ namespace AutoRepair.Catalogs {
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },

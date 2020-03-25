@@ -34,13 +34,14 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Incompatible }, // Ambient Sounds Tuner 2.0
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
                     // incompat: [ARIS] Remove Cows
                     // incompat: [ARIS] Remove Pigs
                     // incompat: [ARIS] Remove Seagulls
-                    { 455958878u, Status.Incompatible }, // Ambient Sounds Tuner
-                    { 435167188u, Status.Incompatible }, // V10Siren
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 ContinuationOf = 455958878u, // Ambient Sounds Tuner
                 Flags = ItemFlags.SourceAvailable,
@@ -535,7 +536,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "imabusybee",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
                 },
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "en-us",

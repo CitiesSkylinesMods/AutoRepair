@@ -77,6 +77,7 @@ namespace AutoRepair.Catalogs {
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -112,6 +113,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "Krzychu1245, kvakvs, LinuxFan, FireController#1847, kian.zarrin, aubergine18",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // Got one report that Extended Building Info mod might cause TM:PE to fail
+                    // Not sure how that could be possible, but keeping here for future ref.
+                    // { 1875298330u, Status.Incompatible }, // Extended Building Information
                     { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -126,12 +130,14 @@ namespace AutoRepair.Catalogs {
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -233,6 +239,7 @@ namespace AutoRepair.Catalogs {
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -296,10 +303,12 @@ namespace AutoRepair.Catalogs {
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
+                    { 498363759u , Status.Incompatible }, // Traffic Manager + Improved AI
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
@@ -356,6 +365,7 @@ namespace AutoRepair.Catalogs {
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -420,6 +430,7 @@ namespace AutoRepair.Catalogs {
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -476,12 +487,14 @@ namespace AutoRepair.Catalogs {
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -505,6 +518,10 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.AfterDark,
                 ReplaceWith = 1637663252u, // TM:PE V11 STABLE
                 SourceURL = "https://github.com/VictorPhilipp/Cities-Skylines-Traffic-Manager-President-Edition",
+                Tags = new[] {
+                    "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
+                    "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
+                },
             });
         }
     }

@@ -29,9 +29,9 @@ namespace AutoRepair {
         public static readonly Version InitialRelease = new Version(1, 0, 5);
 
         /// <summary>
-        /// 2015-05-19 European buildings added.
+        /// 2015-05-19 European biome and buildings added. IUserMod changed.
         /// </summary>
-        public static readonly Version EuropeBuildings = new Version(1, 1, 0);
+        public static readonly Version EuropeBiome = new Version(1, 1, 0);
 
         /// <summary>
         /// 2015-09-24 After Dark expansion.

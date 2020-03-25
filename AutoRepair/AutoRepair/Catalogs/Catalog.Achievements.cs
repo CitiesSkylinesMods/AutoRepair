@@ -21,6 +21,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1567569285u, Status.Incompatible }, // Achieve It!
                     { 1444491969u, Status.Incompatible }, // Achievements with Mods
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 407055819u , Status.Incompatible }, // Mod Achievement Enabler
                 },
                 Flags = ItemFlags.Abandonware

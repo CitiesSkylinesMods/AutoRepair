@@ -145,6 +145,7 @@ namespace AutoRepair.Catalogs {
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1440928803u, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 543722850u , Status.Incompatible }, // Network Skins (original)

@@ -1,4 +1,4 @@
-namespace AutoRepair {
+namespace AutoRepair.Util {
     using System.Diagnostics;
     using System.IO;
     using System.Reflection;

@@ -382,21 +382,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/keallu/CSL-MeasureIt",
             });
 
-            AddMod(new Item(1766839841u, "Anxiety Reducer") {
-                Affect = Factor.Boredom
-                       | Factor.TransportLines
-                       | Factor.TransportPreference,
-                Authors = "Klyte45",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1776052533u, Status.Incompatible }, // Stops & Stations
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
-                    // tmpe? ipt2?
-                },
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
             AddMod(new Item(1764637396u, "Toggle It!") {
                 Affect = Factor.HideRemove,
                 Authors = "Keallu",
@@ -454,6 +439,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 586012417u, // Ploppable RICO (original)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
+                      | ItemFlags.EditorBreaking
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
@@ -524,6 +510,7 @@ namespace AutoRepair.Catalogs {
                     { 1899449152u, Status.Incompatible }, // Game Day Timer (it can't recognise offline realtime)
                     // other
                     { 1801953480u, Status.MinorIssues  }, // Natural Disasters Overhaul (endless thunderstorms)
+                    { 1766839841u, Status.Incompatible }, // Anxiety Reducer
                     { 1412844620u, Status.Compatible   }, // Realistic Walking Speed
                     { 927293560u , Status.Compatible   }, // Geli-Districts v3.0
                 },
@@ -626,91 +613,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/pcfantasy/RealConstruction",
             });
 
-            AddMod(new Item(1312767991u, "Transport Lines Manager 13.1") {
-                Affect = Factor.Boredom
-                       | Factor.Naming
-                       | Factor.TransportLines
-                       | Factor.TransportPreference
-                       | Factor.VehicleCapacity,
-                Authors = "Klyte45",
-                Flags = ItemFlags.Localised
-                      | ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
-                    { 1764208250u, Status.Incompatible }, // More Vehicles
-                    { 1637663252u, Status.Compatible   }, // TM:PE v11 STABLE
-                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
-                    { 1550281302u, Status.Incompatible }, // TransportCapacity
-                    { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options AVO (Industries DLC ready)
-                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
-                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
-                    { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
-                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
-                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
-                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
-                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
-                    { 583429740u , Status.Compatible   }, // Traffic Manager: President Edition [STABLE]
-                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector (original)
-                    { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
-                    { 424106600u , Status.Incompatible }, // Improved Public Transport (original)
-                    { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager (original)
-                    { 408760323u , Status.Incompatible }, // Auto Line Color
-                },
-                CompatibleWith = GameVersion.PdxLauncher,
-                ContinuationOf = 929654063u, // Transport Lines Manager Reborn 8.0.3
-                Languages = new[] { "en", "pt", "ko", "de", "nl", "pl", "zh-cn", "fr", "es" },
-                Locale = "en",
-                ReleasedDuring = GameVersion.GreenCities,
-                SourceURL = "https://github.com/klyte45/TransportLinesManager",
-            });
-
-            // old version
-            AddMod(new Item(424106600u, "Improved Public Transport (IPT)") {
-                Affect = Factor.Boredom
-                       | Factor.Naming
-                       | Factor.TransportLines
-                       | Factor.TransportPreference
-                       | Factor.VehicleCapacity,
-                Authors = "DontCryJustDie",
-                BrokenBy = GameVersion.MassTransit,
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // was compat with ancient versions of TMPE, but they all changed after mass transit
-                    // was also compat with t++ v2 (now obsolete)
-                    { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
-                    { 1764208250u, Status.Incompatible }, // More Vehicles
-                    { 1637663252u, Status.Incompatible }, // TM:PE v11 STABLE
-                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
-                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
-                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
-                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
-                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
-                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
-                    { 531401164u , Status.Incompatible }, // Vehicle Unbuncher
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
-                },
-                CompatibleWith = GameVersion.NaturalDisasters,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.BrokenByUpdate
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.Localised
-                      | ItemFlags.NoWorkshop // removed jan 2018?
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
-                Languages = new[] { "en", "de", "es", "zh-cn", "pl", "it", "pt", "zh", "ru", "fr", "ko", },
-                Locale = "en",
-                ReleasedDuring = new Version(1, 0, 7), // before European buildings were added
-                ReplaceWith = 928128676u, // Improved Public Transport 2
-            });
-
             // old version
             AddMod(new Item(519691655u, "Service Vehicle Selector") {
                 Affect = Factor.Other,
@@ -725,6 +627,7 @@ namespace AutoRepair.Catalogs {
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -740,109 +643,135 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 934994075u, // Service Vehicle Selector 2
             });
 
-            // old version
-            AddMod(new Item(929654063u, "Transport Lines Manager Reborn 8.0.3") {
-                Affect = Factor.Boredom
-                       | Factor.Naming
-                       | Factor.TransportLines
-                       | Factor.TransportPreference
-                       | Factor.VehicleCapacity,
-                Authors = "Klyte45",
-                BrokenBy = GameVersion.ParkLife, // was already replaced by new mod by then
+            AddMod(new Item(1383456057u, "Shicho") {
+                Affect = Factor.BuildingInfo
+                       | Factor.Camera
+                       | Factor.Health
+                       | Factor.HideRemove
+                       | Factor.Rendering
+                       | Factor.Toolbar
+                       | Factor.Trees
+                       | Factor.VehicleInfo,
+                Authors = "saki7, Ryuichi Kaminogi",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // incompat with overwatch/aris mods
-                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
-                    { 1764208250u, Status.Incompatible }, // More Vehicles
-                    { 1637663252u, Status.Incompatible }, // TM:PE v11 STABLE
-                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
+                    { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 1978555062u, Status.Compatible   }, // AllSpacesUnlockable
+                    { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
+                    { 1891302645u, Status.Compatible   }, // UnlockAreaCountLimitAndFree
+                    { 1878659195u, Status.Compatible   }, // UnlockAreaCountLimitAndFree
+                    { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
+                    { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
+                    { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
+                    { 1830615215u, Status.Compatible   }, // All 25 Areas purchaseable
+                    { 1778652879u, Status.Compatible   }, // MaxArea
+                    { 1758376843u, Status.Incompatible }, // Network Skins 2 Beta
+                    { 1723162741u, Status.Compatible   }, // UnlockAreaCountLimitAndFree
+                    { 1721492498u, Status.Incompatible }, // Cargo Hold Fix
+                    { 1643902284u, Status.Incompatible }, // Watch It!
+                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
+                    { 1619685021u, Status.Incompatible }, // Move It 2.4.1
+                    { 1612287735u, Status.Compatible   }, // Purchase It!
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
+                    { 1591417160u, Status.Incompatible }, // Hide It!
+                    { 1577882296u, Status.Incompatible }, // Resize It!
+                    { 1575247594u, Status.Incompatible }, // 576327847 81 Tiles (Fixed for 1
+                    { 1567569285u, Status.Incompatible }, // Achieve It!
+                    { 1560122066u, Status.Incompatible }, // 81MOD
+                    { 1556715327u, Status.Incompatible }, // Show It!
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
-                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (Industries DLC ready)
-                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options 1.8.5
+                    { 1457742795u, Status.Compatible   }, // 403798635 All Spaces Unlockable
+                    { 1449194984u, Status.Compatible   }, // 25格汉化版
+                    { 1388613752u, Status.Incompatible }, // Tree Movement Control
+                    { 1369729955u, Status.Incompatible }, // Customize It!
+                    { 1361478243u, Status.Incompatible }, // 81 Tiles
+                    { 1314938052u, Status.Compatible   }, // UnlockAreaCountLimit
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 1312735149u, Status.Incompatible }, // Klyte Commons 1.1.6
+                    { 1270675750u, Status.Compatible   }, // BigCity (25 tiles mod)
+                    { 1268806334u, Status.Compatible   }, // UnlockAreaCountLimitAndFree
+                    { 1265292380u, Status.Compatible   }, // UnlockAreaCountLimit
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1225712804u, Status.Compatible   }, // 406218372
+                    { 1223738434u, Status.Incompatible }, // 422554572
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
-                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
+                    { 1138679561u, Status.Compatible   }, // AllSpacesUnlock
+                    { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
+                    { 1094334744u, Status.Incompatible }, // Procedural Objects 1.5.5
+                    { 940299505u , Status.Incompatible }, // AnimUV Params
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
-                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
-                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition [STABLE]
-                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector (original)
-                    { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
-                    { 424106600u , Status.Incompatible }, // Improved Public Transport (original)
+                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2 [r4.3.1]
+                    { 928103306u , Status.Incompatible }, // Ship Converter
+                    { 924884948u , Status.Incompatible }, // Plop The Growables
+                    { 922939393u , Status.Incompatible }, // Transparency LOD Fix + Cloud Assets Enabler
+                    { 912329352u , Status.Incompatible }, // Building Anarchy
+                    { 903347963u , Status.Incompatible }, // Transparent Selectors
+                    { 895061550u , Status.Incompatible }, // Theme Decals
+                    { 878991312u , Status.Incompatible }, // Prop it Up! 1.4.4
+                    { 877748783u , Status.Incompatible }, // Topographic Lines Toggle
+                    { 837734529u , Status.Incompatible }, // Find It! 1.5.4
+                    { 820157360u , Status.Incompatible }, // Spawn Points Fix
+                    { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 816260433u , Status.Incompatible }, // Metro Overhaul
+                    { 815103125u , Status.Incompatible }, // Extra Vehicle Effects
+                    { 814498849u , Status.Incompatible }, // Improved Content Manager
+                    { 812125426u , Status.Incompatible }, // Network Extensions 2
+                    { 812107110u , Status.Incompatible }, // Less Steam
+                    { 802066100u , Status.Incompatible }, // Fine Road Anarchy 1.3.5
+                    { 795514116u , Status.Incompatible }, // Train Converter
+                    { 793176674u , Status.Incompatible }, // Sharp Textures
+                    { 791221322u , Status.Incompatible }, // Prop Precision 1.0.1
+                    { 787611845u , Status.Incompatible }, // Prop Snapping
+                    { 780720853u , Status.Incompatible }, // Vehicle Effects 1.8.1a
+                    { 766190099u , Status.Incompatible }, // Move It
+                    { 724382534u , Status.Incompatible }, // One-Way Train Tracks
+                    { 714056356u , Status.Incompatible }, // Transport Line Rendering Fix
+                    { 707759735u , Status.Incompatible }, // Ship Path Anarchy
+                    { 694512541u , Status.Incompatible }, // Prop Line Tool
+                    { 694123443u , Status.Incompatible }, // American Traffic Lights
+                    { 689937287u , Status.Incompatible }, // Surface Painter
+                    { 667342976u , Status.Incompatible }, // Loading Screen Mod
+                    { 654707599u , Status.Incompatible }, // WG Citizen Lifecycle Rebalance v2.6
+                    { 651322972u , Status.Incompatible }, // Fine Road Tool 1.3.7
+                    { 650436109u , Status.Incompatible }, // Quay Anarchy
+                    { 625608461u , Status.Incompatible }, // Adaptive Prop Visibility Distance
+                    { 616078328u , Status.Incompatible }, // All Tile Start -- not a tile mod, incompat with 81 tiles
+                    { 593588108u , Status.Incompatible }, // Prop & Tree Anarchy
+                    { 591137516u , Status.Incompatible }, // Redcomet's Municipal Sound Pack
+                    { 583429740u , Status.Incompatible }, // TM:PE 10.20
+                    { 576327847u , Status.Incompatible }, // 81 Tiles (Fixed for C:S 1.2+)
+                    { 552309905u , Status.Incompatible }, // No Abandonment
+                    { 538019888u , Status.Incompatible }, // Spawn/Unspawn Positions Swapper
+                    { 530771650u , Status.Incompatible }, // Prefab Hook
+                    { 523818382u , Status.Incompatible }, // Force Level Up
+                    { 515489008u , Status.Incompatible }, // Extra Train Station Tracks
+                    { 512314255u , Status.Incompatible }, // More Network Stuff
+                    { 510677558u , Status.Incompatible }, // The Metropolitan Sound Pack
+                    { 502750307u , Status.Incompatible }, // Extra Landscaping Tools
+                    { 498386331u , Status.Incompatible }, // CrossTheLine
+                    { 497033453u , Status.Incompatible }, // UnlimitedOutsideConnections
+                    { 465318661u , Status.Incompatible }, // ToggleableWhiteness
+                    { 463845891u , Status.Incompatible }, // No Pillars
+                    { 455403039u , Status.Incompatible }, // Unlimited Trees Mod
+                    { 445589127u , Status.Incompatible }, // Precision Engineering
+                    { 426163185u , Status.Incompatible }, // WG Realistic Population v8.4.0
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
+                    { 422554572u , Status.Incompatible }, // 81 Tiles (original by emf)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager (original)
-                    { 408760323u , Status.Incompatible }, // Auto Line Color
+                    { 413498678u , Status.Compatible   }, // All Spaces Unlockable - With Right Price
+                    { 408905948u , Status.Incompatible }, // Pause on load
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    { 406218372u , Status.Compatible   }, // All Spaces Unlockable
+                    { 405810376u , Status.Compatible   }, // All 25 Areas purchasable (by tomdotio)
+                    { 403798635u , Status.Compatible   }, // All Spaces Unlockable
                 },
-                CompatibleWith = GameVersion.GreenCities,
-                ContinuationOf = 408875519u, // Transport Lines Manager
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.BrokenByUpdate // park life
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.Localised
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceAvailable, // same repo as new version
-                Languages = new[] { "en", "de", "zh-cn", "pl", "pt", "ko", },
-                Locale = "en",
-                ReleasedDuring = GameVersion.MassTransit,
-                ReplaceWith = 1312767991u, // Transport Lines Manager 13.1
-                SourceURL = "https://github.com/klyte45/TransportLinesManager",
+                      | ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/SETNAHQ/Shicho",
             });
-
-            // old version
-            AddMod(new Item(408875519u, "Transport Lines Manager") {
-                Affect = Factor.Boredom
-                       | Factor.Naming
-                       | Factor.TransportLines
-                       | Factor.TransportPreference
-                       | Factor.VehicleCapacity,
-                Authors = "Klyte45",
-                BrokenBy = GameVersion.MassTransit,
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
-                    { 1764208250u, Status.Incompatible }, // More Vehicles
-                    { 1637663252u, Status.Incompatible }, // TM:PE v11 STABLE
-                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
-                    { 1550281302u, Status.Incompatible }, // TransportCapacity
-                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (Industries DLC ready)
-                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
-                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
-                    { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
-                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
-                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
-                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
-                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
-                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition [STABLE]
-                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector (original)
-                    { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
-                    { 424106600u , Status.Incompatible }, // Improved Public Transport (original)
-                    { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager (original)
-                    { 408760323u , Status.Incompatible }, // Auto Line Color
-                },
-                CompatibleWith = GameVersion.NaturalDisasters, // there was update on ND release day, assuming minor bug fixes
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.BrokenByUpdate // mass transit
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop // jan 2018?
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceAvailable, // same repo as new version
-                ReleasedDuring = new Version(1, 0, 7), // before European buildings were added
-                ReplaceWith = 1312767991u, // Transport Lines Manager 13.1
-                SourceURL = "https://github.com/klyte45/TransportLinesManager",
-            });
-
         }
     }
 }

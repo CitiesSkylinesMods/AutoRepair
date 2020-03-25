@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Catalogs\Catalog.Unlimiters.cs" />
     <Compile Include="Catalogs\Vanilla.cs" />
     <Compile Include="Catalogs\Catalog.Achievements.cs" />
     <Compile Include="Catalogs\Catalog.AudioEffects.cs" />
@@ -70,7 +71,6 @@
     <Compile Include="Catalogs\Skins.Maps.cs" />
     <Compile Include="Catalogs\Catalog.Networks.cs" />
     <Compile Include="Catalogs\Stats.Mods.cs" />
-    <Compile Include="Catalogs\Tile.Mods.cs" />
     <Compile Include="Catalogs\Catalog.Traffic.cs" />
     <Compile Include="Catalogs\TrafficLight.cs" />
     <Compile Include="Catalogs\TrafficLight.Packs.cs" />
@@ -87,9 +87,11 @@
     <Compile Include="Enums\Status.cs" />
     <Compile Include="Catalogs\Catalog.Addendum.cs" />
     <Compile Include="GameVersion.cs" />
-    <Compile Include="Log.cs" />
+    <Compile Include="Util\Log.cs" />
+    <Compile Include="Util\MemberValue.cs" />
+    <Compile Include="Util\ModInspector.cs" />
+    <Compile Include="Scanner.cs" />
     <Compile Include="Temp.cs" />
-    <Compile Include="Catalogs\Tile.cs" />
     <Compile Include="Catalogs\Translations.cs" />
     <Compile Include="UserMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
