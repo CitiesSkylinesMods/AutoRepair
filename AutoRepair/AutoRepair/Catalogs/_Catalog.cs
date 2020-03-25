@@ -157,7 +157,7 @@ namespace AutoRepair.Catalogs {
                 DoshCatalog();
                 EmptyingCatalog();
                 HideCatalog();
-                LoadingCatalog();
+                LoadSaveCatalog();
                 MultiplayerCatalog();
                 MusicCatalog();
                 NetworksCatalog();
@@ -166,6 +166,7 @@ namespace AutoRepair.Catalogs {
                 ProceduralCatalog();
                 PublicTransportCatalog();
                 RepairCatalog();
+                ServicesCatalog();
                 SkyclothCatalog();
                 ToolbarCatalog();
                 TrafficCatalog();

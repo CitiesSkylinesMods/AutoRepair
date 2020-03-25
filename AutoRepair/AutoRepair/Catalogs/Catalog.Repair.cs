@@ -14,6 +14,31 @@ namespace AutoRepair.Catalogs {
         private void RepairCatalog() {
             string catalog = "Repair";
 
+            AddMod(new Item(2034713132u, "AutoRepair") {
+                Affect = Factor.Other,
+                Authors = "aubergine18",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.PdxLauncher,
+                SourceURL = "https://github.com/CitiesSkylinesMods/AutoRepair",
+            });
+
+            AddMod(new Item(1938493221u, "Mini FPS Booster") {
+                Affect = Factor.Other,
+                Authors = "Krzychu1245",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // no known issues!
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.Recommended
+                      | ItemFlags.SourceUnavailable,
+                ReleasedDuring = GameVersion.Campus,
+            });
+
             AddMod(new Item(1777173984u, "Broken Nodes Detector") {
                 Affect = Factor.Other,
                 Authors = "krzychu1245",

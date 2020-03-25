@@ -18,6 +18,19 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "PlaceAndMove";
 
+            AddMod(new Item(2030755273u, "Automatic Pedestrian Bridge Builder [PRE ALPHA]") {
+                Affect = Factor.Tools
+                       | Factor.Toolbar,
+                Authors = "kian.zarrin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.PdxLauncher,
+                SourceURL = "https://github.com/kianzarrin/PedestrianBridge/",
+            });
+
             // for creating intersections
             // No detours used!! Compat with basically everything.
             AddMod(new Item(1925527132u, "Advanced Road Tools") {

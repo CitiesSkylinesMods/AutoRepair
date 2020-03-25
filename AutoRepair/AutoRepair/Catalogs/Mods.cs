@@ -408,11 +408,6 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/Celisuis/YAFU",
             });
 
-            Add(new Item(1420955187u, "Real Time") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/dymanoid/RealTime",
-            });
-
             Add(new Item(1415090282u, "AutoLineColor Redux") {
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/taradinoc/CitiesSkylinesAutoColorMod",
@@ -422,24 +417,11 @@ namespace AutoRepair {
                 },
             });
 
-            Add(new Item(1410003347u, "Additive Shader") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
-            });
+
 
             // editor tool
             Add(new Item(1406275125u, "Asset DLC flags Editor") {
                 Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1394468624u, "Advanced Stop Selection (ex MTSE)") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/bloodypenguin/Skylines-ImprovedStopSelection",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 442957897u, Status.Incompatible }, // [Obsolete] Multi-Track Station Enabler
-                    { 532863263u, Status.Incompatible }, // [deprecated] Multi-Track Station Enabler 1.2.0
-                    // todo: t++
-                },
             });
 
             // editor
@@ -453,16 +435,6 @@ namespace AutoRepair {
             });
 
             AddDodgey(1391679732u, "CS-RP");
-
-            Add(new Item(1386697922u, "Garbage Bin Controller") {
-                Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.MinorBugs, // LSM skipping vanilla garbage bin = game breaks
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1390252175u, Status.Recommended }, // Japanese Plastic Bucket
-                    { 1389908178u, Status.Recommended }, // Wheelie Bin - Color Variation
-                    { 1386088603u, Status.Recommended }, // Metal bin - 01
-                },
-            });
 
             Add(new Item(1385468094u, "PollutionRemoverMod") {
                 Flags = ItemFlags.Abandonware
@@ -585,11 +557,6 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/targettius/cs-hex-colors",
             });
 
-            Add(new Item(1274199764u, "Network Tiling") {
-                Authors = "Ronyx69",
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/ronyx69/4f06181c8082188418cd0c224f630a09",
-            });
 
             Add(new Item(1269478692u, "Trains stop on both sides of the station") {
                 Authors = "Jaddy",
@@ -642,61 +609,13 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/wboler05/CS-BudgetController",
             });
 
-            // Several reported issues with this mod (based on user comment):
-            // * laggy (multiple users are reporting this - lots of code running on recurring events!)
-            // * milestone unlock not working
-            // * achievement enabler not working
-            Add(new Item(1237383751u, "Extended Game Options") {
-                Authors = "Zenya",
-                Affect = Factor.Milestones, // will be more
-                Flags = ItemFlags.Laggy
-                      | ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1242879105u, Status.Incompatible }, // Unlock Any Milestone
-                    { 823348129u , Status.Incompatible }, // Disasters Enabler
-                    { 410614868u , Status.Incompatible }, // EarlyUnlock
-                    { 407162294u , Status.Incompatible }, // All basic unlocks at the start
-                    // todo: will be more
-                },
-                SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
-            });
+
 
             // refund full construction cost when bulldozing
             Add(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
                 Authors = "C#",
                 Flags = ItemFlags.SourceUnavailable,
                 // todo check conflict with other refund mods
-            });
-
-            // Completely redundant mod as vanilla has auto-save
-            Add(new Item(1225712349u, "406123642") {
-                Authors = "丿CK独狼灬",
-                CloneOf = 406123642u, // AutoSave - Configurable
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Localised,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 406123642u, Status.Incompatible }, // AutoSave - Configurable
-                },
-                Locale = "zh-cn",
-            });
-
-
-
-            // Based on user comments some major bugs with this:
-            // * Causes problems with route creation
-            // * Often adds too many vehicles (even after waiting for it to settle after few day/night cycles)
-            Add(new Item(1218121337u, "Automatic Vehicle Numbers Adjuster") {
-                Authors = "Overhatted",
-                Flags = ItemFlags.MinorBugs
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // incompat: likely IPT, TLM and maybe others
-                },
-                SourceURL = "https://cld.pt/dl/download/0d0cc60b-6568-4618-90f5-ed687b9d8eed/AutomaticVehicleNumbersAdjuster.zip",
             });
 
             Add(new Item(1217239330u, "Profitable Offices") {
@@ -737,34 +656,13 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/pcfantasy/RealCity/",
             });
 
-            Add(new Item(1192250578u, "Emergency Lights Manager") {
-                Authors = "Cryptkeeper",
-                ContinuationOf = 863909323u, // Emergency Lights Changer Plus
-                Flags = ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 863909323u, Status.Incompatible }, // Emergency Lights Changer Plus
-                    { 559172768u, Status.Incompatible }, // Emergency Light Changer
-                },
-            });
-
             Add(new Item(1182174575u, "Export Vehicles Positions") {
                 Authors = "Simon Ryr",
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://gist.github.com/simon56modder/78b3ecab27b7829017f327baf0f9652c",
             });
 
-            Add(new Item(1181352643u, "District Service Limit 3.0") {
-                Authors = "cambrium",
-                Affect = Factor.ServiceLimit,
-                ContinuationOf = 649522495u, // District Service Limit
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
-                      | ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo - incompat
-                },
-                SourceURL = "https://github.com/TheDogKSP/cs-districts",
-            });
+
 
             // Similar thing to Klyte's addresses mod
             Add(new Item(1179846541u, "Rename buildings") {
@@ -788,17 +686,6 @@ namespace AutoRepair {
             Add(new Item(1174585364u, "Rescue Fullwidth Digits") {
                 Authors = "Gansaku",
                 Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1147015481u, "No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets") {
-                Authors = "Madgemade",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 812125426u , Status.Compatible   }, // Network Extensions 2
-                    { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
-                    { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
-                },
-                Flags = ItemFlags.SlowLoad
-                      | ItemFlags.SourceUnavailable,
             });
 
             // "Repeated construction of landmark buildings"
@@ -853,15 +740,6 @@ namespace AutoRepair {
                     // todo
                 },
                 SourceURL = "https://bitbucket.org/Runaurufu/cities-skylines-immersive-water/src",
-            });
-
-            Add(new Item(959894658u, "Custom Light Effects") {
-                Authors = "Ronyx69, vasimr22",
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking // memory leaks = crashes
-                      | ItemFlags.SourceUnavailable,
-                ReplaceWith = 1886877404u, // Custom Effects Loader
             });
 
             Add(new Item(958161597u, "Twitch Viewer Integrator") {
@@ -927,12 +805,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceAvailable,
                 Languages = new[] { "en", "pl" },
                 SourceURL = "https://github.com/vonLeebpl/NoBuoysMod/tree/master/NoBuoysMod",
-            });
-
-            // https://cslmodding.info/shader/animuv/
-            Add(new Item(940299505u, "AnimUV Params") {
-                Authors = "Ronyx69",
-                Flags = ItemFlags.SourceUnavailable,
             });
         }
     }

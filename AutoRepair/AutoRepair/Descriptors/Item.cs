@@ -117,6 +117,11 @@ namespace AutoRepair.Descriptors {
         public string Locale { get; set; }
 
         /// <summary>
+        /// Gets or sets arbitrary notes for the item, which will be displayed in log file.
+        /// </summary>
+        public string[] Notes { get; set; }
+
+        /// <summary>
         /// Gets or sets the game version at time when item was first published to workshop, if known.
         /// </summary>
         public Version ReleasedDuring { get; set; } = GameVersion.DefaultRelease;
@@ -202,6 +207,12 @@ namespace AutoRepair.Descriptors {
         /// </summary>
         [Conditional("DEBUG")]
         public void Validate() {
+
+            // ignore addendum catalog
+            if (!string.IsNullOrEmpty(Catalog) && Catalog == "Addendum") {
+                return;
+            }
+
             bool problems = false;
 
             StringBuilder log = new StringBuilder(1000);

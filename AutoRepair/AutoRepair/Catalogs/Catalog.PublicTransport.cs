@@ -19,6 +19,23 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "PublicTransport";
 
+            // looks like update to Extended Public Transport UI, that's compatibile or merged with TLM
+            AddMod(new Item(2009172305u, "EPTUI TLM Integration (Beta)") {
+                Affect = Factor.TransportLines,
+                Authors = "Arturj07",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "This appears to be update to Extended Public Transport UI. Author is not responsive.",
+                },
+                ReleasedDuring = GameVersion.PdxLauncher,
+            });
+
             // todo: check if this causes stuck cims
             AddMod(new Item(1776052533u, "Stops & Stations") {
                 Affect = Factor.Boredom
@@ -65,6 +82,21 @@ namespace AutoRepair.Catalogs {
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 Flags = ItemFlags.SourceUnavailable,
+            });
+
+            AddMod(new Item(1394468624u, "Advanced Stop Selection (ex MTSE)") {
+                Affect = Factor.TransportLines,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 532863263u, Status.Incompatible }, // [deprecated] Multi-Track Station Enabler 1.2.0
+                    { 442957897u, Status.Incompatible }, // [Obsolete] Multi-Track Station Enabler
+                    { 409184143u, Status.Incompatible }, // Traffic++
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.ParkLife,
+                SourceURL = "https://github.com/bloodypenguin/Skylines-ImprovedStopSelection",
             });
 
             AddMod(new Item(1312767991u, "Transport Lines Manager 13.1") {
@@ -115,6 +147,27 @@ namespace AutoRepair.Catalogs {
                 Locale = "en",
                 ReleasedDuring = GameVersion.GreenCities,
                 SourceURL = "https://github.com/klyte45/TransportLinesManager",
+            });
+
+            // Based on user comments some major bugs with this:
+            // * Causes problems with route creation
+            // * Often adds too many vehicles (even after waiting for it to settle after few day/night cycles)
+            AddMod(new Item(1218121337u, "Automatic Vehicle Numbers Adjuster") {
+                Affect = Factor.TransportLines,
+                Authors = "Overhatted",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // incompat: likely IPT, TLM and maybe others
+                    { 928128676u, Status.Incompatible }, // Improved Public Transport 2
+                },
+                Flags = ItemFlags.MinorBugs
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Notes = new[] {
+                    "Users report this mod causes problems with route creation.",
+                    "Users report this mod adds excessive numbers of vehicles to lines\n   (even after waiting few game dayes for it to settle).",
+                },
+                SourceURL = "https://cld.pt/dl/download/0d0cc60b-6568-4618-90f5-ed687b9d8eed/AutomaticVehicleNumbersAdjuster.zip",
             });
 
             AddMod(new Item(928128676, "Improved Public Transport 2") {

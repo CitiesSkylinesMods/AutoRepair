@@ -20,23 +20,54 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Dosh";
 
+            AddMod(new Item(2030216556u, "GrantMeMoney: get cash / money unconditionally") {
+                Affect = Factor.Money,
+                Authors = "the weatherman",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
+
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.PdxLauncher,
+                SourceURL = "https://github.com/NJAldwin/GrantMeMoney",
+            });
+
             // todo: conflict with vanilla
             AddMod(new Item(1949192313u, "UnlimitedMoney") {
                 Affect = Factor.Money,
                 Authors = "j.a.pasterkamp",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
-                    { 1367444256u, Status.MinorIssues  }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.MinorIssues  }, // 调整金钱
-                    { 409171141u , Status.MinorIssues  }, // Cash on Demand
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
-                Flags = ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "The base game comes with its own unlimited money mod, use that instead.",
+                },
             });
 
             AddMod(new Item(1673480325u, "£5 Million Starting Money") {
@@ -44,12 +75,18 @@ namespace AutoRepair.Catalogs {
                 Authors = "Mister Doctor",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
                 ContinuationOf = 1671542319u, // £2.5 Million Starting Money
                 Flags = ItemFlags.SourceUnavailable,
@@ -60,12 +97,18 @@ namespace AutoRepair.Catalogs {
                 Authors = "Mister Doctor",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -77,12 +120,18 @@ namespace AutoRepair.Catalogs {
                 Authors = "Jay",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Incompatible }, // 调整金钱
-                    { 409171141u , Status.Incompatible }, // Cash on Demand
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
                 ContinuationOf = 409171141u, // Cash on Demand
                 Flags = ItemFlags.SourceUnavailable,
@@ -94,12 +143,18 @@ namespace AutoRepair.Catalogs {
                 Authors = "kartoffelx86",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -111,12 +166,18 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 409171141u, // Cash on Demand
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Incompatible }, // 调整金钱
-                    { 409171141u , Status.Incompatible }, // Cash on Demand
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable
@@ -130,12 +191,18 @@ namespace AutoRepair.Catalogs {
                 Authors = "UndergroundHero",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Incompatible }, // 调整金钱
-                    { 409171141u , Status.Incompatible }, // Cash on Demand
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
+                    // similar but non-conflicting mods:
+                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.Compatible   }, // CS-Utils
+                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Compatible   }, // 调整金钱
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,

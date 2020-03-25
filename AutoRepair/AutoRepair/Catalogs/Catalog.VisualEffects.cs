@@ -151,7 +151,6 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "Sky", "Environment", "Stars", "Clouds" },
             });
 
-            // Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2
             AddMod(new Item(1138510774u, "PostProcessFX - Multi-platform") {
                 Affect = Factor.Rendering,
                 Authors = "cor3ntin",
@@ -169,10 +168,25 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorBugs // some users have problems opening GUI
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // some users say it stopped working
+                Notes = new[] {
+                    "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2",
+                },
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "TAA", "Ambient Occlusion", "Grain", "Sun shafts" },
             });
 
-            // Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2
+            AddMod(new Item(940299505u, "AnimUV Params") {
+                Affect = Factor.Props
+                       | Factor.Rendering,
+                Authors = "Ronyx69",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "Asset creators: See https://cslmodding.info/shader/animuv/",
+                },
+            });
+
             AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
                 Affect = Factor.Rendering,
                 Authors = "MazK",
@@ -189,6 +203,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer version available: 1138510774u
                       | ItemFlags.MinorBugs // some users have problems displaying the GUI
                       | ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2",
+                },
                 ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
             });
@@ -200,6 +217,21 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
+
+            AddMod(new Item(959894658u, "Custom Light Effects") {
+                Affect = Factor.Rendering
+                       | Factor.Textures,
+                Authors = "Ronyx69, vasimr22",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking // memory leaks = crashes
+                      | ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "This mod causes memory leaks which eventually result in lag then crash to desktop.",
+                    "Use Custom Effect Loader mod instead.",
+                },
+                ReplaceWith = 1886877404u, // Custom Effects Loader
+            });
 
             /*
             # ██████   █████   ██████ ██   ██ ███████

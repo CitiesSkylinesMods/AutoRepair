@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Catalogs\Catalog.Services.cs" />
     <Compile Include="Catalogs\Catalog.Unlimiters.cs" />
     <Compile Include="Catalogs\Vanilla.cs" />
     <Compile Include="Catalogs\Catalog.Achievements.cs" />
@@ -59,7 +60,7 @@
     <Compile Include="Catalogs\Catalog.Trees.cs" />
     <Compile Include="Catalogs\_Catalog.cs" />
     <Compile Include="Catalogs\Catalog.Diagnostic.cs" />
-    <Compile Include="Catalogs\Catalog.Loading.cs" />
+    <Compile Include="Catalogs\Catalog.LoadSave.cs" />
     <Compile Include="Catalogs\Catalog.Multiplayer.cs" />
     <Compile Include="Catalogs\Catalog.BuildingThemes.cs" />
     <Compile Include="Catalogs\Catalog.Dosh.cs" />

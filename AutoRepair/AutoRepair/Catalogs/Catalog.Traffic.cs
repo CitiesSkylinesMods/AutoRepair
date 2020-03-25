@@ -92,6 +92,11 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised, // localised to lots of languages
                 Languages = v11languages,
                 Locale = "en",
+                Notes = new[] {
+                    "Setting 'Simulation Accuracy' to lower value will improve framerate.",
+                    "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
+                    "We suspect there is issue with pedestrian pathfinding since Sunset Harbor update, and are investigating.",
+                },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
@@ -152,6 +157,11 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised, // localised to lots of languages
                 Languages = v11languages,
                 Locale = "en",
+                Notes = new[] {
+                    "Setting 'Simulation Accuracy' to lower value will improve framerate.",
+                    "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
+                    "We suspect there is issue with pedestrian pathfinding since Sunset Harbor update, and are investigating.",
+                },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
@@ -515,6 +525,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 Languages = v10languages,
                 Locale = "en",
+                Notes = new[] {
+                    "LinuxFan no longer plays the game so this v10.20 cannot be updated.",
+                    "Please move to either TM:PE v11 STABLE or TM:PE v11 LABS for updated mod."
+                },
                 ReleasedDuring = GameVersion.AfterDark,
                 ReplaceWith = 1637663252u, // TM:PE V11 STABLE
                 SourceURL = "https://github.com/VictorPhilipp/Cities-Skylines-Traffic-Manager-President-Edition",

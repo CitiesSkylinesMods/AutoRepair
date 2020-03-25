@@ -156,9 +156,9 @@ namespace AutoRepair.Enums {
         LandValue = 1UL << 27,
 
         /// <summary>
-        /// Loading process (app startup, loading screen).
+        /// Loading/saving process (app startup, loading screen, autosave).
         /// </summary>
-        Loading = 1UL << 28,
+        LoadSave = 1UL << 28,
 
         /// <summary>
         /// Maintenance cost of buildings, roads, etc.
@@ -236,9 +236,9 @@ namespace AutoRepair.Enums {
         RoadMarkings = 1UL << 42,
 
         /// <summary>
-        /// Mods which impose limitations (eg. by district or range) on services.
+        /// Affects services (including buildings, vehicles, coverage, etc).
         /// </summary>
-        ServiceLimit = 1UL << 43,
+        Service = 1UL << 43,
 
         /// <summary>
         /// Storage capacity of buildings or vehicles (including restocking).

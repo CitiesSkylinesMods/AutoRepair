@@ -82,7 +82,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Entertainment
                        | Factor.Health
                        | Factor.Pollution
-                       | Factor.ServiceLimit
+                       | Factor.Service
                        | Factor.StorageCapacity
                        | Factor.VehicleCapacity,
                 Authors = "C#",
@@ -324,7 +324,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Entertainment
                        | Factor.Health
                        | Factor.Pollution
-                       | Factor.ServiceLimit
+                       | Factor.Service
                        | Factor.StorageCapacity,
                 Authors = "TPB",
                 BrokenBy = GameVersion.SunsetHarbor,

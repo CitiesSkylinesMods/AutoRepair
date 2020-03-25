@@ -123,6 +123,10 @@ namespace AutoRepair {
                             ? new Dictionary<ulong, Status>()
                             : descriptor.Compatibility;
 
+#if DEBUG
+                        log.AppendFormat("\n - CATALOG: {0}\n", descriptor.Catalog);
+#endif
+
                         if (HasFlag(flags, ItemFlags.NoWorkshop)) {
                             log.Append("\n - It has no workshop page; it is probably obsolete or game breaking.\n");
                         } else {
@@ -153,7 +157,7 @@ namespace AutoRepair {
                             log.Append("\n - The music in this mod is safe for streaming (according to mod author).\n");
                         } else if (compatibility.TryGetValue(422934383u, out var music)) {
                             if (music == Status.Required) {
-                                log.Append("\n - The music is copyrigted and must not be played while streaming.\n");
+                                log.Append("\n - The music is copyrighted and must not be played while streaming.\n");
                             }
                         }
 
@@ -218,6 +222,16 @@ namespace AutoRepair {
                                 default:
                                     break;
                             }
+                        }
+
+                        if (descriptor.Notes != null) {
+                            foreach (string note in descriptor.Notes) {
+                                log.AppendFormat("\n - {0}\n", note);
+                            }
+                        }
+
+                        if (descriptor.ReplaceWith != 0u) {
+                            log.AppendFormat("\n - Newer version/replacement: {0}\n", GetWorkshopURL(descriptor.ReplaceWith));
                         }
                     }
                 } catch (Exception e) {
