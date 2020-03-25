@@ -66,9 +66,14 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1895443005u, Status.Incompatible }, // Fine Road Anarchy 2 汉化版
+                    { 1895440521u, Status.Incompatible }, // Fine Road Tool 2 汉化版
                     { 1844440354u, Status.Recommended  }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Compatible   }, // Dynamic Text Props
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1393797695u, Status.Compatible   }, // Touch This Tool
+                    { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
                     { 651322972u , Status.Incompatible }, // Fine Road Tool
                 },
@@ -82,9 +87,14 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1895443005u, Status.Incompatible }, // Fine Road Anarchy 2 汉化版
+                    { 1895440521u, Status.Incompatible }, // Fine Road Tool 2 汉化版
                     { 1844442251u, Status.Recommended  }, // Fine Road Tool 2.0.3
                     { 1831805509u, Status.Compatible   }, // Dynamic Text Props
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1393797695u, Status.Compatible   }, // Touch This Tool
+                    { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
                     { 651322972u , Status.Incompatible }, // Fine Road Tool
                 },
@@ -132,6 +142,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Strad",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1890830956u, Status.MinorIssues }, // Undo It!
                     { 1844442251u, Status.Recommended }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Required    }, // Fine Road Anarchy 2
                     { 802066100u , Status.Compatible  }, // Fine Road Anarchy
@@ -160,6 +171,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Flags = ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1890830956u, Status.MinorIssues }, // Undo It!
                     { 1844442251u, Status.Recommended }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Required    }, // Fine Road Anarchy 2
                     { 802066100u , Status.Compatible  }, // Fine Road Anarchy
@@ -174,11 +186,14 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
+                    { 1890830956u, Status.MinorIssues  }, // Undo It!
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1393797695u, Status.Compatible }, // Touch This! Tool 3
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 787611845u , Status.Recommended  }, // Prop Snapping
                     { 766190099u , Status.Incompatible }, // Move It (original)
@@ -194,6 +209,13 @@ namespace AutoRepair.Catalogs {
                        | Factor.Toolbar, // toolbar altering mods can adversely affect it
                 Authors = "Elektrix",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1844442251u, Status.Compatible }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Compatible }, // Fine Road Anarchy 2
+                    { 1619685021u, Status.Compatible }, // Move It 2.7.0
+                    { 1612012531u, Status.Compatible }, // Net Picker 2.0
+                    { 1393797695u, Status.Compatible }, // Touch This! Tool 3
+                },
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -203,21 +225,27 @@ namespace AutoRepair.Catalogs {
                 Authors = "Quboid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1844440354u, Status.Required    }, // Fine Road Anarchy 2
-                    { 1806963141u, Status.MinorIssues }, // TMPE v11 LABS (issues at junctions)
-                    { 1637663252u, Status.MinorIssues }, // TMPE v11 STABLE (issues at junctions)
+                    { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
+                    { 1806963141u, Status.MinorIssues  }, // TMPE v11 LABS (issues at junctions)
+                    { 1637663252u, Status.MinorIssues  }, // TMPE v11 STABLE (issues at junctions)
+                    { 1957033250u, Status.MinorIssues  }, // TrafficManager Fixed for industry DLC
+                    { 1604291910u, Status.MinorIssues  }, // 498363759 Traffic Manager + Improved AI
+                    { 1546870472u, Status.MinorIssues  }, // TrafficManager Fixed for industry DLC
+                    { 1348361731u, Status.MinorIssues  }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 583429740u , Status.MinorIssues  }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            // Seems possibly broken by Campus update, or NS2... Users reporting it only lays one road.
             AddMod(new Item(1440928803u, "Parallel Road Tool") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "S__T",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1959183067u, Status.Unknown      }, // CSUR Loader
                     { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
-                    { 1758376843u, Status.MinorIssues  }, // Network Skins 2 (Beta)
+                    { 1758376843u, Status.Compatible   }, // Network Skins 2
                     { 1645781000u, Status.Incompatible }, // Elektrix's Road Tools 2.91
                     { 1440928803u, Status.Incompatible }, // Parallel Road Tool (invert flag)
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
@@ -233,12 +261,45 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
             });
 
+            AddMod(new Item(1400711138u, "[BETA] Parallel Road Tool") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "S__T",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1959183067u, Status.Unknown      }, // CSUR Loader
+                    { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
+                    { 1758376843u, Status.Compatible   }, // Network Skins 2
+                    { 1645781000u, Status.Incompatible }, // Elektrix's Road Tools 2.91
+                    { 1440928803u, Status.Incompatible }, // Parallel Road Tool (invert flag)
+                    { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
+                    { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorBugs
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Languages = new[] { "zh-cn", "nl", "en", "fr", "de", "it", "ja", "pt", "ru", "es", },
+                Locale = "en",
+                ReplaceWith = 1440928803u, // Parallel Road Tool
+                SourceURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
+            });
+
             AddMod(new Item(1393797695u, "Touch This! Tool 3") {
                 Affect = Factor.Pathfinder // may chance how pathfinder relates to buildings
                        | Factor.PlaceAndMove
                        | Factor.TransportLines, // can break transport lines
                 Authors = "Klyte45",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1895443005u, Status.Compatible   }, // Fine Road Anarchy 2 汉化版
+                    { 1895440521u, Status.Compatible   }, // Fine Road Tool 2 汉化版
+                    { 1844442251u, Status.Compatible   }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Compatible   }, // Fine Road Anarchy 2
+                    { 1619685021u, Status.Compatible   }, // Move It 2.7.0
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
+                    { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/TouchThisTool",
                 // todo: incompat with older touch tool no longer in workshop
@@ -258,8 +319,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 1844440354u, // Fine Road Anarchy 2
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Compatible   }, // Dynamic Text Props
                     { 1393797695u, Status.Compatible   }, // Touch This Tool
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
@@ -277,8 +338,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 1844442251u, // Fine Road Tool 2.0.3
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Compatible   }, // Dynamic Text Props
                     { 1393797695u, Status.Compatible   }, // Touch This Tool
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
@@ -432,6 +493,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 802066100u, // Fine Road Anarchy
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Incompatible }, // Dynamic Text Props
                     { 1393797695u, Status.Incompatible }, // Touch This Tool
@@ -446,35 +508,13 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1844440354u, // Fine Road Anarchy 2
             });
 
-            // Seems possibly broken by Campus update, or NS2... Users reporting it only lays one road.
-            AddMod(new Item(1400711138u, "[BETA] Parallel Road Tool") {
-                Affect = Factor.PlaceAndMove,
-                Authors = "S__T",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
-                    { 1758376843u, Status.MinorIssues  }, // Network Skins 2 (Beta)
-                    { 1645781000u, Status.Incompatible }, // Elektrix's Road Tools 2.91
-                    { 1440928803u, Status.Incompatible }, // Parallel Road Tool (invert flag)
-                    { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
-                    { 802066100u , Status.Compatible   }, // Fine Road Anarchy
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable,
-                Languages = new[] { "zh-cn", "nl", "en", "fr", "de", "it", "ja", "pt", "ru", "es", },
-                Locale = "en",
-                ReplaceWith = 1440928803u, // Parallel Road Tool
-                SourceURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
-            });
-
             AddMod(new Item(1362508329u, "TC01 - FineRoadAnarchy! (2018)") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Fatih ÇELİK",
                 Catalog = catalog,
                 CloneOf = 802066100u, // Fine Road Anarchy
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Incompatible }, // Dynamic Text Props
                     { 1393797695u, Status.Incompatible }, // Touch This Tool
@@ -526,7 +566,7 @@ namespace AutoRepair.Catalogs {
                     { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
-                    { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
+                    { 1120637951u, Status.Compatible   }, // [OUTDATED] Move It! Extra Filters
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },
                 CompatibleWith = GameVersion.ParkLife,

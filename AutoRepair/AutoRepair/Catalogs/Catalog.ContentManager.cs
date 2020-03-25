@@ -15,7 +15,42 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void ContentManagerCatalog() {
+
             string catalog = "ContentManager";
+
+            // weird mod collection manager
+            AddMod(new Item(1842879635u, "SwitchMAD_light") {
+                Affect = Factor.Other,
+                Authors = "UguuDoki",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
+                    { 1838385855u, Status.Incompatible }, // SwitchMAD
+                    { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
+                    { 1762394554u, Status.Incompatible }, // Wider Options Panel
+                    { 973512634u , Status.Incompatible }, // Sort Mod Settings
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceUnavailable,
+                ReleasedDuring = GameVersion.Campus,
+            });
+
+            // weird mod collection manager
+            AddMod(new Item(1838385855u, "SwitchMAD") {
+                Affect = Factor.Other,
+                Authors = "UguuDoki",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
+                    { 1838385855u, Status.Incompatible }, // SwitchMAD
+                    { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
+                    { 1762394554u, Status.Incompatible }, // Wider Options Panel
+                    { 973512634u , Status.Incompatible }, // Sort Mod Settings
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceUnavailable,
+                ReleasedDuring = GameVersion.Campus,
+            });
 
             // todo: check if source still obfu
             AddMod(new Item(1773106708u, "More Advanced OptionsPanel") {
@@ -23,6 +58,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "Dendraspis",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
+                    { 1838385855u, Status.Incompatible }, // SwitchMAD
                     { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings
@@ -38,6 +75,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "Dendraspis",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
+                    { 1838385855u, Status.Incompatible }, // SwitchMAD
                     { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings
@@ -53,6 +92,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "egi",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
+                    { 1838385855u, Status.Incompatible }, // SwitchMAD
                     { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings

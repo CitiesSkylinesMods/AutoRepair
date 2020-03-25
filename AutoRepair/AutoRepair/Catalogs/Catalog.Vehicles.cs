@@ -26,20 +26,36 @@ namespace AutoRepair.Catalogs {
                 Authors = "dymanoid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1953042839u, Status.Unknown      }, // Unified Railway System
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
                     { 1637663252u, Status.Compatible   }, // TM:PE v11 STABLE
+                    { 1614061108u, Status.Incompatible }, // Real Construction
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1575247594u, Status.Incompatible }, // 576327847 81 Tiles (Fixed for 1
                     { 1560122066u, Status.Incompatible }, // 81MOD
+                    { 1550281302u, Status.Incompatible }, // TransportCapacity
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options (new one; v1.9.0 should fix)
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1361478243u, Status.Incompatible }, // 81 Tiles (prolly a localised version)
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3 
                     { 888017364u , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
                     { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
-                    { 583429740u , Status.Incompatible }, // TM:PE 10.20 and earlier
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 576970398u , Status.MinorIssues  }, // Quartz (former Sapphire) - UI skin framework
                     { 576327847u , Status.Incompatible }, // 81 Tiles (BP version)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 422554572u , Status.Incompatible }, // 81 Tiles (original version)
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (original)
                     { 421770876u , Status.MinorIssues  }, // Sapphire - UI skin framework
+                    { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable
@@ -73,9 +89,14 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1637663252u, Status.Compatible }, // TM:PE V11 STABLE
-                    { 1806963141u, Status.Compatible }, // TM:PE v11 LABS
-                    // incompat with tmpe 10.20 and earlier
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
+                    { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                 },
                 CompatibleWith = GameVersion.Campus,
                 ReleasedDuring = GameVersion.Industries,
@@ -92,15 +113,19 @@ namespace AutoRepair.Catalogs {
                 Authors = "Tim",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1818462177u, Status.Incompatible }, // Vehicle Color Expander
                     { 1764208250u, Status.Compatible   }, // More Vehicles (from v1.9.0 onwards)
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (current stable)
                     { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable
@@ -185,9 +210,12 @@ namespace AutoRepair.Catalogs {
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 CompatibleWith = GameVersion.Industries,
                 Flags = ItemFlags.Abandonware
@@ -210,17 +238,27 @@ namespace AutoRepair.Catalogs {
                 Authors = "bzimage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS (aubergine18)
                     { 1764208250u, Status.Incompatible }, // More Vehicles
                     { 1637663252u, Status.Incompatible }, // TM:PE v11 STABLE (Krzychu1245)
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (current stable)
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 CompatibleWith = GameVersion.GreenCities,
                 Flags = ItemFlags.Abandonware
@@ -242,19 +280,28 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 //CloneOf = ??,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS (aubergine18)
                     { 1764208250u, Status.Incompatible }, // More Vehicles
                     { 1637663252u, Status.Incompatible }, // TM:PE v11 STABLE (Krzychu1245)
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (current stable)
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1412844620u, Status.Incompatible }, // Realistic Walking Speed
                     { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.GameBreaking // Wrong .Net version 4.5 (should be 3.5)
@@ -278,9 +325,12 @@ namespace AutoRepair.Catalogs {
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // Parklife

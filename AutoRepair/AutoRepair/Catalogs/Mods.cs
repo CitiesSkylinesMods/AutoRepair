@@ -54,112 +54,12 @@ namespace AutoRepair {
         }
 
         public void Populate() {
-
-            Add(new Item(2016920607u, "RICO revisited") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 586012417u, Status.Incompatible }, // Ploppable RICO (original)
-                },
-            });
-
-            Add(new Item(2009708489u, "Road Arrows Replacer [Spain]") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 956707300u, Status.Incompatible }, // Remove Street Arrows
-                    //? { _hideIt },
-                    { 2008960441u, Status.Required }, // Spanish Arrow Decals Pack
-                },
-            });
-
-            AddDodgey(2009172305u, "EPTUI TLM Integration (Beta)");
-
-            Add(new Item(1962752152u, "Busstop Prop Remover") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { _hideIt, Status.Incompatible },
-                    { 919020932u, Status.Incompatible }, // Stop Remover
-                    { 545878277u, Status.Incompatible }, // [GBS] German Bus Stop Mod [NC]
-                },
-            });
-
-            Add(new Item(1959342332u, "CSUR ToolBox") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1959183067u, Status.Required }, // CSUR Loader
-                },
-            });
-
-            // Todo - list more assets?
-            Add(new Item(1959183067u, "CSUR Loader") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1959342332u, Status.Required }, // CSUR ToolBox
-                    { 1959210164u, Status.Required }, // CSUR Basic Pack [R1]
-                },
-            });
-
-            Add(1957515502u, "OpenStreetMap Import - generate roads from OSM with street names and road-type selection");
-
-            // todo: probably incompatible with TMPE
-            Add(1953042839u, "Unified Railway System");
-
-            Add(new Item(1938493221u, "Mini FPS Booster") {
-                Flags = ItemFlags.Recommended,
-            });
-
-            Add(1927186256u, "Problem Info");
-
-            // todo: probably incompatible with multiple other district service mods
-            // possibly breaks when used on existing saves
-            Add(new Item(1922400472u, "Enhanced District Services") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/chronofanz/EnhancedDistrictServices",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1721492498u, Status.Recommended }, // Optimised Outside Connections
-                    { 1680840913u, Status.Incompatible }, // More Effective Transfer Manager
-                },
-            });
-
-            AddDodgey(1920431318u, "Biogas-pw"); // dafuq?
-
-            // replaces bus shelters, likely incompat with similar mods
-            Add(1900151000u, "替换为不锈钢公交候车亭");
-
-            // todo: prolly incompat with realtime/realconstruciton mods
-            Add(1899943042u, "No Scaffolding Animation");
-
-            Add(1899449152, "Game Day Timer");
-
             AddDodgey(1891302387u, "自动推土机");
 
             AddDodgey(1891302187u, "自动推土机");
 
-            Add(new Item(1886877404u, "Custom Effect Loader") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1889349343u, Status.Recommended },
-                    { 1886961495u, Status.Recommended },
-                },
-            });
-
-            // likely incompat with Customize It Extended
-            Add(1865667356u, "Twitch Citizens");
-
             // todo: this might be localisation of older mod, not sure
             AddDodgey(1864205702u, "地图图片叠加 Image Overlay");
-
-            Add(1859100867u, "Klyte's Framework 1.1");
-
-            // road editor mod
-            Add(1845697704u, "Network Dump Tools");
-
-            // weird mod collection manager
-            Add(new Item(1842879635u, "SwitchMAD_light") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1838385855u, Status.Incompatible }, // SwitchMAD
-                },
-            });
-
-            // weird mod collection manager
-            Add(new Item(1838385855u, "SwitchMAD") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
-                },
-            });
 
             // todo: incompatible with hardmode vanilla mod
             Add(1830455071u, "EasyMode");
@@ -171,53 +71,7 @@ namespace AutoRepair {
             // todo: requires Industries DLC
             Add(1816571194u, "No Industries Import");
 
-            // Bundle of Chinese localised mods
-            Add(new Item(1812384654u, string.Empty) {
-                Flags = ItemFlags.GameBreaking
-                      | ItemFlags.Abandonware,
-            });
-
-            Add(1801953480u, "Natural Disasters Overhaul");
-
-            Add(1800844556u, "Zone Mixer 0 (Beta)"); // incompat with zone tools?
-
-            Add(new Item(1799667916u, "UX Mod - OSD & Keybinds") {
-                Flags = ItemFlags.Obsolete,
-            });
-
             AddDodgey(1787941751u, "交通"); // "traffic" ?!
-
-            Add(new Item(1782814610u, "Building Variations") {
-            });
-
-            // todo: check if this causes stuck cims
-            Add(new Item(1776052533u, "Stops & Stations") {
-                Flags = ItemFlags.SourceAvailable,
-            });
-
-            // sounds like bit of a nightmare
-            Add(new Item(1769420886u, "Panel Hook (beta) for modders") {
-                Flags = ItemFlags.SourceAvailable,
-            });
-
-            Add(new Item(1768810491u, "Measure It!") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
-            });
-
-            // todo: check if compat with Stops & Stations mod, TM:PE, etc.
-            Add(new Item(1766839841u, "Anxiety Reducer") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1764637396u, "Toggle It!") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
-            });
-
-
 
             // clone of: Extended Public Transport UI (Obsolete)
             Add(new Item(1763358249u, "411164732") {
@@ -243,20 +97,6 @@ namespace AutoRepair {
 
             Add(new Item(1751039059u, "Taxes Helper Mod") {
                 Flags = ItemFlags.SourceAvailable,
-            });
-
-            Add(new Item(1749971558u, "Real Time Offline") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1893036262u, Status.Incompatible }, // Mayor's Dashboard v2 (includes code from Export Electricity)
-                    { 1729576238u, Status.Incompatible }, // Date Changer
-                    { 1420955187u, Status.Incompatible }, // Real Time (original by dymanoid)
-                    { 702070768u , Status.Incompatible }, // Export Electricity
-                    { 649522495u , Status.Incompatible }, // District Service Limit (oriignal)
-                    { 629713122u , Status.Incompatible }, // Climate Control
-                    { 605590542u , Status.Incompatible }, // Rush Hour II
-                },
             });
 
             // todo: prolly incompatible with similar mods
@@ -319,38 +159,8 @@ namespace AutoRepair {
 
             Add(1706704781u, "Remove All Animals");
 
-            Add(new Item(1706703944u, "More Outside Interaction") {
-                Affect = Factor.Employment
-                              | Factor.ServiceLimit,
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/pcfantasy/MoreOutsideInteraction",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1674732053u, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
-                    { 569008960u , Status.Incompatible }, // Employ Overeducated Workers (original)
-                    { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
-                    { 649522495u , Status.Incompatible }, // District Service Limit (original)
-                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
-                    { 1911736890u, Status.Incompatible }, // 1181352643 District Service Limit 3
-                },
-            });
-
             Add(new Item(1689984220u, "Electric Roads Mod 1.2.3") {
                 Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1680840913u, "More Effective Transfer Manager") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/pcfantasy/MoreEffectiveTransfer",
-                Affect = Factor.Employment,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1922400472u, Status.Incompatible }, // Enhanced District Services
-                    { 1911736890u, Status.Incompatible }, // 1181352643 District Service Limit 3
-                    { 1674732053u, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
-                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
-                    { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
-                    { 649522495u , Status.Incompatible }, // District Service Limit (original)
-                    { 569008960u , Status.Incompatible }, // Employ Overeducated Workers (original)
-                },
             });
 
             Add(new Item(1664509314u, "Custom Animation Loader (CAL)") {
@@ -371,15 +181,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1632320836u, "Service Vehicles Manager 2.0.1") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/klyte45/ServiceVehiclesManager",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 934994075u, Status.Incompatible }, // Service Vehicle Selector 2
-                    { 928128676u, Status.Incompatible }, // Improved Public Transport 2
-                },
-            });
-
             Add(new Item(1627469414u, "No Parking") {
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -397,19 +198,6 @@ namespace AutoRepair {
 
             Add(new Item(1614062928u, "Unlock LandScaping") {
                 Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1614061108u, "Real Construction") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1785774902u, Status.Compatible   }, // Transfer Info (beta)
-                    { 1072157697u, Status.Incompatible }, // Cargo Info
-                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
-                    { 1435741602u, Status.Incompatible }, // Snooper
-                    { 1764208250u, Status.Incompatible }, // More Vehicles
-                },
-                Affect = Factor.VehicleLimit,
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/pcfantasy/RealConstruction",
             });
 
             Add(new Item(1603319148u, "576997275 Remove Need For Pipes") {
@@ -744,22 +532,6 @@ namespace AutoRepair {
                 SourceURL = "https://gist.github.com/simon56modder/5fa6c13f751ec97add408ed8c6312ac9",
             });
 
-
-
-            Add(new Item(1312767991u, "Transport Lines Manager 13.1") {
-                Authors = "Klyte45",
-                Flags = ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
-                    { 408760323u , Status.Incompatible }, // Auto Line Color
-                    // incompatible:
-                    // ipt2
-                    // svs - svc vehicle sel
-                    // more vehicles
-                },
-                SourceURL = "https://github.com/klyte45/TransportLinesManager",
-            });
-
             Add(new Item(1312735149u, "Klyte Commons") {
                 Authors = "Klyte45",
                 Flags = ItemFlags.SourceAvailable,
@@ -997,7 +769,7 @@ namespace AutoRepair {
             // Similar thing to Klyte's addresses mod
             Add(new Item(1179846541u, "Rename buildings") {
                 Authors = "Romanoza",
-                Affect = Factor.Addresses,
+                Affect = Factor.Naming,
                 Flags = ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // todo: incompat - klyte addresses, possibly also customize it extended, and custom name lists

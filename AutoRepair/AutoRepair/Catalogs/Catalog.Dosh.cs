@@ -2,6 +2,7 @@ namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Mod(s) which add numbered rectangles.
@@ -13,7 +14,10 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to the list.
         /// </summary>
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void DoshCatalog() {
+
             string catalog = "Dosh";
 
             // todo: conflict with vanilla
@@ -22,13 +26,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "j.a.pasterkamp",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1949192313u, Status.Incompatible }, // UnlimitedMoney
-                    { 1673480325u, Status.Incompatible }, // £5 Million Starting Money
-                    { 1671542319u, Status.Incompatible }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.Incompatible }, // CS-Utils
-                    { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Incompatible }, // 调整金钱
-                    { 409171141u , Status.Incompatible }, // Cash on Demand
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
+                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
+                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+                    { 1367444256u, Status.MinorIssues  }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.MinorIssues  }, // 调整金钱
+                    { 409171141u , Status.MinorIssues  }, // Cash on Demand
+
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -38,9 +44,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "Mister Doctor",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1673480325u, Status.MinorIssues }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.MinorIssues }, // CS-Utils
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
+                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
+                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
                 },
                 ContinuationOf = 1671542319u, // £2.5 Million Starting Money
                 Flags = ItemFlags.SourceUnavailable,
@@ -51,9 +60,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "Mister Doctor",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1673480325u, Status.MinorIssues }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.MinorIssues }, // CS-Utils
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
+                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
+                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -65,9 +77,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "Jay",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
                     { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
                     { 1232451940u, Status.Incompatible }, // 调整金钱
                     { 409171141u , Status.Incompatible }, // Cash on Demand
+
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
                 },
                 ContinuationOf = 409171141u, // Cash on Demand
                 Flags = ItemFlags.SourceUnavailable,
@@ -79,9 +94,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "kartoffelx86",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1673480325u, Status.MinorIssues }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.MinorIssues }, // CS-Utils
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
+                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
+                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -93,9 +111,12 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 409171141u, // Cash on Demand
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
                     { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
                     { 1232451940u, Status.Incompatible }, // 调整金钱
                     { 409171141u , Status.Incompatible }, // Cash on Demand
+
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable
@@ -109,9 +130,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "UndergroundHero",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
                     { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
                     { 1232451940u, Status.Incompatible }, // 调整金钱
                     { 409171141u , Status.Incompatible }, // Cash on Demand
+
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues }, // Unlimited Money (bundled with Cities: Skylines)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,

@@ -2,6 +2,7 @@ namespace AutoRepair.Descriptors {
     using AutoRepair.Enums;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
 
@@ -25,7 +26,7 @@ namespace AutoRepair.Descriptors {
         /// <param name="workshopName">The name of this item as it appears in Steam Workshop.</param>
         public Item(ulong workshopId, string workshopName) {
             if (workshopId == 0 || string.IsNullOrEmpty(workshopName)) {
-                throw new ArgumentNullException("All items must specify both workshop ID and name.");
+                throw new ArgumentNullException($"All items must specify both workshop ID '{workshopId}' and name '{workshopName}'.");
             }
             WorkshopId = workshopId;
             WorkshopName = workshopName;
@@ -166,6 +167,14 @@ namespace AutoRepair.Descriptors {
         public string WorkshopName { get; set; }
 
         /// <summary>
+        /// Returns a string representation of the item.
+        /// </summary>
+        /// <returns>String representation.</returns>
+        public override string ToString() {
+            return $"{WorkshopId} <{Catalog}> \"{WorkshopName}\"";
+        }
+
+        /// <summary>
         /// Determines if the item is compatible with the specified <paramref name="workshopId"/>.
         /// </summary>
         /// 
@@ -190,18 +199,15 @@ namespace AutoRepair.Descriptors {
         /// <summary>
         /// Performs basic validation of the item itself, without checking external data.
         /// </summary>
-        /// 
-        /// <returns>Returns <c>true</c> if valid, otherwise <c>false</c>.</returns>
-        public bool Validate() {
+        [Conditional("DEBUG")]
+        public void Validate() {
             bool problems = false;
 
             StringBuilder log = new StringBuilder(1000);
 
             log.AppendFormat(
-                "\n{0} <{1}> \"{2}\":\n",
-                WorkshopId,
-                Catalog,
-                WorkshopName);
+                "\n{0}:\n",
+                ToString());
 
             // item type should always be set (check just in case)
             if (ItemType == ItemTypes.None) {
@@ -340,9 +346,6 @@ namespace AutoRepair.Descriptors {
             if (problems) {
                 Log.Info(log.ToString());
             }
-
-            return problems;
         }
-
     }
 }

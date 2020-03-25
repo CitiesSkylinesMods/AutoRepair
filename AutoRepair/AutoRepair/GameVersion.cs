@@ -9,6 +9,11 @@ namespace AutoRepair {
         // date format: yyyy-mm-dd
 
         /// <summary>
+        /// Gets the active game version (Major, minor, patch).
+        /// </summary>
+        public static Version Active => GetGameVersion();
+
+        /// <summary>
         /// 2015-03-10 Release version. Used as default for all items.
         /// </summary>
         public static readonly Version DefaultRelease = new Version(0, 0, 0);
@@ -92,5 +97,17 @@ namespace AutoRepair {
         /// 2020-03-26 Sunset Harbor expansion.
         /// </summary>
         public static readonly Version SunsetHarbor = new Version(1, 13, 0);
+
+        /// <summary>
+        /// Returns the game version as a <see cref="Version"/> instance.
+        /// </summary>
+        /// 
+        /// <returns>Game version.</returns>
+        public static Version GetGameVersion() {
+            return new Version(
+                Convert.ToInt32(BuildConfig.APPLICATION_VERSION_A),
+                Convert.ToInt32(BuildConfig.APPLICATION_VERSION_B),
+                Convert.ToInt32(BuildConfig.APPLICATION_VERSION_C));
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace AutoRepair.Catalogs {
             string catalog = "Multiplayer";
 
             Dictionary<ulong, Status> incompatibleMods = new Dictionary<ulong, Status>() {
+                { 2030131871u, Status.Incompatible }, // CSM
                 { 2027716634u, Status.Incompatible }, // CitiesSkylinesMultiplayer_2002.2.0
                 { 2021598295u, Status.Incompatible }, // 1558438291 [Beta] CSM - Cities_ Skylines Multiplayer
                 { 2000408250u, Status.Incompatible }, // CSM
@@ -29,6 +30,9 @@ namespace AutoRepair.Catalogs {
                 { 1556669944u, Status.Incompatible }, // CSM
             };
 
+            // This seems to be the current "official" version
+            // although there are several versions released after it.
+            // Strangely, none of the uploaders are very talkative
             AddMod(new Item(1558438291u, "Cities: Skylines Multiplayer (CSM) [Beta]") {
                 Affect = Factor.Multiplayer,
                 Authors = "xylisn",
@@ -47,6 +51,20 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
+
+            // looks like yet another clone, waiting for feedback from author
+            AddMod(new Item(2030131871u, "CSM") {
+                Affect = Factor.Multiplayer,
+                Authors = "wihtewolf1712",
+                Catalog = catalog,
+                CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Compatibility = incompatibleMods,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.MinorBugs
+                      | ItemFlags.SourceUnavailable,
+                ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+            });
 
             // waiting for response from author, currently assuming _yet another clone_
             AddMod(new Item(2027716634u, "CitiesSkylinesMultiplayer_2002.2.0") {

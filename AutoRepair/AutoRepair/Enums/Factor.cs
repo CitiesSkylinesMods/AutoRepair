@@ -26,11 +26,6 @@ namespace AutoRepair.Enums {
         Achievements = 1UL << 1,
 
         /// <summary>
-        /// Addresses (names) of road, building or transport stop.
-        /// </summary>
-        Addresses = 1UL << 2,
-
-        /// <summary>
         /// Citizen aging.
         /// </summary>
         Aging = 1UL << 3,
@@ -189,6 +184,11 @@ namespace AutoRepair.Enums {
         /// Conflicts with Cities Skylines Multiplayer (CSM) mod
         /// </summary>
         Multiplayer = 1UL << 33,
+
+        /// <summary>
+        /// Changes or affects names of roads, buildings, districts, cims, vehicles, etc.
+        /// </summary>
+        Naming = 1UL << 2,
 
         /// <summary>
         /// Mods which alter outside connections (max connections, network types, etc).

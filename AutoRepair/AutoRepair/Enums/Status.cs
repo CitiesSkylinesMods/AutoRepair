@@ -8,33 +8,38 @@ namespace AutoRepair.Enums {
     public enum Status {
 
         /// <summary>
+        /// Not defined; likely a mistake.
+        /// </summary>
+        None = 0,
+
+        /// <summary>
         /// Compatibility not yet determined.
         /// </summary>
-        Unknown = 0,
+        Unknown = 1,
 
         /// <summary>
         /// There are serious issues (often game-breaking) when the items are used together.
         /// </summary>
-        Incompatible = 1,
+        Incompatible = 2,
 
         /// <summary>
         /// There are minor (not game breaking) issues when the items used together.
         /// </summary>
-        MinorIssues = 2,
+        MinorIssues = 4,
 
         /// <summary>
         /// The items are compatible with each other.
         /// </summary>
-        Compatible = 4,
+        Compatible = 8,
 
         /// <summary>
         /// The items are compatible and it is recommended to use them together.
         /// </summary>
-        Recommended = 8,
+        Recommended = 16,
 
         /// <summary>
         /// The items are compatible and must be used together (eg. mod dependencies).
         /// </summary>
-        Required = 16,
+        Required = 32,
     }
 }

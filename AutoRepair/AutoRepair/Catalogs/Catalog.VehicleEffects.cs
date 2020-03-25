@@ -78,6 +78,7 @@ namespace AutoRepair.Catalogs {
                     { 780720853u , Status.Required     }, // Vehicle Effects
                     { 818641631u , Status.Recommended  }, // Ambient Sounds Tuner 2.0
                     { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",

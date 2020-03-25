@@ -29,6 +29,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 2025147082u, Status.Recommended  }, // Realistic Population revisited
+                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
                     //Randomize Age Cim Move In (incompat)
                     //Lifespan Changer (incompat)
@@ -59,8 +60,13 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2027161563u, Status.Recommended  }, // Lifecycle Rebalance Revisited
                     { 2016920607u, Status.Compatible   }, // Ploppable RICO revisited
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption (WG)
+                    { 410344523u , Status.Incompatible }, // PopBalanceMod
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 ContinuationOf = 426163185u, // Realistic Population and Consumption (WG)
                 Flags = ItemFlags.SourceUnavailable,
@@ -80,8 +86,10 @@ namespace AutoRepair.Catalogs {
                 Authors = "C#",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1865667356u, Status.Unknown      }, // Twitch Citizens
                     { 1562650024u, Status.Compatible   }, // Rebalanced Industries
                     { 1369729955u, Status.Incompatible }, // Customize It (original mod)
+                    { 946550801u , Status.Incompatible }, // Park Rebalance
                 },
                 ContinuationOf = 1369729955u, // Customize It (original mod)
                 Flags = ItemFlags.SourceAvailable,
@@ -134,7 +142,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "Quboid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806759255u, Status.Compatible }, // Customize It Extended
+                    { 1806759255u, Status.Compatible   }, // Customize It Extended
+                    { 1553517176u, Status.Incompatible }, // Specialized Industry Fix Redux
                     { 1369729955u, Status.Incompatible }, // Customize It!
                 },
                 Flags = ItemFlags.SourceAvailable,
@@ -150,6 +159,7 @@ namespace AutoRepair.Catalogs {
                 Authors = " Flexible Games",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 938049744u, Status.Incompatible }, // Proper Hardness Fixed
                     { 410344523u, Status.Incompatible }, // PopBalanceMod
                     { 408706691u, Status.Incompatible }, // Proper Hardness
                     { 411190402u, Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
@@ -162,6 +172,9 @@ namespace AutoRepair.Catalogs {
                        | Factor.Immigrants,
                 Authors = "μohnytoxic™",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+                },
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -169,6 +182,10 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Velocity,
                 Authors = "egi",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1749971558u, Status.Compatible   }, // Real Time Offline
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RealisticWalkingSpeed",
             });
@@ -181,6 +198,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 602336261u, Status.Incompatible }, // Maintenance Fees
+
+                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
                 ContinuationOf = 602336261u, // Maintenance Fees
                 Flags = ItemFlags.SourceAvailable,
@@ -228,8 +247,12 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607u, Status.Incompatible }, // Ploppable RICO revisited
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
@@ -278,6 +301,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "Derangedteddy",
                 BrokenBy = GameVersion.Industries,
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+                },
                 CompatibleWith = GameVersion.ParkLife,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // Industries DLC
@@ -299,10 +325,13 @@ namespace AutoRepair.Catalogs {
                        | Factor.ServiceLimit
                        | Factor.StorageCapacity,
                 Authors = "TPB",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1865667356u, Status.Unknown      }, // Twitch Citizens
                     { 1806759255u, Status.Incompatible }, // Customize It Extended
-                    { 946550801u , Status.Incompatible}, // Park Rebalance
+                    { 1562650024u, Status.Incompatible }, // Rebalanced Industries
+                    { 946550801u , Status.Incompatible }, // Park Rebalance
                 },
                 Flags = ItemFlags.Obsolete // new version avail
                       | ItemFlags.SourceAvailable,
@@ -318,16 +347,17 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 409070739u, // Very Slow Citizen Aging
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1420955187u, Status.MinorIssues }, // Real Time (by dymanoid)
-                    { 654707599u, Status.Incompatible }, // Citizen Lifecycle Rebalance
-                    { 643642403u, Status.Incompatible }, // Lifespan multiplier v1.1
-                    { 573925048u, Status.Incompatible }, // Lifespan Changer
-                    { 571655171u, Status.Incompatible }, // Randomize Age Cims Move in
-                    { 541673195u, Status.Incompatible }, // Resident Travel Rebalance v1.1:
-                    { 421188880u, Status.Incompatible }, // [ARIS] Early Death
-                    { 409071509u, Status.Incompatible }, // Slow Citizen Aging Configurable
-                    { 409070739u, Status.Incompatible }, // Very Slow Citizen Aging
-                    { 409070218u, Status.Incompatible }, // Slow Citizen Aging
+                    { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 654707599u , Status.Incompatible }, // Citizen Lifecycle Rebalance
+                    { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
+                    { 573925048u , Status.Incompatible }, // Lifespan Changer
+                    { 571655171u , Status.Incompatible }, // Randomize Age Cims Move in
+                    { 541673195u , Status.Incompatible }, // Resident Travel Rebalance v1.1:
+                    { 421188880u , Status.Incompatible }, // [ARIS] Early Death
+                    { 409071509u , Status.Incompatible }, // Slow Citizen Aging Configurable
+                    { 409070739u , Status.Incompatible }, // Very Slow Citizen Aging
+                    { 409070218u , Status.Incompatible }, // Slow Citizen Aging
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -371,6 +401,12 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // incompat: Infinite Goods by Googen
+                    { 1614061108u, Status.Incompatible }, // Real Construction
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+
+                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
                 CompatibleWith = GameVersion.Industries,
                 Flags = ItemFlags.BrokenByUpdate // some time around May 2019
@@ -427,7 +463,22 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.ParkLife,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 408706691u, Status.Incompatible }, // Proper Hardness
+                    { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1776052533u, Status.Incompatible }, // Stops & Stations
+                    { 1766839841u, Status.Incompatible }, // Anxiety Reducer
+                    { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1614061108u, Status.Incompatible }, // Real Construction
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 410344523u , Status.Incompatible }, // PopBalanceMod
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+
+                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
                 CompatibleWith = GameVersion.GreenCities,
                 // note: if there is a knighthawkGP version, then it's continuation of that instead
@@ -450,16 +501,20 @@ namespace AutoRepair.Catalogs {
                 Authors = "Whitefang Greytail",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1420955187u, Status.MinorIssues }, // Real Time (by dymanoid)
+                    { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
+                    { 1765325082u, Status.Incompatible }, // Customizable Education
+                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
+                    { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
                     //Randomize Age Cim Move In (incompat)
                     //Lifespan Changer (incompat)
                     //Slow Citizen Aging (incompat)
                     //Very Slow Citizen Aging (incompat)
                     //[ARIS] Early Death (incompat)
-                    { 654707599u, Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
-                    { 643642403u, Status.Incompatible }, // Lifespan multiplier v1.1
-                    { 541673195u, Status.Incompatible }, // Resident Travel Rebalance v1.1
-                    { 409071509u, Status.Incompatible }, // Slow Citizen Aging Configurable
+                    { 654707599u , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
+                    { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
+                    { 541673195u , Status.Incompatible }, // Resident Travel Rebalance v1.1
+                    { 409071509u , Status.Incompatible }, // Slow Citizen Aging Configurable
                 },
                 ContinuationOf = 643642403u, // Lifespan multiplier v1.1
                 Flags = ItemFlags.Abandonware
@@ -475,13 +530,16 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // early death mods (incompat)
-                    { 1420955187u, Status.MinorIssues }, // Real Time (by dymanoid)
+                    { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
+                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
+                    { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
                     { 654707599u , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
                     { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
                     { 573925048u , Status.Incompatible }, // Lifespan Changer
                     { 571655171u , Status.Incompatible }, // Randomize Age Cims Move in
                     { 541673195u , Status.Incompatible }, // Resident Travel Rebalance v1.1
-                    { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 421188880u , Status.Incompatible }, // [ARIS] Early Death
                     { 409071509u , Status.Incompatible }, // Slow Citizen Aging Configurable
                     { 409070739u , Status.Incompatible }, // Very Slow Citizen Aging
@@ -521,8 +579,13 @@ namespace AutoRepair.Catalogs {
                 Authors = "Whitefang Greytail",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 426163185u, Status.Recommended }, // Realistic Population and Consumption Mod v8.4.0
-                    { 654707599u, Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
+                    { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
+                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
+                    { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
+                    { 654707599u , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
+                    { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
+                    { 426163185u , Status.Recommended  }, // Realistic Population and Consumption Mod v8.4.0
+                    { 409071509u , Status.Incompatible }, // Slow Citizen Aging Configurable
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
@@ -548,11 +611,15 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607u, Status.Compatible   }, // RICO revisited
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1204126182u, Status.Compatible   }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
-                    { 938049744u, Status.Incompatible }, // Proper Hardness Fixed
-                    { 541673195u, Status.Compatible }, // Resident Travel Rebalance v1.1
-                    { 410344523u, Status.Incompatible }, // PopBalanceMod
-                    { 408706691u, Status.Incompatible }, // Proper Hardness
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
+                    { 541673195u , Status.Compatible   }, // Resident Travel Rebalance v1.1
+                    { 410344523u , Status.Incompatible }, // PopBalanceMod
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
                     // INCOMPATIBLE:
                     // Building Simulation Overhaul
                     // Enhanced Building Capacity
@@ -578,6 +645,7 @@ namespace AutoRepair.Catalogs {
                     // Building Simulation Overhaul
                     // Fire Spread (?!!)
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 408706691u , Status.Incompatible }, // Proper Hardness
@@ -610,16 +678,19 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.Snowfall,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1420955187u, Status.MinorIssues }, // Real Time (by dymanoid)
-                    { 654707599u, Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
-                    { 643642403u, Status.Incompatible }, // Lifespan multiplier v1.1
-                    { 573925048u, Status.Incompatible }, // Lifespan Changer
-                    { 571655171u, Status.Incompatible }, // Randomize Age Cims Move in
-                    { 541673195u, Status.Incompatible }, // Resident Travel Rebalance v1.1:
-                    { 421188880u, Status.Incompatible }, // [ARIS] Early Death
-                    { 409071509u, Status.Incompatible }, // Slow Citizen Aging Configurable
-                    { 409070739u, Status.Incompatible }, // Very Slow Citizen Aging
-                    { 409070218u, Status.Incompatible }, // Slow Citizen Aging
+                    { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
+                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
+                    { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
+                    { 654707599u , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
+                    { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
+                    { 573925048u , Status.Incompatible }, // Lifespan Changer
+                    { 571655171u , Status.Incompatible }, // Randomize Age Cims Move in
+                    { 541673195u , Status.Incompatible }, // Resident Travel Rebalance v1.1:
+                    { 421188880u , Status.Incompatible }, // [ARIS] Early Death
+                    { 409071509u , Status.Incompatible }, // Slow Citizen Aging Configurable
+                    { 409070739u , Status.Incompatible }, // Very Slow Citizen Aging
+                    { 409070218u , Status.Incompatible }, // Slow Citizen Aging
                 },
                 CompatibleWith = GameVersion.AfterDark,
                 Flags = ItemFlags.Abandonware
@@ -663,10 +734,21 @@ namespace AutoRepair.Catalogs {
                     // incompat with all extended building info
                     // incompat with t++ & likely other traffic mods
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1776052533u, Status.Incompatible }, // Stops & Stations
+                    { 1766839841u, Status.Incompatible }, // Anxiety Reducer
+                    { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1614061108u, Status.Incompatible }, // Real Construction
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
+
+                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
                 CompatibleWith = GameVersion.EuropeBuildings,
                 Flags = ItemFlags.Abandonware

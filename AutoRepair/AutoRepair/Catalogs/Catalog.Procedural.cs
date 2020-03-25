@@ -25,6 +25,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // todo: old Fine Road mods not compatible
+                    { 1895443005u, Status.Compatible   }, // Fine Road Anarchy 2 汉化版
+                    { 1895440521u, Status.Compatible }, // Fine Road Tool 2 汉化版
                     { 1844442251u, Status.Recommended  }, // Fine Road Tool 2
                     { 1844440354u, Status.Recommended  }, // Fine Road Anarchy 2
                     { 1840448750u, Status.Incompatible }, // FineRoadTool 汉化版
@@ -92,7 +94,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "Simon Ryr",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1442713872u, Status.MinorIssues }, // Detail http://proceduralobjects.shoutwiki.com/wiki/Known_Issues
+                    { 2033714682u, Status.Compatible   }, // Tree and Vehicle Props
+                    { 1442713872u, Status.MinorIssues  }, // Detail http://proceduralobjects.shoutwiki.com/wiki/Known_Issues
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable,

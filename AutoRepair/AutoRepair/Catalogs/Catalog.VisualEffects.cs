@@ -17,18 +17,34 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
         private void VisualEffectsCatalog() {
+
             string catalog = "VisualEffects";
 
-            AddMod(new Item(1980656676u, "MARS Sky - Cubemap Replacer Pack") {
-                Affect = Factor.Environment,
-                Authors = "citywokcitywall",
+            /*
+            # ███    ███  ██████  ██████  ███████
+            # ████  ████ ██    ██ ██   ██ ██
+            # ██ ████ ██ ██    ██ ██   ██ ███████
+            # ██  ██  ██ ██    ██ ██   ██      ██
+            # ██      ██  ██████  ██████  ███████
+            */
+
+            AddMod(new Item(1886877404u, "Custom Effect Loader") {
+                Affect = Factor.Rendering
+                       | Factor.Textures,
+                Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1183931915u, Status.Required    }, // Cubemap Replacer
+                    { 1889349343u, Status.Recommended },
+                    { 1886961495u, Status.Recommended },
+                    // If active, some vehicles will get hard-dependency for Custom Effect Loader:
+                    { 800820816u , Status.MinorIssues }, // Extended Asset Editor
                 },
-                Flags = ItemFlags.LargeFileWarning
-                      | ItemFlags.SourceUnavailable,
-                Tags = new[] { "Cubemap", "4K", "Sky", "Mars", "Environment" },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.EditorMod // assets created with it require it
+                      | ItemFlags.MinorBugs // can become hard dependency for vehicle assets if Extended Asset Editor active
+                      | ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.Campus,
+                SourceURL = "https://github.com/boformer/CustomEffectLoader",
             });
 
             AddMod(new Item(1883101331u, "Persistent Fog Adjuster") {
@@ -58,19 +74,6 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-RenderIt",
                 Tags = new[] { "Effects", "Visual", "Graphics", "Eyecandy" },
-            });
-
-            AddMod(new Item(1771841274u, "HDRI Haven Cubemap Pack 2") {
-                Affect = Factor.Environment,
-                Authors = "Ronyx69",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1183931915u, Status.Required }, // Cubemap replacer
-                },
-                Flags = ItemFlags.LargeFileWarning
-                      | ItemFlags.SourceAvailable,
-                SourceURL = "https://hdrihaven.com/",
-                Tags = new[] { "Cubemap", "2K", "Sky", "Earth", "Day", "Sunny", "Dusk", "Night", "Sunset", "Weather", "Environment" },
             });
 
             // todo: check if source still obfu
@@ -108,6 +111,129 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "LODs", "Detail", "Graphics", "Eyecandy", "Trees", "Props", "Buildings", "Networks", "Decals" },
             });
 
+            // Some Daylight Classic settings conflict with Relight
+            // Game engine issues: Shadow acne vs. Shadow detachment
+            AddMod(new Item(1209581656u, "Relight") {
+                Affect = Factor.Environment
+                       | Factor.Rendering,
+                Authors = "Ronyx69, TPB, Simon Ryr",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1889738001u, Status.Recommended  }, // Real Neutral LUT - for Relight, Daylight Classic and Vanilla
+                    { 1539183804u, Status.Recommended  }, // Testing LUTs (for asset creators)
+                    { 1539181199u, Status.Recommended  }, // More Relight LUTs
+                    { 1414802020u, Status.Recommended  }, // Color & Material Test Charts
+                    { 1122189715u, Status.Recommended  }, // Realtime (for asset creators)
+                    { 762520291u , Status.Recommended  }, // Shadow Strength Adjuster
+                    { 672248733u , Status.Recommended  }, // Ultimate Eye Candy
+                    { 643364914u , Status.Incompatible }, // Softer Shadows
+                    { 530871278u , Status.MinorIssues  }, // Daylight Classic
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://gist.github.com/ronyx69/a75400389e7561164bacabadf0095a2b",
+                Tags = new[] { "Render", "Lighting", "Eyecandy", "Brightness", "Gamma", "Contrast", "Temperature", "Tint", "Sun", "Sky", "Moon", "Tonemapping" },
+            });
+
+            AddMod(new Item(1183931915u, "Cubemap Replacer") {
+                Affect = Factor.Environment
+                       | Factor.Rendering,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1209581656u, Status.Recommended }, // Relight
+                    { 1183931915u, Status.Compatible  }, // Cubemap Replacer
+                    { 1138510774u, Status.Required    }, // PostProcessFX - Multi-platform
+                    { 530871278u , Status.Required    }, // Daylight classic (classic fog efffect option must be enabled)
+                    { 412146081u , Status.Compatible  }, // PostProcessFX v1.9.0
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/bloodypenguin/Skylines-CubemapReplacer",
+                Tags = new[] { "Cubemap", "Sky", "Environment", "Stars", "Clouds" },
+            });
+
+            // Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2
+            AddMod(new Item(1138510774u, "PostProcessFX - Multi-platform") {
+                Affect = Factor.Rendering,
+                Authors = "cor3ntin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
+                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
+                    // recommend: dynamic resolution
+                    // recommend: sun shafts
+                },
+                ContinuationOf = 412146081u, // PostProcessFX v1.9.0
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorBugs // some users have problems opening GUI
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable, // some users say it stopped working
+                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "TAA", "Ambient Occlusion", "Grain", "Sun shafts" },
+            });
+
+            // Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2
+            AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
+                Affect = Factor.Rendering,
+                Authors = "MazK",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
+                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
+                    // recommend: dynamic resolution
+                    // recommend: sun shafts
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Obsolete // newer version available: 1138510774u
+                      | ItemFlags.MinorBugs // some users have problems displaying the GUI
+                      | ItemFlags.SourceUnavailable,
+                ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
+                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
+            });
+
+            /*
+            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
+            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
+            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
+            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
+            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
+            */
+
+            /*
+            # ██████   █████   ██████ ██   ██ ███████
+            # ██   ██ ██   ██ ██      ██  ██  ██
+            # ██████  ███████ ██      █████   ███████
+            # ██      ██   ██ ██      ██  ██       ██
+            # ██      ██   ██  ██████ ██   ██ ███████
+            */
+
+            AddMod(new Item(1980656676u, "MARS Sky - Cubemap Replacer Pack") {
+                Affect = Factor.Environment,
+                Authors = "citywokcitywall",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1183931915u, Status.Required    }, // Cubemap Replacer
+                },
+                Flags = ItemFlags.LargeFileWarning
+                      | ItemFlags.SourceUnavailable,
+                Tags = new[] { "Cubemap", "4K", "Sky", "Mars", "Environment" },
+            });
+
+            AddMod(new Item(1771841274u, "HDRI Haven Cubemap Pack 2") {
+                Affect = Factor.Environment,
+                Authors = "Ronyx69",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1183931915u, Status.Required }, // Cubemap replacer
+                },
+                Flags = ItemFlags.LargeFileWarning
+                      | ItemFlags.SourceAvailable,
+                SourceURL = "https://hdrihaven.com/",
+                Tags = new[] { "Cubemap", "2K", "Sky", "Earth", "Day", "Sunny", "Dusk", "Night", "Sunset", "Weather", "Environment" },
+            });
+
             AddMod(new Item(1591584836u, "HDRI 2K Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "Sparks",
@@ -133,29 +259,6 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "1K", "Sky", "Earth", "Sunset", "Weather", "Environment" },
             });
 
-            // Some Daylight Classic settings conflict with Relight
-            // Game engine issues: Shadow acne vs. Shadow detachment
-            AddMod(new Item(1209581656u, "Relight") {
-                Affect = Factor.Environment
-                       | Factor.Rendering,
-                Authors = "Ronyx69, TPB, Simon Ryr",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1889738001u, Status.Recommended  }, // Real Neutral LUT - for Relight, Daylight Classic and Vanilla
-                    { 1539183804u, Status.Recommended  }, // Testing LUTs (for asset creators)
-                    { 1539181199u, Status.Recommended  }, // More Relight LUTs
-                    { 1414802020u, Status.Recommended  }, // Color & Material Test Charts
-                    { 1122189715u, Status.Recommended  }, // Realtime (for asset creators)
-                    { 762520291u , Status.Recommended  }, // Shadow Strength Adjuster
-                    { 672248733u , Status.Recommended  }, // Ultimate Eye Candy
-                    { 643364914u , Status.Incompatible }, // Softer Shadows
-                    { 530871278u , Status.MinorIssues  }, // Daylight Classic
-                },
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/ronyx69/a75400389e7561164bacabadf0095a2b",
-                Tags = new[] { "Render", "Lighting", "Eyecandy", "Brightness", "Gamma", "Contrast", "Temperature", "Tint", "Sun", "Sky", "Moon", "Tonemapping" },
-            });
-
             AddMod(new Item(1186800787u, "Pastel Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "BloodyPenguin",
@@ -166,62 +269,6 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://imgur.com/a/WSGJ5",
                 Tags = new[] { "Cubemap", "1K", "Sky", "Earth", "Sunset", "Weather", "Environment" },
-            });
-
-            AddMod(new Item(1183931915u, "Cubemap Replacer") {
-                Affect = Factor.Environment
-                       | Factor.Rendering,
-                Authors = "BloodyPenguin",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1209581656u, Status.Recommended }, // Relight
-                    { 530871278u , Status.Required    }, // Daylight classic (classic fog efffect option must be enabled)
-                    { 1138510774u, Status.Required    }, // PostProcessFX - Multi-platform
-                    { 412146081u , Status.Compatible  }, // PostProcessFX v1.9.0
-                },
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/bloodypenguin/Skylines-CubemapReplacer",
-                Tags = new[] { "Cubemap", "Sky", "Environment", "Stars", "Clouds" },
-            });
-
-            // Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2
-            AddMod(new Item(1138510774u, "PostProcessFX - Multi-platform") {
-                Affect = Factor.Rendering,
-                Authors = "cor3ntin",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    // recommend: dynamic resolution
-                    // recommend: sun shafts
-                },
-                ContinuationOf = 412146081u, // PostProcessFX v1.9.0
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // some users have problems opening GUI
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Unreliable, // some users say it stopped working
-                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "TAA", "Ambient Occlusion", "Grain", "Sun shafts" },
-            });
-
-            // Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2
-            AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
-                Affect = Factor.Rendering,
-                Authors = "MazK",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    // recommend: dynamic resolution
-                    // recommend: sun shafts
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.Obsolete // newer version available: 1138510774u
-                      | ItemFlags.MinorBugs // some users have problems displaying the GUI
-                      | ItemFlags.SourceUnavailable,
-                ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
-                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
             });
         }
     }

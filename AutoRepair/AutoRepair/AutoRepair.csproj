@@ -36,13 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Catalogs\Vanilla.cs" />
     <Compile Include="Catalogs\Catalog.Achievements.cs" />
     <Compile Include="Catalogs\Catalog.AudioEffects.cs" />
     <Compile Include="Catalogs\Catalog.BuildingLevel.cs" />
     <Compile Include="Catalogs\Catalog.ContentManager.cs" />
     <Compile Include="Catalogs\Catalog.Emptying.cs" />
     <Compile Include="Catalogs\Catalog.Hide.cs" />
+    <Compile Include="Catalogs\Catalog.PublicTransport.cs" />
     <Compile Include="Catalogs\Catalog.Skycloth.cs" />
+    <Compile Include="Catalogs\Catalog.Unsorted.cs" />
+    <Compile Include="Catalogs\Catalog.Vanilla.cs" />
     <Compile Include="Catalogs\Catalog.Vehicles.cs" />
     <Compile Include="Catalogs\Catalog.VisualEffects.cs" />
     <Compile Include="Catalogs\Catalog.PlaceAndMove.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Catalogs\Mods.cs" />
     <Compile Include="Catalogs\Roads.cs" />
     <Compile Include="Enums\Status.cs" />
+    <Compile Include="Catalogs\Catalog.Addendum.cs" />
     <Compile Include="GameVersion.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Temp.cs" />

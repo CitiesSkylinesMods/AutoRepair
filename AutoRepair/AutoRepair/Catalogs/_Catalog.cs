@@ -2,6 +2,7 @@ namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Text;
 
     /// <summary>
@@ -21,16 +22,50 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         public Catalog() {
             Items = new Dictionary<ulong, Item>();
-
             AddCatalogs();
-
             Validate();
+            LogTally();
         }
 
         /// <summary>
         /// Gets the list of workshop items, keyed by Steam Workshop ID.
         /// </summary>
         public Dictionary<ulong, Item> Items { get; private set; }
+
+        public Dictionary<Status, int> Tally = new Dictionary<Status, int>() {
+            { Status.Unknown     , 0 },
+            { Status.Incompatible, 0 },
+            { Status.MinorIssues , 0 },
+            { Status.Compatible  , 0 },
+            { Status.Recommended , 0 },
+            { Status.Required    , 0 },
+        };
+
+        private readonly Dictionary<Status, Status> ValidReciprocalsFor = new Dictionary<Status, Status>() {
+            { Status.Unknown     , Status.Unknown },
+            { Status.Incompatible, Status.Incompatible },
+            { Status.MinorIssues , Status.MinorIssues },
+            { Status.Compatible  , Status.Compatible | Status.Recommended | Status.Required },
+            { Status.Recommended , Status.Compatible | Status.Recommended | Status.Required },
+            { Status.Required    , Status.Compatible | Status.Recommended },
+        };
+
+        [Conditional("DEBUG")]
+        private void LogTally() {
+
+            StringBuilder log = new StringBuilder(500);
+
+            log.Append("\nSTATS:\n");
+
+            foreach (KeyValuePair<Status, int> stat in Tally) {
+                log.AppendFormat(
+                    "{0} x {1}\n",
+                    stat.Value,
+                    stat.Key);
+            }
+
+            Log.Info(log.ToString());
+        }
 
         /// <summary>
         /// Adds a mod item to the list.
@@ -43,7 +78,7 @@ namespace AutoRepair.Catalogs {
             item.ItemType = ItemTypes.Mod;
 
             if (Items.ContainsKey(item.WorkshopId)) {
-                Log.Info($"# ERROR: Item {item.WorkshopId} <{item.Catalog}> {item.WorkshopName} already in Items list!");
+                Log.Info($"### ERROR: {item} already in Items list!");
                 return item;
             }
 
@@ -65,7 +100,7 @@ namespace AutoRepair.Catalogs {
             item.ItemType = ItemTypes.Asset;
 
             if (Items.ContainsKey(item.WorkshopId)) {
-                Log.Info($"# ERROR: Item {item.WorkshopId} <{item.Catalog}> {item.WorkshopName} already in Items list!");
+                Log.Info($"### ERROR: {item} already in Items list!");
                 return item;
             }
 
@@ -77,6 +112,9 @@ namespace AutoRepair.Catalogs {
         }
 
         private void AddCatalogs() {
+            VanillaCatalog(); // mods bundled with base game
+            UnsortedCatalog(); // currently uncategorised items
+
             AchievementsCatalog();
             AudioEffectsCatalog();
             BalanceCatalog();
@@ -96,6 +134,7 @@ namespace AutoRepair.Catalogs {
             PaintCatalog();
             PlaceAndMoveCatalog();
             ProceduralCatalog();
+            PublicTransportCatalog();
             RepairCatalog();
             SkyclothCatalog();
             ToolbarCatalog();
@@ -104,12 +143,15 @@ namespace AutoRepair.Catalogs {
             VehicleEffectsCatalog();
             VehiclesCatalog();
             VisualEffectsCatalog();
+
+            CatalogAddendum(); // items affected by recent update
         }
 
         /// <summary>
         /// Validates the items that have been added to catalog to check if thier
         /// references to other items are listed and, if applicable, reciprocated.
         /// </summary>
+        [Conditional("DEBUG")]
         private void Validate() {
 
             bool problems = false;
@@ -135,12 +177,7 @@ namespace AutoRepair.Catalogs {
                 if (itemProblems) {
                     problems = true;
 
-                    log.AppendFormat(
-                        "\n{0} <{1}> \"{2}\":\n{3}",
-                        item.WorkshopId,
-                        item.Catalog,
-                        item.WorkshopName,
-                        itemLog);
+                    log.AppendFormat("\n{0}:\n{1}", item, itemLog);
                 }
             }
 
@@ -211,49 +248,58 @@ namespace AutoRepair.Catalogs {
                 ulong targetId = reference.Key;
                 Status targetStatus = reference.Value;
 
+                if (targetStatus == Status.None) {
+                    compatProblems = true;
+                    itemLog.AppendFormat("- ### Invalid status for: Compatibility[{0}]\n", targetId);
+                    continue;
+                }
+
+                if (targetId == item.WorkshopId) {
+                    continue;
+                }
+
+                Tally[targetStatus] += 1;
+
                 if (Items.TryGetValue(targetId, out var target)) {
 
-                    // we can skip reciprocal checks for required/recommended targets
+                    // skip reciprocal checks for required/recommended targets
+                    // (could maybe add in later, requiring compatible reciprocate, but too much work for now)
                     if ((targetStatus & (Status.Required | Status.Recommended)) == 0) {
 
-                        if (target.Compatibility == null || target.Compatibility.Count == 0) {
+                        if (target.Compatibility == null) {
 
                             compatProblems = true;
-                            itemLog.AppendFormat(
-                                "- Compatibility field missing: {0} <{1}> \"{2}\"\n",
-                                targetId,
-                                target.Catalog,
-                                target.WorkshopName);
+                            itemLog.AppendFormat("- Compatibility field missing: {0}\n", target);
 
                         } else if (target.Compatibility.TryGetValue(item.WorkshopId, out var status)) {
 
-                            if (status != targetStatus) {
+                           if ((ValidReciprocalsFor[targetStatus] & status) == 0) {
 
                                 compatProblems = true;
+                                itemLog.AppendFormat("- Reciprocate mismatch from: {0}\n", target);
                                 itemLog.AppendFormat(
-                                    "- Reciprocated status mismatch from: {0} <{1}> \"{2}\"\n",
-                                    targetId,
-                                    target.Catalog,
-                                    target.WorkshopName);
+                                    "  - Should be: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
+                                    $"{item.WorkshopId}u",
+                                    targetStatus,
+                                    item.WorkshopName);
                             }
 
                         } else {
 
                             compatProblems = true;
+                            itemLog.AppendFormat("- No reciprocation from: {0}\n", target);
                             itemLog.AppendFormat(
-                                "- No reciprocation from: {0} <{1}> \"{2}\"\n",
-                                targetId,
-                                target.Catalog,
-                                target.WorkshopName);
+                                "  - Should be: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
+                                $"{item.WorkshopId}u",
+                                targetStatus,
+                                item.WorkshopName);
                         }
                     }
 
                 } else {
 
-                    compatProblems = true;
-                    itemLog.AppendFormat(
-                        "- Compatibility[{0}] not found in Catalog.Items\n",
-                        targetId);
+                    //compatProblems = true;
+                    itemLog.AppendFormat("- Compatibility[{0}] not found in Catalog.Items\n", targetId);
 
                 }
             }

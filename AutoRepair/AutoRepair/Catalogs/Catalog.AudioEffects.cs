@@ -65,13 +65,14 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Incompatible }, // Ambient Sounds Tuner 2.0
+                    { 1541828679u, Status.Incompatible }, // CNSoundPack V0.2.2
+                    { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
                     // incompat: [ARIS] Remove Cows
                     // incompat: [ARIS] Remove Pigs
                     // incompat: [ARIS] Remove Seagulls
-                    { 455958878u, Status.Incompatible }, // Ambient Sounds Tuner
-                    { 435167188u, Status.Compatible   }, // V10Siren
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Compatible   }, // V10Siren
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // approx Dec 2016
@@ -92,10 +93,11 @@ namespace AutoRepair.Catalogs {
                 Authors = "V10lator",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Incompatible }, // Ambient Sounds Tuner 2.0
+                    { 1541828679u, Status.Incompatible }, // CNSoundPack V0.2.2
+                    { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
-                    { 455958878u, Status.Compatible   }, // Ambient Sounds Tuner
-                    { 435167188u, Status.Incompatible }, // V10Siren
+                    { 455958878u , Status.Compatible   }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration

@@ -74,7 +74,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "yoojt2",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806881627u, Status.Unknown      }, // Altering History Fix
+                    { 1806881627u, Status.Incompatible }, // Altering History Fix
                     { 1658773932u, Status.Incompatible }, // Historical Districts
                     { 1647722503u, Status.Incompatible }, // Level
                     { 1403136223u, Status.Incompatible }, // Control Building Level Up v0.5 (Industries)
@@ -102,7 +102,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1806881627u, Status.Unknown      }, // Altering History Fix
                     { 1658773932u, Status.Unknown      }, // Historical Districts
-                    { 1647722503u, Status.Unknown      }, // Level
+                    { 1647722503u, Status.Incompatible }, // Level
                     { 1403136223u, Status.Incompatible }, // Control Building Level Up v0.5 (Industries)
                     { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
                     { 1275678215u, Status.Incompatible }, // Force Building Level
@@ -154,9 +154,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "CoarzFlovv",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806881627u, Status.Incompatible }, // Altering History Fix
-                    { 1658773932u, Status.Incompatible }, // Historical Districts
-                    { 1647722503u, Status.Incompatible }, // Level
+                    { 1806881627u, Status.Unknown      }, // Altering History Fix
+                    { 1658773932u, Status.Unknown      }, // Historical Districts
+                    { 1647722503u, Status.Unknown      }, // Level
                     { 1403136223u, Status.Incompatible }, // Control Building Level Up v0.5 (Industries)
                     { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
                     { 1275678215u, Status.Incompatible }, // Force Building Level
@@ -190,7 +190,7 @@ namespace AutoRepair.Catalogs {
                     { 1806881627u, Status.Unknown      }, // Altering History Fix
                     { 1658773932u, Status.Unknown      }, // Historical Districts
                     { 1647722503u, Status.Incompatible }, // Level
-                    { 1403136223u, Status.Unknown      }, // Control Building Level Up v0.5 (Industries)
+                    { 1403136223u, Status.Incompatible }, // Control Building Level Up v0.5 (Industries)
                     { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
@@ -216,14 +216,14 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806881627u, Status.Unknown      }, // Altering History Fix
-                    { 1658773932u, Status.Unknown      }, // Historical Districts
+                    { 1806881627u, Status.Incompatible }, // Altering History Fix
+                    { 1658773932u, Status.Incompatible }, // Historical Districts
                     { 1647722503u, Status.Incompatible }, // Level
-                    { 1403136223u, Status.Unknown      }, // Control Building Level Up v0.5 (Industries)
+                    { 1403136223u, Status.Incompatible }, // Control Building Level Up v0.5 (Industries)
                     { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
-                    { 924884948u , Status.Unknown      }, // Plop the Growables
+                    { 924884948u , Status.Incompatible }, // Plop the Growables
                     { 466158459u , Status.Unknown      }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod

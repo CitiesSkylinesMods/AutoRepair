@@ -74,6 +74,12 @@ namespace AutoRepair.Enums {
         [Description("Item is not in catalog")]
         Unrecognised = 1 << 8,
 
+        /// <summary>
+        /// Item is bundled with base game; it is not from the Workshop.
+        /// </summary>
+        [Description("Bundled with the base game")]
+        Vanilla = 1 << 9,
+
         /*
         # ██ ███████ ███████ ██    ██ ███████ ███████
         # ██ ██      ██      ██    ██ ██      ██
@@ -86,55 +92,55 @@ namespace AutoRepair.Enums {
         /// Broken by a game update; no longer works or causes errors.
         /// </summary>
         [Description("Broken by recent game update")]
-        BrokenByUpdate = 1 << 9,
+        BrokenByUpdate = 1 << 10,
 
         /// <summary>
         /// Breaks the content editors or assets created with them.
         /// </summary>
         [Description("Breaks the content editors")]
-        EditorBreaking = 1 << 10,
+        EditorBreaking = 1 << 11,
 
         /// <summary>
         /// Very badly broken; prevents games loading or breaks saves beyond repair.
         /// </summary>
         [Description("Game-breaking")]
-        GameBreaking = 1 << 11,
+        GameBreaking = 1 << 12,
 
         /// <summary>
         /// Significantly reduces frame-rate in-game.
         /// </summary>
         [Description("Can cause lag in-game")]
-        Laggy = 1 << 12,
+        Laggy = 1 << 13,
 
         /// <summary>
         /// Filesize is excessively large compared to similar items.
         /// </summary>
         [Description("Excessively lage filesize")]
-        LargeFileWarning = 1 << 13,
+        LargeFileWarning = 1 << 14,
 
         /// <summary>
         /// Minor bugs; does not break saves, easy to recover from (eg. by unsubscribing the mod).
         /// </summary>
         [Description("Some minor bugs")]
-        MinorBugs = 1 << 14,
+        MinorBugs = 1 << 15,
 
         /// <summary>
         /// Save games created with this item will not load without it.
         /// </summary>
         [Description("Save games created with this will not load without it")]
-        SaveChanging = 1 << 15,
+        SaveChanging = 1 << 16,
 
         /// <summary>
         /// Significantly increases load times.
         /// </summary>
         [Description("Increases city load times")]
-        SlowLoad = 1 << 16,
+        SlowLoad = 1 << 17,
 
         /// <summary>
         /// Some users, but not all, report major loss of functionality or serious bugs.
         /// </summary>
         [Description("Some users report serious issues")]
-        Unreliable = 1 << 17,
+        Unreliable = 1 << 18,
 
         /*
         # ███████  ██████  ██    ██ ██████   ██████ ███████
@@ -148,30 +154,30 @@ namespace AutoRepair.Enums {
         /// Source code available online.
         /// </summary>
         [Description("Source available")]
-        SourceAvailable = 1 << 18,
+        SourceAvailable = 1 << 19,
 
         /// <summary>
         /// Source code bundled with the mod.
         /// </summary>
         [Description("Source bundled with item")]
-        SourceBundled = 1 << 19,
+        SourceBundled = 1 << 20,
 
         /// <summary>
         /// Compiled mod code is obfuscated and unreadable.
         /// </summary>
         [Description("Warning: Source obfuscated")]
-        SourceObfuscated = 1 << 20,
+        SourceObfuscated = 1 << 21,
 
         /// <summary>
         /// The source code is available, but appears to be outdated.
         /// </summary>
         [Description("Source available, but outdated")]
-        SourceOudated = 1 << 21,
+        SourceOudated = 1 << 22,
 
         /// <summary>
         /// Source code is not available.
         /// </summary>
         [Description("Source not available")]
-        SourceUnavailable = 1 << 22,
+        SourceUnavailable = 1 << 23,
     }
 }

@@ -36,6 +36,11 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Textures,
                 Authors = "Klyte45",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1818462177u, Status.Compatible   }, // Vehicle Color Expander
+                    { 1808439336u, Status.Compatible   }, // Building Color Expander
+                    { 1372431101u, Status.Unknown      }, // Painter
+                },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/BuildingColorExpander",
             });
@@ -56,7 +61,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 530771650u, Status.Recommended }, // Prefab hook (enables invert and colorize options)
+                    { 1808439336u, Status.Unknown      }, // Building Color Expander
+                    { 1372431101u, Status.Incompatible }, // Painter
+                    { 530771650u , Status.Recommended  }, // Prefab hook (enables invert and colorize options)
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/TPBCS/Painter",
@@ -76,6 +83,9 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Textures,
                 Authors = "Ronyx69",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1094334744u, Status.MinorIssues }, // Procedural Objects
+                },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Obsolete // Prop Painter and Network Skins 2
                       | ItemFlags.SourceAvailable
