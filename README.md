@@ -1,6 +1,8 @@
 # AutoRepair
 The incompatible mods list, in a mod!
 
+> Note to modders: Create issues rather than pull requests please; this mod is still undergoing regular mass-refactorings and PRs will just clog up with merge conflicts.
+
 ## Current status
 
 Current ETA for basic working mod is about 1-2 weeks (as of 15/Mar/2020).
