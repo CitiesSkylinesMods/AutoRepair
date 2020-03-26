@@ -105,6 +105,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor, // has native pause on load feature
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.Abandonware

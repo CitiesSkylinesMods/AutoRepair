@@ -63,7 +63,7 @@
     <Compile Include="Catalogs\Catalog.LoadSave.cs" />
     <Compile Include="Catalogs\Catalog.Multiplayer.cs" />
     <Compile Include="Catalogs\Catalog.BuildingThemes.cs" />
-    <Compile Include="Catalogs\Catalog.Dosh.cs" />
+    <Compile Include="Catalogs\Catalog.Money.cs" />
     <Compile Include="Catalogs\Catalog.Music.cs" />
     <Compile Include="Catalogs\Catalog.Paint.cs" />
     <Compile Include="Catalogs\RoadsUnited.cs" />

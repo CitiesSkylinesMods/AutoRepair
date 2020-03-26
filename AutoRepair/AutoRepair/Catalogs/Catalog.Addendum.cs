@@ -22,7 +22,31 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
-            // credit to AquilaSol for compiling these lists in google docs
+            // credit to AquilaSol/Avanya for compiling these lists in google docs
+
+            if (GameVersion.Active >= LatestUpdate) {
+                //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
+                Broken(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
+                Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
+                Broken(928128676u, "Improved Public Transport 2"); // transport not working
+                Broken(1312735149u, "Klyte Commons");
+                Broken(667342976u, "Loading Screen Mod"); // doesn't load DLC content
+                Broken(833779378u, "Loading Screen Mod [Test]"); // doesn't load DLC content
+                Broken(650436109u, "Quay Anarchy");
+                Broken(1420955187u, "Real Time");
+                Broken(934994075u, "Service Vehicle Selector 2"); // stack overflow
+                Broken(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
+                Broken(583429740u, "Traffic Manager: President Edition [STABLE]");
+                Broken(1312767991u, "Transport Lines Manager 11.1.2");
+                Broken(912329352u, "Building Anarchy"); // breaks placement mode
+                Broken(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
+                Broken(1349895184u, "Tree LOD Fix"); // Error on launch
+                Broken(621002682u, "No Questions Asked"); // crash to desktop
+
+                // will be updated quickly after update
+                Broken(1637663252u, "TM:PE V11 STABLE");
+                Broken(1806963141u, "TM:PE v11.1.2 LABS");
+            }
 
             // dead mods
             Dead(421188880u , "[ARIS] Early Death");
@@ -217,14 +241,6 @@ namespace AutoRepair.Catalogs {
             Incompatible(1312767991u, "Transport Lines Manager 13.1",            928128676u, "Improved Public Transport 2");
             Incompatible(1400711138u, "[BETA] ParallelRoadTool",                 543722850u, "Network Skins");
             Incompatible(1406625743u, "EnhancedZoomContinued",                   651056665u, "Enhanced Zoom Continued");
-            Incompatible(1420955187u, "Real Time",                               605590542u, "Rush Hour II");
-            Incompatible(1420955187u, "Real Time",                               629713122u, "Climate Control 1.2.7.0");
-            Incompatible(1420955187u, "Real Time",                               672248733u, "Ultimate Eyecandy - Partially compatible, read description!");
-            Incompatible(1420955187u, "Real Time",                               702070768u, "Export Electricity");
-            Incompatible(1420955187u, "Real Time",                               814698320u, "TimeWarp Fix - Partially compatible, read description!");
-            Incompatible(1420955187u, "Real Time",                               1432430887u, "Rush Hour II [Development]");
-            Incompatible(1420955187u, "Real Time",                               1729576238u, "Date Changer");
-            Incompatible(1432430887u, "Rush Hour II",                            605590542u, "Rush Hour");
             Incompatible(1442713872u, "Detail",                                  1094334744u, "Ploppable Asphalt objects turned into Procedural Objects");
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 407335588u, "No Despawn Mod");
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 418556522u, "Road Anarchy");
@@ -254,32 +270,6 @@ namespace AutoRepair.Catalogs {
             BreaksEditor(672248733u, "Ultimate Eyecandy");
             BreaksEditor(1138510774u, "PostProcessFX - Multi-platform");
             BreaksEditor(1204126182u, "Ploppable RICO - High Density Fix");
-
-            if (GameVersion.Active < LatestUpdate) {
-                return;
-            }
-
-            //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
-            Broken(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
-            Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
-            Broken(928128676u, "Improved Public Transport 2"); // transport not working
-            Broken(1312735149u, "Klyte Commons");
-            Broken(667342976u, "Loading Screen Mod"); // doesn't load DLC content
-            Broken(833779378u, "Loading Screen Mod [Test]"); // doesn't load DLC content
-            Broken(650436109u, "Quay Anarchy");
-            Broken(1420955187u, "Real Time");
-            Broken(934994075u, "Service Vehicle Selector 2"); // stack overflow
-            Broken(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
-            Broken(583429740u, "Traffic Manager: President Edition [STABLE]");
-            Broken(1312767991u, "Transport Lines Manager 11.1.2");
-            Broken(912329352u, "Building Anarchy"); // breaks placement mode
-            Broken(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
-            Broken(1349895184u, "Tree LOD Fix"); // Error on launch
-            Broken(621002682u, "No Questions Asked"); // crash to desktop
-
-            // will be updated quickly after update
-            Broken(1637663252u, "TM:PE V11 STABLE");
-            Broken(1806963141u, "TM:PE v11.1.2 LABS");
         }
 
         /// <summary>
@@ -296,6 +286,14 @@ namespace AutoRepair.Catalogs {
             if (Items.TryGetValue(workshopId, out Item item)) {
                 item.BrokenBy = GameVersion.DefaultUntil;
                 item.CompatibleWith = LatestUpdate;
+                if (item.Notes == null) {
+                    item.Notes = new[] { "Compatible with Sunset Harbor update." };
+                } else {
+                    List<string> arr = new List<string>(item.Notes) {
+                        { "Compatible with Sunset Harbor!" },
+                    };
+                    item.Notes = arr.ToArray();
+                }
             } else {
                 AddMod(new Item(workshopId, workshopName) {
                     Affect = Factor.Other,

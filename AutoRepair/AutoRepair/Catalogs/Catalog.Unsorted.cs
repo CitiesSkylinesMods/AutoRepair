@@ -69,6 +69,7 @@ namespace AutoRepair.Catalogs {
                     { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
@@ -178,8 +179,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "mshsheng",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // real time?
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
                     // real construciton?
                     // plop growables?
                     // rico?
@@ -308,6 +309,7 @@ namespace AutoRepair.Catalogs {
                     { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
@@ -434,6 +436,7 @@ namespace AutoRepair.Catalogs {
                     { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
                     { 1674732053u, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
                     { 1435741602u, Status.Incompatible }, // Snooper
+                    { 1420955187u, Status.Compatible   }, // Real Time
                     { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 1072157697u, Status.Incompatible }, // Cargo Info
@@ -627,10 +630,10 @@ namespace AutoRepair.Catalogs {
                     { 1766839841u, Status.MinorIssues  }, // Anxiety Reducer (still testing)
                     // conceptual conflict: time
                     { 1899449152u, Status.Compatible   }, // Game Day Timer (switches to different mode for Real Time)
-                    { 1729576238u, Status.Incompatible }, // Date Changer (breaks citizen scedules)
-                    { 814698320u , Status.MinorIssues  }, // TimeWarp Fix (game will pause when used, time resets when unpaused)
-                    { 672248733u , Status.MinorIssues  }, // Ultimate Eyecandy v1.5.2 (game will pause when used, time resets when unpaused)
-                    { 629713122u , Status.Incompatible }, // Climate Control (breaks citizen schedules)
+                    { 1729576238u, Status.Incompatible }, // Date Changer
+                    { 814698320u , Status.MinorIssues  }, // TimeWarp Fix
+                    { 672248733u , Status.MinorIssues  }, // Ultimate Eyecandy v1.5.2
+                    { 629713122u , Status.Incompatible }, // Climate Control
                     // conceptual coflict: aging
                     { 2027161563u, Status.Compatible   }, // Lifecycle Rebalance Revisited
                     { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
@@ -666,8 +669,12 @@ namespace AutoRepair.Catalogs {
                 Languages = new[] { "de", "en", "es", "fr", "it", "ja", "ko", "pl", "pt", "ru", "zh" },
                 Notes = new[] {
                     "The 'Better citizen aging' option has a big influence on how education works.",
-                    "If Plop the Growables buildings are breaking, set 'Construction speed' to 100%.",
-                    "Natural Disasters Overhaul mod to trigger excessive thunder storms when used with Real Time.",
+                    "[Mod: Climate Control] It breaks the citizen schedules in Real Time.",
+                    "[Mod: District Service Limit] Disable its citizen-limiting options to make compatible with Real Time.",
+                    "[Mod: Natural Disasters Overhaul] Real Time changes time flow, causuing excessive thunder storms.",
+                    "[Mod: Plop the Growables] If plopped buildings disappear, set 'Construction speed' to 100% in Real Time.",
+                    "[Mod: TimeWarp Fix] Game will pause when you change time, time will revert when game unpaused.",
+                    "[Mod: Ultimate Eye Candy] Game will pause when you change time, time will revert when game unpaused.",
                 },
                 ReleasedDuring = GameVersion.ParkLife,
                 SourceURL = "https://github.com/dymanoid/RealTime",
@@ -677,6 +684,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Props
                        | Factor.Emptying,
                 Authors = "Arnold J. Rimmer, TPB",
+                Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1390252175u, Status.Recommended }, // Japanese Plastic Bucket
                     { 1389908178u, Status.Recommended }, // Wheelie Bin - Color Variation
@@ -691,7 +699,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.MinorBugs
                       | ItemFlags.SourceUnavailable,
                 Notes = new[] {
-                    "This mod will crash if LSM skip.txt contains 'Garbage Bin'.",
+                    "[Mod: Loading Screen Mod] To prevent crashes, remove 'Garbage Bin' from your skip.txt file.",
                 },
                 ReleasedDuring = GameVersion.ParkLife,
             });
@@ -705,7 +713,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceAvailable,
                 Notes = new[] {
-                    "Asset creators, see: https://gist.github.com/ronyx69/db4e7c41fe80020e31d9bd2e1e1196f8",
+                    "[Docs] For asset creators: https://gist.github.com/ronyx69/db4e7c41fe80020e31d9bd2e1e1196f8",
                 },
                 SourceURL = "https://gist.github.com/ronyx69/4f06181c8082188418cd0c224f630a09",
             });
@@ -717,6 +725,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1237383751u, "Extended Game Options") {
                 Authors = "Zenya",
                 Affect = Factor.Milestones, // will be more
+                Catalog = catalog,
                 Flags = ItemFlags.Laggy
                       | ItemFlags.MinorBugs // pause on load now in base game
                       | ItemFlags.SourceAvailable,

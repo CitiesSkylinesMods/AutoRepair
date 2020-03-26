@@ -205,10 +205,12 @@ namespace AutoRepair.Descriptors {
         /// <summary>
         /// Performs basic validation of the item itself, without checking external data.
         /// </summary>
+        /// 
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive validation.</param>
         [Conditional("DEBUG")]
-        public void Validate() {
+        public void Validate(bool extendedReporting = false) {
 
-            // ignore addendum catalog
+            // always ignore addendum catalog
             if (!string.IsNullOrEmpty(Catalog) && Catalog == "Addendum") {
                 return;
             }
@@ -250,12 +252,14 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Flags missing\n");
             }
 
-            if (CompatibleWith == GameVersion.DefaultRelease) {
-                //problems = true;
+            if (extendedReporting && CompatibleWith == GameVersion.DefaultRelease) {
+                problems = true;
                 log.Append("- CompatibleWith missing\n");
             }
 
+            // sometimes already long-broken mods are reuploaded to workshop (hence ability to skip these checks)
             if (!SkipVersionValidation) {
+
                 // game version at release must be <= checked compatible version
                 if (CompatibleWith < ReleasedDuring) {
                     problems = true;
@@ -276,7 +280,8 @@ namespace AutoRepair.Descriptors {
             }
 
             // todo: once all of these are sorted, the BrokenByUpdate flag can be removed.
-            if ((Flags & ItemFlags.BrokenByUpdate) == ItemFlags.BrokenByUpdate
+            if (extendedReporting
+                && (Flags & ItemFlags.BrokenByUpdate) == ItemFlags.BrokenByUpdate
                 && BrokenBy == GameVersion.DefaultUntil)
             {
                 problems = true;
@@ -305,19 +310,27 @@ namespace AutoRepair.Descriptors {
                     ContinuationOf);
             }
 
-            // if replaceable, must be incompatible with replacement item
-            if (ReplaceWith != 0u && IsCompatibleWith(ReplaceWith)) {
-                problems = true;
-                log.AppendFormat(
-                    "- Must be incompatible with replacement item: {0}\n",
-                    ReplaceWith);
+            // if replaceable, _should_ be incompatible with replacement item
+            if (ReplaceWith != 0u) {
+
+                if (extendedReporting && IsCompatibleWith(ReplaceWith)) {
+                    problems = true;
+                    log.AppendFormat(
+                        "- Should (usually) be incompatible with replacement item: {0}\n",
+                        ReplaceWith);
+                } else if (!Compatibility.ContainsKey(ReplaceWith)) {
+                    problems = true;
+                    log.AppendFormat(
+                        "- Must specify (in)compatibility with replacement item: {0}\n",
+                        ReplaceWith);
+                }
             }
 
             bool localised = (Flags & ItemFlags.Localised) == ItemFlags.Localised;
             bool noLocale = string.IsNullOrEmpty(Locale);
 
             // if translation flag set, locale must be specified (unless languages specified)
-            if (localised && (noLocale || (Languages == null && Locale == "en"))) {
+            if (extendedReporting && localised && (noLocale || (Languages == null && Locale == "en"))) {
                 problems = true;
                 log.Append("- Locale must be specified for translations\n");
             }
@@ -344,14 +357,14 @@ namespace AutoRepair.Descriptors {
             }
 
             // if list defined, it should contain something
-            if (Compatibility?.Count == 0) {
-                //problems = true;
+            if (extendedReporting && Compatibility?.Count == 0) {
+                problems = true;
                 log.Append("- Compatibility list defined, but is empty\n");
             }
 
             // tags should be specified (long-term task)
-            if (Tags == null || Tags.Count() == 0) {
-                //problems = true;
+            if (extendedReporting && (Tags == null || Tags.Count() == 0)) {
+                problems = true;
                 log.Append("- Tags missing\n");
             }
 

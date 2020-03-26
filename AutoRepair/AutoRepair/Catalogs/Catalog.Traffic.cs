@@ -95,7 +95,8 @@ namespace AutoRepair.Catalogs {
                 Notes = new[] {
                     "Setting 'Simulation Accuracy' to lower value will improve framerate.",
                     "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
-                    "We suspect there is issue with pedestrian pathfinding since Sunset Harbor update, and are investigating.",
+                    "If rail junction customiations not working, it is likely caused by SingleTrainTrackAI mod.",
+                    "Will be updated for Sunset Harbor. Might be some issues with pedestrian pathfinding (investigating).",
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -160,7 +161,8 @@ namespace AutoRepair.Catalogs {
                 Notes = new[] {
                     "Setting 'Simulation Accuracy' to lower value will improve framerate.",
                     "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
-                    "We suspect there is issue with pedestrian pathfinding since Sunset Harbor update, and are investigating.",
+                    "If rail junction customiations not working, it is likely caused by SingleTrainTrackAI mod.",
+                    "Will be updated for Sunset Harbor. Might be some issues with pedestrian pathfinding (investigating).",
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -202,6 +204,9 @@ namespace AutoRepair.Catalogs {
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                 },
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "Interferes with some rail junction features of TM:PE.",
+                },
                 SourceURL = "https://github.com/coarxflow/SingleTrainTrackAI",
             });
 

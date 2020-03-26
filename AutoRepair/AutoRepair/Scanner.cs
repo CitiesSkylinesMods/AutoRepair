@@ -123,9 +123,11 @@ namespace AutoRepair {
                             ? new Dictionary<ulong, Status>()
                             : descriptor.Compatibility;
 
-#if DEBUG
-                        log.AppendFormat("\n - CATALOG: {0}\n", descriptor.Catalog);
-#endif
+                        log.AppendFormat(
+                            "\n - [AutoRepair Descriptor] Catalog: '{0}'. Vectors: {1}. Author(s): {2}\n",
+                            descriptor.Catalog,
+                            compatibility.Count,
+                            descriptor.Authors);
 
                         if (HasFlag(flags, ItemFlags.NoWorkshop)) {
                             log.Append("\n - It has no workshop page; it is probably obsolete or game breaking.\n");
@@ -133,20 +135,18 @@ namespace AutoRepair {
                             log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
                         }
 
-                        if (descriptor.BrokenBy <= GameVersion.Active) {
+                        if (HasFlag(flags, ItemFlags.GameBreaking)) {
+                            log.Append("\n - It's reported as game breaking. Unsubscribe it.\n");
+                        } else if(descriptor.BrokenBy <= GameVersion.Active) {
                             log.Append(" - Not compatible with current game version. Disable it until an update is ready.\n");
                         } else if (descriptor.CompatibleWith >= GameVersion.Active) {
-                            log.Append("\n - It is confirmed compatible with this version of the game.\n");
+                            log.AppendFormat("\n - It is confirmed compatible with Cities: Skylines v{0}.\n", GameVersion.Active.ToString(3));
                         } else {
                             log.Append("\n - It should be compatible with current game version; if not, let us know!\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.EditorBreaking)) {
                             log.Append("\n - It's reported to cause problems with the asset/map/theme editors.\n");
-                        }
-
-                        if (HasFlag(flags, ItemFlags.GameBreaking)) {
-                            log.Append("\n - It's reported as game breaking. Unsubscribe it.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.Abandonware)) {
@@ -206,17 +206,17 @@ namespace AutoRepair {
                             switch (entry.Value) {
                                 case Status.Incompatible:
                                     if (subscriptions.TryGetValue(entry.Key, out var strIncompat)) {
-                                        log.AppendFormat("\n - Incompatible with: [ID {0}] \"{1}\"\n", entry.Key, strIncompat);
+                                        log.AppendFormat("\n - Incompatible: [ID: {0}] \"{1}\"\n", entry.Key, strIncompat);
                                     }
                                     break;
                                 case Status.MinorIssues:
                                     if (subscriptions.TryGetValue(entry.Key, out var strMinor)) {
-                                        log.AppendFormat("\n - Minor incompatibility with: [ID {0}] \"{1}\"\n", entry.Key, strMinor);
+                                        log.AppendFormat("\n - Minor isuses: [ID: {0}] \"{1}\"\n", entry.Key, strMinor);
                                     }
                                     break;
                                 case Status.Required:
                                     if (!subscriptions.ContainsKey(entry.Key)) {
-                                        log.AppendFormat("\n - It won't work unless you subscribe: {0}\n", GetWorkshopURL(entry.Key));
+                                        log.AppendFormat("\n - It won't work unless you subscribe to: {0}\n", GetWorkshopURL(entry.Key));
                                     }
                                     break;
                                 default:

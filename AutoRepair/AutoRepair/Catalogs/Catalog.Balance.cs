@@ -30,7 +30,7 @@ namespace AutoRepair.Catalogs {
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 2025147082u, Status.Recommended  }, // Realistic Population revisited
                     { 1749971558u, Status.MinorIssues  }, // Real Time Offline
-                    { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1420955187u, Status.Compatible   }, // Real Time
                     { 1383456057u, Status.Incompatible }, // Shicho
                     //Randomize Age Cim Move In (incompat)
                     //Lifespan Changer (incompat)
@@ -186,6 +186,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1749971558u, Status.Compatible   }, // Real Time Offline
+                    { 1420955187u, Status.Compatible   }, // Real Time
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
                 },
                 Flags = ItemFlags.SourceAvailable,
@@ -351,7 +352,7 @@ namespace AutoRepair.Catalogs {
                 CloneOf = 409070739u, // Very Slow Citizen Aging
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
-                    { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1420955187u, Status.Incompatible }, // Real Time
                     { 654707599u , Status.Incompatible }, // Citizen Lifecycle Rebalance
                     { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
                     { 573925048u , Status.Incompatible }, // Lifespan Changer
@@ -474,6 +475,7 @@ namespace AutoRepair.Catalogs {
                     { 1614061108u, Status.Incompatible }, // Real Construction
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1420955187u, Status.Incompatible }, // Real Time
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
@@ -507,7 +509,7 @@ namespace AutoRepair.Catalogs {
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1765325082u, Status.Incompatible }, // Customizable Education
                     { 1749971558u, Status.MinorIssues  }, // Real Time Offline
-                    { 1420955187u, Status.MinorIssues  }, // Real Time (by dymanoid)
+                    { 1420955187u, Status.Compatible   }, // Real Time
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
                     //Randomize Age Cim Move In (incompat)
@@ -585,6 +587,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558u, Status.MinorIssues  }, // Real Time Offline
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
                     { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
                     { 654707599u , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
                     { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
@@ -746,6 +749,7 @@ namespace AutoRepair.Catalogs {
                     { 1614061108u, Status.Incompatible }, // Real Construction
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1420955187u, Status.Incompatible }, // Real Time
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed

@@ -105,6 +105,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Rendering
                        | Factor.Service,
                 Authors = "Cryptkeeper",
+                Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 863909323u, Status.Incompatible }, // Emergency Lights Changer Plus
                     { 559172768u, Status.Incompatible }, // Emergency Light Changer
@@ -118,14 +119,20 @@ namespace AutoRepair.Catalogs {
                 Authors = "cambrium",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // todo - incompat
+                    { 1922400472u, Status.Incompatible }, // Enhanced District Services
+                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
+                    { 1706703944u, Status.Incompatible }, // More Outside Interaction
+                    { 1680840913u, Status.Incompatible }, // More Effective Transfer Manager
+                    { 1632320836u, Status.Incompatible }, // Service Vehicles Manager 2.0.1
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 649522495u , Status.Incompatible }, // District Service Limit
                 },
                 ContinuationOf = 649522495u, // District Service Limit
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable,
                 Notes = new[] {
-                    "The citizen limits directly conflict with Real Time mod; disable them for compatibility.",
+                    "[Mod: Real Time] Disable citizen-limiting options in DSL mod to be compatible.",
                 },
                 SourceURL = "https://github.com/TheDogKSP/cs-districts",
             });

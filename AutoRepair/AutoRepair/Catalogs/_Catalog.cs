@@ -28,7 +28,7 @@ namespace AutoRepair.Catalogs {
             AddCatalogs();
             Validate();
             LogTally();
-            DumpCatalog();
+            //DumpCatalog();
         }
 
         /// <summary>
@@ -154,10 +154,10 @@ namespace AutoRepair.Catalogs {
                 CameraCatalog();
                 ContentManagerCatalog();
                 DiagnosticCatalog();
-                DoshCatalog();
                 EmptyingCatalog();
                 HideCatalog();
                 LoadSaveCatalog();
+                MoneyCatalog();
                 MultiplayerCatalog();
                 MusicCatalog();
                 NetworksCatalog();
@@ -176,7 +176,7 @@ namespace AutoRepair.Catalogs {
                 VehiclesCatalog();
                 VisualEffectsCatalog();
 
-                CatalogAddendum(); // items affected by recent update
+                CatalogAddendum(); // items affected by recent update + temporary kludges
             }
             catch (Exception e) {
                 Log.Error(e.ToString());
@@ -201,8 +201,10 @@ namespace AutoRepair.Catalogs {
         /// Validates the items that have been added to catalog to check if thier
         /// references to other items are listed and, if applicable, reciprocated.
         /// </summary>
+        /// 
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive validation checks.</param>
         [Conditional("DEBUG")]
-        private void Validate() {
+        private void Validate(bool extendedReporting = false) {
 
             bool problems = false;
 
@@ -216,11 +218,11 @@ namespace AutoRepair.Catalogs {
 
                 StringBuilder itemLog = new StringBuilder(1024 * 5);
 
-                if (HasBasicProblems(item, ref itemLog)) {
+                if (HasBasicProblems(item, extendedReporting, ref itemLog)) {
                     itemProblems = true;
                 }
 
-                if (HasCompatibilityProblems(item, ref itemLog)) {
+                if (HasCompatibilityProblems(item, extendedReporting, ref itemLog)) {
                     itemProblems = true;
                 }
 
@@ -245,32 +247,34 @@ namespace AutoRepair.Catalogs {
         /// <param name="itemLog">The item log string builder.</param>
         /// 
         /// <returns>Returns <c>true</c> if there are problems, otherwise <c>false</c>.</returns>
-        private bool HasBasicProblems(Item item, ref StringBuilder itemLog) {
+        private bool HasBasicProblems(Item item, bool extendedReporting, ref StringBuilder itemLog) {
 
             bool basicProblems = false;
 
-            // if clone, check it's in catalog
-            if (item.CloneOf != 0u && !Has(item.CloneOf)) {
-                basicProblems = true;
-                itemLog.AppendFormat(
-                    "- CloneOf not in Catalog.Items: {0}\n",
-                    item.CloneOf);
-            }
+            if (extendedReporting) {
+                // if clone, check it's in catalog
+                if (item.CloneOf != 0u && !Has(item.CloneOf)) {
+                    basicProblems = true;
+                    itemLog.AppendFormat(
+                        "- CloneOf not in Catalog.Items: {0}\n",
+                        item.CloneOf);
+                }
 
-            // if continuation, check it's in catalog
-            if (item.ContinuationOf != 0u && !Has(item.ContinuationOf)) {
-                basicProblems = true;
-                itemLog.AppendFormat(
-                    "- ContinuationOf not in Catalog.Items: {0}\n",
-                    item.ContinuationOf);
-            }
+                // if continuation, check it's in catalog
+                if (item.ContinuationOf != 0u && !Has(item.ContinuationOf)) {
+                    basicProblems = true;
+                    itemLog.AppendFormat(
+                        "- ContinuationOf not in Catalog.Items: {0}\n",
+                        item.ContinuationOf);
+                }
 
-            // if replacement, check it's in catalog
-            if (item.ReplaceWith != 0u && !Has(item.ReplaceWith)) {
-                basicProblems = true;
-                itemLog.AppendFormat(
-                    "- ReplaceWith not in Catalog.Items: {0}\n",
-                    item.ReplaceWith);
+                // if replacement, check it's in catalog
+                if (item.ReplaceWith != 0u && !Has(item.ReplaceWith)) {
+                    basicProblems = true;
+                    itemLog.AppendFormat(
+                        "- ReplaceWith not in Catalog.Items: {0}\n",
+                        item.ReplaceWith);
+                }
             }
 
             return basicProblems;
@@ -286,9 +290,9 @@ namespace AutoRepair.Catalogs {
         /// <param name="itemLog">The item log string builder.</param>
         /// 
         /// <returns>Returns <c>true</c> if there are problems, otherwise <c>false</c>.</returns>
-        private bool HasCompatibilityProblems(Item item, ref StringBuilder itemLog) {
+        private bool HasCompatibilityProblems(Item item, bool extendedReporting, ref StringBuilder itemLog) {
 
-            if (item.Compatibility == null || item.Compatibility.Count == 0) {
+            if (item.Compatibility == null || item.Compatibility.Count == 0 || item.Catalog == "Addendum") {
                 return false;
             }
 
@@ -310,7 +314,7 @@ namespace AutoRepair.Catalogs {
 
                 Tally[targetStatus] += 1;
 
-                if (Items.TryGetValue(targetId, out var target)) {
+                if (Items.TryGetValue(targetId, out var target) && target.Catalog != "Addendum") {
 
                     // skip reciprocal checks for required/recommended targets
                     // (could maybe add in later, requiring compatible reciprocate, but too much work for now)
@@ -346,9 +350,9 @@ namespace AutoRepair.Catalogs {
                         }
                     }
 
-                } else {
+                } else if (extendedReporting) {
 
-                    //compatProblems = true;
+                    compatProblems = true;
                     itemLog.AppendFormat("- Compatibility[{0}] not found in Catalog.Items\n", targetId);
 
                 }

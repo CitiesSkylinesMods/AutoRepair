@@ -157,9 +157,10 @@ namespace AutoRepair.Catalogs {
                 Authors = "Madgemade",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 812125426u , Status.Compatible   }, // Network Extensions 2
+                    { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
                     { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
                     { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                    { 812125426u , Status.Compatible   }, // Network Extensions 2
                 },
                 Flags = ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,

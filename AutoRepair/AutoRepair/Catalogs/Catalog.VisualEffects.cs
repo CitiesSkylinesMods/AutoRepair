@@ -34,16 +34,20 @@ namespace AutoRepair.Catalogs {
                 Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1889349343u, Status.Recommended },
-                    { 1886961495u, Status.Recommended },
+                    { 1889349343u, Status.Recommended  },
+                    { 1886961495u, Status.Recommended  },
+                    { 959894658u , Status.Compatible   }, // Custom Light Effects
                     // If active, some vehicles will get hard-dependency for Custom Effect Loader:
-                    { 800820816u , Status.MinorIssues }, // Extended Asset Editor
+                    { 800820816u , Status.MinorIssues  }, // Extended Asset Editor
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.EditorMod // assets created with it require it
                       | ItemFlags.MinorBugs // can become hard dependency for vehicle assets if Extended Asset Editor active
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
+                Notes = new[] {
+                    "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL.",
+                },
                 SourceURL = "https://github.com/boformer/CustomEffectLoader",
             });
 
@@ -180,6 +184,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Ronyx69",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new[] {
@@ -222,13 +227,17 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Rendering
                        | Factor.Textures,
                 Authors = "Ronyx69, vasimr22",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1886877404u, Status.Compatible }, // Custom Effects Loader
+                },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // memory leaks = crashes
                       | ItemFlags.SourceUnavailable,
                 Notes = new[] {
                     "This mod causes memory leaks which eventually result in lag then crash to desktop.",
-                    "Use Custom Effect Loader mod instead.",
+                    "[Asset creators] Use Custom Effect Loader mod instead.",
                 },
                 ReplaceWith = 1886877404u, // Custom Effects Loader
             });

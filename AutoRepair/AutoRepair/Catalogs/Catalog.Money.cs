@@ -16,9 +16,9 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void DoshCatalog() {
+        private void MoneyCatalog() {
 
-            string catalog = "Dosh";
+            string catalog = "Money";
 
             AddMod(new Item(2030216556u, "GrantMeMoney: get cash / money unconditionally") {
                 Affect = Factor.Money,
@@ -54,14 +54,14 @@ namespace AutoRepair.Catalogs {
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
                     { Vanilla.UnlimitedMoney, Status.MinorIssues },
 
-                    // similar but non-conflicting mods:
-                    { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
-                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
-                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
-                    { 1330289236u, Status.Compatible   }, // CS-Utils
-                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Compatible   }, // 调整金钱
-                    { 409171141u , Status.Compatible   }, // Cash on Demand
+                    // this mods are pointless when unlimited money is active:
+                    { 2030216556u, Status.MinorIssues  }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
+                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
+                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
+                    { 1367444256u, Status.MinorIssues  }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.MinorIssues  }, // 调整金钱
+                    { 409171141u , Status.MinorIssues  }, // Cash on Demand
                 },
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
@@ -81,8 +81,8 @@ namespace AutoRepair.Catalogs {
 
                     // similar but non-conflicting mods:
                     { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
-                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
-                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1673480325u, Status.Incompatible }, // £5 Million Starting Money
+                    { 1671542319u, Status.Incompatible }, // £2.5 Million Starting Money
                     { 1330289236u, Status.Compatible   }, // CS-Utils
                     { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
                     { 1232451940u, Status.Compatible   }, // 调整金钱
@@ -103,8 +103,8 @@ namespace AutoRepair.Catalogs {
 
                     // similar but non-conflicting mods:
                     { 2030216556u, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
-                    { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
-                    { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1673480325u, Status.Incompatible }, // £5 Million Starting Money
+                    { 1671542319u, Status.Incompatible }, // £2.5 Million Starting Money
                     { 1330289236u, Status.Compatible   }, // CS-Utils
                     { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
                     { 1232451940u, Status.Compatible   }, // 调整金钱
@@ -113,8 +113,6 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            // Ctrl+shift+m to get fraud tokens
-            // Based on earlier mod but with larger quantity of numbered rectangles.
             AddMod(new Item(1367444256u, "Cash/Money On Demand 500k") {
                 Affect = Factor.Money,
                 Authors = "Jay",
@@ -129,12 +127,15 @@ namespace AutoRepair.Catalogs {
                     { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
                     { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236u, Status.Compatible   }, // CS-Utils
-                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Compatible   }, // 调整金钱
-                    { 409171141u , Status.Compatible   }, // Cash on Demand
+                    { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Incompatible }, // 调整金钱
+                    { 409171141u , Status.Incompatible }, // Cash on Demand
                 },
                 ContinuationOf = 409171141u, // Cash on Demand
                 Flags = ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "Use Ctrl+Shift+M (Mac users: Cmd+Shift+M) to add cash.",
+                },
             });
 
             // Also has limits display but people really only use it to add money on demand
@@ -159,7 +160,6 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            // Ctrl+shift+m to get fraud tokens
             AddMod(new Item(1232451940u, "调整金钱") {
                 Affect = Factor.Money,
                 Authors = "TIMIYANG",
@@ -175,17 +175,19 @@ namespace AutoRepair.Catalogs {
                     { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
                     { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236u, Status.Compatible   }, // CS-Utils
-                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Compatible   }, // 调整金钱
-                    { 409171141u , Status.Compatible   }, // Cash on Demand
+                    { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Incompatible }, // 调整金钱
+                    { 409171141u , Status.Incompatible }, // Cash on Demand
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
+                Notes = new[] {
+                    "Use Ctrl+Shift+M (Mac users: Cmd+Shift+M) to add cash.",
+                },
             });
 
-            // Ctrl+shift+m to get fraud tokens
             AddMod(new Item(409171141u, "Cash on Demand") {
                 Affect = Factor.Money,
                 Authors = "UndergroundHero",
@@ -200,12 +202,17 @@ namespace AutoRepair.Catalogs {
                     { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
                     { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236u, Status.Compatible   }, // CS-Utils
-                    { 1367444256u, Status.Compatible   }, // Cash/Money On Demand 500k
-                    { 1232451940u, Status.Compatible   }, // 调整金钱
-                    { 409171141u , Status.Compatible   }, // Cash on Demand
+
+                    // conflicting because they use same shortcut:
+                    { 1367444256u, Status.Incompatible }, // Cash/Money On Demand 500k
+                    { 1232451940u, Status.Incompatible }, // 调整金钱
+                    { 409171141u , Status.Incompatible }, // Cash on Demand
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "Use Ctrl+Shift+M (Mac users: Cmd+Shift+M) to add cash.",
+                },
                 SourceURL = "https://github.com/rob-williams/CashOnDemandMod/",
             });
         }

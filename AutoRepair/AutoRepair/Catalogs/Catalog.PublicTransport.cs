@@ -72,7 +72,7 @@ namespace AutoRepair.Catalogs {
                     { 1776052533u, Status.Incompatible }, // Stops & Stations
                     { 1766839841u, Status.Incompatible }, // Anxiety Reducer
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
-                    { 1420955187u, Status.Compatible   }, // Real Time
+                    { 1420955187u, Status.MinorIssues  }, // Real Time (still investigating)
                     { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3 -- old ver
@@ -157,8 +157,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "Overhatted",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // incompat: likely IPT, TLM and maybe others
-                    { 928128676u, Status.Incompatible }, // Improved Public Transport 2
+                    // incompat: likely IPT and maybe others
+                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
                 Flags = ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable
