@@ -23,30 +23,32 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
             // credit to AquilaSol/Avanya for compiling these lists in google docs
+            Fixed(1637663252u, "TM:PE V11 STABLE");
+            Fixed(1806963141u, "TM:PE v11.1.2 LABS");
+            Fixed(1420955187u, "Real Time");
+            Fixed(1312767991u, "Transport Lines Manager 11.1.2");
+            Fixed(1776052533u, "Stops & Stations");
+            Fixed(1435741602u, "Snooper");
 
-            if (GameVersion.Active >= LatestUpdate) {
-                //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
-                Broken(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
-                Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
-                Broken(928128676u, "Improved Public Transport 2"); // transport not working
-                Broken(1312735149u, "Klyte Commons");
-                Broken(667342976u, "Loading Screen Mod"); // doesn't load DLC content
-                Broken(833779378u, "Loading Screen Mod [Test]"); // doesn't load DLC content
-                Broken(650436109u, "Quay Anarchy");
-                Broken(1420955187u, "Real Time");
-                Broken(934994075u, "Service Vehicle Selector 2"); // stack overflow
-                Broken(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
-                Broken(583429740u, "Traffic Manager: President Edition [STABLE]");
-                Broken(1312767991u, "Transport Lines Manager 11.1.2");
-                Broken(912329352u, "Building Anarchy"); // breaks placement mode
-                Broken(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
-                Broken(1349895184u, "Tree LOD Fix"); // Error on launch
-                Broken(621002682u, "No Questions Asked"); // crash to desktop
+            //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
+            Broken(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
+            Broken(912329352u, "Building Anarchy"); // breaks placement mode
+            Broken(515489008u, "Extra Train Station Tracks");
+            Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
+            Broken(667342976u, "Loading Screen Mod"); // doesn't load DLC content
+            Broken(833779378u, "Loading Screen Mod [Test]"); // doesn't load DLC content
+            Broken(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
+            Broken(621002682u, "No Questions Asked"); // crash to desktop
+            Broken(650436109u, "Quay Anarchy");
+            Broken(934994075u, "Service Vehicle Selector 2"); // stack overflow
+            Broken(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
+            Broken(583429740u, "Traffic Manager: President Edition [STABLE]");
+            Broken(1349895184u, "Tree LOD Fix"); // Error on launch
 
-                // will be updated quickly after update
-                Broken(1637663252u, "TM:PE V11 STABLE");
-                Broken(1806963141u, "TM:PE v11.1.2 LABS");
-            }
+            Broken(1312735149u, "Klyte Commons");
+
+            // will be updated quickly after update
+            Broken(928128676u, "Improved Public Transport 2"); // transport not working
 
             // dead mods
             Dead(421188880u , "[ARIS] Early Death");
@@ -280,7 +282,7 @@ namespace AutoRepair.Catalogs {
         /// 
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
-        internal void Compatible(ulong workshopId, string workshopName) {
+        internal void Fixed(ulong workshopId, string workshopName) {
             //Log.Info($"- Confirmed compatible: {workshopId} '{workshopName}'");
 
             if (Items.TryGetValue(workshopId, out Item item)) {

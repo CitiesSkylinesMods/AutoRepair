@@ -87,6 +87,10 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // https://github.com/CityGecko/CS-AdvancedVehicleOptions/issues
+                Notes = new[] {
+                    "Sunset Harbor: Working, but does not have options for the new DLC vehicles yet.",
+                    "Aurthor is working on updates.",
+                },
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",
                 Tags = new[] { "Vehicles", "Capacity", "Tilt", "Nod", "Breaking", "Acceleration", "Colors", "Colours", "Speeds", "Despawn" },

@@ -19,7 +19,7 @@ namespace AutoRepair {
         /// </summary>
         [UsedImplicitly]
         public string Description => "Mod compatibility checker.";
-
+        
         [UsedImplicitly]
         public void OnEnabled() {
 
