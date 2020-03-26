@@ -181,6 +181,15 @@ namespace AutoRepair.Descriptors {
         }
 
         /// <summary>
+        /// Determine whether the item has one (or more) of the specified <see cref="ItemFlags"/>.
+        /// </summary>
+        /// <param name="flags">Flag(s) to check for.</param>
+        /// <returns>Returns <c>true</c> if the item has one or more of the specified <paramref name="flags"/>, otherwise <c>false</c>.</returns>
+        public bool HasFlags(ItemFlags flags) {
+            return (Flags & flags) != 0;
+        }
+
+        /// <summary>
         /// Determines if the item is compatible with the specified <paramref name="workshopId"/>.
         /// </summary>
         /// 

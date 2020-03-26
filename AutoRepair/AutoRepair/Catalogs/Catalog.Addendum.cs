@@ -22,84 +22,82 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
+            Broken(554232266u, "Nursing Homes for Senior Citizens");
+            Note(554232266u, "Nursing Homes for Senior Citizens", "Breaks if any DLCs are added due to changes in toolbar.");
+            Fixed(556784825u, "Random Tree Rotation");
+            Broken(842981708u, "Random Tree Rotation for Natural Disasters");
+            Note(842981708u, "Random Tree Rotation for Natural Disasters", "Use the other version: https://steamcommunity.com/sharedfiles/filedetails/?id=556784825");
+            Fixed(667342976u, "Loading Screen Mod");
+            Fixed(833779378u, "Loading Screen Mod [Test]");
+            Fixed(1410003347u, "Additive Shader");
+            Fixed(812713438u, "Dynamic Resolution");
+            Fixed(1899640536u, "Theme Mixer 2");
+            Fixed(877950833u, "Vanilla Trees Remover");
+            Fixed(1806759255u, "Customize It Extended");
+            Fixed(1869561285u, "Prop Painter");
+            Fixed(632951976u, "Improved Mod Upload Panel");
+            Fixed(762520291u, "Shadow Strenght Adjuster");
+            Fixed(643364914u, "Softer Shadows");
+            Fixed(1764637396u, "Toggle It!");
+            Fixed(1562650024u, "Rebalanced Industries");
             Note(1393820309u, "Ticket Price Customizer", "Sunset Harbor: Trollyebus are not currently supported.");
-
             Broken(543722850u, "Network Skins");
             Note(543722850u, "Network Skins", "Replace with new version: https://steamcommunity.com/sharedfiles/filedetails/?id=1758376843");
-
-            Broken(932192868u, "Road Options (Road Colors Changer ++)");
-            Note(932192868u, "Road Options (Road Colors Changer ++)", "Use Network Skins 2 instead: https://steamcommunity.com/sharedfiles/filedetails/?id=1758376843");
-
+            Broken(611254368u, "Environment Changer");
+            Note(611254368u, "Environment Changer", "Sunset Harbor: Spitting nulll reference errors in to log.");
             Fixed(1758376843u, "Network Skins 2");
-
+            Fixed(422934383u, "CSL Music Mod");
             Fixed(1637663252u, "TM:PE V11 STABLE");
             Fixed(1806963141u, "TM:PE v11.1.2 LABS");
             Fixed(1420955187u, "Real Time");
             Fixed(1312767991u, "Transport Lines Manager 13.2");
             Fixed(1776052533u, "Stops & Stations");
             Fixed(1435741602u, "Snooper");
-            Fixed(1768810491u, "Measure It");
+            Fixed(1768810491u, "Measure It!");
             Fixed(445589127u, "Precision Engineering");
             Fixed(1619685021u, "Move It 2.7.1");
             Fixed(405810376u, "All 25 Areas purchasable");
-
+            Fixed(1721492498u, "Optimised Outside Connections");
+            Fixed(1591584836u, "HDRI 2K Cubempap Pack");
+            Fixed(1585691173u, "HDRI Haven Cubemap Pack");
+            Fixed(1183931915u, "Cubemap Replacer");
+            Fixed(629850626u, "Workshop RICO Settings");
             Fixed(2016920607u, "Ploppable RICO Revisited");
             Fixed(2025147082u, "Realistic Population Revisited");
             Fixed(2027161563u, "Lifecycle Rebalance Revisited");
-
             Broken(816260433u, "Metro Overhaul Mod");
             Note(816260433u, "Metro Overhaul Mod", "Suset Harbor: Developers are working on an update and the mod will be continued.");
-
             Fixed(1938493221u, "Mini FPS Booster");
             Note(1938493221u, "Mini FPS Booster", "And yes, the bigger fps booster will be coming soon!");
-
-            Broken(928128676u, "Improved Public Transport 2");
-            Note(928128676u, "Improved Public Transport 2", "Sunset Harbor: Breaks trolley bus depots");
-
+            Fixed(928128676u, "Improved Public Transport 2");
             Broken(812125426u, "Network Extensions 2");
             Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads");
-
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
-
             Broken(502750307u, "Extra Landscaping Tools"); // menu wont close
             Broken(442167376u, "Advanced Vehicle Options (AVO)"); // technically not but long overdue to get people over to new ver
-
             Dead(414618382u, "Rotate Brush");
             Dead(408905948u, "Pause on Load"); // Sunset harbor contains
-
             // credit to AquilaSol/Avanya for compiling these lists in google docs
-
             //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
             Broken(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
             Note(576327847u, "81 Tiles (Fixed for 1.2+)", "Sunset Harbor: BP expects to have bugfix out within 48 hours.");
             Note(576327847u, "81 Tiles (Fixed for 1.2+)", "[Mod: More Vehicles] Currently incompatible with 81 Tiles but should be fixed soon.");
-
             Broken(912329352u, "Building Anarchy"); // breaks placement mode
-            Broken(515489008u, "Extra Train Station Tracks");
-
+            Fixed(515489008u, "Extra Train Station Tracks");
             Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
             Note(1844440354u, "Fine Road Anarchy 2", "Sunset Harbor: It's not detecting clicks on networks properly");
-
-            Broken(667342976u, "Loading Screen Mod"); // doesn't load DLC content
-            Broken(833779378u, "Loading Screen Mod [Test]"); // doesn't load DLC content
-            Broken(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
+            Fixed(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
             Broken(621002682u, "No Questions Asked"); // crash to desktop
-            Broken(650436109u, "Quay Anarchy");
-            Note(650436109u, "Quay Anarchy", "Sunset Harbor: A fix will be released within next day or two");
-
-            Broken(934994075u, "Service Vehicle Selector 2"); // stack overflow
-            Broken(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
+            Fixed(650436109u, "Quay Anarchy");
+            Fixed(934994075u, "Service Vehicle Selector 2"); // stack overflow
+            Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
             Broken(583429740u, "Traffic Manager: President Edition [STABLE]");
             Broken(1349895184u, "Tree LOD Fix"); // Error on launch
-
             Broken(1632320836u, "Service Vehicles Manager 2.0.1");
             Note(1632320836u, "Service Vehicles Manager 2.0.1", "Klyte45 is focussing on some updates to Transport Lines Manager first.");
-
             Broken(1312735149u, "Klyte Commons");
 
-            // will be updated quickly after update
-            Broken(928128676u, "Improved Public Transport 2"); // transport not working
 
             // dead mods
             Dead(421188880u , "[ARIS] Early Death");

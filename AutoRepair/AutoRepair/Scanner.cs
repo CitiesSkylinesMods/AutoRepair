@@ -161,7 +161,7 @@ namespace AutoRepair {
                         }
 
                         if (HasFlag(flags, ItemFlags.Streamable)) {
-                            log.Append("\n - This music is safe for streaming (accordin to author / music source).\n");
+                            log.Append("\n - This music is safe for streaming (according to author / music source).\n");
                         } else if (compatibility.TryGetValue(422934383u, out var music)) {
                             if (music == Status.Required) {
                                 log.Append("\n - Not safe for streaming (copyrighted music).\n");

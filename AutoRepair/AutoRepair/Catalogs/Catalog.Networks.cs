@@ -162,9 +162,12 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "[NOTE] In game Graphics Settings, set 'Texture Quality' to 'High' before dumping for best quality.",
+                },
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/Cgameworld/NetworkDumpTools",
             });
@@ -183,6 +186,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "TIMIYANG",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 CloneOf = 932192868u, // Road Options (Road Colors Changer ++)
                 Compatibility = new Dictionary<ulong, Status>() {

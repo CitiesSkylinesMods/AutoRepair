@@ -25,7 +25,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.PdxLauncher,
                 SourceURL = "https://github.com/kianzarrin/PedestrianBridge/",
@@ -37,6 +37,9 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.PlaceAndMove,
                 Authors = "amamlya, VictoriaCity, pcfantasy",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Languages = new[] { "de", "en", "es", "fr", "ko", "ru", "zh-cn", "zh" },
                 Locale = "en",
@@ -148,6 +151,9 @@ namespace AutoRepair.Catalogs {
                     { 689937287u, Status.Recommended }, // Surface Painter
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "[NOTE] Avoid using it near map edges (small bug spams log file).",
+                },
             });
 
             AddMod(new Item(1677913611u, "Smart Intersection Builder") {
@@ -174,6 +180,7 @@ namespace AutoRepair.Catalogs {
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
                     { 1597198847u, Status.Incompatible }, // [Legacy] Segment Slope Smoother
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1597198847u, // [Legacy] Segment Slope Smoother
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -212,6 +219,7 @@ namespace AutoRepair.Catalogs {
                     { 787611845u , Status.Recommended  }, // Prop Snapping
                     { 766190099u , Status.Incompatible }, // Move It (original)
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 766190099u, // Move It (original)
                 Flags = ItemFlags.Recommended // rare accolade
                       | ItemFlags.SourceAvailable,
@@ -230,6 +238,7 @@ namespace AutoRepair.Catalogs {
                     { 1612012531u, Status.Compatible }, // Net Picker 2.0
                     { 1393797695u, Status.Compatible }, // Touch This! Tool 3
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -388,7 +397,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
-                ReplaceWith = 1619685021u, // Move It
+                ReplaceWith = 1619685021u, // Move It 2.7.1
             });
 
             AddMod(new Item(1866239503u, "MOVE IT Sakuya16个人汉化版") {
@@ -412,7 +421,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
-                ReplaceWith = 1619685021u, // Move It
+                ReplaceWith = 1619685021u, // Move It 2.7.1
             });
 
             AddMod(new Item(1857894421u, "766190099_Move_It_") {
@@ -598,7 +607,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // Removed some time around Feb 2019
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
-                ReplaceWith = 1619685021u, // Move It
+                ReplaceWith = 1619685021u, // Move It (curent stable release)
                 SourceURL = "https://github.com/SamsamTS/CS-MoveIt",
             });
 
