@@ -42,7 +42,9 @@ namespace AutoRepair.Catalogs {
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.PdxLauncher,
                 SourceURL = "https://github.com/kianzarrin/HideUnconnectedTracks",
                 Tags = new[] { "TMPE", "TM:PE", "Tram", "Train", "Network", "Skins", "Junctions", "Tracks" },
             });
@@ -72,9 +74,11 @@ namespace AutoRepair.Catalogs {
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1934023593u, // Hide TMPE crosswalks V2.5 [BETA]
                 Flags = ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.PdxLauncher,
                 SourceURL = "https://github.com/kianzarrin/HideTMPECrosswalks",
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
             });
@@ -104,8 +108,10 @@ namespace AutoRepair.Catalogs {
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/kianzarrin/HideTMPECrosswalks",
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
             });

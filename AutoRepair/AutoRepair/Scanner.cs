@@ -26,6 +26,11 @@ namespace AutoRepair {
 
             log.Append("\nTo contact us, visit workshop page: https://steamcommunity.com/sharedfiles/filedetails/?id=2034713132 \n"); // todo
 
+            log.Append("\nSome general notes:");
+            log.Append("\n* Mods that do the same thing are generally incompatible.");
+            log.Append("\n* For modded games, always exit to desktop before loading another city.");
+            log.Append("\n* If you find any problems in the report below, _please_ let us know what the specific problem is.\n");
+
             PluginManager manager = Singleton<PluginManager>.instance;
 
             // list of all subscribed, local and bundled mods (incl. camera scripts)
@@ -105,7 +110,7 @@ namespace AutoRepair {
                     }
 
                     if (!Catalog.Instance.Has(modId)) {
-                        log.Append("\n - This mod should be compatible with current game version; if not, let us know!.\n");
+                        log.Append("\n - Should be compatible with current game version (if not, let us know).\n");
 
                         // best wait until we have mode descriptors otherwise it will result in flood of spam!
                         //log.Append("\n - It would be helpful if you could copy and paste the mod id/name above\n");
@@ -130,59 +135,59 @@ namespace AutoRepair {
                             descriptor.Authors);
 
                         if (HasFlag(flags, ItemFlags.NoWorkshop)) {
-                            log.Append("\n - It has no workshop page; it is probably obsolete or game breaking.\n");
+                            log.Append("\n - Removed from Steam Workshop; it is probably obsolete or game breaking.\n");
                         } else {
                             log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
                         }
 
                         if (HasFlag(flags, ItemFlags.GameBreaking)) {
-                            log.Append("\n - It's reported as game breaking. Unsubscribe it.\n");
+                            log.Append("\n - Broken mod. Unsubscribe it.\n");
                         } else if(descriptor.BrokenBy <= GameVersion.Active) {
                             log.Append("\n - Not compatible with current game version. Disable it until an update is ready.\n");
                         } else if (descriptor.CompatibleWith >= GameVersion.Active) {
-                            log.AppendFormat("\n - It is confirmed compatible with Cities: Skylines v{0}.\n", GameVersion.Active.ToString(3));
+                            log.AppendFormat("\n - Confirmed compatible with Cities: Skylines v{0} :)\n", GameVersion.Active.ToString(3));
                         } else {
-                            log.Append("\n - It should be compatible with current game version; if not, let us know!\n");
+                            log.Append("\n - Should be compatible with current game version (if not, let us know).\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.EditorBreaking)) {
-                            log.Append("\n - It's reported to cause problems with the asset/map/theme editors.\n");
+                            log.Append("\n - Causes problems in asset/map/theme editors.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.Abandonware)) {
-                            log.Append("\n - It appears the author no longer maintains this mod; if wrong, let us know!\n");
+                            log.Append("\n - The author hasn't been active for a long time, updates unlikely.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.Streamable)) {
-                            log.Append("\n - The music in this mod is safe for streaming (according to mod author).\n");
+                            log.Append("\n - This music is safe for streaming (accordin to author / music source).\n");
                         } else if (compatibility.TryGetValue(422934383u, out var music)) {
                             if (music == Status.Required) {
-                                log.Append("\n - The music is copyrighted and must not be played while streaming.\n");
+                                log.Append("\n - Not safe for streaming (copyrighted music).\n");
                             }
                         }
 
                         if (HasFlag(flags, ItemFlags.Laggy)) {
-                            log.Append("\n - It can cause some lag or framerate drop in-game.\n");
+                            log.Append("\n - May cause some lag or framerate drop in-game.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.SlowLoad)) {
-                            log.Append("\n - It is likely to significantly increase load times.\n");
+                            log.Append("\n - Likely to significantly increase load times.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.LargeFileWarning)) {
-                            log.Append("\n - It has a somewhat large file size compared to other mods of this type.\n");
+                            log.Append("\n - Large file size compared to other items of same type.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.MinorBugs)) {
-                            log.Append("\n - Minor bugs reported for this mod; please read the mods' workshop page/comments for details.\n");
+                            log.Append("\n - Minor issues - check workshop page/comments for details.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.SaveChanging)) {
-                            log.Append("\n - This mod alters the save game; without the mod, the savegame might be unusable.\n");
+                            log.Append("\n - Alters the save game; without the mod, the savegame might be unusable.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.Unreliable)) {
-                            log.Append("\n - Some users report major problems with this mod; see mods' workshop page/comments for details.\n");
+                            log.Append("\n - Some users report major problems; check its workshop page/comments for details.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.SourceAvailable)) {
@@ -215,6 +220,7 @@ namespace AutoRepair {
                                     }
                                     break;
                                 case Status.Required:
+                                    // todo: check required item is enabled
                                     if (!subscriptions.ContainsKey(entry.Key)) {
                                         log.AppendFormat("\n - It won't work unless you subscribe to: {0}\n", GetWorkshopURL(entry.Key));
                                     }

@@ -33,7 +33,7 @@ namespace AutoRepair.Catalogs {
                     { 593588108u , Status.Recommended  }, // Prop & Tree Anarchy
                     { 1094334744u, Status.Compatible   }, // Procedural Objects
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.PdxLauncher,
             });

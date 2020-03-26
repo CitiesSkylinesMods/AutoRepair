@@ -25,14 +25,21 @@ namespace AutoRepair.Catalogs {
             Fixed(1637663252u, "TM:PE V11 STABLE");
             Fixed(1806963141u, "TM:PE v11.1.2 LABS");
             Fixed(1420955187u, "Real Time");
-            Fixed(1312767991u, "Transport Lines Manager 11.1.2");
+            Fixed(1312767991u, "Transport Lines Manager 13.2");
             Fixed(1776052533u, "Stops & Stations");
             Fixed(1435741602u, "Snooper");
-            Fixed(2016920607u, "Ploppable RICO Revisited");
             Fixed(1768810491u, "Measure It");
             Fixed(445589127u, "Precision Engineering");
             Fixed(1619685021u, "Move It 2.7.1");
             Fixed(405810376u, "All 25 Areas purchasable");
+
+            Fixed(2016920607u, "Ploppable RICO Revisited");
+            Fixed(2025147082u, "Realistic Population Revisited");
+            Fixed(2027161563u, "Lifecycle Rebalance Revisited");
+
+            Broken(816260433u, "Metro Overhaul Mod");
+            Note(816260433u, "Metro Overhaul Mod", "Suset Harbor: Developers are working on an update and the mod will be continued.");
+
             Fixed(1938493221u, "Mini FPS Booster");
             Note(1938493221u, "Mini FPS Booster", "And yes, the bigger fps booster will be coming soon!");
 
@@ -41,8 +48,10 @@ namespace AutoRepair.Catalogs {
 
             Broken(812125426u, "Network Extensions 2");
             Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads");
+
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
+
             Broken(502750307u, "Extra Landscaping Tools"); // menu wont close
             Broken(442167376u, "Advanced Vehicle Options (AVO)"); // technically not but long overdue to get people over to new ver
 
@@ -67,10 +76,15 @@ namespace AutoRepair.Catalogs {
             Broken(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
             Broken(621002682u, "No Questions Asked"); // crash to desktop
             Broken(650436109u, "Quay Anarchy");
+            Note(650436109u, "Quay Anarchy", "Sunset Harbor: A fix will be released within next day or two");
+
             Broken(934994075u, "Service Vehicle Selector 2"); // stack overflow
             Broken(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
             Broken(583429740u, "Traffic Manager: President Edition [STABLE]");
             Broken(1349895184u, "Tree LOD Fix"); // Error on launch
+
+            Broken(1632320836u, "Service Vehicles Manager 2.0.1");
+            Note(1632320836u, "Service Vehicles Manager 2.0.1", "Klyte45 is focussing on some updates to Transport Lines Manager first.");
 
             Broken(1312735149u, "Klyte Commons");
 
