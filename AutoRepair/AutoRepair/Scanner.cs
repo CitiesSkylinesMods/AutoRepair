@@ -105,7 +105,7 @@ namespace AutoRepair {
                     }
 
                     if (!Catalog.Instance.Has(modId)) {
-                        log.Append("\n - AutoRepair database does not currently contain any data for this mod, sorry.\n");
+                        log.Append("\n - This mod should be compatible with current game version; if not, let us know!.\n");
 
                         // best wait until we have mode descriptors otherwise it will result in flood of spam!
                         //log.Append("\n - It would be helpful if you could copy and paste the mod id/name above\n");
@@ -138,7 +138,7 @@ namespace AutoRepair {
                         if (HasFlag(flags, ItemFlags.GameBreaking)) {
                             log.Append("\n - It's reported as game breaking. Unsubscribe it.\n");
                         } else if(descriptor.BrokenBy <= GameVersion.Active) {
-                            log.Append(" - Not compatible with current game version. Disable it until an update is ready.\n");
+                            log.Append("\n - Not compatible with current game version. Disable it until an update is ready.\n");
                         } else if (descriptor.CompatibleWith >= GameVersion.Active) {
                             log.AppendFormat("\n - It is confirmed compatible with Cities: Skylines v{0}.\n", GameVersion.Active.ToString(3));
                         } else {

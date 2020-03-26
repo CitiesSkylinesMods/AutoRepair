@@ -21,6 +21,7 @@ namespace AutoRepair.Catalogs {
 
             // Compatibilities for 25 tile mods
             Dictionary<ulong, Status> tile25compatibility = new Dictionary<ulong, Status>() {
+                { 2035564927u, Status.Incompatible }, // 25parts_su
                 { 1978555062u, Status.Incompatible }, // AllSpacesUnlockable
                 { 1891302645u, Status.Incompatible }, // UnlockAreaCountLimitAndFree
                 { 1878659195u, Status.Incompatible }, // UnlockAreaCountLimitAndFree
@@ -203,6 +204,17 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
+
+            // 25 tiles
+            AddMod(new Item(2035564927u, "25parts_su") {
+                Affect = Factor.TileLimit,
+                Authors = "915962083",
+                Catalog = catalog,
+                Compatibility = tile25compatibility,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+            });
 
             // 25 tiles
             AddMod(new Item(1978555062u, "AllSpacesUnlockable") {

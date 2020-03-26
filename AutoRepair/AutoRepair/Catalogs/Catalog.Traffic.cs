@@ -85,18 +85,20 @@ namespace AutoRepair.Catalogs {
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1637663252u, // TM:PE V11 STABLE (Krzychu1245)
                 Flags = ItemFlags.Laggy // TM:PE does put lots of strain on CPU :/
                       | ItemFlags.MinorBugs // https://github.com/CitiesSkylinesMods/TMPE/labels/BUG
                       | ItemFlags.SourceAvailable
-                      | ItemFlags.Localised, // localised to lots of languages
+                      | ItemFlags.Localised,
                 Languages = v11languages,
                 Locale = "en",
                 Notes = new[] {
+                    "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Troubleshooting",
                     "Setting 'Simulation Accuracy' to lower value will improve framerate.",
                     "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
                     "If rail junction customiations not working, it is likely caused by SingleTrainTrackAI mod.",
-                    "Will be updated for Sunset Harbor. Might be some issues with pedestrian pathfinding (investigating).",
+                    "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating).",
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -151,18 +153,20 @@ namespace AutoRepair.Catalogs {
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 583429740u, // TM:PE 10.20 (LinuxFan)
                 Flags = ItemFlags.Laggy // TM:PE does put lots of strain on CPU :/
                       | ItemFlags.MinorBugs // https://github.com/CitiesSkylinesMods/TMPE/labels/BUG
                       | ItemFlags.SourceAvailable
-                      | ItemFlags.Localised, // localised to lots of languages
+                      | ItemFlags.Localised,
                 Languages = v11languages,
                 Locale = "en",
                 Notes = new[] {
+                    "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Troubleshooting",
                     "Setting 'Simulation Accuracy' to lower value will improve framerate.",
                     "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
                     "If rail junction customiations not working, it is likely caused by SingleTrainTrackAI mod.",
-                    "Will be updated for Sunset Harbor. Might be some issues with pedestrian pathfinding (investigating).",
+                    "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating).",
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {

@@ -22,19 +22,46 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
-            // credit to AquilaSol/Avanya for compiling these lists in google docs
             Fixed(1637663252u, "TM:PE V11 STABLE");
             Fixed(1806963141u, "TM:PE v11.1.2 LABS");
             Fixed(1420955187u, "Real Time");
             Fixed(1312767991u, "Transport Lines Manager 11.1.2");
             Fixed(1776052533u, "Stops & Stations");
             Fixed(1435741602u, "Snooper");
+            Fixed(2016920607u, "Ploppable RICO Revisited");
+            Fixed(1768810491u, "Measure It");
+            Fixed(445589127u, "Precision Engineering");
+            Fixed(1619685021u, "Move It 2.7.1");
+            Fixed(405810376u, "All 25 Areas purchasable");
+            Fixed(1938493221u, "Mini FPS Booster");
+            Note(1938493221u, "Mini FPS Booster", "And yes, the bigger fps booster will be coming soon!");
+
+            Broken(928128676u, "Improved Public Transport 2");
+            Note(928128676u, "Improved Public Transport 2", "Sunset Harbor: Breaks trolley bus depots");
+
+            Broken(812125426u, "Network Extensions 2");
+            Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads");
+            Broken(414469593u, "Extended Building Information");
+            Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
+            Broken(502750307u, "Extra Landscaping Tools"); // menu wont close
+            Broken(442167376u, "Advanced Vehicle Options (AVO)"); // technically not but long overdue to get people over to new ver
+
+            Dead(414618382u, "Rotate Brush");
+            Dead(408905948u, "Pause on Load"); // Sunset harbor contains
+
+            // credit to AquilaSol/Avanya for compiling these lists in google docs
 
             //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
             Broken(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
+            Note(576327847u, "81 Tiles (Fixed for 1.2+)", "Sunset Harbor: BP expects to have bugfix out within 48 hours.");
+            Note(576327847u, "81 Tiles (Fixed for 1.2+)", "[Mod: More Vehicles] Currently incompatible with 81 Tiles but should be fixed soon.");
+
             Broken(912329352u, "Building Anarchy"); // breaks placement mode
             Broken(515489008u, "Extra Train Station Tracks");
+
             Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
+            Note(1844440354u, "Fine Road Anarchy 2", "Sunset Harbor: It's not detecting clicks on networks properly");
+
             Broken(667342976u, "Loading Screen Mod"); // doesn't load DLC content
             Broken(833779378u, "Loading Screen Mod [Test]"); // doesn't load DLC content
             Broken(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
@@ -275,6 +302,34 @@ namespace AutoRepair.Catalogs {
         }
 
         /// <summary>
+        /// Adds a note to an item (creating the item if necessary).
+        /// </summary>
+        /// 
+        /// <param name="workshopId">The id of the item in Steam Workshop.</param>
+        /// <param name="workshopName">The name of the item in Steam Workshop.</param>
+        /// <param name="note">The note to add (only one note per call, this is a quick kludge).</param>
+        internal void Note(ulong workshopId, string workshopName, string note) {
+            if (Items.TryGetValue(workshopId, out Item item)) {
+                if (item.Notes == null) {
+                    item.Notes = new[] { note };
+                } else {
+                    List<string> arr = new List<string>(item.Notes) {
+                        { note },
+                    };
+                    item.Notes = arr.ToArray();
+                }
+            } else {
+                AddMod(new Item(workshopId, workshopName) {
+                    Affect = Factor.Other,
+                    Authors = "(not specified)",
+                    Catalog = "Addendum",
+                    Flags = ItemFlags.Unrecognised,
+                    Notes = new[] { note },
+                });
+            }
+        }
+
+        /// <summary>
         /// Mark an item as compatible with latest version.
         ///
         /// If the item is not yet in catalog, it will be added, otherwise the existing item will be updated.
@@ -285,15 +340,15 @@ namespace AutoRepair.Catalogs {
         internal void Fixed(ulong workshopId, string workshopName) {
             //Log.Info($"- Confirmed compatible: {workshopId} '{workshopName}'");
 
+            string theNote = "COMPATIBLE with Sunset Harbor update! :)";
+
             if (Items.TryGetValue(workshopId, out Item item)) {
                 item.BrokenBy = GameVersion.DefaultUntil;
                 item.CompatibleWith = LatestUpdate;
                 if (item.Notes == null) {
-                    item.Notes = new[] { "Compatible with Sunset Harbor update." };
+                    item.Notes = new[] { theNote };
                 } else {
-                    List<string> arr = new List<string>(item.Notes) {
-                        { "Compatible with Sunset Harbor!" },
-                    };
+                    List<string> arr = new List<string>(item.Notes) { { theNote } };
                     item.Notes = arr.ToArray();
                 }
             } else {
@@ -303,6 +358,7 @@ namespace AutoRepair.Catalogs {
                     Catalog = "Addendum",
                     CompatibleWith = LatestUpdate,
                     Flags = ItemFlags.Unrecognised,
+                    Notes = new[] { theNote },
                 });
             }
         }
@@ -318,10 +374,18 @@ namespace AutoRepair.Catalogs {
         internal void Broken(ulong workshopId, string workshopName) {
             //Log.Info($"- Broken: {workshopId} '{workshopName}'");
 
+            string theNote = "BROKEN since Sunset Harbor update :(";
+
             if (Items.TryGetValue(workshopId, out Item item)) {
                 item.BrokenBy = LatestUpdate;
                 if (item.CompatibleWith >= LatestUpdate) {
                     item.CompatibleWith = GameVersion.DefaultRelease;
+                }
+                if (item.Notes == null) {
+                    item.Notes = new[] { theNote };
+                } else {
+                    List<string> arr = new List<string>(item.Notes) { { theNote } };
+                    item.Notes = arr.ToArray();
                 }
             } else {
                 AddMod(new Item(workshopId, workshopName) {
@@ -330,6 +394,7 @@ namespace AutoRepair.Catalogs {
                     BrokenBy = LatestUpdate,
                     Catalog = "Addendum",
                     Flags = ItemFlags.Unrecognised,
+                    Notes = new[] { theNote },
                 });
             }
         }
