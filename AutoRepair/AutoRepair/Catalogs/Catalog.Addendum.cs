@@ -1,6 +1,7 @@
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
+    using AutoRepair.Util;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
@@ -22,6 +23,9 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
+            Broken(810858473u, "Traffic Report Tool");
+            Broken(426460372u, "Favorite Cims");
+            Dead(426460372u, "Favorite Cims");
             Broken(554232266u, "Nursing Homes for Senior Citizens");
             Note(554232266u, "Nursing Homes for Senior Citizens", "Breaks if any DLCs are added due to changes in toolbar.");
             Fixed(556784825u, "Random Tree Rotation");
@@ -33,22 +37,17 @@ namespace AutoRepair.Catalogs {
             Fixed(812713438u, "Dynamic Resolution");
             Fixed(1899640536u, "Theme Mixer 2");
             Fixed(877950833u, "Vanilla Trees Remover");
-            Fixed(1806759255u, "Customize It Extended");
-            Fixed(1869561285u, "Prop Painter");
             Fixed(632951976u, "Improved Mod Upload Panel");
             Fixed(762520291u, "Shadow Strenght Adjuster");
             Fixed(643364914u, "Softer Shadows");
-            Fixed(1764637396u, "Toggle It!");
-            Fixed(1562650024u, "Rebalanced Industries");
             Note(1393820309u, "Ticket Price Customizer", "Sunset Harbor: Trollyebus are not currently supported.");
             Broken(543722850u, "Network Skins");
+            Dead(543722850u, "Network Skins");
             Note(543722850u, "Network Skins", "Replace with new version: https://steamcommunity.com/sharedfiles/filedetails/?id=1758376843");
             Broken(611254368u, "Environment Changer");
             Note(611254368u, "Environment Changer", "Sunset Harbor: Spitting nulll reference errors in to log.");
             Fixed(1758376843u, "Network Skins 2");
             Fixed(422934383u, "CSL Music Mod");
-            Fixed(1637663252u, "TM:PE V11 STABLE");
-            Fixed(1806963141u, "TM:PE v11.1.2 LABS");
             Fixed(1420955187u, "Real Time");
             Fixed(1312767991u, "Transport Lines Manager 13.2");
             Fixed(1776052533u, "Stops & Stations");
@@ -71,6 +70,7 @@ namespace AutoRepair.Catalogs {
             Note(1938493221u, "Mini FPS Booster", "And yes, the bigger fps booster will be coming soon!");
             Fixed(928128676u, "Improved Public Transport 2");
             Broken(812125426u, "Network Extensions 2");
+            BreaksEditor(812125426u, "Network Extensions 2");
             Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads");
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
@@ -80,9 +80,8 @@ namespace AutoRepair.Catalogs {
             Dead(408905948u, "Pause on Load"); // Sunset harbor contains
             // credit to AquilaSol/Avanya for compiling these lists in google docs
             //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
-            Broken(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
-            Note(576327847u, "81 Tiles (Fixed for 1.2+)", "Sunset Harbor: BP expects to have bugfix out within 48 hours.");
-            Note(576327847u, "81 Tiles (Fixed for 1.2+)", "[Mod: More Vehicles] Currently incompatible with 81 Tiles but should be fixed soon.");
+            Fixed(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
+            Note(576327847u, "81 Tiles (Fixed for 1.2+)", "[Mod: More Vehicles] Now compatible with 81 Tiles!!");
             Broken(912329352u, "Building Anarchy"); // breaks placement mode
             Fixed(515489008u, "Extra Train Station Tracks");
             Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
@@ -332,6 +331,9 @@ namespace AutoRepair.Catalogs {
         /// <param name="note">The note to add (only one note per call, this is a quick kludge).</param>
         internal void Note(ulong workshopId, string workshopName, string note) {
             if (Items.TryGetValue(workshopId, out Item item)) {
+#if DEBUG
+                Log.Info($"Addendum updated existing item: {item}");
+#endif
                 if (item.Notes == null) {
                     item.Notes = new[] { note };
                 } else {
@@ -365,6 +367,9 @@ namespace AutoRepair.Catalogs {
             string theNote = "COMPATIBLE with Sunset Harbor update! :)";
 
             if (Items.TryGetValue(workshopId, out Item item)) {
+#if DEBUG
+                Log.Info($"Addendum updated existing item: {item}");
+#endif
                 item.BrokenBy = GameVersion.DefaultUntil;
                 item.CompatibleWith = LatestUpdate;
                 if (item.Notes == null) {
@@ -399,6 +404,9 @@ namespace AutoRepair.Catalogs {
             string theNote = "BROKEN since Sunset Harbor update :(";
 
             if (Items.TryGetValue(workshopId, out Item item)) {
+#if DEBUG
+                Log.Info($"Addendum updated existing item: {item}");
+#endif
                 item.BrokenBy = LatestUpdate;
                 if (item.CompatibleWith >= LatestUpdate) {
                     item.CompatibleWith = GameVersion.DefaultRelease;
@@ -429,6 +437,9 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void BreaksEditor(ulong workshopId, string workshopName) {
             if (Items.TryGetValue(workshopId, out Item item)) {
+#if DEBUG
+                Log.Info($"Addendum updated existing item: {item}");
+#endif
                 item.Flags |= ItemFlags.EditorBreaking;
             } else {
                 AddMod(new Item(workshopId, workshopName) {
@@ -451,6 +462,9 @@ namespace AutoRepair.Catalogs {
         /// <param name="replacement">(Optional) Workshop ID of a suitable replacement.</param>
         internal void Dead(ulong workshopId, string workshopName, ulong replacement = 0u) {
             if (Items.TryGetValue(workshopId, out Item item)) {
+#if DEBUG
+                Log.Info($"Addendum updated existing item: {item}");
+#endif
                 item.Flags |= ItemFlags.Abandonware | ItemFlags.GameBreaking | ItemFlags.Obsolete;
                 if (item.ReplaceWith != 0u) {
                     item.Flags |= ItemFlags.ForceMigration;

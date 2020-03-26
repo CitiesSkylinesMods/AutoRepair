@@ -53,6 +53,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {                   
                     // Sometimes breaks if 81 Tiles mod active
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable, // linked on workshop page, but github repo deleted
             });
 

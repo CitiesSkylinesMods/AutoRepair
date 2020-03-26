@@ -76,7 +76,7 @@ namespace AutoRepair.Catalogs {
                     { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.PdxLauncher,
                 SourceURL = "https://github.com/algernon-A/Ploppable-RICO-Revisited",
@@ -97,21 +97,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.PdxLauncher,
             });
 
-            AddMod(new Item(1962752152u, "Busstop Prop Remover") {
-                Affect = Factor.HideRemove
-                       | Factor.Props,
-                Authors = "PC28K",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1591417160u, Status.Incompatible },
-                    { 919020932u , Status.Incompatible }, // Stop Remover
-                    { 545878277u , Status.Incompatible }, // [GBS] German Bus Stop Mod [NC]
-                },
-                CompatibleWith = GameVersion.PdxLauncher,
-                Flags = ItemFlags.MinorBugs // requires game restart to toggle th
-                      | ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.Campus,
-            });
+
 
             AddMod(new Item(1927186256u, "Problem Info") {
                 Affect = Factor.Other,
@@ -581,18 +567,6 @@ namespace AutoRepair.Catalogs {
                     "Shicho seems to break mods that use Harmony framework.",
                 },
                 SourceURL = "https://github.com/SETNAHQ/Shicho",
-            });
-
-            AddMod(new Item(1410003347u, "Additive Shader") {
-                Affect = Factor.Rendering,
-                Authors = "Ronyx69, Simon Ryr",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                CompatibleWith = GameVersion.PdxLauncher,
-                Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.ParkLife,
-                SourceURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
             });
 
             AddMod(new Item(1420955187u, "Real Time") {

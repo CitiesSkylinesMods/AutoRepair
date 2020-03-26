@@ -27,7 +27,6 @@ namespace AutoRepair.Catalogs {
             # ██  ██  ██ ██    ██ ██   ██      ██
             # ██      ██  ██████  ██████  ███████
             */
-
             AddMod(new Item(1886877404u, "Custom Effect Loader") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
@@ -115,7 +114,18 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "LODs", "Detail", "Graphics", "Eyecandy", "Trees", "Props", "Buildings", "Networks", "Decals" },
             });
 
-            // Some Daylight Classic settings conflict with Relight
+            AddMod(new Item(1410003347u, "Additive Shader") {
+                Affect = Factor.Rendering,
+                Authors = "Ronyx69, Simon Ryr",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.ParkLife,
+                SourceURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
+            });
+
             // Game engine issues: Shadow acne vs. Shadow detachment
             AddMod(new Item(1209581656u, "Relight") {
                 Affect = Factor.Environment
@@ -134,6 +144,11 @@ namespace AutoRepair.Catalogs {
                     { 530871278u , Status.MinorIssues  }, // Daylight Classic
                 },
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "[Note] Read the workshop page for important details on how to properly set-up your system for Relight.",
+                    "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight.",
+                    "[Mod: Shadow Strength Adjuster] Set it's 'Shadow Strength' to maximum for best results with Relight.",
+                },
                 SourceURL = "https://gist.github.com/ronyx69/a75400389e7561164bacabadf0095a2b",
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Brightness", "Gamma", "Contrast", "Temperature", "Tint", "Sun", "Sky", "Moon", "Tonemapping" },
             });

@@ -5,7 +5,7 @@ namespace AutoRepair.Catalogs {
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// Mods that replace road textures or colors.
+    /// Mods that add or alter networks.
     /// </summary>
     public partial class Catalog {
 
@@ -17,7 +17,6 @@ namespace AutoRepair.Catalogs {
         private void NetworksCatalog() {
 
             string catalog = "Networks";
-
             AddMod(new Item(1959342332u, "CSUR ToolBox") {
                 Affect = Factor.OutsideConnection
                        | Factor.Pathfinder
@@ -56,7 +55,6 @@ namespace AutoRepair.Catalogs {
                     { 1959342332u, Status.Required     }, // CSUR ToolBox
                     { 1959210164u, Status.Required     }, // CSUR Basic Pack [R1]
                     { 1758376843u, Status.MinorIssues  }, // Network Skins 2 (overrides road color; likely desirable in that respect)
-                    // incompat: all road color changers
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1440928803u, Status.Unknown      }, // Parallel Road Tool
@@ -95,10 +93,11 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/grilly86/Open-Street-Cities",
             });
 
-            // todo: probably incompatible with TMPE, MOM, etc
+            // todo: probably incompatible with MOM, etc
             AddMod(new Item(1953042839u, "Unified Railway System") {
                 Affect = Factor.Pathfinder
                        | Factor.PlaceAndMove
+                       | Factor.TransportLines
                        | Factor.Vehicles,
                 Authors = "fanyongda2012",
                 Catalog = catalog,
@@ -129,33 +128,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Campus,
             });
 
-            AddMod(new Item(1758376843u, "Network Skins 2") {
-                Affect = Factor.Props // catenary, lights
-                       | Factor.Textures
-                       | Factor.Trees,
-                Authors = "boformer, TPB",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo: incompat with roads color changer
-                    { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
-                    { 1959183067u, Status.MinorIssues  }, // CSUR Loader
-                    { 1826488681u, Status.Recommended  }, // Modern Lighting Pack: Liberated!
-                    { 1758376843u, Status.Incompatible }, // Network Skins 2
-                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
-                    { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
-                    { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
-                    { 543722850u , Status.Incompatible }, // Network Skins (original)
-                    { 417585852u , Status.Incompatible }, // Road Color Changer
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/boformer/NetworkSkins",
-            });
-
+            // todo: move to editor cat
             AddMod(new Item(1845697704u, "Network Dump Tools") {
                 Affect = Factor.Textures,
                 Authors = "Cgameworld",
@@ -172,153 +145,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Cgameworld/NetworkDumpTools",
             });
 
-            /*
-            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
-            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
-            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
-            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
-            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
-            */
-
-            // translated clone of (assuming) 932192868u
-            AddMod(new Item(1449429720u, "Road Color 道路颜色修改中文汉化版") {
-                Affect = Factor.Props
-                       | Factor.RoadMarkings
-                       | Factor.Textures,
-                Authors = "TIMIYANG",
-                BrokenBy = GameVersion.SunsetHarbor,
-                Catalog = catalog,
-                CloneOf = 932192868u, // Road Options (Road Colors Changer ++)
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1959183067u, Status.Incompatible }, // CSUR Loader
-                    { 1758376843u, Status.Incompatible }, // Network Skins 2
-                    { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
-                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
-                    { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
-                    { 812125426u , Status.Compatible   }, // Network Extensions 2
-                    { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
-                    { 478820060u , Status.Incompatible }, // Network Extensions Project
-                    { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Localised,
-                Locale = "zh-cn",
-                ReplaceWith = 1758376843u, // Network Skins 2
-            });
-
-            // Road Options (Road Colors Changer ++)
-            AddMod(new Item(1189186167u, "道路颜色调整") {
-                Affect = Factor.Props
-                       | Factor.RoadMarkings
-                       | Factor.Textures,
-                Authors = "hlwb7788",
-                BrokenBy = GameVersion.SunsetHarbor,
-                Catalog = catalog,
-                CloneOf = 932192868u, // Road Options (Road Colors Changer ++)
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1959183067u, Status.Incompatible }, // CSUR Loader
-                    { 1758376843u, Status.Incompatible }, // Network Skins 2
-                    { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
-                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
-                    { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
-                    { 812125426u , Status.Compatible   }, // Network Extensions 2
-                    { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
-                    { 478820060u , Status.Incompatible }, // Network Extensions Project
-                    { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SlowLoad
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Localised,
-                Locale = "zh-cn",
-                ReplaceWith = 1758376843u, // Network Skins 2
-            });
-
-            // Additional dev work on 651610627u
-            // Currently most reliable version but superseded by NS2
-            AddMod(new Item(932192868u, "Road Options (Road Colors Changer ++)") {
-                Affect = Factor.Props
-                       | Factor.RoadMarkings
-                       | Factor.Textures,
-                Authors = "TPB",
-                BrokenBy = GameVersion.SunsetHarbor,
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1959183067u, Status.Incompatible }, // CSUR Loader
-                    { 1758376843u, Status.Incompatible }, // Network Skins 2
-                    { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
-                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
-                    { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
-                    { 812125426u , Status.Compatible   }, // Network Extensions 2
-                    { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
-                    { 478820060u , Status.Incompatible }, // Network Extensions Project
-                    { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
-                },
-                ContinuationOf = 651610627u, // [DISCONTINUED] Road Color Changer Continued
-                Flags = ItemFlags.Obsolete // network skins and other prop/decal remover mods
-                      | ItemFlags.SlowLoad
-                      | ItemFlags.SourceUnavailable,
-                ReplaceWith = 1758376843u, // Network Skins 2
-            });
-
-            // Additional dev work on the original mod
-            AddMod(new Item(651610627u, "[DISCONTINUED] Road Color Changer Continued") {
-                Affect = Factor.Props
-                       | Factor.RoadMarkings
-                       | Factor.Textures,
-                Authors = "vukica",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1959183067u, Status.Incompatible }, // CSUR Loader
-                    { 1758376843u, Status.Incompatible }, // Network Skins 2
-                    { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
-                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
-                    { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
-                    { 812125426u , Status.Incompatible }, // Network Extensions 2
-                    { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
-                    { 478820060u , Status.Compatible   }, // Network Extensions Project
-                    { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
-                },
-                ContinuationOf = 417585852u, // Road Color Changer
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking // yellow bar in workshop
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SlowLoad
-                      | ItemFlags.SourceUnavailable,
-                ReplaceWith = 1758376843u, // Network Skins 2
-            });
-
-            // original mod
-            AddMod(new Item(417585852u, "Road Color Changer") {
-                Affect = Factor.Props
-                       | Factor.RoadMarkings
-                       | Factor.Textures,
-                Authors = "hyperdrive_engage",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1959183067u, Status.Incompatible }, // CSUR Loader
-                    { 1758376843u, Status.Incompatible }, // Network Skins 2
-                    { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
-                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
-                    { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
-                    { 812125426u , Status.Incompatible }, // Network Extensions 2
-                    { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
-                    { 478820060u , Status.Compatible   }, // Network Extensions Project
-                    { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SlowLoad
-                      | ItemFlags.SourceUnavailable,
-                ReplaceWith = 1758376843u, // Network Skins 2
-            });
 
         }
     }

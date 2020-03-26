@@ -93,6 +93,7 @@ namespace AutoRepair.Catalogs {
                     { 1369729955u, Status.Incompatible }, // Customize It (original mod)
                     { 946550801u , Status.Incompatible }, // Park Rebalance
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1369729955u, // Customize It (original mod)
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/Celisuis/CustomizeItExtended",
@@ -148,6 +149,7 @@ namespace AutoRepair.Catalogs {
                     { 1553517176u, Status.Incompatible }, // Specialized Industry Fix Redux
                     { 1369729955u, Status.Incompatible }, // Customize It!
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/Quboid/CSL_RebalancedIndustries",
             });

@@ -106,7 +106,7 @@ namespace AutoRepair.Catalogs {
                     { 616078328u , Status.Incompatible }, // All Tile Start
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 576970398u , Status.MinorIssues  }, // Quartz (former Sapphire) - UI skin framework
-                    { 576327847u , Status.Incompatible }, // 81 Tiles (BP version)
+                    { 576327847u , Status.Compatible   }, // 81 Tiles (BP version)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
