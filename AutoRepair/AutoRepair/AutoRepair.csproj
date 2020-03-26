@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="ExternalPaths.props" Condition="Exists('ExternalPaths.props')" />
@@ -103,5 +103,9 @@
     <None Include="PostBuild.props" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(_DevPlatform)' == 'Win'">
+    <!-- Temp override publish to folder for rapid updates -->
+    <PublishDllPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\255710\2034713132</PublishDllPath>
+  </PropertyGroup>
   <Import Project="PostBuild.props" Condition="Exists('PostBuild.props')" />
 </Project>
