@@ -151,6 +151,7 @@ namespace AutoRepair.Catalogs {
                     { 543722850u , Status.Incompatible }, // Network Skins (original)
                     { 417585852u , Status.Incompatible }, // Road Color Changer
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/boformer/NetworkSkins",
             });
@@ -200,7 +201,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                ReplaceWith = 1758376843u, // Network Skins 2 (Beta)
+                ReplaceWith = 1758376843u, // Network Skins 2
             });
 
             // Road Options (Road Colors Changer ++)
@@ -209,6 +210,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "hlwb7788",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 CloneOf = 932192868u, // Road Options (Road Colors Changer ++)
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -228,7 +230,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                ReplaceWith = 1758376843u, // Network Skins 2 (Beta)
+                ReplaceWith = 1758376843u, // Network Skins 2
             });
 
             // Additional dev work on 651610627u
@@ -238,6 +240,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "TPB",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067u, Status.Incompatible }, // CSUR Loader
@@ -254,7 +257,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Obsolete // network skins and other prop/decal remover mods
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
-                ReplaceWith = 1758376843u, // Network Skins 2 (Beta)
+                ReplaceWith = 1758376843u, // Network Skins 2
             });
 
             // Additional dev work on the original mod
@@ -282,7 +285,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
-                ReplaceWith = 932192868u, // Road Options (Road Colors Changer ++)
+                ReplaceWith = 1758376843u, // Network Skins 2
             });
 
             // original mod
@@ -305,12 +308,12 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking // older than 651610627u which is also game breaking
+                      | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
-                ReplaceWith = 932192868u, // Road Options (Road Colors Changer ++)
+                ReplaceWith = 1758376843u, // Network Skins 2
             });
 
         }

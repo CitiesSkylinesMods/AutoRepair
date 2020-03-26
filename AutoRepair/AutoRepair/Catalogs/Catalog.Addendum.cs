@@ -22,6 +22,16 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
+            Note(1393820309u, "Ticket Price Customizer", "Sunset Harbor: Trollyebus are not currently supported.");
+
+            Broken(543722850u, "Network Skins");
+            Note(543722850u, "Network Skins", "Replace with new version: https://steamcommunity.com/sharedfiles/filedetails/?id=1758376843");
+
+            Broken(932192868u, "Road Options (Road Colors Changer ++)");
+            Note(932192868u, "Road Options (Road Colors Changer ++)", "Use Network Skins 2 instead: https://steamcommunity.com/sharedfiles/filedetails/?id=1758376843");
+
+            Fixed(1758376843u, "Network Skins 2");
+
             Fixed(1637663252u, "TM:PE V11 STABLE");
             Fixed(1806963141u, "TM:PE v11.1.2 LABS");
             Fixed(1420955187u, "Real Time");

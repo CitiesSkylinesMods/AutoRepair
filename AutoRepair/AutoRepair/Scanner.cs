@@ -27,8 +27,10 @@ namespace AutoRepair {
             log.Append("\nTo contact us, visit workshop page: https://steamcommunity.com/sharedfiles/filedetails/?id=2034713132 \n"); // todo
 
             log.Append("\nSome general notes:");
+            log.Append("\n* Disabled mods are often still loaded; always unsubscribe mods you're not using!");
             log.Append("\n* Mods that do the same thing are generally incompatible.");
             log.Append("\n* For modded games, always exit to desktop before loading another city.");
+            log.Append("\n* After disabling/unsubscribing mods, always exit to desktop to flush them from RAM");
             log.Append("\n* If you find any problems in the report below, _please_ let us know what the specific problem is.\n");
 
             PluginManager manager = Singleton<PluginManager>.instance;
@@ -134,12 +136,6 @@ namespace AutoRepair {
                             compatibility.Count,
                             descriptor.Authors);
 
-                        if (HasFlag(flags, ItemFlags.NoWorkshop)) {
-                            log.Append("\n - Removed from Steam Workshop; it is probably obsolete or game breaking.\n");
-                        } else {
-                            log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
-                        }
-
                         if (HasFlag(flags, ItemFlags.GameBreaking)) {
                             log.Append("\n - Broken mod. Unsubscribe it.\n");
                         } else if(descriptor.BrokenBy <= GameVersion.Active) {
@@ -148,6 +144,12 @@ namespace AutoRepair {
                             log.AppendFormat("\n - Confirmed compatible with Cities: Skylines v{0} :)\n", GameVersion.Active.ToString(3));
                         } else {
                             log.Append("\n - Should be compatible with current game version (if not, let us know).\n");
+                        }
+
+                        if (HasFlag(flags, ItemFlags.NoWorkshop)) {
+                            log.Append("\n - Removed from Steam Workshop; it is probably obsolete or game breaking.\n");
+                        } else {
+                            log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
                         }
 
                         if (HasFlag(flags, ItemFlags.EditorBreaking)) {
