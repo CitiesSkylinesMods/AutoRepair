@@ -57,33 +57,96 @@ namespace AutoRepair.Catalogs {
                 Authors = "Krzychu1245, kvakvs, LinuxFan, FireController#1847, kian.zarrin, aubergine18",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // Current versions of TM:PE
+                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
+                    // Old/rogue versions of TM:PE
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1581695572u, Status.Incompatible }, // Traffic Manager: President Edition (no longer in workshop)
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    // Traffic Manager + Traffic++ AI (obsolete; game breaking)
+                    { 563720449u , Status.Incompatible }, // Traffic Manager + Improved AI (Japanese Ver.)
+                    { 498363759u , Status.Incompatible }, // Traffic Manager + Improved AI
+                    // Traffic++ (obsolete; game breaking)
+                    { 626024868u , Status.Incompatible }, // Traffic++ V2
+                    { 492391912u , Status.Incompatible }, // Improved AI (Traffic++)
+                    { 409184143u , Status.Incompatible }, // Traffic++
+                    // Extremely old verisons of Traffic Manager (obsolete; game breaking)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 481786333u , Status.Incompatible }, // Traffic Manager Plus
+                    { 427585724u , Status.Incompatible }, // Traffic Manager (where it all started!!)
+                    // ARIS Hearse AI (breaks AI)
+                    { 813835241u , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 583556014u , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4+]
+                    { 433249875u , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    // ARIS Garbage AI (breaks AI)
+                    { 813835391u , Status.Incompatible }, // Enhanced Garbage Truck AI [1.6]
+                    { 583552152u , Status.Incompatible }, // Enhanced Garbage Truck AI [Fixed for v1.4+]
+                    { 439582006u , Status.Incompatible }, // [ARIS] Enhanced Garbage Truck AI
+                    // ARIS Remove Stuck (use TM:PE "Reset Stuck Vehicles and Cims" instead)
+                    { 813834836u , Status.Incompatible }, // Remove Stuck Vehicles [1.6]
+                    { 587530437u , Status.Incompatible }, // Remove Stuck Vehicles [Fixed for v1.4+]
+                    { 428094792u , Status.Incompatible }, // [ARIS] Remove Stuck Vehicles
+                    // ARIS Overwatch (breaks game)
+                    { 813833476u , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 583538182u , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 421028969u , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    // Old anarchy mods (make a huge mess of networks and terrain!)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9 (just sick of seeing this break games!)
+                    // Obsolete road mods (fix with "Road Removal Tool" and "Safenets" mods)
+                    { 929114228u , Status.Incompatible }, // New Roads for Network Extensions
+                    { 478820060u , Status.Incompatible }, // Network Extensions Project (v1)
+                    { 414702884u,  Status.Incompatible }, // Zoneable Pedestrian Paths
+                    // Incompatible with TM:PE (patch conflicts or does not fire events)
+                    { 1803209875u, Status.Incompatible }, // Trees Respiration
+                    { 649522495u , Status.Incompatible }, // District Service Limit
+                    { 844180955u , Status.Incompatible }, // City Drive
+                    { 512341354u , Status.Incompatible }, // Central Services Dispatcher (WtM)
+                    { 413847191u , Status.Incompatible }, // SOM - Services Optimisation Module
+                    // Reported to cause lane usage issues in TM:PE
+                    { 810858473u , Status.Incompatible }, // Traffic Report Mod: Updated
+                    { 408092246u , Status.Incompatible }, // Traffic Report Tool 2.0
+                    // Other breaking mods
+                    { 1767246646u, Status.Incompatible }, // AutoLineBudget (PropVehCount errors, using .Net Framework 2, published as camera script?!!)
+                    { 1072157697u, Status.Incompatible }, // Cargo Info
+                    { 436253779u,  Status.Incompatible }, // Road Protractor
+                    { 417926819u,  Status.Incompatible }, // Road Assistant
+                    // Mods made obsolete by TM:PE (and conflict with TM:PE patches/state)
+                    { 1628112268u, Status.Incompatible }, // RightTurnNoStop
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
+                    { 600733054u , Status.Incompatible }, // No On-Street Parking
+                    { 529979180u , Status.Incompatible }, // CSL Service Reserve
+                    { 411833858u , Status.Incompatible }, // Toggle Traffic Lights
+                    { 407335588u , Status.Incompatible }, // No Despawn Mod
+                    // Transport line mods
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
+                    { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Other mods
                     { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
-                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1939169189u, Status.Recommended  }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
                     { 1934023593u, Status.Compatible   }, // Hide TMPE crosswalks V2.5 [BETA]
                     { 1829496988u, Status.Compatible   }, // Adjust Pathfinding
-                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1764208250u, Status.Compatible   }, // More Vehicles
-                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                     { 1633580257u, Status.Compatible   }, // Vehicle Wealthizer 2
-                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
-                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
-                    { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
+                    //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
-                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
-                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
-                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
-                    { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
-                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
-                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
-                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector
-                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector (old version)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1637663252u, // TM:PE V11 STABLE (Krzychu1245)
@@ -122,36 +185,99 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // Got one report that Extended Building Info mod might cause TM:PE to fail
-                    // Not sure how that could be possible, but keeping here for future ref.
                     // { 1875298330u, Status.Incompatible }, // Extended Building Information
-                    { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
-                    { 1959342332u, Status.Compatible   }, // CSUR ToolBox
+                    // Not sure how that could be possible, but keeping here for future ref.
+
+                    // Current versions of TM:PE
+                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
+                    // Old/rogue versions of TM:PE
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1581695572u, Status.Incompatible }, // Traffic Manager: President Edition (no longer in workshop)
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    // Traffic Manager + Traffic++ AI (obsolete; game breaking)
+                    { 563720449u , Status.Incompatible }, // Traffic Manager + Improved AI (Japanese Ver.)
+                    { 498363759u , Status.Incompatible }, // Traffic Manager + Improved AI
+                    // Traffic++ (obsolete; game breaking)
+                    { 626024868u , Status.Incompatible }, // Traffic++ V2
+                    { 492391912u , Status.Incompatible }, // Improved AI (Traffic++)
+                    { 409184143u , Status.Incompatible }, // Traffic++
+                    // Extremely old verisons of Traffic Manager (obsolete; game breaking)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 481786333u , Status.Incompatible }, // Traffic Manager Plus
+                    { 427585724u , Status.Incompatible }, // Traffic Manager (where it all started!!)
+                    // ARIS Hearse AI (breaks AI)
+                    { 813835241u , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 583556014u , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4+]
+                    { 433249875u , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    // ARIS Garbage AI (breaks AI)
+                    { 813835391u , Status.Incompatible }, // Enhanced Garbage Truck AI [1.6]
+                    { 583552152u , Status.Incompatible }, // Enhanced Garbage Truck AI [Fixed for v1.4+]
+                    { 439582006u , Status.Incompatible }, // [ARIS] Enhanced Garbage Truck AI
+                    // ARIS Remove Stuck (use TM:PE "Reset Stuck Vehicles and Cims" instead)
+                    { 813834836u , Status.Incompatible }, // Remove Stuck Vehicles [1.6]
+                    { 587530437u , Status.Incompatible }, // Remove Stuck Vehicles [Fixed for v1.4+]
+                    { 428094792u , Status.Incompatible }, // [ARIS] Remove Stuck Vehicles
+                    // ARIS Overwatch (breaks game)
+                    { 813833476u , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 583538182u , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 421028969u , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    // Old anarchy mods (make a huge mess of networks and terrain!)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9 (just sick of seeing this break games!)
+                    // Obsolete road mods (fix with "Road Removal Tool" and "Safenets" mods)
+                    { 929114228u , Status.Incompatible }, // New Roads for Network Extensions
+                    { 478820060u , Status.Incompatible }, // Network Extensions Project (v1)
+                    { 414702884u,  Status.Incompatible }, // Zoneable Pedestrian Paths
+                    // Incompatible with TM:PE (patch conflicts or does not fire events)
+                    { 1803209875u, Status.Incompatible }, // Trees Respiration
+                    { 649522495u , Status.Incompatible }, // District Service Limit
+                    { 844180955u , Status.Incompatible }, // City Drive
+                    { 512341354u , Status.Incompatible }, // Central Services Dispatcher (WtM)
+                    { 413847191u , Status.Incompatible }, // SOM - Services Optimisation Module
+                    // Reported to cause lane usage issues in TM:PE
+                    { 810858473u , Status.Incompatible }, // Traffic Report Mod: Updated
+                    { 408092246u , Status.Incompatible }, // Traffic Report Tool 2.0
+                    // Other breaking mods
+                    { 1767246646u, Status.Incompatible }, // AutoLineBudget (PropVehCount errors, using .Net Framework 2, published as camera script?!!)
+                    { 1072157697u, Status.Incompatible }, // Cargo Info
+                    { 436253779u,  Status.Incompatible }, // Road Protractor
+                    { 417926819u,  Status.Incompatible }, // Road Assistant
+                    // Mods made obsolete by TM:PE (and conflict with TM:PE patches/state)
+                    { 1628112268u, Status.Incompatible }, // RightTurnNoStop
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
+                    { 600733054u , Status.Incompatible }, // No On-Street Parking
+                    { 529979180u , Status.Incompatible }, // CSL Service Reserve
+                    { 411833858u , Status.Incompatible }, // Toggle Traffic Lights
+                    { 407335588u , Status.Incompatible }, // No Despawn Mod
+                    // Transport line mods
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
+                    { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Other mods
+                    { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
+                    { 1959342332u, Status.Compatible   }, // CSUR ToolBox
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1939169189u, Status.Compatible   }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
                     { 1934023593u, Status.Recommended  }, // Hide TMPE crosswalks V2.5 [BETA]
                     { 1829496988u, Status.Compatible   }, // Adjust Pathfinding
-                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1764208250u, Status.Compatible   }, // More Vehicles
-                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                     { 1633580257u, Status.Compatible   }, // Vehicle Wealthizer 2
-                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
-                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
-                    { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
+                    //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
-                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
-                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
-                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
-                    { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
-                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
-                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
-                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector
-                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector (old version)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 583429740u, // TM:PE 10.20 (LinuxFan)

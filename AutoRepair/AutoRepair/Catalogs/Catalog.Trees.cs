@@ -26,7 +26,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // incompat with tmpe
+                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/TreesRespiration",

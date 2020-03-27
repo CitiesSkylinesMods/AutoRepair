@@ -53,7 +53,7 @@ namespace AutoRepair.Catalogs {
             Note(816260433u, "Metro Overhaul Mod", "Suset Harbor: Developers are working on an update and the mod will be continued.");
             Broken(812125426u, "Network Extensions 2");
             BreaksEditor(812125426u, "Network Extensions 2");
-            Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads");
+            Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads, also a map editor bug.");
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
             Fixed(502750307u, "Extra Landscaping Tools"); // menu wont close

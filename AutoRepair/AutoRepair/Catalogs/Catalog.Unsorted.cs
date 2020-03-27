@@ -454,7 +454,7 @@ namespace AutoRepair.Catalogs {
                     { 1723162741u, Status.Compatible   }, // UnlockAreaCountLimitAndFree
                     { 1721492498u, Status.Incompatible }, // Cargo Hold Fix
                     { 1643902284u, Status.Incompatible }, // Watch It!
-                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
+                    //{ 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.4.1
                     { 1612287735u, Status.Compatible   }, // Purchase It!
@@ -731,6 +731,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // todo
+                    { 1487849798u, Status.Incompatible }, // Higher Income Mod 1.2a
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Localised
