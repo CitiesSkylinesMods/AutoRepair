@@ -43,24 +43,18 @@ namespace AutoRepair.Util {
         /// Resets log file on startup.
         /// </summary>
         static Log() {
-            try {
-                if (File.Exists(LogFilePath)) {
-                    string scene = SceneManager.GetActiveScene().name;
+            Reset();
+        }
 
-                    if (scene == "Startup" || scene == "IntroScreen") {
-                        File.Delete(LogFilePath);
-                    } else if (scene == "Game") {
-                        Info($"\n--- HOT RELOAD DETECTED ({scene}) ---\n");
-                    } else {
-                        Info($"\n--- POSSIBLE HOT RELOAD DETECTED ({scene}) ---\n");
-                    }
-                }
-
-                AssemblyName mod = typeof(Log).Assembly.GetName();
-                Info($"\n{mod.Name} v{mod.Version.ToString()}\n", true);
-            } catch {
-                // ignore
+        /// <summary>
+        /// Reset the log file.
+        /// </summary>
+        public static void Reset() {
+            if (File.Exists(LogFilePath)) {
+                try { File.Delete(LogFilePath); } catch { }
             }
+            AssemblyName mod = typeof(Log).Assembly.GetName();
+            Info($"\n{mod.Name} v{mod.Version.ToString()}\n");
         }
 
         /// <summary>

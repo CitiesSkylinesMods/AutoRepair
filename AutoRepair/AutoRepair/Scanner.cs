@@ -21,17 +21,31 @@ namespace AutoRepair {
         /// Performs the compatibility scan.
         /// </summary>
         public static void PerformScan() {
+            try {
+                Log.Reset();
+                Log.Info($"\nLoaded {Catalog.Instance.Items.Count} AutoRepair Descriptors.");
+                DoScan();
+            }
+            catch (Exception e) {
+                Log.Info("Something went horribly wrong...");
+                Log.Error(e.ToString());
+            }
+        }
+
+        private static void DoScan() {
 
             StringBuilder log = new StringBuilder(1024 * 20);
 
             log.Append("\nTo contact us, visit workshop page: https://steamcommunity.com/sharedfiles/filedetails/?id=2034713132 \n"); // todo
 
-            log.Append("\nSome general notes:");
-            log.Append("\n* Disabled mods are often still loaded; always unsubscribe mods you're not using!");
-            log.Append("\n* Mods that do the same thing are generally incompatible.");
-            log.Append("\n* For modded games, always exit to desktop before loading another city.");
-            log.Append("\n* After disabling/unsubscribing mods, always exit to desktop to flush them from RAM");
-            log.Append("\n* If you find any problems in the report below, _please_ let us know what the specific problem is.\n");
+            if (Options.Instance.LogIntroText) {
+                log.Append("\nSome general notes:");
+                log.Append("\n* Disabled mods are often still loaded; always unsubscribe mods you're not using!");
+                log.Append("\n* Mods that do the same thing are generally incompatible.");
+                log.Append("\n* For modded games, always exit to desktop before loading another city.");
+                log.Append("\n* After disabling/unsubscribing mods, always exit to desktop to flush them from RAM");
+                log.Append("\n* If you find any problems in the report below, _please_ let us know what the specific problem is.\n");
+            }
 
             PluginManager manager = Singleton<PluginManager>.instance;
 
@@ -56,10 +70,10 @@ namespace AutoRepair {
             // flags from descriptor
             ItemFlags flags;
 
-            // compatibility dict from descriptor
+            // compatibility vectors
             Dictionary<ulong, Status> compatibility;
 
-            // list of subscribed mod workshop ids
+            // list of subscribed mod workshop ids -> names
             Dictionary<ulong, string> subscriptions = new Dictionary<ulong, string>();
 
             log.Append("\nStarting compatibility scan...\n");
@@ -75,7 +89,7 @@ namespace AutoRepair {
                         }
                     }
                 } catch {
-                    // ignore
+                    // ignore for now
                 }
             }
 
@@ -129,12 +143,13 @@ namespace AutoRepair {
                         compatibility = descriptor.Compatibility == null
                             ? new Dictionary<ulong, Status>()
                             : descriptor.Compatibility;
-
-                        log.AppendFormat(
-                            "\n - [AutoRepair Descriptor] Catalog: '{0}'. Vectors: {1}. Author(s): {2}\n",
-                            descriptor.Catalog,
-                            compatibility.Count,
-                            descriptor.Authors);
+                        if (Options.Instance.LogDescriptorHeaders) {
+                            log.AppendFormat(
+                                "\n - [AutoRepair Descriptor] Catalog: '{0}'. Vectors: {1}. Author(s): {2}\n",
+                                descriptor.Catalog,
+                                compatibility.Count,
+                                descriptor.Authors);
+                        }
 
                         if (HasFlag(flags, ItemFlags.GameBreaking)) {
                             log.Append("\n - Broken mod. Unsubscribe it.\n");
@@ -146,10 +161,12 @@ namespace AutoRepair {
                             log.Append("\n - Should be compatible with current game version (if not, let us know).\n");
                         }
 
-                        if (HasFlag(flags, ItemFlags.NoWorkshop)) {
-                            log.Append("\n - Removed from Steam Workshop; it is probably obsolete or game breaking.\n");
-                        } else {
-                            log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
+                        if (Options.Instance.LogWorkshopURLs) {
+                            if (HasFlag(flags, ItemFlags.NoWorkshop)) {
+                                log.Append("\n - Removed from Steam Workshop; it is probably obsolete or game breaking.\n");
+                            } else {
+                                log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
+                            }
                         }
 
                         if (HasFlag(flags, ItemFlags.EditorBreaking)) {
@@ -192,13 +209,15 @@ namespace AutoRepair {
                             log.Append("\n - Some users report major problems; check its workshop page/comments for details.\n");
                         }
 
-                        if (HasFlag(flags, ItemFlags.SourceAvailable)) {
-                            if (!string.IsNullOrEmpty(descriptor.SourceURL)) {
-                                log.AppendFormat("\n - Source available: {0}\n", descriptor.SourceURL);
+                        if (Options.Instance.LogSourceURLs) {
+                            if (HasFlag(flags, ItemFlags.SourceAvailable)) {
+                                if (!string.IsNullOrEmpty(descriptor.SourceURL)) {
+                                    log.AppendFormat("\n - Source available: {0}\n", descriptor.SourceURL);
+                                }
+                            } else if (HasFlag(flags, ItemFlags.SourceUnavailable)) {
+                                // todo: check for `Source` folder in mod folder
+                                log.Append("\n - No source code/files found (yet); it might be difficult to update in future.\n");
                             }
-                        } else if (HasFlag(flags, ItemFlags.SourceUnavailable)) {
-                            // todo: check for `Source` folder in mod folder
-                            log.Append("\n - No source code/files found (yet); it might be difficult to update in future.\n");
                         }
 
                         if (HasFlag(flags, ItemFlags.SourceObfuscated)) {
