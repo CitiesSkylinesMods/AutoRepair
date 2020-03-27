@@ -119,6 +119,22 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.ChirpX,
                 Tags = new[] { "Trees", "Forest", "Landscape", "LODs", "Graphics", "Environment", "Detailing", },
             });
+
+            AddMod(new Item(406723376u, "Tree Brush") {
+                Affect = Factor.Environment
+                       | Factor.PlaceAndMove
+                       | Factor.Trees,
+                Authors = "Destroyer",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1928787248u, Status.Recommended  }, // Weeds
+                    { 963853793u , Status.Recommended  }, // Ultra low tri trees
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceUnavailable,
+                ReleasedDuring = GameVersion.InitialRelease,
+                ReplaceWith = 502750307u, // Extra Landscaping Tools
+            });
         }
     }
 }

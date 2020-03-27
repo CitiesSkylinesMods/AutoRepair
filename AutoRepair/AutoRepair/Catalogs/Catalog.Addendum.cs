@@ -195,7 +195,6 @@ namespace AutoRepair.Catalogs {
             Dead(409184143u , "Traffic++", 812125426u);
             Dead(626024868u , "Traffic++V2", 812125426u);
             Dead(679377572u , "Trash & Dead Cleaner 1");
-            Dead(406723376u , "Tree Brush", 502750307u);
             Dead(627047745u , "Winter Buildings Unlocker");
             Dead(414702884u , "Zonable Pedestrian Paths - Stable", 812125426u);
 

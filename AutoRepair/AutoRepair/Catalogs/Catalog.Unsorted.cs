@@ -740,6 +740,31 @@ namespace AutoRepair.Catalogs {
                 Locale = "en",
             });
 
+            // runs a load of code in OnUpdate = lag.
+            AddMod(new Item(878991312u, "Prop it Up! 1.4.4") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.Props
+                       | Factor.Trees,
+                Authors = "Judazzz, BloodyPenguin",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.Laggy
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Notes = new[] {
+                    "Runs a lot of code in OnUpdate() = can cause lag in-game.",
+                    "[Docs] User guide: https://steamcommunity.com/workshop/filedetails/discussion/878991312/133259227529823319/",
+                    "[Sunset Harbor] Tree replacement features seem broken.",
+                    "[Sunset Harbor] Some users report it crashes when replacing props.",
+                },
+                SourceURL = "https://github.com/Judazzz/CitiesSkylines-PropItUp",
+            });
+
         }
     }
 }
