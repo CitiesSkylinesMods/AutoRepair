@@ -167,6 +167,7 @@ namespace AutoRepair.Catalogs {
                 PublicTransportCatalog();
                 RepairCatalog();
                 ServicesCatalog();
+                SkinRoadsCatalog();
                 SkyclothCatalog();
                 ToolbarCatalog();
                 TrafficCatalog();

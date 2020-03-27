@@ -42,8 +42,10 @@ namespace AutoRepair.Catalogs {
                     { 541673195u, Status.Incompatible }, // Resident Travel Rebalance v1.1
                     { 409071509u, Status.Incompatible }, // Slow Citizen Aging Configurable
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 654707599u, // Citizen Lifecycle Rebalance v2.6
-                Flags = ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/algernon-A/Lifecycle-Rebalance-Revisited",
             });
 
             AddMod(new Item(2025147082u, "Realistic Population revisited") {
@@ -70,8 +72,10 @@ namespace AutoRepair.Catalogs {
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 426163185u, // Realistic Population and Consumption (WG)
-                Flags = ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/algernon-A/Realistic-Population-Revisited",
             });
 
             AddMod(new Item(1806759255u, "Customize It Extended") {
@@ -130,6 +134,9 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 1114249433u, // Employ Overeducated Workers (1.10+)
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
+                Notes = new[] {
+                    "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative.",
+                },
                 SourceURL = "https://github.com/pcfantasy/EmployOvereducatedWorkers-v2",
             });
 
@@ -392,6 +399,9 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 569008960u, // Employ Overeducated Workers
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
+                Notes = new[] {
+                    "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative.",
+                },
                 ReplaceWith = 1674732053u, // Employ Overeducated Workers V2 (1.11+)
                 SourceURL = "https://github.com/AmaroqOkami/Skylines-EmployOvereducatedWorkers",
             });
@@ -578,6 +588,9 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
+                Notes = new[] {
+                    "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative.",
+                },
                 ReplaceWith = 1674732053u, // Employ Overeducated Workers V2 (1.11+)
                 SourceURL = "https://github.com/AmaroqOkami/Skylines-EmployOvereducatedWorkers",
             });

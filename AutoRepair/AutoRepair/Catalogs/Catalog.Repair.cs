@@ -33,7 +33,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     // no known issues!
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus,

@@ -56,7 +56,7 @@ namespace AutoRepair.Catalogs {
             Dictionary<ulong, Status> tile81compatibility = new Dictionary<ulong, Status>(tile25compatibility) {
                 [1764208250u] = Status.Incompatible, // More Vehicles
                 [1383456057u] = Status.Incompatible, // Shicho
-                [616078328u ] = Status.Incompatible, // All Tile Start
+                [616078328u] = Status.Incompatible, // All Tile Start
 
             };
 
@@ -67,6 +67,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "dymanoid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2035564927u, Status.Compatible   }, // 25parts_su
                     { 1978555062u, Status.Compatible   }, // AllSpacesUnlockable
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Unknown      }, // Unified Railway System
@@ -102,6 +103,7 @@ namespace AutoRepair.Catalogs {
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 888017364u , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
+                    { 816260433u , Status.Incompatible }, // Metro Overhaul Mod
                     { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
                     { 616078328u , Status.Incompatible }, // All Tile Start
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
@@ -132,7 +134,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "Keallu",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
@@ -149,7 +151,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "frostblue",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.GreenCities,
@@ -163,13 +165,19 @@ namespace AutoRepair.Catalogs {
                        | Factor.TileLimit,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
-                Compatibility = tile81compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile81compatibility) {
+                    [1764208250u] = Status.Compatible, // More Vehicles
+                },
                 ContinuationOf = 422554572u, // 81 Tiles (original version by emf)
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Laggy // each purchased tile adds additional rendering and simulation workload
                       | ItemFlags.MinorBugs // some glitches with various services built outside central 25 tile area
                       | ItemFlags.SaveChanging // can be removed, but stuff outside central 25 tiles will glitch
                       | ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "Reported to have some minor glitches with disaster detection buildings outside central 25 tile area.",
+                    "[Mod: More Vehicles] Should be compatible with 81 Tiles since Sunset Harbor update.",
+                },
                 ReleasedDuring = GameVersion.AfterDark,
                 SourceURL = "https://github.com/bloodypenguin/cities-skylines-unlimiter-1",
             });
@@ -179,7 +187,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "Klyte45",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.MinorBugs, // doesn't increase purchase price after first 9 tiles
@@ -191,7 +199,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "Klyte45",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.InitialRelease,
@@ -210,7 +218,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "915962083",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -221,7 +229,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "(unknown)",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.NoWorkshop // sometime during March 2020
@@ -235,7 +243,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "enroban",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -246,7 +254,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "KiDDOT",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -257,7 +265,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "gendows",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -268,7 +276,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "MMP",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -279,7 +287,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "奥利弗·奎恩",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -289,8 +297,9 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1575247594u, "576327847 81 Tiles (Fixed for 1") {
                 Affect = Factor.TileLimit,
                 Authors = "1061303312",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
-                Compatibility = tile81compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
@@ -305,8 +314,9 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1560122066u, "81MOD") {
                 Affect = Factor.TileLimit,
                 Authors = "116060166",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
-                Compatibility = tile81compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
@@ -323,7 +333,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "exedoronexe",
                 Catalog = catalog,
                 CloneOf = 403798635u, // All Spaces Unlockable (by Klyte45)
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceUnavailable,
@@ -336,7 +346,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "TIMIYANG",
                 Catalog = catalog,
                 CloneOf = 405810376u, // All 25 Areas purchasable (by tomdotio)
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
@@ -348,8 +358,9 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1361478243u, "81 Tiles") {
                 Affect = Factor.TileLimit,
                 Authors = "限量版好男人",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
-                Compatibility = tile81compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
@@ -365,7 +376,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "angelleng",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -376,7 +387,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "YFGG",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -387,7 +398,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "binbck-y",
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
@@ -400,7 +411,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.EuropeBiome, // when the IUserMod changed
                 Catalog = catalog,
                 CloneOf = 406218372u, // 25 Spaces
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
@@ -419,9 +430,9 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1223738434u, "422554572") {
                 Affect = Factor.TileLimit,
                 Authors = "Pride",
-                Catalog = catalog,
                 BrokenBy = GameVersion.AfterDark,
-                Compatibility = tile81compatibility,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 CompatibleWith = new Version(1, 1, 1), // patch after euro theme added
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -442,7 +453,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "The700",
                 Affect = Factor.TileLimit,
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceUnavailable
@@ -459,13 +470,17 @@ namespace AutoRepair.Catalogs {
                 Authors = "johnrom",
                 BrokenBy = GameVersion.Campus, // breaks milestones, issues with vehicle spawning, etc.
                 Catalog = catalog,
-                Compatibility = tile81compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 CompatibleWith = GameVersion.Industries,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking // lots of uers reporting game breaking bugs or other major issues
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
+                Notes = new[] {
+                  "This mod is known to break vehicle spawning and causes problems with milestones.",
+                  "[Mod: 81 Tiles] It is game-breaking when used with any version of 81 Tiles.",
+                },
                 ReleasedDuring = GameVersion.AfterDark,
             });
 
@@ -475,7 +490,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "emf",
                 BrokenBy = GameVersion.AfterDark,
                 Catalog = catalog,
-                Compatibility = tile81compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 CompatibleWith = new Version(1, 1, 1), // patch after euro theme added
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -495,7 +510,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "(unknown)",
                 BrokenBy = GameVersion.EuropeBiome, // when the IUserMod changed
                 Catalog = catalog,
-                Compatibility = tile25compatibility,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 CompatibleWith = new Version(1, 0, 7),
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate

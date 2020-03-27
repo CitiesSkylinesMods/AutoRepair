@@ -249,6 +249,8 @@ namespace AutoRepair {
 
             log.Append("\nSCAN COMPLETE.\n");
 
+            log.Append("\nIf this compatibility checker helped even a little bit,\nplease conisder rating it in the workshop to help others find it.");
+
             Log.Info(log.ToString());
         }
 

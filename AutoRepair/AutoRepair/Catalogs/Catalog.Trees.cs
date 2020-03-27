@@ -103,11 +103,19 @@ namespace AutoRepair.Catalogs {
                        | Factor.Rendering
                        | Factor.Trees,
                 Authors = "TPB",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // recommend ulod?
+                    { 1680642819u, Status.Compatible }, // Ultimate Level of Detail (ULOD)
                 },
+                CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "Sunset Harbor: There is no news on when this will be updated, although some users say it still works.",
+                    "This mod improves quality of tree LODs with almost no impact on performance.",
+                    "[Mod: Ultimate Level of Detail] Tree LOD Fix allows you to _reduce_ the tree LOD range for better performance.", 
+                },
+                ReleasedDuring = GameVersion.ChirpX,
                 Tags = new[] { "Trees", "Forest", "Landscape", "LODs", "Graphics", "Environment", "Detailing", },
             });
         }

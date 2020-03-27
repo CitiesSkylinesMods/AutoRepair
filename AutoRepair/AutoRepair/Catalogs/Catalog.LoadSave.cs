@@ -114,7 +114,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new[] {
-                    "The base game has pause on load feature since the Sunset Harbor update.",
+                    "The base game has built-in pause on load feature since the Sunset Harbor update.",
                 },
                 ReleasedDuring = GameVersion.InitialRelease,
                 SourceURL = "https://github.com/MrLawbreaker/SkylinesMod_PauseOnLoad",

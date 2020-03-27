@@ -56,7 +56,7 @@ namespace AutoRepair.Catalogs {
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager -- old ver
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/dymanoid/StopsAndStations",
@@ -141,7 +141,7 @@ namespace AutoRepair.Catalogs {
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager (original)
                     { 408760323u , Status.Incompatible }, // Auto Line Color
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 929654063u, // Transport Lines Manager Reborn 8.0.3
                 Languages = new[] { "en", "pt", "ko", "de", "nl", "pl", "zh-cn", "fr", "es" },
                 Locale = "en",
@@ -213,7 +213,7 @@ namespace AutoRepair.Catalogs {
                     { 413146544u , Status.Incompatible }, // SuperBigTransport 60 v1.1
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 424106600u, // Improved Public Transport (IPT)
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.MassTransit,

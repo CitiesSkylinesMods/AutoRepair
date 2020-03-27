@@ -273,6 +273,7 @@ namespace AutoRepair.Catalogs {
                     { 1440928803u, Status.Incompatible }, // Parallel Road Tool (invert flag)
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
                     { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                    { 543722850u , Status.Unknown      }, // Network Skins (Park Life compatible)
                 },
                 ContinuationOf = 1400711138u, // [BETA] Parallel Road Tool
                 Flags = ItemFlags.Abandonware
@@ -296,6 +297,7 @@ namespace AutoRepair.Catalogs {
                     { 1440928803u, Status.Incompatible }, // Parallel Road Tool (invert flag)
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
                     { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                    { 543722850u , Status.Unknown      }, // Network Skins (Park Life compatible)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs

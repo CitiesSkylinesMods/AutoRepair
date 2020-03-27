@@ -13,8 +13,8 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void ServicesCatalog() {
 
             string catalog = "Services";
@@ -132,8 +132,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable,
                 Notes = new[] {
+                    "Lots of users report this mod no longer works for them.",
                     "[Mod: Real Time] Disable citizen-limiting options in DSL mod to be compatible.",
                 },
+                // ReplaceWith = 927293560u, // Geli Districts (also seems broken)
                 SourceURL = "https://github.com/TheDogKSP/cs-districts",
             });
 

@@ -535,8 +535,8 @@ namespace AutoRepair.Catalogs {
                 Languages = v10languages,
                 Locale = "en",
                 Notes = new[] {
-                    "LinuxFan no longer plays the game so this v10.20 cannot be updated.",
-                    "Please move to either TM:PE v11 STABLE or TM:PE v11 LABS for updated mod."
+                    "THIS VERSION OF TM:PE IS NO LONGER MAINTAINED, PRESS 'F' TO PAY RESPECTS.",
+                    "LinuxFan no longer plays the game so this mod cannot be updated; use TM:PE v11 STABLE instead.",
                 },
                 ReleasedDuring = GameVersion.AfterDark,
                 ReplaceWith = 1637663252u, // TM:PE V11 STABLE

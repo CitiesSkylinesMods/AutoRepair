@@ -358,10 +358,6 @@ namespace AutoRepair {
                 // todo: incompat with other ragnarock and maybe similar mods
             });
 
-            Add(new Item(1498036881u, "UltimateMod 2.4 ( Higher Income and More Options )") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
             Add(new Item(1485051886u, "Cimtographer - rebuild for 1.10.1-f3") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable

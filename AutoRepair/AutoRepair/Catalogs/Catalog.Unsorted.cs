@@ -42,6 +42,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1985556066u, "4546") {
                 Affect = Factor.Other,
                 Authors = "暮",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 CloneOf = 426460372u, // Favorite Cims
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -82,20 +83,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/algernon-A/Ploppable-RICO-Revisited",
             });
 
-            AddMod(new Item(2009708489u, "Road Arrows Replacer [Spain]") {
-                Affect = Factor.RoadMarkings,
-                Authors = "Nouvilas",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // minor issue: hide it
-                    // incompat - anything that chances road arrows or markings etc
-                    { 2008960441u, Status.Required     }, // Spanish Arrow Decals Pack
-                    { 956707300u , Status.Incompatible }, // Remove Street Arrows
-                },
-                CompatibleWith = GameVersion.PdxLauncher,
-                Flags = ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
-            });
+
 
 
 
@@ -274,9 +262,11 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/keallu/CSL-MeasureIt",
             });
 
@@ -448,6 +438,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "saki7, Ryuichi Kaminogi",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2035564927u, Status.Compatible   }, // 25parts_su
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
                     { 1978555062u, Status.Compatible   }, // AllSpacesUnlockable
@@ -537,6 +528,7 @@ namespace AutoRepair.Catalogs {
                     { 583429740u , Status.Incompatible }, // TM:PE 10.20
                     { 576327847u , Status.Incompatible }, // 81 Tiles (Fixed for C:S 1.2+)
                     { 552309905u , Status.Incompatible }, // No Abandonment
+                    { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 538019888u , Status.Incompatible }, // Spawn/Unspawn Positions Swapper
                     { 530771650u , Status.Incompatible }, // Prefab Hook
                     { 523818382u , Status.Incompatible }, // Force Level Up
@@ -636,7 +628,7 @@ namespace AutoRepair.Catalogs {
                     { 1412844620u, Status.Compatible   }, // Realistic Walking Speed
                     { 927293560u , Status.Compatible   }, // Geli-Districts v3.0
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceAvailable,
                 Locale = "en",
@@ -697,8 +689,8 @@ namespace AutoRepair.Catalogs {
             // * milestone unlock not working
             // * achievement enabler not working
             AddMod(new Item(1237383751u, "Extended Game Options") {
-                Authors = "Zenya",
                 Affect = Factor.Milestones, // will be more
+                Authors = "Zenya",
                 Catalog = catalog,
                 Flags = ItemFlags.Laggy
                       | ItemFlags.MinorBugs // pause on load now in base game
@@ -718,6 +710,35 @@ namespace AutoRepair.Catalogs {
                 },
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
             });
+
+            AddMod(new Item(1498036881u, "UltimateMod 2.4 ( Higher Income and More Options )") {
+                Affect = Factor.Achievements
+                       | Factor.Budget
+                       | Factor.Bulldoze
+                       | Factor.Construction
+                       | Factor.Consumption
+                       | Factor.Entertainment
+                       | Factor.Education
+                       | Factor.HideRemove
+                       | Factor.LandValue
+                       | Factor.MaintenanceCost
+                       | Factor.Milestones
+                       | Factor.Money
+                       | Factor.PlaceAndMove
+                       | Factor.Pollution
+                       | Factor.Service,
+                Authors = "mcclane96[GER]",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Localised
+                      | ItemFlags.SourceUnavailable,
+                Languages = new[] { "en", "zh-cn" },
+                Locale = "en",
+            });
+
         }
     }
 }

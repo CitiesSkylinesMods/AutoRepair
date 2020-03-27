@@ -33,6 +33,7 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Unknown      }, // Force Building Level
                     { 1196714353u, Status.Unknown      }, // 建筑升级平衡MOD
                     { 924884948u , Status.Unknown      }, // Plop the Growables
+                    { 523818382u , Status.Unknown      }, // Force Level Up
                     { 466158459u , Status.Compatible   }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
@@ -58,12 +59,16 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Unknown      }, // Force Building Level
                     { 1196714353u, Status.Unknown      }, // 建筑升级平衡MOD
                     { 924884948u , Status.MinorIssues  }, // Plop the Growables
+                    { 523818382u , Status.Compatible   }, // Force Level Up
                     { 466158459u , Status.Compatible   }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
                 },
-                CompatibleWith = GameVersion.Campus,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "[Mod: Plop the Growables] Settings in PtG can override the historical districst settings.",
+                },
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://gist.github.com/boformer/3e01770a0c86cf9273ccdcc33d9bbc42",
             });
@@ -82,6 +87,7 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Unknown      }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
                     { 924884948u , Status.Unknown      }, // Plop the Growables
+                    { 523818382u , Status.Incompatible }, // Force Level Up
                     { 466158459u , Status.Unknown      }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
@@ -108,17 +114,54 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
                     { 924884948u , Status.Compatible   }, // Plop the Growables
+                    { 523818382u , Status.Compatible   }, // Force Level Up
                     { 466158459u , Status.Compatible   }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
                 },
-                CompatibleWith = GameVersion.Industries, // likely works in campus too
+                CompatibleWith = GameVersion.SunsetHarbor, // likely works in campus too
                 ContinuationOf = 410535198, // Control Building Level Up v0.4
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                },
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://gist.github.com/boformer/c0a449426ae681bbe4f4e54693df4b8c",
             });
+
+            AddMod(new Item(523818382u, "Force Level Up") {
+                Affect = Factor.BuildingLevel,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1806881627u, Status.Unknown      }, // Altering History Fix
+                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
+                    { 1658773932u, Status.Compatible   }, // Historical Districts
+                    { 1647722503u, Status.Incompatible }, // Level
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 1403136223u, Status.Compatible   }, // Control Building Level Up v0.5 (Industries)
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
+                    { 1275678215u, Status.Incompatible }, // Force Building Level
+                    { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
+                    { 924884948u , Status.Compatible   }, // Plop the Growables
+                    { 523818382u , Status.Incompatible }, // Force Level Up
+                    { 466158459u , Status.Compatible   }, // Building Themes
+                    { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
+                    { 409654587u , Status.Incompatible }, // Level Up Balance Mod
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/bloodypenguin/Skylines-ForceBuildingUpgrade",
+            });
+
+            /*
+            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
+            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
+            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
+            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
+            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
+            */
 
             AddMod(new Item(1330381737u, "Historic Buildings (Make Historical)") {
                 Affect = Factor.BuildingLevel,
@@ -134,6 +177,7 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
                     { 924884948u , Status.Incompatible }, // Plop the Growables
+                    { 523818382u , Status.Incompatible }, // Force Level Up
                     { 466158459u , Status.Incompatible }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
@@ -145,6 +189,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete // vanilla game now has this function
                       | ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                },
                 ReleasedDuring = GameVersion.ChirpX,
                 ReplaceWith = 1658773932u, // Historical Districts
             });
@@ -162,6 +209,7 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
                     { 924884948u , Status.Incompatible }, // Plop the Growables
+                    { 523818382u , Status.Incompatible }, // Force Level Up
                     { 466158459u , Status.Incompatible }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
@@ -169,8 +217,14 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParkLife,
                 ContinuationOf = 410535198, // Control Building Level Up v0.4
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable,
+                      | ItemFlags.MinorBugs
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Notes = new[] {
+                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                },
                 ReleasedDuring = GameVersion.GreenCities,
+                ReplaceWith = 523818382u, // Force Level Up
                 SourceURL = "https://github.com/coarxflow/Skylines-ControlBuildingLevelUpMod",
             });
 
@@ -195,11 +249,46 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
                     { 924884948u , Status.Unknown      }, // Plop the Growables
+                    { 523818382u , Status.Incompatible }, // Force Level Up
                     { 466158459u , Status.Unknown      }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
                 },
                 Locale = "zh-cn",
+            });
+
+            AddMod(new Item(410535198u, "Control Building Level Up v0.4") {
+                Affect = Factor.BuildingLevel,
+                Authors = "DirtyDan",
+                BrokenBy = GameVersion.GreenCities, // guesstimate
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1806881627u, Status.Incompatible }, // Altering History Fix
+                    { 1658773932u, Status.Incompatible }, // Historical Districts
+                    { 1647722503u, Status.Incompatible }, // Level
+                    { 1403136223u, Status.Incompatible }, // Control Building Level Up v0.5 (Industries)
+                    { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
+                    { 1275678215u, Status.Incompatible }, // Force Building Level
+                    { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
+                    { 924884948u , Status.Compatible   }, // Plop the Growables
+                    { 523818382u , Status.Incompatible }, // Force Level Up
+                    { 466158459u , Status.Compatible   }, // Building Themes
+                    { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
+                    { 409654587u , Status.Incompatible }, // Level Up Balance Mod
+                },
+                CompatibleWith = GameVersion.MassTransit,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                },
+                ReleasedDuring = GameVersion.InitialRelease,
+                ReplaceWith = 1403136223, // Control Building Level Up v0.5
+                SourceURL = "https://github.com/DirtyDan88/Skylines-ControlBuildingLevelUpMod",
             });
 
             // Changed the algorithm that determined when buildings would level up
@@ -224,7 +313,8 @@ namespace AutoRepair.Catalogs {
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
                     { 924884948u , Status.Incompatible }, // Plop the Growables
-                    { 466158459u , Status.Unknown      }, // Building Themes
+                    { 523818382u , Status.Incompatible }, // Force Level Up
+                    { 466158459u , Status.Incompatible }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
                 },

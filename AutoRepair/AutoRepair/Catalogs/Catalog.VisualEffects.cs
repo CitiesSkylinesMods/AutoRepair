@@ -14,8 +14,8 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to the list.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void VisualEffectsCatalog() {
 
             string catalog = "VisualEffects";
@@ -45,6 +45,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
                 Notes = new[] {
+                    "[Docs] Asset authors, see: https://gist.github.com/boformer/a9c5935a9752dcaa68d67e3a611ada26",
                     "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL.",
                 },
                 SourceURL = "https://github.com/boformer/CustomEffectLoader",
@@ -102,12 +103,14 @@ namespace AutoRepair.Catalogs {
                 Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 898480258u, Status.Recommended  }, // Camera Positions Utility
-                    { 812713438u, Status.Recommended  }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 625608461u, Status.Recommended  }, // Adaptive Prop Visibility Distance
-                    { 561888259u, Status.Incompatible }, // LOD Toggler (deprecated)
-                    { 556784825u, Status.Recommended  }, // Random Tree Rotation
+                    { 1349895184u, Status.Compatible   }, // Tree LOD Fix
+                    { 898480258u , Status.Recommended  }, // Camera Positions Utility
+                    { 812713438u , Status.Recommended  }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 625608461u , Status.Recommended  }, // Adaptive Prop Visibility Distance
+                    { 561888259u , Status.Incompatible }, // LOD Toggler (deprecated)
+                    { 556784825u , Status.Recommended  }, // Random Tree Rotation
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 561888259u, // LOD Toggler (deprecated)
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/boformer/UltimateLevelOfDetail",
@@ -162,10 +165,15 @@ namespace AutoRepair.Catalogs {
                     { 1209581656u, Status.Recommended }, // Relight
                     { 1183931915u, Status.Compatible  }, // Cubemap Replacer
                     { 1138510774u, Status.Recommended }, // PostProcessFX - Multi-platform
-                    { 530871278u , Status.Required    }, // Daylight classic (classic fog efffect option must be enabled)
+                    { 530871278u , Status.Required    }, // Daylight classic
                     { 412146081u , Status.Compatible  }, // PostProcessFX v1.9.0
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new[] {
+                    "[Mod: Daylight Classic] 'Classic for effect' option must be enabled for the cubemap to work!",
+                },
+                ReleasedDuring = GameVersion.GreenCities,
                 SourceURL = "https://github.com/bloodypenguin/Skylines-CubemapReplacer",
                 Tags = new[] { "Cubemap", "Sky", "Environment", "Stars", "Clouds" },
             });
@@ -207,29 +215,6 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
-                Affect = Factor.Rendering,
-                Authors = "MazK",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    // recommend: dynamic resolution
-                    // recommend: sun shafts
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.Obsolete // newer version available: 1138510774u
-                      | ItemFlags.MinorBugs // some users have problems displaying the GUI
-                      | ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2",
-                },
-                ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
-                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
-            });
-
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -249,12 +234,38 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // memory leaks = crashes
+                      | ItemFlags.Laggy
+                      | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
                 Notes = new[] {
                     "This mod causes memory leaks which eventually result in lag then crash to desktop.",
-                    "[Asset creators] Use Custom Effect Loader mod instead.",
+                    "[Asset creators] Use Custom Effect Loader mod instead (see replacement link).",
                 },
                 ReplaceWith = 1886877404u, // Custom Effects Loader
+            });
+
+            AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
+                Affect = Factor.Rendering,
+                Authors = "MazK",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
+                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
+                    // recommend: dynamic resolution
+                    // recommend: sun shafts
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.EditorBreaking
+                      | ItemFlags.Obsolete // newer version available: 1138510774u
+                      | ItemFlags.MinorBugs // some users have problems displaying the GUI
+                      | ItemFlags.SourceUnavailable,
+                Notes = new[] {
+                    "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2",
+                },
+                ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
+                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
             });
 
             /*
@@ -272,6 +283,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1183931915u, Status.Required    }, // Cubemap Replacer
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning
                       | ItemFlags.SourceUnavailable,
                 Tags = new[] { "Cubemap", "4K", "Sky", "Mars", "Environment" },
@@ -284,6 +296,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1183931915u, Status.Required }, // Cubemap replacer
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://hdrihaven.com/",
@@ -297,6 +310,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1183931915u, Status.Required }, // Cubemap replacer
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning
                       | ItemFlags.SourceAvailable,
                 SourceURL = "http://noemotionhdrs.net/hdrday.html",
@@ -310,6 +324,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1183931915u, Status.Required }, // Cubemap replacer
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://hdrihaven.com/",
                 Tags = new[] { "Cubemap", "1K", "Sky", "Earth", "Sunset", "Weather", "Environment" },
@@ -322,6 +337,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1183931915u, Status.Required }, // Cubemap replacer
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://imgur.com/a/WSGJ5",
                 Tags = new[] { "Cubemap", "1K", "Sky", "Earth", "Sunset", "Weather", "Environment" },

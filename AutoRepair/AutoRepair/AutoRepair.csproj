@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Catalogs\Catalog.Services.cs" />
-    <Compile Include="Catalogs\Catalog.SkinRoads.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.Roads.cs" />
     <Compile Include="Catalogs\Catalog.Unlimiters.cs" />
     <Compile Include="Catalogs\Vanilla.cs" />
     <Compile Include="Catalogs\Catalog.Achievements.cs" />

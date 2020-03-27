@@ -4,6 +4,7 @@ namespace AutoRepair.Catalogs {
     using AutoRepair.Util;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
@@ -33,7 +34,6 @@ namespace AutoRepair.Catalogs {
             Note(842981708u, "Random Tree Rotation for Natural Disasters", "Use the other version: https://steamcommunity.com/sharedfiles/filedetails/?id=556784825");
             Fixed(667342976u, "Loading Screen Mod");
             Fixed(833779378u, "Loading Screen Mod [Test]");
-            Fixed(1410003347u, "Additive Shader");
             Fixed(812713438u, "Dynamic Resolution");
             Fixed(1899640536u, "Theme Mixer 2");
             Fixed(877950833u, "Vanilla Trees Remover");
@@ -41,47 +41,26 @@ namespace AutoRepair.Catalogs {
             Fixed(762520291u, "Shadow Strenght Adjuster");
             Fixed(643364914u, "Softer Shadows");
             Note(1393820309u, "Ticket Price Customizer", "Sunset Harbor: Trollyebus are not currently supported.");
-            Broken(543722850u, "Network Skins");
-            Dead(543722850u, "Network Skins");
-            Note(543722850u, "Network Skins", "Replace with new version: https://steamcommunity.com/sharedfiles/filedetails/?id=1758376843");
             Broken(611254368u, "Environment Changer");
             Note(611254368u, "Environment Changer", "Sunset Harbor: Spitting nulll reference errors in to log.");
-            Fixed(1758376843u, "Network Skins 2");
             Fixed(422934383u, "CSL Music Mod");
-            Fixed(1420955187u, "Real Time");
-            Fixed(1312767991u, "Transport Lines Manager 13.2");
-            Fixed(1776052533u, "Stops & Stations");
             Fixed(1435741602u, "Snooper");
-            Fixed(1768810491u, "Measure It!");
             Fixed(445589127u, "Precision Engineering");
-            Fixed(1619685021u, "Move It 2.7.1");
             Fixed(405810376u, "All 25 Areas purchasable");
             Fixed(1721492498u, "Optimised Outside Connections");
-            Fixed(1591584836u, "HDRI 2K Cubempap Pack");
-            Fixed(1585691173u, "HDRI Haven Cubemap Pack");
-            Fixed(1183931915u, "Cubemap Replacer");
             Fixed(629850626u, "Workshop RICO Settings");
-            Fixed(2016920607u, "Ploppable RICO Revisited");
-            Fixed(2025147082u, "Realistic Population Revisited");
-            Fixed(2027161563u, "Lifecycle Rebalance Revisited");
             Broken(816260433u, "Metro Overhaul Mod");
             Note(816260433u, "Metro Overhaul Mod", "Suset Harbor: Developers are working on an update and the mod will be continued.");
-            Fixed(1938493221u, "Mini FPS Booster");
-            Note(1938493221u, "Mini FPS Booster", "And yes, the bigger fps booster will be coming soon!");
-            Fixed(928128676u, "Improved Public Transport 2");
             Broken(812125426u, "Network Extensions 2");
             BreaksEditor(812125426u, "Network Extensions 2");
             Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads");
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
-            Broken(502750307u, "Extra Landscaping Tools"); // menu wont close
+            Fixed(502750307u, "Extra Landscaping Tools"); // menu wont close
             Broken(442167376u, "Advanced Vehicle Options (AVO)"); // technically not but long overdue to get people over to new ver
             Dead(414618382u, "Rotate Brush");
-            Dead(408905948u, "Pause on Load"); // Sunset harbor contains
             // credit to AquilaSol/Avanya for compiling these lists in google docs
             //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
-            Fixed(576327847u, "81 Tiles (Fixed for 1.2+)"); // very broken
-            Note(576327847u, "81 Tiles (Fixed for 1.2+)", "[Mod: More Vehicles] Now compatible with 81 Tiles!!");
             Broken(912329352u, "Building Anarchy"); // breaks placement mode
             Fixed(515489008u, "Extra Train Station Tracks");
             Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
@@ -91,8 +70,6 @@ namespace AutoRepair.Catalogs {
             Fixed(650436109u, "Quay Anarchy");
             Fixed(934994075u, "Service Vehicle Selector 2"); // stack overflow
             Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
-            Broken(583429740u, "Traffic Manager: President Edition [STABLE]");
-            Broken(1349895184u, "Tree LOD Fix"); // Error on launch
             Broken(1632320836u, "Service Vehicles Manager 2.0.1");
             Note(1632320836u, "Service Vehicles Manager 2.0.1", "Klyte45 is focussing on some updates to Transport Lines Manager first.");
             Broken(1312735149u, "Klyte Commons");
@@ -108,18 +85,14 @@ namespace AutoRepair.Catalogs {
             Dead(428094792u , "[ARIS] Remove Stuck Vehicles", 1637663252u);
             Dead(421028969u , "[ARIS] Skylines Overwatch");
             //Dead(932939897u , "5 way Clover Full Capacity Final");
-            Dead(422554572u , "81 Tiles Updated", 576327847u);
-            Dead(1361478243u, "81 Tiles (Not the real 81 tiles!)", 576327847u);
             Dead(1444491969u, "Achievements with Mods", 407055819u);
             Dead(412168106u , "Adjustable Demand v2", 409776678u);
             Dead(1647686914u, "Advanced Junction Rule", 1637663252u);
             Dead(442167376u , "Advanced Vehicle Options (AVO)", 1548831935u);
             Dead(793489846u , "Aedificium");
             Dead(1452259306u, "Aedificium RELOADED");
-            Dead(616078328u , "All Tile Start", 576327847u);
             Dead(474652684u , "Asset Prefab(+Building) AI Changer");
             Dead(408760323u , "Auto Line Color", 1415090282u);
-            Dead(406132323u , "Automatic Bulldoze", 639486063u);
             Dead(686588890u , "Automatic Emptying: Extended", 407873631u);
             Dead(683304621u , "Barrier Placer", 694512541u);
             Dead(1072157697u, "Cargo Info");
@@ -128,17 +101,12 @@ namespace AutoRepair.Catalogs {
             Dead(408613485u , "City Statistics Easy Access");
             Dead(658232246u , "Compass");
             Dead(420469721u , "Compass Mod");
-            Dead(410535198u , "Control Building Level Up", 1403136223u);
             Dead(529979180u , "CSL Service Reserve");
-            Dead(959894658u , "Custom Light Effects");
-            Dead(1398502258u, "Dam Upkeep Scaler");
             Dead(649522495u , "District Service Limit", 927293560u);
             Dead(1181352643u, "District Service Limit 3.0", 927293560u);
             Dead(406629464u , "Dynamic Resolution", 812713438u);
             Dead(813835487u , "Early Death [1.6]");
             Dead(587516082u , "Early Death [Fixed for v1.4+]");
-            Dead(569008960u , "Employ Overeducated Workers", 1674732053u);
-            Dead(1114249433u, "Employ Overeducated Workers (1.10+)", 1674732053u);
             Dead(813835391u , "Enhanced Garbage Truck AI [1.6]");
             Dead(583552152u , "Enhanced Garbage Truck AI [Fixed for v1.4+]");
             Dead(813835241u , "Enhanced Hearse AI [1.6]");
@@ -150,12 +118,8 @@ namespace AutoRepair.Catalogs {
             Dead(802489150u , "Extended Public Transport UI (+DLCs!)");
             Dead(408209297u , "Extended Road Upgrade");
             Dead(451700838u , "Extended Toolbar", 563229150u);
-            Dead(651322972u , "Fine Road Tool", 1844442251u);
-            Dead(802066100u , "Fine Road Anarchy", 1844440354u);
             Dead(410234967u , "Fire Spread");
             Dead(637901778u , "Fire Spread [ Fixed for C:S 1.3.2+ ]");
-            Dead(406255342u , "First-person camera", 650805785u);
-            Dead(1275678215u, "Force Building Level", 523818382u);
             Dead(636687806u , "Freewalking");
             //Dead(1368078347u, "French Architecture Style (Paris) District Style");
             Dead(406749417u , "Ground Level Camera - Broken by Mass Transit, don't use");
@@ -230,22 +194,17 @@ namespace AutoRepair.Catalogs {
             Dead(583429740u , "Traffic Manager: President Edition [STABLE]", 1637663252u);
             Dead(409184143u , "Traffic++", 812125426u);
             Dead(626024868u , "Traffic++V2", 812125426u);
-            Dead(408875519u , "Transport Lines Manager", 1312767991u);
             Dead(679377572u , "Trash & Dead Cleaner 1");
             Dead(406723376u , "Tree Brush", 502750307u);
-            Dead(1498036881u, "UltimateMod 2.1 ( Higher Income and More Options )");
             Dead(627047745u , "Winter Buildings Unlocker");
             Dead(414702884u , "Zonable Pedestrian Paths - Stable", 812125426u);
 
             // incompatible mods
-            Incompatible(412146081u , "PostProcessFX v1.9.0",                    812713438u , "Dynamic Resolution (Fixed for 1.9!)");
-            Incompatible(412146081u , "PostProcessFX v1.9.1",                    1794015399u, "Render It!");
+            //Incompatible(412146081u , "PostProcessFX v1.9.0",                    812713438u , "Dynamic Resolution (Fixed for 1.9!)");
             Incompatible(442167376u , "Advanced Vehicle Options (AVO)",          1548831935u, "Advanced Vehicle Options AVO (Industries DLC ready)");
             Incompatible(451700838u , "Extended Toolbar",                        563229150u , "Advanced Toolbar");
             Incompatible(455403039u , "Unlimited Trees Mod",                     869134690u, "Tree Snapping");
             Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
-            Incompatible(543722850u , "Network Skins",                           1312735149u, "Klyte Commons");
-            Incompatible(543722850u , "Network Skins",                           1758376843u, "Network Skins 2 (Beta)");
             Incompatible(583429740u , "Traffic Manager: President Edition",      407335588u, "No Despawn Mod");
             Incompatible(583429740u , "Traffic Manager: President Edition",      418556522u, "Road Anarchy");
             Incompatible(583429740u , "Traffic Manager: President Edition",      498363759u, "Traffic Manager + Improved AI");
@@ -282,14 +241,11 @@ namespace AutoRepair.Catalogs {
             Incompatible(928128676u , "Improved Public Transport 2",             472128528u, "Larger Footprints");
             Incompatible(928128676u , "Improved Public Transport 2",             531401164u, "Vehicle Unbuncher");
             Incompatible(928128676u , "Improved Public Transport 2",             1218121337u, "Automatic Vehicle Numbers Adjuster");
-            Incompatible(959894658u , "Custom Light Effects",                    651322972u, "Fine Road Tool");
-            Incompatible(1138510774u, "PostProcessFX - Multi-platform",          412146081u, "PostProcessFX v1.9.0");
             Incompatible(1138510774u, "PostProcessFX - Multi-platform",          812713438u, "Dynamic Resolution (Fixed for 1.9!)");
             Incompatible(1138510774u, "PostProcessFX - Multi-platform",          1794015399u, "Render It!");
             Incompatible(1204126182u, "Ploppable RICO - High Density Fix",       2016920607u, "Ploppable RICO revisited");
             Incompatible(1312767991u, "Transport Lines Manager13.1",             934994075u, "Service Vehicle Selector 2");
             Incompatible(1312767991u, "Transport Lines Manager 13.1",            928128676u, "Improved Public Transport 2");
-            Incompatible(1400711138u, "[BETA] ParallelRoadTool",                 543722850u, "Network Skins");
             Incompatible(1406625743u, "EnhancedZoomContinued",                   651056665u, "Enhanced Zoom Continued");
             Incompatible(1442713872u, "Detail",                                  1094334744u, "Ploppable Asphalt objects turned into Procedural Objects");
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 407335588u, "No Despawn Mod");
@@ -302,10 +258,6 @@ namespace AutoRepair.Catalogs {
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 1181352643u, "District Service Limit 3.0");
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 1764208250u, "More Vehicles");
             Incompatible(1645781000u, "Elektrix's Road Tools 2.0",               1597198847u, "[Legacy] Segment Slope Smoother");
-            Incompatible(1758376843u, "Network Skins 2 (Beta)",                  1440928803u, "Parallel Road Tool");
-            Incompatible(1764208250u, "More Vehicles",                           442167376u, "Advanced Vehicle Options");
-            Incompatible(1764208250u, "More Vehicles",                           576327847u, "81 Tiles");
-            Incompatible(1764208250u, "More Vehicles",                           816260433u, "Metro Overhaul Mod");
             Incompatible(1764208250u, "More Vehicles",                           1548831935u, "Advanced Vehicle Options AVO (Industries DLC ready)");
             Incompatible(1831805509u, "Dynamic Text Props",                      651322972u, "Fine Road Tool");
             Incompatible(1844440354u, "Fine Road Anarchy 2",                     802066100u, "Fine Road Anarchy");
@@ -314,12 +266,23 @@ namespace AutoRepair.Catalogs {
             Incompatible(1959342332u, "CSUR ToolBox",                            812125426u, "Network Extensions 2");
 
             // breaks editor
-            BreaksEditor(412146081u, "PostProcessFX v1.9.0");
-            BreaksEditor(543722850u, "Network Skins");
             BreaksEditor(586012417u, "Ploppable RICO");
             BreaksEditor(672248733u, "Ultimate Eyecandy");
             BreaksEditor(1138510774u, "PostProcessFX - Multi-platform");
             BreaksEditor(1204126182u, "Ploppable RICO - High Density Fix");
+        }
+
+        /// <summary>
+        /// Just prints message to log (in debug builds) to let me know when addendum
+        /// is updating an existing item in some other catalog.
+        /// </summary>
+        /// 
+        /// <param name="item">The existing item.</param>
+        [Conditional("DEBUG")]
+        internal void Addendum(Item item) {
+            if (item.Catalog != "Addendum") {
+                Log.Info($"Addendum updated existing item: {item}");
+            }
         }
 
         /// <summary>
@@ -331,9 +294,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="note">The note to add (only one note per call, this is a quick kludge).</param>
         internal void Note(ulong workshopId, string workshopName, string note) {
             if (Items.TryGetValue(workshopId, out Item item)) {
-#if DEBUG
-                Log.Info($"Addendum updated existing item: {item}");
-#endif
+                Addendum(item);
                 if (item.Notes == null) {
                     item.Notes = new[] { note };
                 } else {
@@ -367,9 +328,7 @@ namespace AutoRepair.Catalogs {
             string theNote = "COMPATIBLE with Sunset Harbor update! :)";
 
             if (Items.TryGetValue(workshopId, out Item item)) {
-#if DEBUG
-                Log.Info($"Addendum updated existing item: {item}");
-#endif
+                Addendum(item);
                 item.BrokenBy = GameVersion.DefaultUntil;
                 item.CompatibleWith = LatestUpdate;
                 if (item.Notes == null) {
@@ -404,9 +363,7 @@ namespace AutoRepair.Catalogs {
             string theNote = "BROKEN since Sunset Harbor update :(";
 
             if (Items.TryGetValue(workshopId, out Item item)) {
-#if DEBUG
-                Log.Info($"Addendum updated existing item: {item}");
-#endif
+                Addendum(item);
                 item.BrokenBy = LatestUpdate;
                 if (item.CompatibleWith >= LatestUpdate) {
                     item.CompatibleWith = GameVersion.DefaultRelease;
@@ -437,9 +394,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void BreaksEditor(ulong workshopId, string workshopName) {
             if (Items.TryGetValue(workshopId, out Item item)) {
-#if DEBUG
-                Log.Info($"Addendum updated existing item: {item}");
-#endif
+                Addendum(item);
                 item.Flags |= ItemFlags.EditorBreaking;
             } else {
                 AddMod(new Item(workshopId, workshopName) {
@@ -462,9 +417,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="replacement">(Optional) Workshop ID of a suitable replacement.</param>
         internal void Dead(ulong workshopId, string workshopName, ulong replacement = 0u) {
             if (Items.TryGetValue(workshopId, out Item item)) {
-#if DEBUG
-                Log.Info($"Addendum updated existing item: {item}");
-#endif
+                Addendum(item);
                 item.Flags |= ItemFlags.Abandonware | ItemFlags.GameBreaking | ItemFlags.Obsolete;
                 if (item.ReplaceWith != 0u) {
                     item.Flags |= ItemFlags.ForceMigration;
@@ -505,6 +458,7 @@ namespace AutoRepair.Catalogs {
         internal void Incompatible(ulong idA, string nameA, ulong idB, string nameB) {
             // first item
             if (Items.TryGetValue(idA, out Item itemA)) {
+                Addendum(itemA);
                 if (itemA.Compatibility == null) {
                     itemA.Compatibility = new Dictionary<ulong, Status>() {
                         { idB, Status.Incompatible },
@@ -525,6 +479,7 @@ namespace AutoRepair.Catalogs {
             }
 
             if (Items.TryGetValue(idB, out Item itemB)) {
+                Addendum(itemB);
                 if (itemB.Compatibility == null) {
                     itemB.Compatibility = new Dictionary<ulong, Status>() {
                         { idA, Status.Incompatible },
