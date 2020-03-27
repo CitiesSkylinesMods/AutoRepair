@@ -25,19 +25,18 @@ namespace AutoRepair {
 
         }
 
+        /// <summary>
+        /// Called by the game when it wants the settings UI to be created.
+        /// </summary>
+        /// <param name="helper">UI helper from the game.</param>
         [UsedImplicitly]
         public void OnSettingsUI(UIHelperBase helper) {
             if (SceneManager.GetActiveScene().name == "Game") {
                 return;
             }
 
-            try {
-                Log.Info($"\nNum items in catalog = {Catalog.Instance.Items.Count}");
-                Scanner.PerformScan();
-            } catch (Exception e) {
-                Log.Info("Something went horribly wrong...");
-                Log.Error(e.ToString());
-            }
+            SettingsUI.Render(helper);
+            Scanner.PerformScan();
         }
 
         [UsedImplicitly]
