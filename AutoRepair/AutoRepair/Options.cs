@@ -1,6 +1,7 @@
 namespace AutoRepair {
     using AutoRepair.Attributes;
     using AutoRepair.Util;
+    using UnityEngine;
 
     /// <summary>
     /// Log file verbosity options.

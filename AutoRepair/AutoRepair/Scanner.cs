@@ -38,6 +38,8 @@ namespace AutoRepair {
 
             log.Append("\nTo contact us, visit workshop page: https://steamcommunity.com/sharedfiles/filedetails/?id=2034713132 \n"); // todo
 
+            log.Append("\nGetting 'Object reference' errors mentioning 'TransportStationAI.IsIntercity()'? Here is a mod to fix that:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2037862156\n");
+
             if (Options.Instance.LogIntroText) {
                 log.Append("\nSome general notes:");
                 log.Append("\n* Disabled mods are often still loaded; always unsubscribe mods you're not using!");
@@ -131,8 +133,9 @@ namespace AutoRepair {
                         // best wait until we have mode descriptors otherwise it will result in flood of spam!
                         //log.Append("\n - It would be helpful if you could copy and paste the mod id/name above\n");
                         //log.Append("   to the Compatibility Checker workshop page linked at top of log file.\n");
-
-                        log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
+                        if (Options.Instance.LogWorkshopURLs) {
+                            log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
+                        }
 
                         continue;
                     }
@@ -214,6 +217,8 @@ namespace AutoRepair {
                                 if (!string.IsNullOrEmpty(descriptor.SourceURL)) {
                                     log.AppendFormat("\n - Source available: {0}\n", descriptor.SourceURL);
                                 }
+                            } else if (HasFlag(flags, ItemFlags.SourceBundled)) {
+                                log.Append("\n - Source code is included with the mod (in 'Source' folder).\n");
                             } else if (HasFlag(flags, ItemFlags.SourceUnavailable)) {
                                 // todo: check for `Source` folder in mod folder
                                 log.Append("\n - No source code/files found (yet); it might be difficult to update in future.\n");
@@ -252,8 +257,10 @@ namespace AutoRepair {
                         }
 
                         if (descriptor.Notes != null) {
-                            foreach (string note in descriptor.Notes) {
-                                log.AppendFormat("\n - {0}\n", note);
+                            foreach (KeyValuePair<ulong, string> note in descriptor.Notes) {
+                                if (IsAlwaysNote(note.Key) || subscriptions.ContainsKey(note.Key)) {
+                                    log.AppendFormat("\n - {0}\n", note.Value);
+                                }
                             }
                         }
 
@@ -271,6 +278,11 @@ namespace AutoRepair {
             log.Append("\nIf this compatibility checker helped even a little bit,\nplease conisder rating it in the workshop to help others find it.");
 
             Log.Info(log.ToString());
+        }
+
+        // check if Notes id is an "always show" note.
+        public static bool IsAlwaysNote(ulong id) {
+            return id >= 100000000u && id <= 200000000u;
         }
 
         // check if flag set

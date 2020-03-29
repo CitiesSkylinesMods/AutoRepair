@@ -14,14 +14,21 @@ namespace AutoRepair.Util {
     public class Log {
 
         /// <summary>
-        /// File name for log file.
+        /// Log file name.
         /// </summary>
         public static readonly string LogFileName = $"{typeof(Log).Assembly.GetName().Name}.log";
 
         /// <summary>
-        /// Full path and file name of log file.
+        /// Log file path.
         /// </summary>
-        public static readonly string LogFilePath = Path.Combine(Application.dataPath, LogFileName);
+        public static readonly string LogFilePath = Application.dataPath;
+
+        /// <summary>
+        /// The fully qualified path to the log file.
+        ///
+        /// NOTE: On Macs this will always be ignored and the log will go in game Player.log file.
+        /// </summary>
+        public static readonly string LogFile = Path.Combine(LogFilePath, LogFileName);
 
         /// <summary>
         /// Stopwatch used if <see cref="ShowTimestamp"/> is <c>true</c>.
@@ -47,23 +54,26 @@ namespace AutoRepair.Util {
         }
 
         /// <summary>
-        /// Reset the log file.
-        /// </summary>
-        public static void Reset() {
-            if (File.Exists(LogFilePath)) {
-                try { File.Delete(LogFilePath); } catch { }
-            }
-            AssemblyName mod = typeof(Log).Assembly.GetName();
-            Info($"\n{mod.Name} v{mod.Version.ToString()}\n");
-        }
-
-        /// <summary>
         /// Log levels. Also output in log file.
         /// </summary>
         private enum LogLevel {
             Debug,
             Info,
             Error,
+        }
+
+        /// <summary>
+        /// Reset the log file.
+        /// </summary>
+        public static void Reset() {
+            UnityEngine.Debug.Log("AutoRepair log: " + LogFile);
+            if (Application.platform != RuntimePlatform.OSXPlayer) {
+                if (File.Exists(LogFile)) {
+                    try { File.Delete(LogFile); } catch { }
+                }
+            }
+            AssemblyName mod = typeof(Log).Assembly.GetName();
+            Info($"\n{mod.Name} v{mod.Version.ToString()}\n");
         }
 
         /// <summary>
@@ -120,27 +130,34 @@ namespace AutoRepair.Util {
                     return;
                 }
 
-                using StreamWriter w = File.AppendText(LogFilePath);
+                if (Application.platform == RuntimePlatform.OSXPlayer) {
 
-                if (lastMessageCount > 0) {
-                    w.WriteLine($"[{lastMessageCount} repeat(s)]");
-                }
-                lastMessage = message;
-                lastMessageCount = 0;
+                    copyToGameLog = true;
 
-                if (ShowLogLevel) {
-                    w.Write("{0, -8}", $"[{level.ToString()}] ");
-                }
+                } else {
 
-                if (ShowTimestamp) {
-                    w.Write("{0, 15}", Timestamp.ElapsedTicks + " | ");
-                }
+                    using StreamWriter w = File.AppendText(LogFile);
 
-                w.WriteLine(message);
+                    if (lastMessageCount > 0) {
+                        w.WriteLine($"[{lastMessageCount} repeat(s)]");
+                    }
+                    lastMessage = message;
+                    lastMessageCount = 0;
 
-                if (level == LogLevel.Error) {
-                    w.WriteLine(new StackTrace());
-                    w.WriteLine();
+                    if (ShowLogLevel) {
+                        w.Write("{0, -8}", $"[{level.ToString()}] ");
+                    }
+
+                    if (ShowTimestamp) {
+                        w.Write("{0, 15}", Timestamp.ElapsedTicks + " | ");
+                    }
+
+                    w.WriteLine(message);
+
+                    if (level == LogLevel.Error) {
+                        w.WriteLine(new StackTrace());
+                        w.WriteLine();
+                    }
                 }
 
                 if (copyToGameLog) {

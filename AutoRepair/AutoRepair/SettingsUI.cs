@@ -1,5 +1,9 @@
 namespace AutoRepair {
+    using AutoRepair.Util;
+    using ColossalFramework.UI;
     using ICities;
+    using System.IO;
+    using UnityEngine;
 
     /// <summary>
     /// Renders the settings UI.
@@ -16,6 +20,14 @@ namespace AutoRepair {
             bool selected;
 
             group = helper.AddGroup("Log File Options");
+
+            string value = Application.platform == RuntimePlatform.OSXPlayer
+                ? "~/Library/Logs/Unity/Player.log" // only way I could get logging working on Macs
+                : Log.LogFile;
+
+            UITextField field = (UITextField)group.AddTextfield("Log file (copy and paste in to Explorer/Finder):", value, _ => { });
+            field.selectOnFocus = true;
+            field.width = 650f;
 
             selected = Options.Instance.LogIntroText;
             group.AddCheckbox("Log intro text at top of log file (recommended for first time users)", selected, sel => {
@@ -44,6 +56,7 @@ namespace AutoRepair {
                 Options.Instance.Save();
                 Scanner.PerformScan();
             });
+
         }
     }
 }

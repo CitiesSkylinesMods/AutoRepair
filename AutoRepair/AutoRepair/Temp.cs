@@ -1,5 +1,8 @@
 /*
 
+// how to get asset tags (BP sent this):
+https://github.com/bloodypenguin/Skylines-ImprovedContentManager/blob/master/ImprovedContentManager/Detours/CategoryContentPanelDetour.cs#L47
+
 Just jotting down details of WG mods soon to be retired:
 
 Configurable Population Modifiers v1.8:
