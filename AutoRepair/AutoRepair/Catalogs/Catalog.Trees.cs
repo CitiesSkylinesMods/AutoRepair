@@ -114,7 +114,7 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: There is no news on when this will be updated, although some users say it still works." },
                     { NOTE, "This mod improves quality of tree LODs with almost no impact on performance." },
-                    { 1680642819u, "[Mod: ULOD] If Tree LOD Fix enabled, try setting tree LOD range lower for eveb better performance." }, 
+                    { 1680642819u, "[Mod: ULOD] If Tree LOD Fix enabled, try setting tree LOD range lower for faster performance." }, 
                 },
                 ReleasedDuring = GameVersion.ChirpX,
                 Tags = new[] { "Trees", "Forest", "Landscape", "LODs", "Graphics", "Environment", "Detailing", },

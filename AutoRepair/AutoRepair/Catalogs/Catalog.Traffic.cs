@@ -146,6 +146,8 @@ namespace AutoRepair.Catalogs {
                     //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
+                    { 726005715u , Status.MinorIssues  }, // Roads United: Core+
+                    { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector (old version)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -162,6 +164,8 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions." },
                     { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
                     { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
+                    { 726005715u, "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
+                    { 633547552u, "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -277,6 +281,8 @@ namespace AutoRepair.Catalogs {
                     //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
+                    { 726005715u , Status.MinorIssues  }, // Roads United: Core+
+                    { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector (old version)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -293,6 +299,8 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions." },
                     { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
                     { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
+                    { 726005715u, "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
+                    { 633547552u, "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {

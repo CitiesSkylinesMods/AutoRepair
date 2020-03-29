@@ -18,41 +18,46 @@ namespace AutoRepair {
         public static void Render(UIHelperBase helper) {
             UIHelperBase group;
             bool selected;
+            string path, caption;
 
             group = helper.AddGroup("Log File Options");
 
-            string value = Application.platform == RuntimePlatform.OSXPlayer
-                ? "~/Library/Logs/Unity/Player.log" // only way I could get logging working on Macs
-                : Log.LogFile;
+            if (Application.platform == RuntimePlatform.OSXPlayer) {
+                caption = "Search for 'AutoRepair Descriptors' in this file:";
+                path = "~/Library/Logs/Unity/Player.log"; // only way I could get logging working on Macs (see also: Log.cs)
+            } else {
+                caption = "Copy this path for location of log file:";
+                path = Log.LogFile;
+            }
 
-            UITextField field = (UITextField)group.AddTextfield("Log file (copy and paste in to Explorer/Finder):", value, _ => { });
+            UITextField field = (UITextField)group.AddTextfield(caption, path, _ => { });
             field.selectOnFocus = true;
             field.width = 650f;
 
             selected = Options.Instance.LogIntroText;
-            group.AddCheckbox("Log intro text at top of log file (recommended for first time users)", selected, sel => {
+            group.AddCheckbox("Add notes on mod management at top of log file", selected, sel => {
                 Options.Instance.LogIntroText = sel;
                 Options.Instance.Save();
                 Scanner.PerformScan();
             });
 
-            selected = Options.Instance.LogDescriptorHeaders;
-            group.AddCheckbox("Log the AutoRepair Descriptor header (if available) for each item", selected, sel => {
-                Options.Instance.LogDescriptorHeaders = sel;
-                Options.Instance.Save();
-                Scanner.PerformScan();
-            });
-
             selected = Options.Instance.LogWorkshopURLs;
-            group.AddCheckbox("Log the Steam Workshop URL for each item", selected, sel => {
+            group.AddCheckbox("Include URLs to Steam Workshop pages (if known)", selected, sel => {
                 Options.Instance.LogWorkshopURLs = sel;
                 Options.Instance.Save();
                 Scanner.PerformScan();
             });
 
             selected = Options.Instance.LogSourceURLs;
-            group.AddCheckbox("Log the Source URL (if available) for each item", selected, sel => {
+            group.AddCheckbox("Include URLs to source files (if known)", selected, sel => {
                 Options.Instance.LogSourceURLs = sel;
+                Options.Instance.Save();
+                Scanner.PerformScan();
+            });
+
+            selected = Options.Instance.LogDescriptorHeaders;
+            group.AddCheckbox("Include descriptor headers (not recommended)", selected, sel => {
+                Options.Instance.LogDescriptorHeaders = sel;
                 Options.Instance.Save();
                 Scanner.PerformScan();
             });

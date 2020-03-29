@@ -49,6 +49,11 @@ namespace AutoRepair {
         public static readonly Version MatchDay = new Version(1, 5, 0);
 
         /// <summary>
+        /// 2016-09-01  Art Deco content pack.
+        /// </summary>
+        public static readonly Version ArtDeco = new Version(1, 5, 1);
+
+        /// <summary>
         /// 2016-10-18 Stadiums DLC (no longer available).
         /// </summary>
         public static readonly Version Stadiums = new Version(1, 5, 2);

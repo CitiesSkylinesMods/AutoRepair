@@ -27,6 +27,7 @@ namespace AutoRepair.Catalogs {
             # ██  ██  ██ ██    ██ ██   ██      ██
             # ██      ██  ██████  ██████  ███████
             */
+
             AddMod(new Item(1886877404u, "Custom Effect Loader") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
@@ -170,7 +171,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "[Mod: Daylight Classic] 'Classic for effect' option must be enabled for the cubemap to work!" },
+                    { NOTE, "[Mod: Daylight Classic] 'Classic fog effect' option must be enabled for the cubemap to work!" },
                 },
                 ReleasedDuring = GameVersion.GreenCities,
                 SourceURL = "https://github.com/bloodypenguin/Skylines-CubemapReplacer",
@@ -191,6 +192,7 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 412146081u, // PostProcessFX v1.9.0
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.EditorBreaking
                       | ItemFlags.MinorBugs // some users have problems opening GUI
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // some users say it stopped working

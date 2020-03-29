@@ -88,6 +88,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // https://github.com/CityGecko/CS-AdvancedVehicleOptions/issues
                 Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Version 1.9.0 will be available soon; it might show an error when you load old city, but after taht should be OK." },
                     { NOTE, "Sunset Harbor: Working, but does not have options for the new DLC vehicles yet." },
                     { NOTE, "Author is working on updates to categorize new vehicles." },
                 },

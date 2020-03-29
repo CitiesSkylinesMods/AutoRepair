@@ -199,22 +199,13 @@ namespace AutoRepair.Catalogs {
             Incompatible(451700838u , "Extended Toolbar",                        563229150u , "Advanced Toolbar");
             Incompatible(455403039u , "Unlimited Trees Mod",                     869134690u, "Tree Snapping");
             Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      407335588u, "No Despawn Mod");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      418556522u, "Road Anarchy");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      498363759u, "Traffic Manager + Improved AI");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      631930385u, "Realistic Vehicle Speeds");
             Incompatible(583429740u , "Traffic Manager: President Edition",      844180955u, "City Drive");
             Incompatible(583429740u , "Traffic Manager: President Edition",      927293560u, "Geli-Districts v3.0");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      954034590u, "Road Anarchy V2");
             Incompatible(583429740u , "Traffic Manager: President Edition",      1181352643u, "District Service Limit 3.0");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      1764208250u, "More Vehicles");
             Incompatible(586012417u , "Ploppable RICO",                          1204126182u, "Ploppable RICO - High Density Fix");
             Incompatible(586012417u , "Ploppable RICO",                          2016920607u, "Ploppable RICO revisited");
             Incompatible(602077938u , "TotalyFree Camera",                       406629464u, "Dynamic Resolution");
             Incompatible(602077938u , "TotalyFree Camera",                       812713438u, "Dynamic Resolution (Fixed for 1.9!)");
-            Incompatible(633547552u , "Roads United Core 2.0",                   726005715u, "Roads United Core+");
-            Incompatible(666425898u , "No Radioactive Desert And More!",         1591417160u, "Hide It!");
             Incompatible(667342976u , "Loading Screen Mod",                      833779378u, "Loading Screen Mod [Test]");
             Incompatible(775021554u , "Theme Mixer",                             1899640536u, "Theme Mixer 2");
             Incompatible(791968744u , "Dynamic Foliage",                         666425898u, "No Radioactive Desert And More!");
@@ -242,15 +233,8 @@ namespace AutoRepair.Catalogs {
             Incompatible(1312767991u, "Transport Lines Manager 13.1",            928128676u, "Improved Public Transport 2");
             Incompatible(1406625743u, "EnhancedZoomContinued",                   651056665u, "Enhanced Zoom Continued");
             Incompatible(1442713872u, "Detail",                                  1094334744u, "Ploppable Asphalt objects turned into Procedural Objects");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 407335588u, "No Despawn Mod");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 418556522u, "Road Anarchy");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 498363759u, "Traffic Manager + Improved AI");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 583429740u, "Traffic Manager: President Edition");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 631930385u, "Realistic Vehicle Speeds");
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 844180955u, "City Drive");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 954034590u, "Road Anarchy V2");
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 1181352643u, "District Service Limit 3.0");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 1764208250u, "More Vehicles");
             Incompatible(1645781000u, "Elektrix's Road Tools 2.0",               1597198847u, "[Legacy] Segment Slope Smoother");
             Incompatible(1764208250u, "More Vehicles",                           1548831935u, "Advanced Vehicle Options AVO (Industries DLC ready)");
             Incompatible(1831805509u, "Dynamic Text Props",                      651322972u, "Fine Road Tool");
@@ -262,7 +246,6 @@ namespace AutoRepair.Catalogs {
             // breaks editor
             BreaksEditor(586012417u, "Ploppable RICO");
             BreaksEditor(672248733u, "Ultimate Eyecandy");
-            BreaksEditor(1138510774u, "PostProcessFX - Multi-platform");
             BreaksEditor(1204126182u, "Ploppable RICO - High Density Fix");
         }
 

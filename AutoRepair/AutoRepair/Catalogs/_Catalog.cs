@@ -189,6 +189,7 @@ namespace AutoRepair.Catalogs {
                 RepairCatalog();
                 ServicesCatalog();
                 SkinRoadsCatalog();
+                SkinRoadsUnitedCatalog();
                 SkyclothCatalog();
                 StatsCatalog();
                 ToolbarCatalog();

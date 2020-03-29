@@ -1,7 +1,6 @@
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
-    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
@@ -13,8 +12,8 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void SkinRoadsCatalog() {
 
             string catalog = "Skin.Roads";
@@ -219,9 +218,12 @@ namespace AutoRepair.Catalogs {
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 812125426u , Status.Compatible   }, // Network Extensions 2
+                    { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060u , Status.Incompatible }, // Network Extensions Project
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
@@ -250,9 +252,12 @@ namespace AutoRepair.Catalogs {
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 812125426u , Status.Compatible   }, // Network Extensions 2
+                    { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060u , Status.Incompatible }, // Network Extensions Project
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
@@ -305,9 +310,12 @@ namespace AutoRepair.Catalogs {
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 812125426u , Status.Compatible   }, // Network Extensions 2
+                    { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060u , Status.Incompatible }, // Network Extensions Project
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
@@ -332,9 +340,12 @@ namespace AutoRepair.Catalogs {
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 812125426u , Status.Incompatible }, // Network Extensions 2
+                    { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060u , Status.Compatible   }, // Network Extensions Project
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
@@ -374,6 +385,7 @@ namespace AutoRepair.Catalogs {
                     { 1361478243u, Status.MinorIssues  }, // 81 Tiles
                     { 1223738434u, Status.MinorIssues  }, // 422554572
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 616078328u , Status.MinorIssues  }, // All Tile Start
@@ -412,9 +424,12 @@ namespace AutoRepair.Catalogs {
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 812125426u , Status.Incompatible }, // Network Extensions 2
+                    { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060u , Status.Compatible   }, // Network Extensions Project
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)

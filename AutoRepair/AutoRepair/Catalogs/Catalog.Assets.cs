@@ -23,6 +23,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "GolonkaSwe",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2037862156u, Status.Compatible   }, // IsIntercity Fix
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
             });

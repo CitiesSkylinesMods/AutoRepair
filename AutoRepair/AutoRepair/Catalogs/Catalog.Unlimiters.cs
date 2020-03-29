@@ -184,7 +184,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "IMPORTANT: If your save game became corrupt due to Sunset Harbor update, use the recovery mode in 81 Tiles mod options." },
-                    { NOTE, "After loading a save, terrain may look distorted but should quickly go bac to normal." },
+                    { NOTE, "After loading a save, terrain may look distorted but should quickly return to normal." },
                     { NOTE, "Dams cause tsunamis if placed outside central 25 tile area." },
                     { NOTE, "Disasters and evacuation don't work properly outside central 25 tile area." },
                     { 1764208250u, "[Mod: More Vehicles] It is now compatible with 81 Tiles!" },

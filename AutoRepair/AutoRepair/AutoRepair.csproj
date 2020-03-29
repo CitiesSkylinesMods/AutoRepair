@@ -71,8 +71,7 @@
     <Compile Include="Catalogs\Catalog.Money.cs" />
     <Compile Include="Catalogs\Catalog.Music.cs" />
     <Compile Include="Catalogs\Catalog.Paint.cs" />
-    <Compile Include="Catalogs\RoadsUnited.cs" />
-    <Compile Include="Catalogs\Skins.RoadsUnited.cs" />
+    <Compile Include="Catalogs\Catalog.Skins.RoadsUnited.cs" />
     <Compile Include="Catalogs\Skins.cs" />
     <Compile Include="Catalogs\Skins.Maps.cs" />
     <Compile Include="Catalogs\Catalog.Networks.cs" />
