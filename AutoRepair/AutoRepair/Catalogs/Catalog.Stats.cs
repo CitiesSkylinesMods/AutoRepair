@@ -91,9 +91,12 @@ namespace AutoRepair.Catalogs {
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 414469593u, // Extended Building Information (emf)
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: It works, but doesn't show info for new building types." },
+                },
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/live627/Cities-Skylines-Extended-Building-Info",
             });

@@ -24,6 +24,7 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
+            Fixed(881161181u, "More Asset Tags");
             Broken(506982407u, "Dropouts");
             Note(506982407u, "Dropouts", "[Sunset Harbor] Error: Field '.Citizen.m_age' not found.");
             Broken(810858473u, "Traffic Report Tool");

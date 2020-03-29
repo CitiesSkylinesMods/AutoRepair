@@ -685,7 +685,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Users report lag and reduced framerate when using this mod." },
-                    { NOTE, "Achievement Unlocker: The icon will still have a lock on it (minor bug), but achievements should work." },
+                    { NOTE, "Achievement Unlocker: Icon still has a lock on it (minor bug), but achievements should work." },
                 },
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
             });
