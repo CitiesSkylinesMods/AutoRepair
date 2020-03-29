@@ -1,4 +1,5 @@
 namespace AutoRepair.Descriptors {
+    using AutoRepair.Catalogs;
     using AutoRepair.Enums;
     using AutoRepair.Util;
     using System;
@@ -118,8 +119,13 @@ namespace AutoRepair.Descriptors {
 
         /// <summary>
         /// Gets or sets arbitrary notes for the item, which will be displayed in log file.
+        ///
+        /// Workshop id -> Note.
+        ///
+        /// String only shown if workshop id subscribed. To make a note always display,
+        /// use <see cref="Catalog.NOTE"/> id (value <c>100000000u -> 200000000u</c>).
         /// </summary>
-        public string[] Notes { get; set; }
+        public Dictionary<ulong, string> Notes { get; set; }
 
         /// <summary>
         /// Gets or sets the game version at time when item was first published to workshop, if known.
