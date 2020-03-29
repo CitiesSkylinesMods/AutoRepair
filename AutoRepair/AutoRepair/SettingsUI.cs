@@ -1,4 +1,5 @@
 namespace AutoRepair {
+    using AutoRepair.Catalogs;
     using AutoRepair.Util;
     using ColossalFramework.UI;
     using ICities;
@@ -26,7 +27,11 @@ namespace AutoRepair {
                 caption = "Search for 'AutoRepair Descriptors' in this file:";
                 path = "~/Library/Logs/Unity/Player.log"; // only way I could get logging working on Macs (see also: Log.cs)
             } else {
-                caption = "Copy this path for location of log file:";
+                if (Application.platform == RuntimePlatform.WindowsPlayer) {
+                    caption = "Copy this path in to Windows File Explorer to view log file:";
+                } else {
+                    caption = "Copy this path for log file location:";
+                }
                 path = Log.LogFile;
             }
 
@@ -61,6 +66,12 @@ namespace AutoRepair {
                 Options.Instance.Save();
                 Scanner.PerformScan();
             });
+
+#if DEBUG
+            group.AddButton("Dump CSV", () => {
+                Catalog.Instance.DumpToCSV();
+            });
+#endif
 
         }
     }

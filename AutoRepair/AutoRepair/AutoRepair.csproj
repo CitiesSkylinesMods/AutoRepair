@@ -81,6 +81,7 @@
     <Compile Include="Catalogs\TrafficLight.Packs.cs" />
     <Compile Include="Catalogs\Catalog.Repair.cs" />
     <Compile Include="Catalogs\Catalog.VehicleEffects.cs" />
+    <Compile Include="Catalogs\_Catalog.DumpToCSV.cs" />
     <Compile Include="Descriptors\Item.cs" />
     <Compile Include="Enums\DLCs.cs" />
     <Compile Include="Enums\Factor.cs" />

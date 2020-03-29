@@ -41,8 +41,8 @@ namespace AutoRepair.Catalogs {
             Fixed(632951976u, "Improved Mod Upload Panel");
             Fixed(762520291u, "Shadow Strenght Adjuster");
             Fixed(643364914u, "Softer Shadows");
-            Broken(611254368u, "Environment Changer");
-            Note(611254368u, "Environment Changer", "Sunset Harbor: Spitting nulll reference errors in to log.");
+            Fixed(611254368u, "Environment Changer");
+            Fixed(530771650u, "Prefab Hook");
             Fixed(422934383u, "CSL Music Mod");
             Fixed(1435741602u, "Snooper");
             Fixed(445589127u, "Precision Engineering");
@@ -61,7 +61,9 @@ namespace AutoRepair.Catalogs {
             Dead(414618382u, "Rotate Brush");
             // credit to AquilaSol/Avanya for compiling these lists in google docs
             //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
-            Broken(912329352u, "Building Anarchy"); // breaks placement mode
+            Fixed(912329352u, "Building Anarchy"); // breaks placement mode
+            Note(912329352u, "Building Anarchy", "Placement mode problems? Find and delete 'BuildingAnarchy.xml' to fix (thanks Avanya for info!)");
+
             Fixed(515489008u, "Extra Train Station Tracks");
             Fixed(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
             Broken(621002682u, "No Questions Asked"); // crash to desktop
@@ -95,7 +97,7 @@ namespace AutoRepair.Catalogs {
             Dead(549792340u , "Cimtographer updated for Natural_Disasters", 1485051886u);
             Dead(408613485u , "City Statistics Easy Access");
             Dead(658232246u , "Compass");
-            Dead(420469721u , "Compass Mod");
+            //Dead(420469721u , "Compass Mod"); // https://github.com/CitiesSkylinesMods/AutoRepair/issues/10
             Dead(529979180u , "CSL Service Reserve");
             Dead(649522495u , "District Service Limit", 927293560u);
             Dead(1181352643u, "District Service Limit 3.0", 927293560u);

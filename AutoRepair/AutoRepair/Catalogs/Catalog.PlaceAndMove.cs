@@ -3,6 +3,7 @@ namespace AutoRepair.Catalogs {
     using AutoRepair.Enums;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
 
     /// <summary>
     /// Tools that help with placement and relocation of roads, buildings, etc.
@@ -90,9 +91,14 @@ namespace AutoRepair.Catalogs {
                     { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1393797695u, Status.Compatible   }, // Touch This Tool
                     { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 651322972u , Status.Incompatible }, // Fine Road Tool
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 651322972u, // Fine Road Tool
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/CS-FineRoadTool",
@@ -106,18 +112,25 @@ namespace AutoRepair.Catalogs {
                     { 1895443005u, Status.Incompatible }, // Fine Road Anarchy 2 汉化版
                     { 1895440521u, Status.Incompatible }, // Fine Road Tool 2 汉化版
                     { 1844442251u, Status.Recommended  }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Recommended  }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Compatible   }, // Dynamic Text Props
                     { 1612012531u, Status.Compatible   }, // Net Picker 2.0
                     { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1393797695u, Status.Compatible   }, // Touch This Tool
                     { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 651322972u , Status.Incompatible }, // Fine Road Tool
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                 },
+                CompatibleWith = GameVersion.PdxLauncher,
                 ContinuationOf = 802066100u, // Fine Road Anarchy
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE,  "Sunset Harbor: It's making road collisions (connections) unreliable." },
+                    { NOTE,  "Sunset Harbor: Collidion toggle isn't working properly.\n" },
                 },
                 SourceURL = "https://github.com/klyte45/CS-FineRoadAnarchy",
             });
@@ -164,13 +177,21 @@ namespace AutoRepair.Catalogs {
                 Authors = "Strad",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1890830956u, Status.MinorIssues }, // Undo It!
-                    { 1844442251u, Status.Recommended }, // Fine Road Tool 2.0.3
-                    { 1844440354u, Status.Required    }, // Fine Road Anarchy 2
-                    { 802066100u , Status.Compatible  }, // Fine Road Anarchy
-                    { 651322972u , Status.Compatible  }, // Fine Road Tool
+                    { 1890830956u, Status.MinorIssues  }, // Undo It!
+                    { 1844442251u, Status.Recommended  }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
+                    { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 651322972u , Status.Compatible   }, // Fine Road Tool
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1890830956u, "[Mod: Undo It!] Doesn't undo roundabouts. Use the undo feature of Smart Intersections instead." },
+                },
                 SourceURL = "https://github.com/Strdate/SmartIntersections",
             });
 
@@ -182,6 +203,11 @@ namespace AutoRepair.Catalogs {
                     { 1440928803u, Status.Incompatible }, // Parallel Road Tool (invert flag)
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
                     { 1597198847u, Status.Incompatible }, // [Legacy] Segment Slope Smoother
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1597198847u, // [Legacy] Segment Slope Smoother
@@ -194,11 +220,18 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Flags = ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1890830956u, Status.MinorIssues }, // Undo It!
-                    { 1844442251u, Status.Recommended }, // Fine Road Tool 2.0.3
-                    { 1844440354u, Status.Required    }, // Fine Road Anarchy 2
-                    { 802066100u , Status.Compatible  }, // Fine Road Anarchy
-                    { 651322972u , Status.Compatible  }, // Fine Road Tool
+                    { 1890830956u, Status.MinorIssues  }, // Undo It!
+                    { 1844442251u, Status.Recommended  }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
+                    { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 651322972u , Status.Compatible   }, // Fine Road Tool
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                },
+                Notes = new Dictionary<ulong, string>() {
+                    { 1890830956u, "[Mod: Undo It!] Doesn't undo roundabouts. Use undo feature of Roundabout Builder instead." },
                 },
                 SourceURL = "https://github.com/Strdate/AutomaticRoundaboutBuilder",
             });
@@ -219,8 +252,12 @@ namespace AutoRepair.Catalogs {
                     { 1393797695u, Status.Compatible   }, // Touch This! Tool 3
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
                     { 787611845u , Status.Recommended  }, // Prop Snapping
                     { 766190099u , Status.Incompatible }, // Move It (original)
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 766190099u, // Move It (original)
@@ -235,11 +272,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "Elektrix",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1844442251u, Status.Compatible }, // Fine Road Tool 2.0.3
-                    { 1844440354u, Status.Compatible }, // Fine Road Anarchy 2
-                    { 1619685021u, Status.Compatible }, // Move It 2.7.0
-                    { 1612012531u, Status.Compatible }, // Net Picker 2.0
-                    { 1393797695u, Status.Compatible }, // Touch This! Tool 3
+                    { 1844442251u, Status.Compatible   }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Compatible   }, // Fine Road Anarchy 2
+                    { 1619685021u, Status.Compatible   }, // Move It 2.7.0
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1393797695u, Status.Compatible   }, // Touch This! Tool 3
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
@@ -258,8 +299,12 @@ namespace AutoRepair.Catalogs {
                     { 1604291910u, Status.MinorIssues  }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.MinorIssues  }, // TrafficManager Fixed for industry DLC
                     { 1348361731u, Status.MinorIssues  }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 583429740u , Status.MinorIssues  }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -275,8 +320,12 @@ namespace AutoRepair.Catalogs {
                     { 1645781000u, Status.Incompatible }, // Elektrix's Road Tools 2.91
                     { 1440928803u, Status.Incompatible }, // Parallel Road Tool (invert flag)
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool (invert flag)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
                     { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 543722850u , Status.Unknown      }, // Network Skins (Park Life compatible)
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 ContinuationOf = 1400711138u, // [BETA] Parallel Road Tool
                 Flags = ItemFlags.Abandonware
@@ -501,6 +550,7 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 766190099u, // Move It
                 Flags = ItemFlags.Abandonware // Was temporary bug fix
+                      | ItemFlags.GameBreaking
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1619685021u, // Move It (current stable release)
@@ -526,11 +576,22 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 802066100u, // Fine Road Anarchy
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1895443005u, Status.Incompatible }, // Fine Road Anarchy 2 汉化版
+                    { 1895440521u, Status.Incompatible }, // Fine Road Tool 2 汉化版
                     { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Incompatible }, // Dynamic Text Props
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1393797695u, Status.Incompatible }, // Touch This Tool
+                    { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 651322972u , Status.Incompatible }, // Fine Road Tool
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9 (just sick of seeing this break games!)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -547,11 +608,22 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 802066100u, // Fine Road Anarchy
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1895443005u, Status.Incompatible }, // Fine Road Anarchy 2 汉化版
+                    { 1895440521u, Status.Incompatible }, // Fine Road Tool 2 汉化版
                     { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Incompatible }, // Dynamic Text Props
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1393797695u, Status.Incompatible }, // Touch This Tool
+                    { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 651322972u , Status.Incompatible }, // Fine Road Tool
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9 (just sick of seeing this break games!)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -587,6 +659,39 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gist.github.com/simon56modder/46b2d593e0364fb5386c80c3c97ae396",
             });
 
+            AddMod(new Item(802066100u, "Fine Road Anarchy") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "Boogieman Sam",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1895443005u, Status.Incompatible }, // Fine Road Anarchy 2 汉化版
+                    { 1895440521u, Status.Incompatible }, // Fine Road Tool 2 汉化版
+                    { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
+                    { 1844440354u, Status.Incompatible }, // Fine Road Anarchy 2
+                    { 1831805509u, Status.Incompatible }, // Dynamic Text Props
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
+                    { 1393797695u, Status.Incompatible }, // Touch This Tool
+                    { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 802066100u , Status.Incompatible }, // Fine Road Anarchy
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 651322972u , Status.Incompatible }, // Fine Road Tool
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                ContinuationOf = 418556522u, // Road Anarchy
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE,  "Sunset Harbor: Collidion toggle isn't working properly.\n" },
+                },
+                ReleasedDuring = GameVersion.Stadiums,
+                ReplaceWith = 1844440354u, // Fine Road Anarchy 2
+                SourceURL = "https://github.com/SamsamTS/CS-FineRoadAnarchy",
+            });
+
             // original version
             AddMod(new Item(766190099u, "Move It") {
                 Affect = Factor.PlaceAndMove,
@@ -602,7 +707,13 @@ namespace AutoRepair.Catalogs {
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Compatible   }, // [OUTDATED] Move It! Extra Filters
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
                     { 766190099u , Status.Incompatible }, // Move It (original)
+                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                 },
                 CompatibleWith = GameVersion.ParkLife,
                 Flags = ItemFlags.Abandonware
