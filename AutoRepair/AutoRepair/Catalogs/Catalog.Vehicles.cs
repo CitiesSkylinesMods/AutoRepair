@@ -87,29 +87,13 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // https://github.com/CityGecko/CS-AdvancedVehicleOptions/issues
-                Notes = new[] {
-                    "Sunset Harbor: Working, but does not have options for the new DLC vehicles yet.",
-                    "Aurthor is working on updates.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Working, but does not have options for the new DLC vehicles yet." },
+                    { NOTE, "Author is working on updates to categorize new vehicles." },
                 },
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",
                 Tags = new[] { "Vehicles", "Capacity", "Tilt", "Nod", "Breaking", "Acceleration", "Colors", "Colours", "Speeds", "Despawn" },
-            });
-
-            AddMod(new Item(1546357276u, "Industries Vehicle Converter") {
-                Affect = Factor.Customize
-                       | Factor.Vehicles,
-                Authors = "BloodyPenguin",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 530771650u, Status.Required }, // Prefab Hook (Mod Dependency)
-                    // todo: suggested assets
-                },
-                CompatibleWith = GameVersion.Campus,
-                Flags = ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.Industries,
-                RequiredDLC = DLCs.Industries,
-                Tags = new[] { "Vehicles", "Cargo", "Truck", "Ship", "Aircraft", "Airplane", },
             });
 
             // todo: treat as service?

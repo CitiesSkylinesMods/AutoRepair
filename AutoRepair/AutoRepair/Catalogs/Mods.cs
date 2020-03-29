@@ -232,16 +232,7 @@ namespace AutoRepair {
                 ReplaceWith = 1756787990u, // More Advanced InfoViews
             });
 
-            Add(new Item(1591417160u, "Hide It!") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
-                SourceURL = "https://github.com/keallu/CSL-HideIt",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 666425898u, Status.Incompatible }, // No Radioactive Desert And More!
-                    //{ 1899640536u }. // Theme Mixer 2 (race condition between sprite show/hide)
-                },
-            });
+
 
             // removes building needs at night
             Add(new Item(1591311030u, "Don't Bulldoze At Night") {

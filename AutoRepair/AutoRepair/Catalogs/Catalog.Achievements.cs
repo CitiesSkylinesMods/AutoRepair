@@ -24,8 +24,8 @@ namespace AutoRepair.Catalogs {
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 407055819u , Status.Incompatible }, // Mod Achievement Enabler
                 },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // harmony patch management could be better
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.MinorBugs // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-AchieveIt",
             });
@@ -39,10 +39,14 @@ namespace AutoRepair.Catalogs {
                     { 1444491969u, Status.Incompatible }, // Achievements with Mods
                     { 407055819u , Status.Incompatible }, // Mod Achievement Enabler
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 407055819u, // Mod Achievement Enabler
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs // trophy icon doesn't get updated (makes some users think it's not working)
                       | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },  
+                },
                 ReplaceWith = 1567569285u, // Achieve It!
             });
 

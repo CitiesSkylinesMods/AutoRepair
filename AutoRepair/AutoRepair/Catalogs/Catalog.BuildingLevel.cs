@@ -66,8 +66,8 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "[Mod: Plop the Growables] Settings in PtG can override the historical districst settings.",
+                Notes = new Dictionary<ulong, string>() {
+                    { 924884948u ,"[Mod: Plop the Growables] Settings in PtG can override the historical districts settings." },
                 },
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://gist.github.com/boformer/3e01770a0c86cf9273ccdcc33d9bbc42",
@@ -123,8 +123,8 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 410535198, // Control Building Level Up v0.4
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Consider using the 'Make historical' feature (building info panels) of the base game instead." },
                 },
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://gist.github.com/boformer/c0a449426ae681bbe4f4e54693df4b8c",
@@ -189,8 +189,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete // vanilla game now has this function
                       | ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Consider using the 'Make historical' feature (building info panels) of the base game instead." },
                 },
                 ReleasedDuring = GameVersion.ChirpX,
                 ReplaceWith = 1658773932u, // Historical Districts
@@ -220,8 +220,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
-                Notes = new[] {
-                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Consider using the 'Make historical' feature (building info panels) of the base game instead." },
                 },
                 ReleasedDuring = GameVersion.GreenCities,
                 ReplaceWith = 523818382u, // Force Level Up
@@ -283,8 +283,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "Consider using the 'Make historical' feature (building info panels) of the base game instead.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Consider using the 'Make historical' feature (building info panels) of the base game instead." },
                 },
                 ReleasedDuring = GameVersion.InitialRelease,
                 ReplaceWith = 1403136223, // Control Building Level Up v0.5

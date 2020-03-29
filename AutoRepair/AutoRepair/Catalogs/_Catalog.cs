@@ -13,7 +13,24 @@ namespace AutoRepair.Catalogs {
     /// </summary>
     public partial class Catalog {
 
+        /// <summary>
+        /// Internal reference to active instance.
+        /// </summary>
         private static Catalog instance;
+
+        /// <summary>
+        /// Value to use for notes. Access via <see cref="NOTE"/> property to ensure it increments.
+        /// </summary>
+        private static ulong note = 100000000u;
+
+        /// <summary>
+        /// Gets id to use for "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong NOTE => ++note;
 
         /// <summary>
         /// Gets the reference to the catalog instance.
@@ -35,6 +52,7 @@ namespace AutoRepair.Catalogs {
         /// Gets the list of workshop items, keyed by Steam Workshop ID.
         /// </summary>
         public Dictionary<ulong, Item> Items { get; private set; }
+
 
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
@@ -145,6 +163,8 @@ namespace AutoRepair.Catalogs {
                 VanillaCatalog(); // mods bundled with base game
                 UnsortedCatalog(); // currently uncategorised items
 
+                AssetsCatalog(); // actual assets, not mods
+
                 AchievementsCatalog();
                 AudioEffectsCatalog();
                 BalanceCatalog();
@@ -153,6 +173,7 @@ namespace AutoRepair.Catalogs {
                 BulldozeCatalog();
                 CameraCatalog();
                 ContentManagerCatalog();
+                ConvertersCatalog();
                 DiagnosticCatalog();
                 EmptyingCatalog();
                 HideCatalog();
@@ -169,6 +190,7 @@ namespace AutoRepair.Catalogs {
                 ServicesCatalog();
                 SkinRoadsCatalog();
                 SkyclothCatalog();
+                StatsCatalog();
                 ToolbarCatalog();
                 TrafficCatalog();
                 TreesCatalog();
@@ -333,7 +355,7 @@ namespace AutoRepair.Catalogs {
                                 compatProblems = true;
                                 itemLog.AppendFormat("- Reciprocate mismatch from: {0}\n", target);
                                 itemLog.AppendFormat(
-                                    "  - Should be: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
+                                    "  - Change to: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
                                     $"{item.WorkshopId}u",
                                     targetStatus,
                                     item.WorkshopName);
@@ -344,7 +366,7 @@ namespace AutoRepair.Catalogs {
                             compatProblems = true;
                             itemLog.AppendFormat("- No reciprocation from: {0}\n", target);
                             itemLog.AppendFormat(
-                                "  - Should be: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
+                                "  - Add: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
                                 $"{item.WorkshopId}u",
                                 targetStatus,
                                 item.WorkshopName);

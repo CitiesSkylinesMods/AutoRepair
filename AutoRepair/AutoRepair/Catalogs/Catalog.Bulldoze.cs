@@ -34,8 +34,7 @@ namespace AutoRepair.Catalogs {
                     { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
                     { 406132323u , Status.Incompatible }, // Automatic Bulldoze
                 },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // harmony patch management could be better
+                Flags = ItemFlags.MinorBugs // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-RebuildIt",
             });
@@ -77,8 +76,8 @@ namespace AutoRepair.Catalogs {
                     { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
                     { 406132323u , Status.Incompatible }, // Automatic Bulldoze
                 },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // harmony patch management could be better
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.MinorBugs // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-BulldozeIt",
             });

@@ -55,6 +55,11 @@ namespace AutoRepair.Catalogs {
             # ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ███████
             */
 
+            AddMusic(new Item(2037555938u, "Neon Genesis Evangelion Music Pack") {
+                Authors = "PoeticTeacup",
+                ReleasedDuring = GameVersion.SunsetHarbor,
+            });
+
             // Soundtrack From Touhou 8 Imperishable Night (2004) created By ZUN
             AddMusic(new Item(2023013451u, "Touhou 8 Soundtrack") {
                 Authors = "v.peterbilt",

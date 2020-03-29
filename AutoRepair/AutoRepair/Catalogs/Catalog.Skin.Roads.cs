@@ -135,7 +135,6 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
             });
 
-
             AddMod(new Item(1758376843u, "Network Skins 2") {
                 Affect = Factor.Props // catenary, lights
                        | Factor.Rendering
@@ -149,18 +148,29 @@ namespace AutoRepair.Catalogs {
                     { 1959183067u, Status.MinorIssues  }, // CSUR Loader
                     { 1826488681u, Status.Recommended  }, // Modern Lighting Pack: Liberated!
                     { 1758376843u, Status.Incompatible }, // Network Skins 2
-                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
+                    { 1575247594u, Status.MinorIssues  }, // 576327847 81 Tiles (Fixed for 1
+                    { 1560122066u, Status.MinorIssues  }, // 81MOD
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1440928803u, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1361478243u, Status.MinorIssues  }, // 81 Tiles
+                    { 1223738434u, Status.MinorIssues  }, // 422554572
+                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 616078328u , Status.MinorIssues  }, // All Tile Start
+                    { 576327847u , Status.MinorIssues  }, // 81 Tiles (Fixed for 1.2+)
                     { 543722850u , Status.Incompatible }, // Network Skins (original)
+                    { 422554572u , Status.MinorIssues  }, // 81 Tiles Updated
                     { 417585852u , Status.Incompatible }, // Road Color Changer
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1959183067u, "[Mod: CSUR Loader] Network Skins replaces the CSUR road colors." },
+                    { 576327847u , "[Mod: 81 Tiles] Network Skins settings may occasionally reset outside central 25 tile area." },
+                },
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/boformer/NetworkSkins2",
             });
@@ -186,9 +196,9 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorBugs // requires game restart after changing its settings
                       | ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "Requires game restart after changing settings.",
-                    "[Mod: Hide It!] The hide it mod contains a stop remover feature that can be toggled in-game.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Requires game restart after changing settings." },
+                    { NOTE, "[Mod: Hide It!] The hide it mod contains a stop remover feature that can be toggled in-game ;)" },
                 },
                 ReleasedDuring = GameVersion.Campus,
                 ReplaceWith = 1591417160u, // Hide It
@@ -218,6 +228,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Obsolete
+                      | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
@@ -302,7 +313,7 @@ namespace AutoRepair.Catalogs {
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 ContinuationOf = 651610627u, // [DISCONTINUED] Road Color Changer Continued
-                Flags = ItemFlags.Obsolete // network skins and other prop/decal remover mods
+                Flags = ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1758376843u, // Network Skins 2
@@ -353,15 +364,22 @@ namespace AutoRepair.Catalogs {
                     { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
                     { 1826488681u, Status.Incompatible }, // Modern Lighting Pack: Liberated!
                     { 1758376843u, Status.Incompatible }, // Network Skins 2
+                    { 1575247594u, Status.MinorIssues  }, // 576327847 81 Tiles (Fixed for 1
+                    { 1560122066u, Status.MinorIssues  }, // 81MOD
                     { 1312735149u, Status.Incompatible }, // Klyte Commons
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1440928803u, Status.Unknown      }, // Parallel Road Tool
                     { 1400711138u, Status.Unknown      }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1361478243u, Status.MinorIssues  }, // 81 Tiles
+                    { 1223738434u, Status.MinorIssues  }, // 422554572
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 616078328u , Status.MinorIssues  }, // All Tile Start
+                    { 576327847u , Status.MinorIssues  }, // 81 Tiles (Fixed for 1.2+)
                     { 543722850u , Status.Incompatible }, // Network Skins (original)
+                    { 422554572u , Status.MinorIssues  }, // 81 Tiles Updated
                     { 417585852u , Status.Incompatible }, // Road Color Changer
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
@@ -373,6 +391,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorBugs
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 576327847u, "[Mod: 81 Tiles] Network Skins settings may occasionally reset outside central 25 tile area." },
+                },
                 ReleasedDuring = GameVersion.AfterDark,
                 ReplaceWith = 1758376843u, // Network Skins 2
                 SourceURL = "https://github.com/boformer/NetworkSkins",

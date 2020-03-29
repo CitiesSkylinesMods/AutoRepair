@@ -116,6 +116,9 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 802066100u, // Fine Road Anarchy
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE,  "Sunset Harbor: It's making road collisions (connections) unreliable." },
+                },
                 SourceURL = "https://github.com/klyte45/CS-FineRoadAnarchy",
             });
 
@@ -151,8 +154,8 @@ namespace AutoRepair.Catalogs {
                     { 689937287u, Status.Recommended }, // Surface Painter
                 },
                 Flags = ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "[NOTE] Avoid using it near map edges (small bug spams log file).",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "[Note] Avoid using it near map edges (small bug spams log file)." },
                 },
             });
 

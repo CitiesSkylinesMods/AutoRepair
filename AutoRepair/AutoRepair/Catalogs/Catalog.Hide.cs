@@ -44,11 +44,30 @@ namespace AutoRepair.Catalogs {
                     { 410842044u , Status.Incompatible }, // Persistent Resource View
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // harmony patch management could be better, map borders keep reappearing
+                Flags = ItemFlags.MinorBugs // harmony patch management could be better, map borders keep reappearing
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/keallu/CSL-ToggleIt",
+            });
+
+            AddMod(new Item(1591417160u, "Hide It!") {
+                Affect = Factor.HideRemove,
+                Authors = "Keallu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1962752152u, Status.Incompatible }, // Busstop Prop Remover
+                    { 1899640536u, Status.MinorIssues  }, // Theme Mixer 2 (both can toggle terrain sprites)
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 666425898u , Status.Incompatible }, // No Radioactive Desert And More!
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable
+                      | ItemFlags.MinorBugs, // harmony patch management could be better
+                Notes = new Dictionary<ulong, string>() {
+                    { 1899640536u, "[Mod: Theme Mixer 2] Terrain sprites affected by both mods; check sprite settings in both to ensure same effect." },
+                    { 666425898u , "[Mod: No Radioactive Desert] Conflcits with Hide It causing terrain textures to disappear from map." },
+                },
+                SourceURL = "https://github.com/keallu/CSL-HideIt",
             });
 
             /*

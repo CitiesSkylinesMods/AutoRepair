@@ -30,9 +30,8 @@ namespace AutoRepair.Catalogs {
                     { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
                     { 407873631u , Status.Incompatible }, // Automatic Emptying
                 },
-                CompatibleWith = GameVersion.Campus,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
                 SourceURL = "https://github.com/keallu/CSL-EmptyIt",
             });

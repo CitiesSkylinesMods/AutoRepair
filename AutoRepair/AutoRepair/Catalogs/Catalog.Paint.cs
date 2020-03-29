@@ -12,8 +12,8 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility")]
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         private void PaintCatalog() {
 
             string catalog = "Paint";
@@ -50,11 +50,21 @@ namespace AutoRepair.Catalogs {
                        | Factor.TileLimit, // 81 tiles mod sometimes breaks it
                 Authors = "Elektrix",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {                   
+                Compatibility = new Dictionary<ulong, Status>() {
                     // Sometimes breaks if 81 Tiles mod active
+                    { 1575247594u, Status.MinorIssues  }, // 576327847 81 Tiles (Fixed for 1
+                    { 1560122066u, Status.MinorIssues  }, // 81MOD
+                    { 1361478243u, Status.MinorIssues  }, // 81 Tiles
+                    { 1223738434u, Status.MinorIssues  }, // 422554572
+                    { 616078328u , Status.MinorIssues  }, // All Tile Start
+                    { 576327847u , Status.MinorIssues  }, // 81 Tiles (BP version)
+                    { 422554572u , Status.MinorIssues  }, // 81 Tiles Updated
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable, // linked on workshop page, but github repo deleted
+                Notes = new Dictionary<ulong, string>() {
+                    { 576327847u, "[Mod: 81 Tiles] Prop Painter will sometimes lose its settings if 81 Tiles is active." },
+                },
             });
 
             AddMod(new Item(1372431101u, "Painter") {

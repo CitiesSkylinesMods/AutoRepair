@@ -111,10 +111,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "Sunset Harbor: There is no news on when this will be updated, although some users say it still works.",
-                    "This mod improves quality of tree LODs with almost no impact on performance.",
-                    "[Mod: Ultimate Level of Detail] Tree LOD Fix allows you to _reduce_ the tree LOD range for better performance.", 
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: There is no news on when this will be updated, although some users say it still works." },
+                    { NOTE, "This mod improves quality of tree LODs with almost no impact on performance." },
+                    { 1680642819u, "[Mod: ULOD] If Tree LOD Fix enabled, try setting tree LOD range lower for eveb better performance." }, 
                 },
                 ReleasedDuring = GameVersion.ChirpX,
                 Tags = new[] { "Trees", "Forest", "Landscape", "LODs", "Graphics", "Environment", "Detailing", },
@@ -129,6 +129,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1928787248u, Status.Recommended  }, // Weeds
                     { 963853793u , Status.Recommended  }, // Ultra low tri trees
+                    { 502750307u , Status.Incompatible }, // Extra Landscaping Tools
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.SourceUnavailable,

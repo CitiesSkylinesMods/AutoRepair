@@ -134,8 +134,8 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 1114249433u, // Employ Overeducated Workers (1.10+)
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
-                Notes = new[] {
-                    "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative." },
                 },
                 SourceURL = "https://github.com/pcfantasy/EmployOvereducatedWorkers-v2",
             });
@@ -218,14 +218,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Xial/Maintenancefee",
             });
 
-            AddMod(new Item(1393820309u, "Ticket Price Customizer") {
-                Affect = Factor.Revenue,
-                Authors = "BloodyPenguin",
-                Catalog = catalog,
-                Flags = ItemFlags.SourceUnavailable,
-                // todo: incompat with similar mods? eg. by klyte
-            });
-
             // An update to 406841580u - SimCity Fudged Population, but with better UI.
             // Dev still responsive as of Feb 2020, confirms mod still works.
             AddMod(new Item(1224627683u, "Fudged Population Enhanced") {
@@ -294,7 +286,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Vectorial1024/SpecializedIndustryFixRedux",
             });;
 
-            // potentially replace with UltimateMod 2.4?
             AddMod(new Item(1487849798u, "Higher Income Mod 1.2a") {
                 Affect = Factor.Revenue,
                 Authors = "I'm Not MentaL",
@@ -399,8 +390,8 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 569008960u, // Employ Overeducated Workers
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
-                Notes = new[] {
-                    "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative." },
                 },
                 ReplaceWith = 1674732053u, // Employ Overeducated Workers V2 (1.11+)
                 SourceURL = "https://github.com/AmaroqOkami/Skylines-EmployOvereducatedWorkers",
@@ -488,6 +479,7 @@ namespace AutoRepair.Catalogs {
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1420955187u, Status.Incompatible }, // Real Time
+                    { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
@@ -588,8 +580,8 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
-                Notes = new[] {
-                    "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have Industries DLC, the 'Industry 4.0' city/district policy might be better alternative." },
                 },
                 ReplaceWith = 1674732053u, // Employ Overeducated Workers V2 (1.11+)
                 SourceURL = "https://github.com/AmaroqOkami/Skylines-EmployOvereducatedWorkers",
@@ -765,6 +757,7 @@ namespace AutoRepair.Catalogs {
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1420955187u, Status.Incompatible }, // Real Time
+                    { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed

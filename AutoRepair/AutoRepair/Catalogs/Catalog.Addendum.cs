@@ -24,9 +24,10 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
+            Broken(506982407u, "Dropouts");
+            Note(506982407u, "Dropouts", "[Sunset Harbor] Error: Field '.Citizen.m_age' not found.");
             Broken(810858473u, "Traffic Report Tool");
-            Broken(426460372u, "Favorite Cims");
-            Dead(426460372u, "Favorite Cims");
+            Fixed(426460372u, "Favorite Cims");
             Broken(554232266u, "Nursing Homes for Senior Citizens");
             Note(554232266u, "Nursing Homes for Senior Citizens", "Breaks if any DLCs are added due to changes in toolbar.");
             Fixed(556784825u, "Random Tree Rotation");
@@ -40,7 +41,6 @@ namespace AutoRepair.Catalogs {
             Fixed(632951976u, "Improved Mod Upload Panel");
             Fixed(762520291u, "Shadow Strenght Adjuster");
             Fixed(643364914u, "Softer Shadows");
-            Note(1393820309u, "Ticket Price Customizer", "Sunset Harbor: Trollyebus are not currently supported.");
             Broken(611254368u, "Environment Changer");
             Note(611254368u, "Environment Changer", "Sunset Harbor: Spitting nulll reference errors in to log.");
             Fixed(422934383u, "CSL Music Mod");
@@ -63,15 +63,11 @@ namespace AutoRepair.Catalogs {
             //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
             Broken(912329352u, "Building Anarchy"); // breaks placement mode
             Fixed(515489008u, "Extra Train Station Tracks");
-            Broken(1844440354u, "Fine Road Anarchy 2"); // network mouse detection
-            Note(1844440354u, "Fine Road Anarchy 2", "Sunset Harbor: It's not detecting clicks on networks properly");
             Fixed(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
             Broken(621002682u, "No Questions Asked"); // crash to desktop
             Fixed(650436109u, "Quay Anarchy");
             Fixed(934994075u, "Service Vehicle Selector 2"); // stack overflow
             Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
-            Broken(1632320836u, "Service Vehicles Manager 2.0.1");
-            Note(1632320836u, "Service Vehicles Manager 2.0.1", "Klyte45 is focussing on some updates to Transport Lines Manager first.");
             Broken(1312735149u, "Klyte Commons");
 
 
@@ -85,7 +81,6 @@ namespace AutoRepair.Catalogs {
             Dead(428094792u , "[ARIS] Remove Stuck Vehicles", 1637663252u);
             Dead(421028969u , "[ARIS] Skylines Overwatch");
             //Dead(932939897u , "5 way Clover Full Capacity Final");
-            Dead(1444491969u, "Achievements with Mods", 407055819u);
             Dead(412168106u , "Adjustable Demand v2", 409776678u);
             Dead(1647686914u, "Advanced Junction Rule", 1637663252u);
             Dead(442167376u , "Advanced Vehicle Options (AVO)", 1548831935u);
@@ -295,12 +290,9 @@ namespace AutoRepair.Catalogs {
             if (Items.TryGetValue(workshopId, out Item item)) {
                 Addendum(item);
                 if (item.Notes == null) {
-                    item.Notes = new[] { note };
+                    item.Notes = new Dictionary<ulong, string>() { { NOTE, note } };
                 } else {
-                    List<string> arr = new List<string>(item.Notes) {
-                        { note },
-                    };
-                    item.Notes = arr.ToArray();
+                    item.Notes.Add(NOTE, note);
                 }
             } else {
                 AddMod(new Item(workshopId, workshopName) {
@@ -308,8 +300,8 @@ namespace AutoRepair.Catalogs {
                     Authors = "(not specified)",
                     Catalog = "Addendum",
                     Flags = ItemFlags.Unrecognised,
-                    Notes = new[] { note },
-                });
+                    Notes = new Dictionary<ulong, string>() { { NOTE, note } },
+            });
             }
         }
 
@@ -324,17 +316,16 @@ namespace AutoRepair.Catalogs {
         internal void Fixed(ulong workshopId, string workshopName) {
             //Log.Info($"- Confirmed compatible: {workshopId} '{workshopName}'");
 
-            string theNote = "COMPATIBLE with Sunset Harbor update! :)";
+            string note = "COMPATIBLE with Sunset Harbor update! :)";
 
             if (Items.TryGetValue(workshopId, out Item item)) {
                 Addendum(item);
                 item.BrokenBy = GameVersion.DefaultUntil;
                 item.CompatibleWith = LatestUpdate;
                 if (item.Notes == null) {
-                    item.Notes = new[] { theNote };
+                    item.Notes = new Dictionary<ulong, string>() { { NOTE, note } };
                 } else {
-                    List<string> arr = new List<string>(item.Notes) { { theNote } };
-                    item.Notes = arr.ToArray();
+                    item.Notes.Add(NOTE, note);
                 }
             } else {
                 AddMod(new Item(workshopId, workshopName) {
@@ -343,7 +334,7 @@ namespace AutoRepair.Catalogs {
                     Catalog = "Addendum",
                     CompatibleWith = LatestUpdate,
                     Flags = ItemFlags.Unrecognised,
-                    Notes = new[] { theNote },
+                    Notes = new Dictionary<ulong, string>() { { NOTE, note } },
                 });
             }
         }
@@ -359,7 +350,7 @@ namespace AutoRepair.Catalogs {
         internal void Broken(ulong workshopId, string workshopName) {
             //Log.Info($"- Broken: {workshopId} '{workshopName}'");
 
-            string theNote = "BROKEN since Sunset Harbor update :(";
+            string note = "BROKEN since Sunset Harbor update :(";
 
             if (Items.TryGetValue(workshopId, out Item item)) {
                 Addendum(item);
@@ -368,10 +359,9 @@ namespace AutoRepair.Catalogs {
                     item.CompatibleWith = GameVersion.DefaultRelease;
                 }
                 if (item.Notes == null) {
-                    item.Notes = new[] { theNote };
+                    item.Notes = new Dictionary<ulong, string>() { { NOTE, note } };
                 } else {
-                    List<string> arr = new List<string>(item.Notes) { { theNote } };
-                    item.Notes = arr.ToArray();
+                    item.Notes.Add(NOTE, note);
                 }
             } else {
                 AddMod(new Item(workshopId, workshopName) {
@@ -380,7 +370,7 @@ namespace AutoRepair.Catalogs {
                     BrokenBy = LatestUpdate,
                     Catalog = "Addendum",
                     Flags = ItemFlags.Unrecognised,
-                    Notes = new[] { theNote },
+                    Notes = new Dictionary<ulong, string>() { { NOTE, note } },
                 });
             }
         }

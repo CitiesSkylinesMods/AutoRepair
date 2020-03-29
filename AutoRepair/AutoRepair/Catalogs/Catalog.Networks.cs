@@ -138,8 +138,8 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "[NOTE] In game Graphics Settings, set 'Texture Quality' to 'High' before dumping for best quality.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "In game Graphics Settings, set 'Texture Quality' to 'High' before dumping for best quality." },
                 },
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/Cgameworld/NetworkDumpTools",

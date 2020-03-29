@@ -156,9 +156,9 @@ namespace AutoRepair.Enums {
         LandValue = 1UL << 27,
 
         /// <summary>
-        /// Loading/saving process (app startup, loading screen, autosave).
+        /// Loading/saving/exit process (app startup, loading screen, autosave, quit to desktop).
         /// </summary>
-        LoadSave = 1UL << 28,
+        LoadSaveExit = 1UL << 28,
 
         /// <summary>
         /// Maintenance cost of buildings, roads, etc.

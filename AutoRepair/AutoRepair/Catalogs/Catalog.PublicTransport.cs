@@ -13,8 +13,8 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void PublicTransportCatalog() {
 
             string catalog = "PublicTransport";
@@ -30,8 +30,8 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "This appears to be update to Extended Public Transport UI. Author is not responsive.",
+                Notes = new Dictionary<ulong, string> {
+                    { NOTE, "This appears to be update to Extended Public Transport UI. Author is not responsive." },
                 },
                 ReleasedDuring = GameVersion.PdxLauncher,
             });
@@ -99,6 +99,28 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/bloodypenguin/Skylines-ImprovedStopSelection",
             });
 
+            AddMod(new Item(1393820309u, "Ticket Price Customizer") {
+                Affect = Factor.Revenue
+                       | Factor.TransportLines
+                       | Factor.TransportPreference,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3 -- old ver
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager -- old ver
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Values in options screen are divided by 100 in-game, so if you want price 2.80 set option value to 280." },
+                },
+                ReleasedDuring = GameVersion.ParkLife,
+                SourceURL = "https://github.com/bloodypenguin/Skylines-TicketPriceCustomizer",
+            });
+
             AddMod(new Item(1312767991u, "Transport Lines Manager 13.1") {
                 Affect = Factor.Boredom
                        | Factor.Naming
@@ -121,6 +143,7 @@ namespace AutoRepair.Catalogs {
                     { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options AVO (Industries DLC ready)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
+                    { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
@@ -145,6 +168,9 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 929654063u, // Transport Lines Manager Reborn 8.0.3
                 Languages = new[] { "en", "pt", "ko", "de", "nl", "pl", "zh-cn", "fr", "es" },
                 Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { 928128676u, "[Mod: Improved Public Transport] Massive lag when IPT and TLM are used together. Unsubscribe one of them." },
+                },
                 ReleasedDuring = GameVersion.GreenCities,
                 SourceURL = "https://github.com/klyte45/TransportLinesManager",
             });
@@ -167,9 +193,9 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
-                Notes = new[] {
-                    "Users report this mod causes problems with route creation.",
-                    "Users report this mod adds excessive numbers of vehicles to lines\n   (even after waiting few game dayes for it to settle).",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Users report this mod causes problems with route creation." },
+                    { NOTE, "Users report this mod adds excessive numbers of vehicles to lines\n   (even after waiting few game dayes for it to settle)." },
                 },
                 SourceURL = "https://cld.pt/dl/download/0d0cc60b-6568-4618-90f5-ed687b9d8eed/AutomaticVehicleNumbersAdjuster.zip",
             });
@@ -216,6 +242,9 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 424106600u, // Improved Public Transport (IPT)
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1312767991u, "[Mod: Transport Lines Manager] Massive lag when IPT and TLM are used together. Unsubscribe one of them." },
+                },
                 ReleasedDuring = GameVersion.MassTransit,
                 SourceURL = "https://github.com/bloodypenguin/ImprovedPublicTransport",
             });
@@ -251,6 +280,7 @@ namespace AutoRepair.Catalogs {
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (Industries DLC ready)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
+                    { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
@@ -364,6 +394,7 @@ namespace AutoRepair.Catalogs {
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (Industries DLC ready)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1415090282u, Status.Incompatible }, // AutoLineColor Redux
+                    { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1

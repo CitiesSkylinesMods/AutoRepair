@@ -20,24 +20,6 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Unsorted";
 
-            AddMod(new Item(2033714682u, "Tree and Vehicle Props") {
-                Affect = Factor.LoadSave
-                       | Factor.Props
-                       | Factor.Trees
-                       | Factor.Vehicles,
-                Authors = "Elektrix",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 787611845u , Status.Recommended  }, // Prop Snapping
-                    { 791221322u , Status.Recommended  }, // Prop Precision
-                    { 593588108u , Status.Recommended  }, // Prop & Tree Anarchy
-                    { 1094334744u, Status.Compatible   }, // Procedural Objects
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
-            });
-
             // looks like translated clone of Favorite Cims mod
             AddMod(new Item(1985556066u, "4546") {
                 Affect = Factor.Other,
@@ -82,10 +64,6 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.PdxLauncher,
                 SourceURL = "https://github.com/algernon-A/Ploppable-RICO-Revisited",
             });
-
-
-
-
 
             AddMod(new Item(1927186256u, "Problem Info") {
                 Affect = Factor.Other,
@@ -211,6 +189,9 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1420955187u, "[Mod: Real Time] Slower time rate results in excessive number of thunderstorms." },
+                },
                 RequiredDLC = DLCs.NaturalDisasters,
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Enhanced-Disasters",
             });
@@ -263,8 +244,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // harmony patch management could be better
+                Flags = ItemFlags.MinorBugs // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/keallu/CSL-MeasureIt",
@@ -555,8 +535,8 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "Shicho seems to break mods that use Harmony framework.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Shicho seems to break mods that use Harmony framework." },
                 },
                 SourceURL = "https://github.com/SETNAHQ/Shicho",
             });
@@ -633,14 +613,15 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 Locale = "en",
                 Languages = new[] { "de", "en", "es", "fr", "it", "ja", "ko", "pl", "pt", "ru", "zh" },
-                Notes = new[] {
-                    "The 'Better citizen aging' option has a big influence on how education works.",
-                    "[Mod: Climate Control] It breaks the citizen schedules in Real Time.",
-                    "[Mod: District Service Limit] Disable its citizen-limiting options to make compatible with Real Time.",
-                    "[Mod: Natural Disasters Overhaul] Real Time changes time flow, causuing excessive thunder storms.",
-                    "[Mod: Plop the Growables] If plopped buildings disappear, set 'Construction speed' to 100% in Real Time.",
-                    "[Mod: TimeWarp Fix] Game will pause when you change time, time will revert when game unpaused.",
-                    "[Mod: Ultimate Eye Candy] Game will pause when you change time, time will revert when game unpaused.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The 'Better citizen aging' option has a big influence on how education works." },
+                    { 1911736890u, "[Mod: District Service Limit] Disable its citizen-limiting options to make compatible with Real Time." },
+                    { 1801953480u, "[Mod: Natural Disasters Overhaul] Real Time changes time flow, causuing excessive thunder storms." },
+                    { 924884948u , "[Mod: Plop the Growables] If plopped buildings disappear, set 'Construction speed' to 100% in Real Time." },
+                    { 814698320u , "[Mod: TimeWarp Fix] Game will pause when you change time, time will revert when game unpaused." },
+                    { 672248733u , "[Mod: Ultimate Eye Candy] Game will pause when you change time, time will revert when game unpaused." },
+                    { 649522495u , "[Mod: District Service Limit] Disable its citizen-limiting options to make compatible with Real Time." },
+                    { 629713122u , "[Mod: Climate Control] It breaks the citizen schedules in Real Time." },
                 },
                 ReleasedDuring = GameVersion.ParkLife,
                 SourceURL = "https://github.com/dymanoid/RealTime",
@@ -656,16 +637,16 @@ namespace AutoRepair.Catalogs {
                     { 1389908178u, Status.Recommended }, // Wheelie Bin - Color Variation
                     { 1386088603u, Status.Recommended }, // Metal bin - 01
                     // LSM skipping vanilla garbage bin = game breaking
-                    { 667342976u , Status.MinorIssues }, // Loading Screen Mod
-                    { 833779378u , Status.MinorIssues }, // Loading Screen Mod [Test]
                     { 1894425170u, Status.MinorIssues }, // Loading Screen Mod 汉化版
                     { 1860379049u, Status.MinorIssues }, // 加载优化 Loading Screen
+                    { 833779378u , Status.MinorIssues }, // Loading Screen Mod [Test]
+                    { 667342976u , Status.MinorIssues }, // Loading Screen Mod
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
-                Flags = ItemFlags.MinorBugs
-                      | ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "[Mod: Loading Screen Mod] To prevent crashes, remove 'Garbage Bin' from your skip.txt file.",
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 833779378u, "[Mod: Loading Screen Mod] If you get crashes, remove 'Garbage Bin' from your skip.txt file." },
+                    { 667342976u, "[Mod: Loading Screen Mod] If you get crashes, remove 'Garbage Bin' from your skip.txt file." },
                 },
                 ReleasedDuring = GameVersion.ParkLife,
             });
@@ -678,8 +659,8 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "[Docs] For asset creators: https://gist.github.com/ronyx69/db4e7c41fe80020e31d9bd2e1e1196f8",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "[Docs] Asset creators, see: https://gist.github.com/ronyx69/db4e7c41fe80020e31d9bd2e1e1196f8" },
                 },
                 SourceURL = "https://gist.github.com/ronyx69/4f06181c8082188418cd0c224f630a09",
             });
@@ -693,7 +674,6 @@ namespace AutoRepair.Catalogs {
                 Authors = "Zenya",
                 Catalog = catalog,
                 Flags = ItemFlags.Laggy
-                      | ItemFlags.MinorBugs // pause on load now in base game
                       | ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1242879105u, Status.Incompatible }, // Unlock Any Milestone
@@ -702,11 +682,10 @@ namespace AutoRepair.Catalogs {
                     { 407162294u , Status.Incompatible }, // All basic unlocks at the start
                     // todo: will be more
                 },
-                Notes = new[] {
-                    "Users report lag and reduced framerate when using this mod.",
-                    "Users report the milestone unlocks no longer work as expected.",
-                    "Users report achievement enabler is not working properly.",
-                    "The base game has a 'Pause On Load' feature since Sunset Harbor update.",
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Users report lag and reduced framerate when using this mod." },
+                    { NOTE, "Achievement Unlocker: The icon will still have a lock on it (minor bug), but achievements should work." },
                 },
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
             });
@@ -749,18 +728,18 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-
+                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.BrokenByUpdate
                       | ItemFlags.Laggy
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
-                Notes = new[] {
-                    "Runs a lot of code in OnUpdate() = can cause lag in-game.",
-                    "[Docs] User guide: https://steamcommunity.com/workshop/filedetails/discussion/878991312/133259227529823319/",
-                    "[Sunset Harbor] Tree replacement features seem broken.",
-                    "[Sunset Harbor] Some users report it crashes when replacing props.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Runs a lot of code in OnUpdate() = can cause lag in-game." },
+                    { NOTE, "User guide: https://steamcommunity.com/workshop/filedetails/discussion/878991312/133259227529823319/" },
+                    { NOTE, "Sunset Harbor: Tree replacement features seem broken." },
+                    { NOTE, "Sunset Harbor: Some users report it crashes when replacing props." },
                 },
                 SourceURL = "https://github.com/Judazzz/CitiesSkylines-PropItUp",
             });

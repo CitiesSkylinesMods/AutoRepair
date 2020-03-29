@@ -44,9 +44,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorBugs // can become hard dependency for vehicle assets if Extended Asset Editor active
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
-                Notes = new[] {
-                    "[Docs] Asset authors, see: https://gist.github.com/boformer/a9c5935a9752dcaa68d67e3a611ada26",
-                    "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Asset creators: See https://gist.github.com/boformer/a9c5935a9752dcaa68d67e3a611ada26" },
+                    { 800820816u, "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL." },
                 },
                 SourceURL = "https://github.com/boformer/CustomEffectLoader",
             });
@@ -73,8 +73,7 @@ namespace AutoRepair.Catalogs {
                     { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
                     { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
                 },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // harmony patch management could be better, TAA is shit
+                Flags = ItemFlags.MinorBugs // harmony patch management could be better, TAA is shit
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-RenderIt",
                 Tags = new[] { "Effects", "Visual", "Graphics", "Eyecandy" },
@@ -147,10 +146,10 @@ namespace AutoRepair.Catalogs {
                     { 530871278u , Status.MinorIssues  }, // Daylight Classic
                 },
                 Flags = ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "[Note] Read the workshop page for important details on how to properly set-up your system for Relight.",
-                    "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight.",
-                    "[Mod: Shadow Strength Adjuster] Set it's 'Shadow Strength' to maximum for best results with Relight.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Read the workshop page for important details on how to properly set-up your system for Relight." },
+                    { NOTE, "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight." },
+                    { 762520291u, "[Mod: Shadow Strength Adjuster] Set it's 'Shadow Strength' to maximum for best results with Relight." },
                 },
                 SourceURL = "https://gist.github.com/ronyx69/a75400389e7561164bacabadf0095a2b",
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Brightness", "Gamma", "Contrast", "Temperature", "Tint", "Sun", "Sky", "Moon", "Tonemapping" },
@@ -170,8 +169,8 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "[Mod: Daylight Classic] 'Classic for effect' option must be enabled for the cubemap to work!",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "[Mod: Daylight Classic] 'Classic for effect' option must be enabled for the cubemap to work!" },
                 },
                 ReleasedDuring = GameVersion.GreenCities,
                 SourceURL = "https://github.com/bloodypenguin/Skylines-CubemapReplacer",
@@ -195,8 +194,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorBugs // some users have problems opening GUI
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // some users say it stopped working
-                Notes = new[] {
-                    "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
                 },
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "TAA", "Ambient Occlusion", "Grain", "Sun shafts" },
             });
@@ -210,8 +209,8 @@ namespace AutoRepair.Catalogs {
                     { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 Flags = ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "Asset creators: See https://cslmodding.info/shader/animuv/",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Asset creators: See https://cslmodding.info/shader/animuv/" },
                 },
             });
 
@@ -237,9 +236,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Laggy
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "This mod causes memory leaks which eventually result in lag then crash to desktop.",
-                    "[Asset creators] Use Custom Effect Loader mod instead (see replacement link).",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This mod causes memory leaks which eventually result in lag then crash to desktop." },
+                    { NOTE, "Asset creators: Use Custom Effect Loader mod instead (see replacement link)." },
                 },
                 ReplaceWith = 1886877404u, // Custom Effects Loader
             });
@@ -261,8 +260,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer version available: 1138510774u
                       | ItemFlags.MinorBugs // some users have problems displaying the GUI
                       | ItemFlags.SourceUnavailable,
-                Notes = new[] {
-                    "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
                 },
                 ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },

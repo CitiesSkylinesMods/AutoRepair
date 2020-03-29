@@ -156,12 +156,12 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised,
                 Languages = v11languages,
                 Locale = "en",
-                Notes = new[] {
-                    "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Troubleshooting",
-                    "Setting 'Simulation Accuracy' to lower value will improve framerate.",
-                    "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
-                    "If rail junction customiations not working, it is likely caused by SingleTrainTrackAI mod.",
-                    "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating).",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Troubleshooting" },
+                    { NOTE, "Setting 'Simulation Accuracy' to lower value will improve framerate." },
+                    { NOTE, "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions." },
+                    { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
+                    { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -287,12 +287,12 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised,
                 Languages = v11languages,
                 Locale = "en",
-                Notes = new[] {
-                    "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Troubleshooting",
-                    "Setting 'Simulation Accuracy' to lower value will improve framerate.",
-                    "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions.",
-                    "If rail junction customiations not working, it is likely caused by SingleTrainTrackAI mod.",
-                    "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating).",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Troubleshooting" },
+                    { NOTE, "Setting 'Simulation Accuracy' to lower value will improve framerate." },
+                    { NOTE, "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions." },
+                    { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
+                    { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -334,8 +334,9 @@ namespace AutoRepair.Catalogs {
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                 },
                 Flags = ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "Interferes with some rail junction features of TM:PE.",
+                Notes = new Dictionary<ulong, string>() {
+                    { 1806963141u, "[Mod: TM:PE] SingleTrainTrackAI breaks TM:PE rail junction customisations (traffic lights, priority signs, etc)." },
+                    { 1637663252u, "[Mod: TM:PE] SingleTrainTrackAI breaks TM:PE rail junction customisations (traffic lights, priority signs, etc)." },
                 },
                 SourceURL = "https://github.com/coarxflow/SingleTrainTrackAI",
             });
@@ -660,9 +661,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 Languages = v10languages,
                 Locale = "en",
-                Notes = new[] {
-                    "THIS VERSION OF TM:PE IS NO LONGER MAINTAINED, PRESS 'F' TO PAY RESPECTS.",
-                    "LinuxFan no longer plays the game so this mod cannot be updated; use TM:PE v11 STABLE instead.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "THIS VERSION OF TM:PE IS NO LONGER MAINTAINED, PRESS 'F' TO PAY RESPECTS." },
+                    { NOTE, "LinuxFan no longer plays the game so this mod will NOT be updated; use TM:PE v11 STABLE instead." },
                 },
                 ReleasedDuring = GameVersion.AfterDark,
                 ReplaceWith = 1637663252u, // TM:PE V11 STABLE

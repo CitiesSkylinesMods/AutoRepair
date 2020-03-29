@@ -49,6 +49,11 @@ namespace AutoRepair {
         public static readonly Version MatchDay = new Version(1, 5, 0);
 
         /// <summary>
+        /// 2016-10-18 Stadiums DLC (no longer available).
+        /// </summary>
+        public static readonly Version Stadiums = new Version(1, 5, 2);
+
+        /// <summary>
         /// 2016-11-29 Natural Disasters expansion.
         /// </summary>
         public static readonly Version NaturalDisasters = new Version(1, 6, 0);

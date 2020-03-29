@@ -48,6 +48,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2036484892u, Status.MinorIssues  }, // AutoMoney
                     { 2030216556u, Status.MinorIssues  }, // GrantMeMoney: get cash / money unconditionally
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
                     { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money

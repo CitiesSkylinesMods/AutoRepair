@@ -54,10 +54,18 @@ namespace AutoRepair.Catalogs {
 
             // Compatibilities for 81 tiles mods
             Dictionary<ulong, Status> tile81compatibility = new Dictionary<ulong, Status>(tile25compatibility) {
+                // note: More Vehicles is compatible with BPs 81 Tiles mod but not any older versions
+                //       MV is specifically marked compatible with BPs 81 Tiles mod descriptor, but left
+                //       but left incompatible here for all the other 81 Tiles clones.
                 [1764208250u] = Status.Incompatible, // More Vehicles
+                // technical conflict with all 81 Tile mods:
                 [1383456057u] = Status.Incompatible, // Shicho
-                [616078328u] = Status.Incompatible, // All Tile Start
-
+                [616078328u ] = Status.Incompatible, // All Tile Start
+                // customisations sometimes reset outside central 25 tile area:
+                [1869561285u] = Status.MinorIssues , // Prop Painter 2.6.0
+                [1758376843u] = Status.MinorIssues , // Network Skins 2 (Sunset Harbor compatible)
+                [543722850u ] = Status.MinorIssues , // Network Skins (Park Life compatible)
+                [463845891u ] = Status.MinorIssues , // No Pillars
             };
 
             AddMod(new Item(1764208250u, "More Vehicles") {
@@ -174,9 +182,15 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorBugs // some glitches with various services built outside central 25 tile area
                       | ItemFlags.SaveChanging // can be removed, but stuff outside central 25 tiles will glitch
                       | ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "Reported to have some minor glitches with disaster detection buildings outside central 25 tile area.",
-                    "[Mod: More Vehicles] Should be compatible with 81 Tiles since Sunset Harbor update.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IMPORTANT: If your save game became corrupt due to Sunset Harbor update, use the recovery mode in 81 Tiles mod options." },
+                    { NOTE, "After loading a save, terrain may look distorted but should quickly go bac to normal." },
+                    { NOTE, "Dams cause tsunamis if placed outside central 25 tile area." },
+                    { NOTE, "Disasters and evacuation don't work properly outside central 25 tile area." },
+                    { 1764208250u, "[Mod: More Vehicles] It is now compatible with 81 Tiles!" },
+                    { 1758376843u, "[Mod: Network Skins 2] Customisations sometimes reset outside of central 25 tile area." },
+                    { 543722850u , "[Mod: Network Skins] Customisations sometimes reset outside of central 25 tile area." },
+                    { 463845891u , "[Mod: No Pillars] Customisations sometimes reset outside of central 25 tile area." },
                 },
                 ReleasedDuring = GameVersion.AfterDark,
                 SourceURL = "https://github.com/bloodypenguin/cities-skylines-unlimiter-1",
@@ -477,9 +491,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking // lots of uers reporting game breaking bugs or other major issues
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
-                Notes = new[] {
-                  "This mod is known to break vehicle spawning and causes problems with milestones.",
-                  "[Mod: 81 Tiles] It is game-breaking when used with any version of 81 Tiles.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This mod is known to break vehicle spawning and causes problems with milestones." },
+                    { NOTE, "[Mod: 81 Tiles] It is game-breaking when used with any version of 81 Tiles." },
                 },
                 ReleasedDuring = GameVersion.AfterDark,
             });

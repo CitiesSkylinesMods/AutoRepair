@@ -84,6 +84,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1632320836u, "Service Vehicles Manager 2.0.1") {
                 Affect = Factor.Service,
                 Authors = "Klyte45",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1922400472u, Status.Incompatible }, // Enhanced District Services
@@ -97,6 +98,9 @@ namespace AutoRepair.Catalogs {
                     { 649522495u , Status.Incompatible }, // District Service Limit (original)
                 },
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Klyte45 is aware of issue but is currently fixing other mods. Check workshop page for progress updates." },
+                },
                 SourceURL = "https://github.com/klyte45/ServiceVehiclesManager",
             });
 
@@ -131,9 +135,9 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable,
-                Notes = new[] {
-                    "Lots of users report this mod no longer works for them.",
-                    "[Mod: Real Time] Disable citizen-limiting options in DSL mod to be compatible.",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Lots of users report this mod no longer works for them." },
+                    { 1420955187u, "[Mod: Real Time] Disable citizen-limiting options in DSL mod to be compatible." },
                 },
                 // ReplaceWith = 927293560u, // Geli Districts (also seems broken)
                 SourceURL = "https://github.com/TheDogKSP/cs-districts",
