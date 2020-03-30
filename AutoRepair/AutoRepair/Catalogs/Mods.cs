@@ -507,42 +507,7 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            // editor mod
-            Add(new Item(1288816430u, "Hex Colors") {
-                Authors = "targa",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // COMPATIBLE:
-                    // 81 Tiles
-                    // Advanced Buildings Editor
-                    // AnimUV Params
-                    // Asset ItemClass Changer
-                    // Asset Prefab(+Building) AI Changer
-                    // Asset UI Category Changer
-                    // Asset UI Priority Changer
-                    // Camera Positions Utility
-                    // Custom Light Effects
-                    // Extended Asset Editor
-                    // Fine Road Anarchy
-                    // ModTools
-                    // More Beautification
-                    // More Network Stuff
-                    // MoveIt
-                    // NetworkSkins
-                    // Prefab Hook
-                    // Prop & Tree Anarchy
-                    // Prop Line Tool
-                    // Prop Precision
-                    // PropRotating Params
-                    // PropSnapping
-                    // Transparency LODs Fix
-                    // Ultimate Eyecandy
 
-                    { 586012417u, Status.Incompatible }, // Ploppable RICO
-                    // RICO Revisited?
-                },
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/targettius/cs-hex-colors",
-            });
 
 
             Add(new Item(1269478692u, "Trains stop on both sides of the station") {
@@ -556,54 +521,7 @@ namespace AutoRepair {
                 ReplaceWith = 1394468624u, // Advanced Stop Selection
             });
 
-            Add(new Item(1263262833u, "Pollution Solution") {
-                Authors = "Shadow Link",
-                Affect = Factor.Pollution,
-                Flags = ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo
-                },
-                SourceURL = "https://github.com/rkanter/PollutionSolution/",
-            });
 
-            Add(new Item(1242879105u, "Unlock Any Milestone") {
-                Authors = "Ilion",
-                Affect = Factor.Milestones,
-                Flags = ItemFlags.Abandonware // author suggests to use "Extended Game Options" mod
-                      //| ItemFlags.Obsolete (still works according to comments)
-                      | ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1237383751u, Status.Incompatible }, // Extended Game Options
-                    { 410614868u, Status.Incompatible }, // EarlyUnlock
-                    { 407162294u, Status.Incompatible }, // All basic unlocks at the start
-                    // todo: will be more
-                },
-            });
-
-            // Known issues (based on author comment):
-            // * Cannot see values that you set the offsets for
-            // * Unable to save/load option settings
-            // * Does not update visual budget panel, but does update budget in the background
-            // Was previously named "Water and Electricity Controller".
-            Add(new Item(1239683428u, "Budget Controller") {
-                Authors = "wboler05",
-                Affect = Factor.Budget,
-                Flags = ItemFlags.MinorBugs
-                      | ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo
-                },
-                SourceURL = "https://github.com/wboler05/CS-BudgetController",
-            });
-
-
-
-            // refund full construction cost when bulldozing
-            Add(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
-                Authors = "C#",
-                Flags = ItemFlags.SourceUnavailable,
-                // todo check conflict with other refund mods
-            });
 
             Add(new Item(1217239330u, "Profitable Offices") {
                 Authors = "Mrnr1",

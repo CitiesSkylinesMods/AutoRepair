@@ -50,8 +50,8 @@ namespace AutoRepair.Catalogs {
             Fixed(405810376u, "All 25 Areas purchasable");
             Fixed(1721492498u, "Optimised Outside Connections");
             Fixed(629850626u, "Workshop RICO Settings");
-            Broken(816260433u, "Metro Overhaul Mod");
-            Note(816260433u, "Metro Overhaul Mod", "Suset Harbor: Developers are working on an update and the mod will be continued.");
+            Fixed(816260433u, "Metro Overhaul Mod");
+            Note(816260433u, "Metro Overhaul Mod", "Suset Harbor: Now compatible!!");
             Broken(812125426u, "Network Extensions 2");
             BreaksEditor(812125426u, "Network Extensions 2");
             Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads, also a map editor bug.");
@@ -70,7 +70,7 @@ namespace AutoRepair.Catalogs {
             Broken(621002682u, "No Questions Asked"); // crash to desktop
             Fixed(650436109u, "Quay Anarchy");
             Fixed(934994075u, "Service Vehicle Selector 2"); // stack overflow
-            Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
+            Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths    invisible
             Broken(1312735149u, "Klyte Commons");
 
 
@@ -149,7 +149,6 @@ namespace AutoRepair.Catalogs {
             Dead(771161159u , "OSM Import");
             Dead(418352365u , "Pedestrian Suspension Bridge");
             Dead(410842044u , "Persistent Resource View");
-            Dead(1204126182u, "Ploppable RICO - High Density Fix", 586012417u);
             Dead(685747254u , "Prop Fine Tune");
             Dead(1499486217u, "Ragnarok EXTREME EDITION");
             //Dead(1122848011u, "regency_corner_restaurant");

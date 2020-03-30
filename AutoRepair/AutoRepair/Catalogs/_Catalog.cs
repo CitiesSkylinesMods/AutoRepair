@@ -169,7 +169,6 @@ namespace AutoRepair.Catalogs {
                 AudioEffectsCatalog();
                 BalanceCatalog();
                 BuildingLevelCatalog();
-                BuildingThemesCatalog();
                 BulldozeCatalog();
                 CameraCatalog();
                 ContentManagerCatalog();
@@ -188,9 +187,10 @@ namespace AutoRepair.Catalogs {
                 PublicTransportCatalog();
                 RepairCatalog();
                 ServicesCatalog();
+                SkinBuildingsCatalog();
+                SkinFlagsCatalog();
                 SkinRoadsCatalog();
                 SkinRoadsUnitedCatalog();
-                SkyclothCatalog();
                 StatsCatalog();
                 ToolbarCatalog();
                 TrafficCatalog();

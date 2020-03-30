@@ -5,7 +5,7 @@ namespace AutoRepair.Catalogs {
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// Building Themes Mod and it's theme packs.
+    /// Change appearance of buildings.
     /// </summary>
     public partial class Catalog {
 
@@ -14,14 +14,53 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
-        private void BuildingThemesCatalog() {
+        private void SkinBuildingsCatalog() {
 
-            string catalog = "BuildingThemes";
+            string catalog = "Skin.Buildings";
 
             // note: may at some point list all the required buildings per theme, but can't be arsed right now
             Dictionary<ulong, Status> buildingThemesMod = new Dictionary<ulong, Status>() {
                 { 466158459u, Status.Required }, // Building Themes mod
             };
+
+            AddMod(new Item(1808439336u, "Building Color Expander") {
+                Affect = Factor.Textures,
+                Authors = "Klyte45",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1818462177u, Status.Compatible   }, // Vehicle Color Expander
+                    { 1808439336u, Status.Compatible   }, // Building Color Expander
+                    { 1372431101u, Status.Compatible   }, // Painter
+                },
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://github.com/klyte45/BuildingColorExpander/blob/master/README.md" },
+                },
+                SourceURL = "https://github.com/klyte45/BuildingColorExpander",
+                Tags = new[] { "Buildings", "Colors", "Colours", "Painter", "Customise", "Customize", "Textures", },
+            });
+
+            AddMod(new Item(1782814610u, "Building Variations") {
+                Affect = Factor.Textures,
+                Authors = "Elektrix",
+                Catalog = catalog,
+                Flags = ItemFlags.SourceUnavailable,
+                Tags = new[] { "Buildings", "Colors", "Colours", "Painter", "Customise", "Customize", "Textures", "Roof", "Tiles", },
+            });
+
+            AddMod(new Item(1372431101u, "Painter") {
+                Affect = Factor.Textures,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1808439336u, Status.Compatible   }, // Building Color Expander
+                    { 1372431101u, Status.Incompatible }, // Painter
+                    { 530771650u , Status.Recommended  }, // Prefab hook (enables invert and colorize options)
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/TPBCS/Painter",
+                Tags = new[] { "Buildings", "Colors", "Colours", "Painter", "Customise", "Customize", "Textures", },
+            });
 
             /*
             # ████████ ██   ██ ███████ ███    ███ ███████ ███████

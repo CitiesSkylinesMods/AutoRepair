@@ -51,7 +51,7 @@
     <Compile Include="Catalogs\Catalog.Emptying.cs" />
     <Compile Include="Catalogs\Catalog.Hide.cs" />
     <Compile Include="Catalogs\Catalog.PublicTransport.cs" />
-    <Compile Include="Catalogs\Catalog.Skycloth.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.Flags.cs" />
     <Compile Include="Catalogs\Catalog.Unsorted.cs" />
     <Compile Include="Catalogs\Catalog.Vanilla.cs" />
     <Compile Include="Catalogs\Catalog.Vehicles.cs" />
@@ -67,7 +67,7 @@
     <Compile Include="Catalogs\Catalog.Diagnostic.cs" />
     <Compile Include="Catalogs\Catalog.LoadSave.cs" />
     <Compile Include="Catalogs\Catalog.Multiplayer.cs" />
-    <Compile Include="Catalogs\Catalog.BuildingThemes.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.Buildings.cs" />
     <Compile Include="Catalogs\Catalog.Money.cs" />
     <Compile Include="Catalogs\Catalog.Music.cs" />
     <Compile Include="Catalogs\Catalog.Paint.cs" />

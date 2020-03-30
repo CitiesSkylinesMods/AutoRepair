@@ -125,8 +125,25 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Asset creators, see: https://cslmodding.info/mod/additive-shader/" },
+                },
                 ReleasedDuring = GameVersion.ParkLife,
                 SourceURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
+            });
+
+            AddMod(new Item(1274199764u, "Network Tiling") {
+                Affect = Factor.Rendering,
+                Authors = "Ronyx69",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.Recommended
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Asset creators, see: https://gist.github.com/ronyx69/db4e7c41fe80020e31d9bd2e1e1196f8" },
+                },
+                SourceURL = "https://gist.github.com/ronyx69/4f06181c8082188418cd0c224f630a09",
             });
 
             // Game engine issues: Shadow acne vs. Shadow detachment
@@ -149,7 +166,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Read the workshop page for important details on how to properly set-up your system for Relight." },
-                    { NOTE, "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight." },
+                    { 530871278u, "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight." },
                     { 762520291u, "[Mod: Shadow Strength Adjuster] Set it's 'Shadow Strength' to maximum for best results with Relight." },
                 },
                 SourceURL = "https://gist.github.com/ronyx69/a75400389e7561164bacabadf0095a2b",

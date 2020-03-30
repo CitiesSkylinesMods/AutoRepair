@@ -37,33 +37,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 426460372u, // Favorite Cims
             });
 
-            AddMod(new Item(2016920607u, "RICO revisited") {
-                Affect = Factor.Naming
-                       | Factor.BuildingCapacity
-                       | Factor.BuildingLevel
-                       | Factor.Construction
-                       | Factor.Customize
-                       | Factor.DemandRCI
-                       | Factor.Employment,
-                Authors = "algernon",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 2025147082u, Status.Compatible   }, // Realistic Population revisited
-                    { 2016920607u, Status.Incompatible }, // RICO revisited
-                    { 1749971558u, Status.Incompatible }, // Real Time Offline
-                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1420955187u, Status.MinorIssues  }, // Real Time
-                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
-                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
-                    { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
-                SourceURL = "https://github.com/algernon-A/Ploppable-RICO-Revisited",
-            });
+
 
             AddMod(new Item(1927186256u, "Problem Info") {
                 Affect = Factor.Other,
@@ -161,7 +135,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/KlyteFramework",
             });
@@ -215,12 +189,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/kvakvs/Skylines-UX",
             });
 
-            AddMod(new Item(1782814610u, "Building Variations") {
-                Affect = Factor.Textures,
-                Authors = "Elektrix",
-                Catalog = catalog,
-                Flags = ItemFlags.SourceUnavailable,
-            });
+
 
             // sounds like bit of a nightmare
             AddMod(new Item(1769420886u, "Panel Hook (beta) for modders") {
@@ -250,39 +219,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/keallu/CSL-MeasureIt",
             });
 
-            AddMod(new Item(1204126182u, "Ploppable Rico High Density Fix") {
-                Affect = Factor.Naming
-                       | Factor.BuildingCapacity
-                       | Factor.BuildingLevel
-                       | Factor.Construction
-                       | Factor.Customize
-                       | Factor.DemandRCI
-                       | Factor.Employment,
-                Authors = "(unknown)",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 2025147082u, Status.Incompatible }, // Realistic Population revisited
-                    { 2016920607u, Status.Incompatible }, // RICO revisited
-                    { 1749971558u, Status.Incompatible }, // Real Time Offline
-                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1420955187u, Status.MinorIssues  }, // Real Time
-                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
-                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
-                    { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
-                },
-                ContinuationOf = 586012417u, // Ploppable RICO (original)
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.BrokenByUpdate
-                      | ItemFlags.EditorBreaking
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
-                ReplaceWith = 2016920607u, // RICO revisited
-            });
+
 
             AddMod(new Item(1749971558u, "Real Time Offline") {
                 Affect = Factor.Aging
@@ -651,19 +588,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.ParkLife,
             });
 
-            AddMod(new Item(1274199764u, "Network Tiling") {
-                Affect = Factor.Rendering,
-                Authors = "Ronyx69",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                Flags = ItemFlags.Recommended
-                      | ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "[Docs] Asset creators, see: https://gist.github.com/ronyx69/db4e7c41fe80020e31d9bd2e1e1196f8" },
-                },
-                SourceURL = "https://gist.github.com/ronyx69/4f06181c8082188418cd0c224f630a09",
-            });
+
 
             // Several reported issues with this mod (based on user comment):
             // * laggy (multiple users are reporting this - lots of code running on recurring events!)
@@ -744,6 +669,54 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Judazzz/CitiesSkylines-PropItUp",
             });
 
+            AddMod(new Item(1263262833u, "Pollution Solution") {
+                Affect = Factor.Pollution,
+                Authors = "Shadow Link",
+                Flags = ItemFlags.SourceAvailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo
+                },
+                SourceURL = "https://github.com/rkanter/PollutionSolution/",
+            });
+
+            AddMod(new Item(1242879105u, "Unlock Any Milestone") {
+                Affect = Factor.Milestones,
+                Authors = "Ilion",
+                Flags = ItemFlags.Abandonware // author suggests to use "Extended Game Options" mod
+                                              //| ItemFlags.Obsolete (still works according to comments)
+                      | ItemFlags.SourceUnavailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1237383751u, Status.Incompatible }, // Extended Game Options
+                    { 410614868u, Status.Incompatible }, // EarlyUnlock
+                    { 407162294u, Status.Incompatible }, // All basic unlocks at the start
+                    // todo: will be more
+                },
+            });
+
+            // Known issues (based on author comment):
+            // * Cannot see values that you set the offsets for
+            // * Unable to save/load option settings
+            // * Does not update visual budget panel, but does update budget in the background
+            // Was previously named "Water and Electricity Controller".
+            AddMod(new Item(1239683428u, "Budget Controller") {
+                Affect = Factor.Budget,
+                Authors = "wboler05",
+                Flags = ItemFlags.MinorBugs
+                      | ItemFlags.SourceAvailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo
+                },
+                SourceURL = "https://github.com/wboler05/CS-BudgetController",
+            });
+
+
+
+            // refund full construction cost when bulldozing
+            AddMod(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
+                Authors = "C#",
+                Flags = ItemFlags.SourceUnavailable,
+                // todo check conflict with other refund mods
+            });
         }
     }
 }

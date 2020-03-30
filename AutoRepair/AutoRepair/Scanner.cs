@@ -39,20 +39,22 @@ namespace AutoRepair {
 
             StringBuilder log = new StringBuilder(1024 * 50);
 
-            log.Append("\nUpdate: The 'Array Index' error with Customize It Extended mod has been fixed; if you had unsubbed it, it's now safe to use again.\n");
+            log.Append("\nGeneral Announcements:\n");
+            log.Append("\n(!) 'Customize It Extended' mod is broken again. If you have it, unsubscribe it as it's breaking loads of mods.\n");
+            log.Append("\n(!) 'Metro Overhaul Mod has been updated, but still seems broken.\n");
 
             log.Append("\nSave game not loading? Subscribe Loading Screen Mod, enable it's sharing/optimisation and safe mode options, then try again:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=667342976\n");
-            log.Append("\nGetting 'Object reference' errors in-game? Try this bugfix mod:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2037862156\n");
-            log.Append("\nFine Road Anarchy mods (both versions) are not connecting roads/rails/etc properly, which is causing errors in other mods.\n");
+            log.Append("\nGetting 'Object reference' errors in-game? Try this bugfix:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2037862156\n");
 
             if (Options.Instance.LogIntroText) {
-                log.Append("\nSome general notes:");
+                log.Append("\nThings to know about mods:");
                 log.Append("\n* Disabled mods are often still loaded; always unsubscribe mods you're not using!");
                 log.Append("\n* Mods that do the same thing are generally incompatible.");
                 log.Append("\n* For modded games, always exit to desktop before loading another city.");
-                log.Append("\n* After disabling/unsubscribing mods, always exit to desktop to flush them from RAM");
-                log.Append("\n* If you find any problems in the report below, _please_ let us know what the specific problem is.\n");
+                log.Append("\n* After disabling/unsubscribing mods, always exit to desktop to flush them from RAM\n");
             }
+
+            log.Append("\n* If you find any problems in the report below, _please_ let us know what the specific problem is.\n");
 
             PluginManager manager = Singleton<PluginManager>.instance;
 

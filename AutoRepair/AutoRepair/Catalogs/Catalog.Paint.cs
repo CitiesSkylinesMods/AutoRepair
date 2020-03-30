@@ -31,20 +31,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/klyte45/VehicleColorExpander",
             });
 
-            // todo: prolly incompat with painter mod? asked Klyte for confirmation
-            AddMod(new Item(1808439336u, "Building Color Expander") {
-                Affect = Factor.Textures,
-                Authors = "Klyte45",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1818462177u, Status.Compatible   }, // Vehicle Color Expander
-                    { 1808439336u, Status.Compatible   }, // Building Color Expander
-                    { 1372431101u, Status.Unknown      }, // Painter
-                },
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/klyte45/BuildingColorExpander",
-            });
-
             AddMod(new Item(1869561285u, "Prop Painter 2.6.0") {
                 Affect = Factor.Textures
                        | Factor.TileLimit, // 81 tiles mod sometimes breaks it
@@ -67,17 +53,48 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1372431101u, "Painter") {
-                Affect = Factor.Textures,
-                Authors = "TPB",
-                Catalog = catalog,
+            // editor mod
+            AddMod(new Item(1288816430u, "Hex Colors") {
+                Authors = "targa",
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1808439336u, Status.Unknown      }, // Building Color Expander
-                    { 1372431101u, Status.Incompatible }, // Painter
-                    { 530771650u , Status.Recommended  }, // Prefab hook (enables invert and colorize options)
+                    // COMPATIBLE:
+                    // 81 Tiles
+                    // Advanced Buildings Editor
+                    // AnimUV Params
+                    // Asset ItemClass Changer
+                    // Asset Prefab(+Building) AI Changer
+                    // Asset UI Category Changer
+                    // Asset UI Priority Changer
+                    // Camera Positions Utility
+                    // Custom Light Effects
+                    // Extended Asset Editor
+                    // Fine Road Anarchy
+                    // ModTools
+                    // More Beautification
+                    // More Network Stuff
+                    // MoveIt
+                    // NetworkSkins
+                    // Prefab Hook
+                    // Prop & Tree Anarchy
+                    // Prop Line Tool
+                    // Prop Precision
+                    // PropRotating Params
+                    // PropSnapping
+                    // Transparency LODs Fix
+                    // Ultimate Eyecandy
+
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO
+                    // RICO Revisited?
                 },
                 Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/TPBCS/Painter",
+                Notes = new Dictionary<ulong, string>() {
+                    { 2016920607u, "[Ploppable RICO] Breaks the Hex Color in the asset editor." },
+                    { 1204126182u, "[Ploppable RICO] Breaks the Hex Color in the asset editor." },
+                    { 586012417u , "[Ploppable RICO] Breaks the Hex Color in the asset editor." },
+                },
+                SourceURL = "https://github.com/targettius/cs-hex-colors",
             });
 
             /*

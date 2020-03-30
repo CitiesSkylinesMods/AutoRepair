@@ -130,7 +130,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 802066100u, // Fine Road Anarchy
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE,  "Sunset Harbor: Collidion toggle isn't working properly.\n" },
+                    { NOTE,  "Sunset Harbor: Colission toggle isn't working properly.\n" },
                 },
                 SourceURL = "https://github.com/klyte45/CS-FineRoadAnarchy",
             });
@@ -685,7 +685,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 418556522u, // Road Anarchy
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE,  "Sunset Harbor: Collidion toggle isn't working properly.\n" },
+                    { NOTE,  "Sunset Harbor: Colission toggle isn't working properly.\n" },
                 },
                 ReleasedDuring = GameVersion.Stadiums,
                 ReplaceWith = 1844440354u, // Fine Road Anarchy 2

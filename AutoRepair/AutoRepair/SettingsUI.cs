@@ -18,8 +18,17 @@ namespace AutoRepair {
         /// <param name="helper">UI helper from the game.</param>
         public static void Render(UIHelperBase helper) {
             UIHelperBase group;
-            bool selected;
+            bool selected = false;
             string path, caption;
+            
+            group = helper.AddGroup("Announcements");
+
+            selected = Announce(group, 1806759255u, "Customize It Extended: Serious bug, unsubscribe it until further notice") || selected;
+            selected = Announce(group, 0u, "Metro Overhaul Mod: Updated, but still seems to have bugs with Sunset Harbor") || selected;
+
+            if (!selected) {
+                Announce(group, 0u, "There are currently no announcements.");
+            }
 
             group = helper.AddGroup("Log File Options");
 
@@ -73,6 +82,21 @@ namespace AutoRepair {
             });
 #endif
 
+        }
+
+        private static bool Announce(UIHelperBase group, ulong workshopId, string msg) {
+            if (workshopId == 0u || IsSubscribed(workshopId)) {
+                UICheckBox box = (UICheckBox)group.AddCheckbox(msg, true, (bool _) => { });
+                box.readOnly = true;
+                box.opacity = 1f;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        private static bool IsSubscribed(ulong workshopId) {
+            return true; // todo
         }
     }
 }

@@ -160,8 +160,8 @@ namespace AutoRepair.Catalogs {
                 Locale = "en",
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Troubleshooting" },
-                    { NOTE, "Setting 'Simulation Accuracy' to lower value will improve framerate." },
-                    { NOTE, "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions." },
+                    { NOTE, "Vehicles despawning after altering roads? Use Broken Nodes Detector: https://steamcommunity.com/sharedfiles/filedetails/?id=1777173984" },
+                    { NOTE, "Setting 'Simulation Accuracy' to lower value will reduce lag (but impair junction customisations)." },
                     { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
                     { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
                     { 726005715u, "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
