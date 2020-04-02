@@ -5,17 +5,16 @@ The incompatible mods list, in a mod!
 
 ## Current status
 
-Current ETA for basic working mod is about 1-2 weeks (as of 15/Mar/2020).
+The mod contains almost 800 descriptors and almost 5,000 compatibility vectors.
 
-Initial goal is to have the mod create a log file detailing incompatibilities and other information based on users' subscribed mods.
-
-Main task currently is adding mod definitions (up to page 20 on the Worskhop mods section). Mod currently won't build, as entire focus is currently getting all the mod definitions done and lots of ongoing refactoring to group them more semantically. Only after that will proper functionality start getting added.
-
-In particular some base classes will be developed to drastically reduce duplicate code across dozens of mod catalogs.
+The goal is to get every single mod added, then start enhancing core functionality.
 
 ## Future plans
 
-Once initial mod is deployed (just log file) the next goal will be to add user interface. That will likely wait until new Form Builder UI wrapper is complete (a TM:PE project by kvakvs). This will allow user to view compatibility reports via mod options screen (or some other entry point) and subscribe/unsubscribe mods, switch between versions, etc.
+Once all mods are added, the next task will be to provide a better interface for users to review results (the log file works, but is not great usability, and a PITA on Mac OS/X platform):
+
+1. Integrate with BP's Improved Content Manager mod
+2. Maybe add web interface to view the full report
 
 After that, future plans include:
 
