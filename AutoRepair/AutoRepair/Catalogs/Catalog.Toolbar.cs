@@ -23,12 +23,14 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Authors = "Dendraspis",
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
                     { 1577882296u, Status.Incompatible }, // Resize It!
                     { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
                     { 586012417u , Status.Incompatible }, // Ploppable RICO
                     { 563229150u , Status.Incompatible }, // Advanced Toolbar
                     { 540758804u , Status.Incompatible }, // Search Box Mod
                     { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
+                    { 451700838u , Status.Incompatible }, // Extended Toolbar
                 },
                 Flags = ItemFlags.SourceObfuscated // checked 12/Mar/2020
                       | ItemFlags.SourceUnavailable,
@@ -46,6 +48,7 @@ namespace AutoRepair.Catalogs {
                     { 563229150u , Status.Incompatible }, // Advanced Toolbar
                     { 540758804u , Status.Incompatible }, // Search Box Mod
                     { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
+                    { 451700838u , Status.Incompatible }, // Extended Toolbar
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable

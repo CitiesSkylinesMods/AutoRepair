@@ -203,6 +203,7 @@ namespace AutoRepair.Catalogs {
                     { 1794015399u, Status.Incompatible }, // Render It!
                     { 1183931915u, Status.Compatible   }, // Cubemap Replacer
                     { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 812713438u , Status.MinorIssues  }, // Dynamic Resolution (Fixed for 1.9)
                     { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
                     // recommend: dynamic resolution
                     // recommend: sun shafts
@@ -215,6 +216,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Unreliable, // some users say it stopped working
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
+                    { 812713438u, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
                 },
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "TAA", "Ambient Occlusion", "Grain", "Sun shafts" },
             });
@@ -281,6 +283,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
+                    { 812713438u, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
                 },
                 ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },

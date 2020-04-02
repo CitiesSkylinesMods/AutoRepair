@@ -18,6 +18,9 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "aubergine18",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/CitiesSkylinesMods/SequenceLogger",
             });
@@ -26,6 +29,9 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "aubergine18",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/CitiesSkylinesMods/DuplicateAssemblyScanner",
             });
@@ -35,6 +41,8 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "Boogieman Sam",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/SamsamTS/CS-SpriteDumperExtended",
             });

@@ -26,6 +26,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1614061108u, Status.Incompatible }, // Real Construction
                     { 1522785644u, Status.Incompatible }, // Infinite Demand Mod
                     { 1403960464u, Status.Incompatible }, // Maintenance Fees (Parklife Ready)
@@ -48,6 +50,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039606384u, Status.MinorIssues  }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.MinorIssues  }, // Free Maintenance by Anvilarse
                     { 2036484892u, Status.MinorIssues  }, // AutoMoney
                     { 2030216556u, Status.MinorIssues  }, // GrantMeMoney: get cash / money unconditionally
                     { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney

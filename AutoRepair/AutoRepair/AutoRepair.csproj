@@ -39,6 +39,7 @@
     <Compile Include="Attributes\StorageFileAttribute.cs" />
     <Compile Include="Catalogs\Catalog.Assets.cs" />
     <Compile Include="Catalogs\Catalog.Converters.cs" />
+    <Compile Include="Catalogs\Catalog.Disasters.cs" />
     <Compile Include="Catalogs\Catalog.Services.cs" />
     <Compile Include="Catalogs\Catalog.Skin.Roads.cs" />
     <Compile Include="Catalogs\Catalog.Stats.cs" />
@@ -71,13 +72,13 @@
     <Compile Include="Catalogs\Catalog.Money.cs" />
     <Compile Include="Catalogs\Catalog.Music.cs" />
     <Compile Include="Catalogs\Catalog.Paint.cs" />
-    <Compile Include="Catalogs\Catalog.Skins.RoadsUnited.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.RoadsUnited.cs" />
     <Compile Include="Catalogs\Skins.cs" />
-    <Compile Include="Catalogs\Skins.Maps.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.Environment.cs" />
     <Compile Include="Catalogs\Catalog.Networks.cs" />
     <Compile Include="Catalogs\Stats.Mods.cs" />
     <Compile Include="Catalogs\Catalog.Traffic.cs" />
-    <Compile Include="Catalogs\TrafficLight.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.TrafficLights.cs" />
     <Compile Include="Catalogs\TrafficLight.Packs.cs" />
     <Compile Include="Catalogs\Catalog.Repair.cs" />
     <Compile Include="Catalogs\Catalog.VehicleEffects.cs" />
@@ -92,7 +93,9 @@
     <Compile Include="Catalogs\Roads.cs" />
     <Compile Include="Enums\Status.cs" />
     <Compile Include="Catalogs\Catalog.Addendum.cs" />
-    <Compile Include="GameVersion.cs" />
+    <Compile Include="Lists\Announcements.cs" />
+    <Compile Include="Lists\GameVersion.cs" />
+    <Compile Include="Lists\Locale.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="SettingsUI.cs" />
     <Compile Include="Util\Log.cs" />
@@ -100,7 +103,7 @@
     <Compile Include="Util\ModInspector.cs" />
     <Compile Include="Scanner.cs" />
     <Compile Include="Temp.cs" />
-    <Compile Include="Catalogs\Translations.cs" />
+    <Compile Include="Catalogs\Catalog.Translations.cs" />
     <Compile Include="UserMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\StorageManager.cs" />

@@ -1,6 +1,5 @@
 namespace AutoRepair.Util {
     using AutoRepair.Attributes;
-    using AutoRepair.Util;
     using System;
     using System.IO;
     using System.Linq;

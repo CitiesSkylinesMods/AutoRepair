@@ -14,11 +14,6 @@ namespace AutoRepair.Catalogs {
     public partial class Catalog {
 
         /// <summary>
-        /// Specify the version number of the update.
-        /// </summary>
-        private static readonly Version LatestUpdate = GameVersion.SunsetHarbor;
-
-        /// <summary>
         /// Declare the broken or updated mods.
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
@@ -37,7 +32,6 @@ namespace AutoRepair.Catalogs {
             Fixed(667342976u, "Loading Screen Mod");
             Fixed(833779378u, "Loading Screen Mod [Test]");
             Fixed(812713438u, "Dynamic Resolution");
-            Fixed(1899640536u, "Theme Mixer 2");
             Fixed(877950833u, "Vanilla Trees Remover");
             Fixed(632951976u, "Improved Mod Upload Panel");
             Fixed(762520291u, "Shadow Strenght Adjuster");
@@ -51,10 +45,7 @@ namespace AutoRepair.Catalogs {
             Fixed(1721492498u, "Optimised Outside Connections");
             Fixed(629850626u, "Workshop RICO Settings");
             Fixed(816260433u, "Metro Overhaul Mod");
-            Note(816260433u, "Metro Overhaul Mod", "Suset Harbor: Now compatible!!");
-            Broken(812125426u, "Network Extensions 2");
-            BreaksEditor(812125426u, "Network Extensions 2");
-            Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads, also a map editor bug.");
+            Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads.");
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
             Fixed(502750307u, "Extra Landscaping Tools"); // menu wont close
@@ -91,9 +82,7 @@ namespace AutoRepair.Catalogs {
             Dead(1452259306u, "Aedificium RELOADED");
             Dead(474652684u , "Asset Prefab(+Building) AI Changer");
             Dead(408760323u , "Auto Line Color", 1415090282u);
-            Dead(686588890u , "Automatic Emptying: Extended", 407873631u);
             Dead(683304621u , "Barrier Placer", 694512541u);
-            Dead(1072157697u, "Cargo Info");
             Dead(416064574u , "Cimtographer", 1485051886u);
             Dead(549792340u , "Cimtographer updated for Natural_Disasters", 1485051886u);
             Dead(408613485u , "City Statistics Easy Access");
@@ -101,7 +90,6 @@ namespace AutoRepair.Catalogs {
             //Dead(420469721u , "Compass Mod"); // https://github.com/CitiesSkylinesMods/AutoRepair/issues/10
             Dead(529979180u , "CSL Service Reserve");
             Dead(649522495u , "District Service Limit", 927293560u);
-            Dead(1181352643u, "District Service Limit 3.0", 927293560u);
             Dead(406629464u , "Dynamic Resolution", 812713438u);
             Dead(813835487u , "Early Death [1.6]");
             Dead(587516082u , "Early Death [Fixed for v1.4+]");
@@ -110,7 +98,6 @@ namespace AutoRepair.Catalogs {
             Dead(813835241u , "Enhanced Hearse AI [1.6]");
             Dead(583556014u , "Enhanced Hearse AI [Fixed for v1.4+]");
             Dead(414469593u , "Extended Building Information", 1556715327u);
-            Dead(1133108993u, "Extended Building Information (1.10+)", 1556715327u);
             Dead(456408505u , "European Buildings Unlocker");
             Dead(411164732u , "Extended Public Transport UI");
             Dead(802489150u , "Extended Public Transport UI (+DLCs!)");
@@ -126,7 +113,6 @@ namespace AutoRepair.Catalogs {
             Dead(508195208u , "Improved Asset Icons", 747836519u);
             Dead(417430545u , "Improved Assets Panel", 814498849u);
             Dead(416033610u , "Improved Mods Panel", 814498849u);
-            Dead(424106600u , "Improved Public Transport", 928128676u);
             Dead(580335918u , "Infinite Oil And Ore Redux [DEPRECATED]");
             //Dead(1633845925u, "International Finance Center GuangZhou");
             Dead(635815270u , "IOperateIt");
@@ -134,8 +120,6 @@ namespace AutoRepair.Catalogs {
             Dead(649674529u , "Mark-a-Route");
             Dead(1416566861u, "Moorfield Houses");
             Dead(505480567u , "More Beautification", 837734529u);
-            Dead(766190099u , "Move It! (old original mod)", 1619685021u);
-            Dead(1120637951u, "Move it! Extra Filters");
             Dead(1588340989u, "Move It Tool Extensions");
             Dead(420230361u , "Moving Sun");
             Dead(532863263u , "Multi-Track Station Enabler 1.2.0", 1394468624u);
@@ -158,22 +142,17 @@ namespace AutoRepair.Catalogs {
             Dead(587549083u , "Remove Pigs [Fixed for v1.4+]");
             Dead(813835673u , "Remove Seagulls [1.6]", 564141599u);
             Dead(587536931u , "Remove Seagulls [Fixed for v1.4+]", 564141599u);
-            Dead(813834836u , "Remove Stuck Vehicles [1.6]", 442167376u);
-            Dead(587530437u , "Remove Stuck Vehicles [Fixed for v1.4+]", 442167376u);
+            Dead(813834836u , "Remove Stuck Vehicles [1.6]", 1548831935u);
+            Dead(587530437u , "Remove Stuck Vehicles [Fixed for v1.4+]", 1548831935u);
             Dead(820547325u , "Resilient Owners (Make Historical)", 1330381737u);
             Dead(418556522u , "Road Anarchy", 1844440354u);
             Dead(954034590u , "Road Anarchy V2", 1844440354u);
             Dead(417926819u , "Road Assistant - BROKEN");
-            Dead(417585852u , "Road Color Changer", 932192868u);
-            Dead(651610627u , "Road Color Changer Continued", 932192868u);
             Dead(436253779u , "Road Protractor", 445589127u);
-            Dead(726005715u , "Roads United Core+", 633547552u);
-            Dead(1691909129u, "Rotate Brush");
             Dead(605590542u , "Rush Hour II - Formerly Rush Hour [Beta]", 1420955187u);
             Dead(1432430887u, "Rush Hour II [Development]", 1420955187u);
             Dead(540758804u , "Search Box Mod", 837734529u);
             Dead(553184329u , "Sharp Junction Angles", 1844440354u);
-            Dead(1383456057u, "Shicho - Fundamental support mod for hardcore builders");
             Dead(813833476u , "Skylines Overwatch [1.6]");
             Dead(583538182u , "Skylines Overwatch [Fixed for v1.3+]");
             Dead(512194601u , "Slope Limits (WtM)");
@@ -187,8 +166,6 @@ namespace AutoRepair.Catalogs {
             Dead(510802741u , "Toggle District Snapping");
             Dead(415782697u , "Toggle Zoning", 592076973u);
             Dead(755839415u , "Touch This!", 1393797695u);
-            Dead(498363759u , "Traffic Manager + Improved AI", 1637663252u);
-            Dead(583429740u , "Traffic Manager: President Edition [STABLE]", 1637663252u);
             Dead(409184143u , "Traffic++", 812125426u);
             Dead(626024868u , "Traffic++V2", 812125426u);
             Dead(679377572u , "Trash & Dead Cleaner 1");
@@ -196,20 +173,14 @@ namespace AutoRepair.Catalogs {
             Dead(414702884u , "Zonable Pedestrian Paths - Stable", 812125426u);
 
             // incompatible mods
-            //Incompatible(412146081u , "PostProcessFX v1.9.0",                    812713438u , "Dynamic Resolution (Fixed for 1.9!)");
-            Incompatible(442167376u , "Advanced Vehicle Options (AVO)",          1548831935u, "Advanced Vehicle Options AVO (Industries DLC ready)");
             Incompatible(451700838u , "Extended Toolbar",                        563229150u , "Advanced Toolbar");
             Incompatible(455403039u , "Unlimited Trees Mod",                     869134690u, "Tree Snapping");
             Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      844180955u, "City Drive");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      927293560u, "Geli-Districts v3.0");
-            Incompatible(583429740u , "Traffic Manager: President Edition",      1181352643u, "District Service Limit 3.0");
             Incompatible(586012417u , "Ploppable RICO",                          1204126182u, "Ploppable RICO - High Density Fix");
             Incompatible(586012417u , "Ploppable RICO",                          2016920607u, "Ploppable RICO revisited");
             Incompatible(602077938u , "TotalyFree Camera",                       406629464u, "Dynamic Resolution");
             Incompatible(602077938u , "TotalyFree Camera",                       812713438u, "Dynamic Resolution (Fixed for 1.9!)");
             Incompatible(667342976u , "Loading Screen Mod",                      833779378u, "Loading Screen Mod [Test]");
-            Incompatible(775021554u , "Theme Mixer",                             1899640536u, "Theme Mixer 2");
             Incompatible(791968744u , "Dynamic Foliage",                         666425898u, "No Radioactive Desert And More!");
             Incompatible(812125426u , "Network Extensions 2",                    547126602u, "Street Light Replacer");
             Incompatible(812125426u , "Network Extensions 2",                    1959342332u, "CSUR ToolBox");
@@ -217,50 +188,29 @@ namespace AutoRepair.Catalogs {
             Incompatible(816260433u , "Metro Overhaul Mod 9.0",                  1530376523u, "Railway Replacer");
             Incompatible(821539759u , "Disable Zone Check",                      924884948u, "Plop The Growables");
             Incompatible(837734529u , "Find It!",                                540758804u, "Search Box Mod");
-            Incompatible(844180955u , "City Drive",                              406255342u, "First-person camera");
-            Incompatible(844180955u , "City Drive",                              583429740u, "Traffic Manager: President Edition");
-            Incompatible(844180955u , "City Drive",                              650805785u, "First Person Camera: Updated");
-            Incompatible(844180955u , "City Drive",                              651056665u, "Enhanced Zoom Continued");
-            Incompatible(844180955u , "City Drive",                              1406625743u, "EnhancedZoomContinued");
             Incompatible(917543381u , "No Problem [BETA]",                       561293123u, "Hide Problems AKA Politician's Mod");
             Incompatible(924884948u , "Plop The Growables",                      821539759u, "Disable Zone Check");
-            Incompatible(928128676u , "Improved Public Transport 2",             424106600u, "Improved Public Transport");
-            Incompatible(928128676u , "Improved Public Transport 2",             472128528u, "Larger Footprints");
-            Incompatible(928128676u , "Improved Public Transport 2",             531401164u, "Vehicle Unbuncher");
-            Incompatible(928128676u , "Improved Public Transport 2",             1218121337u, "Automatic Vehicle Numbers Adjuster");
-            Incompatible(1138510774u, "PostProcessFX - Multi-platform",          812713438u, "Dynamic Resolution (Fixed for 1.9!)");
-            Incompatible(1138510774u, "PostProcessFX - Multi-platform",          1794015399u, "Render It!");
-            Incompatible(1204126182u, "Ploppable RICO - High Density Fix",       2016920607u, "Ploppable RICO revisited");
-            Incompatible(1312767991u, "Transport Lines Manager13.1",             934994075u, "Service Vehicle Selector 2");
-            Incompatible(1312767991u, "Transport Lines Manager 13.1",            928128676u, "Improved Public Transport 2");
-            Incompatible(1406625743u, "EnhancedZoomContinued",                   651056665u, "Enhanced Zoom Continued");
             Incompatible(1442713872u, "Detail",                                  1094334744u, "Ploppable Asphalt objects turned into Procedural Objects");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 844180955u, "City Drive");
             Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 1181352643u, "District Service Limit 3.0");
-            Incompatible(1645781000u, "Elektrix's Road Tools 2.0",               1597198847u, "[Legacy] Segment Slope Smoother");
-            Incompatible(1764208250u, "More Vehicles",                           1548831935u, "Advanced Vehicle Options AVO (Industries DLC ready)");
-            Incompatible(1831805509u, "Dynamic Text Props",                      651322972u, "Fine Road Tool");
-            Incompatible(1844440354u, "Fine Road Anarchy 2",                     802066100u, "Fine Road Anarchy");
-            Incompatible(1844442251u, "Fine Road Tool 2",                        651322972u, "Fine Road Tool");
             Incompatible(1959342332u, "CSUR ToolBox",                            427258853u, "Crossings");
             Incompatible(1959342332u, "CSUR ToolBox",                            812125426u, "Network Extensions 2");
 
             // breaks editor
             BreaksEditor(586012417u, "Ploppable RICO");
             BreaksEditor(672248733u, "Ultimate Eyecandy");
-            BreaksEditor(1204126182u, "Ploppable RICO - High Density Fix");
         }
 
         /// <summary>
         /// Just prints message to log (in debug builds) to let me know when addendum
         /// is updating an existing item in some other catalog.
         /// </summary>
-        /// 
+        ///
+        /// <param name="methodName">The method name (and any other details to show).</param>
         /// <param name="item">The existing item.</param>
         [Conditional("DEBUG")]
-        internal void Addendum(Item item) {
+        internal void Addendum(string methodName, Item item) {
             if (item.Catalog != "Addendum") {
-                Log.Info($"Addendum updated existing item: {item}");
+                Log.Info($"Addendum: {methodName} -> {item}");
             }
         }
 
@@ -273,7 +223,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="note">The note to add (only one note per call, this is a quick kludge).</param>
         internal void Note(ulong workshopId, string workshopName, string note) {
             if (Items.TryGetValue(workshopId, out Item item)) {
-                Addendum(item);
+                Addendum("Note", item);
                 if (item.Notes == null) {
                     item.Notes = new Dictionary<ulong, string>() { { NOTE, note } };
                 } else {
@@ -284,6 +234,7 @@ namespace AutoRepair.Catalogs {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
+                    Compatibility = new Dictionary<ulong, Status>() { },
                     Flags = ItemFlags.Unrecognised,
                     Notes = new Dictionary<ulong, string>() { { NOTE, note } },
             });
@@ -299,27 +250,18 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void Fixed(ulong workshopId, string workshopName) {
-            //Log.Info($"- Confirmed compatible: {workshopId} '{workshopName}'");
-
-            string note = "COMPATIBLE with Sunset Harbor update! :)";
-
             if (Items.TryGetValue(workshopId, out Item item)) {
-                Addendum(item);
+                Addendum("Fixed", item);
                 item.BrokenBy = GameVersion.DefaultUntil;
-                item.CompatibleWith = LatestUpdate;
-                if (item.Notes == null) {
-                    item.Notes = new Dictionary<ulong, string>() { { NOTE, note } };
-                } else {
-                    item.Notes.Add(NOTE, note);
-                }
+                item.CompatibleWith = GameVersion.LatestMajorRelease;
             } else {
                 AddMod(new Item(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
-                    CompatibleWith = LatestUpdate,
+                    Compatibility = new Dictionary<ulong, Status>() { },
+                    CompatibleWith = GameVersion.LatestMajorRelease,
                     Flags = ItemFlags.Unrecognised,
-                    Notes = new Dictionary<ulong, string>() { { NOTE, note } },
                 });
             }
         }
@@ -333,29 +275,20 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void Broken(ulong workshopId, string workshopName) {
-            //Log.Info($"- Broken: {workshopId} '{workshopName}'");
-
-            string note = "BROKEN since Sunset Harbor update :(";
-
             if (Items.TryGetValue(workshopId, out Item item)) {
-                Addendum(item);
-                item.BrokenBy = LatestUpdate;
-                if (item.CompatibleWith >= LatestUpdate) {
-                    item.CompatibleWith = GameVersion.DefaultRelease;
-                }
-                if (item.Notes == null) {
-                    item.Notes = new Dictionary<ulong, string>() { { NOTE, note } };
-                } else {
-                    item.Notes.Add(NOTE, note);
+                Addendum("Broken", item);
+                item.BrokenBy = GameVersion.LatestMajorRelease;
+                if (item.CompatibleWith >= GameVersion.LatestMajorRelease) {
+                    Addendum("Broken & Compatible at same time", item);
                 }
             } else {
                 AddMod(new Item(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
-                    BrokenBy = LatestUpdate,
+                    BrokenBy = GameVersion.LatestMajorRelease,
                     Catalog = "Addendum",
+                    Compatibility = new Dictionary<ulong, Status>() { },
                     Flags = ItemFlags.Unrecognised,
-                    Notes = new Dictionary<ulong, string>() { { NOTE, note } },
                 });
             }
         }
@@ -368,13 +301,14 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void BreaksEditor(ulong workshopId, string workshopName) {
             if (Items.TryGetValue(workshopId, out Item item)) {
-                Addendum(item);
+                Addendum("BreaksEditor", item);
                 item.Flags |= ItemFlags.EditorBreaking;
             } else {
                 AddMod(new Item(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
+                    Compatibility = new Dictionary<ulong, Status>() { },
                     Flags = ItemFlags.EditorBreaking
                           | ItemFlags.Unrecognised,
                 });
@@ -391,7 +325,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="replacement">(Optional) Workshop ID of a suitable replacement.</param>
         internal void Dead(ulong workshopId, string workshopName, ulong replacement = 0u) {
             if (Items.TryGetValue(workshopId, out Item item)) {
-                Addendum(item);
+                Addendum("Dead", item);
                 item.Flags |= ItemFlags.Abandonware | ItemFlags.GameBreaking | ItemFlags.Obsolete;
                 if (item.ReplaceWith != 0u) {
                     item.Flags |= ItemFlags.ForceMigration;
@@ -404,6 +338,7 @@ namespace AutoRepair.Catalogs {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
+                    Compatibility = new Dictionary<ulong, Status>() { },
                     Flags = ItemFlags.Abandonware
                           | ItemFlags.GameBreaking
                           | ItemFlags.Obsolete
@@ -432,7 +367,7 @@ namespace AutoRepair.Catalogs {
         internal void Incompatible(ulong idA, string nameA, ulong idB, string nameB) {
             // first item
             if (Items.TryGetValue(idA, out Item itemA)) {
-                Addendum(itemA);
+                Addendum($"Incompatible ({idA}, {idB}) - itemA", itemA);
                 if (itemA.Compatibility == null) {
                     itemA.Compatibility = new Dictionary<ulong, Status>() {
                         { idB, Status.Incompatible },
@@ -453,7 +388,7 @@ namespace AutoRepair.Catalogs {
             }
 
             if (Items.TryGetValue(idB, out Item itemB)) {
-                Addendum(itemB);
+                Addendum($"Incompatible ({idA}, {idB}) - itemB", itemB);
                 if (itemB.Compatibility == null) {
                     itemB.Compatibility = new Dictionary<ulong, Status>() {
                         { idA, Status.Incompatible },

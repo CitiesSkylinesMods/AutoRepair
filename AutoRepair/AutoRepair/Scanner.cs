@@ -2,11 +2,13 @@ namespace AutoRepair {
     using AutoRepair.Catalogs;
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
+    using AutoRepair.Lists;
     using AutoRepair.Util;
     using ColossalFramework;
     using ColossalFramework.Plugins;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Text;
     using static ColossalFramework.Plugins.PluginManager;
 
@@ -22,6 +24,8 @@ namespace AutoRepair {
         /// Performs the compatibility scan.
         /// </summary>
         public static void PerformScan() {
+            Stopwatch timer = Stopwatch.StartNew();
+
             try {
                 Log.Reset();
                 Log.Info($"\nLoaded {Catalog.Instance.Items.Count} AutoRepair Descriptors.");
@@ -31,6 +35,9 @@ namespace AutoRepair {
                 Log.Info("Something went horribly wrong...");
                 Log.Error(e.ToString());
             }
+
+            timer.Stop();
+            Log.Info($"AutoRepair scan took {timer.ElapsedMilliseconds}ms");
         }
 
         private static Dictionary<ulong, string> subscriptions;
@@ -40,14 +47,20 @@ namespace AutoRepair {
             StringBuilder log = new StringBuilder(1024 * 50);
 
             log.Append("\nGeneral Announcements:\n");
-            log.Append("\n(!) 'Customize It Extended' mod is broken again. If you have it, unsubscribe it as it's breaking loads of mods.\n");
-            log.Append("\n(!) 'Metro Overhaul Mod has been updated, but still seems broken.\n");
 
-            log.Append("\nSave game not loading? Subscribe Loading Screen Mod, enable it's sharing/optimisation and safe mode options, then try again:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=667342976\n");
-            log.Append("\nGetting 'Object reference' errors in-game? Try this bugfix:\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=2037862156\n");
+            if (Announcements.Notes.Count > 0) {
+                foreach (KeyValuePair<ulong, string> entry in Announcements.Notes) {
+                    log.AppendFormat("\n* {0} - {1}\n",
+                    entry.Value,
+                    GetWorkshopURL(entry.Key));
+                }
+            }
+
+            log.Append("\n* Save game not loading? Subscribe Loading Screen Mod,\nenable it's sharing/optimisation and safe mode options, then load your save.\n https://steamcommunity.com/sharedfiles/filedetails/?id=667342976\n");
+            log.Append("\n* Getting 'Object reference' errors in-game?\nTry this bugfix: https://steamcommunity.com/sharedfiles/filedetails/?id=2037862156\n");
 
             if (Options.Instance.LogIntroText) {
-                log.Append("\nThings to know about mods:");
+                log.Append("\nThings to know about mods:\n");
                 log.Append("\n* Disabled mods are often still loaded; always unsubscribe mods you're not using!");
                 log.Append("\n* Mods that do the same thing are generally incompatible.");
                 log.Append("\n* For modded games, always exit to desktop before loading another city.");
@@ -80,25 +93,32 @@ namespace AutoRepair {
             log.Append("\nStarting compatibility scan...\n");
 
             // populate list of subscribed mod workshop ids
-            foreach (PluginInfo record in plugins) {
+            foreach (PluginInfo plugin in plugins) {
                 try {
-                    if (!IsLocal(record) && !(record?.isBuiltin ?? false)) {
-                        modId = record.publishedFileID.AsUInt64;
-                        strName = GetPluginName(record);
+                    if (!IsLocal(plugin) && !(plugin?.isBuiltin ?? false)) {
+                        modId = plugin.publishedFileID.AsUInt64;
+                        strName = GetPluginName(plugin);
                         if (!subscriptions.ContainsKey(modId)) {
                             subscriptions.Add(modId, strName);
                         }
                     }
-                } catch {
-                    // ignore for now
+                } catch (Exception e) {
+                    UnityEngine.Debug.LogError(e);
                 }
             }
+
+            /*
+            foreach (var modEntry in PluginManager.instance.GetPluginsInfo().Select(pi => new EntryData(pi))
+            {
+                var updated = modEntry.updated;
+            }
+            */
 
             foreach (PluginInfo plugin in plugins) {
                 try {
                     ScanMod(plugin, ref log);
                 } catch (Exception e) {
-                    Log.Error(e.ToString());
+                    UnityEngine.Debug.LogError(e);
                 }
             }
 
@@ -171,9 +191,9 @@ namespace AutoRepair {
 
                 if (HasFlag(flags, ItemFlags.GameBreaking)) {
                     log.Append("\n - Broken mod. Unsubscribe it.\n");
-                } else if (descriptor.BrokenBy <= GameVersion.Active) {
+                } else if (GameVersion.Active >= (descriptor.BrokenBy ?? GameVersion.DefaultUntil)) {
                     log.Append("\n - Not compatible with current game version. Disable it until an update is ready.\n");
-                } else if (descriptor.CompatibleWith >= GameVersion.Active) {
+                } else if (GameVersion.Active <= (descriptor.CompatibleWith ?? GameVersion.DefaultRelease)) {
                     log.AppendFormat("\n - Confirmed compatible with Cities: Skylines v{0} :)\n", GameVersion.Active.ToString(3));
                 } else {
                     log.Append("\n - Should be compatible with current game version (if not, let us know).\n");
@@ -188,7 +208,7 @@ namespace AutoRepair {
                 }
 
                 if (HasFlag(flags, ItemFlags.EditorBreaking)) {
-                    log.Append("\n - Causes problems in asset/map/theme editors.\n");
+                    log.Append("\n - Causes problems in content editors; disable and restart game before opening editor.\n");
                 }
 
                 if (HasFlag(flags, ItemFlags.Abandonware)) {
@@ -227,6 +247,15 @@ namespace AutoRepair {
                     log.Append("\n - Some users report major problems; check its workshop page/comments for details.\n");
                 }
 
+                if (Options.Instance.LogLanguages) {
+                    if (descriptor.Languages != null) {
+                        log.AppendFormat(
+                            "\n - Contains translations for: {0}\n",
+                            string.Join(", ", Locale.FromStringArray(descriptor.Languages).ToArray()));
+                    }
+                    log.AppendFormat("\n - Default language: {0}\n", Locale.ToString(descriptor.Locale));
+                }
+
                 if (Options.Instance.LogSourceURLs) {
                     if (HasFlag(flags, ItemFlags.SourceAvailable)) {
                         if (!string.IsNullOrEmpty(descriptor.SourceURL)) {
@@ -244,7 +273,9 @@ namespace AutoRepair {
                     log.Append("\n - ALERT: The mod source code is obfuscated to prevent inspection!\n");
                 }
 
-                ScanCompatibility(descriptor, ref log);
+                if (descriptor.Compatibility.Count > 0) {
+                    ScanCompatibility(descriptor, ref log);
+                }
 
                 if (descriptor.Notes != null) {
                     foreach (KeyValuePair<ulong, string> note in descriptor.Notes) {

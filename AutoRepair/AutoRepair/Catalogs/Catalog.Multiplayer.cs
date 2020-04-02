@@ -15,7 +15,8 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Multiplayer";
 
-            Dictionary<ulong, Status> incompatibleMods = new Dictionary<ulong, Status>() {
+            Dictionary<ulong, Status> multiplayerIncompatible = new Dictionary<ulong, Status>() {
+                { 2040225526u, Status.Incompatible }, // Multiplayer
                 { 2030131871u, Status.Incompatible }, // CSM
                 { 2027716634u, Status.Incompatible }, // CitiesSkylinesMultiplayer_2002.2.0
                 { 2021598295u, Status.Incompatible }, // 1558438291 [Beta] CSM - Cities_ Skylines Multiplayer
@@ -37,7 +38,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Multiplayer,
                 Authors = "xylisn",
                 Catalog = catalog,
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 ContinuationOf = 1556669944u, // CSM
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // doesn't sync full game features
@@ -52,13 +53,27 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
+            // and another clone!
+            AddMod(new Item(2040225526u, "Multiplayer") {
+                Affect = Factor.Multiplayer,
+                Authors = "State Farm",
+                Catalog = catalog,
+                CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Compatibility = multiplayerIncompatible,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.MinorBugs
+                      | ItemFlags.SourceUnavailable,
+                ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+            });
+
             // looks like yet another clone, waiting for feedback from author
             AddMod(new Item(2030131871u, "CSM") {
                 Affect = Factor.Multiplayer,
                 Authors = "wihtewolf1712",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -72,7 +87,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Ceddicedced",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -86,7 +101,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Leñador de Abedules",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -99,7 +114,7 @@ namespace AutoRepair.Catalogs {
                 Authors = string.Empty,
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -113,7 +128,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "himete",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -126,7 +141,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Stutenandy",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -140,7 +155,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "motacy",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -154,7 +169,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "WartraxX",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -168,7 +183,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "WartraxX",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -182,7 +197,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "WartraxX",
                 Catalog = catalog,
                 CloneOf = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs
@@ -195,7 +210,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Multiplayer,
                 Authors = "Daniel",
                 Catalog = catalog,
-                Compatibility = incompatibleMods,
+                Compatibility = multiplayerIncompatible,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.MinorBugs

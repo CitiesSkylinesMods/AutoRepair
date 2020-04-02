@@ -19,39 +19,18 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "PublicTransport";
 
-            // note: possibly removes maintenance for _everything_, not just transport
-            // in which case it would need moving to Balance cat
-            AddMod(new Item(2039205403u, "Free Maintenance by Anvilarse") {
-                Affect = Factor.Revenue
-                       | Factor.TransportLines
-                       | Factor.TransportPreference,
-                Authors = "Anvilarse",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
-
-                    { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
-                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
-                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3 -- old ver
-                    { 408875519u , Status.Incompatible }, // Transport Lines Manager -- old ver
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceUnavailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Not yet sure if this is just for public transport, or everything." },
-                },
-                ReleasedDuring = GameVersion.SunsetHarbor,
-            });
-
             // looks like update to Extended Public Transport UI, that's compatibile or merged with TLM
             AddMod(new Item(2009172305u, "EPTUI TLM Integration (Beta)") {
                 Affect = Factor.TransportLines,
                 Authors = "Arturj07",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // todo
+                    { 2040218778u, Status.Incompatible }, // ScaleUI
+                    { 2009172305u, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 802489150u , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
+                    { 411164732u , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
+                    { 409338401u , Status.Incompatible }, // ScaleUI (beta)
+                    { 407225523u , Status.Incompatible }, // TextScaleMod
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.Abandonware

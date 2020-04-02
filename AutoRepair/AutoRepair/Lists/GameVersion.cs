@@ -29,6 +29,11 @@ namespace AutoRepair {
         public static readonly Version InitialRelease = new Version(1, 0, 5);
 
         /// <summary>
+        /// Reference to latest major release.
+        /// </summary>
+        public static readonly Version LatestMajorRelease = SunsetHarbor;
+
+        /// <summary>
         /// 2015-05-19 European biome and buildings added. IUserMod changed.
         /// </summary>
         public static readonly Version EuropeBiome = new Version(1, 1, 0);

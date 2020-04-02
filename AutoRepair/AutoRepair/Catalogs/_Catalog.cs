@@ -1,11 +1,14 @@
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
+    using AutoRepair.Lists;
     using AutoRepair.Util;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
+    using System.Linq;
     using System.Text;
 
     /// <summary>
@@ -124,8 +127,8 @@ namespace AutoRepair.Catalogs {
         private Item AddMod(Item item) {
             item.ItemType = ItemTypes.Mod;
 
-            if (Items.ContainsKey(item.WorkshopId)) {
-                Log.Info($"### ERROR: {item} already in Items list!");
+            if (Has(item.WorkshopId)) {
+                Log.Info($"### ERROR: AddMod() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
                 return item;
             }
 
@@ -146,8 +149,8 @@ namespace AutoRepair.Catalogs {
         private Item AddAsset(Item item) {
             item.ItemType = ItemTypes.Asset;
 
-            if (Items.ContainsKey(item.WorkshopId)) {
-                Log.Info($"### ERROR: {item} already in Items list!");
+            if (Has(item.WorkshopId)) {
+                Log.Info($"### ERROR: AddAsset() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
                 return item;
             }
 
@@ -159,6 +162,8 @@ namespace AutoRepair.Catalogs {
         }
 
         private void AddCatalogs() {
+            Stopwatch timer = Stopwatch.StartNew();
+
             try {
                 VanillaCatalog(); // mods bundled with base game
                 UnsortedCatalog(); // currently uncategorised items
@@ -188,12 +193,15 @@ namespace AutoRepair.Catalogs {
                 RepairCatalog();
                 ServicesCatalog();
                 SkinBuildingsCatalog();
+                SkinEnvironmentCatalog();
                 SkinFlagsCatalog();
                 SkinRoadsCatalog();
                 SkinRoadsUnitedCatalog();
+                SkinTrafficLightsCatalog();
                 StatsCatalog();
                 ToolbarCatalog();
                 TrafficCatalog();
+                TranslationsCatalog();
                 TreesCatalog();
                 UnlimitersCatalog();
                 VehicleEffectsCatalog();
@@ -205,8 +213,41 @@ namespace AutoRepair.Catalogs {
             catch (Exception e) {
                 Log.Error(e.ToString());
             }
+
+            timer.Stop();
+            Log.Info($"AutoRepair catalog initialisation took {timer.ElapsedMilliseconds}ms");
         }
 
+        /// <summary>
+        /// Culture used for the <see cref="WorkshopDate(string)"/> method.
+        /// </summary>
+        private static CultureInfo workshopCulture = new CultureInfo("en-GB");
+
+        /// <summary>
+        /// Tries to parse a date string from Steam Workshop page in to a <see cref="DateTime"/> instance.
+        ///
+        /// Format it expects is: dd MMM, yyyy
+        /// </summary>
+        /// 
+        /// <param name="dateStr">The string copied from sidebar on item Workshop page.</param>
+        /// 
+        /// <returns>A <see cref="DateTime"/> instance.</returns>
+        public DateTime WorkshopDate(string dateStr) {
+            try {
+                return DateTime.ParseExact(dateStr, "d MMM, yyyy", workshopCulture);
+            } catch {
+                Log.Info($"Invlaid date format '{dateStr}'; last added item was {Items.Last().Key}");
+                return default;
+            }
+        }
+
+        /// <summary>
+        /// Test if an item is in the main catalog.
+        /// </summary>
+        /// 
+        /// <param name="workshopId">The Steam Workshop id for the item.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if present, otherwise <c>false</c>.</returns>
         public bool Has(ulong workshopId) {
             return Items.ContainsKey(workshopId);
         }
@@ -268,6 +309,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         /// 
         /// <param name="item">The item to validate.</param>
+        /// <param name="extendedReporting">If <c>false</c>, only basic reporting is performed.</param>
         /// <param name="itemLog">The item log string builder.</param>
         /// 
         /// <returns>Returns <c>true</c> if there are problems, otherwise <c>false</c>.</returns>
@@ -275,6 +317,7 @@ namespace AutoRepair.Catalogs {
 
             bool basicProblems = false;
 
+            // clone/continuation checks
             if (extendedReporting) {
                 // if clone, check it's in catalog
                 if (item.CloneOf != 0u && !Has(item.CloneOf)) {
@@ -291,13 +334,103 @@ namespace AutoRepair.Catalogs {
                         "- ContinuationOf not in Catalog.Items: {0}\n",
                         item.ContinuationOf);
                 }
+            }
 
-                // if replacement, check it's in catalog
-                if (item.ReplaceWith != 0u && !Has(item.ReplaceWith)) {
+            // unrecognised locale check
+            if (!Locale.Has(item.Locale)) {
+                basicProblems = true;
+                itemLog.AppendFormat(
+                    "- Unrecognised locale (add to Locale.FromId list): {0}\n",
+                    item.Locale);
+            }
+
+            // todo: check for unrecognised locales in Languages list if present
+
+            // check ReplaceWith - in catalog? recursive? unsquised chain?
+            Item target = item;
+            ulong nextTarget = target.ReplaceWith;
+            List<ulong> chain = new List<ulong>() { nextTarget };
+            bool recursion = false;
+
+            bool debug = false; //  item.WorkshopId == 1393966192u;
+
+            if (debug) {
+                itemLog.Append($" Debugging...\n");
+            }
+
+            while (nextTarget != 0u) {
+
+                if (debug) {
+                    itemLog.Append($" Debug: nextTarget = {nextTarget}\n");
+                }
+
+                if (!target.SuppressOlderReplacementWarning &&
+                    nextTarget < item.WorkshopId &&
+                    item.CloneOf == 0u) {
+
+                    basicProblems = true;
+                    itemLog.AppendFormat(
+                        "- Caution: ReplaceWith is older mod: {0}\n",
+                        nextTarget);
+                }
+
+                if (Has(nextTarget)) {
+
+                    if (debug) {
+                        itemLog.Append($" Debug: Has(nextTarget) = true\n");
+                    }
+
+                    target = Items[nextTarget];
+                    nextTarget = target.ReplaceWith;
+
+                    if (debug) {
+                        itemLog.Append($" Debug: Queue nextTarget = {nextTarget}\n");
+                    }
+
+                    if (nextTarget != 0u) {
+                        if (chain.Contains(nextTarget)) {
+                            recursion = true;
+
+                            if (debug) {
+                                itemLog.Append($" Debug: Recursion detected\n");
+                            }
+                        }
+
+                        chain.Add(nextTarget);
+
+                        if (debug) {
+                            itemLog.Append($" Debug: chain.Count = {chain.Count}\n");
+                        }
+
+                        if (recursion) {
+                            basicProblems = true;
+                            itemLog.Append("- WARNING! Recursion in ReplaceWith chain!\n");
+                            break;
+                        }
+                    }
+
+                } else {
+
+                    if (debug) {
+                        itemLog.Append($" Debug: Has(nextTarget) = false\n");
+                    }
+
                     basicProblems = true;
                     itemLog.AppendFormat(
                         "- ReplaceWith not in Catalog.Items: {0}\n",
-                        item.ReplaceWith);
+                        target.ReplaceWith);
+                    break;
+                }
+            }
+
+            if (debug) {
+                itemLog.Append($" Debug: squish? chain.Count = {chain.Count}\n");
+            }
+
+            if (chain.Count > 1) {
+                itemLog.Append("- Squish ReplaceWith chain:\n");
+                foreach (ulong replacement in chain) {
+                    itemLog.AppendFormat("  - {0} \"{1}\"\n", replacement, GetNameFromId(replacement));
                 }
             }
 

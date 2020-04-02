@@ -121,14 +121,9 @@ namespace AutoRepair.Enums {
         Environment = 1UL << 20,
 
         /// <summary>
-        /// Mods which alter how fire spreads.
+        /// Disasters (storms, tsunami, earthquake, etc).
         /// </summary>
-        FireSpread = 1UL << 21,
-
-        /// <summary>
-        /// Flooding (amount, location, probability, etc).
-        /// </summary>
-        Flooding = 1UL << 22,
+        Disasters = 1UL << 22,
 
         /// <summary>
         /// Happiness of cims (eg. what alters it, or what it alters).

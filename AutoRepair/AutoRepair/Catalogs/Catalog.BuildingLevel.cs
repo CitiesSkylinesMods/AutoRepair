@@ -226,6 +226,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.GreenCities,
                 ReplaceWith = 523818382u, // Force Level Up
                 SourceURL = "https://github.com/coarxflow/Skylines-ControlBuildingLevelUpMod",
+                SuppressOlderReplacementWarning = true,
             });
 
             // Building Upgrade Balance Mod

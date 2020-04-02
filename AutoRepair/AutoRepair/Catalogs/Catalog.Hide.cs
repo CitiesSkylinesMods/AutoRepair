@@ -59,6 +59,7 @@ namespace AutoRepair.Catalogs {
                     { 1899640536u, Status.MinorIssues  }, // Theme Mixer 2 (both can toggle terrain sprites)
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 666425898u , Status.Incompatible }, // No Radioactive Desert And More!
+                    { 564141599u , Status.MinorIssues  }, // No Seagulls
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable
@@ -66,8 +67,27 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { 1899640536u, "[Mod: Theme Mixer 2] Terrain sprites affected by both mods; check sprite settings in both to ensure same effect." },
                     { 666425898u , "[Mod: No Radioactive Desert] Conflcits with Hide It causing terrain textures to disappear from map." },
+                    { 564141599u , "[Mod: No Seagulls] Both mods can remove seagulls. If you want to use No Seagulls mod, disable 'Seagulls' option in Hide It mod." },
                 },
                 SourceURL = "https://github.com/keallu/CSL-HideIt",
+            });
+
+            AddMod(new Item(564141599u, "No Seagulls") {
+                Authors = "thale5",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1706704781 , Status.Incompatible }, // Remove All Animals
+                    { 1591417160u, Status.MinorIssues  }, // Hide It!
+                    { 587536931u , Status.Incompatible }, // Remove Seagulls [Fixed for v1.4+]
+                    { 421041154u , Status.Incompatible }, // [ARIS] Remove Seagulls
+                    { 417145328u , Status.Incompatible }, // [Deprecated] Kill the Seagulls!
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1591417160u, "[Mod: Hide It] Both mods can remove seagulls. If you want to use No Seagulls mod, disable 'Seagulls' option in Hide It mod." },
+                },
+                SourceURL = "https://github.com/thale5/NoSeagulls",
             });
 
             /*

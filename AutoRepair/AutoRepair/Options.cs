@@ -32,6 +32,11 @@ namespace AutoRepair {
         public bool LogSourceURLs { get; set; } = false;
 
         /// <summary>
+        /// Gets or sets a value indicating whether languages/locales should be logged.
+        /// </summary>
+        public bool LogLanguages { get; set; } = false;
+
+        /// <summary>
         /// Save settings to disk.
         /// </summary>
         public void Save() => StorageManager<Options>.Save();

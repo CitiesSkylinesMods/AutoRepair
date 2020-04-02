@@ -133,6 +133,12 @@ namespace AutoRepair.Catalogs {
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Compatible   }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.MinorIssues  }, // New American Traffic Lights
                     // Other mods
                     { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
@@ -163,6 +169,7 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Vehicles despawning after altering roads? Use Broken Nodes Detector: https://steamcommunity.com/sharedfiles/filedetails/?id=1777173984" },
                     { NOTE, "Setting 'Simulation Accuracy' to lower value will reduce lag (but impair junction customisations)." },
                     { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
+                    { NOTE, "[Mod: CSM - Cities Skylines Multiplayer] Some users report it's incompatible with TM:PE" },
                     { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
                     { 726005715u, "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                     { 633547552u, "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
@@ -268,6 +275,12 @@ namespace AutoRepair.Catalogs {
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Compatible   }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.MinorIssues  }, // New American Traffic Lights
                     // Other mods
                     { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
@@ -400,6 +413,12 @@ namespace AutoRepair.Catalogs {
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Incompatible }, // New American Traffic Lights
                 },
                 ContinuationOf = 583429740u, // Traffic Manager: President Edition (LinuxFan)
                 Flags = ItemFlags.Abandonware
@@ -414,6 +433,7 @@ namespace AutoRepair.Catalogs {
                 Locale = "en",
                 ReleasedDuring = GameVersion.Industries,
                 ReplaceWith = 1637663252u, // TM:PE V11 STABLE
+                SuppressOlderReplacementWarning = true,
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
                     "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
@@ -465,6 +485,12 @@ namespace AutoRepair.Catalogs {
                     { 498363759u , Status.Incompatible }, // Traffic Manager + Improved AI
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Incompatible }, // New American Traffic Lights
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -476,7 +502,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus, // yes, really.
                 ReplaceWith = 1637663252u, // TM:PE V11 STABLE
-                SkipVersionValidation = true,
+                SuppressVersionWarnings = true,
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
                     "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
@@ -526,6 +552,12 @@ namespace AutoRepair.Catalogs {
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Incompatible }, // New American Traffic Lights
                 },
                 ContinuationOf = 583429740u, // Traffic Manager: President Edition (LinuxFan)
                 Flags = ItemFlags.Abandonware
@@ -591,6 +623,12 @@ namespace AutoRepair.Catalogs {
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Incompatible }, // New American Traffic Lights
                 },
                 ContinuationOf = 583429740u, // Traffic Manager: President Edition (LinuxFan)
                 Flags = ItemFlags.Abandonware
@@ -649,12 +687,20 @@ namespace AutoRepair.Catalogs {
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
+                    { 927293560u , Status.Incompatible }, // Geli-Districts v3.0
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Compatible   }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.MinorIssues  }, // New American Traffic Lights
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 ContinuationOf = 568443446, // Traffic Manager Plus 1.2.0

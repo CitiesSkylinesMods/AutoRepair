@@ -53,8 +53,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "It's marked game-breaking in workshop, but still works (mostly)." },
                     { NOTE, "Minor issue - Toll Booths won't generate money while this mod is active." },
+                    { NOTE, "It's marked game-breaking in workshop, but is still usable according to most users." },
                     { NOTE, "Asset creators, see: https://github.com/Unlawful-Productions/Roads_United_Texture_Template" },
                     { 1806963141u, "[Mod: TM:PE] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                     { 1637663252u, "[Mod: TM:PE] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },

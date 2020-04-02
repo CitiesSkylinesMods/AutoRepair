@@ -115,7 +115,7 @@ namespace AutoRepair.Descriptors {
         /// <summary>
         /// Gets or sets the item's primary language id. Defaults to <c>"en"</c>.
         /// </summary>
-        public string Locale { get; set; }
+        public string Locale { get; set; } = "en";
 
         /// <summary>
         /// Gets or sets arbitrary notes for the item, which will be displayed in log file.
@@ -126,6 +126,11 @@ namespace AutoRepair.Descriptors {
         /// use <see cref="Catalog.NOTE"/> id (value <c>100000000u -> 200000000u</c>).
         /// </summary>
         public Dictionary<ulong, string> Notes { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date when the item was published to Steam Workshop.
+        /// </summary>
+        public DateTime Published { get; set; }
 
         /// <summary>
         /// Gets or sets the game version at time when item was first published to workshop, if known.
@@ -150,22 +155,33 @@ namespace AutoRepair.Descriptors {
         public Selection RequiredModsSelection { get; set; } = Selection.All;
 
         /// <summary>
-        /// Gets or sets a value indicating whether to perform game version validation.
-        ///
-        /// Use this to disable validation spam in cases where someone uploaded an
-        /// already-obsolete mod to the workshop.
-        /// </summary>
-        public bool SkipVersionValidation { get; set; }
-
-        /// <summary>
         /// Gets or sets URL to source code.
         /// </summary>
         public string SourceURL { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to validate ReplaceWith property.
+        ///
+        /// Use this where a replacement is intentionally an older item.
+        /// </summary>
+        public bool SuppressOlderReplacementWarning { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to perform game version validation.
+        ///
+        /// Use this where someone uploaded an already-broken item to workshop.
+        /// </summary>
+        public bool SuppressVersionWarnings { get; set; }
+
+        /// <summary>
         /// Gets or sets tags (labels, keywords) for the item.
         /// </summary>
         public string[] Tags { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date when the item was last updated in Steam Workshop.
+        /// </summary>
+        public DateTime Updated { get; set; }
 
         /// <summary>
         /// Gets or sets the Steam Workshop ID for this item.
@@ -273,7 +289,7 @@ namespace AutoRepair.Descriptors {
             }
 
             // sometimes already long-broken mods are reuploaded to workshop (hence ability to skip these checks)
-            if (!SkipVersionValidation) {
+            if (!SuppressVersionWarnings) {
 
                 // game version at release must be <= checked compatible version
                 if (CompatibleWith < ReleasedDuring) {

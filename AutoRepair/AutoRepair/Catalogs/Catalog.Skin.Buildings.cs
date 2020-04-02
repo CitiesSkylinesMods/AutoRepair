@@ -124,6 +124,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1182123078u, // Chalet District Style (Vanilla)
+                SuppressOlderReplacementWarning = true,
             });
         }
     }

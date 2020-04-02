@@ -1,9 +1,11 @@
 namespace AutoRepair {
     using AutoRepair.Catalogs;
+    using AutoRepair.Lists;
     using AutoRepair.Util;
     using ColossalFramework.UI;
     using ICities;
-    using System.IO;
+    using System;
+    using System.Collections.Generic;
     using UnityEngine;
 
     /// <summary>
@@ -23,8 +25,11 @@ namespace AutoRepair {
             
             group = helper.AddGroup("Announcements");
 
-            selected = Announce(group, 1806759255u, "Customize It Extended: Serious bug, unsubscribe it until further notice") || selected;
-            selected = Announce(group, 0u, "Metro Overhaul Mod: Updated, but still seems to have bugs with Sunset Harbor") || selected;
+            if (Announcements.Notes.Count > 0) {
+                foreach (KeyValuePair<ulong, string> entry in Announcements.Notes) {
+                    selected = Announce(group, entry.Key, entry.Value) || selected;
+                }
+            }
 
             if (!selected) {
                 Announce(group, 0u, "There are currently no announcements.");
@@ -51,6 +56,13 @@ namespace AutoRepair {
             selected = Options.Instance.LogIntroText;
             group.AddCheckbox("Add notes on mod management at top of log file", selected, sel => {
                 Options.Instance.LogIntroText = sel;
+                Options.Instance.Save();
+                Scanner.PerformScan();
+            });
+
+            selected = Options.Instance.LogLanguages;
+            group.AddCheckbox("Include details of languages/translations (where applicable)", selected, sel => {
+                Options.Instance.LogLanguages = sel;
                 Options.Instance.Save();
                 Scanner.PerformScan();
             });

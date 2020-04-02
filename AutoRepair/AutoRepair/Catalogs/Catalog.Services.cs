@@ -129,15 +129,18 @@ namespace AutoRepair.Catalogs {
                     { 1680840913u, Status.Incompatible }, // More Effective Transfer Manager
                     { 1632320836u, Status.Incompatible }, // Service Vehicles Manager 2.0.1
                     { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 649522495u , Status.Incompatible }, // District Service Limit
+                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                 },
                 ContinuationOf = 649522495u, // District Service Limit
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
-                      | ItemFlags.SourceAvailable,
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Lots of users report this mod no longer works for them." },
-                    { 1420955187u, "[Mod: Real Time] Disable citizen-limiting options in DSL mod to be compatible." },
+                    { NOTE, "Some users report it breaks deathcare, garbage and other services." },
+                    { NOTE, "Campus DLC: Deactivate 'Education in current district' for compatibility." },
+                    { 1420955187u, "[Mod: Real Time] For compatibility, disable citizen limiting options in District Service Limit." },
                 },
                 // ReplaceWith = 927293560u, // Geli Districts (also seems broken)
                 SourceURL = "https://github.com/TheDogKSP/cs-districts",
@@ -165,6 +168,7 @@ namespace AutoRepair.Catalogs {
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
                     { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)

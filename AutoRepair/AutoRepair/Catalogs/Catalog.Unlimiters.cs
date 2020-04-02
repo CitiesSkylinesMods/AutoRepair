@@ -55,7 +55,7 @@ namespace AutoRepair.Catalogs {
             // Compatibilities for 81 tiles mods
             Dictionary<ulong, Status> tile81compatibility = new Dictionary<ulong, Status>(tile25compatibility) {
                 // note: More Vehicles is compatible with BPs 81 Tiles mod but not any older versions
-                //       MV is specifically marked compatible with BPs 81 Tiles mod descriptor, but left
+                //       MV is specifically marked compatible with BPs 81 Tiles mod descriptor,
                 //       but left incompatible here for all the other 81 Tiles clones.
                 [1764208250u] = Status.Incompatible, // More Vehicles
                 // technical conflict with all 81 Tile mods:
@@ -63,7 +63,6 @@ namespace AutoRepair.Catalogs {
                 [616078328u ] = Status.Incompatible, // All Tile Start
                 // customisations sometimes reset outside central 25 tile area:
                 [1869561285u] = Status.MinorIssues , // Prop Painter 2.6.0
-                [1758376843u] = Status.MinorIssues , // Network Skins 2 (Sunset Harbor compatible)
                 [543722850u ] = Status.MinorIssues , // Network Skins (Park Life compatible)
                 [463845891u ] = Status.MinorIssues , // No Pillars
             };
@@ -174,7 +173,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile81compatibility) {
-                    [1764208250u] = Status.Compatible, // More Vehicles
+                    [1764208250u] = Status.MinorIssues, // More Vehicles
                 },
                 ContinuationOf = 422554572u, // 81 Tiles (original version by emf)
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -187,13 +186,24 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "After loading a save, terrain may look distorted but should quickly return to normal." },
                     { NOTE, "Dams cause tsunamis if placed outside central 25 tile area." },
                     { NOTE, "Disasters and evacuation don't work properly outside central 25 tile area." },
-                    { 1764208250u, "[Mod: More Vehicles] It is now compatible with 81 Tiles!" },
-                    { 1758376843u, "[Mod: Network Skins 2] Customisations sometimes reset outside of central 25 tile area." },
+                    { 1764208250u, "[Mod: More Vehicles] Some reports that 81 Tiles mod still isn't compatible with More Vehicles." },
+                    { 576327847u , "[Mod: Surface Painter] Customisations sometimes reset if used outside of central 25 tile area." },
                     { 543722850u , "[Mod: Network Skins] Customisations sometimes reset outside of central 25 tile area." },
                     { 463845891u , "[Mod: No Pillars] Customisations sometimes reset outside of central 25 tile area." },
                 },
                 ReleasedDuring = GameVersion.AfterDark,
                 SourceURL = "https://github.com/bloodypenguin/cities-skylines-unlimiter-1",
+            });
+
+            // 25 tiles - author still active
+            AddMod(new Item(413498678u, "All Spaces Unlockable - With Right Price") {
+                Affect = Factor.TileLimit,
+                Authors = "Klyte45",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceUnavailable,
+                ReleasedDuring = GameVersion.InitialRelease,
             });
 
             // 25 tiles - author still active
@@ -205,17 +215,6 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.MinorBugs, // doesn't increase purchase price after first 9 tiles
-                ReleasedDuring = GameVersion.InitialRelease,
-            });
-
-            // 25 tiles - author still active
-            AddMod(new Item(413498678u, "All Spaces Unlockable - With Right Price") {
-                Affect = Factor.TileLimit,
-                Authors = "Klyte45",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
-                CompatibleWith = GameVersion.PdxLauncher,
-                Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.InitialRelease,
             });
 
@@ -236,6 +235,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -250,6 +250,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -261,6 +262,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -272,6 +274,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -283,6 +286,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -294,6 +298,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -305,6 +310,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 81 tiles
@@ -322,6 +328,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
                 ReplaceWith = 576327847u, // 81 Tile (BP version)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 81 tiles
@@ -339,6 +346,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
                 ReplaceWith = 576327847u, // 81 Tile (BP version)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -352,6 +360,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 403798635u, // All Spaces Unlockable (by Klyte45)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -366,6 +375,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
                 ReplaceWith = 405810376u, // All 25 Areas purchasable (by tomdotio)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 81 tiles
@@ -383,6 +393,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
                 ReplaceWith = 576327847u, // 81 Tile (BP version)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -394,6 +405,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressOlderReplacementWarning = true,
             });
 
             // 25 tiles
@@ -437,7 +449,7 @@ namespace AutoRepair.Catalogs {
                 Locale = "zh-cn",
                 ReleasedDuring = GameVersion.GreenCities, // lolol
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
-                SkipVersionValidation = true,
+                SuppressVersionWarnings = true,
             });
 
             // 81 tiles
@@ -459,7 +471,8 @@ namespace AutoRepair.Catalogs {
                 Locale = "zh-cn",
                 ReleasedDuring = GameVersion.GreenCities, // lol!!
                 ReplaceWith = 576327847, // 81 Tiles (Fixed for 1.2+)
-                SkipVersionValidation = true,
+                SuppressOlderReplacementWarning = true,
+                SuppressVersionWarnings = true,
             });
 
             // 25 tiles

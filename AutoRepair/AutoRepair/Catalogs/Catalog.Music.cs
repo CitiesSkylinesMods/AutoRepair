@@ -45,6 +45,7 @@ namespace AutoRepair.Catalogs {
         /// * Add locales where applicable.
         /// </summary>
         private void MusicCatalog() {
+
             string catalog = "Music";
 
             /*
@@ -54,6 +55,32 @@ namespace AutoRepair.Catalogs {
             #      ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██      ██
             # ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ███████
             */
+
+            AddMusic(new Item(2042929072u, "Music Pack: Cubeworld Soundtrack Music Pack") {
+                Authors = "Exoidus",
+                Published = WorkshopDate("1 Apr, 2020"),
+                Updated = WorkshopDate("1 Apr, 2020"),
+            });
+
+            AddMusic(new Item(2040635682u, "Ocarina of Time music pack") {
+                Authors = "Consumedgrub2",
+                ReleasedDuring = GameVersion.SunsetHarbor,
+            });
+
+            AddMusic(new Item(2040545346u, "Zelda Radio for CSLMusicMod") {
+                Authors = "Consumedgrub2",
+                ReleasedDuring = GameVersion.SunsetHarbor,
+            });
+
+            AddMusic(new Item(2040390596u, "Animal Crossing Music Pack") {
+                Authors = "Consumedgrub2",
+                ReleasedDuring = GameVersion.SunsetHarbor,
+            });
+
+            AddMusic(new Item(2039485213u, "The Legend Of Zelda: Spirit Tracks Music Pack") {
+                Authors = "Consumedgrub2",
+                ReleasedDuring = GameVersion.SunsetHarbor,
+            });
 
             AddMusic(new Item(2037555938u, "Neon Genesis Evangelion Music Pack") {
                 Authors = "PoeticTeacup",

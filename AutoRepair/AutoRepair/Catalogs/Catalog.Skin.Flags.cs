@@ -238,7 +238,7 @@ namespace AutoRepair.Catalogs {
                     { 595017353u, Status.Required }, // Flags Replacer
                 },
                 Flags = ItemFlags.SourceUnavailable,
-                Locale = "az-tr",
+                Locale = "tr",
                 Tags = new[] {
                     "Flags", "Replacer", "Turkish",
                 },

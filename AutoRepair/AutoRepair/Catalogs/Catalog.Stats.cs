@@ -15,6 +15,7 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void StatsCatalog() {
+
             string catalog = "Stats";
 
             // economy stats
@@ -84,12 +85,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "live627",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
                     { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
                     { 1556715327u, Status.Incompatible }, // Show It!
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 414469593u, // Extended Building Information (emf)
@@ -137,23 +141,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/keallu/CSL-MonitorIt",
             });
 
-            AddMod(new Item(1785774902u, "Transfer Info (beta)") {
-                Affect = Factor.Other, // todo: better factor
-                Authors = "vpoteryaev",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
-                    { 1614061108u, Status.Compatible   }, // Real Construction
-                    { 1072157697u, Status.Incompatible }, // Cargo Info (original)
-                },
-                CompatibleWith = GameVersion.PdxLauncher,
-                ContinuationOf = 1072157697u, // Cargo Info
-                Flags = ItemFlags.Abandonware // author commented they lost interest in CSL
-                      | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Campus,
-                SourceURL = "https://github.com/vpoteryaev-cs-mods/TransferInfo",
-            });
-
             AddMod(new Item(1643902284u, "Watch It!") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "Keallu",
@@ -178,13 +165,16 @@ namespace AutoRepair.Catalogs {
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
                     { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
                     { 1556715327u, Status.Incompatible }, // Show It!
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended // by far the best building info mod
@@ -266,7 +256,54 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            // game breaking?
+            AddMod(new Item(2039486691u, "1133108993 Extended Building Information (1") {
+                Affect = Factor.BuildingInfo,
+                Authors = "Tykrane",
+                Catalog = catalog,
+                CloneOf = 1133108993u, // Extended Building Information (1.10+)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
+                    { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
+                    { 1556715327u, Status.Incompatible }, // Show It!
+                    { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
+                    { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
+                    { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking // multiple users report 'object ref not set' errors
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                ReplaceWith = 1875298330u, // Extended Building Info
+                SourceURL = "https://github.com/AmaroqOkami/Cities-Skylines-Extended-Building-Info",
+            });
+
+            AddMod(new Item(1785774902u, "Transfer Info (beta)") {
+                Affect = Factor.Other, // todo: better factor
+                Authors = "vpoteryaev",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1769420886u, Status.Required     }, // Panel Hook (beta) for modders
+                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
+                    { 1614061108u, Status.Compatible   }, // Real Construction
+                    { 1072157697u, Status.Incompatible }, // Cargo Info (original)
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                ContinuationOf = 1072157697u, // Cargo Info
+                Flags = ItemFlags.Abandonware // author commented they lost interest in CSL
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Author states they no longer play C:SL; this mod will not be updated." },
+                },
+                Published = WorkshopDate("29 Jun, 2019"),
+                ReleasedDuring = GameVersion.Campus,
+                SourceURL = "https://github.com/vpoteryaev-cs-mods/TransferInfo",
+                Updated = WorkshopDate("3 Oct, 2019"),
+            });
+
             AddMod(new Item(1739993783u, "Cargo Info (Fix)") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "vpoteryaev",
@@ -276,15 +313,19 @@ namespace AutoRepair.Catalogs {
                     { 1614061108u, Status.Incompatible }, // Real Construction
                     { 1072157697u, Status.Incompatible }, // Cargo Info (original version)
                 },
-                CompatibleWith = GameVersion.Campus,
+                CompatibleWith = GameVersion.PdxLauncher,
                 ContinuationOf = 1072157697u, // Cargo Info (original version)
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceBundled
-                      | ItemFlags.ForceMigration,
+                      | ItemFlags.SourceBundled,
                 Languages = new[] { "en", "de", "ru" },
                 Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Author states they no longer play C:SL; the mod will not be updated." },
+                },
+                Published = WorkshopDate("13 May, 2019"),
                 ReleasedDuring = GameVersion.Industries,
                 ReplaceWith = 1785774902u, // Transfer Info (beta)
+                Updated = WorkshopDate("21 Jun, 2019"),
             });
 
             // todo: warn about network traffic
@@ -355,12 +396,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "Ellie",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
                     { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
                     { 1556715327u, Status.Incompatible }, // Show It!
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 ContinuationOf = 928988785u, // Extended Building Information
                 Flags = ItemFlags.Abandonware
@@ -385,9 +429,10 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1785774902u, Status.Incompatible }, // Transfer Info (beta)
+                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
                     { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                     { 1614061108u, Status.Incompatible }, // Real Construction
-                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
+                    { 1072157697u, Status.Incompatible }, // Cargo Info (original version)
                 },
                 Languages = new[] { "en", "de", "ru" },
                 ReplaceWith = 1785774902u, // Transfer Info (beta)

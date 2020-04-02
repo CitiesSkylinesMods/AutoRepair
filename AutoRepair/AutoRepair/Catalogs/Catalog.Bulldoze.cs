@@ -102,30 +102,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/yakka34/AutomaticBulldoze",
             });
 
-            AddMod(new Item(639486063u, "Automatic Bulldoze v2") {
-                Affect = Factor.Bulldoze,
-                Authors = "mexahuk",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
-                },
-                ContinuationOf = 406132323u, // Automatic Bulldoze
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.Localised,
-                Languages = new[] { "en", "ru", "es", "de", "fr", "pt", "zh" },
-                Locale = "en",
-                SourceURL = "https://github.com/YuryScherbakov/AutomaticBulldozeV2",
-            });
-
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -185,7 +161,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus,
                 ReplaceWith = 639486063u, // Automatic Bulldoze v2
-                SkipVersionValidation = true, // author uploaded already-broken mod to workshop lol
+                SuppressVersionWarnings = true, // author uploaded already-broken mod to workshop lol
             });
 
             AddMod(new Item(1759514242u, "639486063 Automatic Bulldoze v2") {
@@ -234,7 +210,40 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.SourceUnavailable, // null reference errors for lots of users
                 ReleasedDuring = GameVersion.ParkLife,
-                ReplaceWith = 639486063u, // Automatic Bulldoze v2
+                ReplaceWith = 1507233911u, // Automatic Bulldoze * Campus Compatible *
+            });
+
+            AddMod(new Item(639486063u, "Automatic Bulldoze v2") {
+                Affect = Factor.Bulldoze,
+                Authors = "mexahuk",
+                BrokenBy = GameVersion.Campus,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865u, Status.Incompatible }, // Rebuild It!
+                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                },
+                CompatibleWith = GameVersion.Industries,
+                ContinuationOf = 406132323u, // Automatic Bulldoze
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Localised
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Languages = new[] { "en", "ru", "es", "de", "fr", "pt", "zh" },
+                Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Seems to have stopped working for many users since Campus update" },
+                },
+                ReleasedDuring = GameVersion.Snowfall,
+                ReplaceWith = 1507233911u, // Automatic Bulldoze * Campus Compatible *
+                SourceURL = "https://github.com/YuryScherbakov/AutomaticBulldozeV2",
             });
 
             AddMod(new Item(406132323u, "Automatic Bulldoze") {

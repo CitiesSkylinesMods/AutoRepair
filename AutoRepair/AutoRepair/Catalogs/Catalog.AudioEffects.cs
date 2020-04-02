@@ -126,6 +126,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required    }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 76 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
@@ -145,6 +146,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
@@ -160,6 +162,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "sv-se",
                 Tags = new[] {
@@ -178,6 +181,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 64 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "sv-se",
@@ -197,6 +201,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient", "Building", "Upgrade", "GTA",
@@ -212,6 +217,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 72 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "it",
@@ -232,6 +238,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 73 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "fr",
@@ -252,6 +259,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 70 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "nl",
@@ -272,6 +280,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 67 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "de-at",
@@ -292,6 +301,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 62 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "de",
@@ -311,6 +321,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
@@ -328,6 +339,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "de",
                 Tags = new[] {
@@ -345,6 +357,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "de-at",
                 Tags = new[] {
@@ -362,6 +375,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "en-us",
                 Tags = new[] {
@@ -381,13 +395,17 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
+                Languages = new[] { "nl", "en", "fr", },
                 Locale = "nl",
+                Published = WorkshopDate("26 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Dutch", "Nedelands", "Netherlands", "European",
                     "Buildings", "Trains", "Stations", "NS", "Spoorwegen", "announcement",
                 },
+                Updated = WorkshopDate("26 Jan, 2019"),
             });
 
             AddMod(new Item(1629745074u, "ÖBB Sound Pack for Ambient Sounds Tuner") {
@@ -399,13 +417,17 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
+                Languages = new[] { "de-at", "en" },
                 Locale = "de-at",
+                Published = WorkshopDate("19 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Austrian", "Vienna", "Österreich", "German", "Deutsch", "Wien", "European",
                     "Buildings", "Trains", "Stations", "Announcement", "ÖBB", "OBB", "OEBB",
                 },
+                Updated = WorkshopDate("19 Jan, 2019"),
             });
 
             AddMod(new Item(1628985258u, "CFF Sound Pack for Ambient Sounds Tuner") {
@@ -417,13 +439,17 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
+                Languages = new[] { "fr-ch", "en" },
                 Locale = "fr-ch",
+                Published = WorkshopDate("19 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Swiss", "Switzerland", "Schweiz", "Suisse", "French", "European",
                     "Buildings", "Trains", "Stations", "Announcement", "SBB", "CFF", "FFS",
                 },
+                Updated = WorkshopDate("19 Jan, 2019"),
             });
 
             AddMod(new Item(1624184698u, "SBB Sound Pack for Ambient Sounds Tune") {
@@ -435,13 +461,17 @@ namespace AutoRepair.Catalogs {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                     { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
-                Locale = "fr-de",
+                Languages = new[] { "de-ch", "en", "fr-ch", "it-ch", },
+                Locale = "de-ch",
+                Published = WorkshopDate("13 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Swiss", "Switzerland", "Schweiz", "Suisse", "German", "deutsch", "European",
                     "Buildings", "Trains", "Stations", "Announcement", "SBB", "CFF", "FFS",
                 },
+                Updated = WorkshopDate("18 Jan, 2019"),
             });
 
             AddMod(new Item(1480332470u, "Polish Sirens Pack [V2.2]") {
@@ -452,6 +482,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "pl",
                 Tags = new[] {
@@ -471,6 +502,7 @@ namespace AutoRepair.Catalogs {
                     { 818641631u , Status.Required    }, // Ambient Sounds Tuner 2.0
                     { 815103125u , Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "ja",
                 Tags = new[] {
@@ -487,6 +519,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "ko",
                 Tags = new[] {
@@ -504,6 +537,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "de",
                 Tags = new[] {
@@ -521,6 +555,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "de",
                 Tags = new[] {
@@ -538,6 +573,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "en-us",
                 Tags = new[] {

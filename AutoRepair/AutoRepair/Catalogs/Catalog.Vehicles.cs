@@ -58,7 +58,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: might have more conflicts
-            AddMod(new Item(1548831935u, "Advanced Vehicle Options AVO (Industries DLC ready)") {
+            AddMod(new Item(1548831935u, "Advanced Vehicle Options AVO") {
                 Affect = Factor.Customize
                        | Factor.Despawn // has options to remove vehicles
                        | Factor.Textures // vehicle colours
@@ -174,6 +174,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Industries,
                 ReplaceWith = 1548831935u, // Advanced Vehicle Options AVO (Industries DLC ready)
+                SuppressOlderReplacementWarning = true,
                 Tags = new[] { "Vehicles", "Capacity", "Transport" },
             });
 

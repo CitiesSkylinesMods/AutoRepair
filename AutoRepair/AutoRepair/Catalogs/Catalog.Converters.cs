@@ -70,7 +70,8 @@ namespace AutoRepair.Catalogs {
                     { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 1420955187u, Status.Compatible   }, // Real Time
+                    { 1288816430u, Status.Incompatible }, // Hex Colors
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
@@ -156,6 +157,7 @@ namespace AutoRepair.Catalogs {
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 1288816430u, Status.Incompatible }, // Hex Colors
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)

@@ -18,6 +18,51 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Balance";
 
+            AddMod(new Item(2039606384u, "Easy Mode: Money Mod") {
+                Affect = Factor.Revenue,
+                Authors = "Anvilarse",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
+                    { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sets all construction, maintennace and relocation costs to zero." },
+                    { 2039606384u, "[Mod: Free Maintenance] If using Easy Mode: Money, you don't need Free Maintenance (Easy Mode already has that)." },
+                },
+                ReleasedDuring = GameVersion.SunsetHarbor,
+            });
+
+            // confirmed by anvil that it sets maintenance to zero for everything (including transport)
+            AddMod(new Item(2039205403u, "Free Maintenance by Anvilarse") {
+                Affect = Factor.Revenue,
+                Authors = "Anvilarse",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
+                    { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sets all maintenance fees to zero." },
+                    { 2039606384u, "[Mod: Easy Mode: Money] Easy Money also sets maintenance fees to zero. Use one of the mods, not both." },
+                },
+                ReleasedDuring = GameVersion.SunsetHarbor,
+            });
+
             AddMod(new Item(2027161563u, "Lifecycle Rebalance Revisited") {
                 Affect = Factor.Aging
                        | Factor.Education
@@ -198,7 +243,9 @@ namespace AutoRepair.Catalogs {
                     { 1420955187u, Status.Compatible   }, // Real Time
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                ReleasedDuring = GameVersion.ParkLife,
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RealisticWalkingSpeed",
             });
 
@@ -209,9 +256,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "Xial",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 602336261u, Status.Incompatible }, // Maintenance Fees
-
                     { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 602336261u, Status.Incompatible }, // Maintenance Fees
                 },
                 ContinuationOf = 602336261u, // Maintenance Fees
                 Flags = ItemFlags.SourceAvailable,
@@ -282,7 +329,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Industries,
                 ReplaceWith = 1562650024u, // Rebalanced Industries
-                SkipVersionValidation = true,
+                SuppressVersionWarnings = true,
                 SourceURL = "https://github.com/Vectorial1024/SpecializedIndustryFixRedux",
             });;
 
@@ -452,8 +499,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.DemandRCI
                        | Factor.Despawn
                        | Factor.Employment
-                       | Factor.FireSpread
-                       | Factor.Flooding
+                       | Factor.Disasters
                        | Factor.Happiness
                        | Factor.Immigrants
                        | Factor.MaintenanceCost
@@ -470,20 +516,29 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.ParkLife,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
                     { 1776052533u, Status.Incompatible }, // Stops & Stations
                     { 1766839841u, Status.Incompatible }, // Anxiety Reducer
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
                     { 1614061108u, Status.Incompatible }, // Real Construction
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1556715327u, Status.Incompatible }, // Show It!
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1420955187u, Status.Incompatible }, // Real Time
                     { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
+                    { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
 
@@ -728,8 +783,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.DemandRCI
                        | Factor.Despawn
                        | Factor.Employment
-                       | Factor.FireSpread
-                       | Factor.Flooding
+                       | Factor.Disasters
                        | Factor.Happiness
                        | Factor.Immigrants
                        | Factor.MaintenanceCost
@@ -746,22 +800,30 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.AfterDark,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // incompat with all extended building info
                     // incompat with t++ & likely other traffic mods
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
                     { 1776052533u, Status.Incompatible }, // Stops & Stations
                     { 1766839841u, Status.Incompatible }, // Anxiety Reducer
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
                     { 1614061108u, Status.Incompatible }, // Real Construction
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1556715327u, Status.Incompatible }, // Show It!
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1420955187u, Status.Incompatible }, // Real Time
                     { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
+                    { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
 

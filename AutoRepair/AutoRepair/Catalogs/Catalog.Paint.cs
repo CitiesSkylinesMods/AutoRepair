@@ -56,6 +56,7 @@ namespace AutoRepair.Catalogs {
             // editor mod
             AddMod(new Item(1288816430u, "Hex Colors") {
                 Authors = "targa",
+                Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // COMPATIBLE:
                     // 81 Tiles
@@ -88,13 +89,35 @@ namespace AutoRepair.Catalogs {
                     { 586012417u , Status.Incompatible }, // Ploppable RICO
                     // RICO Revisited?
                 },
-                Flags = ItemFlags.SourceAvailable,
+                Flags = ItemFlags.EditorMod
+                      | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 2016920607u, "[Ploppable RICO] Breaks the Hex Color in the asset editor." },
                     { 1204126182u, "[Ploppable RICO] Breaks the Hex Color in the asset editor." },
                     { 586012417u , "[Ploppable RICO] Breaks the Hex Color in the asset editor." },
                 },
                 SourceURL = "https://github.com/targettius/cs-hex-colors",
+            });
+
+            AddMod(new Item(689937287u, "Surface Painter") {
+                Affect = Factor.Textures,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 576327847u , Status.MinorIssues  }, // 81 Tiles (BP version)
+                    { 502750307u , Status.Required     }, // Extra Landscaping Tools
+                },
+                CompatibleWith = GameVersion.PdxLauncher,
+                Flags = ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Users reporting 'Array index is out of range' errors." },
+                    { NOTE, "Sunset Harbor: Users reporting that the painted textures look strange." },
+                    { 672248733u, "[Mod: Ultimate Eye Candy] May cause Surface Painer customisations to reset (unconfirmed reports)." },
+                    { 576327847u, "[Mod: 81 Tiles] Surface Painter customisations sometimes reset if 81 Tiles active." },
+                },
+                SourceURL = "https://github.com/bloodypenguin/Skylines-SurfacePainter",
             });
 
             /*

@@ -106,6 +106,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
                     { 411016892u , Status.Incompatible }, // Enhanced Zoom
                 },
@@ -121,6 +122,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1492317158u, Status.Incompatible }, // 第一人称视角
                     { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 650805785u , Status.Incompatible }, // First Person Camera: Updated
                     { 406255342u , Status.Incompatible }, // First-person camera
                 },
@@ -157,6 +159,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1492317158u, Status.Incompatible }, // 第一人称视角
                     { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 650805785u , Status.Incompatible }, // First Person Camera: Updated
                     { 406255342u , Status.Incompatible }, // First-person camera
                 },
@@ -172,7 +175,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 650805785u, // First Person Camera: Updated
                 ReleasedDuring = GameVersion.ParkLife,
                 Locale = "zh-cn",
-                SkipVersionValidation = true, // it was long broken when added to workshop lol
+                SuppressVersionWarnings = true, // it was long broken when added to workshop lol
             });
 
             // literally an exact copy of 650805785u
@@ -184,6 +187,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1492317158u, Status.Incompatible }, // 第一人称视角
                     { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 650805785u , Status.Incompatible }, // First Person Camera: Updated
                     { 406255342u , Status.Incompatible }, // First-person camera
                 },
@@ -199,6 +203,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
                     { 411016892u , Status.Incompatible }, // Enhanced Zoom
                 },
@@ -219,6 +224,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
                     { 411016892u , Status.Incompatible }, // Enhanced Zoom
                 },
@@ -239,6 +245,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1492317158u, Status.Incompatible }, // 第一人称视角
                     { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955u , Status.Incompatible }, // City Drive
                     { 650805785u , Status.Incompatible }, // First Person Camera: Updated
                     { 406255342u , Status.Incompatible }, // First-person camera
                 },

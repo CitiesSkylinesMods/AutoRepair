@@ -20,6 +20,124 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Unsorted";
 
+            AddMod(new Item(2044145894u, "Dropouts Sunset Fix") {
+                Authors = "Bobinator The Destroyer!",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 506982407u, Status.Incompatible }, // Dropouts
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 506982407u, // Dropouts
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This is a temporary bug fix mod for Dropouts mod." },
+                },
+                Published = WorkshopDate("1 Apr, 2020"),
+                ReleasedDuring = GameVersion.SunsetHarbor,
+                Updated = WorkshopDate("1 Apr, 2020"),
+            });
+
+            AddMod(new Item(2040656402u, "Harmony") {
+                Affect = Factor.Other,
+                Authors = "boformer",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This is a dependency for multiple mods, do not remove." },
+                },
+                Published = WorkshopDate("30 Mar, 2020"),
+                SourceURL = "https://github.com/boformer/CitiesHarmony",
+                Updated = WorkshopDate("31 Mar, 2020"),
+            });
+
+
+            AddMod(new Item(2040218778u, "ScaleUI") {
+                Affect = Factor.Other, // todo
+                Authors = "*",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // likely incompatible with TMPE
+                    { 2040218778u, Status.Incompatible }, // ScaleUI
+                    { 2009172305u, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 802489150u , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
+                    { 419090722u , Status.Incompatible }, // Mod Corral
+                    { 411164732u , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
+                    { 409338401u , Status.Incompatible }, // ScaleUI (beta)
+                    { 407225523u , Status.Incompatible }, // TextScaleMod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 409338401u, // ScaleUI (beta)
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Can break UI of other mods during scaling (close buttons move, panels go off-screen, etc.)" },
+                    { NOTE, "Breaks UI of all versions of Extended Public Transport UI mods." },
+                },
+                ReleasedDuring = GameVersion.SunsetHarbor,
+                SourceURL = "https://github.com/joeyjojojunior/skylines-scaleui",
+            });
+
+            AddMod(new Item(409338401u, "ScaleUI (beta)") {
+                Affect = Factor.Other, // todo
+                Authors = "permutation",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040218778u, Status.Incompatible }, // ScaleUI
+                    { 2009172305u, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 802489150u , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
+                    { 419090722u , Status.Compatible   }, // Mod Corral
+                    { 411164732u , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
+                    { 409338401u , Status.Incompatible }, // ScaleUI (beta)
+                    { 407225523u , Status.Incompatible }, // TextScaleMod
+                },
+                ContinuationOf = 407225523u, // TextScaleMod
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete // new ver avail
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "To reset scale to default, hit Ctrl+0 (zero)." },
+                },
+                ReplaceWith = 2040218778u, // ScaleUI
+                SourceURL = "https://github.com/githubpermutation/skylines-scaleui",
+            });
+
+            AddMod(new Item(419090722u, "Mod Corral") {
+                Affect = Factor.Other, // todo
+                Authors = "(unknown)",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040218778u, Status.Incompatible }, // ScaleUI
+                    { 409338401u , Status.Compatible   }, // ScaleUI (beta)
+                    { 407225523u , Status.Incompatible }, // TextScaleMod
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceUnavailable,
+            });
+
+            AddMod(new Item(407225523u, "TextScaleMod") {
+                Affect = Factor.Other, // todo
+                Authors = "(unknown)",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040218778u, Status.Incompatible }, // ScaleUI
+                    { 2009172305u, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 419090722u , Status.Incompatible }, // Mod Corral
+                    { 412149127u , Status.Incompatible }, // Font Selector
+                    { 409338401u , Status.Incompatible }, // ScaleUI (beta)
+                    { 407225523u , Status.Incompatible }, // TextScaleMod
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceUnavailable,
+            });
+
             // looks like translated clone of Favorite Cims mod
             AddMod(new Item(1985556066u, "4546") {
                 Affect = Factor.Other,
@@ -36,8 +154,6 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.PdxLauncher,
                 ReplaceWith = 426460372u, // Favorite Cims
             });
-
-
 
             AddMod(new Item(1927186256u, "Problem Info") {
                 Affect = Factor.Other,
@@ -149,25 +265,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.GameBreaking
                       | ItemFlags.SourceUnavailable,
-                SkipVersionValidation = true,
-            });
-
-            AddMod(new Item(1801953480u, "Natural Disasters Overhaul") {
-                Affect = Factor.Environment,
-                Authors = "Zenya",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1420955187u, Status.MinorIssues  }, // Real Time (causes excessive thunderstorms)
-                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline (ditto)
-                    // todo: check compat with other disaster mods
-                },
-                CompatibleWith = GameVersion.PdxLauncher,
-                Flags = ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { 1420955187u, "[Mod: Real Time] Slower time rate results in excessive number of thunderstorms." },
-                },
-                RequiredDLC = DLCs.NaturalDisasters,
-                SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Enhanced-Disasters",
+                SuppressVersionWarnings = true,
             });
 
             AddMod(new Item(1800844556u, "Zone Mixer 0 (Beta)") {
@@ -189,8 +287,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/kvakvs/Skylines-UX",
             });
 
-
-
             // sounds like bit of a nightmare
             AddMod(new Item(1769420886u, "Panel Hook (beta) for modders") {
                 Affect = Factor.BuildingInfo
@@ -202,8 +298,14 @@ namespace AutoRepair.Catalogs {
                     // snooper?
                     // klyte mods?
                 },
-                Flags = ItemFlags.SourceAvailable,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Author states they no longer play C:SL; this mod will not be updated." },
+                },
+                Published = WorkshopDate("14 Jun, 2019"),
                 SourceURL = "https://github.com/vpoteryaev-cs-mods/PanelHook",
+                Updated = WorkshopDate("11 Jul, 2019"),
             });
 
             AddMod(new Item(1768810491u, "Measure It!") {
@@ -291,6 +393,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1420955187u, // Real Time (original by dymanoid)
+                SuppressOlderReplacementWarning = true,
             });
 
             AddMod(new Item(1706703944u, "More Outside Interaction") {
@@ -355,6 +458,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "saki7, Ryuichi Kaminogi",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
                     { 2035564927u, Status.Compatible   }, // 25parts_su
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
@@ -386,8 +490,10 @@ namespace AutoRepair.Catalogs {
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options 1.8.5
                     { 1457742795u, Status.Compatible   }, // 403798635 All Spaces Unlockable
                     { 1449194984u, Status.Compatible   }, // 25格汉化版
+                    { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1388613752u, Status.Incompatible }, // Tree Movement Control
                     { 1369729955u, Status.Incompatible }, // Customize It!
+                    { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
                     { 1361478243u, Status.Incompatible }, // 81 Tiles
                     { 1314938052u, Status.Compatible   }, // UnlockAreaCountLimit
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
@@ -530,7 +636,7 @@ namespace AutoRepair.Catalogs {
                     { 409070739u , Status.MinorIssues  }, // Very Slow Citizen Aging
                     { 409070218u , Status.MinorIssues  }, // Slow Citizen Aging
                     // conceptual conflict: construction
-                    { 2016920607u, Status.MinorIssues  }, // RICO revisited
+                    { 2016920607u, Status.Compatible   }, // RICO revisited
                     { 1899943042u, Status.MinorIssues  }, // No Scaffolding Animation
                     { 1614061108u, Status.Compatible   }, // Real Construction
                     { 1204126182u, Status.MinorIssues  }, // Ploppable Rico High Density Fix
@@ -554,11 +660,13 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "The 'Better citizen aging' option has a big influence on how education works." },
                     { 1911736890u, "[Mod: District Service Limit] Disable its citizen-limiting options to make compatible with Real Time." },
                     { 1801953480u, "[Mod: Natural Disasters Overhaul] Real Time changes time flow, causuing excessive thunder storms." },
+                    { 1204126182u, "[Mod: Ploppable RICO] Old versions of the mod sometimes report zero construction time which crashes Real Time." },
                     { 924884948u , "[Mod: Plop the Growables] If plopped buildings disappear, set 'Construction speed' to 100% in Real Time." },
                     { 814698320u , "[Mod: TimeWarp Fix] Game will pause when you change time, time will revert when game unpaused." },
                     { 672248733u , "[Mod: Ultimate Eye Candy] Game will pause when you change time, time will revert when game unpaused." },
                     { 649522495u , "[Mod: District Service Limit] Disable its citizen-limiting options to make compatible with Real Time." },
                     { 629713122u , "[Mod: Climate Control] It breaks the citizen schedules in Real Time." },
+                    { 586012417u , "[Mod: Ploppable RICO] Old versions of the mod sometimes report zero construction time which crashes Real Time." },
                 },
                 ReleasedDuring = GameVersion.ParkLife,
                 SourceURL = "https://github.com/dymanoid/RealTime",
@@ -609,7 +717,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users report lag and reduced framerate when using this mod." },
+                    { NOTE, "The mod runs quite a bit of code every frame = lag." },
                     { NOTE, "Achievement Unlocker: Icon still has a lock on it (minor bug), but achievements should work." },
                 },
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
@@ -672,6 +780,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1263262833u, "Pollution Solution") {
                 Affect = Factor.Pollution,
                 Authors = "Shadow Link",
+                Catalog = catalog,
                 Flags = ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // todo
@@ -682,6 +791,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1242879105u, "Unlock Any Milestone") {
                 Affect = Factor.Milestones,
                 Authors = "Ilion",
+                Catalog = catalog,
                 Flags = ItemFlags.Abandonware // author suggests to use "Extended Game Options" mod
                                               //| ItemFlags.Obsolete (still works according to comments)
                       | ItemFlags.SourceUnavailable,
@@ -701,6 +811,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1239683428u, "Budget Controller") {
                 Affect = Factor.Budget,
                 Authors = "wboler05",
+                Catalog = catalog,
                 Flags = ItemFlags.MinorBugs
                       | ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -709,14 +820,16 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/wboler05/CS-BudgetController",
             });
 
-
-
             // refund full construction cost when bulldozing
             AddMod(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
                 Authors = "C#",
+                Catalog = catalog,
                 Flags = ItemFlags.SourceUnavailable,
                 // todo check conflict with other refund mods
             });
+
+
+
         }
     }
 }

@@ -24,14 +24,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // todo: old Fine Road mods not compatible
+                    { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
                     { 1895443005u, Status.Compatible   }, // Fine Road Anarchy 2 汉化版
-                    { 1895440521u, Status.Compatible }, // Fine Road Tool 2 汉化版
+                    { 1895440521u, Status.Compatible   }, // Fine Road Tool 2 汉化版
                     { 1844442251u, Status.Recommended  }, // Fine Road Tool 2
                     { 1844440354u, Status.Recommended  }, // Fine Road Anarchy 2
                     { 1840448750u, Status.Incompatible }, // FineRoadTool 汉化版
                     { 1833197583u, Status.Recommended  }, // Station Board 6m
                     { 1833197028u, Status.Recommended  }, // Station Board 12m
+                    { 1619685021u, Status.Recommended  }, // Move It (latest stable)
                     { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
                     { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
@@ -87,7 +88,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            // http://proceduralobjects.shoutwiki.com/wiki/Main_Page
+            // 
             AddMod(new Item(1094334744u, "Procedural Objects") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Props,
@@ -100,6 +101,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Documentation; http://proceduralobjects.shoutwiki.com/wiki/Main_Page" },
+                    { NOTE, "Fonts for Procedural Objects: https://steamcommunity.com/workshop/filedetails/?id=1897915526" },
+                },
                 ReleasedDuring = GameVersion.MassTransit,
                 SourceURL = "https://github.com/simon56modder/ProceduralObjects",
                 Tags = new[] { "Text", "Font", "Procedural", "Signs", "Signage", "Props", "Buildings", "Editor", "Dynamic", },
