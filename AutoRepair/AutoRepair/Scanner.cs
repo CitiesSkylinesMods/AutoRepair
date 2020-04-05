@@ -24,27 +24,39 @@ namespace AutoRepair {
         /// Performs the compatibility scan.
         /// </summary>
         public static void PerformScan() {
-            Stopwatch timer = Stopwatch.StartNew();
-
             try {
+                Stopwatch timer = Stopwatch.StartNew();
+
                 Log.Reset();
-                Log.Info($"\nLoaded {Catalog.Instance.Items.Count} AutoRepair Descriptors.");
+                Log.Info($"\nLoaded {Catalog.Instance.Count} AutoRepair Descriptors.");
+
                 DoScan();
+
+                timer.Stop();
+                Log.Info($"\nAutoRepair scanned {subscriptions.Count} items in {timer.ElapsedMilliseconds}ms");
+
+                subscriptions.Clear();
             }
             catch (Exception e) {
-                Log.Info("Something went horribly wrong...");
+                Log.Info("Failure...");
                 Log.Error(e.ToString());
             }
-
-            timer.Stop();
-            Log.Info($"AutoRepair scan took {timer.ElapsedMilliseconds}ms");
+            finally {
+                Catalog.Close();
+            }
         }
 
+        /// <summary>
+        /// Maps subscribed mods to their names.
+        /// </summary>
         private static Dictionary<ulong, string> subscriptions;
 
+        /// <summary>
+        /// Scans the subscribed mods for issues.
+        /// </summary>
         private static void DoScan() {
 
-            StringBuilder log = new StringBuilder(1024 * 50);
+            StringBuilder log = new StringBuilder(1024 * 100);
 
             log.Append("\nGeneral Announcements:\n");
 
@@ -90,7 +102,7 @@ namespace AutoRepair {
                 subscriptions.Clear();
             }
 
-            log.Append("\nStarting compatibility scan...\n");
+            log.Append("\nSscanning...\n");
 
             // populate list of subscribed mod workshop ids
             foreach (PluginInfo plugin in plugins) {
@@ -126,7 +138,7 @@ namespace AutoRepair {
 
             log.Append("\nOudated information? Please let us know! https://steamcommunity.com/sharedfiles/filedetails/?id=2034713132 \n"); // todo
 
-            log.Append("\nIf this compatibility checker helped even a little bit,\nplease conisder commenting/rating it in the workshop to help others find it.");
+            log.Append("\nDid it help? Please rate/comment the compatibility checker mod in the workshop to help others find it.");
 
             Log.Info(log.ToString());
         }
@@ -153,7 +165,7 @@ namespace AutoRepair {
 
             // todo: find a decent way to identify local mods
             if (isLocal || isVanilla) {
-                log.Append(" - Bundled/local mods are not currently scanned, sorry.\n");
+                log.Append(" - Bundled/local mods not scanned.\n");
                 return;
             }
 
@@ -168,7 +180,7 @@ namespace AutoRepair {
                 //log.Append("\n - It would be helpful if you could copy and paste the mod id/name above\n");
                 //log.Append("   to the Compatibility Checker workshop page linked at top of log file.\n");
                 if (Options.Instance.LogWorkshopURLs) {
-                    log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
+                    log.AppendFormat("\n - Workshop page: {0}\n", GetWorkshopURL(modId));
                 }
 
                 return;
@@ -194,7 +206,7 @@ namespace AutoRepair {
                 } else if (GameVersion.Active >= (descriptor.BrokenBy ?? GameVersion.DefaultUntil)) {
                     log.Append("\n - Not compatible with current game version. Disable it until an update is ready.\n");
                 } else if (GameVersion.Active <= (descriptor.CompatibleWith ?? GameVersion.DefaultRelease)) {
-                    log.AppendFormat("\n - Confirmed compatible with Cities: Skylines v{0} :)\n", GameVersion.Active.ToString(3));
+                    log.AppendFormat("\n - Compatible with Cities: Skylines v{0} :)\n", GameVersion.Active.ToString(3));
                 } else {
                     log.Append("\n - Should be compatible with current game version (if not, let us know).\n");
                 }
@@ -208,7 +220,7 @@ namespace AutoRepair {
                 }
 
                 if (HasFlag(flags, ItemFlags.EditorBreaking)) {
-                    log.Append("\n - Causes problems in content editors; disable and restart game before opening editor.\n");
+                    log.Append("\n - Causes problems in content editors; before using editors, disable it and exit to desktop to flush it from RAM.\n");
                 }
 
                 if (HasFlag(flags, ItemFlags.Abandonware)) {
@@ -240,20 +252,20 @@ namespace AutoRepair {
                 }
 
                 if (HasFlag(flags, ItemFlags.SaveChanging)) {
-                    log.Append("\n - Alters the save game; without the mod, the savegame might be unusable.\n");
+                    log.Append("\n - Alters the save game; without it, the savegame might break.\n");
                 }
 
                 if (HasFlag(flags, ItemFlags.Unreliable)) {
-                    log.Append("\n - Some users report major problems; check its workshop page/comments for details.\n");
+                    log.Append("\n - Some users report problems; check workshop page/comments for details.\n");
                 }
 
                 if (Options.Instance.LogLanguages) {
                     if (descriptor.Languages != null) {
                         log.AppendFormat(
-                            "\n - Contains translations for: {0}\n",
+                            "\n - Contains locales: {0}\n",
                             string.Join(", ", Locale.FromStringArray(descriptor.Languages).ToArray()));
                     }
-                    log.AppendFormat("\n - Default language: {0}\n", Locale.ToString(descriptor.Locale));
+                    log.AppendFormat("\n - Primary locale: {0}\n", Locale.ToString(descriptor.Locale));
                 }
 
                 if (Options.Instance.LogSourceURLs) {
@@ -262,15 +274,15 @@ namespace AutoRepair {
                             log.AppendFormat("\n - Source available: {0}\n", descriptor.SourceURL);
                         }
                     } else if (HasFlag(flags, ItemFlags.SourceBundled)) {
-                        log.Append("\n - Source code is included in the mod 'Source' folder.\n");
+                        log.Append("\n - Source is bundled in its 'Source' folder.\n");
                     } else if (HasFlag(flags, ItemFlags.SourceUnavailable)) {
                         // todo: check for `Source` folder in mod folder
-                        log.Append("\n - No source code/files found (yet); it might be difficult to update in future.\n");
+                        log.Append("\n - No source code/files found (yet); future updates will be difficult.\n");
                     }
                 }
 
                 if (HasFlag(flags, ItemFlags.SourceObfuscated)) {
-                    log.Append("\n - ALERT: The mod source code is obfuscated to prevent inspection!\n");
+                    log.Append("\n - WARNING: Source code is obfuscated, preventing inspection!\n");
                 }
 
                 if (descriptor.Compatibility.Count > 0) {
@@ -302,7 +314,7 @@ namespace AutoRepair {
             uint reqSubscribed = 0;
 
             foreach (KeyValuePair<ulong, Status> entry in descriptor.Compatibility) {
-                if (entry.Key == descriptor.WorkshopId) {
+                if (entry.Key == 0u || entry.Key == descriptor.WorkshopId) {
                     continue;
                 }
 
@@ -324,7 +336,7 @@ namespace AutoRepair {
                         }
 
                         // todo: check required item is enabled
-                        if (!subscriptions.ContainsKey(entry.Key)) {
+                        if (!IsSunbscribed(entry.Key)) {
                             log.AppendFormat("\n - It won't work without: {0}\n", GetWorkshopURL(entry.Key));
                         } else {
                             ++reqSubscribed;
@@ -334,6 +346,11 @@ namespace AutoRepair {
                         break;
                 }
             }
+        }
+
+        // returns true if subbed
+        private static bool IsSunbscribed(ulong id) {
+            return subscriptions.ContainsKey(id);
         }
 
         // check if Notes id is an "always show" note.

@@ -1,10 +1,11 @@
 namespace AutoRepair {
+#if DEBUG
     using AutoRepair.Catalogs;
+#endif
     using AutoRepair.Lists;
     using AutoRepair.Util;
     using ColossalFramework.UI;
     using ICities;
-    using System;
     using System.Collections.Generic;
     using UnityEngine;
 
@@ -15,10 +16,13 @@ namespace AutoRepair {
 
         /// <summary>
         /// Define components for settings UI.
+        ///
+        /// Full settings are rendered at main menu; only partial settings are rendered in-game.
         /// </summary>
         /// 
         /// <param name="helper">UI helper from the game.</param>
-        public static void Render(UIHelperBase helper) {
+        /// <param name="scene">The currently active scene from <c>SceneManager.GetActiveScene()</c>.</param>
+        public static void Render(UIHelperBase helper, string scene) {
             UIHelperBase group;
             bool selected = false;
             string path, caption;
@@ -52,6 +56,14 @@ namespace AutoRepair {
             UITextField field = (UITextField)group.AddTextfield(caption, path, _ => { });
             field.selectOnFocus = true;
             field.width = 650f;
+
+            if (Application.platform == RuntimePlatform.WindowsPlayer) {
+                group.AddButton("Open File Explorer", () => System.Diagnostics.Process.Start("explorer.exe", "/select," + path));
+            }
+
+            if (scene == "Game") {
+                return;
+            }
 
             selected = Options.Instance.LogIntroText;
             group.AddCheckbox("Add notes on mod management at top of log file", selected, sel => {

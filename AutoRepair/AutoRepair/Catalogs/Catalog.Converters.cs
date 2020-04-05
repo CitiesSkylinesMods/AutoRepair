@@ -51,7 +51,11 @@ namespace AutoRepair.Catalogs {
                     { 1094334744u, Status.Compatible   }, // Procedural Objects
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.SlowLoad
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have lots of tree and vehicle assets, loading cities may take significnatly longer." },
+                },
                 ReleasedDuring = GameVersion.PdxLauncher,
             });
 
@@ -89,6 +93,27 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/algernon-A/Ploppable-RICO-Revisited",
             });
 
+            // todo: requires Campus DLC
+            AddMod(new Item(1824254667u, "Campus Parks") {
+                Affect = Factor.Customize
+                       | Factor.PlaceAndMove,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1393452031u, Status.Required      }, // Parkify
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Allows parks to be placed in Campus areas. If mod is removed, they will despawn." },
+                },
+                Published = WorkshopDate("3 Aug, 2019"),
+                RequiredDLC = DLCs.Campus,
+                SourceURL = "https://github.com/bloodypenguin/Skylines-CampusParks",
+                Tags = new[] { "Vehicles", "Cargo", "Truck", "Ship", "Aircraft", "Airplane", },
+                Updated = WorkshopDate("4 Aug, 2019"),
+            });
+
             AddMod(new Item(1546357276u, "Industries Vehicle Converter") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
@@ -110,6 +135,24 @@ namespace AutoRepair.Catalogs {
                 RequiredDLC = DLCs.Industries,
                 Tags = new[] { "Vehicles", "Cargo", "Truck", "Ship", "Aircraft", "Airplane", },
             });
+
+            // require dlc: park life
+            AddMod(new Item(1393452031u, "Parkify") {
+                Affect = Factor.Customize,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Converts some vanilla game unique buildings in to Park Life park buildings."},
+                    { NOTE, "Also adds missing boats to the Marina and Fishing Tours buildings from After Dark DLC (if you have it)." },
+                },
+                Published = WorkshopDate("24 May, 2018"),
+                RequiredDLC = DLCs.ParkLife,
+                Updated = WorkshopDate("8 Jun, 2018"),
+            }); 
 
             AddMod(new Item(795514116u, "Train Converter") {
                 Affect = Factor.Customize

@@ -148,16 +148,22 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1893036262u, Status.MinorIssues  }, // Mayor's Dashboard v2
                     { 1383456057u, Status.Incompatible }, // Shicho
+                    // https://github.com/keallu/CSL-WatchIt/issues/3 :
+                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options (latest)
+                    { 1764208250u, Status.Incompatible }, // More Vehicles
+                    { 576327847u , Status.Incompatible }, // 81 Tiles
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorBugs // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Harmony errors in log on game exit; doesn't seem to cause any problems." },
+                    { NOTE, "Watch It may crash if used with More Vehicles / 81 Tiles / AVO mods. See: https://github.com/keallu/CSL-WatchIt/issues/3" },
                     { 1893036262u, "[Mod: Mayors Dashboard] Has same functionality as Watch It; consider unsubscribing one of these mods." },
                 },
-                ReleasedDuring = GameVersion.Industries,
+                Published = WorkshopDate("3 Feb, 2019"),
                 SourceURL = "https://github.com/keallu/CSL-WatchIt",
+                Updated = WorkshopDate("20 Oct, 2019"),
             });
 
             AddMod(new Item(1556715327u, "Show It!") {

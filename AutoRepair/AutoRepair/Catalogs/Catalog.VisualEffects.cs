@@ -117,6 +117,28 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "LODs", "Detail", "Graphics", "Eyecandy", "Trees", "Props", "Buildings", "Networks", "Decals" },
             });
 
+            AddMod(new Item(1664509314u, "Custom Animation Loader (CAL)") {
+                Affect = Factor.Rendering,
+                Authors = "boformer",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1706978404u, Status.Recommended }, // Animated Excavator アニメーションユンボ
+                    { 2010704792u, Status.Recommended }, // Animated Excavator CAT 365C L
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.EditorMod
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Find animated assets here: https://steamcommunity.com/workshop/browse/?appid=255710&section=readytouseitems&requiredtags%5B%5D=custom%20animation" },
+                    { NOTE, "Some animations won't work if the building has no power or is disabled." },
+                    { NOTE, "Asset creators, see: http://cslmodding.info/mod/custom-animation-loader/" },
+                    { NOTE, "A (slightly outdated) video shows how to create assets: https://www.youtube.com/watch?v=Y7SABko_ZXQ" },
+                },
+                Published = WorkshopDate("23 Feb, 2019"),
+                SourceURL = "https://github.com/boformer/CustomAnimationLoader",
+                Updated = WorkshopDate("27 Mar, 2019"),
+            });
+
             AddMod(new Item(1410003347u, "Additive Shader") {
                 Affect = Factor.Rendering,
                 Authors = "Ronyx69, Simon Ryr",

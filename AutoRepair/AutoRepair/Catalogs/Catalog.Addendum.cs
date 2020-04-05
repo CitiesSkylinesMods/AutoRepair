@@ -134,7 +134,6 @@ namespace AutoRepair.Catalogs {
             Dead(418352365u , "Pedestrian Suspension Bridge");
             Dead(410842044u , "Persistent Resource View");
             Dead(685747254u , "Prop Fine Tune");
-            Dead(1499486217u, "Ragnarok EXTREME EDITION");
             //Dead(1122848011u, "regency_corner_restaurant");
             Dead(813835951u , "Remove Cows [1.6]");
             Dead(587545554u , "Remove Cows [Fixed for v1.4+]");

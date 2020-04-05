@@ -12,14 +12,25 @@ namespace AutoRepair.Catalogs {
         /// Add mods to list.
         /// </summary>
         private void RepairCatalog() {
+
             string catalog = "Repair";
+
+            AddMod(new Item(2041457644u, "Patch Loader Mod") {
+                Affect = Factor.Other,
+                Authors = "Krzychu1245, egi",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("30 Mar, 2020"),
+                Updated = WorkshopDate("4 Apr, 2020"),
+            });
 
             AddMod(new Item(2037888659u, "Instant Return To Desktop") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "Cgameworld",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
+                Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.SunsetHarbor,
@@ -111,8 +122,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "aubergine18",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
+                Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.PdxLauncher,
@@ -123,9 +133,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "Krzychu1245",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // no known issues!
-                },
+                Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceUnavailable,
@@ -136,6 +144,8 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "krzychu1245",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/CitiesSkylinesMods/BrokenNodeDetector",
             });
@@ -144,6 +154,8 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "thale5",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/thale5/Safenets",
@@ -153,6 +165,8 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "egi",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RoadRemovalTool",
             });
@@ -162,8 +176,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
+                Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.BrokenByUpdate
                       | ItemFlags.SourceAvailable,

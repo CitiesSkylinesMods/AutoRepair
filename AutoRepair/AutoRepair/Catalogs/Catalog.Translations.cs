@@ -75,6 +75,7 @@ namespace AutoRepair.Catalogs {
                     { 1865667356u, Status.Incompatible }, // Twitch Citizens
                     { 1322787091u, Status.Unknown      }, // Addresses & Names Mod 2.0.1
                     { 1231957400u, Status.Incompatible }, // Custom Namelists
+                    { 950011274u , Status.Incompatible }, // Japanese Romaji Names [BETA]
                     { 937334007u , Status.Incompatible }, // Japanese Localization RD
                     { 935356978u , Status.Incompatible }, // CSL Names Pack Example [1.0.0]
                     { 935350530u , Status.Incompatible }, // CSL Custom Names [1.0.0]
@@ -214,6 +215,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1231957400u, Status.Required     }, // Custom Namelists
+                    { 950011274u , Status.Incompatible }, // Japanese Romaji Names [BETA]
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
@@ -229,6 +231,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1231957400u, Status.Required     }, // Custom Namelists
+                    { 950011274u , Status.Incompatible }, // Japanese Romaji Names [BETA]
                     { 937334007u , Status.Incompatible }, // Japanese Localization RD
                 },
                 CompatibleWith = GameVersion.Active,
@@ -326,13 +329,31 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Jan, 2018"),
             });
 
+            // probably obsolete - custom name lists mod is much better apporach
+            AddMod(new Item(950011274u, "Japanese Romaji Names [BETA]") {
+                Authors = "Homusubi",
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1301101044u, Status.Incompatible }, // CNL Japanese Blank Road Name
+                    { 1299863509u, Status.Incompatible }, // CNL Japanese Localization Name Lists
+                    { 1231957400u, Status.Incompatible }, // Custom Namelists
+                    { 937334007u , Status.Incompatible }, // Japanese Localization RD
+                    { 935350530u , Status.Required     }, // CSL Custom Names [1.0.0]
+                },
+                Locale = "ja",
+                Published = WorkshopDate("18 Jun, 2017"),
+                ReplaceWith = 1299863509u, // CNL Japanese Localization Name Lists
+                Updated = WorkshopDate("28 Jun, 2017"),
+            });
+
             // use namelist alternative instead: 1299863509u, 
             AddMod(new Item(937334007u, "Japanese Localization RD") {
                 Affect = Factor.Other, // todo
                 Authors = "Gansaku",
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Localised,
                 Catalog = catalog,
@@ -341,6 +362,7 @@ namespace AutoRepair.Catalogs {
                     { 1322787091u, Status.Incompatible }, // Addresses & Names Mod 2.0.1
                     { 1299863509u, Status.Incompatible }, // CNL Japanese Localization Name Lists
                     { 1231957400u, Status.Incompatible }, // Custom Namelists
+                    { 950011274u , Status.Incompatible }, // Japanese Romaji Names [BETA]
                     { 935350530u , Status.Incompatible }, // CSL Custom Names [1.0.0]
                 },
                 Locale = "ja",

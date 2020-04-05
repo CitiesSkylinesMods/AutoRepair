@@ -166,9 +166,9 @@ namespace AutoRepair.Enums {
         MapThemes = 1UL << 30,
 
         /// <summary>
-        /// Mods which affect milestones or milestone unlocks.
+        /// Mods which unlock milestones, etc.
         /// </summary>
-        Milestones = 1UL << 31,
+        Unlockers = 1UL << 31,
 
         /// <summary>
         /// Any mod that automatically adds numbered rectangles when starting new city.

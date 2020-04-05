@@ -5,7 +5,9 @@ namespace AutoRepair.Catalogs {
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// Mods that alter the way roads look.
+    /// Mods that skin road textures/meshes.
+    ///
+    /// Mods that just remove basic props/decals should go in Catalog.Hide.cs.
     /// </summary>
     public partial class Catalog {
 
@@ -18,13 +20,29 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Skin.Roads";
 
+            AddMod(new Item(2045625827u, "Cgameworld’s Railway/BVU Track Customizations") {
+                Affect = Factor.Rendering // meh
+                       | Factor.Textures,
+                Authors = "Cgameworld",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1779369015u, Status.Required     }, // Railway Shinkansen Gravel Wireless
+                    { 1847646595u, Status.Recommended  }, // Bienvenüe - Munich U-Bahn Tracks
+                },
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("3 Apr, 2020"),
+                SourceURL = "https://github.com/Cgameworld/CGWRailwayCustomizations",
+                Updated = WorkshopDate("3 Apr, 2020"),
+            });
+
             AddMod(new Item(2044086131u, "Network Extensions 2 - Sunset Harbour Build / Fix") {
-                Affect = Factor.RoadMarkings
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "DJSADERS",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 812125426u, Status.Incompatible }, // Network Extensions 2
+                    { 812125426u , Status.Incompatible }, // Network Extensions 2
                     // traffic light mods struggle with NExt2 roads:
                     { 1812157090u, Status.MinorIssues  }, // [NL] Dutch Traffic Lights
                     { 1550720600u, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
@@ -41,6 +59,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 812125426u, // Network Extensions 2
                 Flags = ItemFlags.SaveChanging
+                      | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "This is a temporary bug fix mod for Network Extensions 2." },
@@ -59,7 +78,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "kian.zarrin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
+                    { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1939169189u, Status.Compatible   }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
@@ -89,13 +108,17 @@ namespace AutoRepair.Catalogs {
                 Authors = "Nouvilas",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // minor issue: hide it
+                    // hide it - if used to hide street arrows, road arrows replacer won't work
+                    { 1591417160u, Status.MinorIssues  }, // Hide It!
                     // incompat - anything that chances road arrows or markings etc
                     { 2008960441u, Status.Required     }, // Spanish Arrow Decals Pack
                     { 956707300u , Status.Incompatible }, // Remove Street Arrows
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1591417160u, "[Mod: Hide It!] If you remove road arrows with Hide It, the Road Arrows Replacer can't replace them." },
+                },
                 ReleasedDuring = GameVersion.PdxLauncher,
             });
 
@@ -186,6 +209,7 @@ namespace AutoRepair.Catalogs {
                     { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 543722850u , Status.Incompatible }, // Network Skins (original)
@@ -208,26 +232,30 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1962752152u, "Busstop Prop Remover") {
-                Affect = Factor.HideRemove
-                       | Factor.Props,
-                Authors = "PC28K",
+            AddMod(new Item(1128766708u, "Remove Road Textures - Blank Roads") {
+                Authors = "Madgemade",
+                Affect = Factor.RoadMarkings,
                 Catalog = catalog,
+                Flags = ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1591417160u, Status.Incompatible }, // Hide It (has same feature)
-                    { 919020932u , Status.Incompatible }, // Stop Remover
-                    { 545878277u , Status.Incompatible }, // [GBS] German Bus Stop Mod [NC]
+                    { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
+                    { 1959183067u, Status.Incompatible }, // CSUR Loader
+                    { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                    { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
+                    { 1758376843u, Status.Incompatible }, // Network Skins 2
+                    { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
+                    { 1189186167u, Status.Incompatible }, // 道路颜色调整
+                    { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
+                    { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
+                    { 812125426u , Status.Compatible   }, // Network Extensions 2
+                    { 726005715u , Status.Incompatible }, // Roads United: Core+
+                    { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552u , Status.Incompatible }, // Roads United Core 2.0
+                    { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
+                    { 478820060u , Status.Incompatible }, // Network Extensions Project
+                    { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
                 },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs // requires game restart after changing its settings
-                      | ItemFlags.SourceUnavailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Requires game restart after changing settings." },
-                    { NOTE, "[Mod: Hide It!] The hide it mod contains a stop remover feature that can be toggled in-game ;)" },
-                },
-                ReleasedDuring = GameVersion.Campus,
-                ReplaceWith = 1591417160u, // Hide It
-                SuppressOlderReplacementWarning = true,
             });
 
             // translated clone of (assuming) 932192868u
@@ -310,6 +338,7 @@ namespace AutoRepair.Catalogs {
                     //{ 1758376843u, Status.Incompatible }, // Network Skins 2
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 812125426u , Status.Compatible   }, // Network Extensions 2
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued

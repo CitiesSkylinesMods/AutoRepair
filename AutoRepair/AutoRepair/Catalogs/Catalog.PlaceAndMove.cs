@@ -24,8 +24,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Toolbar,
                 Authors = "kian.zarrin",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
+                Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.PdxLauncher,
@@ -38,8 +37,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.PlaceAndMove,
                 Authors = "amamlya, VictoriaCity, pcfantasy",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
+                Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Languages = new[] { "de", "en", "es", "fr", "ko", "ru", "zh-cn", "zh" },
@@ -51,6 +49,8 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.PlaceAndMove, // todo: add terrain factor
                 Authors = "eelcobaas",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
+                CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.EditorMod // can also be used in-game
                       | ItemFlags.SourceUnavailable,
             });
@@ -60,6 +60,8 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.PlaceAndMove, // todo: add terrain factor
                 Authors = "eelcobaas",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
+                CompatibleWith = GameVersion.PdxLauncher,
                 Flags = ItemFlags.EditorMod // can also be used in-game
                       | ItemFlags.SourceUnavailable,
             });
@@ -69,10 +71,17 @@ namespace AutoRepair.Catalogs {
                 Authors = "Strad",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1677913611u, Status.MinorIssues }, // Smart Intersection Builder (compatible, but can't undo)
-                    { 1625704117u, Status.MinorIssues }, // Roundabout Builder (compatible, but can't undo)
-                    { 1619685021u, Status.MinorIssues }, // Move It (compatible, but can't undo)
-                    { 694512541u , Status.MinorIssues }, // Prop Line Tool (compatible, but can't undo)
+                    { 2045014295u, Status.MinorIssues  }, // Move It! 移动它 中文版
+                    { 1677913611u, Status.MinorIssues  }, // Smart Intersection Builder (compatible, but can't undo)
+                    { 1625704117u, Status.MinorIssues  }, // Roundabout Builder (compatible, but can't undo)
+                    { 1619685021u, Status.MinorIssues  }, // Move It (compatible, but can't undo)
+                    { 694512541u , Status.MinorIssues  }, // Prop Line Tool (compatible, but can't undo)
+                },
+                Notes = new Dictionary<ulong, string>() {
+                    { 1677913611u, "[Mod: Smart Intersection Builder] Can't undo intersections made with Smart Intersection Builder (use it's own undo tool instead)." },
+                    { 1625704117u, "[Mod: Roundabout Builder] Can't undo roundabouts made with Roundabout Builder (use it's own undo tool instead)." },
+                    { 1619685021u, "[Mod: Move It] Can't undo changes made by Move It (use it's own undo tool instead)." },
+                    { 694512541u , "[Mod: Prop Line Tool] Can't undo props placed with Prop Line Tool." },
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/Strdate/UndoMod",
@@ -249,6 +258,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Quboid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1890830956u, Status.MinorIssues  }, // Undo It!
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
@@ -280,6 +290,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Elektrix",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Compatible   }, // Move It! 移动它 中文版
                     { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
                     { 1844442251u, Status.Compatible   }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Compatible   }, // Fine Road Anarchy 2
@@ -393,6 +404,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Compatible   }, // Move It! 移动它 中文版
                     { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
                     { 1895443005u, Status.Compatible   }, // Fine Road Anarchy 2 汉化版
                     { 1895440521u, Status.Compatible   }, // Fine Road Tool 2 汉化版
@@ -420,6 +432,39 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
+
+            AddMod(new Item(2045014295u, "Move It! 移动它 中文版") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "Yuuki",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
+                    { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
+                    { 1890830956u, Status.MinorIssues  }, // Undo It!
+                    { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
+                    { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
+                    { 1856282754u, Status.Incompatible }, // MoveIt 汉化版
+                    { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
+                    { 1619685021u, Status.Incompatible }, // Move It 2.7.0
+                    { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1393797695u, Status.Compatible   }, // Touch This! Tool 3
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
+                    { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 787611845u , Status.Recommended  }, // Prop Snapping
+                    { 766190099u , Status.Incompatible }, // Move It (original)
+                    { 658653260u , Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329u , Status.Incompatible }, // Sharp Junction Angles
+                    { 418556522u , Status.Incompatible }, // Road Anarchy
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 1619685021u, // Move It (current stable release)
+                Flags = ItemFlags.Localised
+                      | ItemFlags.SourceUnavailable,
+                Locale = "zh-cn",
+                Published = WorkshopDate("2 Apr, 2020"),
+                Updated = WorkshopDate("2 Apr, 2020"),
+            });
 
             AddMod(new Item(2043038271u, "Fine Road Anarchy") {
                 Affect = Factor.PlaceAndMove,
@@ -528,6 +573,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 1619685021u, // Move It
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
@@ -556,6 +602,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 1619685021u, // Move It
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
@@ -584,6 +631,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 766190099u, // Move It (original version)
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
@@ -613,6 +661,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 1619685021u, // Move It (current stable release)
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
@@ -637,6 +686,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "RudRecciah",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
@@ -757,6 +807,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_
@@ -823,6 +874,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.Industries,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 1892174866u, Status.Incompatible }, // MoveIt2.6汉化版
                     { 1866239503u, Status.Incompatible }, // MOVE IT Sakuya16个人汉化版
                     { 1857894421u, Status.Incompatible }, // 766190099_Move_It_

@@ -278,6 +278,15 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Catalog missing\n");
             }
 
+            // check compatibility list
+            if (Compatibility == null) {
+                problems = true;
+                log.Append("- Compatibility list missing\n");
+            } else if (extendedReporting && Compatibility?.Count == 0) {
+                problems = true;
+                log.Append("- Compatibility list defined, but is empty\n");
+            }
+
             if (Flags == ItemFlags.None) {
                 problems = true;
                 log.Append("- Flags missing\n");
@@ -349,7 +358,7 @@ namespace AutoRepair.Descriptors {
                     log.AppendFormat(
                         "- Should (usually) be incompatible with replacement item: {0}\n",
                         ReplaceWith);
-                } else if (!Compatibility.ContainsKey(ReplaceWith)) {
+                } else if (Compatibility != null && !Compatibility.ContainsKey(ReplaceWith)) {
                     problems = true;
                     log.AppendFormat(
                         "- Must specify (in)compatibility with replacement item: {0}\n",
@@ -385,12 +394,6 @@ namespace AutoRepair.Descriptors {
             {
                 problems = true;
                 log.Append("- SourceURL missing\n");
-            }
-
-            // if list defined, it should contain something
-            if (extendedReporting && Compatibility?.Count == 0) {
-                problems = true;
-                log.Append("- Compatibility list defined, but is empty\n");
             }
 
             // tags should be specified (long-term task)

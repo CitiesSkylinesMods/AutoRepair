@@ -53,7 +53,6 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("31 Mar, 2020"),
             });
 
-
             AddMod(new Item(2040218778u, "ScaleUI") {
                 Affect = Factor.Other, // todo
                 Authors = "*",
@@ -262,6 +261,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "打的好不如排的好",
                 BrokenBy = GameVersion.DefaultRelease,
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {},
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.GameBreaking
                       | ItemFlags.SourceUnavailable,
@@ -282,6 +282,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "kvakvs",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/kvakvs/Skylines-UX",
@@ -458,6 +459,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "saki7, Ryuichi Kaminogi",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2045014295u, Status.Incompatible }, // Move It! 移动它 中文版
                     { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
                     { 2035564927u, Status.Compatible   }, // 25parts_su
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
@@ -696,62 +698,6 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.ParkLife,
             });
 
-
-
-            // Several reported issues with this mod (based on user comment):
-            // * laggy (multiple users are reporting this - lots of code running on recurring events!)
-            // * milestone unlock not working
-            // * achievement enabler not working
-            AddMod(new Item(1237383751u, "Extended Game Options") {
-                Affect = Factor.Milestones, // will be more
-                Authors = "Zenya",
-                Catalog = catalog,
-                Flags = ItemFlags.Laggy
-                      | ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1242879105u, Status.Incompatible }, // Unlock Any Milestone
-                    { 823348129u , Status.Incompatible }, // Disasters Enabler
-                    { 410614868u , Status.Incompatible }, // EarlyUnlock
-                    { 407162294u , Status.Incompatible }, // All basic unlocks at the start
-                    // todo: will be more
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "The mod runs quite a bit of code every frame = lag." },
-                    { NOTE, "Achievement Unlocker: Icon still has a lock on it (minor bug), but achievements should work." },
-                },
-                SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Extended-Game-Options",
-            });
-
-            AddMod(new Item(1498036881u, "UltimateMod 2.4 ( Higher Income and More Options )") {
-                Affect = Factor.Achievements
-                       | Factor.Budget
-                       | Factor.Bulldoze
-                       | Factor.Construction
-                       | Factor.Consumption
-                       | Factor.Entertainment
-                       | Factor.Education
-                       | Factor.HideRemove
-                       | Factor.LandValue
-                       | Factor.MaintenanceCost
-                       | Factor.Milestones
-                       | Factor.Money
-                       | Factor.PlaceAndMove
-                       | Factor.Pollution
-                       | Factor.Service,
-                Authors = "mcclane96[GER]",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo
-                    { 1487849798u, Status.Incompatible }, // Higher Income Mod 1.2a
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Localised
-                      | ItemFlags.SourceUnavailable,
-                Languages = new[] { "en", "zh-cn" },
-                Locale = "en",
-            });
-
             // runs a load of code in OnUpdate = lag.
             AddMod(new Item(878991312u, "Prop it Up! 1.4.4") {
                 Affect = Factor.PlaceAndMove
@@ -788,21 +734,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/rkanter/PollutionSolution/",
             });
 
-            AddMod(new Item(1242879105u, "Unlock Any Milestone") {
-                Affect = Factor.Milestones,
-                Authors = "Ilion",
-                Catalog = catalog,
-                Flags = ItemFlags.Abandonware // author suggests to use "Extended Game Options" mod
-                                              //| ItemFlags.Obsolete (still works according to comments)
-                      | ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1237383751u, Status.Incompatible }, // Extended Game Options
-                    { 410614868u, Status.Incompatible }, // EarlyUnlock
-                    { 407162294u, Status.Incompatible }, // All basic unlocks at the start
-                    // todo: will be more
-                },
-            });
-
             // Known issues (based on author comment):
             // * Cannot see values that you set the offsets for
             // * Unable to save/load option settings
@@ -820,13 +751,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/wboler05/CS-BudgetController",
             });
 
-            // refund full construction cost when bulldozing
-            AddMod(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
-                Authors = "C#",
-                Catalog = catalog,
-                Flags = ItemFlags.SourceUnavailable,
-                // todo check conflict with other refund mods
-            });
 
 
 

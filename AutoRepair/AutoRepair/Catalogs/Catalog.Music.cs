@@ -14,7 +14,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="item">The item to add.</param>
         internal void AddMusic(Item item) {
 
-            item.Affect = Factor.Other;
+            item.Affect = Factor.Audio;
 
             item.Catalog = "Music";
 
@@ -48,6 +48,24 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Music";
 
+            AddMod(new Item(422934383u, "CSL Music Mod") {
+                Affect = Factor.Audio,
+                Authors = "mrnotsoevil",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Documentation for users and authors: https://github.com/rumangerst/CSLMusicMod/wiki" },
+                    { NOTE, "Most music packs / stations are copyrighted and must not be played while streaming." },
+                },
+                Published = WorkshopDate("15 Apr, 2015"),
+                SourceURL = "https://github.com/rumangerst/CSLMusicMod",
+                Updated = WorkshopDate("14 Dec, 2018"),
+            });
+
             /*
             # ███████ ████████  █████  ████████ ██  ██████  ███    ██ ███████
             # ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ ██
@@ -55,6 +73,32 @@ namespace AutoRepair.Catalogs {
             #      ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██      ██
             # ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ███████
             */
+
+            AddMusic(new Item(2048519799u, "The Legend Of Zelda: Spirit Tracks Music Pack") {
+                Authors = "Consumedgrub2",
+                Flags = ItemFlags.LargeFileWarning, // 115 MB
+                Published = WorkshopDate("5 Apr, 2020"),
+                Updated = WorkshopDate("5 Apr, 2020"),
+            });
+
+            AddMusic(new Item(2048091295u, "Monster Hunter World") {
+                Authors = "Mr. Monday",
+                Flags = ItemFlags.LargeFileWarning, // 214 MB
+                Published = WorkshopDate("4 Apr, 2020"),
+                Updated = WorkshopDate("4 Apr, 2020"),
+            });
+
+            AddMusic(new Item(2048003647u, "Elite Dangerous") {
+                Authors = "Mr. Monday",
+                Published = WorkshopDate("4 Apr, 2020"),
+                Updated = WorkshopDate("4 Apr, 2020"),
+            });
+
+            AddMusic(new Item(2048002477u, "Advance Wars") {
+                Authors = "Mr. Monday",
+                Published = WorkshopDate("4 Apr, 2020"),
+                Updated = WorkshopDate("4 Apr, 2020"),
+            });
 
             AddMusic(new Item(2042929072u, "Music Pack: Cubeworld Soundtrack Music Pack") {
                 Authors = "Exoidus",

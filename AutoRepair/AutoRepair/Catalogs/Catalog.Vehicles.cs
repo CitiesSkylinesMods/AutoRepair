@@ -67,8 +67,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "Tim",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1818462177u, Status.Incompatible }, // Vehicle Color Expander
-                    { 1764208250u, Status.Compatible   }, // More Vehicles (from v1.9.0 onwards)
+                    { 1818462177u, Status.Compatible   }, // Vehicle Color Expander (from AVO 1.9.0a onwards)
+                    { 1764208250u, Status.Compatible   }, // More Vehicles (from AVO 1.9.0 onwards)
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (current stable)
                     { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
@@ -88,9 +88,8 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // https://github.com/CityGecko/CS-AdvancedVehicleOptions/issues
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Version 1.9.0 will be available soon; it might show an error when you load old city, but after that should be OK." },
-                    { NOTE, "Sunset Harbor: Working, but does not have options for the new DLC vehicles yet." },
-                    { NOTE, "Author is working on updates to categorize new vehicles." },
+                    { NOTE, "May show error first time you load a city, but after that it will work fine." },
+                    { 1818462177u, "[Mod: Vehicle Color Expander] AVO color features will self-disable if Vehicle Color Expander mod is active." },
                 },
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",

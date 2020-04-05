@@ -24,7 +24,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1808439336u, Status.Compatible   }, // Building Color Expander
-                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (Industries DLC ready)
+                    { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options AVO (Industries DLC ready)
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
                 },
                 Flags = ItemFlags.SourceAvailable,

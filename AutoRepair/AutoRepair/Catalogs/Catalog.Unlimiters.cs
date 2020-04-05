@@ -40,6 +40,7 @@ namespace AutoRepair.Catalogs {
                 { 1270675750u, Status.Incompatible }, // BigCity (25 tiles mod)
                 { 1268806334u, Status.Incompatible }, // UnlockAreaCountLimitAndFree
                 { 1265292380u, Status.Incompatible }, // UnlockAreaCountLimit
+                { 1237383751u, Status.Incompatible }, // Extended Game Options
                 { 1225712804u, Status.Incompatible }, // 406218372
                 { 1223738434u, Status.Incompatible }, // 422554572
                 { 1138679561u, Status.Incompatible }, // AllSpacesUnlock
@@ -91,7 +92,7 @@ namespace AutoRepair.Catalogs {
                     { 1575247594u, Status.Incompatible }, // 576327847 81 Tiles (Fixed for 1
                     { 1560122066u, Status.Incompatible }, // 81MOD
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
-                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options (new one; v1.9.0 should fix)
+                    { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options (new one; v1.9.0 should fix)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1457742795u, Status.Compatible   }, // 403798635 All Spaces Unlockable
                     { 1449194984u, Status.Compatible   }, // 25格汉化版
@@ -110,7 +111,7 @@ namespace AutoRepair.Catalogs {
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 888017364u , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
-                    { 816260433u , Status.Incompatible }, // Metro Overhaul Mod
+                    { 816260433u , Status.Compatible   }, // Metro Overhaul Mod
                     { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
                     { 616078328u , Status.Incompatible }, // All Tile Start
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
@@ -173,7 +174,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile81compatibility) {
-                    [1764208250u] = Status.MinorIssues, // More Vehicles
+                    [1764208250u] = Status.Compatible, // More Vehicles
+                    [576327847u ] = Status.MinorIssues, // Surface Painter
                 },
                 ContinuationOf = 422554572u, // 81 Tiles (original version by emf)
                 CompatibleWith = GameVersion.SunsetHarbor,

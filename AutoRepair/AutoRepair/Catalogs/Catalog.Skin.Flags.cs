@@ -30,6 +30,20 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
+            AddMod(new Item(1603398633u, "Flag Params") {
+                Affect = Factor.Props,
+                Authors = "Ronyx69",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.EditorMod // also required in-game to use the created props
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Obsolete,
+                ReleasedDuring = GameVersion.Industries,
+                Tags = new[] { "Flags", "Props" },
+            });
+
             AddMod(new Item(595017353u, "More Flags ( + flags replacer )") {
                 Affect = Factor.Props,
                 Authors = "BloodyPenguin",
@@ -41,19 +55,6 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/bloodypenguin/Skylines-MoreFlags",
                 Tags = new[] { "Flags", "Replacer", "Props" },
-            });
-
-            AddMod(new Item(1603398633u, "Flag Params") {
-                Affect = Factor.Props,
-                Authors = "Ronyx69",
-                Catalog = catalog,
-                CompatibleWith = GameVersion.Campus,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.EditorMod // also required in-game to use the created props
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Obsolete,
-                ReleasedDuring = GameVersion.Industries,
-                Tags = new[] { "Flags", "Props" },
             });
 
             /*

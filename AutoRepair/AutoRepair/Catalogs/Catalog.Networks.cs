@@ -17,6 +17,7 @@ namespace AutoRepair.Catalogs {
         private void NetworksCatalog() {
 
             string catalog = "Networks";
+
             AddMod(new Item(1959342332u, "CSUR ToolBox") {
                 Affect = Factor.OutsideConnection
                        | Factor.Pathfinder
@@ -59,6 +60,7 @@ namespace AutoRepair.Catalogs {
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1440928803u, Status.Unknown      }, // Parallel Road Tool
                     { 1400711138u, Status.Unknown      }, // [BETA] Parallel Road Tool
+                    { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 543722850u , Status.Incompatible }, // Network Skins (original)

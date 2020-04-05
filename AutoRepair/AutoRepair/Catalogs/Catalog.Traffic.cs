@@ -139,6 +139,11 @@ namespace AutoRepair.Catalogs {
                     { 1548117573u, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
                     { 1541164608u, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
                     { 1535107168u, Status.MinorIssues  }, // New American Traffic Lights
+                    // prop removers
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1627469414u, Status.Compatible   }, // No Parking
+                    { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
+                    { 956707300u , Status.Compatible   }, // Remove Street Arrows
                     // Other mods
                     { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
@@ -155,6 +160,7 @@ namespace AutoRepair.Catalogs {
                     { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector (old version)
+
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1637663252u, // TM:PE V11 STABLE (Krzychu1245)
@@ -170,9 +176,10 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Setting 'Simulation Accuracy' to lower value will reduce lag (but impair junction customisations)." },
                     { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
                     { NOTE, "[Mod: CSM - Cities Skylines Multiplayer] Some users report it's incompatible with TM:PE" },
-                    { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
-                    { 726005715u, "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
-                    { 633547552u, "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
+                    { 1586027591u, "[Mod: Tiny Segments] Very short road segments entering junctions may cause traffic to ignore customisations." },
+                    { 949504539u , "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
+                    { 726005715u , "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
+                    { 633547552u , "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -281,6 +288,11 @@ namespace AutoRepair.Catalogs {
                     { 1548117573u, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
                     { 1541164608u, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
                     { 1535107168u, Status.MinorIssues  }, // New American Traffic Lights
+                    // prop removers
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1627469414u, Status.Compatible   }, // No Parking
+                    { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
+                    { 956707300u , Status.Compatible   }, // Remove Street Arrows
                     // Other mods
                     { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
@@ -311,9 +323,10 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Setting 'Simulation Accuracy' to lower value will improve framerate." },
                     { NOTE, "Setting 'Simulation Accuracy' to higher value will improve vehicle behaviour at junctions." },
                     { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
-                    { 949504539u, "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
-                    { 726005715u, "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
-                    { 633547552u, "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
+                    { 1586027591u, "[Mod: Tiny Segments] Very short road segments entering junctions may cause traffic to ignore customisations." },
+                    { 949504539u , "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
+                    { 726005715u , "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
+                    { 633547552u , "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                 },
                 SourceURL = "https://github.com/CitiesSkylinesMods/TMPE",
                 Tags = new[] {
@@ -666,6 +679,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1959342332u, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
@@ -676,6 +690,7 @@ namespace AutoRepair.Catalogs {
                     { 1764208250u, Status.Incompatible }, // More Vehicles
                     { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                     { 1633580257u, Status.Incompatible }, // Vehicle Wealthizer 2
+                    { 1627469414u, Status.Compatible   }, // No Parking
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -684,6 +699,7 @@ namespace AutoRepair.Catalogs {
                     { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 956707300u , Status.Compatible   }, // Remove Street Arrows
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
@@ -701,6 +717,7 @@ namespace AutoRepair.Catalogs {
                     { 1548117573u, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
                     { 1541164608u, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
                     { 1535107168u, Status.MinorIssues  }, // New American Traffic Lights
+                    { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.PdxLauncher,
                 ContinuationOf = 568443446, // Traffic Manager Plus 1.2.0

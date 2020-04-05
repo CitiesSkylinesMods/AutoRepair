@@ -68,6 +68,9 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
@@ -122,6 +125,9 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 86 MB
@@ -184,6 +190,9 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 120 MB
@@ -246,6 +255,9 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 284 MB
@@ -308,6 +320,9 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 395 MB
@@ -350,6 +365,9 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
@@ -389,6 +407,9 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
@@ -438,6 +459,11 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Incompatible }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Incompatible }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
+                    { 1117087491u, Status.MinorIssues  }, // Remove Road Props
+                    { 418637762u , Status.MinorIssues  }, // American Roads
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorBugs
@@ -446,7 +472,9 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The lights and barriers are non-functional." },
                     { 2044086131u, "[Mod: Network Extensions 2] Minor issues with level crossings on NExt2 roads." },
+                    { 1117087491u, "[Mod: Remove Road Props] If you remove railway barriers, the American Railroad Signal Replacer can't replace them." },
                     { 812125426u , "[Mod: Network Extensions 2] Minor issues with level crossings on NExt2 roads." },
+                    { 418637762u , "[Mod: American Roads] If you remove railway barriers, the American Railroad Signal Replacer can't replace them." },
                 },
                 Published = WorkshopDate("22 Sep, 2018"),
                 Updated = WorkshopDate("25 Sep, 2018"),
@@ -473,6 +501,11 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Incompatible }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Incompatible }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
+                    { 1117087491u, Status.MinorIssues  }, // Remove Road Props
+                    { 418637762u , Status.MinorIssues  }, // American Roads
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorBugs
@@ -481,7 +514,9 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The lights and barriers are non-functional." },
                     { 2044086131u, "[Mod: Network Extensions 2] Minor issues with level crossings on NExt2 roads." },
+                    { 1117087491u, "[Mod: Remove Road Props] If you remove railway barriers, the Japanese Railway Crossings can't replace them." },
                     { 812125426u , "[Mod: Network Extensions 2] Minor issues with level crossings on NExt2 roads." },
+                    { 418637762u , "[Mod: American Roads] If you remove railway barriers, the Japanese Railway Crossings can't replace them." },
                 },
                 Published = WorkshopDate("29 Dec, 2017"),
                 SourceURL = "https://github.com/ako-ako/Japanese-Railway-Crossings",
@@ -519,15 +554,18 @@ namespace AutoRepair.Catalogs {
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
                 },
-                CompatibleWith = GameVersion.SunsetHarbor,
+                CompatibleWith = GameVersion.GreenCities,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // parklife
                       | ItemFlags.MinorBugs
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Issues with T-junctions - see workshop page for details." },
+                    { NOTE, "Users report mod no longer works, or traffic lights on wrong side of road." },
                     { 2044086131u, "[Mod: Network Extensions 2] Minor issues with some NExt2 roads." },
                     { 812125426u , "[Mod: Network Extensions 2] Minor issues with some NExt2 roads." },
                 },

@@ -6,6 +6,9 @@ namespace AutoRepair {
     using System;
     using UnityEngine.SceneManagement;
 
+    /// <summary>
+    /// The main mod class.
+    /// </summary>
     public class UserMod : IUserMod {
 
         /// <summary>
@@ -19,7 +22,10 @@ namespace AutoRepair {
         /// </summary>
         [UsedImplicitly]
         public string Description => "Mod compatibility checker.";
-        
+
+        /// <summary>
+        /// Called by the game when the mod is enabled.
+        /// </summary>
         [UsedImplicitly]
         public void OnEnabled() {
 
@@ -31,21 +37,25 @@ namespace AutoRepair {
         /// <param name="helper">UI helper from the game.</param>
         [UsedImplicitly]
         public void OnSettingsUI(UIHelperBase helper) {
-            if (SceneManager.GetActiveScene().name == "Game") {
-                return;
-            }
+            string scene = SceneManager.GetActiveScene().name;
 
-            SettingsUI.Render(helper);
-            Scanner.PerformScan();
+            SettingsUI.Render(helper, scene);
+
+            if (scene != "Game") {
+                Scanner.PerformScan();
+            }
         }
 
+        /// <summary>
+        /// Called by the game when the mod is disabled.
+        /// </summary>
         [UsedImplicitly]
         public void OnDisabled() {
-
+            Catalog.Close();
         }
 
         public void OnPluginChange() {
-
+            throw new NotImplementedException("UserMod.OnPluginsChange()");
         }
 
     }

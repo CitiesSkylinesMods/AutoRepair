@@ -40,12 +40,13 @@
     <Compile Include="Catalogs\Catalog.Assets.cs" />
     <Compile Include="Catalogs\Catalog.Converters.cs" />
     <Compile Include="Catalogs\Catalog.Disasters.cs" />
+    <Compile Include="Catalogs\Catalog.Editor.cs" />
     <Compile Include="Catalogs\Catalog.Services.cs" />
     <Compile Include="Catalogs\Catalog.Skin.Roads.cs" />
     <Compile Include="Catalogs\Catalog.Stats.cs" />
     <Compile Include="Catalogs\Catalog.Unlimiters.cs" />
+    <Compile Include="Catalogs\Catalog.Unlockers.cs" />
     <Compile Include="Catalogs\Vanilla.cs" />
-    <Compile Include="Catalogs\Catalog.Achievements.cs" />
     <Compile Include="Catalogs\Catalog.AudioEffects.cs" />
     <Compile Include="Catalogs\Catalog.BuildingLevel.cs" />
     <Compile Include="Catalogs\Catalog.ContentManager.cs" />

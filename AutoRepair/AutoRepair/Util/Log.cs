@@ -28,7 +28,7 @@ namespace AutoRepair.Util {
         ///
         /// NOTE: On Macs this will always be ignored and the log will go in game Player.log file.
         /// </summary>
-        public static readonly string LogFile = Path.Combine(LogFilePath, LogFileName);
+        public static readonly string LogFile = Path.GetFullPath(Path.Combine(LogFilePath, LogFileName));
 
         /// <summary>
         /// Stopwatch used if <see cref="ShowTimestamp"/> is <c>true</c>.

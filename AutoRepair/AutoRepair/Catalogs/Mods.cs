@@ -61,12 +61,6 @@ namespace AutoRepair {
             // todo: this might be localisation of older mod, not sure
             AddDodgey(1864205702u, "地图图片叠加 Image Overlay");
 
-            // todo: incompatible with hardmode vanilla mod
-            Add(1830455071u, "EasyMode");
-
-            // todo: requires Campus DLC
-            Add(1824254667u, "Campus Parks");
-
             // todo: prolly breaks TM:PE
             // todo: requires Industries DLC
             Add(1816571194u, "No Industries Import");
@@ -97,12 +91,6 @@ namespace AutoRepair {
 
             Add(new Item(1751039059u, "Taxes Helper Mod") {
                 Flags = ItemFlags.SourceAvailable,
-            });
-
-            // todo: prolly incompatible with similar mods
-            Add(new Item(1744522363u, "Money Back (Refund)") {
-                Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.Abandonware,
             });
 
             Add(new Item(1741725093u, "Note It!") {
@@ -148,28 +136,12 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1719979486u, "Philippines Realistic Sound Mod: Return!") {
-                Flags = ItemFlags.GameBreaking
-                      | ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable,
-            });
-
             // todo: requires dlcs
             Add(1718245521u, "No Park Building Fires");
 
-            Add(1706704781u, "Remove All Animals");
 
             Add(new Item(1689984220u, "Electric Roads Mod 1.2.3") {
                 Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1664509314u, "Custom Animation Loader (CAL)") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/boformer/CustomAnimationLoader",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1706978404u, Status.Recommended }, // Animated Excavator アニメーションユンボ
-                    { 2010704792u, Status.Recommended }, // Animated Excavator CAT 365C L
-                },
             });
 
             Add(new Item(1651036644u, "Advanced Traffic Congestion Report") {
@@ -178,10 +150,6 @@ namespace AutoRepair {
             });
 
             Add(new Item(1648585256u, "NoBailOutWarning") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1627469414u, "No Parking") {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -196,10 +164,6 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/pcfantasy/RealGasStation",
             });
 
-            Add(new Item(1614062928u, "Unlock LandScaping") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
             Add(new Item(1603319148u, "576997275 Remove Need For Pipes") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -210,10 +174,7 @@ namespace AutoRepair {
                 ReplaceWith = 576997275u, // Remove Need For Pipes
             });
 
-            Add(new Item(1598546349u, "Mary's Mod") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable,
-            });
+
 
             Add(new Item(1597285962u, "Stream It!") {
                 Flags = ItemFlags.Abandonware
@@ -231,8 +192,6 @@ namespace AutoRepair {
                 },
                 ReplaceWith = 1756787990u, // More Advanced InfoViews
             });
-
-
 
             // removes building needs at night
             Add(new Item(1591311030u, "Don't Bulldoze At Night") {
@@ -256,17 +215,6 @@ namespace AutoRepair {
             AddDodgey(1558675585u, "MyTheme");
 
             AddDodgey(1555378173u, "410344523"); // translated pop balance mod?
-
-
-            // todo: also works in editor
-            Add(new Item(1552053911u, "TrailerVariation Loader") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/Acc3ssViolation/a129c802e7e2eaeb2ef566a0f370afc0",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 800820816u, Status.Recommended }, // Extended Asset Editor 0.4.11
-                },
-            });
-
 
             Add(new Item(1548749050u, "Mark-a-Route Reuploaded") {
                 Flags = ItemFlags.Abandonware
@@ -297,22 +245,6 @@ namespace AutoRepair {
                 // todo: incompat with other budget mods
             });
 
-            Add(new Item(1540147921u, "Grid be Gone") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/Quboid/298552b4e4787cefe7faa55cf8a6e6be",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1536223783u, Status.Recommended }, // Hide Selectors
-                },
-            });
-
-            Add(new Item(1536223783u, "Hide Selectors") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/Quboid/628b69e5f778c57a29cbcc8877e0cd59",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1540147921u, Status.Recommended }, // Grid be Gone
-                    { 903347963u , Status.Compatible }, // Transparent Selectors
-                },
-            });
 
             Add(new Item(1530376523u, "Railway Replacer") {
                 Flags = ItemFlags.SourceUnavailable,
@@ -329,10 +261,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            // editor mod
-            Add(new Item(1518485094u, "Mesh Import Rotation Tangents Fix") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
 
             Add(new Item(1502721219u, "[Deprecated] Spinny Red Circle") {
                 Flags = ItemFlags.Abandonware
@@ -342,11 +270,6 @@ namespace AutoRepair {
                     { 1526302248u, Status.Incompatible }, // Spinny RGB Circle
                 },
                 ReplaceWith = 1526302248u, // Spinny RGB Circle
-            });
-
-            Add(new Item(1499486217u, "Ragnarok EXTREME EDITION") {
-                Flags = ItemFlags.SourceUnavailable,
-                // todo: incompat with other ragnarock and maybe similar mods
             });
 
             Add(new Item(1485051886u, "Cimtographer - rebuild for 1.10.1-f3") {
@@ -389,12 +312,6 @@ namespace AutoRepair {
                 },
             });
 
-            // todo: chk compat with feature unlockers
-            Add(new Item(1424264814u, "YAFU - Yet Another Feature Unlocker") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/Celisuis/YAFU",
-            });
-
             Add(new Item(1415090282u, "AutoLineColor Redux") {
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/taradinoc/CitiesSkylinesAutoColorMod",
@@ -406,21 +323,6 @@ namespace AutoRepair {
 
 
 
-            // editor tool
-            Add(new Item(1406275125u, "Asset DLC flags Editor") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            // editor
-            Add(new Item(1393831156u, "Sub Mesh Flags") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            // require dlc: park life
-            Add(new Item(1393452031u, "Parkify") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
             AddDodgey(1391679732u, "CS-RP");
 
             Add(new Item(1385468094u, "PollutionRemoverMod") {
@@ -429,27 +331,7 @@ namespace AutoRepair {
                 // todo: incompat with other pol removers
             });
 
-            Add(new Item(1383456057u, "Shicho - Fundamental support mod for hardcore builders") {
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable,
-                SourceURL = "https://github.com/SETNAHQ/Shicho",
-                // tood: big list of incompatibilities
-            });
-
             AddDodgey(1379361024u, "bd96432_mod_2"); // likely a translation mod
-
-            // editor mod
-            Add(new Item(1364044386u, "Theme Editor Maps") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/TPBCS/ThemeEditorMaps",
-                Authors = "TPB",
-            });
-
-            // editor mod
-            Add(new Item(1361644472u, "Precise Prop Positioning for Asset Creators") {
-                Flags = ItemFlags.SourceUnavailable,
-                Authors = "TPB",
-            });
 
             Add(new Item(1348627392u, "Tides") {
                 Authors = "TPB",
@@ -484,12 +366,7 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/klyte45/AddressesMod",
             });
 
-            Add(new Item(1320575938u, "Hide Traffic Lights") {
-                Authors = "Simon Ryr",
-                Affect = Factor.TrafficLights,
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/simon56modder/5fa6c13f751ec97add408ed8c6312ac9",
-            });
+
 
             Add(new Item(1312735149u, "Klyte Commons") {
                 Authors = "Klyte45",
@@ -569,16 +446,6 @@ namespace AutoRepair {
 
 
 
-            // Similar thing to Klyte's addresses mod
-            Add(new Item(1179846541u, "Rename buildings") {
-                Authors = "Romanoza",
-                Affect = Factor.Naming,
-                Flags = ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo: incompat - klyte addresses, possibly also customize it extended, and custom name lists
-                },
-            });
-
             Add(new Item(1176756723u, "Increased Pollution Radius") {
                 Authors = "BloodyPenguin",
                 Flags = ItemFlags.SourceAvailable,
@@ -593,48 +460,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            // "Repeated construction of landmark buildings"
-            // An unaltered clone of Not So Unique Buildings
-            // It's not even translated!
-            Add(new Item(1137224650u, "重复建设地标建筑") {
-                Authors = "回忆时光℡",
-                CloneOf = 466834228u, // Not So Unique Buildings
-                Flags = ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 466834228u, Status.Incompatible }, // Not So Unique Buildings
-                },
-            });
-
-            Add(new Item(1128766708u, "Remove Road Textures - Blank Roads") {
-                Authors = "Madgemade",
-                Affect = Factor.RoadMarkings,
-                Flags = ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
-                    { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
-                    { 1147015481u, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
-                },
-            });
-
-            Add(new Item(1122189715u, "Realtime") {
-                Authors = "Ronyx69, Simon Ryr",
-                Flags = ItemFlags.EditorMod // it's not really, but this will flag it for attention of asset creators
-                      | ItemFlags.SourceAvailable,
-                // todo: possibly assembly nane conflict with Real Time mod by dymanoid
-                SourceURL = "https://gist.github.com/ronyx69/280e5695b3caeac7ef8b356cc36e0a7c",
-            });
-
-            Add(new Item(1117087491u, "Remove Road Props") {
-                Authors = "Simon Ryr",
-                Affect = Factor.HideRemove,
-                Flags = ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 690066392u, Status.Incompatible }, // American RoadSigns v2.2.0
-                    // anything else that removes road props
-                },
-                SourceURL = "https://gist.github.com/simon56modder/e1e15b53d7ca0d4ac76cb5fbccacc279",
-            });
-
             Add(new Item(1115699323u, "Immersive Water 0.9.0.0 (beta release)") {
                 Authors = "Runaurufu",
                 Flags = ItemFlags.Abandonware
@@ -645,6 +470,18 @@ namespace AutoRepair {
                     // todo
                 },
                 SourceURL = "https://bitbucket.org/Runaurufu/cities-skylines-immersive-water/src",
+            });
+
+
+            // Similar thing to Klyte's addresses mod
+            // renames based on street/district name
+            Add(new Item(1179846541u, "Rename buildings") {
+                Authors = "Romanoza",
+                Affect = Factor.Naming,
+                Flags = ItemFlags.SourceUnavailable,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo: incompat - klyte addresses, possibly also customize it extended, and custom name lists
+                },
             });
 
             Add(new Item(958161597u, "Twitch Viewer Integrator") {
@@ -661,55 +498,6 @@ namespace AutoRepair {
                 },
                 ReplaceWith = 1865667356u, // Twitch Citizens
                 SourceURL = "https://github.com/kiwiploetze/TwitchIntegrator",
-            });
-
-            Add(new Item(956707300u, "Remove Street Arrows") {
-                Authors = "Simon Ryr",
-                Affect = Factor.HideRemove,
-                Flags = ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo
-                },
-                SourceURL = "https://gist.github.com/simon56modder/161f68433ad951b3f6b10ad7c392d277",
-            });
-
-            Add(new Item(954067599u, "PropRotating Params") {
-                Authors = "Ronyx69",
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.EditorMod
-                      | ItemFlags.Obsolete // Use instead: https://cslmodding.info/shader/proprotating/
-                      | ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(952542692u, "Airport Road Light Remover") {
-                Authors = "vasimr22",
-                Affect = Factor.HideRemove,
-                Flags = ItemFlags.SlowLoad // parses all runway assets
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Unreliable, // many users report crashes and other errors
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // Hide It - incompat
-                    { 953381687u, Status.Recommended }, // Basic Airport Road Light Pack
-                },
-            });
-
-            // probably obsolete - custom name lists mod is much better apporach
-            Add(new Item(950011274u, "Japanese Romaji Names [BETA]") {
-                Authors = "Homusubi",
-                Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.Localised,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 935350530u, Status.Required }, // CSL Custom Names [1.0.0]
-                },
-                Locale = "ja",
-            });
-
-            Add(new Item(949061920u, "No Buoys Mod") {
-                Authors = "noob_vl",
-                Affect = Factor.HideRemove,
-                Flags = ItemFlags.SourceAvailable,
-                Languages = new[] { "en", "pl" },
-                SourceURL = "https://github.com/vonLeebpl/NoBuoysMod/tree/master/NoBuoysMod",
             });
         }
     }

@@ -27,6 +27,24 @@ namespace AutoRepair.Catalogs {
         private static ulong note = 100000000u;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Catalog"/> class.
+        /// </summary>
+        public Catalog() {
+            Log.Info("Catalog Opened\n");
+            Items = new Dictionary<ulong, Item>();
+            AddCatalogs();
+            Validate();
+            LogTally();
+        }
+
+        /// <summary>
+        /// Finalizes an instance of the <see cref="Catalog"/> class.
+        /// </summary>
+        ~Catalog() {
+            Items = null;
+        }
+
+        /// <summary>
         /// Gets id to use for "always show" Notes fields in item descriptors.
         ///
         /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
@@ -41,21 +59,106 @@ namespace AutoRepair.Catalogs {
         public static Catalog Instance => instance ?? (instance = new Catalog());
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Catalog"/> class.
+        /// Gets the number of items currently defined in the catalog.
         /// </summary>
-        public Catalog() {
-            Items = new Dictionary<ulong, Item>();
-            AddCatalogs();
-            Validate();
-            LogTally();
-            //DumpCatalog();
+        public int Count => Items == null ? 0 : Items.Count;
+
+        /// <summary>
+        /// Gets or sets the list of workshop items, keyed by Steam Workshop ID.
+        /// </summary>
+        private Dictionary<ulong, Item> Items { get; set; }
+
+        /// <summary>
+        /// Closes the catalog to allow gc to recover used RAM.
+        /// </summary>
+        public static void Close() {
+            Log.Info("Catalog Closed\n");
+            if (instance?.Items != null) {
+                instance.Items.Clear();
+            }
+            instance = null;
         }
 
         /// <summary>
-        /// Gets the list of workshop items, keyed by Steam Workshop ID.
+        /// Test if an item is in the main catalog.
         /// </summary>
-        public Dictionary<ulong, Item> Items { get; private set; }
+        /// 
+        /// <param name="workshopId">The Steam Workshop id for the item.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if present, otherwise <c>false</c>.</returns>
+        public bool Has(ulong workshopId) {
+            return Items.ContainsKey(workshopId);
+        }
 
+        /// <summary>
+        /// Tries to get an item from the catalog.
+        /// </summary>
+        /// 
+        /// <param name="workshopId">The Steam Workshop id of the item.</param>
+        /// <param name="item">The item, if found.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if the item was found, otherwise <c>false</c>.</returns>
+        public bool TryGetValue(ulong workshopId, out Item item) {
+            if (Items.TryGetValue(workshopId, out var result)) {
+                item = result;
+                return true;
+            } else {
+                item = null;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Adds a mod item to the list.
+        /// </summary>
+        /// 
+        /// <param name="item">The item to add.</param>
+        ///
+        /// <returns>Returns the item.</returns>
+        private Item AddMod(Item item) {
+            item.ItemType = ItemTypes.Mod;
+
+            if (Has(item.WorkshopId)) {
+                Log.Info($"### ERROR: AddMod() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
+                return item;
+            }
+
+            // to help track down which item is failing:
+            // uncomment following and edit catalog if you are getting duplicate key errors
+            /*
+            if (item.Catalog == "Unlockers") {
+                Log.Info($"# {item.WorkshopName}");
+            }
+            /**/
+
+            item.Validate();
+
+            Items.Add(item.WorkshopId, item);
+
+            return item;
+        }
+
+        /// <summary>
+        /// Adds an asset item to the list.
+        /// </summary>
+        /// 
+        /// <param name="item">The item to add.</param>
+        ///
+        /// <returns>Returns the item.</returns>
+        private Item AddAsset(Item item) {
+            item.ItemType = ItemTypes.Asset;
+
+            if (Has(item.WorkshopId)) {
+                Log.Info($"### ERROR: AddAsset() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
+                return item;
+            }
+
+            item.Validate();
+
+            Items.Add(item.WorkshopId, item);
+
+            return item;
+        }
 
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
@@ -117,50 +220,6 @@ namespace AutoRepair.Catalogs {
             Log.Info(log.ToString());
         }
 
-        /// <summary>
-        /// Adds a mod item to the list.
-        /// </summary>
-        /// 
-        /// <param name="item">The item to add.</param>
-        ///
-        /// <returns>Returns the item.</returns>
-        private Item AddMod(Item item) {
-            item.ItemType = ItemTypes.Mod;
-
-            if (Has(item.WorkshopId)) {
-                Log.Info($"### ERROR: AddMod() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
-                return item;
-            }
-
-            item.Validate();
-
-            Items.Add(item.WorkshopId, item);
-
-            return item;
-        }
-
-        /// <summary>
-        /// Adds an asset item to the list.
-        /// </summary>
-        /// 
-        /// <param name="item">The item to add.</param>
-        ///
-        /// <returns>Returns the item.</returns>
-        private Item AddAsset(Item item) {
-            item.ItemType = ItemTypes.Asset;
-
-            if (Has(item.WorkshopId)) {
-                Log.Info($"### ERROR: AddAsset() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
-                return item;
-            }
-
-            item.Validate();
-
-            Items.Add(item.WorkshopId, item);
-
-            return item;
-        }
-
         private void AddCatalogs() {
             Stopwatch timer = Stopwatch.StartNew();
 
@@ -170,7 +229,6 @@ namespace AutoRepair.Catalogs {
 
                 AssetsCatalog(); // actual assets, not mods
 
-                AchievementsCatalog();
                 AudioEffectsCatalog();
                 BalanceCatalog();
                 BuildingLevelCatalog();
@@ -179,6 +237,8 @@ namespace AutoRepair.Catalogs {
                 ContentManagerCatalog();
                 ConvertersCatalog();
                 DiagnosticCatalog();
+                DisastersCatalog();
+                EditorCatalog();
                 EmptyingCatalog();
                 HideCatalog();
                 LoadSaveCatalog();
@@ -204,6 +264,7 @@ namespace AutoRepair.Catalogs {
                 TranslationsCatalog();
                 TreesCatalog();
                 UnlimitersCatalog();
+                UnlockersCatalog();
                 VehicleEffectsCatalog();
                 VehiclesCatalog();
                 VisualEffectsCatalog();
@@ -226,7 +287,7 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Tries to parse a date string from Steam Workshop page in to a <see cref="DateTime"/> instance.
         ///
-        /// Format it expects is: dd MMM, yyyy
+        /// Format it expects is: d MMM, yyyy
         /// </summary>
         /// 
         /// <param name="dateStr">The string copied from sidebar on item Workshop page.</param>
@@ -242,27 +303,6 @@ namespace AutoRepair.Catalogs {
         }
 
         /// <summary>
-        /// Test if an item is in the main catalog.
-        /// </summary>
-        /// 
-        /// <param name="workshopId">The Steam Workshop id for the item.</param>
-        /// 
-        /// <returns>Returns <c>true</c> if present, otherwise <c>false</c>.</returns>
-        public bool Has(ulong workshopId) {
-            return Items.ContainsKey(workshopId);
-        }
-
-        public bool TryGetValue(ulong workshopId, out Item item) {
-            if (Items.TryGetValue(workshopId, out var result)) {
-                item = result;
-                return true;
-            } else {
-                item = null;
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Validates the items that have been added to catalog to check if thier
         /// references to other items are listed and, if applicable, reciprocated.
         /// </summary>
@@ -273,7 +313,7 @@ namespace AutoRepair.Catalogs {
 
             bool problems = false;
 
-            StringBuilder log = new StringBuilder(1024 * 50);
+            StringBuilder log = new StringBuilder(1024 * 100);
 
             foreach (KeyValuePair<ulong, Item> record in Items) {
 
@@ -415,10 +455,13 @@ namespace AutoRepair.Catalogs {
                         itemLog.Append($" Debug: Has(nextTarget) = false\n");
                     }
 
-                    basicProblems = true;
-                    itemLog.AppendFormat(
-                        "- ReplaceWith not in Catalog.Items: {0}\n",
-                        target.ReplaceWith);
+                    if (extendedReporting) {
+                        basicProblems = true;
+                        itemLog.AppendFormat(
+                            "- ReplaceWith not in Catalog.Items: {0}\n",
+                            target.ReplaceWith);
+                    }
+
                     break;
                 }
             }

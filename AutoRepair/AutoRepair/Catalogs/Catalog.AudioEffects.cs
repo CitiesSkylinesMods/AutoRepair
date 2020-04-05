@@ -34,6 +34,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1719979486u, Status.Incompatible }, // Philippines Realistic Sound Mod: Return!
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
@@ -57,8 +58,23 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
+            AddMod(new Item(1719979486u, "Philippines Realistic Sound Mod: Return!") {
+                Affect = Factor.Audio,
+                Authors = "Corn Starchia",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
+                },
+                Flags = ItemFlags.GameBreaking
+                      | ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("22 Apr, 2019"),
+                Updated = WorkshopDate("22 Apr, 2019"),
+            });
+
             // original mod (obsolete)
-            // https://github.com/Archomeda/csl-ambient-sounds-tuner/wiki/Creating%20Sound%20Packs
             AddMod(new Item(455958878u, "Ambient Sounds Tuner") {
                 Affect = Factor.Audio
                        | Factor.Environment,
@@ -66,6 +82,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1719979486u, Status.Incompatible }, // Philippines Realistic Sound Mod: Return!
                     { 1541828679u, Status.Incompatible }, // CNSoundPack V0.2.2
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
@@ -82,6 +99,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // approx Jan 2017
                       | ItemFlags.Obsolete // replacement mod available
                       | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Creating sound packs (outdated): https://github.com/Archomeda/csl-ambient-sounds-tuner/wiki/Creating%20Sound%20Packs" },
+                },
                 ReplaceWith = 818641631u, // Ambient Sounds Tuner 2.0
                 SourceURL = "https://github.com/Archomeda/csl-ambient-sounds-tuner",
                 Tags = new[] { "Audio", "Sound", "Sirens", "Police", "Fire", "Ambulance" }, // add more
@@ -94,6 +114,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "V10lator",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1719979486u, Status.Incompatible }, // Philippines Realistic Sound Mod: Return!
                     { 1541828679u, Status.Incompatible }, // CNSoundPack V0.2.2
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)

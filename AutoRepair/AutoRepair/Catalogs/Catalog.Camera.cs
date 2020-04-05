@@ -43,16 +43,16 @@ namespace AutoRepair.Catalogs {
                 Authors = "eelcobaas",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1828737770u, Status.Incompatible }, // StereoscopicView
-                    { 1492317158u, Status.Incompatible }, // 第一人称视角
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued (no longer in workshop)
-                    { 650805785u , Status.Incompatible }, // First Person Camera: Updated
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom (no longer in workshop)
-                    { 406255342u , Status.Incompatible }, // First-person camera
+                    //{ 1828737770u, Status.Incompatible }, // StereoscopicView
+                    //{ 1492317158u, Status.Incompatible }, // 第一人称视角
+                    //{ 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
+                    //{ 651056665u , Status.Incompatible }, // Enhanced Zoom Continued (no longer in workshop)
+                    //{ 650805785u , Status.Incompatible }, // First Person Camera: Updated
+                    //{ 411016892u , Status.Incompatible }, // Enhanced Zoom (no longer in workshop)
+                    //{ 406255342u , Status.Incompatible }, // First-person camera
                 },
                 Flags = ItemFlags.MinorBugs // mouse pointer and underground view borked
-                      | ItemFlags.SourceUnavailable,
+                      | ItemFlags.SourceBundled,
             });
 
             AddMod(new Item(1756089251u, "Zoom It!") {

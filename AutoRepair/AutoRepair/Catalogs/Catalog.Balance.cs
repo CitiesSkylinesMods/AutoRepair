@@ -23,11 +23,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "Anvilarse",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
-                    { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  },
+                    { Vanilla.HardMode      , Status.Incompatible },
 
                     { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 1830455071u, Status.Incompatible }, // EasyMode
+                    { 1744522363u, Status.Incompatible }, // Money Back (Refund)
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
+                    { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
@@ -35,7 +39,8 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sets all construction, maintennace and relocation costs to zero." },
-                    { 2039606384u, "[Mod: Free Maintenance] If using Easy Mode: Money, you don't need Free Maintenance (Easy Mode already has that)." },
+                    { Vanilla.UnlimitedMoney, "[Vanilla Mod: Unlimited Money] If you have unlimited money, Easy Mode mod is not much use." },
+                    { 2039606384u, "[Mod: Free Maintenance] Easy Mode includes free maintenance, so you can remove one of these mods." },
                 },
                 ReleasedDuring = GameVersion.SunsetHarbor,
             });
@@ -46,11 +51,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "Anvilarse",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
-                    { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  },
+                    { Vanilla.HardMode      , Status.Incompatible },
 
                     { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 1830455071u, Status.Incompatible }, // EasyMode
+                    { 1744522363u, Status.Incompatible }, // Money Back (Refund)
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
+                    { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
@@ -123,6 +132,38 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/algernon-A/Realistic-Population-Revisited",
             });
 
+            AddMod(new Item(1830455071u, "EasyMode") {
+                Affect = Factor.Bulldoze
+                       | Factor.Construction
+                       | Factor.MaintenanceCost
+                       | Factor.PlaceAndMove
+                       | Factor.Money
+                       | Factor.Revenue,
+                Authors = "GoNutsDonuts",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  },
+                    { Vanilla.HardMode      , Status.Incompatible },
+
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 1744522363u, Status.Incompatible }, // Money Back (Refund)
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
+                    { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Reduces cost of construction, maintenance, relocation, increases refund." },
+                    { Vanilla.UnlimitedMoney, "[Vanilla Mod: Unlimited Money] If you have unlimited money, EasyMode mod is not much use." },
+                },
+                Published = WorkshopDate("10 Aug, 2019"),
+                Updated = WorkshopDate("10 Aug, 2019"),
+            });
+
             AddMod(new Item(1806759255u, "Customize It Extended") {
                 Affect = Factor.BuildingInfo
                        | Factor.BuildingCapacity
@@ -162,6 +203,34 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Abandonware,
             });
 
+            // todo: prolly incompatible with similar mods
+            AddMod(new Item(1744522363u, "Money Back (Refund)") {
+                Affect = Factor.Money
+                       | Factor.PlaceAndMove
+                       | Factor.Revenue,
+                Authors = "vpoteryaev",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
+                    { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 1830455071u, Status.Incompatible }, // EasyMode
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceBundled
+                      | ItemFlags.Abandonware,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Allows altering the relocation costs and bulldozer refund amounts while game is paused." },
+                },
+                Published = WorkshopDate("18 May, 2019"),
+                Updated = WorkshopDate("18 May, 2019"),
+            });
+
             AddMod(new Item(1674732053u, "Employ Overeducated Workers V2 (1.11+)") {
                 Affect = Factor.Employment,
                 Authors = "pcfantasy",
@@ -185,12 +254,39 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/pcfantasy/EmployOvereducatedWorkers-v2",
             });
 
+            AddMod(new Item(1598546349u, "Mary's Mod") {
+                Affect = Factor.Money,
+                Authors = "tim",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  },
+                    { Vanilla.HardMode      , Status.Incompatible },
+
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 1830455071u, Status.Incompatible }, // EasyMode
+                    { 1744522363u, Status.Incompatible }, // Money Back (Refund)
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
+                    { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { Vanilla.UnlimitedMoney, "[Vanilla Mod: Unlimited Money] If you have unlimited money, Mary's Mod mod is not much use." },
+                },
+                Published = WorkshopDate("22 Dec, 2018"),
+                Updated = WorkshopDate("22 Dec, 2018"),
+            });
+
             AddMod(new Item(1562650024u, "Rebalanced Industries") {
                 Affect = Factor.BuildingCapacity
                        | Factor.BuildingLevel
                        | Factor.Consumption
                        | Factor.Employment
-                       | Factor.Milestones
+                       | Factor.Unlockers
                        | Factor.Production
                        | Factor.StorageCapacity
                        | Factor.VehicleCapacity,
@@ -216,9 +312,9 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 938049744u, Status.Incompatible }, // Proper Hardness Fixed
+                    { 411190402u, Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
                     { 410344523u, Status.Incompatible }, // PopBalanceMod
                     { 408706691u, Status.Incompatible }, // Proper Hardness
-                    { 411190402u, Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -256,13 +352,38 @@ namespace AutoRepair.Catalogs {
                 Authors = "Xial",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  },
+                    { Vanilla.HardMode      , Status.Incompatible },
 
                     { 602336261u, Status.Incompatible }, // Maintenance Fees
                 },
                 ContinuationOf = 602336261u, // Maintenance Fees
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/Xial/Maintenancefee",
+            });
+
+            // refund full construction cost when bulldozing
+            AddMod(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
+                Affect = Factor.Money,
+                Authors = "C#",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
+                    { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 1830455071u, Status.Incompatible }, // EasyMode
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { Vanilla.UnlimitedMoney, "[Vanilla Mod: Unlimited Money] If you have unlimited money, Full Refund Cost mod is not much use." },
+                },
+                Published = WorkshopDate("10 Dec, 2017"),
+                Updated = WorkshopDate("5 Mar, 2019"),
             });
 
             // An update to 406841580u - SimCity Fudged Population, but with better UI.
@@ -503,7 +624,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Happiness
                        | Factor.Immigrants
                        | Factor.MaintenanceCost
-                       | Factor.Milestones // reduced cash reward
+                       | Factor.Unlockers // reduced cash reward
                        | Factor.Money
                        | Factor.Pollution
                        | Factor.Production
@@ -516,21 +637,27 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.ParkLife,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  },
+                    { Vanilla.HardMode      , Status.Incompatible },
                     { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
                     { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
+                    { 1830455071u, Status.Incompatible }, // EasyMode
                     { 1776052533u, Status.Incompatible }, // Stops & Stations
                     { 1766839841u, Status.Incompatible }, // Anxiety Reducer
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1744522363u, Status.Incompatible }, // Money Back (Refund)
                     { 1614061108u, Status.Incompatible }, // Real Construction
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1556715327u, Status.Incompatible }, // Show It!
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1420955187u, Status.Incompatible }, // Real Time
                     { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
+                    { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
@@ -541,8 +668,6 @@ namespace AutoRepair.Catalogs {
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
-
-                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
                 CompatibleWith = GameVersion.GreenCities,
                 // note: if there is a knighthawkGP version, then it's continuation of that instead
@@ -787,7 +912,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Happiness
                        | Factor.Immigrants
                        | Factor.MaintenanceCost
-                       | Factor.Milestones // reduced cash reward
+                       | Factor.Unlockers // reduced cash reward
                        | Factor.Money
                        | Factor.Pollution
                        | Factor.Production
@@ -800,6 +925,8 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.AfterDark,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues  },
+                    { Vanilla.HardMode      , Status.Incompatible },
                     // incompat with t++ & likely other traffic mods
                     { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
@@ -807,15 +934,19 @@ namespace AutoRepair.Catalogs {
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
+                    { 1830455071u, Status.Incompatible }, // EasyMode
                     { 1776052533u, Status.Incompatible }, // Stops & Stations
                     { 1766839841u, Status.Incompatible }, // Anxiety Reducer
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1744522363u, Status.Incompatible }, // Money Back (Refund)
                     { 1614061108u, Status.Incompatible }, // Real Construction
+                    { 1598546349u, Status.Incompatible }, // Mary's Mod
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1556715327u, Status.Incompatible }, // Show It!
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1420955187u, Status.Incompatible }, // Real Time
                     { 1393820309u, Status.Incompatible }, // Ticket Price Customizer
+                    { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
@@ -826,8 +957,6 @@ namespace AutoRepair.Catalogs {
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
-
-                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
                 CompatibleWith = GameVersion.EuropeBiome,
                 Flags = ItemFlags.Abandonware

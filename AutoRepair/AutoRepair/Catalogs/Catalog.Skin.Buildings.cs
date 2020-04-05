@@ -44,6 +44,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Textures,
                 Authors = "Elektrix",
                 Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() { },
                 Flags = ItemFlags.SourceUnavailable,
                 Tags = new[] { "Buildings", "Colors", "Colours", "Painter", "Customise", "Customize", "Textures", "Roof", "Tiles", },
             });
