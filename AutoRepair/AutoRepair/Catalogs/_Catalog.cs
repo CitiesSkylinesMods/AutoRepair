@@ -153,7 +153,7 @@ namespace AutoRepair.Catalogs {
                 return item;
             }
 
-            item.Validate();
+            //item.Validate();
 
             Items.Add(item.WorkshopId, item);
 
@@ -248,6 +248,7 @@ namespace AutoRepair.Catalogs {
                 NetworksCatalog();
                 PaintCatalog();
                 PlaceAndMoveCatalog();
+                PollutionCatalog();
                 ProceduralCatalog();
                 PublicTransportCatalog();
                 RepairCatalog();

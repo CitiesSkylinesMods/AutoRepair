@@ -30,7 +30,7 @@ namespace AutoRepair.Catalogs {
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus,
             });
@@ -47,7 +47,7 @@ namespace AutoRepair.Catalogs {
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus,
             });

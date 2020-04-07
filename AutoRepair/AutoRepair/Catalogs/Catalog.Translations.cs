@@ -79,6 +79,7 @@ namespace AutoRepair.Catalogs {
                     { 937334007u , Status.Incompatible }, // Japanese Localization RD
                     { 935356978u , Status.Incompatible }, // CSL Names Pack Example [1.0.0]
                     { 935350530u , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 933961247u , Status.Unknown      }, // Russian text fix
                 },
                 Flags = ItemFlags.SourceAvailable,
                 Published = WorkshopDate("15 Dec, 2017"),
@@ -96,6 +97,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1231957400u, Status.Incompatible }, // Custom Namelists
                     { 935350530u , Status.Required     }, // CSL Custom Names [1.0.0]
+                    { 933961247u , Status.Unknown      }, // Russian text fix
                 },
                 Published = WorkshopDate("29 May, 2017"),
                 ReplaceWith = 1231957400u, // Custom Namelists
@@ -116,10 +118,30 @@ namespace AutoRepair.Catalogs {
                     { 937334007u , Status.Incompatible }, // Japanese Localization RD
                     { 935356978u , Status.Compatible   }, // CSL Names Pack Example [1.0.0]
                     { 935350530u , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 933961247u , Status.Unknown      }, // Russian text fix
                 },
                 Published = WorkshopDate("29 May, 2017"),
                 ReplaceWith = 1231957400u, // Custom Namelists
                 Updated = WorkshopDate("29 May, 2017"),
+            });
+
+            // changes existing russian translation text, replacing some words with shorter ones
+            AddMod(new Item(933961247u, "Russian text fix") {
+                Affect = Factor.Other,
+                Authors = "TGC",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1753697086u, Status.Unknown      }, // Russian Localization Fix - Исправление русской локализации
+                    { 1752699330u, Status.Unknown      }, // Альтернативный русский NamesLists
+                    { 1231957400u, Status.Unknown      }, // Custom Namelists
+                    { 935356978u , Status.Unknown      }, // CSL Names Pack Example [1.0.0]
+                    { 935350530u , Status.Unknown      }, // CSL Custom Names [1.0.0]
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.Localised
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("27 May, 2017"),
+                Updated = WorkshopDate("27 May, 2017"),
             });
 
             /*
@@ -137,6 +159,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1752699330u, Status.Incompatible }, // Альтернативный русский NamesLists
                     { 1231957400u, Status.Required     }, // Custom Namelists
+                    { 933961247u , Status.Unknown      }, // Russian text fix
                 },
                 CompatibleWith = GameVersion.Active,
                 ContinuationOf = 1752699330u, // Альтернативный русский NamesLists
@@ -154,6 +177,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1753697086u, Status.Incompatible }, // Russian Localization Fix - Исправление русской локализации
                     { 1231957400u, Status.Required     }, // Custom Namelists
+                    { 933961247u , Status.Unknown      }, // Russian text fix
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
@@ -417,6 +441,9 @@ namespace AutoRepair.Catalogs {
                     { 940398690u , Status.Incompatible },
                     { 929222270u , Status.Incompatible },
                     { 929211897u , Status.Incompatible },
+                    { 928628465u , Status.Incompatible },
+                    { 928477022u , Status.Incompatible },
+                    { 926909781u , Status.Incompatible },
             };
 
             string aliDetails = "Details of mod: https://forum.paradoxplaza.com/forum/index.php?threads/get-steam-to-remove-this-item-from-the-workshop.975808/#post-21997231";
@@ -1066,7 +1093,62 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 May, 2017"),
             });
 
+            AddMod(new Item(928628465u, "ali213_mod_01") {
+                Affect = Factor.Other, // todo
+                Authors = "yuluo",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Locale = "zh-cn",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, aliDetails },
+                },
+                Published = WorkshopDate("19 May, 2017"),
+                ReplaceWith = latestAliMod,
+                Updated = WorkshopDate("19 May, 2017"),
+            });
 
+            AddMod(new Item(928477022u, "ali213_mod_01") {
+                Affect = Factor.Other, // todo
+                Authors = "BeiCheng",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Locale = "zh-cn",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, aliDetails },
+                },
+                Published = WorkshopDate("19 May, 2017"),
+                ReplaceWith = latestAliMod,
+                Updated = WorkshopDate("19 May, 2017"),
+            });
+
+            AddMod(new Item(926909781u, "ali213_mod_01") {
+                Affect = Factor.Other, // todo
+                Authors = "MCOO",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Locale = "zh-cn",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, aliDetails },
+                },
+                Published = WorkshopDate("16 May, 2017"),
+                ReplaceWith = latestAliMod,
+                Updated = WorkshopDate("16 May, 2017"),
+            });
         }
     }
 }

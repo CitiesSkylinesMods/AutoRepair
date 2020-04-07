@@ -50,7 +50,7 @@ namespace AutoRepair.Catalogs {
                     { 439582006u , Status.Incompatible }, // [ARIS] Enhanced Garbage Truck AI
                     { 433249875u , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/chronofanz/EnhancedDistrictServices",
@@ -73,6 +73,7 @@ namespace AutoRepair.Catalogs {
                     { 1632320836u, Status.Incompatible }, // Service Vehicles Manager 2.0.1
                     { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
                     { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
+                    { 934994075u , Status.Unknown      }, // Service Vehicle Selector 2
                     { 927293560u , Status.Incompatible }, // Geli-Districts v3.0
                     { 649522495u , Status.Incompatible }, // District Service Limit (original)
                     { 569008960u , Status.Incompatible }, // Employ Overeducated Workers (original)
@@ -107,7 +108,8 @@ namespace AutoRepair.Catalogs {
             // todo: move to vehicle cat?
             AddMod(new Item(1192250578u, "Emergency Lights Manager") {
                 Affect = Factor.Rendering
-                       | Factor.Service,
+                       | Factor.Service
+                       | Factor.Vehicles,
                 Authors = "Cryptkeeper",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -119,7 +121,8 @@ namespace AutoRepair.Catalogs {
             });
 
             AddMod(new Item(1181352643u, "District Service Limit 3.0") {
-                Affect = Factor.Service,
+                Affect = Factor.Service
+                       | Factor.Vehicles,
                 Authors = "cambrium",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -144,6 +147,45 @@ namespace AutoRepair.Catalogs {
                 },
                 // ReplaceWith = 927293560u, // Geli Districts (also seems broken)
                 SourceURL = "https://github.com/TheDogKSP/cs-districts",
+            });
+
+            AddMod(new Item(934994075u, "Service Vehicle Selector 2") {
+                Affect = Factor.Service
+                       | Factor.Vehicles,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1922400472u, Status.Incompatible }, // Enhanced District Services
+                    { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
+                    { 1764208250u, Status.Unknown      }, // More Vehicles
+                    { 1680840913u, Status.Unknown      }, // More Effective Transfer Manager
+                    { 1637663252u, Status.Compatible   }, // TM:PE v11 STABLE
+                    { 1632320836u, Status.Incompatible }, // Service Vehicles Manager 2.0.1
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options AVO (Industries DLC ready)
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (alters vehicle AIs)
+                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2
+                    { 871859856u , Status.Incompatible }, // RiverCargoHarborMod
+                    { 583429740u , Status.Compatible   }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT) - original ver
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 519691655u, // Service Vehicle Selector
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("28 May, 2017"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-ServiceVehicleSelector",
+                Updated = WorkshopDate("2 Apr, 2020"),
             });
 
             /*

@@ -40,9 +40,14 @@ namespace AutoRepair.Catalogs {
                        | Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "DJSADERS",
+                BrokenBy = GameVersion.Patch_1_13_0_f8,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    // other road skin mods:
+                    { 1959342332u, Status.Incompatible }, // CSUR ToolBox
                     { 812125426u , Status.Incompatible }, // Network Extensions 2
+                    // street light mods:
+                    { 547126602u , Status.Incompatible }, // Street Light Replacer
                     // traffic light mods struggle with NExt2 roads:
                     { 1812157090u, Status.MinorIssues  }, // [NL] Dutch Traffic Lights
                     { 1550720600u, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
@@ -58,16 +63,21 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 812125426u, // Network Extensions 2
-                Flags = ItemFlags.SaveChanging
+                Flags = ItemFlags.NoWorkshop // removed 6th April 2020 due to original mod being fixed
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SaveChanging
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "This is a temporary bug fix mod for Network Extensions 2." },
-                    { NOTE, "More info: https://github.com/andreharv/NetworkExtensions/issues/18" },
+                    { NOTE, "OBSOLETE: The original mod has been fixed, so you can unsubscribe this temporary bug fix version." },
+                    // { NOTE, "More info: https://github.com/andreharv/NetworkExtensions/issues/18" },
+                    { 1959342332u, "[Mod: CSUR ToolBox] Breaks road zoning position and Zone Adjuster (Shift+Click)" },
                 },
                 Published = WorkshopDate("1 Apr, 2020"),
                 ReleasedDuring = GameVersion.SunsetHarbor,
+                ReplaceWith = 812125426u, // Network Extensions 2
                 SourceURL = "https://github.com/andreharv/NetworkExtensions",
+                SuppressOlderReplacementWarning = true,
                 Updated = WorkshopDate("1 Apr, 2020"),
             });
 
@@ -98,7 +108,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/kianzarrin/HideUnconnectedTracks",
                 Tags = new[] { "TMPE", "TM:PE", "Tram", "Train", "Network", "Skins", "Junctions", "Tracks" },
             });
@@ -114,12 +124,12 @@ namespace AutoRepair.Catalogs {
                     { 2008960441u, Status.Required     }, // Spanish Arrow Decals Pack
                     { 956707300u , Status.Incompatible }, // Remove Street Arrows
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 1591417160u, "[Mod: Hide It!] If you remove road arrows with Hide It, the Road Arrows Replacer can't replace them." },
                 },
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
             });
 
             // Requires either TM:PE and/or Network Skins 2
@@ -152,7 +162,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 1934023593u, // Hide TMPE crosswalks V2.5 [BETA]
                 Flags = ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/kianzarrin/HideTMPECrosswalks",
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
             });
@@ -450,7 +460,7 @@ namespace AutoRepair.Catalogs {
                     { 422554572u , Status.MinorIssues  }, // 81 Tiles Updated
                     { 417585852u , Status.Incompatible }, // Road Color Changer
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.EditorBreaking

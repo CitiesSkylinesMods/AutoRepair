@@ -96,11 +96,11 @@ namespace AutoRepair.Catalogs {
                     { 421028969u , Status.Incompatible }, // [ARIS] Skylines Overwatch
                     // Old anarchy mods (make a huge mess of networks and terrain!)
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
-                    { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
+                    { 912329352u,  Status.Incompatible }, // Building Anarchy
                     { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
                     { 418556522u , Status.Incompatible }, // Road Anarchy
-                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9 (just sick of seeing this break games!)
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                     // Obsolete road mods (fix with "Road Removal Tool" and "Safenets" mods)
                     { 929114228u , Status.Incompatible }, // New Roads for Network Extensions
                     { 478820060u , Status.Incompatible }, // Network Extensions Project (v1)
@@ -157,6 +157,7 @@ namespace AutoRepair.Catalogs {
                     //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
+                    { 934994075u , Status.Compatible   }, // Service Vehicle Selector 2
                     { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector (old version)
@@ -245,11 +246,11 @@ namespace AutoRepair.Catalogs {
                     { 421028969u , Status.Incompatible }, // [ARIS] Skylines Overwatch
                     // Old anarchy mods (make a huge mess of networks and terrain!)
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
-                    { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
+                    { 912329352u,  Status.Incompatible }, // Building Anarchy
                     { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
                     { 418556522u , Status.Incompatible }, // Road Anarchy
-                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9 (just sick of seeing this break games!)
+                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                     // Obsolete road mods (fix with "Road Removal Tool" and "Safenets" mods)
                     { 929114228u , Status.Incompatible }, // New Roads for Network Extensions
                     { 478820060u , Status.Incompatible }, // Network Extensions Project (v1)
@@ -306,6 +307,7 @@ namespace AutoRepair.Catalogs {
                     //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
+                    { 934994075u , Status.Compatible   }, // Service Vehicle Selector 2
                     { 726005715u , Status.MinorIssues  }, // Roads United: Core+
                     { 633547552u , Status.MinorIssues  }, // Roads United Core 2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector (old version)
@@ -418,6 +420,7 @@ namespace AutoRepair.Catalogs {
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
@@ -489,6 +492,7 @@ namespace AutoRepair.Catalogs {
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
@@ -557,6 +561,7 @@ namespace AutoRepair.Catalogs {
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
@@ -628,6 +633,7 @@ namespace AutoRepair.Catalogs {
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
@@ -701,6 +707,7 @@ namespace AutoRepair.Catalogs {
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
                     { 956707300u , Status.Compatible   }, // Remove Street Arrows
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
+                    { 934994075u , Status.Compatible   }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 927293560u , Status.Incompatible }, // Geli-Districts v3.0
@@ -719,7 +726,7 @@ namespace AutoRepair.Catalogs {
                     { 1535107168u, Status.MinorIssues  }, // New American Traffic Lights
                     { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 568443446, // Traffic Manager Plus 1.2.0
                 Flags = ItemFlags.Abandonware // replaced by v11 branch
                       | ItemFlags.BrokenByUpdate // Sunset Harbor

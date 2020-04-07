@@ -75,6 +75,7 @@ namespace AutoRepair.Catalogs {
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 934994075u , Status.Compatible   }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (AVO)
@@ -242,6 +243,7 @@ namespace AutoRepair.Catalogs {
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed

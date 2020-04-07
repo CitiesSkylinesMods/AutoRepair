@@ -23,9 +23,11 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Authors = "Dendraspis",
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
                     { 1577882296u, Status.Incompatible }, // Resize It!
                     { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 586012417u , Status.Incompatible }, // Ploppable RICO
                     { 563229150u , Status.Incompatible }, // Advanced Toolbar
                     { 540758804u , Status.Incompatible }, // Search Box Mod
@@ -41,15 +43,18 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Authors = "Keallu",
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2016920607u, Status.Compatible   }, // RICO revisited
                     { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
                     { 1577882296u, Status.Incompatible }, // Resize It!
                     { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
-                    { 586012417u , Status.Incompatible }, // Ploppable RICO
+                    { 1204126182u, Status.Compatible   }, // Ploppable Rico High Density Fix
+                    { 586012417u , Status.Compatible   }, // Ploppable RICO
                     { 563229150u , Status.Incompatible }, // Advanced Toolbar
                     { 540758804u , Status.Incompatible }, // Search Box Mod
                     { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
                     { 451700838u , Status.Incompatible }, // Extended Toolbar
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better

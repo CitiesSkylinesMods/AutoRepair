@@ -36,7 +36,7 @@ namespace AutoRepair.Catalogs {
         private void CsvDumpItemsByFlags(ItemFlags flags, ref StringBuilder csv) {
             foreach (KeyValuePair<ulong, Item> entry in Items) {
                 Item item = entry.Value;
-                if (item.HasFlags(flags)) {
+                if (item.HasFlag(flags)) {
                     CsvDumpItem(item, ref csv);
                 }
             }
@@ -55,7 +55,7 @@ namespace AutoRepair.Catalogs {
                     continue; // nothing to do 
                 }
 
-                if (item.HasFlags(ItemFlags.GameBreaking)) {
+                if (item.HasFlag(ItemFlags.GameBreaking)) {
                     continue; // user should remove or replace it instead
                 }
 

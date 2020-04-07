@@ -108,7 +108,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1680642819u, Status.Compatible }, // Ultimate Level of Detail (ULOD)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: An error sometimes appears on startup, but it seems to work properly after that." },
@@ -130,7 +130,7 @@ namespace AutoRepair.Catalogs {
                     { 963853793u , Status.Recommended  }, // Ultra low tri trees
                     { 502750307u , Status.Incompatible }, // Extra Landscaping Tools
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.InitialRelease,
                 ReplaceWith = 502750307u, // Extra Landscaping Tools

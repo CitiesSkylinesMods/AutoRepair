@@ -63,7 +63,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(1733593614u, "Immediate Continue") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "Dendraspis",
-                BrokenBy = GameVersion.PdxLauncher,
+                BrokenBy = GameVersion.ParadoxLauncher,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
@@ -107,7 +107,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1383456057u, Status.Incompatible }, // Shicho
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking

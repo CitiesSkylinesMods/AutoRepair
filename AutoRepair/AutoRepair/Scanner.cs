@@ -5,11 +5,14 @@ namespace AutoRepair {
     using AutoRepair.Lists;
     using AutoRepair.Util;
     using ColossalFramework;
+    using ColossalFramework.PlatformServices;
     using ColossalFramework.Plugins;
+    using ICities;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Text;
+    using UnityEngine;
     using static ColossalFramework.Plugins.PluginManager;
 
     /// <summary>
@@ -21,9 +24,20 @@ namespace AutoRepair {
         internal const string BUNDLED_MOD_STR = "(bundled)";
 
         /// <summary>
+        /// Gets a value indicating whether the Steam Workshop is available.
+        /// </summary>
+        private static bool SteamWorkshopAvailable => PlatformService.platformType == PlatformType.Steam && !PluginManager.noWorkshop;
+
+        /// <summary>
         /// Performs the compatibility scan.
         /// </summary>
         public static void PerformScan() {
+
+            if (!SteamWorkshopAvailable) {
+                Log.Info("Steam Workshop is not online; unable to perform compatibility scan.");
+                return;
+            }
+
             try {
                 Stopwatch timer = Stopwatch.StartNew();
 
@@ -69,7 +83,6 @@ namespace AutoRepair {
             }
 
             log.Append("\n* Save game not loading? Subscribe Loading Screen Mod,\nenable it's sharing/optimisation and safe mode options, then load your save.\n https://steamcommunity.com/sharedfiles/filedetails/?id=667342976\n");
-            log.Append("\n* Getting 'Object reference' errors in-game?\nTry this bugfix: https://steamcommunity.com/sharedfiles/filedetails/?id=2037862156\n");
 
             if (Options.Instance.LogIntroText) {
                 log.Append("\nThings to know about mods:\n");
@@ -186,119 +199,134 @@ namespace AutoRepair {
                 return;
             }
 
-            if (Catalog.Instance.TryGetValue(modId, out var descriptor)) {
-                ItemFlags flags = descriptor.Flags;
+            if (Catalog.Instance.TryGetValue(modId, out var item)) {
 
-                if (descriptor.Compatibility == null) {
-                    descriptor.Compatibility = new Dictionary<ulong, Status>();
+                if (item.Compatibility == null) {
+                    item.Compatibility = new Dictionary<ulong, Status>();
                 }
 
                 if (Options.Instance.LogDescriptorHeaders) {
                     log.AppendFormat(
                         "\n - [AutoRepair Descriptor] Catalog: '{0}'. Vectors: {1}. Author(s): {2}\n",
-                        descriptor.Catalog,
-                        descriptor.Compatibility.Count,
-                        descriptor.Authors);
+                        item.Catalog,
+                        item.Compatibility.Count,
+                        item.Authors);
                 }
 
-                if (HasFlag(flags, ItemFlags.GameBreaking)) {
+                Version gameVersion = GameVersion.Active;
+
+                if (item.HasFlag(ItemFlags.GameBreaking)) {
+
                     log.Append("\n - Broken mod. Unsubscribe it.\n");
-                } else if (GameVersion.Active >= (descriptor.BrokenBy ?? GameVersion.DefaultUntil)) {
+
+                } else if (item.BrokenBy != null && gameVersion >= item.BrokenBy) {
+
                     log.Append("\n - Not compatible with current game version. Disable it until an update is ready.\n");
-                } else if (GameVersion.Active <= (descriptor.CompatibleWith ?? GameVersion.DefaultRelease)) {
-                    log.AppendFormat("\n - Compatible with Cities: Skylines v{0} :)\n", GameVersion.Active.ToString(3));
+
+                } else if (item.CompatibleWith != null && GameVersion.LatestMilestone <= item.CompatibleWith) {
+
+                    log.AppendFormat(
+                        "\n - Compatible with Cities: Skylines v{0}-f{1} :)\n",
+                        gameVersion.ToString(3),
+                        gameVersion.Revision);
+
                 } else {
+
                     log.Append("\n - Should be compatible with current game version (if not, let us know).\n");
                 }
 
                 if (Options.Instance.LogWorkshopURLs) {
-                    if (HasFlag(flags, ItemFlags.NoWorkshop)) {
+                    if (item.HasFlag(ItemFlags.NoWorkshop)) {
                         log.Append("\n - Removed from Steam Workshop; it is probably obsolete or game breaking.\n");
                     } else {
                         log.AppendFormat("\n - Workshop page for this mod: {0}\n", GetWorkshopURL(modId));
                     }
                 }
 
-                if (HasFlag(flags, ItemFlags.EditorBreaking)) {
+                if (item.HasFlag(ItemFlags.EditorBreaking)) {
                     log.Append("\n - Causes problems in content editors; before using editors, disable it and exit to desktop to flush it from RAM.\n");
                 }
 
-                if (HasFlag(flags, ItemFlags.Abandonware)) {
+                if (item.HasFlag(ItemFlags.Abandonware)) {
                     log.Append("\n - The author hasn't been active for a long time, updates unlikely.\n");
                 }
 
-                if (HasFlag(flags, ItemFlags.Streamable)) {
+                if (item.HasFlag(ItemFlags.Streamable)) {
                     log.Append("\n - This music is safe for streaming (according to author / music source).\n");
-                } else if (descriptor.Compatibility.TryGetValue(422934383u, out var music)) {
+                } else if (item.Compatibility.TryGetValue(422934383u, out var music)) {
                     if (music == Status.Required) {
                         log.Append("\n - Not safe for streaming (copyrighted music).\n");
                     }
                 }
 
-                if (HasFlag(flags, ItemFlags.Laggy)) {
+                if (item.HasFlag(ItemFlags.Laggy)) {
                     log.Append("\n - May cause some lag or framerate drop in-game.\n");
                 }
 
-                if (HasFlag(flags, ItemFlags.SlowLoad)) {
+                if (item.HasFlag(ItemFlags.SlowLoad)) {
                     log.Append("\n - Likely to significantly increase load times.\n");
                 }
 
-                if (HasFlag(flags, ItemFlags.LargeFileWarning)) {
+                if (item.HasFlag(ItemFlags.LargeFileWarning)) {
                     log.Append("\n - Large file size compared to other items of same type.\n");
                 }
 
-                if (HasFlag(flags, ItemFlags.MinorBugs)) {
+                if (item.HasFlag(ItemFlags.MinorBugs)) {
                     log.Append("\n - Minor issues - check workshop page/comments for details.\n");
                 }
 
-                if (HasFlag(flags, ItemFlags.SaveChanging)) {
+                if (item.HasFlag(ItemFlags.SaveChanging)) {
                     log.Append("\n - Alters the save game; without it, the savegame might break.\n");
                 }
 
-                if (HasFlag(flags, ItemFlags.Unreliable)) {
+                if (item.HasFlag(ItemFlags.Unreliable)) {
                     log.Append("\n - Some users report problems; check workshop page/comments for details.\n");
                 }
 
                 if (Options.Instance.LogLanguages) {
-                    if (descriptor.Languages != null) {
+                    if (item.Languages != null) {
                         log.AppendFormat(
                             "\n - Contains locales: {0}\n",
-                            string.Join(", ", Locale.FromStringArray(descriptor.Languages).ToArray()));
+                            string.Join(", ", Locale.FromStringArray(item.Languages).ToArray()));
                     }
-                    log.AppendFormat("\n - Primary locale: {0}\n", Locale.ToString(descriptor.Locale));
+                    log.AppendFormat("\n - Primary locale: {0}\n", Locale.ToString(item.Locale));
                 }
 
                 if (Options.Instance.LogSourceURLs) {
-                    if (HasFlag(flags, ItemFlags.SourceAvailable)) {
-                        if (!string.IsNullOrEmpty(descriptor.SourceURL)) {
-                            log.AppendFormat("\n - Source available: {0}\n", descriptor.SourceURL);
+                    if (item.HasFlag(ItemFlags.SourceAvailable)) {
+                        if (!string.IsNullOrEmpty(item.SourceURL)) {
+                            log.AppendFormat("\n - Source available: {0}\n", item.SourceURL);
                         }
-                    } else if (HasFlag(flags, ItemFlags.SourceBundled)) {
+                    } else if (item.HasFlag(ItemFlags.SourceBundled)) {
                         log.Append("\n - Source is bundled in its 'Source' folder.\n");
-                    } else if (HasFlag(flags, ItemFlags.SourceUnavailable)) {
+
+                        if (Application.platform == RuntimePlatform.OSXPlayer) {
+                            log.Append("\n - Mac users: If this item doesn't contain a pre-compiled '.dll' file, it might not work on OS/X.\n");
+                        }
+                    } else if (item.HasFlag(ItemFlags.SourceUnavailable)) {
                         // todo: check for `Source` folder in mod folder
                         log.Append("\n - No source code/files found (yet); future updates will be difficult.\n");
                     }
                 }
 
-                if (HasFlag(flags, ItemFlags.SourceObfuscated)) {
+                if (item.HasFlag(ItemFlags.SourceObfuscated)) {
                     log.Append("\n - WARNING: Source code is obfuscated, preventing inspection!\n");
                 }
 
-                if (descriptor.Compatibility.Count > 0) {
-                    ScanCompatibility(descriptor, ref log);
+                if (item.Compatibility.Count > 0) {
+                    ScanCompatibility(item, ref log);
                 }
 
-                if (descriptor.Notes != null) {
-                    foreach (KeyValuePair<ulong, string> note in descriptor.Notes) {
+                if (item.Notes != null) {
+                    foreach (KeyValuePair<ulong, string> note in item.Notes) {
                         if (IsAlwaysNote(note.Key) || subscriptions.ContainsKey(note.Key)) {
                             log.AppendFormat("\n - {0}\n", note.Value);
                         }
                     }
                 }
 
-                if (descriptor.ReplaceWith != 0u) {
-                    log.AppendFormat("\n - Newer version/replacement: {0}\n", GetWorkshopURL(descriptor.ReplaceWith));
+                if (item.ReplaceWith != 0u) {
+                    log.AppendFormat("\n - Newer version/replacement: {0}\n", GetWorkshopURL(item.ReplaceWith));
                 }
             }
         }
@@ -358,11 +386,6 @@ namespace AutoRepair {
             return id >= 100000000u && id <= 200000000u;
         }
 
-        // check if flag set
-        private static bool HasFlag(ItemFlags item, ItemFlags flag) {
-            return (item & flag) != 0;
-        }
-
         // given workshop id, return workshop url
         public static string GetWorkshopURL(ulong id) {
             return $"https://steamcommunity.com/sharedfiles/filedetails/?id={id}";
@@ -370,7 +393,22 @@ namespace AutoRepair {
 
         // get the mod name safely
         public static string GetPluginName(PluginInfo plugin) {
-            return ModInspector.GetModName(plugin);
+            try {
+                if (plugin == null) {
+                    return "(PluginInfo is null)";
+                }
+
+                if (plugin.userModInstance == null) {
+                    return string.IsNullOrEmpty(plugin.name)
+                        ? "(userModInstance and name are null)"
+                        : $"({plugin.name})";
+                }
+
+                return ((IUserMod)plugin.userModInstance).Name;
+            }
+            catch {
+                return $"(error retreiving Name)";
+            }
         }
 
         // return true if mod stored in local folder (Addons\Mods)

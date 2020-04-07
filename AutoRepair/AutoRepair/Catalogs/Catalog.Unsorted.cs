@@ -147,10 +147,10 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 426460372u, Status.Incompatible }, // Favorite Cims
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 ReplaceWith = 426460372u, // Favorite Cims
             });
 
@@ -161,7 +161,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     // no known issues
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus,
             });
@@ -177,7 +177,7 @@ namespace AutoRepair.Catalogs {
                     { 1231957400u, Status.Incompatible }, // Custom Namelists
                     { 935350530u , Status.Incompatible }, // CSL Custom Names [1.0.0]
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus,
             });
@@ -210,7 +210,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     // anything that alters bus stops
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://gist.github.com/OwiHH-NC/4cefbd1fbc7ff7135c59",
             });
@@ -226,7 +226,7 @@ namespace AutoRepair.Catalogs {
                     // plop growables?
                     // rico?
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -239,7 +239,7 @@ namespace AutoRepair.Catalogs {
                     { 1420955187u, Status.Compatible   }, // Real Time
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/rcav8tr/GameDayTimer",
             });
@@ -511,6 +511,7 @@ namespace AutoRepair.Catalogs {
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 1094334744u, Status.Incompatible }, // Procedural Objects 1.5.5
                     { 940299505u , Status.Incompatible }, // AnimUV Params
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2 [r4.3.1]
                     { 928103306u , Status.Incompatible }, // Ship Converter
@@ -689,7 +690,7 @@ namespace AutoRepair.Catalogs {
                     { 833779378u , Status.MinorIssues }, // Loading Screen Mod [Test]
                     { 667342976u , Status.MinorIssues }, // Loading Screen Mod
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 833779378u, "[Mod: Loading Screen Mod] If you get crashes, remove 'Garbage Bin' from your skip.txt file." },
@@ -709,7 +710,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1383456057u, Status.Incompatible }, // Shicho
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.BrokenByUpdate
                       | ItemFlags.Laggy
                       | ItemFlags.SourceAvailable

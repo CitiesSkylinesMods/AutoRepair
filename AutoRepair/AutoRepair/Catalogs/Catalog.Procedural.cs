@@ -88,7 +88,6 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            // 
             AddMod(new Item(1094334744u, "Procedural Objects") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Props,
@@ -104,6 +103,7 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Documentation; http://proceduralobjects.shoutwiki.com/wiki/Main_Page" },
                     { NOTE, "Fonts for Procedural Objects: https://steamcommunity.com/workshop/filedetails/?id=1897915526" },
+                    { 1442713872u, "[Mod: Detail] PO Ploppable Asphalt props might disappear when Detail mod is active: http://proceduralobjects.shoutwiki.com/wiki/Known_Issues" },
                 },
                 ReleasedDuring = GameVersion.MassTransit,
                 SourceURL = "https://github.com/simon56modder/ProceduralObjects",

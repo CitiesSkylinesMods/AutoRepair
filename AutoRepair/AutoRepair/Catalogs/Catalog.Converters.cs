@@ -56,7 +56,7 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "If you have lots of tree and vehicle assets, loading cities may take significnatly longer." },
                 },
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
             });
 
             AddMod(new Item(2016920607u, "RICO revisited") {
@@ -73,7 +73,9 @@ namespace AutoRepair.Catalogs {
                     { 2025147082u, Status.Compatible   }, // Realistic Population revisited
                     { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1577882296u, Status.Compatible   }, // Resize It!
                     { 1420955187u, Status.Compatible   }, // Real Time
                     { 1288816430u, Status.Incompatible }, // Hex Colors
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
@@ -89,7 +91,7 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Asset creators, see: https://steamcommunity.com/sharedfiles/filedetails/?id=628080291 " },
                     { NOTE, "Asset creators, also see: https://steamcommunity.com/sharedfiles/filedetails/?id=615114749" },
                 },
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/algernon-A/Ploppable-RICO-Revisited",
             });
 
@@ -196,9 +198,11 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
-                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 2016920607u, Status.Incompatible }, // Ploppable RICO revisited
                     { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1577882296u, Status.Compatible   }, // Resize It!
                     { 1420955187u, Status.MinorIssues  }, // Real Time
                     { 1288816430u, Status.Incompatible }, // Hex Colors
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
@@ -216,12 +220,49 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Troubleshooting guide: https://github.com/CitiesSkylinesMods/TMPE/wiki/Ploppable-RICO-errors" },
-                    { NOTE, "Asset creators, see: https://steamcommunity.com/sharedfiles/filedetails/?id=628080291 " },
-                    { NOTE, "Asset creators, also see: https://steamcommunity.com/sharedfiles/filedetails/?id=615114749" },
-                },
                 ReplaceWith = 2016920607u, // RICO revisited
+            });
+
+            AddMod(new Item(586012417u, "Ploppable RICO") {
+                Affect = Factor.Naming
+                       | Factor.BuildingCapacity
+                       | Factor.BuildingLevel
+                       | Factor.Construction
+                       | Factor.Customize
+                       | Factor.DemandRCI
+                       | Factor.Employment,
+                Authors = "AJ3D, BloodyPenguin, boformer, Tailgunner",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607u, Status.Incompatible }, // Ploppable RICO revisited
+                    { 1749971558u, Status.Incompatible }, // Real Time Offline
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1577882296u, Status.Compatible   }, // Resize It!
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 1288816430u, Status.Incompatible }, // Hex Colors
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
+                    { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.EditorBreaking
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Causes residential buildings to have 0/0 households, collapsing your economy." },
+                },
+                Published = WorkshopDate("28 Dec, 2015"),
+                ReplaceWith = 2016920607u, // Ploppable RICO revisited
+                Updated = WorkshopDate("26 Oct, 2018"),
             });
         }
     }

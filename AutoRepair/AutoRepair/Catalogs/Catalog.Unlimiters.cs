@@ -108,6 +108,7 @@ namespace AutoRepair.Catalogs {
                     { 1223738434u, Status.Incompatible }, // 422554572
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
                     { 1138679561u, Status.Compatible   }, // AllSpacesUnlock
+                    { 934994075u , Status.Unknown      }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 888017364u , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
@@ -129,7 +130,7 @@ namespace AutoRepair.Catalogs {
                     { 406218372u , Status.Compatible   }, // All Spaces Unlockable
                     { 403798635u , Status.Compatible   }, // All Spaces Unlockable
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.SaveChanging,
                 ReleasedDuring = GameVersion.Campus,
@@ -143,7 +144,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorBugs, // harmony patch management could be better
@@ -203,7 +204,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.InitialRelease,
             });

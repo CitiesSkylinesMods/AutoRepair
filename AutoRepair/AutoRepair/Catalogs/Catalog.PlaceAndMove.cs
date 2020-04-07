@@ -27,7 +27,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/kianzarrin/PedestrianBridge/",
             });
 
@@ -50,7 +50,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "eelcobaas",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() { },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.EditorMod // can also be used in-game
                       | ItemFlags.SourceUnavailable,
             });
@@ -61,7 +61,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "eelcobaas",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() { },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.EditorMod // can also be used in-game
                       | ItemFlags.SourceUnavailable,
             });
@@ -495,7 +495,7 @@ namespace AutoRepair.Catalogs {
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                     { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
@@ -851,7 +851,7 @@ namespace AutoRepair.Catalogs {
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                     { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 // todo: might actually have been cont. of sharper junction angles mod
                 ContinuationOf = 418556522u, // Road Anarchy
                 Flags = ItemFlags.Abandonware
@@ -933,7 +933,7 @@ namespace AutoRepair.Catalogs {
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                     { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 418556522u, // Road Anarchy
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate

@@ -26,6 +26,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "amamlya, pcfantasy, VictoriaCity",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2044086131u, Status.Incompatible }, // Network Extensions 2 - Sunset Harbour Build / Fix
                     { 1959183067u, Status.Required     }, // CSUR Loader
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
@@ -33,12 +34,18 @@ namespace AutoRepair.Catalogs {
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 812125426u , Status.Incompatible }, // Network Extensions 2
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 427258853u , Status.Incompatible }, // Crossings
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                Notes = new Dictionary<ulong, string>() {
+                    { 2044086131u, "[Mod: Network Extensions 2] Breaks NExt2 road zoning position and Zone Adjuster (Shift+Click)" },
+                    { 812125426u , "[Mod: Network Extensions 2] Breaks NExt2 road zoning position and Zone Adjuster (Shift+Click)" },
+                },
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/citiesskylines-csur/CSURToolBox",
             });
 
@@ -66,9 +73,9 @@ namespace AutoRepair.Catalogs {
                     { 543722850u , Status.Incompatible }, // Network Skins (original)
                     { 417585852u , Status.Incompatible }, // Road Color Changer
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/citiesskylines-csur/CSURLoader",
             });
 
@@ -85,7 +92,7 @@ namespace AutoRepair.Catalogs {
                     { 771161159u , Status.Incompatible }, // OSM Import
                     { 416064574u , Status.Incompatible }, // Cimtographer
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 // ContinuationOf = ??
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.MinorBugs // doesn't check node/segment/lane limits properly
@@ -123,7 +130,7 @@ namespace AutoRepair.Catalogs {
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SaveChanging
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // will cause major problems

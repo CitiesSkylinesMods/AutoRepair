@@ -3,6 +3,7 @@ namespace AutoRepair.Catalogs {
     using AutoRepair.Enums;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using UnityEngine;
 
     /// <summary>
     /// Cubemaps, weather, disasters, graphics rendering, etc.
@@ -40,7 +41,7 @@ namespace AutoRepair.Catalogs {
                     // If active, some vehicles will get hard-dependency for Custom Effect Loader:
                     { 800820816u , Status.MinorIssues  }, // Extended Asset Editor
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.EditorMod // assets created with it require it
                       | ItemFlags.MinorBugs // can become hard dependency for vehicle assets if Extended Asset Editor active
                       | ItemFlags.SourceAvailable,
@@ -58,6 +59,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 672248733u, Status.MinorIssues }, // Ultimate Eyecandy v1.5.2 (UE setting overriden by PFA setting)
+                    { 415732693u , Status.Incompatible }, // Disable Clouds
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/Cgameworld/PersistentFogAdjuster",
@@ -72,7 +74,13 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1794015399u, Status.Incompatible }, // Render It!
                     { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735u , Status.Incompatible }, // Ambient Occlusion
                     { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410805639u , Status.Incompatible }, // Sun Shafts (old)
+                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
+                    { 409359952u , Status.Incompatible }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
+                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
                 },
                 Flags = ItemFlags.MinorBugs // harmony patch management could be better, TAA is shit
                       | ItemFlags.SourceAvailable,
@@ -184,6 +192,7 @@ namespace AutoRepair.Catalogs {
                     { 672248733u , Status.Recommended  }, // Ultimate Eye Candy
                     { 643364914u , Status.Incompatible }, // Softer Shadows
                     { 530871278u , Status.MinorIssues  }, // Daylight Classic
+                    { 408648436u , Status.Incompatible }, // More Options
                 },
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
@@ -225,10 +234,14 @@ namespace AutoRepair.Catalogs {
                     { 1794015399u, Status.Incompatible }, // Render It!
                     { 1183931915u, Status.Compatible   }, // Cubemap Replacer
                     { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735u , Status.Incompatible }, // Ambient Occlusion
+                    { 933513277u , Status.Recommended  }, // Sun Shafts
                     { 812713438u , Status.MinorIssues  }, // Dynamic Resolution (Fixed for 1.9)
                     { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    // recommend: dynamic resolution
-                    // recommend: sun shafts
+                    { 410805639u , Status.Incompatible }, // Sun Shafts (old)
+                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
+                    { 409359952u , Status.Incompatible }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
                 },
                 ContinuationOf = 412146081u, // PostProcessFX v1.9.0
                 Flags = ItemFlags.Abandonware
@@ -257,6 +270,96 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
+            AddMod(new Item(933513277u, "Sun Shafts") {
+                Affect = Factor.Rendering,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 934825735u , Status.Compatible   }, // Ambinet Occlusion? (no longer in workshop)
+                    { 933513277u , Status.Incompatible }, // Sun Shafts (BP ver)
+                    { 530871278u , Status.Recommended  }, // Daylight classic
+                    { 410805639u , Status.Incompatible }, // Sun Shafts (orig)
+                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
+                    { 409359952u , Status.Incompatible }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 410805639u, // Sun Shafts
+                Flags = ItemFlags.Laggy
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "May cause fps drop in-game, especially if you have weak graphics card." },
+                },
+                Published = WorkshopDate("26 May, 2017"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-SunShafts",
+                Updated = WorkshopDate("30 Oct, 2017"),
+            });
+
+            AddMod(new Item(812713438u, "Dynamic Resolution (Fixed for 1.9!)") {
+                Affect = Factor.Rendering,
+                Authors = "Gradius Twin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 1138510774u, Status.MinorIssues  }, // PostProcessFX - Multi-platform
+                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 602077938u , Status.Incompatible }, // TotalyFree Camera
+                    { 409359952u , Status.Incompatible }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
+                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 406629464u, // Dynamic Resolution
+                Flags = ItemFlags.Laggy
+                      | ItemFlags.MinorBugs
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press F10, or Left Ctrl + R, to open the slider panel." },
+                    { NOTE, "Can cause extreme lag on older graphics cards. Make sure your GPU has good cooling." },
+                    { 1138510774u, "[PostProcessFX] PostProcessFX breaks SSAO, and might also cause blue or pink screen on load." },
+                },
+                Published = WorkshopDate("5 Dec, 2016"),
+                SourceURL = "https://github.com/dremelofdeath/Skylines-DynamicResolution",
+                Updated = WorkshopDate("28 Oct, 2017"),
+            });
+
+            // app notes for Dynamic Resolution
+            switch (Application.platform) {
+                case RuntimePlatform.WindowsPlayer:
+                    Items[812713438u].Notes.Add(NOTE, "Windows Users: This mod requires a big page file on high resolutions: https://steamcommunity.com/sharedfiles/filedetails/?id=465790009");
+                    break;
+                case RuntimePlatform.OSXPlayer:
+                    Items[812713438u].Notes.Add(NOTE, "Mac Users: This mod causes blank sky on OS/X; unsubscribing the mod will fix it.");
+                    break;
+            }
+
+            AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
+                Affect = Factor.Rendering,
+                Authors = "MazK",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
+                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735u , Status.Incompatible }, // Ambient Occlusion
+                    { 933513277u , Status.Recommended  }, // Sun Shafts (BP ver)
+                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
+                    // recommend: dynamic resolution
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.EditorBreaking
+                      | ItemFlags.Obsolete // newer version available: 1138510774u
+                      | ItemFlags.MinorBugs // some users have problems displaying the GUI
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
+                    { 812713438u, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
+                },
+                //ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
+                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -265,6 +368,32 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
+            // translation
+            AddMod(new Item(1870740367u, "Dynamic Resolution 动态分辨率 Sakuya16个人汉化版") {
+                Affect = Factor.Rendering,
+                Authors = "Izayoi _Sakuya16",
+                Catalog = catalog,
+                CloneOf = 812713438u, // Dynamic Resolution (Fixed for 1.9!)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 409359952u , Status.Incompatible }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
+                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Laggy
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "F10 or Left Ctrl + R to open the slider panel." },
+                    { NOTE, "Can cause extreme lag on older graphics cards. Make sure your GPU has good cooling." },
+                },
+                Published = WorkshopDate("23 Sep, 2019"),
+                ReplaceWith = 812713438u, // Dynamic Resolution (Fixed for 1.9!)
+                Updated = WorkshopDate("23 Sep, 2019"),
+            });
+
+            // broken
             AddMod(new Item(959894658u, "Custom Light Effects") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
@@ -283,32 +412,224 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "This mod causes memory leaks which eventually result in lag then crash to desktop." },
                     { NOTE, "Asset creators: Use Custom Effect Loader mod instead (see replacement link)." },
                 },
+                Published = WorkshopDate("30 Jun, 2017"),
                 ReplaceWith = 1886877404u, // Custom Effects Loader
+                Updated = WorkshopDate("21 Aug, 2017"),
             });
 
-            AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
+            // No workshop page, but Sun Shafts (BP ver) says it's something about AO
+            // Old Sun Shafts page confirms it was called Ambinet Occlusion
+            // User on old AO page also linked to it, so it's a continuation of old AO.
+            // WBM: https://web.archive.org/web/20170715133852/http://steamcommunity.com/sharedfiles/filedetails/?id=934825735
+            AddMod(new Item(934825735u, "Ambient Occlusion") {
                 Affect = Factor.Rendering,
-                Authors = "MazK",
+                Authors = "TPB, BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
                     { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 933513277u , Status.Compatible   }, // Sun Shafts (current)
+                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
                     { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    // recommend: dynamic resolution
-                    // recommend: sun shafts
+                    { 410805639u , Status.Incompatible }, // Sun Shafts (old)
+                    { 410329674u , Status.Incompatible }, // Ambient Occlusion (orig)
+                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952u , Status.Incompatible }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
+                    { 406629464u , Status.Compatible   }, // Dynamic Resolution
+                },
+                ContinuationOf = 410329674u, // Ambient Occlusion
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop // removed between 21-27 Oct 2017
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press F8 to show the sliders." },
+                },
+                Published = WorkshopDate("28 May, 2017"),
+                ReplaceWith = 412146081u, // PostProcessFX v1.9.0
+                SourceURL = "https://github.com/bloodypenguin/Skylines-AmbientOcclusion",
+                SuppressOlderReplacementWarning = true,
+                Updated = WorkshopDate("30 May, 2017"),
+            });
+
+            // old
+            // wbm: https://web.archive.org/web/20150415011651/http://steamcommunity.com/sharedfiles/filedetails/?id=415732693
+            AddMod(new Item(415732693u, "Disable Clouds") {
+                Affect = Factor.Environment
+                       | Factor.Rendering,
+                Authors = "Obelisk",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1883101331u, Status.Incompatible }, // Persistent Fog Adjuster
+                    { 523824395u , Status.Incompatible }, // Clouds & Fog Toggler
+                    { 408648436u , Status.Incompatible }, // More Options (Quget)
+                },
+                ContinuationOf = 408648436u, // More Options (Quget)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("28 Mar, 2015"),
+                ReplaceWith = 523824395u, // Clouds & Fog Toggler
+                Updated = WorkshopDate("28 Mar, 2015"), // no evidence of any updates
+            });
+
+            // old
+            AddMod(new Item(410805639u, "Sun Shafts") {
+                Affect = Factor.Rendering,
+                Authors = "Ulysius",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 933513277u , Status.Incompatible }, // Sun Shafts (current)
+                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 410329674u , Status.Compatible   }, // Ambient Occlusion (orig)
+                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952u , Status.Compatible   }, // Isometric Camera
+                    { 408648436u , Status.Compatible   }, // More Options
+                    { 406629464u , Status.Compatible   }, // Dynamic Resolution
                 },
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.EditorBreaking
-                      | ItemFlags.Obsolete // newer version available: 1138510774u
-                      | ItemFlags.MinorBugs // some users have problems displaying the GUI
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("25 Mar, 2015"),
+                ReplaceWith = 933513277u, // Sun Shafts
+                Updated = WorkshopDate("25 Mar, 2015"),
+            });
+
+            // old
+            AddMod(new Item(410329674u, "Ambient Occlusion") {
+                Affect = Factor.Rendering,
+                Authors = "Ulysius",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 933513277u , Status.Incompatible }, // Sun Shafts (current)
+                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410805639u , Status.Compatible   }, // Sun Shafts (old)
+                    { 410329674u , Status.Incompatible }, // Ambient Occlusion (orig)
+                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952u , Status.Incompatible }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
+                    { 406629464u , Status.Compatible   }, // Dynamic Resolution
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
-                    { 812713438u, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
+                    { NOTE, "Press F8 to show the sliders." },
                 },
-                ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
-                Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
+                Published = WorkshopDate("25 Mar, 2015"),
+                ReplaceWith = 412146081u, // PostProcessFX v1.9.0
+                Updated = WorkshopDate("25 Mar, 2015"),
+            });
+
+            // discovered via: https://steamcommunity.com/workshop/filedetails/discussion/410329674/611701360830851903/
+            // wbm: https://web.archive.org/web/20150415010910/http://steamcommunity.com/sharedfiles/filedetails/?id=408648436
+            // looks very much like an early version of Ultimate Eye Candy or Relight.. fog, bloom, tone mapping...
+            AddMod(new Item(408648436u, "More Options") {
+                Affect = Factor.Rendering,
+                Authors = "Quget",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 1209581656u, Status.Incompatible }, // Relight
+                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 933513277u , Status.Incompatible }, // Sun Shafts (current)
+                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 415732693u , Status.Incompatible }, // Disable Clouds
+                    { 410805639u , Status.Compatible   }, // Sun Shafts (old)
+                    { 410329674u , Status.Incompatible }, // Ambient Occlusion (orig)
+                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952u , Status.Compatible   }, // Isometric Camera
+                    { 408648436u , Status.Incompatible }, // More Options
+                    { 406629464u , Status.Compatible   }, // Dynamic Resolution (old)
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press Left Alt + O (letter 'o') to open settings panel." },
+                },
+                // existed March 26, 2015
+                // existed April 15, 2015
+                Published = WorkshopDate("21 Mar, 2015"),
+                ReplaceWith = 1209581656u, // Relight
+                Updated = WorkshopDate("21 Mar, 2015"), // WBM says 4 change notes but doesn't show updated date
+            });
+
+            // WBM: https://web.archive.org/web/20150326014836/http://steamcommunity.com/id/Quget/myworkshopfiles/?appid=255710
+            AddMod(new Item(407358867u, "Quget's Day & Night Prototype") {
+                Affect = Factor.Rendering,
+                Authors = "Quget",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.InitialRelease, // actually 1.1.1 patch
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete // now in vanilla game
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Vanilla game now has day/night cycle. Unsubscribe this mod." },
+                },
+                // released after 7 Apr, 2015
+                // released before 21 Mar, 2015
+                // removed likely after AD was announced/released
+            });
+
+            // old
+            AddMod(new Item(406629464u, "Dynamic Resolution") {
+                Affect = Factor.Rendering,
+                Authors = "nlight",
+                BrokenBy = GameVersion.GreenCities,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 1794015399u, Status.Incompatible }, // Render It!
+                    { 934825735u , Status.Compatible   }, // Ambient Occlusion
+                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 602077938u , Status.Incompatible }, // TotalyFree Camera
+                    { 410805639u , Status.Compatible   }, // Sun Shafts
+                    { 410329674u , Status.Compatible   }, // Ambient Occlusion
+                    { 409359952u , Status.Compatible   }, // Isometric Camera
+                    { 408648436u , Status.Compatible   }, // More Options
+                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
+                },
+                CompatibleWith = GameVersion.MassTransit,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Laggy
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("7 Apr, 2015"),
+                ReplaceWith = 812713438u, // Dynamic Resolution (Fixed for 1.9!)
+                SourceURL = "https://github.com/AlexanderDzhoganov/Skylines-DynamicResolution",
+                Updated = WorkshopDate("7 Apr, 2015"),
             });
 
             /*

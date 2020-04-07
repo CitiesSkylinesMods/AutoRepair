@@ -107,12 +107,13 @@ namespace AutoRepair.Catalogs {
                     { 417145328u , Status.Incompatible }, // [Deprecated] Kill the Seagulls!
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 1591417160u, "[Mod: Hide It] Both mods can remove animals. Use one, unsubscribe the other." },
                     { 564141599u , "[Mod: Remove Seagulls] Both mods can remove seagulls. Use one, unsubscribe the other." },
                 },
                 Published = WorkshopDate("8 Apr, 2019"),
+                SourceURL = "https://github.com/pcfantasy/RemoveAllAnimals",
                 Updated = WorkshopDate("23 Feb, 2020"),
             });
 
@@ -159,6 +160,7 @@ namespace AutoRepair.Catalogs {
                     { 418637762u , Status.MinorIssues  }, // American Roads
                     // terrain sprites
                     { 1899640536u, Status.MinorIssues  }, // Theme Mixer 2 (both can toggle terrain sprites)
+                    { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的
                     // pollution
                     { 666425898u , Status.Incompatible }, // No Radioactive Desert And More!
                     // animals
@@ -370,6 +372,22 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("17 Jun, 2017"),
                 SourceURL = "https://github.com/vonLeebpl/NoBuoysMod/tree/master/NoBuoysMod",
                 Updated = WorkshopDate("17 Jun, 2017"),
+            });
+
+            AddMod(new Item(934958400u, "Improve FPS ! - Hide Districts [ALPHA]") {
+                Affect = Factor.HideRemove
+                       | Factor.Props
+                       | Factor.Trees,
+                Authors = "Simon Ryr",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.MinorBugs
+                      | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("28 May, 2017"),
+                SourceURL = "https://github.com/simon56modder/HideDistrictsMod",
+                Updated = WorkshopDate("28 May, 2017"),
             });
 
             AddMod(new Item(564141599u, "No Seagulls") {

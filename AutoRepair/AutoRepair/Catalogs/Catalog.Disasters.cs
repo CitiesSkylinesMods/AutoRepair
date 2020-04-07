@@ -49,7 +49,7 @@ namespace AutoRepair.Catalogs {
                     { 1499486217u, Status.Incompatible }, // Ragnarok EXTREME EDITION
                     { 811352708u , Status.Incompatible }, // Ragnarok - More disaster controls
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 811352708u, // Ragnarok - More disaster controls
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // many users saying it doesn't work or is broken

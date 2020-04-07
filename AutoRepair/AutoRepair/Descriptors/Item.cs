@@ -190,25 +190,31 @@ namespace AutoRepair.Descriptors {
 
         /// <summary>
         /// Gets or sets the name of this item as it appears in Steam Workshop.
-        /// (UGCDetails.title).
+        /// Note: May be different to <c>UGCDetails.title</c> or <c>PluginInfo.name</c>, etc.
         /// </summary>
         public string WorkshopName { get; set; }
 
         /// <summary>
         /// Returns a string representation of the item.
         /// </summary>
+        /// 
         /// <returns>String representation.</returns>
         public override string ToString() {
             return $"{WorkshopId} <{Catalog}> \"{WorkshopName}\"";
         }
 
         /// <summary>
-        /// Determine whether the item has one (or more) of the specified <see cref="ItemFlags"/>.
+        /// Determine whether the item at least one of the specified <see cref="ItemFlags"/>.
         /// </summary>
+        /// 
         /// <param name="flags">Flag(s) to check for.</param>
-        /// <returns>Returns <c>true</c> if the item has one or more of the specified <paramref name="flags"/>, otherwise <c>false</c>.</returns>
-        public bool HasFlags(ItemFlags flags) {
-            return (Flags & flags) != 0;
+        /// <param name="all">If <c>true</c>, checks that all flags are set.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if the item has the specified <paramref name="flags"/>, otherwise <c>false</c>.</returns>
+        public bool HasFlag(ItemFlags flags, bool all = false) {
+            return all
+                ? (Flags & flags) == flags
+                : (Flags & flags) != ItemFlags.None;
         }
 
         /// <summary>
@@ -240,6 +246,22 @@ namespace AutoRepair.Descriptors {
         /// <param name="extendedReporting">If <c>true</c>, do more extensive validation.</param>
         [Conditional("DEBUG")]
         public void Validate(bool extendedReporting = false) {
+
+            try {
+                InternalValidate(extendedReporting);
+            } catch (Exception e) {
+                Log.Info($"YOU HAVE FAILED THIS DESCRIPTOR: {this}");
+                Log.Error(e.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Performs basic validation of the item itself, without checking external data.
+        /// </summary>
+        /// 
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive validation.</param>
+        [Conditional("DEBUG")]
+        internal void InternalValidate(bool extendedReporting) {
 
             // always ignore addendum catalog
             if (!string.IsNullOrEmpty(Catalog) && Catalog == "Addendum") {
@@ -320,9 +342,7 @@ namespace AutoRepair.Descriptors {
             }
 
             // todo: once all of these are sorted, the BrokenByUpdate flag can be removed.
-            if (extendedReporting
-                && (Flags & ItemFlags.BrokenByUpdate) == ItemFlags.BrokenByUpdate
-                && BrokenBy == GameVersion.DefaultUntil)
+            if (extendedReporting && HasFlag(ItemFlags.BrokenByUpdate) && BrokenBy == GameVersion.DefaultUntil)
             {
                 problems = true;
                 log.Append("- If BrokenByUpdate flag set, the BrokenBy vesion must be set\n");
@@ -366,7 +386,7 @@ namespace AutoRepair.Descriptors {
                 }
             }
 
-            bool localised = (Flags & ItemFlags.Localised) == ItemFlags.Localised;
+            bool localised = HasFlag(ItemFlags.Localised);
             bool noLocale = string.IsNullOrEmpty(Locale);
 
             // if translation flag set, locale must be specified (unless languages specified)
@@ -376,21 +396,19 @@ namespace AutoRepair.Descriptors {
             }
 
             // if force migration flag set, replacement must be specified
-            if ((Flags & ItemFlags.ForceMigration) == ItemFlags.ForceMigration
-                && ReplaceWith == 0u) {
+            if (HasFlag(ItemFlags.ForceMigration) && ReplaceWith == 0u) {
                 problems = true;
                 log.Append("- ReplaceWith missing\n");
             }
 
             // source must be either available or not available, not both
-            if ((uint)(Flags & SOURCE_DEFINED) == 0) {
+            if (!HasFlag(SOURCE_DEFINED)) {
                 problems = true;
                 log.Append("- Must specify either SourceAvailable, SourceBundled or SourceUnavailable flag\n");
             }
 
             // if source available flag set, source url must be specified
-            if ((Flags & ItemFlags.SourceAvailable) == ItemFlags.SourceAvailable
-                && string.IsNullOrEmpty(SourceURL))
+            if (HasFlag(ItemFlags.SourceAvailable) && string.IsNullOrEmpty(SourceURL))
             {
                 problems = true;
                 log.Append("- SourceURL missing\n");

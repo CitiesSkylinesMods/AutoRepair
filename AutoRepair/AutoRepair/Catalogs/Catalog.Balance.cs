@@ -664,6 +664,7 @@ namespace AutoRepair.Catalogs {
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
@@ -812,6 +813,7 @@ namespace AutoRepair.Catalogs {
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
+                    { 586012417u , Status.Compatible   }, // Ploppable RICO
                     { 541673195u , Status.Compatible   }, // Resident Travel Rebalance v1.1
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
@@ -953,6 +955,7 @@ namespace AutoRepair.Catalogs {
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
                     { 410344523u , Status.Incompatible }, // PopBalanceMod

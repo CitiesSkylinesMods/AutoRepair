@@ -26,9 +26,9 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/alfoirazabal/ecostatsmod",
             });
 
@@ -39,9 +39,9 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
             });
 
             AddMod(new Item(1904439843u, "Mayoral City Service Info") {
@@ -50,7 +50,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press Ctrl+Shift+K to open the service info window." },
@@ -73,7 +73,7 @@ namespace AutoRepair.Catalogs {
                     { 702070768u , Status.Incompatible }, // Export Electricity
                     { 410151616u , Status.Incompatible }, // City Vitals Watch
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 410151616u, // City Vitals Watch
                 Flags = ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Campus,
@@ -114,7 +114,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 410151616u, Status.Incompatible }, // City Vitals Watch
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 410151616u, // City Vitals Watch
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
@@ -215,7 +215,7 @@ namespace AutoRepair.Catalogs {
                     { 943410067u , Status.Incompatible }, // DistrictRCI fix
                     { 486496436u , Status.Incompatible }, // DistrictRCI (original version)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 943410067u, // DistrictRCI fix
                 Flags = ItemFlags.MinorBugs // Stats sometimes incorrect (based on user comments)
                       | ItemFlags.SourceAvailable,
@@ -232,7 +232,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.GreenCities,
                 SourceURL = "https://github.com/TheDogKSP/DistrictStats",
@@ -297,7 +297,7 @@ namespace AutoRepair.Catalogs {
                     { 1614061108u, Status.Compatible   }, // Real Construction
                     { 1072157697u, Status.Incompatible }, // Cargo Info (original)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 1072157697u, // Cargo Info
                 Flags = ItemFlags.Abandonware // author commented they lost interest in CSL
                       | ItemFlags.SourceAvailable,
@@ -319,7 +319,7 @@ namespace AutoRepair.Catalogs {
                     { 1614061108u, Status.Incompatible }, // Real Construction
                     { 1072157697u, Status.Incompatible }, // Cargo Info (original version)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 1072157697u, // Cargo Info (original version)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceBundled,
@@ -364,7 +364,7 @@ namespace AutoRepair.Catalogs {
                     { 943410067u , Status.Incompatible }, // DistrictRCI fix
                     { 486496436u , Status.Incompatible }, // DistrictRCI (original version)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs // Stats sometimes incorrect (based on user comments)
                       | ItemFlags.SourceUnavailable,
@@ -387,7 +387,7 @@ namespace AutoRepair.Catalogs {
                     { 943410067u , Status.Incompatible }, // DistrictRCI fix
                     { 486496436u , Status.Incompatible }, // DistrictRCI (original version)
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorBugs // Stats sometimes incorrect (based on user comments)
                       | ItemFlags.SourceUnavailable,

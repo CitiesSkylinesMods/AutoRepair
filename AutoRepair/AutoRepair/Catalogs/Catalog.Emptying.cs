@@ -49,7 +49,7 @@ namespace AutoRepair.Catalogs {
                     { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
                     { 407873631u , Status.Incompatible }, // Automatic Emptying
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // Some users say it doesn't work
@@ -73,7 +73,7 @@ namespace AutoRepair.Catalogs {
                     { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
                     { 407873631u , Status.Incompatible }, // Automatic Emptying
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // some users state it's not working since parklife DLC

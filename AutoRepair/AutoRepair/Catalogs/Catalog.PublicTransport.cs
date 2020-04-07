@@ -32,13 +32,13 @@ namespace AutoRepair.Catalogs {
                     { 409338401u , Status.Incompatible }, // ScaleUI (beta)
                     { 407225523u , Status.Incompatible }, // TextScaleMod
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string> {
                     { NOTE, "This appears to be update to Extended Public Transport UI. Author is not responsive." },
                 },
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
             });
 
             // todo: check if this causes stuck cims
@@ -98,7 +98,7 @@ namespace AutoRepair.Catalogs {
                     { 442957897u, Status.Incompatible }, // [Obsolete] Multi-Track Station Enabler
                     { 409184143u, Status.Incompatible }, // Traffic++
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.ParkLife,
                 SourceURL = "https://github.com/bloodypenguin/Skylines-ImprovedStopSelection",
@@ -231,6 +231,7 @@ namespace AutoRepair.Catalogs {
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1218121337u, Status.Incompatible }, // Automatic Vehicle Numbers Adjuster
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 934994075u , Status.Compatible   }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2 (BP's version)
                     { 583429740u , Status.Compatible   }, // Traffic Manager: President Edition (LinuxFan)
@@ -323,6 +324,25 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/klyte45/TransportLinesManager",
             });
 
+            AddMod(new Item(714056356u, "Transport Line Rendering Fix") {
+                Affect = Factor.TransportLines
+                       | Factor.Rendering,
+                Authors = "BloodyPenguin",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The vanilla game now includes this fix; you can unsubscribe this mod." },
+                },
+                Published = WorkshopDate("30 Jun, 2016"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-TransportLineRenderingFix",
+                Updated = WorkshopDate("14 Mar, 2018"),
+            });
+
+
             // old version
             AddMod(new Item(424106600u, "Improved Public Transport (IPT)") {
                 Affect = Factor.Boredom
@@ -351,6 +371,7 @@ namespace AutoRepair.Catalogs {
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1218121337u, Status.Incompatible }, // Automatic Vehicle Numbers Adjuster
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Incompatible }, // Improved Public Transport 2 (BP's version)
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)

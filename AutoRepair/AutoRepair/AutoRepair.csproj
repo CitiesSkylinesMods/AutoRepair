@@ -41,6 +41,7 @@
     <Compile Include="Catalogs\Catalog.Converters.cs" />
     <Compile Include="Catalogs\Catalog.Disasters.cs" />
     <Compile Include="Catalogs\Catalog.Editor.cs" />
+    <Compile Include="Catalogs\Catalog.Pollution.cs" />
     <Compile Include="Catalogs\Catalog.Services.cs" />
     <Compile Include="Catalogs\Catalog.Skin.Roads.cs" />
     <Compile Include="Catalogs\Catalog.Stats.cs" />

@@ -31,14 +31,12 @@ namespace AutoRepair.Catalogs {
             Note(842981708u, "Random Tree Rotation for Natural Disasters", "Use the other version: https://steamcommunity.com/sharedfiles/filedetails/?id=556784825");
             Fixed(667342976u, "Loading Screen Mod");
             Fixed(833779378u, "Loading Screen Mod [Test]");
-            Fixed(812713438u, "Dynamic Resolution");
             Fixed(877950833u, "Vanilla Trees Remover");
             Fixed(632951976u, "Improved Mod Upload Panel");
             Fixed(762520291u, "Shadow Strenght Adjuster");
             Fixed(643364914u, "Softer Shadows");
             Fixed(611254368u, "Environment Changer");
             Fixed(530771650u, "Prefab Hook");
-            Fixed(422934383u, "CSL Music Mod");
             Fixed(1435741602u, "Snooper");
             Fixed(445589127u, "Precision Engineering");
             Fixed(405810376u, "All 25 Areas purchasable");
@@ -60,7 +58,6 @@ namespace AutoRepair.Catalogs {
             Fixed(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
             Broken(621002682u, "No Questions Asked"); // crash to desktop
             Fixed(650436109u, "Quay Anarchy");
-            Fixed(934994075u, "Service Vehicle Selector 2"); // stack overflow
             Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths    invisible
             Broken(1312735149u, "Klyte Commons");
 
@@ -90,7 +87,6 @@ namespace AutoRepair.Catalogs {
             //Dead(420469721u , "Compass Mod"); // https://github.com/CitiesSkylinesMods/AutoRepair/issues/10
             Dead(529979180u , "CSL Service Reserve");
             Dead(649522495u , "District Service Limit", 927293560u);
-            Dead(406629464u , "Dynamic Resolution", 812713438u);
             Dead(813835487u , "Early Death [1.6]");
             Dead(587516082u , "Early Death [Fixed for v1.4+]");
             Dead(813835391u , "Enhanced Garbage Truck AI [1.6]");
@@ -127,7 +123,6 @@ namespace AutoRepair.Catalogs {
             Dead(478820060u , "Network Extensions Project", 812125426u);
             Dead(658653260u , "Network Nodes Editor [Experimental]", 1619685021u);
             Dead(929114228u , "New Roads For NE 2");
-            Dead(407270433u , "No More Purple Pollution", 666425898u);
             Dead(409073164u , "NoPillars", 463845891u);
             Dead(635815270u , "Operate It");
             Dead(771161159u , "OSM Import");
@@ -159,7 +154,6 @@ namespace AutoRepair.Catalogs {
             //Dead(667891104u , "Small Ship");
             //Dead(931760630u , "Small Ship");
             Dead(413847191u , "SOM - Services Optimization Module");
-            Dead(1393831156u, "Sub Mesh Flags");
             Dead(556416380u , "Telemetry Control");
             Dead(411095553u , "Terraform tool 0.9", 502750307u);
             Dead(510802741u , "Toggle District Snapping");
@@ -175,27 +169,14 @@ namespace AutoRepair.Catalogs {
             Incompatible(451700838u , "Extended Toolbar",                        563229150u , "Advanced Toolbar");
             Incompatible(455403039u , "Unlimited Trees Mod",                     869134690u, "Tree Snapping");
             Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
-            Incompatible(586012417u , "Ploppable RICO",                          1204126182u, "Ploppable RICO - High Density Fix");
-            Incompatible(586012417u , "Ploppable RICO",                          2016920607u, "Ploppable RICO revisited");
-            Incompatible(602077938u , "TotalyFree Camera",                       406629464u, "Dynamic Resolution");
-            Incompatible(602077938u , "TotalyFree Camera",                       812713438u, "Dynamic Resolution (Fixed for 1.9!)");
             Incompatible(667342976u , "Loading Screen Mod",                      833779378u, "Loading Screen Mod [Test]");
-            Incompatible(791968744u , "Dynamic Foliage",                         666425898u, "No Radioactive Desert And More!");
-            Incompatible(812125426u , "Network Extensions 2",                    547126602u, "Street Light Replacer");
-            Incompatible(812125426u , "Network Extensions 2",                    1959342332u, "CSUR ToolBox");
-            Incompatible(812713438u , "Dynamic Resolution (Fixed for 1.9!)",     406629464u, "Dynamic Resolution");
             Incompatible(816260433u , "Metro Overhaul Mod 9.0",                  1530376523u, "Railway Replacer");
             Incompatible(821539759u , "Disable Zone Check",                      924884948u, "Plop The Growables");
             Incompatible(837734529u , "Find It!",                                540758804u, "Search Box Mod");
             Incompatible(917543381u , "No Problem [BETA]",                       561293123u, "Hide Problems AKA Politician's Mod");
             Incompatible(924884948u , "Plop The Growables",                      821539759u, "Disable Zone Check");
-            Incompatible(1442713872u, "Detail",                                  1094334744u, "Ploppable Asphalt objects turned into Procedural Objects");
-            Incompatible(1637663252u, "TM:PE V11 STABLE (formerly TMPE [LABS])", 1181352643u, "District Service Limit 3.0");
-            Incompatible(1959342332u, "CSUR ToolBox",                            427258853u, "Crossings");
-            Incompatible(1959342332u, "CSUR ToolBox",                            812125426u, "Network Extensions 2");
 
             // breaks editor
-            BreaksEditor(586012417u, "Ploppable RICO");
             BreaksEditor(672248733u, "Ultimate Eyecandy");
         }
 
@@ -252,14 +233,14 @@ namespace AutoRepair.Catalogs {
             if (Items.TryGetValue(workshopId, out Item item)) {
                 Addendum("Fixed", item);
                 item.BrokenBy = GameVersion.DefaultUntil;
-                item.CompatibleWith = GameVersion.LatestMajorRelease;
+                item.CompatibleWith = GameVersion.LatestMilestone;
             } else {
                 AddMod(new Item(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
                     Compatibility = new Dictionary<ulong, Status>() { },
-                    CompatibleWith = GameVersion.LatestMajorRelease,
+                    CompatibleWith = GameVersion.LatestMilestone,
                     Flags = ItemFlags.Unrecognised,
                 });
             }
@@ -276,15 +257,15 @@ namespace AutoRepair.Catalogs {
         internal void Broken(ulong workshopId, string workshopName) {
             if (Items.TryGetValue(workshopId, out Item item)) {
                 Addendum("Broken", item);
-                item.BrokenBy = GameVersion.LatestMajorRelease;
-                if (item.CompatibleWith >= GameVersion.LatestMajorRelease) {
+                item.BrokenBy = GameVersion.LatestMilestone;
+                if (item.CompatibleWith >= GameVersion.LatestMilestone) {
                     Addendum("Broken & Compatible at same time", item);
                 }
             } else {
                 AddMod(new Item(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
-                    BrokenBy = GameVersion.LatestMajorRelease,
+                    BrokenBy = GameVersion.LatestMilestone,
                     Catalog = "Addendum",
                     Compatibility = new Dictionary<ulong, Status>() { },
                     Flags = ItemFlags.Unrecognised,

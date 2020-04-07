@@ -102,13 +102,14 @@ namespace AutoRepair.Catalogs {
             AddMod(new Item(689937287u, "Surface Painter") {
                 Affect = Factor.Textures,
                 Authors = "BloodyPenguin",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 576327847u , Status.MinorIssues  }, // 81 Tiles (BP version)
                     { 502750307u , Status.Required     }, // Extra Landscaping Tools
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Notes = new Dictionary<ulong, string>() {
@@ -135,13 +136,22 @@ namespace AutoRepair.Catalogs {
                 Authors = "Ronyx69",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1442615478u, Status.Recommended }, // Detail Nature
                     { 1094334744u, Status.MinorIssues }, // Procedural Objects
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Obsolete // Prop Painter and Network Skins 2
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // multiple existing users stating it doesn't work any more
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press Shift+Alt+D to toggle visibility of all props." },
+                    { NOTE, "Asset creators, see: https://cslmodding.info/mod/detail/" },
+                    { NOTE, "Asset creators, example assets: https://drive.google.com/open?id=1xH7qB67NhVrlwtTW6gNfKD8FeRl-DNyl" },
+                    { 1094334744u, "[Mod: Procedural Objects] PO Ploppable Asphalt props might disappear when Detail mod is active: http://proceduralobjects.shoutwiki.com/wiki/Known_Issues" },
+                },
+                Published = WorkshopDate("16 Jul, 2018"),
                 SourceURL = "https://gist.github.com/ronyx69/68d57f77e721dabefaefa864cc29616b",
+                Updated = WorkshopDate("16 Jul, 2018"),
             });
 
         }

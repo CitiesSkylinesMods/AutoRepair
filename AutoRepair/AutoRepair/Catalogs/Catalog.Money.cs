@@ -66,9 +66,9 @@ namespace AutoRepair.Catalogs {
                     { 1232451940u, Status.Compatible   }, // 调整金钱
                     { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
-                CompatibleWith = GameVersion.PdxLauncher,
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.PdxLauncher,
+                ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/NJAldwin/GrantMeMoney",
             });
 

@@ -78,10 +78,11 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                CompatibleWith = GameVersion.SunsetHarbor,
+                //CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If this is working, please let aubergine18 know on mod compatbility checker workshop page." },
                     { NOTE, "Users: This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                     { NOTE, "Asset creators: See important note in workshop description: https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156u" },
                 },

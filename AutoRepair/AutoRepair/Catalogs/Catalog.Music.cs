@@ -28,7 +28,7 @@ namespace AutoRepair.Catalogs {
                 item.CompatibleWith = GameVersion.Active;
             }
 
-            if (!item.HasFlags(ItemFlags.SourceAvailable | ItemFlags.SourceUnavailable)) {
+            if (!item.HasFlag(ItemFlags.SourceAvailable | ItemFlags.SourceUnavailable)) {
                 item.Flags |= ItemFlags.SourceUnavailable;
             }
 
@@ -842,6 +842,11 @@ namespace AutoRepair.Catalogs {
 
             AddMusic(new Item(971298487u, "GTA5 Music Pack") {
                 Authors = string.Empty,
+            });
+
+            AddMusic(new Item(933535612u, "JOUKINAMI FM (Music Mod)") {
+                Authors = "InvocK",
+                Flags = ItemFlags.LargeFileWarning, // 155 MB
             });
 
         }
