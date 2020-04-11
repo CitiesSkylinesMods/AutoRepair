@@ -57,17 +57,61 @@ namespace AutoRepair.Catalogs {
     public partial class Catalog {
 
         /// <summary>
+        /// List of all the ali mods.
+        ///
+        /// Note: Also incorporated in to Font Selector mod.
+        /// </summary>
+        internal Dictionary<ulong, Status> aliMods = new Dictionary<ulong, Status>() {
+            { 412149127u , Status.Incompatible }, // Font Selector
+            // ali mods:
+            { 1988319487u, Status.Incompatible },
+            { 1943193013u, Status.Incompatible },
+            { 1939503380u, Status.Incompatible },
+            { 1879010148u, Status.Incompatible },
+            { 1842948393u, Status.Incompatible },
+            { 1842940377u, Status.Incompatible },
+            { 1700403881u, Status.Incompatible },
+            { 1684556269u, Status.Incompatible },
+            { 1680979061u, Status.Incompatible },
+            { 1625610864u, Status.Incompatible },
+            { 1548868991u, Status.Incompatible },
+            { 1546750969u, Status.Incompatible },
+            { 1546742761u, Status.Incompatible },
+            { 1408154706u, Status.Incompatible },
+            { 1396970654u, Status.Incompatible },
+            { 1394163871u, Status.Incompatible },
+            { 1357099637u, Status.Incompatible },
+            { 1357086606u, Status.Incompatible },
+            { 1334668143u, Status.Incompatible },
+            { 1334667876u, Status.Incompatible },
+            { 1322239426u, Status.Incompatible },
+            { 1290370842u, Status.Incompatible },
+            { 1218794439u, Status.Incompatible },
+            { 1216481923u, Status.Incompatible },
+            { 966361998u , Status.Incompatible },
+            { 965590422u , Status.Incompatible },
+            { 964727801u , Status.Incompatible },
+            { 949461510u , Status.Incompatible },
+            { 940398690u , Status.Incompatible },
+            { 929222270u , Status.Incompatible },
+            { 929211897u , Status.Incompatible },
+            { 928628465u , Status.Incompatible },
+            { 928477022u , Status.Incompatible },
+            { 926909781u , Status.Incompatible },
+        };
+
+        /// <summary>
         /// Add mods to list.
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
-        private void TranslationsCatalog() {
+        private void TranslationMods() {
 
             string catalog = "Translations";
 
             ulong latestAliMod = 1988319487u; // ali213_mod_01
 
-            AddMod(new Item(1231957400u, "Custom Namelists") {
+            AddMod(new Review(1231957400u, "Custom Namelists") {
                 Affect = Factor.Other, // todo
                 Authors = "Markus",
                 Catalog = catalog,
@@ -87,7 +131,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 Dec, 2017"),
             });
 
-            AddMod(new Item(935356978u, "CSL Names Pack Example [1.0.0]") {
+            AddMod(new Review(935356978u, "CSL Names Pack Example [1.0.0]") {
                 Affect = Factor.Other, // todo
                 Authors = "TGC",
                 Catalog = catalog,
@@ -104,7 +148,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("29 May, 2017"),
             });
 
-            AddMod(new Item(935350530u, "CSL Custom Names [1.0.0]") {
+            AddMod(new Review(935350530u, "CSL Custom Names [1.0.0]") {
                 Affect = Factor.Other, // todo
                 Authors = "TGC",
                 Catalog = catalog,
@@ -126,7 +170,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // changes existing russian translation text, replacing some words with shorter ones
-            AddMod(new Item(933961247u, "Russian text fix") {
+            AddMod(new Review(933961247u, "Russian text fix") {
                 Affect = Factor.Other,
                 Authors = "TGC",
                 Catalog = catalog,
@@ -152,7 +196,22 @@ namespace AutoRepair.Catalogs {
             # ██   ████ ██   ██ ██      ██ ███████ ███████ ██ ███████    ██    ███████
             */
 
-            AddMod(new Item(1753697086u, "Russian Localization Fix - Исправление русской локализации") {
+            AddMod(new Review(2055299197u, "上海路名") {
+                Affect = Factor.Other, // todo
+                Authors = "BobLiu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1231957400u, Status.Required     }, // Custom Namelists
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SourceBundled
+                      | ItemFlags.Localised,
+                Locale = "zh-cn",
+                Published = WorkshopDate("10 Apr, 2020"),
+                Updated = WorkshopDate("10 Apr, 2020"),
+            });
+
+            AddMod(new Review(1753697086u, "Russian Localization Fix - Исправление русской локализации") {
                 Affect = Factor.Other, // todo
                 Authors = "White_Drake (UA)",
                 Catalog = catalog,
@@ -170,7 +229,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 May, 2019"),
             });
 
-            AddMod(new Item(1752699330u, "Альтернативный русский NamesLists") {
+            AddMod(new Review(1752699330u, "Альтернативный русский NamesLists") {
                 Affect = Factor.Other, // todo
                 Authors = "White_Drake (UA)",
                 Catalog = catalog,
@@ -188,7 +247,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 May, 2019"),
             });
 
-            AddMod(new Item(1652793447u, "Germanize: Road & District Names") {
+            AddMod(new Review(1652793447u, "Germanize: Road & District Names") {
                 Affect = Factor.Other, // todo
                 Authors = "Fabdiwabdi",
                 Catalog = catalog,
@@ -203,7 +262,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("11 Feb, 2019"),
             });
 
-            AddMod(new Item(1644667012u, "Germanize: Cim Names") {
+            AddMod(new Review(1644667012u, "Germanize: Cim Names") {
                 Affect = Factor.Other, // todo
                 Authors = "Fabdiwabdi",
                 Catalog = catalog,
@@ -218,7 +277,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("6 Feb, 2019"),
             });
 
-            AddMod(new Item(1327691796u, "Bayreuther Straßen- und Stadtteilliste") {
+            AddMod(new Review(1327691796u, "Bayreuther Straßen- und Stadtteilliste") {
                 Affect = Factor.Other, // todo
                 Authors = "Viss Valdyr",
                 Catalog = catalog,
@@ -233,7 +292,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("11 Mar, 2018"),
             });
 
-            AddMod(new Item(1301101044u, "CNL Japanese Blank Road Name") {
+            AddMod(new Review(1301101044u, "CNL Japanese Blank Road Name") {
                 Affect = Factor.Other, // todo
                 Authors = "stmSantana",
                 Catalog = catalog,
@@ -249,7 +308,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 Oct, 2018"),
             });
 
-            AddMod(new Item(1299863509u, "CNL Japanese Localization Name Lists") {
+            AddMod(new Review(1299863509u, "CNL Japanese Localization Name Lists") {
                 Affect = Factor.Other, // todo
                 Authors = "stmSantana",
                 Catalog = catalog,
@@ -267,7 +326,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 Oct, 2018"),
             });
 
-            AddMod(new Item(1298626701u, "CNL Blank Road Name MOD") {
+            AddMod(new Review(1298626701u, "CNL Blank Road Name MOD") {
                 Affect = Factor.Other, // todo
                 Authors = "stmSantana",
                 Catalog = catalog,
@@ -282,7 +341,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("11 Feb, 2018"),
             });
 
-            AddMod(new Item(1261047747u, "Wiener Strassennamen/Viennese street names") {
+            AddMod(new Review(1261047747u, "Wiener Strassennamen/Viennese street names") {
                 Affect = Factor.Other, // todo
                 Authors = "x||x",
                 Catalog = catalog,
@@ -297,7 +356,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("7 Jan, 2018"),
             });
 
-            AddMod(new Item(1249641304u, "Custom Names Lists") {
+            AddMod(new Review(1249641304u, "Custom Names Lists") {
                 Affect = Factor.Other, // todo
                 Authors = "Ilion",
                 Catalog = catalog,
@@ -315,7 +374,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("12 Apr, 2018"),
             });
 
-            AddMod(new Item(1231958156u, "Vienna Namelist") {
+            AddMod(new Review(1231958156u, "Vienna Namelist") {
                 Affect = Factor.Other, // todo
                 Authors = "Markus",
                 Catalog = catalog,
@@ -332,7 +391,7 @@ namespace AutoRepair.Catalogs {
 
             // covers multiple regions: Iran Uzbekistan Turkmenistan Afghanistan Pashtun Pakhtun Pashto
             // Pakhto Kurd Kurdistan O'zbekiston Baluch Balochistan Baluchistan Tajikistan Iranian
-            AddMod(new Item(1255835366u, "Central Asian Names") {
+            AddMod(new Review(1255835366u, "Central Asian Names") {
                 Affect = Factor.Other, // todo
                 Authors = "alborzka",
                 Catalog = catalog,
@@ -354,7 +413,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // probably obsolete - custom name lists mod is much better apporach
-            AddMod(new Item(950011274u, "Japanese Romaji Names [BETA]") {
+            AddMod(new Review(950011274u, "Japanese Romaji Names [BETA]") {
                 Authors = "Homusubi",
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable
@@ -374,7 +433,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // use namelist alternative instead: 1299863509u, 
-            AddMod(new Item(937334007u, "Japanese Localization RD") {
+            AddMod(new Review(937334007u, "Japanese Localization RD") {
                 Affect = Factor.Other, // todo
                 Authors = "Gansaku",
                 Flags = ItemFlags.Abandonware
@@ -407,53 +466,14 @@ namespace AutoRepair.Catalogs {
             #    ██    ██   ██ ██   ██ ██   ████ ███████ ███████ ██   ██    ██    ██  ██████  ██   ████ ███████
             */
 
-            Dictionary<ulong, Status> aliCompat = new Dictionary<ulong, Status>() {
-                    { 412149127u , Status.Incompatible }, // Font Selector
-                    // ali mods:
-                    { 1988319487u, Status.Incompatible },
-                    { 1943193013u, Status.Incompatible },
-                    { 1939503380u, Status.Incompatible },
-                    { 1879010148u, Status.Incompatible },
-                    { 1842948393u, Status.Incompatible },
-                    { 1842940377u, Status.Incompatible },
-                    { 1700403881u, Status.Incompatible },
-                    { 1684556269u, Status.Incompatible },
-                    { 1680979061u, Status.Incompatible },
-                    { 1625610864u, Status.Incompatible },
-                    { 1548868991u, Status.Incompatible },
-                    { 1546750969u, Status.Incompatible },
-                    { 1546742761u, Status.Incompatible },
-                    { 1408154706u, Status.Incompatible },
-                    { 1396970654u, Status.Incompatible },
-                    { 1394163871u, Status.Incompatible },
-                    { 1357099637u, Status.Incompatible },
-                    { 1357086606u, Status.Incompatible },
-                    { 1334668143u, Status.Incompatible },
-                    { 1334667876u, Status.Incompatible },
-                    { 1322239426u, Status.Incompatible },
-                    { 1290370842u, Status.Incompatible },
-                    { 1218794439u, Status.Incompatible },
-                    { 1216481923u, Status.Incompatible },
-                    { 966361998u , Status.Incompatible },
-                    { 965590422u , Status.Incompatible },
-                    { 964727801u , Status.Incompatible },
-                    { 949461510u , Status.Incompatible },
-                    { 940398690u , Status.Incompatible },
-                    { 929222270u , Status.Incompatible },
-                    { 929211897u , Status.Incompatible },
-                    { 928628465u , Status.Incompatible },
-                    { 928477022u , Status.Incompatible },
-                    { 926909781u , Status.Incompatible },
-            };
-
             string aliDetails = "Details of mod: https://forum.paradoxplaza.com/forum/index.php?threads/get-steam-to-remove-this-item-from-the-workshop.975808/#post-21997231";
 
             // currently most recent one
-            AddMod(new Item(1988319487u, "ali213_mod_01") {
+            AddMod(new Review(1988319487u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "luotianzhi",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable
@@ -466,7 +486,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Feb, 2020"),
             });
 
-            AddMod(new Item(1418444018u, "417245527 Mod Thai-Language 6") {
+            AddMod(new Review(1418444018u, "417245527 Mod Thai-Language 6") {
                 Affect = Factor.Other, // todo
                 Authors = "[O]ne_Step",
                 Catalog = catalog,
@@ -484,7 +504,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Very well maintained mod, very active author
-            AddMod(new Item(938512234u, "Traditional Chinese Translation V2 社群正體中文化 V2") {
+            AddMod(new Review(938512234u, "Traditional Chinese Translation V2 社群正體中文化 V2") {
                 Affect = Factor.Other, // todo
                 Authors = "alien0512.tw",
                 Catalog = catalog,
@@ -500,7 +520,7 @@ namespace AutoRepair.Catalogs {
 
             // Very well maintained mod, very active author
             // 100% Turkish Cities Skylines May 2019 by Turkish PATCH & Riza symbol54
-            AddMod(new Item(936338233u, "%100 TÜRKÇE 2019 Mayıs ayı Cities Skylines TÜRKÇE YAMA by symbol54 & Rıza") {
+            AddMod(new Review(936338233u, "%100 TÜRKÇE 2019 Mayıs ayı Cities Skylines TÜRKÇE YAMA by symbol54 & Rıza") {
                 Affect = Factor.Other,
                 Authors = " byBashkann(symbol54), Riza",
                 Catalog = catalog,
@@ -522,11 +542,11 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1943193013u, "ali213_mod_01") {
+            AddMod(new Review(1943193013u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "cute",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -541,11 +561,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("22 Dec, 2019"),
             });
 
-            AddMod(new Item(1939503380u, "ali213_mod_01") {
+            AddMod(new Review(1939503380u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "382661337",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -560,11 +580,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 Dec, 2019"),
             });
 
-            AddMod(new Item(1879010148u, "ali213_mod_01") {
+            AddMod(new Review(1879010148u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "喂奶",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -579,11 +599,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Oct, 2019"),
             });
 
-            AddMod(new Item(1842948393u, "ali213_mod_01") {
+            AddMod(new Review(1842948393u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "Jony-y",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -598,11 +618,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("23 Aug, 2019"),
             });
 
-            AddMod(new Item(1842940377u, "ali213_mod_01") {
+            AddMod(new Review(1842940377u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "qq_q33",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -617,11 +637,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("23 Aug, 2019"),
             });
 
-            AddMod(new Item(1700403881u, "ali213_mod_01") {
+            AddMod(new Review(1700403881u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "Lemon",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -636,11 +656,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("1 Apr, 2019"),
             });
 
-            AddMod(new Item(1684556269u, "ali213_mod_01") {
+            AddMod(new Review(1684556269u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "1061303312",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -655,11 +675,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("16 Mar, 2019"),
             });
 
-            AddMod(new Item(1680979061u, "ali213_mod_01") {
+            AddMod(new Review(1680979061u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "136681275",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -674,11 +694,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("12 Mar, 2019"),
             });
 
-            AddMod(new Item(1625610864u, "ali213_mod_01") {
+            AddMod(new Review(1625610864u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "903590283",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -693,11 +713,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("15 Jan, 2019"),
             });
 
-            AddMod(new Item(1548868991u, "ali213_mod_01") {
+            AddMod(new Review(1548868991u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "代号037",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -713,11 +733,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Oct, 2018"),
             });
 
-            AddMod(new Item(1546750969u, "ali213_mod_01") {
+            AddMod(new Review(1546750969u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "fireangel",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -732,11 +752,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("24 Oct, 2018"),
             });
 
-            AddMod(new Item(1546742761u, "ali213_mod_01") {
+            AddMod(new Review(1546742761u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "切斯特威廉尼米兹 海军",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -751,11 +771,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("24 Oct, 2018"),
             });
 
-            AddMod(new Item(1408154706u, "ali213_mod_01") {
+            AddMod(new Review(1408154706u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "WSYYY",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -770,11 +790,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("10 Jun, 2018"),
             });
 
-            AddMod(new Item(1396970654u, "ali213_mod_01") {
+            AddMod(new Review(1396970654u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "东皇丶沫凪",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -789,11 +809,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 May, 2018"),
             });
 
-            AddMod(new Item(1394163871u, "ali213_mod_01") {
+            AddMod(new Review(1394163871u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "丿燃情丶流逝",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -808,11 +828,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("25 May, 2018"),
             });
 
-            AddMod(new Item(1357099637u, "ali213_mod_01") {
+            AddMod(new Review(1357099637u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "jack760826",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -827,11 +847,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("9 Apr, 2018"),
             });
 
-            AddMod(new Item(1357086606u, "ali213_mod_01") {
+            AddMod(new Review(1357086606u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "jack760826",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -846,11 +866,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("9 Apr, 2018"),
             });
 
-            AddMod(new Item(1334668143u, "ali213_mod_01") {
+            AddMod(new Review(1334668143u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "邓大哥",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -865,11 +885,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 Mar, 2018"),
             });
 
-            AddMod(new Item(1334667876u, "ali213_mod_01") {
+            AddMod(new Review(1334667876u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "邓大哥",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -884,11 +904,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 Mar, 2018"),
             });
 
-            AddMod(new Item(1322239426u, "ali213_mod_01") {
+            AddMod(new Review(1322239426u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "希维",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -903,11 +923,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("6 Mar, 2018"),
             });
 
-            AddMod(new Item(1290370842u, "ali213_mod_01") {
+            AddMod(new Review(1290370842u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "梦染",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -922,11 +942,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Feb, 2018"),
             });
 
-            AddMod(new Item(1218794439u, "ali213_mod_01") {
+            AddMod(new Review(1218794439u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "767068841",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -941,11 +961,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("2 Dec, 2017"),
             });
 
-            AddMod(new Item(1216481923u, "ali213_mod_01") {
+            AddMod(new Review(1216481923u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "朱哥",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -960,11 +980,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Aug, 2018"),
             });
 
-            AddMod(new Item(966361998u, "ali213_mod_01") {
+            AddMod(new Review(966361998u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "Migi",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -979,11 +999,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("6 Jul, 2017"),
             });
 
-            AddMod(new Item(965590422u, "ali213_mod_01") {
+            AddMod(new Review(965590422u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "yuhuooo",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -998,11 +1018,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("5 Jul, 2017"),
             });
 
-            AddMod(new Item(964727801u, "ali213_mod_01") {
+            AddMod(new Review(964727801u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "Huskos",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -1017,11 +1037,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("5 Jul, 2017"),
             });
 
-            AddMod(new Item(949461510u, "ali213_mod_01") {
+            AddMod(new Review(949461510u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "丿MX灬神话",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -1036,11 +1056,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 Jun, 2017"),
             });
 
-            AddMod(new Item(940398690u, "ali213_mod_01") {
+            AddMod(new Review(940398690u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "503624885",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -1055,11 +1075,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("5 Jun, 2017"),
             });
 
-            AddMod(new Item(929222270u, "ali213_mod_01") {
+            AddMod(new Review(929222270u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "anyebuzu",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -1074,11 +1094,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 May, 2017"),
             });
 
-            AddMod(new Item(929211897u, "ali213_mod_01") {
+            AddMod(new Review(929211897u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "william0903",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -1093,11 +1113,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 May, 2017"),
             });
 
-            AddMod(new Item(928628465u, "ali213_mod_01") {
+            AddMod(new Review(928628465u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "yuluo",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -1112,11 +1132,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("19 May, 2017"),
             });
 
-            AddMod(new Item(928477022u, "ali213_mod_01") {
+            AddMod(new Review(928477022u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "BeiCheng",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -1131,11 +1151,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("19 May, 2017"),
             });
 
-            AddMod(new Item(926909781u, "ali213_mod_01") {
+            AddMod(new Review(926909781u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
                 Authors = "MCOO",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliCompat),
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration

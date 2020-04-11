@@ -19,30 +19,7 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Assets";
 
-            AddAsset(new Item(421624072u, "Small Airport Hangar") {
-                Authors = "GolonkaSwe",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 2037862156u, Status.Compatible   }, // IsIntercity Fix
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-            });
-
-            AddAsset(new Item(1361591068u, "Invisible 1x1 Spawn Point Variety Pack") {
-                Authors = "ninjanoobslayer",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-            });
-
-            AddAsset(new Item(661138741, "Runway Blast Pad") {
-                Authors = "Ayki",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-            });
+            // todo
         }
     }
 }

@@ -12,11 +12,11 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
-        private void RepairCatalog() {
+        private void RepairMods() {
 
             string catalog = "Repair";
 
-            AddMod(new Item(2041457644u, "Patch Loader Mod") {
+            AddMod(new Review(2041457644u, "Patch Loader Mod") {
                 Affect = Factor.Other,
                 Authors = "Krzychu1245, egi",
                 Catalog = catalog,
@@ -27,7 +27,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Apr, 2020"),
             });
 
-            AddMod(new Item(2037888659u, "Instant Return To Desktop") {
+            AddMod(new Review(2037888659u, "Instant Return To Desktop") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "Cgameworld",
                 Catalog = catalog,
@@ -38,7 +38,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Cgameworld/InstantReturnToDesktop",
             });
 
-            AddMod(new Item(2037862156u, "IsIntercity Fix") {
+            AddMod(new Review(2037862156u, "IsIntercity Fix") {
                 Affect = Factor.Other,
                 Authors = "Elektrix, aubergine18",
                 BrokenBy = new Version(1, 13, 0, 8),
@@ -53,7 +53,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.SunsetHarbor,
             });
 
-            AddMod(new Item(2034713132u, "AutoRepair") {
+            AddMod(new Review(2034713132u, "AutoRepair") {
                 Affect = Factor.Other,
                 Authors = "aubergine18",
                 Catalog = catalog,
@@ -64,7 +64,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/CitiesSkylinesMods/AutoRepair",
             });
 
-            AddMod(new Item(1938493221u, "Mini FPS Booster") {
+            AddMod(new Review(1938493221u, "Mini FPS Booster") {
                 Affect = Factor.Other,
                 Authors = "Krzychu1245",
                 Catalog = catalog,
@@ -75,7 +75,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Campus,
             });
 
-            AddMod(new Item(1777173984u, "Broken Nodes Detector") {
+            AddMod(new Review(1777173984u, "Broken Nodes Detector") {
                 Affect = Factor.Other,
                 Authors = "krzychu1245",
                 Catalog = catalog,
@@ -85,7 +85,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/CitiesSkylinesMods/BrokenNodeDetector",
             });
 
-            AddMod(new Item(1620588636u, "Safenets") {
+            AddMod(new Review(1620588636u, "Safenets") {
                 Affect = Factor.Other,
                 Authors = "thale5",
                 Catalog = catalog,
@@ -96,7 +96,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/thale5/Safenets",
             });
 
-            AddMod(new Item(1243740191u, "Road Removal Tool") {
+            AddMod(new Review(1243740191u, "Road Removal Tool") {
                 Affect = Factor.Other,
                 Authors = "egi",
                 Catalog = catalog,
@@ -106,7 +106,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RoadRemovalTool",
             });
 
-            AddMod(new Item(558661484u, "Building Panel Already Exists Icons Fix") {
+            AddMod(new Review(558661484u, "Building Panel Already Exists Icons Fix") {
                 Affect = Factor.Toolbar,
                 Authors = "BloodyPenguin",
                 BrokenBy = GameVersion.SunsetHarbor,

@@ -11,7 +11,7 @@ namespace AutoRepair.Descriptors {
     /// <summary>
     /// Descriptor for a workshop item.
     /// </summary>
-    public class Item {
+    public class Review {
 
         /// <summary>
         /// Used to validate if minimal source flags are set.
@@ -19,33 +19,19 @@ namespace AutoRepair.Descriptors {
         internal const ItemFlags SOURCE_DEFINED = ItemFlags.SourceAvailable | ItemFlags.SourceBundled | ItemFlags.SourceUnavailable;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Item"/> class.
+        /// Initializes a new instance of the <see cref="Review"/> class.
         ///
         /// If <see cref="ItemType"/> member is not set, the item is ignored.
         /// </summary>
         /// 
         /// <param name="workshopId">The Steam Workshop ID for this item.</param>
         /// <param name="workshopName">The name of this item as it appears in Steam Workshop.</param>
-        public Item(ulong workshopId, string workshopName) {
+        public Review(ulong workshopId, string workshopName) {
             if (workshopId == 0 || string.IsNullOrEmpty(workshopName)) {
                 throw new ArgumentNullException($"All items must specify both workshop ID '{workshopId}' and name '{workshopName}'.");
             }
             WorkshopId = workshopId;
             WorkshopName = workshopName;
-        }
-
-        /// <summary>
-        /// Finalizes an instance of the <see cref="Item"/> class.
-        ///
-        /// I have no idea if this is actually necessary.
-        /// </summary>
-        ~Item() {
-            Authors = null;
-            Catalog = null;
-            Compatibility?.Clear();
-            Languages = null;
-            SourceURL = null;
-            WorkshopName = null;
         }
 
         /// <summary>
@@ -74,7 +60,7 @@ namespace AutoRepair.Descriptors {
         ///
         /// Should be used in conjunction with <see cref="ItemFlags.Clone"/> flag.
         ///
-        /// If the mod is a sucessor, rather than a clone, use <see cref="Item.ContinuationOf"/> instead.
+        /// If the mod is a sucessor, rather than a clone, use <see cref="Review.ContinuationOf"/> instead.
         /// </summary>
         public ulong CloneOf { get; set; }
 
@@ -135,6 +121,7 @@ namespace AutoRepair.Descriptors {
         /// <summary>
         /// Gets or sets the game version at time when item was first published to workshop, if known.
         /// </summary>
+        [Obsolete]
         public Version ReleasedDuring { get; set; } = GameVersion.DefaultRelease;
 
         /// <summary>
@@ -182,6 +169,12 @@ namespace AutoRepair.Descriptors {
         /// Gets or sets the date when the item was last updated in Steam Workshop.
         /// </summary>
         public DateTime Updated { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the IUserMod class for this mod has been
+        /// inspected to check for bad startup code (code run in constructors or property getters).
+        /// </summary>
+        public bool UserModInspected { get; set; } = false;
 
         /// <summary>
         /// Gets or sets the Steam Workshop ID for this item.

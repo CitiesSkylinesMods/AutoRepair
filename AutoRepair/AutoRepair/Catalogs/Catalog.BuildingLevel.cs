@@ -14,12 +14,12 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void BuildingLevelCatalog() {
+        private void BuildingLevelMods() {
 
             string catalog = "BuildingLevel";
 
             // fix bug with historic building despawning
-            AddMod(new Item(1806881627u, "Altering History Fix") {
+            AddMod(new Review(1806881627u, "Altering History Fix") {
                 Affect = Factor.BuildingLevel
                        | Factor.Despawn,
                 Authors = "C#",
@@ -46,7 +46,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Note: Plop the Growables has settings which can override this mod
-            AddMod(new Item(1658773932u, "Historical Districts") {
+            AddMod(new Review(1658773932u, "Historical Districts") {
                 Affect = Factor.BuildingLevel,
                 Authors = "boformer",
                 Catalog = catalog,
@@ -74,7 +74,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Auto-maximises level of growables when built.
-            AddMod(new Item(1647722503u, "Level") {
+            AddMod(new Review(1647722503u, "Level") {
                 Affect = Factor.BuildingLevel,
                 Authors = "yoojt2",
                 Catalog = catalog,
@@ -95,13 +95,13 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Industries,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Unreliable
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 Locale = "ko",
                 ReleasedDuring = GameVersion.Industries,
             });
 
-            AddMod(new Item(1403136223u, "Control Building Level Up v0.5 (Industries)") {
+            AddMod(new Review(1403136223u, "Control Building Level Up v0.5 (Industries)") {
                 Affect = Factor.BuildingLevel,
                 Authors = "boformer",
                 Catalog = catalog,
@@ -113,7 +113,7 @@ namespace AutoRepair.Catalogs {
                     { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
-                    { 924884948u , Status.Compatible   }, // Plop the Growables
+                    { 924884948u , Status.Unknown      }, // Plop the Growables
                     { 523818382u , Status.Compatible   }, // Force Level Up
                     { 466158459u , Status.Compatible   }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
@@ -130,7 +130,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gist.github.com/boformer/c0a449426ae681bbe4f4e54693df4b8c",
             });
 
-            AddMod(new Item(523818382u, "Force Level Up") {
+            AddMod(new Review(523818382u, "Force Level Up") {
                 Affect = Factor.BuildingLevel,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -163,7 +163,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1330381737u, "Historic Buildings (Make Historical)") {
+            AddMod(new Review(1330381737u, "Historic Buildings (Make Historical)") {
                 Affect = Factor.BuildingLevel,
                 Authors = "CoarzFlovv",
                 BrokenBy = GameVersion.Industries,
@@ -196,7 +196,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1658773932u, // Historical Districts
             });
 
-            AddMod(new Item(1275678215u, "Force Building Level") {
+            AddMod(new Review(1275678215u, "Force Building Level") {
                 Affect = Factor.BuildingLevel,
                 Authors = "CoarzFlovv",
                 Catalog = catalog,
@@ -217,7 +217,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParkLife,
                 ContinuationOf = 410535198, // Control Building Level Up v0.4
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Notes = new Dictionary<ulong, string>() {
@@ -230,7 +230,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Building Upgrade Balance Mod
-            AddMod(new Item(1196714353u, "建筑升级平衡MOD") {
+            AddMod(new Review(1196714353u, "建筑升级平衡MOD") {
                 Affect = Factor.BuildingLevel
                        | Factor.Education
                        | Factor.Employment
@@ -258,7 +258,7 @@ namespace AutoRepair.Catalogs {
                 Locale = "zh-cn",
             });
 
-            AddMod(new Item(410535198u, "Control Building Level Up v0.4") {
+            AddMod(new Review(410535198u, "Control Building Level Up v0.4") {
                 Affect = Factor.BuildingLevel,
                 Authors = "DirtyDan",
                 BrokenBy = GameVersion.GreenCities, // guesstimate
@@ -271,7 +271,7 @@ namespace AutoRepair.Catalogs {
                     { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
                     { 1275678215u, Status.Incompatible }, // Force Building Level
                     { 1196714353u, Status.Incompatible }, // 建筑升级平衡MOD
-                    { 924884948u , Status.Compatible   }, // Plop the Growables
+                    { 924884948u , Status.Incompatible }, // Plop the Growables
                     { 523818382u , Status.Incompatible }, // Force Level Up
                     { 466158459u , Status.Compatible   }, // Building Themes
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
@@ -294,7 +294,7 @@ namespace AutoRepair.Catalogs {
 
             // Changed the algorithm that determined when buildings would level up
             // Rather than purely land-value based, it was primarily based on people working/living in the building.
-            AddMod(new Item(409654587u, "Level Up Balance Mod") {
+            AddMod(new Review(409654587u, "Level Up Balance Mod") {
                 Affect = Factor.BuildingLevel
                        | Factor.Education
                        | Factor.Employment

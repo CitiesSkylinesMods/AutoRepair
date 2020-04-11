@@ -3,7 +3,7 @@ namespace AutoRepair.Enums {
     using System.ComponentModel;
 
     /// <summary>
-    /// Determines how many of the <see cref="Item.RequiredAssets"/> and/or <see cref="Item.RequiredMods"/> are required.
+    /// Determines how many of the <see cref="Review.RequiredAssets"/> and/or <see cref="Review.RequiredMods"/> are required.
     /// </summary>
     public enum Selection {
         /// <summary>

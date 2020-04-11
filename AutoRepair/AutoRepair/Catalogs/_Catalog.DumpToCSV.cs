@@ -34,8 +34,8 @@ namespace AutoRepair.Catalogs {
         }
 
         private void CsvDumpItemsByFlags(ItemFlags flags, ref StringBuilder csv) {
-            foreach (KeyValuePair<ulong, Item> entry in Items) {
-                Item item = entry.Value;
+            foreach (KeyValuePair<ulong, Review> entry in Reviews) {
+                Review item = entry.Value;
                 if (item.HasFlag(flags)) {
                     CsvDumpItem(item, ref csv);
                 }
@@ -44,8 +44,8 @@ namespace AutoRepair.Catalogs {
 
         private void CsvDumpIncompatible(ref StringBuilder csv) {
             csv.Append("\n\nINCOMPATIBLE ITEMS:\n\n");
-            foreach (KeyValuePair<ulong, Item> entry in Items) {
-                Item item = entry.Value;
+            foreach (KeyValuePair<ulong, Review> entry in Reviews) {
+                Review item = entry.Value;
 
                 if (item.WorkshopId == 1383456057u) {
                     continue; // Shicho gets its own section lol
@@ -65,11 +65,11 @@ namespace AutoRepair.Catalogs {
 
         private void CsvDumpShicho(ref StringBuilder csv) {
             csv.Append("\n\nSHICHO MOD INCOMPATIBLE ITEMS:\n\n");
-            Item item = Items[1383456057u]; // Shicho
+            Review item = Reviews[1383456057u]; // Shicho
             CsvDumpItemCompatibilityByStatus(item, Status.Incompatible, ref csv);
         }
 
-        private void CsvDumpItemCompatibilityByStatus(Item item, Status status, ref StringBuilder csv) {
+        private void CsvDumpItemCompatibilityByStatus(Review item, Status status, ref StringBuilder csv) {
             foreach (KeyValuePair<ulong, Status> entry in item.Compatibility) {
                 if (entry.Value == status) {
                     csv.AppendFormat(
@@ -89,23 +89,23 @@ namespace AutoRepair.Catalogs {
 
         private void CsvDumpGameUpdate(Version version, ref StringBuilder csv) {
             csv.Append("\n\nBROKEN BY UPDATE :\n\n");
-            foreach (KeyValuePair<ulong, Item> entry in Items) {
-                Item item = entry.Value;
+            foreach (KeyValuePair<ulong, Review> entry in Reviews) {
+                Review item = entry.Value;
                 if (item.BrokenBy == version) {
                     CsvDumpItem(item, ref csv);
                 }
             }
 
             csv.Append("\n\nCOMPATIBLE WITH UPDATE :\n\n");
-            foreach (KeyValuePair<ulong, Item> entry in Items) {
-                Item item = entry.Value;
+            foreach (KeyValuePair<ulong, Review> entry in Reviews) {
+                Review item = entry.Value;
                 if (item.CompatibleWith == version && item.BrokenBy < item.CompatibleWith) {
                     CsvDumpItem(item, ref csv);
                 }
             }
         }
 
-        private void CsvDumpItem(Item item, ref StringBuilder csv) {
+        private void CsvDumpItem(Review item, ref StringBuilder csv) {
             bool hasReplacement = item.ReplaceWith != 0u;
 
             string replacementName = hasReplacement
@@ -123,7 +123,7 @@ namespace AutoRepair.Catalogs {
                 replacementName);
         }
 
-        private string GetRelevantNote(Item item, ulong noteId) {
+        private string GetRelevantNote(Review item, ulong noteId) {
             if (item.Notes != null && item.Notes.TryGetValue(noteId, out var note)) {
                 return note;
             } else {
@@ -132,7 +132,7 @@ namespace AutoRepair.Catalogs {
         }
 
         private string GetNameFromId(ulong workshopId) {
-            if (Items.TryGetValue(workshopId, out Item item)) {
+            if (Reviews.TryGetValue(workshopId, out Review item)) {
                 return item.WorkshopName;
             } else {
                 return string.Empty;

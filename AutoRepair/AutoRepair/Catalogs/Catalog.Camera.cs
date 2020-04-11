@@ -16,12 +16,12 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void CameraCatalog() {
+        private void CameraMods() {
 
             string catalog = "Camera";
 
             // todo: move to driving category
-            AddMod(new Item(1518296436u, "Driving Mod") {
+            AddMod(new Review(1518296436u, "Driving Mod") {
                 Affect = Factor.Camera
                        | Factor.Vehicles,
                 Authors = "WULF1045",
@@ -33,7 +33,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Camera control via SpaceMouse
-            AddMod(new Item(2021361606u, "SpaceMouse for CSL") {
+            AddMod(new Review(2021361606u, "SpaceMouse for CSL") {
                 Affect = Factor.Camera,
                 Authors = "alex",
                 Catalog = catalog,
@@ -50,7 +50,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Stereoscopic camera (split screen)
-            AddMod(new Item(1828737770u, "StereoscopicView") {
+            AddMod(new Review(1828737770u, "StereoscopicView") {
                 Affect = Factor.Camera,
                 Authors = "eelcobaas",
                 Catalog = catalog,
@@ -63,11 +63,11 @@ namespace AutoRepair.Catalogs {
                     //{ 411016892u , Status.Incompatible }, // Enhanced Zoom (no longer in workshop)
                     //{ 406255342u , Status.Incompatible }, // First-person camera
                 },
-                Flags = ItemFlags.MinorBugs // mouse pointer and underground view borked
+                Flags = ItemFlags.MinorIssues // mouse pointer and underground view borked
                       | ItemFlags.SourceBundled,
             });
 
-            AddMod(new Item(1756089251u, "Zoom It!") {
+            AddMod(new Review(1756089251u, "Zoom It!") {
                 Affect = Factor.Camera,
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -80,13 +80,13 @@ namespace AutoRepair.Catalogs {
                     { 410227672u , Status.Incompatible }, // Farther Zoom
                 },
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // harmony patch management could be better
+                      | ItemFlags.MinorIssues // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-ZoomIt",
             });
 
             // Camera control by joystick
-            AddMod(new Item(1721824249u, "Joystick Camera Control") {
+            AddMod(new Review(1721824249u, "Joystick Camera Control") {
                 Affect = Factor.Camera,
                 Authors = "Rena",
                 Catalog = catalog,
@@ -100,7 +100,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/RenaKunisaki/CSL-JoystickCameraControl",
             });
 
-            AddMod(new Item(1721823173u, "NoOffScreenScroll") {
+            AddMod(new Review(1721823173u, "NoOffScreenScroll") {
                 Affect = Factor.Camera,
                 Authors = "Rena",
                 Catalog = catalog,
@@ -114,7 +114,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/RenaKunisaki/CSL-NoOffScreenScroll",
             });
 
-            AddMod(new Item(1406625743u, "EnhancedZoomContinued") {
+            AddMod(new Review(1406625743u, "EnhancedZoomContinued") {
                 Affect = Factor.Camera,
                 Authors = "UguuDoki",
                 Catalog = catalog,
@@ -132,7 +132,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://drive.google.com/file/d/1n9Bga69WamgKPk8rsWDjdJOSEJBTLNId",
             });
 
-            AddMod(new Item(650805785u, "First Person Camera: Updated") {
+            AddMod(new Review(650805785u, "First Person Camera: Updated") {
                 Affect = Factor.Camera,
                 Authors = "tony56a",
                 Catalog = catalog,
@@ -148,7 +148,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/tony56a/Skylines-FPSCamera/tree/1.4.0-fix",
             });
 
-            AddMod(new Item(602077938u, "TotalyFree Camera") {
+            AddMod(new Review(602077938u, "TotalyFree Camera") {
                 Affect = Factor.Camera,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -159,7 +159,7 @@ namespace AutoRepair.Catalogs {
                     { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
                     { 410227672u , Status.Incompatible }, // Farther Zoom
                 },
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Published = WorkshopDate("16 Jan, 2016"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-TotalyFreeCamera",
@@ -174,7 +174,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1492317158u, "第一人称视角") {
+            AddMod(new Review(1492317158u, "第一人称视角") {
                 Affect = Factor.Camera,
                 Authors = "Ling Youqiang",
                 BrokenBy = GameVersion.Snowfall,
@@ -203,7 +203,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // literally an exact copy of 650805785u
-            AddMod(new Item(1317859996u, "650805785 First Person Camera_ Updated") {
+            AddMod(new Review(1317859996u, "650805785 First Person Camera_ Updated") {
                 Affect = Factor.Camera,
                 Authors = "KoLoNyAlı MeNdİL",
                 Catalog = catalog,
@@ -222,7 +222,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // https://web.archive.org/web/20170406042531/http://steamcommunity.com/sharedfiles/filedetails/?id=651056665
-            AddMod(new Item(651056665u, "Enhanced Zoom Continued") {
+            AddMod(new Review(651056665u, "Enhanced Zoom Continued") {
                 Affect = Factor.Camera,
                 Authors = "cylon33",
                 Catalog = catalog,
@@ -250,7 +250,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // https://web.archive.org/web/20150325043452/https://steamcommunity.com/sharedfiles/filedetails/?id=411016892
-            AddMod(new Item(411016892u, "Enhanced Zoom") {
+            AddMod(new Review(411016892u, "Enhanced Zoom") {
                 Affect = Factor.Camera,
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
@@ -277,7 +277,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // found via wayback machine looking at h_e's profile
-            AddMod(new Item(410610814u, "Farther Zoom (full zoom in)") {
+            AddMod(new Review(410610814u, "Farther Zoom (full zoom in)") {
                 Affect = Factor.Camera,
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
@@ -302,7 +302,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("19 Mar, 2015"), // guesstimate
             });
 
-            AddMod(new Item(410227672u, "Farther Zoom") {
+            AddMod(new Review(410227672u, "Farther Zoom") {
                 Affect = Factor.Camera,
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
@@ -325,7 +325,7 @@ namespace AutoRepair.Catalogs {
 
             // discovered via: https://steamcommunity.com/workshop/filedetails/discussion/410329674/611701360830851903/
             // wbm: https://web.archive.org/web/20150415004447/http://steamcommunity.com/sharedfiles/filedetails/?id=409359952
-            AddMod(new Item(409359952u, "Isometric Camera") {
+            AddMod(new Review(409359952u, "Isometric Camera") {
                 Affect = Factor.Rendering,
                 Authors = "Ulysius",
                 Catalog = catalog,
@@ -360,7 +360,23 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("23 Mar, 2015"), // WBM shows 11 updates, but steam did not show updated date back then
             });
 
-            AddMod(new Item(406326408u, "HideUI") {
+            // https://web.archive.org/web/20150329012553/http://steamcommunity.com/profiles/76561198179273381/myworkshopfiles/?appid=255710
+            AddMod(new Review(406940119u, "Camera Buttons") {
+                Affect = Factor.UI,
+                Authors = "brittany",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("14 Mar, 2015"), // guessing based on github initial commit
+                SourceURL = "https://github.com/brittanygh/CS-CameraButtons",
+                Updated = WorkshopDate("8 Apr, 2015"), // guessing based on other mods by same author
+            });
+
+            AddMod(new Review(406326408u, "HideUI") {
                 Affect = Factor.Camera,
                 Authors = "nlight",
                 Catalog = catalog,
@@ -380,7 +396,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("8 Apr, 2015"),
             });
 
-            AddMod(new Item(406255342u, "First-person camera") {
+            AddMod(new Review(406255342u, "First-person camera") {
                 Affect = Factor.Camera,
                 Authors = "nlight",
                 BrokenBy = GameVersion.Snowfall,

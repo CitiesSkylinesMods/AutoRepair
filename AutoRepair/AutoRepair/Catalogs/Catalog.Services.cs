@@ -15,13 +15,13 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void ServicesCatalog() {
+        private void ServiceMods() {
 
             string catalog = "Services";
 
             // todo: probably incompatible with multiple other district service mods
             // possibly breaks when used on existing saves
-            AddMod(new Item(1922400472u, "Enhanced District Services") {
+            AddMod(new Review(1922400472u, "Enhanced District Services") {
                 Affect = Factor.Consumption
                        | Factor.Customize
                        | Factor.Emptying
@@ -56,7 +56,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/chronofanz/EnhancedDistrictServices",
             });
 
-            AddMod(new Item(1680840913u, "More Effective Transfer Manager") {
+            AddMod(new Review(1680840913u, "More Effective Transfer Manager") {
                 Affect = Factor.Consumption
                        | Factor.Emptying
                        | Factor.Health
@@ -82,7 +82,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/pcfantasy/MoreEffectiveTransfer",
             });
 
-            AddMod(new Item(1632320836u, "Service Vehicles Manager 2.0.1") {
+            AddMod(new Review(1632320836u, "Service Vehicles Manager 2.0.1") {
                 Affect = Factor.Service,
                 Authors = "Klyte45",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -102,25 +102,12 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: Klyte45 is aware of issue but is currently fixing other mods. Check workshop page for progress updates." },
                 },
+                Published = WorkshopDate("22 Jan, 2019"),
                 SourceURL = "https://github.com/klyte45/ServiceVehiclesManager",
+                Updated = WorkshopDate("9 Jun, 2019"),
             });
 
-            // todo: move to vehicle cat?
-            AddMod(new Item(1192250578u, "Emergency Lights Manager") {
-                Affect = Factor.Rendering
-                       | Factor.Service
-                       | Factor.Vehicles,
-                Authors = "Cryptkeeper",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 863909323u, Status.Incompatible }, // Emergency Lights Changer Plus
-                    { 559172768u, Status.Incompatible }, // Emergency Light Changer
-                },
-                ContinuationOf = 863909323u, // Emergency Lights Changer Plus
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            AddMod(new Item(1181352643u, "District Service Limit 3.0") {
+            AddMod(new Review(1181352643u, "District Service Limit 3.0") {
                 Affect = Factor.Service
                        | Factor.Vehicles,
                 Authors = "cambrium",
@@ -133,6 +120,7 @@ namespace AutoRepair.Catalogs {
                     { 1632320836u, Status.Incompatible }, // Service Vehicles Manager 2.0.1
                     { 1420955187u, Status.MinorIssues  }, // Real Time
                     { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
+                    { 927293560u , Status.Incompatible }, // Geli-Districts v3.0
                     { 649522495u , Status.Incompatible }, // District Service Limit
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                 },
@@ -149,7 +137,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/TheDogKSP/cs-districts",
             });
 
-            AddMod(new Item(934994075u, "Service Vehicle Selector 2") {
+            AddMod(new Review(934994075u, "Service Vehicle Selector 2") {
                 Affect = Factor.Service
                        | Factor.Vehicles,
                 Authors = "BloodyPenguin",
@@ -188,6 +176,68 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("2 Apr, 2020"),
             });
 
+            // prolly cont. of dsl3
+            AddMod(new Review(927293560u, "Geli-Districts v3.0") {
+                Affect = Factor.Service,
+                Authors = "Geliboy",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1922400472u, Status.Incompatible }, // Enhanced District Services
+                    { 1706703944u, Status.Incompatible }, // More Outside Interaction
+                    { 1680840913u, Status.Incompatible }, // More Effective Transfer Manager
+                    { 1632320836u, Status.Incompatible }, // Service Vehicles Manager 2.0.1
+                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0 (cambrium)
+                    { 927293560u , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835391u , Status.Incompatible }, // Enhanced Garbage Truck AI [1.6]
+                    { 813835241u , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 785237088u , Status.Compatible   }, // Service Radius Adjuster
+                    { 649522495u , Status.Incompatible }, // District Service Limit (Witcher) // gsteigert on github?
+                    { 583556014u , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4+]
+                    { 583552152u , Status.Incompatible }, // Enhanced Garbage Truck AI [Fixed for v1.4+]
+                    { 554232266u , Status.Incompatible }, // Mod: Nursing Homes for Senior Citizens
+                    { 512341354u , Status.Incompatible }, // Central Services Dispatcher (WtM)
+                    { 439582006u , Status.Incompatible }, // [ARIS] Enhanced Garbage Truck AI
+                    { 433249875u , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 413847191u , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
+                    // Compatible with:
+                    { 1420955187u, Status.Compatible   }, // Real Time (dymanoid)
+                    { 1749971558u, Status.Compatible   }, // Real Time Offline
+                    { 2016920607u, Status.Compatible   }, // Ploppable RICO revisited
+                    { 816260433u , Status.Compatible   }, // Metro Overhaul Mod
+                    { 605590542u , Status.Compatible   }, // Rush Hour 2
+                    // TMPE v11:
+                    { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
+                    { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
+                    // Old/rogue versions of TM:PE
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1581695572u, Status.Incompatible }, // Traffic Manager: President Edition (no longer in workshop)
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    // Traffic Manager + Traffic++ AI (obsolete; game breaking)
+                    { 563720449u , Status.Incompatible }, // Traffic Manager + Improved AI (Japanese Ver.)
+                    { 498363759u , Status.Incompatible }, // Traffic Manager + Improved AI
+                    // Traffic++ (obsolete; game breaking)
+                    { 626024868u , Status.Incompatible }, // Traffic++ V2
+                    { 492391912u , Status.Incompatible }, // Improved AI (Traffic++)
+                    { 409184143u , Status.Incompatible }, // Traffic++
+                    // Extremely old verisons of Traffic Manager (obsolete; game breaking)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 481786333u , Status.Incompatible }, // Traffic Manager Plus
+                    { 427585724u , Status.Incompatible }, // Traffic Manager (where it all started!!)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 649522495u, // District Service Limit (Witcher)
+                Flags = ItemFlags.Laggy // some users report lag, but could be mod conflict?
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 554232266u, "[Mod: Nursing Homes for Senior Citizens] Breaks ambulances and hospitals when used with Geli-Districts." },
+                },
+                Published = WorkshopDate("17 May, 2017"),
+                Updated = WorkshopDate("29 Jan, 2019"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -197,7 +247,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // old version
-            AddMod(new Item(519691655u, "Service Vehicle Selector") {
+            AddMod(new Review(519691655u, "Service Vehicle Selector") {
                 Affect = Factor.Other,
                 Authors = "DontCryJustDie",
                 Catalog = catalog,

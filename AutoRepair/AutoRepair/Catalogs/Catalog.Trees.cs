@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void TreesCatalog() {
+        private void TreeMods() {
 
             string catalog = "Trees";
 
-            AddMod(new Item(1803209875u, "Trees' Respiration 1.0.1") {
+            AddMod(new Review(1803209875u, "Trees' Respiration 1.0.1") {
                 Affect = Factor.Environment
                        | Factor.Health
                        | Factor.Pollution
@@ -26,15 +26,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
-                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
+                    { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/TreesRespiration",
                 Tags = new[] { "Trees", "Pollution", "Environment", "Noise", "Health" },
             });
 
-            AddMod(new Item(1658679290u, "Forest Brush v1.3") {
+            AddMod(new Review(1658679290u, "Forest Brush v1.3") {
                 Affect = Factor.Environment
                        | Factor.PlaceAndMove
                        | Factor.Trees,
@@ -50,7 +50,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Trees", "Brush", "Forest", "Landscape", "Random", "Paint", "Environment", "Detailing", },
             });
 
-            AddMod(new Item(1654658173u, "Random Tree Brush") {
+            AddMod(new Review(1654658173u, "Random Tree Brush") {
                 Affect = Factor.Environment
                        | Factor.PlaceAndMove
                        | Factor.Trees,
@@ -67,7 +67,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Trees", "Brush", "Forest", "Landscape", "Random", "Paint", "Environment", "Detailing", },
             });
 
-            AddMod(new Item(1637106958u, "Lock Forestry") {
+            AddMod(new Review(1637106958u, "Lock Forestry") {
                 Affect = Factor.Environment
                        | Factor.HideRemove
                        | Factor.PlaceAndMove
@@ -84,7 +84,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Trees", "Forest", "Landscape", "Farming", "Forestry", "Environment", "Detailing", "Industry", },
             });
 
-            AddMod(new Item(1388613752u, "Tree Movement Control") {
+            AddMod(new Review(1388613752u, "Tree Movement Control") {
                 Affect = Factor.Environment
                        | Factor.Rendering
                        | Factor.Trees,
@@ -99,7 +99,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // render catalog?
-            AddMod(new Item(1349895184u, "Tree LOD Fix") {
+            AddMod(new Review(1349895184u, "Tree LOD Fix") {
                 Affect = Factor.Environment
                        | Factor.Rendering
                        | Factor.Trees,
@@ -119,7 +119,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Trees", "Forest", "Landscape", "LODs", "Graphics", "Environment", "Detailing", },
             });
 
-            AddMod(new Item(406723376u, "Tree Brush") {
+            AddMod(new Review(406723376u, "Tree Brush") {
                 Affect = Factor.Environment
                        | Factor.PlaceAndMove
                        | Factor.Trees,

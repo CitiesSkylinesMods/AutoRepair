@@ -16,11 +16,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void SkinRoadsCatalog() {
+        private void SkinNetworkMods() {
 
-            string catalog = "Skin.Roads";
+            string catalog = "Skin.Networks";
 
-            AddMod(new Item(2045625827u, "Cgameworld’s Railway/BVU Track Customizations") {
+            AddMod(new Review(2045625827u, "Cgameworld’s Railway/BVU Track Customizations") {
                 Affect = Factor.Rendering // meh
                        | Factor.Textures,
                 Authors = "Cgameworld",
@@ -35,7 +35,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Apr, 2020"),
             });
 
-            AddMod(new Item(2044086131u, "Network Extensions 2 - Sunset Harbour Build / Fix") {
+            AddMod(new Review(2044086131u, "Network Extensions 2 - Sunset Harbour Build / Fix") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
@@ -65,7 +65,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 812125426u, // Network Extensions 2
                 Flags = ItemFlags.NoWorkshop // removed 6th April 2020 due to original mod being fixed
                       | ItemFlags.Obsolete
-                      | ItemFlags.SaveChanging
+                      | ItemFlags.SaveAltering
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
@@ -82,7 +82,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Requires TM:PE
-            AddMod(new Item(2019097300u, "Hide TM:PE Unconnected Tracks") {
+            AddMod(new Review(2019097300u, "Hide TM:PE Unconnected Tracks") {
                 Affect = Factor.HideRemove
                        | Factor.RoadMarkings, // not really, but close enough
                 Authors = "kian.zarrin",
@@ -113,7 +113,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "TMPE", "TM:PE", "Tram", "Train", "Network", "Skins", "Junctions", "Tracks" },
             });
 
-            AddMod(new Item(2009708489u, "Road Arrows Replacer [Spain]") {
+            AddMod(new Review(2009708489u, "Road Arrows Replacer [Spain]") {
                 Affect = Factor.RoadMarkings,
                 Authors = "Nouvilas",
                 Catalog = catalog,
@@ -133,7 +133,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Requires either TM:PE and/or Network Skins 2
-            AddMod(new Item(1939169189u, "Hide Crosswalks V3.0 [EXPERIMENTAL]") {
+            AddMod(new Review(1939169189u, "Hide Crosswalks V3.0 [EXPERIMENTAL]") {
                 Affect = Factor.HideRemove
                        | Factor.RoadMarkings,
                 Authors = "kian.zarrin",
@@ -168,7 +168,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Requires either TM:PE and/or Network Skins 2
-            AddMod(new Item(1934023593u, "Hide TMPE crosswalks V2.5 [BETA]") {
+            AddMod(new Review(1934023593u, "Hide TMPE crosswalks V2.5 [BETA]") {
                 Affect = Factor.HideRemove
                        | Factor.RoadMarkings,
                 Authors = "kian.zarrin",
@@ -201,7 +201,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
             });
 
-            AddMod(new Item(1758376843u, "Network Skins 2") {
+            AddMod(new Review(1758376843u, "Network Skins 2") {
                 Affect = Factor.Props // catenary, lights
                        | Factor.Rendering
                        | Factor.Textures
@@ -214,6 +214,7 @@ namespace AutoRepair.Catalogs {
                     { 1959183067u, Status.MinorIssues  }, // CSUR Loader
                     { 1826488681u, Status.Recommended  }, // Modern Lighting Pack: Liberated!
                     { 1758376843u, Status.Incompatible }, // Network Skins 2
+                    { 1530376523u, Status.Compatible   }, // Railway Replacer
                     { 1449429720u, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1440928803u, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
@@ -221,6 +222,7 @@ namespace AutoRepair.Catalogs {
                     { 1189186167u, Status.Incompatible }, // 道路颜色调整
                     { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
+                    { 774449380u , Status.Incompatible }, // Catenary Replacer
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 543722850u , Status.Incompatible }, // Network Skins (original)
                     { 417585852u , Status.Incompatible }, // Road Color Changer
@@ -234,6 +236,26 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/boformer/NetworkSkins2",
             });
 
+            AddMod(new Review(1530376523u, "Railway Replacer") {
+                Affect = Factor.Props, // need a networks factor too
+                Authors = "Ronyx69, Simon Ryr, egi",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1758376843u, Status.Compatible   }, // Network Skins 2
+                    { 816260433u , Status.Incompatible }, // Metro Overhaul Mod
+                    { 774449380u , Status.Incompatible }, // Catenary Replacer
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press Shift + Alt + P to show the railway props settings window." },
+                    { NOTE, "User guide and related assets: https://steamcommunity.com/sharedfiles/filedetails/?id=1569088356" },
+                    { 816260433u, "[Mod: Metro Overhaul Mod] Incompatible with Railway Replacer as they both udpate Railway Tracks." },
+                },
+                Published = WorkshopDate("4 Oct, 2018"),
+                Updated = WorkshopDate("29 Dec, 2019"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -242,7 +264,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1128766708u, "Remove Road Textures - Blank Roads") {
+            AddMod(new Review(1128766708u, "Remove Road Textures - Blank Roads") {
                 Authors = "Madgemade",
                 Affect = Factor.RoadMarkings,
                 Catalog = catalog,
@@ -269,7 +291,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // translated clone of (assuming) 932192868u
-            AddMod(new Item(1449429720u, "Road Color 道路颜色修改中文汉化版") {
+            AddMod(new Review(1449429720u, "Road Color 道路颜色修改中文汉化版") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
@@ -303,7 +325,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Road Options (Road Colors Changer ++)
-            AddMod(new Item(1189186167u, "道路颜色调整") {
+            AddMod(new Review(1189186167u, "道路颜色调整") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
@@ -337,7 +359,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // obsoleted by kian's mods
-            AddMod(new Item(1147015481u, "No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets") {
+            AddMod(new Review(1147015481u, "No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets") {
                 Affect = Factor.RoadMarkings,
                 Authors = "Madgemade",
                 Catalog = catalog,
@@ -363,7 +385,7 @@ namespace AutoRepair.Catalogs {
 
             // Additional dev work on 651610627u
             // Currently most reliable version but superseded by NS2
-            AddMod(new Item(932192868u, "Road Options (Road Colors Changer ++)") {
+            AddMod(new Review(932192868u, "Road Options (Road Colors Changer ++)") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
@@ -393,8 +415,30 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1758376843u, // Network Skins 2
             });
 
+            AddMod(new Review(774449380u, "Catenary Replacer") {
+                Affect = Factor.Props
+                      | Factor.HideRemove,
+                Authors = "Tim The Terrible, boformer, BloodyPenguin",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1758376843u, Status.Incompatible }, // Network Skins 2
+                    { 1530376523u, Status.Incompatible }, // Railway Replacer
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Users report wires no longer removed when catenaries are removed." },
+                },
+                Published = WorkshopDate("3 Oct, 2016"),
+                ReplaceWith = 1758376843u, // Network Skins 2
+                SourceURL = "https://github.com/TimTheTerribleCS/Catenary-Replacer",
+                Updated = WorkshopDate("4 Dec, 2017"),
+            });
+
             // Additional dev work on the original mod
-            AddMod(new Item(651610627u, "[DISCONTINUED] Road Color Changer Continued") {
+            AddMod(new Review(651610627u, "[DISCONTINUED] Road Color Changer Continued") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
@@ -426,7 +470,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1758376843u, // Network Skins 2
             });
 
-            AddMod(new Item(543722850u, "Network Skins (Park Life compatible)") {
+            AddMod(new Review(543722850u, "Network Skins (Park Life compatible)") {
                 Affect = Factor.Props // catenary, lights
                        | Factor.Rendering
                        | Factor.Textures
@@ -466,7 +510,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.EditorBreaking
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
@@ -478,7 +522,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // original mod
-            AddMod(new Item(417585852u, "Road Color Changer") {
+            AddMod(new Review(417585852u, "Road Color Changer") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,

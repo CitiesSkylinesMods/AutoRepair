@@ -73,7 +73,7 @@ namespace AutoRepair.Util {
                 }
             }
             AssemblyName mod = typeof(Log).Assembly.GetName();
-            Info($"\n{mod.Name} v{mod.Version.ToString()}\n");
+            Info($"\n{mod.Name} v{mod.Version}\n");
         }
 
         /// <summary>

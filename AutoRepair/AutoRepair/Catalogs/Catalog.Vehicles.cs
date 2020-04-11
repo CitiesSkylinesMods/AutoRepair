@@ -15,11 +15,30 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void VehiclesCatalog() {
+        private void VehicleMods() {
 
             string catalog = "Vehicles";
 
-            AddMod(new Item(1651041757u, "Auto Rocket Launch 火箭自动发射") {
+            AddMod(new Review(2053661585u, "Emergency Lights Manager V2") {
+                Affect = Factor.Rendering
+                       | Factor.Vehicles,
+                Authors = "ninjanoobslayer",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053661585u, Status.Incompatible }, // Emergency Lights Manager V2
+                    { 1192250578u, Status.Incompatible }, // Emergency Lights Manager
+                    { 863909323u , Status.Incompatible }, // Emergency Lights Changer Plus
+                    { 559172768u , Status.Incompatible }, // Emergency Light Changer
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 1192250578u, // Emergency Lights Manager
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("9 Apr, 2020"),
+                SourceURL = "https://github.com/ninjamods/Emergency-Lights-Manager-V2",
+                Updated = WorkshopDate("9 Apr, 2020"),
+            });
+
+            AddMod(new Review(1651041757u, "Auto Rocket Launch 火箭自动发射") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
                 Authors = "mshsheng",
@@ -36,7 +55,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Vehicles", "Rocket", "Spaceship", "ChirpX", "Mars", "Launcher" },
             });
 
-            AddMod(new Item(1633580257u, "Vehicle Wealthizer 2") {
+            AddMod(new Review(1633580257u, "Vehicle Wealthizer 2") {
                 Affect = Factor.Customize
                        | Factor.Vehicles
                        | Factor.Wealth,
@@ -58,7 +77,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: might have more conflicts
-            AddMod(new Item(1548831935u, "Advanced Vehicle Options AVO") {
+            AddMod(new Review(1548831935u, "Advanced Vehicle Options AVO") {
                 Affect = Factor.Customize
                        | Factor.Despawn // has options to remove vehicles
                        | Factor.Textures // vehicle colours
@@ -87,7 +106,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // https://github.com/CityGecko/CS-AdvancedVehicleOptions/issues
+                      | ItemFlags.MinorIssues, // https://github.com/CityGecko/CS-AdvancedVehicleOptions/issues
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "May show error first time you load a city, but after that it will work fine." },
                     { 1818462177u, "[Mod: Vehicle Color Expander] AVO color features will self-disable if Vehicle Color Expander mod is active." },
@@ -98,7 +117,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: treat as service?
-            AddMod(new Item(1328542923u, "Choose Your Rocket") {
+            AddMod(new Review(1328542923u, "Choose Your Rocket") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
                 Authors = "BloodyPenguin",
@@ -117,7 +136,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Vehicles", "Rocket", "Spaceship", "ChirpX", "Mars", "Launcher" },
             });
 
-            AddMod(new Item(1327013919u, "No Time For Caution") {
+            AddMod(new Review(1327013919u, "No Time For Caution") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
                 Authors = "BloodyPenguin",
@@ -143,7 +162,7 @@ namespace AutoRepair.Catalogs {
 
             // Alters PT vehicle capacities to user defined values
             // Changes vehicle AIs, updates existing vehicles
-            AddMod(new Item(1550281302u, "TransportCapacity") {
+            AddMod(new Review(1550281302u, "TransportCapacity") {
                 Affect = Factor.Customize
                        | Factor.VehicleCapacity
                        | Factor.Vehicles,
@@ -170,7 +189,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // Does not reset vehicle AIs on unloading!
                       | ItemFlags.Obsolete // just use AVO!
-                      | ItemFlags.SaveChanging // Does not reset vehicle AIs proior to game save!
+                      | ItemFlags.SaveAltering // Does not reset vehicle AIs proior to game save!
                       | ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.Industries,
                 ReplaceWith = 1548831935u, // Advanced Vehicle Options AVO (Industries DLC ready)
@@ -179,7 +198,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // tries, but fails, to set transport vehicle capacity to 60 (70 for blimps)
-            AddMod(new Item(1228424498u, "Bzimage VehicleCapacity") {
+            AddMod(new Review(1228424498u, "Bzimage VehicleCapacity") {
                 Affect = Factor.Customize
                        | Factor.VehicleCapacity
                        | Factor.Vehicles,
@@ -222,7 +241,7 @@ namespace AutoRepair.Catalogs {
             // Cities: Never Trapped on the Horizon
             // Dll states name as "NeverCongestion" (possible author of original mod = Miro)
             // Modifies AIs, vehicles, etc.
-            AddMod(new Item(1196714055u, "城市：地平线永不堵车") {
+            AddMod(new Review(1196714055u, "城市：地平线永不堵车") {
                 Affect = Factor.Velocity
                        | Factor.Vehicles,
                 Authors = "回忆时光℡",
@@ -262,7 +281,64 @@ namespace AutoRepair.Catalogs {
                 Locale = "zh-cn",
             });
 
-            AddMod(new Item(414326578u, "Configurable Transport Capacity") {
+            AddMod(new Review(1192250578u, "Emergency Lights Manager") {
+                Affect = Factor.Rendering
+                       | Factor.Vehicles,
+                Authors = "Cryptkeeper",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053661585u, Status.Incompatible }, // Emergency Lights Manager V2
+                    { 1192250578u, Status.Incompatible }, // Emergency Lights Manager
+                    { 863909323u , Status.Incompatible }, // Emergency Lights Changer Plus
+                    { 559172768u , Status.Incompatible }, // Emergency Light Changer
+                },
+                ContinuationOf = 863909323u, // Emergency Light Changer Plus
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("5 Nov, 2017"),
+                ReplaceWith = 2053661585u, // Emergency Lights Manager V2
+                Updated = WorkshopDate("6 Nov, 2017"),
+            });
+
+            AddMod(new Review(863909323u, "Emergency Light Changer Plus") {
+                Affect = Factor.Rendering
+                       | Factor.Vehicles,
+                Authors = "stmSantana",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053661585u, Status.Incompatible }, // Emergency Lights Manager V2
+                    { 1192250578u, Status.Incompatible }, // Emergency Lights Manager
+                    { 863909323u , Status.Incompatible }, // Emergency Lights Changer Plus
+                    { 559172768u , Status.Incompatible }, // Emergency Light Changer
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 559172768u, // Emergency Light Changer
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("14 Feb, 2017"),
+                ReplaceWith = 2053661585u, // Emergency Lights Manager V2
+                SourceURL = "https://gist.github.com/stmSantana/b3950c4cf91ebdfe8e33053453e331e2",
+                Updated = WorkshopDate("14 Feb, 2017"),
+            });
+
+            AddMod(new Review(559172768u, "Emergency Light Changer") {
+                Affect = Factor.Rendering
+                       | Factor.Vehicles,
+                Authors = "boformer",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053661585u, Status.Incompatible }, // Emergency Lights Manager V2
+                    { 1192250578u, Status.Incompatible }, // Emergency Lights Manager
+                    { 863909323u , Status.Incompatible }, // Emergency Lights Changer Plus
+                    { 559172768u , Status.Incompatible }, // Emergency Light Changer
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("21 Nov, 2015"),
+                ReplaceWith = 2053661585u, // Emergency Lights Manager V2
+                SourceURL = "https://gist.github.com/boformer/c0491f7bc295154940ccf1cf4e94dba4",
+                Updated = WorkshopDate("10 Jun, 2016"),
+            });
+
+            AddMod(new Review(414326578u, "Configurable Transport Capacity") {
                 Affect = Factor.Customize
                        | Factor.VehicleCapacity
                        | Factor.Vehicles,

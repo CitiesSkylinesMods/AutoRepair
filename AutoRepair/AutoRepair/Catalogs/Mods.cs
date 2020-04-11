@@ -5,15 +5,13 @@ namespace AutoRepair {
 
     public class Mods {
 
-        private const ulong _hideIt = 1591417160u;
-
-        private Dictionary<ulong, Item> list;
+        private Dictionary<ulong, Review> list;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Mods"/> class.
         /// </summary>
         public Mods() {
-            list = new Dictionary<ulong, Item>();
+            list = new Dictionary<ulong, Review>();
             Populate();
         }
 
@@ -29,7 +27,7 @@ namespace AutoRepair {
         /// </summary>
         /// 
         /// <param name="item">The item to add.</param>
-        public void Add(Item item) {
+        public void Add(Review item) {
             item.ItemType = ItemTypes.Mod;
             list.Add(item.WorkshopId, item);
         }
@@ -41,14 +39,14 @@ namespace AutoRepair {
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         public void Add(ulong workshopId, string workshopName) {
-            list.Add(workshopId, new Item(workshopId, workshopName) {
+            list.Add(workshopId, new Review(workshopId, workshopName) {
                 ItemType = ItemTypes.Mod,
             });
         }
 
         // todo: flag the item as dodgey
         public void AddDodgey(ulong workshopId, string workshopName) {
-            list.Add(workshopId, new Item(workshopId, workshopName) {
+            list.Add(workshopId, new Review(workshopId, workshopName) {
                 ItemType = ItemTypes.Mod,
             });
         }
@@ -68,7 +66,7 @@ namespace AutoRepair {
             AddDodgey(1787941751u, "交通"); // "traffic" ?!
 
             // clone of: Extended Public Transport UI (Obsolete)
-            Add(new Item(1763358249u, "411164732") {
+            Add(new Review(1763358249u, "411164732") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.GameBreaking
                       | ItemFlags.SourceUnavailable
@@ -79,24 +77,20 @@ namespace AutoRepair {
                 },
             });
 
-            Add(new Item(1759269367u, "CrazyTouristFix") {
+            Add(new Review(1759269367u, "CrazyTouristFix") {
                 Flags = ItemFlags.SourceAvailable,
             });
 
-            // todo: check if source still obfu
-            Add(new Item(1756787990u, "More Advanced InfoViews") {
-                Flags = ItemFlags.SourceObfuscated // big warning sign
-                      | ItemFlags.SourceUnavailable,
-            });
 
-            Add(new Item(1751039059u, "Taxes Helper Mod") {
+
+            Add(new Review(1751039059u, "Taxes Helper Mod") {
                 Flags = ItemFlags.SourceAvailable,
             });
 
-            Add(new Item(1741725093u, "Note It!") {
+            Add(new Review(1741725093u, "Note It!") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
+                      | ItemFlags.MinorIssues, // harmony patch management could be better
             });
 
             AddDodgey(1740517576u, "ССМП"); // ??
@@ -105,7 +99,7 @@ namespace AutoRepair {
             Add(1739888663u, "Budget Balancer");
 
             // todo: auto subscribe if user has the broken version?
-            Add(new Item(1737575423u, "[ Backward Compatibility ]  New Roads For Network Extension 2") {
+            Add(new Review(1737575423u, "[ Backward Compatibility ]  New Roads For Network Extension 2") {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 812125426u, Status.Required },
                     { 1243740191u, Status.Required },
@@ -113,7 +107,7 @@ namespace AutoRepair {
                 },
             });
 
-            Add(new Item(1729576238u, "Date Changer") {
+            Add(new Review(1729576238u, "Date Changer") {
                 Flags = ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1420955187u, Status.Incompatible }, // Real Time (original)
@@ -121,7 +115,7 @@ namespace AutoRepair {
                 },
             });
 
-            Add(new Item(1723583521u, "Total Autobudget (Buffer Increase fix) deprecated") {
+            Add(new Review(1723583521u, "Total Autobudget (Buffer Increase fix) deprecated") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable
@@ -132,7 +126,7 @@ namespace AutoRepair {
                 ReplaceWith = 1541897355u, // Total Autobudget
             });
 
-            Add(new Item(1721492498u, "Optimised Outside Connections") {
+            Add(new Review(1721492498u, "Optimised Outside Connections") {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -140,20 +134,20 @@ namespace AutoRepair {
             Add(1718245521u, "No Park Building Fires");
 
 
-            Add(new Item(1689984220u, "Electric Roads Mod 1.2.3") {
+            Add(new Review(1689984220u, "Electric Roads Mod 1.2.3") {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1651036644u, "Advanced Traffic Congestion Report") {
+            Add(new Review(1651036644u, "Advanced Traffic Congestion Report") {
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/pcfantasy/TrafficCongestionReport",
             });
 
-            Add(new Item(1648585256u, "NoBailOutWarning") {
+            Add(new Review(1648585256u, "NoBailOutWarning") {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1623509958u, "Real Gas Station") {
+            Add(new Review(1623509958u, "Real Gas Station") {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1785774902u, Status.Compatible }, // Transfer Info (beta)
                     { 1072157697u, Status.Incompatible }, // Cargo Info
@@ -164,7 +158,7 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/pcfantasy/RealGasStation",
             });
 
-            Add(new Item(1603319148u, "576997275 Remove Need For Pipes") {
+            Add(new Review(1603319148u, "576997275 Remove Need For Pipes") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceUnavailable,
@@ -176,36 +170,19 @@ namespace AutoRepair {
 
 
 
-            Add(new Item(1597285962u, "Stream It!") {
+            Add(new Review(1597285962u, "Stream It!") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
+                      | ItemFlags.MinorIssues, // harmony patch management could be better
                 SourceURL = "https://github.com/keallu/CSL-StreamIt",
             });
 
-            Add(new Item(1595663918u, "InfoPanelOnLoad") {
-                Flags = ItemFlags.SourceObfuscated // checked 12/Mar/2020
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1756787990u, Status.Incompatible }, // More Advanced InfoViews
-                },
-                ReplaceWith = 1756787990u, // More Advanced InfoViews
-            });
 
             // removes building needs at night
-            Add(new Item(1591311030u, "Don't Bulldoze At Night") {
+            Add(new Review(1591311030u, "Don't Bulldoze At Night") {
                 Flags = ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1420955187u, Status.Required }, // Real Time
-                },
-            });
-
-            Add(new Item(1586774819u, "Other Rail Track Speed Increaser") {
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://pastebin.com/sDbefj5J",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 457516262u, Status.Incompatible }, // Rail Track Speed Increaser 2.2.1
                 },
             });
 
@@ -216,9 +193,9 @@ namespace AutoRepair {
 
             AddDodgey(1555378173u, "410344523"); // translated pop balance mod?
 
-            Add(new Item(1548749050u, "Mark-a-Route Reuploaded") {
+            Add(new Review(1548749050u, "Mark-a-Route Reuploaded") {
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -229,53 +206,35 @@ namespace AutoRepair {
             AddDodgey(1547491802, "Chengguanju");
 
             // shows vehicles in tunnels, likely to be removed from workshop
-            Add(new Item(1544546832u, "TRMod") {
+            Add(new Review(1544546832u, "TRMod") {
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 // todo; prolly incompat with NExt2
             });
 
             AddDodgey(1544326926u, "重复建设地标建筑");
 
-            Add(new Item(1541897355u, "Total Autobudget") {
-                Flags = ItemFlags.MinorBugs // can sometimes break services
+            Add(new Review(1541897355u, "Total Autobudget") {
+                Flags = ItemFlags.MinorIssues // can sometimes break services
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Total-Autobudget",
                 // todo: incompat with other budget mods
             });
 
 
-            Add(new Item(1530376523u, "Railway Replacer") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
 
-            Add(new Item(1526302248u, "Spinny RGB Circle") {
-                Flags = ItemFlags.SourceUnavailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1502721219u, Status.Incompatible }, // [Deprecated] Spinny Red Circle
-                },
-            });
 
-            Add(new Item(1523608557u, "American Sign Replacer") {
+            Add(new Review(1523608557u, "American Sign Replacer") {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
 
-            Add(new Item(1502721219u, "[Deprecated] Spinny Red Circle") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Obsolete,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1526302248u, Status.Incompatible }, // Spinny RGB Circle
-                },
-                ReplaceWith = 1526302248u, // Spinny RGB Circle
-            });
 
-            Add(new Item(1485051886u, "Cimtographer - rebuild for 1.10.1-f3") {
+            Add(new Review(1485051886u, "Cimtographer - rebuild for 1.10.1-f3") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.Unreliable,
                 SourceURL = "https://github.com/rdiekema/Cities-Skylines-Mapper/commit/4bb1557b97226cd84728593799be2710bb129c19",
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -284,13 +243,13 @@ namespace AutoRepair {
             });
 
             // Click the "M" mark in the upper left corner to display each type of functional building in different colors
-            Add(new Item(1455265809u, "ServiceMap") {
+            Add(new Review(1455265809u, "ServiceMap") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 // todo: might conflict with TMPE
             });
 
-            Add(new Item(1452259306u, "Aedificium RELOADED [BETA] - OBSOLETE") {
+            Add(new Review(1452259306u, "Aedificium RELOADED [BETA] - OBSOLETE") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
@@ -302,7 +261,7 @@ namespace AutoRepair {
             });
 
             // todo: need speed catalog as there are more of these things
-            Add(new Item(1425061566u, "V10Speed") {
+            Add(new Review(1425061566u, "V10Speed") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/V10lator/V10Speed",
@@ -312,7 +271,7 @@ namespace AutoRepair {
                 },
             });
 
-            Add(new Item(1415090282u, "AutoLineColor Redux") {
+            Add(new Review(1415090282u, "AutoLineColor Redux") {
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/taradinoc/CitiesSkylinesAutoColorMod",
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -325,7 +284,7 @@ namespace AutoRepair {
 
             AddDodgey(1391679732u, "CS-RP");
 
-            Add(new Item(1385468094u, "PollutionRemoverMod") {
+            Add(new Review(1385468094u, "PollutionRemoverMod") {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 // todo: incompat with other pol removers
@@ -333,21 +292,21 @@ namespace AutoRepair {
 
             AddDodgey(1379361024u, "bd96432_mod_2"); // likely a translation mod
 
-            Add(new Item(1348627392u, "Tides") {
+            Add(new Review(1348627392u, "Tides") {
                 Authors = "TPB",
                 Flags = ItemFlags.SourceUnavailable,
                 // possibly incompat with rainfall / other water mods?
             });
 
             // opposite of no abandonment lol
-            Add(new Item(1330378440u, "Building States") {
+            Add(new Review(1330378440u, "Building States") {
                 Authors = "CoarzFlovv",
                 Flags = ItemFlags.SourceUnavailable,
             });
 
 
 
-            Add(new Item(1324539315u, "Land Ships") {
+            Add(new Review(1324539315u, "Land Ships") {
                 Authors = "BloodyPenguin",
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/bloodypenguin/Skylines-LandShips",
@@ -357,7 +316,7 @@ namespace AutoRepair {
             });
 
             // todo: move to translations;
-            Add(new Item(1322787091u, "Addresses & Names Mod 2.0.1") {
+            Add(new Review(1322787091u, "Addresses & Names Mod 2.0.1") {
                 Authors = "Klyte45",
                 Flags = ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -368,26 +327,15 @@ namespace AutoRepair {
 
 
 
-            Add(new Item(1312735149u, "Klyte Commons") {
+            Add(new Review(1312735149u, "Klyte Commons") {
                 Authors = "Klyte45",
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/KlyteCommons",
             });
 
-            Add(new Item(1304997689u, "Light Trail") {
-                Authors = "sqrl",
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
-            Add(new Item(1300411488u, "Dynamic Fireworks") {
-                Authors = "sqrl",
-                Flags = ItemFlags.SourceUnavailable,
-            });
 
 
-
-
-            Add(new Item(1269478692u, "Trains stop on both sides of the station") {
+            Add(new Review(1269478692u, "Trains stop on both sides of the station") {
                 Authors = "Jaddy",
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // some users report crashes or that it doesn't work
@@ -400,7 +348,7 @@ namespace AutoRepair {
 
 
 
-            Add(new Item(1217239330u, "Profitable Offices") {
+            Add(new Review(1217239330u, "Profitable Offices") {
                 Authors = "Mrnr1",
                 Flags = ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -411,7 +359,7 @@ namespace AutoRepair {
 
             // https://github.com/pcfantasy/RealCity/blob/master/Resources/incompatible_mods.txt
             // https://steamcommunity.com/workshop/filedetails/discussion/1192503086/1488866180603720344/
-            Add(new Item(1192503086u, "Real City V9.0.03.14") {
+            Add(new Review(1192503086u, "Real City V9.0.03.14") {
                 Authors = "pcfantasy, Singlewolf",
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
@@ -438,32 +386,21 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/pcfantasy/RealCity/",
             });
 
-            Add(new Item(1182174575u, "Export Vehicles Positions") {
+            Add(new Review(1182174575u, "Export Vehicles Positions") {
                 Authors = "Simon Ryr",
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://gist.github.com/simon56modder/78b3ecab27b7829017f327baf0f9652c",
             });
 
-
-
-            Add(new Item(1176756723u, "Increased Pollution Radius") {
-                Authors = "BloodyPenguin",
-                Flags = ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo - incompat: pollution remover mods, but only those that actually remove pollution (eg. pollution solution)
-                },
-                SourceURL = "https://github.com/bloodypenguin/Skylines-IncreasedPollutionRadius",
-            });
-
-            Add(new Item(1174585364u, "Rescue Fullwidth Digits") {
+            Add(new Review(1174585364u, "Rescue Fullwidth Digits") {
                 Authors = "Gansaku",
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Item(1115699323u, "Immersive Water 0.9.0.0 (beta release)") {
+            Add(new Review(1115699323u, "Immersive Water 0.9.0.0 (beta release)") {
                 Authors = "Runaurufu",
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.SaveChanging // users report broken saves
+                      | ItemFlags.SaveAltering // users report broken saves
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // lots of users report issues
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -475,7 +412,7 @@ namespace AutoRepair {
 
             // Similar thing to Klyte's addresses mod
             // renames based on street/district name
-            Add(new Item(1179846541u, "Rename buildings") {
+            Add(new Review(1179846541u, "Rename buildings") {
                 Authors = "Romanoza",
                 Affect = Factor.Naming,
                 Flags = ItemFlags.SourceUnavailable,
@@ -484,7 +421,7 @@ namespace AutoRepair {
                 },
             });
 
-            Add(new Item(958161597u, "Twitch Viewer Integrator") {
+            Add(new Review(958161597u, "Twitch Viewer Integrator") {
                 Authors = "kiwiploetze",
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration

@@ -358,6 +358,17 @@ namespace AutoRepair {
         // ----------------------------------------------------------------------
 
         /// <summary>
+        /// Returns version as a string in the format shown on Pardox Launcher screen.
+        /// </summary>
+        /// 
+        /// <param name="version">The version to stringify.</param>
+        /// 
+        /// <returns>String represenation of the version.</returns>
+        public static string GetVersionString(Version version) {
+            return $"{version.ToString(3)}-f{version.Revision}";
+        }
+
+        /// <summary>
         /// Parses a date string from the Patches wiki page in to a <see cref="DateTime"/> instance.
         ///
         /// Format it expects is: <c>yyyy-mm-dd</c>.

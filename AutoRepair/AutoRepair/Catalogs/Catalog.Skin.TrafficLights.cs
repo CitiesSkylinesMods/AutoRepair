@@ -14,7 +14,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void SkinTrafficLightsCatalog() {
+        private void SkinTrafficLightsMods() {
 
             string catalog = "Skin.TrafficLights";
 
@@ -26,7 +26,7 @@ namespace AutoRepair.Catalogs {
             #  █████   ██████  ██   ████  ██████    ██    ██  ██████  ██   ████ ███████
             */
 
-            AddMod(new Item(1812157090u, "[NL] Dutch Traffic Lights") {
+            AddMod(new Review(1812157090u, "[NL] Dutch Traffic Lights") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "lennart",
@@ -83,7 +83,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Currently the yellow arrow signals do not operate with TMPE, but I am looking into adding this feature in the future.
-            AddMod(new Item(1550720600u, "New American Traffic Lights - NYC/NJ Style") {
+            AddMod(new Review(1550720600u, "New American Traffic Lights - NYC/NJ Style") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "ol' rdtg",
@@ -131,7 +131,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 86 MB
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
                 Locale = "en-us",
@@ -148,7 +148,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 Oct, 2018"),
             });
 
-            AddMod(new Item(1548117573u, "New American Traffic Lights - Grey Style") {
+            AddMod(new Review(1548117573u, "New American Traffic Lights - Grey Style") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "ol' rdtg",
@@ -196,7 +196,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 120 MB
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
                 Locale = "en-us",
@@ -213,7 +213,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 Oct, 2018"),
             });
 
-            AddMod(new Item(1541164608u, "New American Traffic Lights - Vanilla Side") {
+            AddMod(new Review(1541164608u, "New American Traffic Lights - Vanilla Side") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "ol' rdtg",
@@ -261,7 +261,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 284 MB
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
                 Locale = "en-us",
@@ -278,7 +278,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("17 Oct, 2018"),
             });
 
-            AddMod(new Item(1535107168u, "New American Traffic Lights") {
+            AddMod(new Review(1535107168u, "New American Traffic Lights") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "ol' rdtg",
@@ -326,7 +326,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 395 MB
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
                 Locale = "en-us",
@@ -344,7 +344,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // derived from http://steamcommunity.com/sharedfiles/filedetails/?id=809633246
-            AddMod(new Item(1259628682u, "Taiwanese Traffic Lights (Left Hand Traffic)") {
+            AddMod(new Review(1259628682u, "Taiwanese Traffic Lights (Left Hand Traffic)") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "[TW]ChianMingDang",
@@ -386,7 +386,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // derived from http://steamcommunity.com/sharedfiles/filedetails/?id=809633246
-            AddMod(new Item(1251396095u, "Taiwanese Traffic Lights (Right Hand Traffic)") {
+            AddMod(new Review(1251396095u, "Taiwanese Traffic Lights (Right Hand Traffic)") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "[TW]ChianMingDang",
@@ -438,7 +438,7 @@ namespace AutoRepair.Catalogs {
             // these lights are _compatible_ with the junction light packs
 
             // has minor bugs
-            AddMod(new Item(1519049273u, "American Railroad Signal Replacer") {
+            AddMod(new Review(1519049273u, "American Railroad Signal Replacer") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "ol' rdtg",
@@ -466,7 +466,7 @@ namespace AutoRepair.Catalogs {
                     { 418637762u , Status.MinorIssues  }, // American Roads
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
                 Notes = new Dictionary<ulong, string>() {
@@ -480,7 +480,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("25 Sep, 2018"),
             });
 
-            AddMod(new Item(1249000709u, "Japanese Railway Crossings 日本風踏切MOD") {
+            AddMod(new Review(1249000709u, "Japanese Railway Crossings 日本風踏切MOD") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "ako_ako",
@@ -508,7 +508,7 @@ namespace AutoRepair.Catalogs {
                     { 418637762u , Status.MinorIssues  }, // American Roads
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Locale = "ja",
                 Notes = new Dictionary<ulong, string>() {
@@ -532,7 +532,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // Broken since ~August 2018
-            AddMod(new Item(1108278552u, "Horizontal Traffic Lights") {
+            AddMod(new Review(1108278552u, "Horizontal Traffic Lights") {
                 Affect = Factor.Props
                        | Factor.TrafficLights,
                 Authors = "Cristolisto",
@@ -561,7 +561,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.GreenCities,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // parklife
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
                 Notes = new Dictionary<ulong, string>() {

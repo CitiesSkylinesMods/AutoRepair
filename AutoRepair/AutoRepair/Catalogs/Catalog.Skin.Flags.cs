@@ -18,7 +18,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void SkinFlagsCatalog() {
+        private void SkinFlagsMods() {
 
             string catalog = "Skin.Flags";
 
@@ -30,7 +30,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
-            AddMod(new Item(1603398633u, "Flag Params") {
+            AddMod(new Review(1603398633u, "Flag Params") {
                 Affect = Factor.Props,
                 Authors = "Ronyx69",
                 Catalog = catalog,
@@ -44,7 +44,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Flags", "Props" },
             });
 
-            AddMod(new Item(595017353u, "More Flags ( + flags replacer )") {
+            AddMod(new Review(595017353u, "More Flags ( + flags replacer )") {
                 Affect = Factor.Props,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -65,7 +65,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██   ██  ██████ ██   ██ ███████
             */
 
-            AddMod(new Item(1840528334u, "Ancom flag replacer") {
+            AddMod(new Review(1840528334u, "Ancom flag replacer") {
                 Affect = Factor.Props,
                 Authors = "Microsoft Word",
                 Catalog = catalog,
@@ -78,7 +78,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1821339957u, "Rainbow Armenia Flag") {
+            AddMod(new Review(1821339957u, "Rainbow Armenia Flag") {
                 Affect = Factor.Props,
                 Authors = "w_jkoopman",
                 Catalog = catalog,
@@ -92,7 +92,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1712774142u, "Osterland Flag"){
+            AddMod(new Review(1712774142u, "Osterland Flag"){
                 Affect = Factor.Props,
                 Authors = "w_jkoopman",
                 Catalog = catalog,
@@ -105,7 +105,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1652032078u, "Vooperian Flag") {
+            AddMod(new Review(1652032078u, "Vooperian Flag") {
                 Affect = Factor.Props,
                 Authors = "bballboy2002",
                 Catalog = catalog,
@@ -118,7 +118,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1611090578u, "adsii1970's flags (set A)") {
+            AddMod(new Review(1611090578u, "adsii1970's flags (set A)") {
                 Affect = Factor.Props,
                 Authors = "adsii1970",
                 Catalog = catalog,
@@ -131,7 +131,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1556479796u, "Polish and Lower Silesian Flags Replacer") {
+            AddMod(new Review(1556479796u, "Polish and Lower Silesian Flags Replacer") {
                 Affect = Factor.Props,
                 Authors = "Grzegorz Brzęczyszczykiewicz",
                 Catalog = catalog,
@@ -145,7 +145,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1408407561u, "Arndorf Flag") {
+            AddMod(new Review(1408407561u, "Arndorf Flag") {
                 Affect = Factor.Props,
                 Authors = "w_jkoopman",
                 Catalog = catalog,
@@ -159,7 +159,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1308196504u, "Greek Flag Replacer") {
+            AddMod(new Review(1308196504u, "Greek Flag Replacer") {
                 Affect = Factor.Props,
                 Authors = "nieranjo",
                 Catalog = catalog,
@@ -173,7 +173,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1269317139u, "Malaysian Flags Mod") {
+            AddMod(new Review(1269317139u, "Malaysian Flags Mod") {
                 Affect = Factor.Props,
                 Authors = "[MY] H4F1Z",
                 Catalog = catalog,
@@ -189,7 +189,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1174791765u, "Cities On Flags") {
+            AddMod(new Review(1174791765u, "Cities On Flags") {
                 Affect = Factor.Props,
                 Authors = "SEVEN",
                 Catalog = catalog,
@@ -203,7 +203,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1173729345u, "Cities On Flags") {
+            AddMod(new Review(1173729345u, "Cities On Flags") {
                 Affect = Factor.Props,
                 Authors = "SEVEN",
                 Catalog = catalog,
@@ -217,7 +217,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1146305133u, "ELVIS korean Flags set") {
+            AddMod(new Review(1146305133u, "ELVIS korean Flags set") {
                 Affect = Factor.Props,
                 Authors = "ELVIS0529",
                 Catalog = catalog,
@@ -231,7 +231,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1137426034u, "Turkey Flag-Türk Bayrağı") {
+            AddMod(new Review(1137426034u, "Turkey Flag-Türk Bayrağı") {
                 Affect = Factor.Props,
                 Authors = "Tucizz",
                 Catalog = catalog,
@@ -245,7 +245,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1136317580u, "Vasel flag") {
+            AddMod(new Review(1136317580u, "Vasel flag") {
                 Affect = Factor.Props,
                 Authors = "Raymond Pelletier",
                 Catalog = catalog,
@@ -258,7 +258,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1125168068u, "People's Front For Osahra Flag") {
+            AddMod(new Review(1125168068u, "People's Front For Osahra Flag") {
                 Affect = Factor.Props,
                 Authors = "Blackwolf (Frdm920)",
                 Catalog = catalog,
@@ -271,7 +271,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(940455773u, "Osahra flag replacer") {
+            AddMod(new Review(940455773u, "Osahra flag replacer") {
                 Affect = Factor.Props,
                 Authors = "Armesto",
                 Catalog = catalog,

@@ -14,7 +14,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void SkinRoadsUnitedCatalog() {
+        private void SkinRoadsUnitedMods() {
 
             string catalog = "Skin.RoadsUnited";
 
@@ -26,7 +26,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
-            AddMod(new Item(726005715u, "Roads United: Core+") {
+            AddMod(new Review(726005715u, "Roads United: Core+") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures
@@ -63,7 +63,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Unlawful-Productions/RoadsUnited_Core",
             });
 
-            AddMod(new Item(633547552u, "Roads United Core 2.0") {
+            AddMod(new Review(633547552u, "Roads United Core 2.0") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures
@@ -107,7 +107,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(680748394u, "[Deprecated] Roads United: North America") {
+            AddMod(new Review(680748394u, "[Deprecated] Roads United: North America") {
                 Affect = Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "KraIstGerecht",
@@ -137,7 +137,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██   ██  ██████ ██   ██ ███████
             */
 
-            AddMod(new Item(1573387594u, "[NL] Roads United: The Netherlands") {
+            AddMod(new Review(1573387594u, "[NL] Roads United: The Netherlands") {
                 Affect = Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "lennart",
@@ -154,7 +154,7 @@ namespace AutoRepair.Catalogs {
                 Locale = "nl",
             });
 
-            AddMod(new Item(1565201461u, "Roads United: US Reworked 2018") {
+            AddMod(new Review(1565201461u, "Roads United: US Reworked 2018") {
                 Affect = Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "Pres",
@@ -165,7 +165,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 503.136 MB
-                      | ItemFlags.MinorBugs // some textures not working, and mirroring of highway textures
+                      | ItemFlags.MinorIssues // some textures not working, and mirroring of highway textures
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
                 Notes = new Dictionary<ulong, string>() {
@@ -175,7 +175,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Made from mix of: 726004927u and 848896702u
-            AddMod(new Item(935747460u, "Roads United: US Edition - Concrete Only Highways") {
+            AddMod(new Review(935747460u, "Roads United: US Edition - Concrete Only Highways") {
                 Affect = Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "B4NK35",

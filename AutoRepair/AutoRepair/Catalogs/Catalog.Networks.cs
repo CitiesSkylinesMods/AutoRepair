@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
-        private void NetworksCatalog() {
+        private void NetworkMods() {
 
             string catalog = "Networks";
 
-            AddMod(new Item(1959342332u, "CSUR ToolBox") {
+            AddMod(new Review(1959342332u, "CSUR ToolBox") {
                 Affect = Factor.OutsideConnection
                        | Factor.Pathfinder
                        | Factor.PlaceAndMove
@@ -50,7 +50,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Todo - list more assets?
-            AddMod(new Item(1959183067u, "CSUR Loader") {
+            AddMod(new Review(1959183067u, "CSUR Loader") {
                 Affect = Factor.OutsideConnection
                        | Factor.Pathfinder
                        | Factor.PlaceAndMove
@@ -80,7 +80,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // seems to be based on cimtographer
-            AddMod(new Item(1957515502u, "OpenStreetMap Import - generate roads from OSM with street names and road-type selection") {
+            AddMod(new Review(1957515502u, "OpenStreetMap Import - generate roads from OSM with street names and road-type selection") {
                 Affect = Factor.Naming
                        | Factor.OutsideConnection
                        | Factor.PlaceAndMove,
@@ -95,7 +95,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 // ContinuationOf = ??
                 Flags = ItemFlags.EditorMod
-                      | ItemFlags.MinorBugs // doesn't check node/segment/lane limits properly
+                      | ItemFlags.MinorIssues // doesn't check node/segment/lane limits properly
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // causes game crashes for some users
                 ReleasedDuring = GameVersion.Campus,
@@ -103,7 +103,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: probably incompatible with MOM, etc
-            AddMod(new Item(1953042839u, "Unified Railway System") {
+            AddMod(new Review(1953042839u, "Unified Railway System") {
                 Affect = Factor.Pathfinder
                        | Factor.PlaceAndMove
                        | Factor.TransportLines
@@ -131,14 +131,14 @@ namespace AutoRepair.Catalogs {
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.SaveChanging
+                Flags = ItemFlags.SaveAltering
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // will cause major problems
                 ReleasedDuring = GameVersion.Campus,
             });
 
             // todo: move to editor cat
-            AddMod(new Item(1845697704u, "Network Dump Tools") {
+            AddMod(new Review(1845697704u, "Network Dump Tools") {
                 Affect = Factor.Textures,
                 Authors = "Cgameworld",
                 Catalog = catalog,
@@ -150,11 +150,33 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "In game Graphics Settings, set 'Texture Quality' to 'High' before dumping for best quality." },
                 },
-                ReleasedDuring = GameVersion.Campus,
+                Published = WorkshopDate("26 Aug, 2019"),
                 SourceURL = "https://github.com/Cgameworld/NetworkDumpTools",
+                Updated = WorkshopDate("1 Dec, 2019"),
             });
 
-
+            AddMod(new Review(816260433u, "Metro Overhaul Mod") {
+                Affect = Factor.Other, // todo; add network factor
+                Authors = "Lazarus*Man, BloodyPenguin, bsquiklehausen, Tim The Terrible, BadPeanut",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039036102u, Status.Incompatible }, // Metro Station Converter
+                    { 1953042839u, Status.Incompatible }, // Unified Railway System
+                    { 1764208250u, Status.Compatible   }, // More Vehicles
+                    { 1530376523u, Status.Incompatible }, // Railway Replacer
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 927293560u , Status.Compatible   }, // Geli-Districts v3.0
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SlowLoad
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Users reporting Array Index bug: https://github.com/bloodypenguin/Skylines-MetroOverhaulMod/issues/29" },
+                },
+                Published = WorkshopDate("11 Dec, 2016"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-MetroOverhaulMod",
+                Updated = WorkshopDate("4 Apr, 2020"),
+            });
         }
     }
 }

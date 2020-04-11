@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void BalanceCatalog() {
+        private void BalanceMods() {
 
             string catalog = "Balance";
 
-            AddMod(new Item(2039606384u, "Easy Mode: Money Mod") {
+            AddMod(new Review(2039606384u, "Easy Mode: Money Mod") {
                 Affect = Factor.Revenue,
                 Authors = "Anvilarse",
                 Catalog = catalog,
@@ -46,7 +46,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // confirmed by anvil that it sets maintenance to zero for everything (including transport)
-            AddMod(new Item(2039205403u, "Free Maintenance by Anvilarse") {
+            AddMod(new Review(2039205403u, "Free Maintenance by Anvilarse") {
                 Affect = Factor.Revenue,
                 Authors = "Anvilarse",
                 Catalog = catalog,
@@ -72,7 +72,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.SunsetHarbor,
             });
 
-            AddMod(new Item(2027161563u, "Lifecycle Rebalance Revisited") {
+            AddMod(new Review(2027161563u, "Lifecycle Rebalance Revisited") {
                 Affect = Factor.Aging
                        | Factor.Education
                        | Factor.Health
@@ -102,7 +102,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/algernon-A/Lifecycle-Rebalance-Revisited",
             });
 
-            AddMod(new Item(2025147082u, "Realistic Population revisited") {
+            AddMod(new Review(2025147082u, "Realistic Population revisited") {
                 Affect = Factor.BuildingCapacity
                        | Factor.Consumption
                        | Factor.Employment
@@ -121,6 +121,7 @@ namespace AutoRepair.Catalogs {
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption (WG)
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
@@ -132,7 +133,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/algernon-A/Realistic-Population-Revisited",
             });
 
-            AddMod(new Item(1830455071u, "EasyMode") {
+            AddMod(new Review(1830455071u, "EasyMode") {
                 Affect = Factor.Bulldoze
                        | Factor.Construction
                        | Factor.MaintenanceCost
@@ -164,7 +165,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("10 Aug, 2019"),
             });
 
-            AddMod(new Item(1806759255u, "Customize It Extended") {
+            AddMod(new Review(1806759255u, "Customize It Extended") {
                 Affect = Factor.BuildingInfo
                        | Factor.BuildingCapacity
                        | Factor.Employment
@@ -189,7 +190,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Celisuis/CustomizeItExtended",
             });
 
-            AddMod(new Item(1765325082u, "Customizable Education") {
+            AddMod(new Review(1765325082u, "Customizable Education") {
                 Affect = Factor.Education
                        | Factor.Immigrants,
                 Authors = "monkey_sheng",
@@ -199,12 +200,12 @@ namespace AutoRepair.Catalogs {
                     { 1915645482u, Status.Incompatible }, // Citizen Lifecycle Rebalance v2
                 },
                 Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.MinorBugs // somtimes loses settings
+                      | ItemFlags.MinorIssues // somtimes loses settings
                       | ItemFlags.Abandonware,
             });
 
             // todo: prolly incompatible with similar mods
-            AddMod(new Item(1744522363u, "Money Back (Refund)") {
+            AddMod(new Review(1744522363u, "Money Back (Refund)") {
                 Affect = Factor.Money
                        | Factor.PlaceAndMove
                        | Factor.Revenue,
@@ -231,7 +232,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 May, 2019"),
             });
 
-            AddMod(new Item(1674732053u, "Employ Overeducated Workers V2 (1.11+)") {
+            AddMod(new Review(1674732053u, "Employ Overeducated Workers V2 (1.11+)") {
                 Affect = Factor.Employment,
                 Authors = "pcfantasy",
                 Catalog = catalog,
@@ -254,7 +255,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/pcfantasy/EmployOvereducatedWorkers-v2",
             });
 
-            AddMod(new Item(1598546349u, "Mary's Mod") {
+            AddMod(new Review(1598546349u, "Mary's Mod") {
                 Affect = Factor.Money,
                 Authors = "tim",
                 Catalog = catalog,
@@ -281,7 +282,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("22 Dec, 2018"),
             });
 
-            AddMod(new Item(1562650024u, "Rebalanced Industries") {
+            AddMod(new Review(1562650024u, "Rebalanced Industries") {
                 Affect = Factor.BuildingCapacity
                        | Factor.BuildingLevel
                        | Factor.Consumption
@@ -303,7 +304,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: prolly incompat with WG mods
-            AddMod(new Item(1551563197u, "EnhancedBuildingCapacity - Fixed") {
+            AddMod(new Review(1551563197u, "EnhancedBuildingCapacity - Fixed") {
                 Affect = Factor.BuildingCapacity
                        | Factor.Consumption
                        | Factor.Production
@@ -311,15 +312,16 @@ namespace AutoRepair.Catalogs {
                 Authors = " Flexible Games",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 938049744u, Status.Incompatible }, // Proper Hardness Fixed
-                    { 411190402u, Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
-                    { 410344523u, Status.Incompatible }, // PopBalanceMod
-                    { 408706691u, Status.Incompatible }, // Proper Hardness
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 411190402u , Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
+                    { 410344523u , Status.Incompatible }, // PopBalanceMod
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1522785644u, "Infinite Demand Mod") {
+            AddMod(new Review(1522785644u, "Infinite Demand Mod") {
                 Affect = Factor.DemandRCI
                        | Factor.Immigrants,
                 Authors = "μohnytoxic™",
@@ -330,7 +332,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1412844620u, "Realistic Walking Speed") {
+            AddMod(new Review(1412844620u, "Realistic Walking Speed") {
                 Affect = Factor.Velocity,
                 Authors = "egi",
                 Catalog = catalog,
@@ -345,7 +347,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RealisticWalkingSpeed",
             });
 
-            AddMod(new Item(1403960464u, "Maintenance Fees (Parklife Ready)") {
+            AddMod(new Review(1403960464u, "Maintenance Fees (Parklife Ready)") {
                 Affect = Factor.Budget // side effect
                        | Factor.MaintenanceCost
                        | Factor.Revenue, // side effect
@@ -363,7 +365,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // refund full construction cost when bulldozing
-            AddMod(new Item(1227735337u, "Full Refund Cost[Industries Compatible]") {
+            AddMod(new Review(1227735337u, "Full Refund Cost[Industries Compatible]") {
                 Affect = Factor.Money,
                 Authors = "C#",
                 Catalog = catalog,
@@ -388,7 +390,7 @@ namespace AutoRepair.Catalogs {
 
             // An update to 406841580u - SimCity Fudged Population, but with better UI.
             // Dev still responsive as of Feb 2020, confirms mod still works.
-            AddMod(new Item(1224627683u, "Fudged Population Enhanced") {
+            AddMod(new Review(1224627683u, "Fudged Population Enhanced") {
                 Affect = Factor.Toolbar,
                 Authors = "khollenbeck",
                 Catalog = catalog,
@@ -412,7 +414,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // Real population, only one household at low density, high density population becomes larger
-            AddMod(new Item(1587482024u, "真实人口，低密度只有一户人，高密度人口容量变大") {
+            AddMod(new Review(1587482024u, "真实人口，低密度只有一户人，高密度人口容量变大") {
                 Affect = Factor.BuildingCapacity,
                 Authors = "changxiuyingjian",
                 Catalog = catalog,
@@ -422,8 +424,10 @@ namespace AutoRepair.Catalogs {
                     { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 Flags = ItemFlags.Abandonware
@@ -431,7 +435,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 2025147082u, // Realistic Population revisited
             });
 
-            AddMod(new Item(1553517176u, "Specialized Industry Fix Redux") {
+            AddMod(new Review(1553517176u, "Specialized Industry Fix Redux") {
                 Affect = Factor.Consumption
                        | Factor.Production,
                 Authors = "Vectorial1024",
@@ -454,7 +458,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Vectorial1024/SpecializedIndustryFixRedux",
             });;
 
-            AddMod(new Item(1487849798u, "Higher Income Mod 1.2a") {
+            AddMod(new Review(1487849798u, "Higher Income Mod 1.2a") {
                 Affect = Factor.Revenue,
                 Authors = "I'm Not MentaL",
                 Catalog = catalog,
@@ -467,7 +471,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1498036881u, // UltimateMod 2.4 ( Higher Income and More Options )
             });
 
-            AddMod(new Item(1398502258u, "Dam Upkeep Scaling") {
+            AddMod(new Review(1398502258u, "Dam Upkeep Scaling") {
                 Affect = Factor.MaintenanceCost,
                 Authors = "Derangedteddy",
                 BrokenBy = GameVersion.Industries,
@@ -485,7 +489,7 @@ namespace AutoRepair.Catalogs {
 
             // icky - not sure if this belongs in balance catagory, but lots of mods here conflict with it
             // (it's kind of manual balance adjustment for buildings and vehicles, although AVO could be considered same? meh)
-            AddMod(new Item(1369729955u, "Customize It!") {
+            AddMod(new Review(1369729955u, "Customize It!") {
                 Affect = Factor.BuildingInfo
                        | Factor.BuildingCapacity
                        | Factor.Employment
@@ -513,7 +517,7 @@ namespace AutoRepair.Catalogs {
 
             // Residents become senile
             // Actually translated clone of 409070739u - Very Slow Citizen Aging (by Nohealforu)
-            AddMod(new Item(1196714522u, "居民衰老变十六分之一") {
+            AddMod(new Review(1196714522u, "居民衰老变十六分之一") {
                 Affect = Factor.Aging,
                 Authors = "回忆时光℡",
                 Catalog = catalog,
@@ -541,7 +545,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 654707599u, // Citizen Lifecycle Rebalance
             });
 
-            AddMod(new Item(1114249433u, "Employ Overeducated Workers (1.10+)") {
+            AddMod(new Review(1114249433u, "Employ Overeducated Workers (1.10+)") {
                 Affect = Factor.Employment,
                 Authors = "Ellie",
                 Catalog = catalog,
@@ -566,7 +570,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Broken since May 2019
-            AddMod(new Item(1108715012u, "Adjustable Business Consumption") {
+            AddMod(new Review(1108715012u, "Adjustable Business Consumption") {
                 Affect = Factor.Consumption
                        | Factor.DemandRCI
                        | Factor.Production
@@ -590,7 +594,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/AmaroqOkami/CS-AdjustableBusinessConsumption",
             });
 
-            AddMod(new Item(946550801u, "Park Rebalance") {
+            AddMod(new Review(946550801u, "Park Rebalance") {
                 Affect = Factor.Entertainment,
                 Authors = "Azzurite, egi",
                 BrokenBy = GameVersion.Campus,
@@ -604,7 +608,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.BrokenByUpdate // whatever came after the Industries update
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
-                      | ItemFlags.MinorBugs // mod doesn't disable properly
+                      | ItemFlags.MinorIssues // mod doesn't disable properly
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 ReleasedDuring = GameVersion.ParkLife,
@@ -612,7 +616,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gitlab.com/azzurite/parkrebalance",
             });
 
-            AddMod(new Item(938049744u, "Proper Hardness Fixed") {
+            AddMod(new Review(938049744u, "Proper Hardness Fixed") {
                 Affect = Factor.Boredom
                        | Factor.BuildingInfo
                        | Factor.BuildingLevel
@@ -662,6 +666,7 @@ namespace AutoRepair.Catalogs {
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 586012417u , Status.Incompatible }, // Ploppable RICO
@@ -676,13 +681,59 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking // Breaks police service (milestone 5 or above), spams log with errors, etc.
-                      | ItemFlags.SaveChanging
+                      | ItemFlags.SaveAltering
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.MassTransit,
                 SourceURL = "https://github.com/m4rked0ne/Cities-Skyline-Proper-Hardness-master",
             });
 
-            AddMod(new Item(654707599u, "Citizen Lifecycle Rebalance v2.6") {
+            AddMod(new Review(931330091u, "410344523 PopBalanceMod") {
+                Affect = Factor.BuildingCapacity
+                       | Factor.Consumption,
+                Authors = "onekil7804",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                CloneOf = 410344523u, // PopBalanceMod
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // INCOMPATIBLE:
+                    { 411190402u , Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
+                    { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大 (similar to pop bal mod)
+                    { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 637901778u , Status.Incompatible }, // Fire Spread [ Fixed for C:S 1.3.2+ ]
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
+                    { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 410344523u , Status.Incompatible }, // PopBalanceMod
+                    { 410234967u , Status.Incompatible }, // Fire Spread
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                    // COMPATIBLE:
+                    // Control Building Level up v0.4
+                    // Terraform Tool 0.5
+                    // Public Transport Capacity (Real)
+                    // Traffic++ (Zonable Pedestrian Paths)
+                    // Trafic Report Tool
+                    // Extended Public Transport UI
+                    // Tree Brush
+                    // City Statistics Easy Access
+                    // City Vitals Watch
+                },
+                CompatibleWith = GameVersion.EuropeBiome,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate // AD
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete // replaced by WG's pop & consumption mod, which itself has now been replaced
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("23 May, 2017"),
+                ReplaceWith = 2025147082u, // Realistic Population revisited
+                Updated = WorkshopDate("23 May, 2017"),
+            });
+
+            AddMod(new Review(654707599u, "Citizen Lifecycle Rebalance v2.6") {
                 Affect = Factor.Aging
                        | Factor.Education
                        | Factor.Health
@@ -714,7 +765,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/WhitefangGreytail/WG_CitizenEdit",
             });
 
-            AddMod(new Item(643642403u, "Lifespan multiplier v1.1") {
+            AddMod(new Review(643642403u, "Lifespan multiplier v1.1") {
                 Affect = Factor.Aging
                        | Factor.TransportPreference,
                 Authors = "Whitefang Greytail",
@@ -745,7 +796,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/WhitefangGreytail/WG_Lifespan",
             });
 
-            AddMod(new Item(569008960u, "Employ Overeducated Workers") {
+            AddMod(new Review(569008960u, "Employ Overeducated Workers") {
                 Affect = Factor.Employment,
                 Authors = "Akira Ishizaki",
                 Catalog = catalog,
@@ -768,7 +819,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/AmaroqOkami/Skylines-EmployOvereducatedWorkers",
             });
 
-            AddMod(new Item(541673195u, "Resident Travel Rebalance v1.1") {
+            AddMod(new Review(541673195u, "Resident Travel Rebalance v1.1") {
                 Affect = Factor.TransportPreference,
                 Authors = "Whitefang Greytail",
                 Catalog = catalog,
@@ -792,7 +843,7 @@ namespace AutoRepair.Catalogs {
             // * worker count,
             // * power, water, sewage, garbage,
             // * income, pollution or production.
-            AddMod(new Item(426163185u, "Realistic Population and Consumption Mod v8.4.0") {
+            AddMod(new Review(426163185u, "Realistic Population and Consumption Mod v8.4.0") {
                 Affect = Factor.BuildingCapacity
                        | Factor.Consumption
                        | Factor.Employment
@@ -812,6 +863,7 @@ namespace AutoRepair.Catalogs {
                     { 1204126182u, Status.Compatible   }, // Ploppable Rico High Density Fix
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 643642403u , Status.Incompatible }, // Lifespan multiplier v1.1
                     { 586012417u , Status.Compatible   }, // Ploppable RICO
                     { 541673195u , Status.Compatible   }, // Resident Travel Rebalance v1.1
@@ -831,7 +883,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/WhitefangGreytail/WG_RealisticCitySkylines",
             });
 
-            AddMod(new Item(410344523u, "PopBalanceMod") {
+            AddMod(new Review(410344523u, "PopBalanceMod") {
                 Affect = Factor.BuildingCapacity
                        | Factor.Consumption,
                 Authors = "Kundun",
@@ -839,14 +891,20 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // INCOMPATIBLE:
-                    // Building Simulation Overhaul
-                    // Fire Spread (?!!)
+                    { 411190402u , Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
                     { 2025147082u, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大 (similar to pop bal mod)
                     { 1551563197u, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 637901778u , Status.Incompatible }, // Fire Spread [ Fixed for C:S 1.3.2+ ]
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185u , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 410344523u , Status.Incompatible }, // PopBalanceMod
+                    { 410234967u , Status.Incompatible }, // Fire Spread
                     { 408706691u , Status.Incompatible }, // Proper Hardness
-
                     // COMPATIBLE:
                     // Control Building Level up v0.4
                     // Terraform Tool 0.5
@@ -869,7 +927,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 2025147082u, // Realistic Population revisited
             });
 
-            AddMod(new Item(409071509u, "Slow Citizen Aging Configurable") {
+            AddMod(new Review(409071509u, "Slow Citizen Aging Configurable") {
                 Affect = Factor.Aging,
                 Authors = "Nohealforu",
                 BrokenBy = GameVersion.Snowfall,
@@ -902,7 +960,7 @@ namespace AutoRepair.Catalogs {
 
             // note possibly a KnighthawkGP continuation (AD & snowfall compat) of this prior to later Proper Hardness Fixed version
             // see https://github.com/Knighth/Cities-Skyline-Proper-Hardness
-            AddMod(new Item(408706691u, "Proper Hardness") {
+            AddMod(new Review(408706691u, "Proper Hardness") {
                 Affect = Factor.Boredom
                        | Factor.BuildingInfo
                        | Factor.BuildingLevel
@@ -953,6 +1011,7 @@ namespace AutoRepair.Catalogs {
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
                     { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
                     { 586012417u , Status.Incompatible }, // Ploppable RICO
@@ -966,7 +1025,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete // new mod avail
-                      | ItemFlags.SaveChanging
+                      | ItemFlags.SaveAltering
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.InitialRelease,
                 ReplaceWith = 938049744u, // Proper Hardness Fixed

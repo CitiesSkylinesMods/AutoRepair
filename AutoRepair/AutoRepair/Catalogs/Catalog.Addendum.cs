@@ -22,7 +22,7 @@ namespace AutoRepair.Catalogs {
             Fixed(881161181u, "More Asset Tags");
             Broken(506982407u, "Dropouts");
             Note(506982407u, "Dropouts", "[Sunset Harbor] Error: Field '.Citizen.m_age' not found.");
-            Broken(810858473u, "Traffic Report Tool");
+            Fixed(810858473u, "Traffic Report Tool");
             Fixed(426460372u, "Favorite Cims");
             Broken(554232266u, "Nursing Homes for Senior Citizens");
             Note(554232266u, "Nursing Homes for Senior Citizens", "Breaks if any DLCs are added due to changes in toolbar.");
@@ -42,8 +42,6 @@ namespace AutoRepair.Catalogs {
             Fixed(405810376u, "All 25 Areas purchasable");
             Fixed(1721492498u, "Optimised Outside Connections");
             Fixed(629850626u, "Workshop RICO Settings");
-            Fixed(816260433u, "Metro Overhaul Mod");
-            Note(812125426u, "Network Extensions 2", "Sunset Harbor: Road zoning broken on tiny roads.");
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
             Fixed(502750307u, "Extra Landscaping Tools"); // menu wont close
@@ -170,11 +168,8 @@ namespace AutoRepair.Catalogs {
             Incompatible(455403039u , "Unlimited Trees Mod",                     869134690u, "Tree Snapping");
             Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
             Incompatible(667342976u , "Loading Screen Mod",                      833779378u, "Loading Screen Mod [Test]");
-            Incompatible(816260433u , "Metro Overhaul Mod 9.0",                  1530376523u, "Railway Replacer");
-            Incompatible(821539759u , "Disable Zone Check",                      924884948u, "Plop The Growables");
             Incompatible(837734529u , "Find It!",                                540758804u, "Search Box Mod");
             Incompatible(917543381u , "No Problem [BETA]",                       561293123u, "Hide Problems AKA Politician's Mod");
-            Incompatible(924884948u , "Plop The Growables",                      821539759u, "Disable Zone Check");
 
             // breaks editor
             BreaksEditor(672248733u, "Ultimate Eyecandy");
@@ -188,7 +183,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="methodName">The method name (and any other details to show).</param>
         /// <param name="item">The existing item.</param>
         [Conditional("DEBUG")]
-        internal void Addendum(string methodName, Item item) {
+        internal void Addendum(string methodName, Review item) {
             if (item.Catalog != "Addendum") {
                 Log.Info($"Addendum: {methodName} -> {item}");
             }
@@ -202,7 +197,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         /// <param name="note">The note to add (only one note per call, this is a quick kludge).</param>
         internal void Note(ulong workshopId, string workshopName, string note) {
-            if (Items.TryGetValue(workshopId, out Item item)) {
+            if (Reviews.TryGetValue(workshopId, out Review item)) {
                 Addendum("Note", item);
                 if (item.Notes == null) {
                     item.Notes = new Dictionary<ulong, string>() { { NOTE, note } };
@@ -210,7 +205,7 @@ namespace AutoRepair.Catalogs {
                     item.Notes.Add(NOTE, note);
                 }
             } else {
-                AddMod(new Item(workshopId, workshopName) {
+                AddMod(new Review(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
@@ -230,12 +225,12 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void Fixed(ulong workshopId, string workshopName) {
-            if (Items.TryGetValue(workshopId, out Item item)) {
+            if (Reviews.TryGetValue(workshopId, out Review item)) {
                 Addendum("Fixed", item);
                 item.BrokenBy = GameVersion.DefaultUntil;
                 item.CompatibleWith = GameVersion.LatestMilestone;
             } else {
-                AddMod(new Item(workshopId, workshopName) {
+                AddMod(new Review(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
@@ -255,14 +250,14 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void Broken(ulong workshopId, string workshopName) {
-            if (Items.TryGetValue(workshopId, out Item item)) {
+            if (Reviews.TryGetValue(workshopId, out Review item)) {
                 Addendum("Broken", item);
                 item.BrokenBy = GameVersion.LatestMilestone;
                 if (item.CompatibleWith >= GameVersion.LatestMilestone) {
                     Addendum("Broken & Compatible at same time", item);
                 }
             } else {
-                AddMod(new Item(workshopId, workshopName) {
+                AddMod(new Review(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     BrokenBy = GameVersion.LatestMilestone,
@@ -280,11 +275,11 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopId">The id of the item in Steam Workshop.</param>
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         internal void BreaksEditor(ulong workshopId, string workshopName) {
-            if (Items.TryGetValue(workshopId, out Item item)) {
+            if (Reviews.TryGetValue(workshopId, out Review item)) {
                 Addendum("BreaksEditor", item);
                 item.Flags |= ItemFlags.EditorBreaking;
             } else {
-                AddMod(new Item(workshopId, workshopName) {
+                AddMod(new Review(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
@@ -304,7 +299,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="workshopName">The name of the item in Steam Workshop.</param>
         /// <param name="replacement">(Optional) Workshop ID of a suitable replacement.</param>
         internal void Dead(ulong workshopId, string workshopName, ulong replacement = 0u) {
-            if (Items.TryGetValue(workshopId, out Item item)) {
+            if (Reviews.TryGetValue(workshopId, out Review item)) {
                 Addendum("Dead", item);
                 item.Flags |= ItemFlags.Abandonware | ItemFlags.GameBreaking | ItemFlags.Obsolete;
                 if (item.ReplaceWith != 0u) {
@@ -314,7 +309,7 @@ namespace AutoRepair.Catalogs {
                     item.ReplaceWith = replacement;
                 }
             } else {
-                AddMod(new Item(workshopId, workshopName) {
+                AddMod(new Review(workshopId, workshopName) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
@@ -326,7 +321,7 @@ namespace AutoRepair.Catalogs {
                     ReplaceWith = replacement,
                 });
                 if (replacement != 0u) {
-                    Items[workshopId].Flags |= ItemFlags.ForceMigration;
+                    Reviews[workshopId].Flags |= ItemFlags.ForceMigration;
                 }
             }
         }
@@ -346,7 +341,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="nameB">Workshop name for second item.</param>
         internal void Incompatible(ulong idA, string nameA, ulong idB, string nameB) {
             // first item
-            if (Items.TryGetValue(idA, out Item itemA)) {
+            if (Reviews.TryGetValue(idA, out Review itemA)) {
                 Addendum($"Incompatible ({idA}, {idB}) - itemA", itemA);
                 if (itemA.Compatibility == null) {
                     itemA.Compatibility = new Dictionary<ulong, Status>() {
@@ -356,7 +351,7 @@ namespace AutoRepair.Catalogs {
                     itemA.Compatibility.Add(idB, Status.Incompatible);
                 }
             } else {
-                AddMod(new Item(idA, nameA) {
+                AddMod(new Review(idA, nameA) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",
@@ -367,7 +362,7 @@ namespace AutoRepair.Catalogs {
                 });
             }
 
-            if (Items.TryGetValue(idB, out Item itemB)) {
+            if (Reviews.TryGetValue(idB, out Review itemB)) {
                 Addendum($"Incompatible ({idA}, {idB}) - itemB", itemB);
                 if (itemB.Compatibility == null) {
                     itemB.Compatibility = new Dictionary<ulong, Status>() {
@@ -377,7 +372,7 @@ namespace AutoRepair.Catalogs {
                     itemB.Compatibility.Add(idA, Status.Incompatible);
                 }
             } else {
-                AddMod(new Item(idB, nameB) {
+                AddMod(new Review(idB, nameB) {
                     Affect = Factor.Other,
                     Authors = "(not specified)",
                     Catalog = "Addendum",

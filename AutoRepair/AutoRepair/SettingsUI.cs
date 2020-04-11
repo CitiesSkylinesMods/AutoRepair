@@ -4,6 +4,7 @@ namespace AutoRepair {
 #endif
     using AutoRepair.Lists;
     using AutoRepair.Util;
+    using ColossalFramework;
     using ColossalFramework.UI;
     using ICities;
     using System.Collections.Generic;
@@ -60,6 +61,7 @@ namespace AutoRepair {
             if (Application.platform == RuntimePlatform.WindowsPlayer) {
                 group.AddButton("Open File Explorer", () => System.Diagnostics.Process.Start("explorer.exe", "/select," + path));
             }
+            //Utils.OpenInFileBrowser(Application.dataPath); -- works on mac/linux, but need further testing
 
             if (scene == "Game") {
                 return;

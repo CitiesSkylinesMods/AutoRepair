@@ -16,7 +16,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void VehicleEffectsCatalog() {
+        private void VehicleEffectMods() {
 
             string catalog = "VehicleEffects";
 
@@ -28,7 +28,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
-            AddMod(new Item(1649747813, "No Reverb Mod") {
+            AddMod(new Review(1649747813, "No Reverb Mod") {
                 Affect = Factor.Audio,
                 Authors = "Acc3ss Violation",
                 Catalog = catalog,
@@ -49,7 +49,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // https://drive.google.com/file/d/1ATs9XRlt9oCVOazyqFn5h0S517b7BN1L/view
-            AddMod(new Item(2008325200u, "Vehicle Effects Definition Pack DBAG") {
+            AddMod(new Review(2008325200u, "Vehicle Effects Definition Pack DBAG") {
                 Affect = Factor.Audio,
                 Authors = "Oxylon",
                 Catalog = catalog,
@@ -67,7 +67,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1541828679u, "CNSoundPack V0.2.2") {
+            AddMod(new Review(1541828679u, "CNSoundPack V0.2.2") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "言绥",

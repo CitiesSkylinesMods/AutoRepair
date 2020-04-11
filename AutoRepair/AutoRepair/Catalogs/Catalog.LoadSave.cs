@@ -14,10 +14,10 @@ namespace AutoRepair.Catalogs {
         /// TODO:
         /// * Add authors.
         /// </summary>
-        private void LoadSaveCatalog() {
+        private void LoadSaveMods() {
             string catalog = "LoadSave";
 
-            AddMod(new Item(1818482110u, "Change Loading Image 2") {
+            AddMod(new Review(1818482110u, "Change Loading Image 2") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -29,7 +29,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: check if source still obfu
-            AddMod(new Item(1675213439u, "No Intro") {
+            AddMod(new Review(1675213439u, "No Intro") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "Dendraspis",
                 Catalog = catalog,
@@ -41,7 +41,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1665106193u, "Skip Intro") {
+            AddMod(new Review(1665106193u, "Skip Intro") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "egi",
                 Catalog = catalog,
@@ -60,7 +60,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1733593614u, "Immediate Continue") {
+            AddMod(new Review(1733593614u, "Immediate Continue") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "Dendraspis",
                 BrokenBy = GameVersion.ParadoxLauncher,
@@ -80,7 +80,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Completely redundant mod as vanilla has auto-save
-            AddMod(new Item(1225712349u, "406123642") {
+            AddMod(new Review(1225712349u, "406123642") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "丿CK独狼灬",
                 Catalog = catalog,
@@ -99,7 +99,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(408905948u, "Pause on load") {
+            AddMod(new Review(408905948u, "Pause on load") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "MrLawbreaker",
                 BrokenBy = GameVersion.SunsetHarbor, // has native pause on load feature

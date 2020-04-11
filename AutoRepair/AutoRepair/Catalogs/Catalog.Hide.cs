@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void HideCatalog() {
+        private void HideMods() {
 
             string catalog = "Hide";
 
-            AddMod(new Item(1962752152u, "Busstop Prop Remover") {
+            AddMod(new Review(1962752152u, "Busstop Prop Remover") {
                 Affect = Factor.HideRemove
                        | Factor.Props,
                 Authors = "PC28K",
@@ -57,7 +57,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Mar, 2020"),
             });
 
-            AddMod(new Item(1764637396u, "Toggle It!") {
+            AddMod(new Review(1764637396u, "Toggle It!") {
                 Affect = Factor.HideRemove,
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -83,8 +83,7 @@ namespace AutoRepair.Catalogs {
                     { 410842044u , Status.Incompatible }, // Persistent Resource View
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs // harmony patch management could be better, map borders keep reappearing
-                      | ItemFlags.SourceAvailable,
+                Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 1540147921u, "[Mod: Grid be Gone] If you toggle zoning grid/color with both mods, they both get confused." },
                     { 1536223783u, "[Mod: Hide Selectors] If you toggle selectors with both mods, they both get confused." },
@@ -94,7 +93,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 Jun, 2019"),
             });
 
-            AddMod(new Item(1706704781u, "Remove All Animals") {
+            AddMod(new Review(1706704781u, "Remove All Animals") {
                 Affect = Factor.HideRemove,
                 Authors = "pcfantasy",
                 Catalog = catalog,
@@ -117,7 +116,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("23 Feb, 2020"),
             });
 
-            AddMod(new Item(1627469414u, "No Parking") {
+            AddMod(new Review(1627469414u, "No Parking") {
                 Affect = Factor.HideRemove
                        | Factor.TransportPreference,
                 Authors = "this is literally me",
@@ -133,7 +132,7 @@ namespace AutoRepair.Catalogs {
                     { 853655964u , Status.Recommended  }, // Standard Parking Garage
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Some users report that it's only removing parking from some, not all, vanilla buildings." },
@@ -142,7 +141,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("17 Jan, 2019"),
             });
 
-            AddMod(new Item(1591417160u, "Hide It!") {
+            AddMod(new Review(1591417160u, "Hide It!") {
                 Affect = Factor.HideRemove
                        | Factor.Props
                        | Factor.Textures,
@@ -173,12 +172,11 @@ namespace AutoRepair.Catalogs {
                     { 1383456057u, Status.Incompatible }, // Shicho (Harmony clash)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
+                Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 2009708489u, "[Mod: Road Arrows Replacer] If you remove road arrows with Hide It, the Road Arrows Replacer can't replace them." },
                     { 1706704781u, "[Mod: Remove All Animals] Both mods can remove animals. Use one, unsubscribe the other." },
-                    { 1899640536u, "[Mod: Theme Mixer 2] Terrain sprites affected by both mods; check sprite settings in both to ensure same effect." },
+                    { 1899640536u, "[Mod: Theme Mixer 2] Terrain sprites affected by both mods; modify sprite settings in both to ensure same effect." },
                     { 1117087491u, "[Mod: Remove Road Props] Both mods can remove road props. Use one, unsubscribe the other." },
                     { 956707300u , "[Mod: Remove Street Arrows] Both mods can remove street arrows. Use one, unsubscribe the other." },
                     { 952542692u , "[Mod: Airport Road Light Remover] Both mods can remove runway/taxiway lights. Use one, unsubscribe the other." },
@@ -192,7 +190,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("12 Oct, 2019"),
             });
 
-            AddMod(new Item(1540147921u, "Grid be Gone") {
+            AddMod(new Review(1540147921u, "Grid be Gone") {
                 Affect = Factor.Other, // todo
                 Authors = "Quboid",
                 Catalog = catalog,
@@ -213,7 +211,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("17 Jan, 2019"),
             });
 
-            AddMod(new Item(1536223783u, "Hide Selectors") {
+            AddMod(new Review(1536223783u, "Hide Selectors") {
                 Affect = Factor.Other, // todo
                 Authors = "Quboid",
                 Catalog = catalog,
@@ -234,7 +232,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // doesn't affect level crossings
-            AddMod(new Item(1320575938u, "Hide Traffic Lights") {
+            AddMod(new Review(1320575938u, "Hide Traffic Lights") {
                 Authors = "Simon Ryr",
                 Affect = Factor.HideRemove
                        | Factor.Props
@@ -273,7 +271,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Mar, 2018"),
             });
 
-            AddMod(new Item(1117087491u, "Remove Road Props") {
+            AddMod(new Review(1117087491u, "Remove Road Props") {
                 Affect = Factor.HideRemove
                        | Factor.Props,
                 Authors = "Simon Ryr",
@@ -303,7 +301,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Feb, 2019"),
             });
 
-            AddMod(new Item(956707300u, "Remove Street Arrows") {
+            AddMod(new Review(956707300u, "Remove Street Arrows") {
                 Affect = Factor.HideRemove
                        | Factor.Props,
                 Authors = "Simon Ryr",
@@ -333,7 +331,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Jun, 2017"),
             });
 
-            AddMod(new Item(952542692u, "Airport Road Light Remover") {
+            AddMod(new Review(952542692u, "Airport Road Light Remover") {
                 Affect = Factor.HideRemove,
                 Authors = "vasimr22",
                 Catalog = catalog,
@@ -353,7 +351,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("22 Jun, 2017"),
             });
 
-            AddMod(new Item(949061920u, "No Buoys Mod") {
+            AddMod(new Review(949061920u, "No Buoys Mod") {
                 Affect = Factor.HideRemove,
                 Authors = "noob_vl",
                 Catalog = catalog,
@@ -374,7 +372,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("17 Jun, 2017"),
             });
 
-            AddMod(new Item(934958400u, "Improve FPS ! - Hide Districts [ALPHA]") {
+            AddMod(new Review(934958400u, "Improve FPS ! - Hide Districts [ALPHA]") {
                 Affect = Factor.HideRemove
                        | Factor.Props
                        | Factor.Trees,
@@ -383,14 +381,14 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Published = WorkshopDate("28 May, 2017"),
                 SourceURL = "https://github.com/simon56modder/HideDistrictsMod",
                 Updated = WorkshopDate("28 May, 2017"),
             });
 
-            AddMod(new Item(564141599u, "No Seagulls") {
+            AddMod(new Review(564141599u, "No Seagulls") {
                 Affect = Factor.HideRemove,
                 Authors = "thale5",
                 Catalog = catalog,
@@ -420,7 +418,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(418637762u, "American Roads") {
+            AddMod(new Review(418637762u, "American Roads") {
                 Affect = Factor.HideRemove
                        | Factor.Props
                        | Factor.RoadMarkings,

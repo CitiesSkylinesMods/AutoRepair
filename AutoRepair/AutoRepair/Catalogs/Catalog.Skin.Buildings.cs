@@ -14,7 +14,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
-        private void SkinBuildingsCatalog() {
+        private void SkinBuildingMods() {
 
             string catalog = "Skin.Buildings";
 
@@ -23,7 +23,7 @@ namespace AutoRepair.Catalogs {
                 { 466158459u, Status.Required }, // Building Themes mod
             };
 
-            AddMod(new Item(1808439336u, "Building Color Expander") {
+            AddMod(new Review(1808439336u, "Building Color Expander") {
                 Affect = Factor.Textures,
                 Authors = "Klyte45",
                 Catalog = catalog,
@@ -40,7 +40,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Buildings", "Colors", "Colours", "Painter", "Customise", "Customize", "Textures", },
             });
 
-            AddMod(new Item(1782814610u, "Building Variations") {
+            AddMod(new Review(1782814610u, "Building Variations") {
                 Affect = Factor.Textures,
                 Authors = "Elektrix",
                 Catalog = catalog,
@@ -49,7 +49,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Buildings", "Colors", "Colours", "Painter", "Customise", "Customize", "Textures", "Roof", "Tiles", },
             });
 
-            AddMod(new Item(1372431101u, "Painter") {
+            AddMod(new Review(1372431101u, "Painter") {
                 Affect = Factor.Textures,
                 Authors = "TPB",
                 Catalog = catalog,
@@ -72,7 +72,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // collection: https://steamcommunity.com/workshop/filedetails/?id=1901228838
-            AddMod(new Item(1903967441u, "Building Theme: European Suburbia Decorated") {
+            AddMod(new Review(1903967441u, "Building Theme: European Suburbia Decorated") {
                 Affect = Factor.Other,
                 Authors = "Avanya",
                 Catalog = catalog,
@@ -81,7 +81,7 @@ namespace AutoRepair.Catalogs {
                 RequiredDLC = DLCs.EuropeanSuburbia,
             });
 
-            AddAsset(new Item(1182123078u, "Chalet District Style (Vanilla)") {
+            AddAsset(new Review(1182123078u, "Chalet District Style (Vanilla)") {
                 Affect = Factor.Other,
                 Authors = "MrMiyagi",
                 Catalog = catalog,
@@ -93,7 +93,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1747800340u, "Building Theme: University City Districts") {
+            AddMod(new Review(1747800340u, "Building Theme: University City Districts") {
                 Affect = Factor.Other,
                 Authors = "MrMiyagi",
                 Catalog = catalog,
@@ -103,7 +103,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // collection: https://steamcommunity.com/workshop/filedetails/?id=1632934634
-            AddMod(new Item(1632933031u, "Building Theme:Japanese low residential theme") {
+            AddMod(new Review(1632933031u, "Building Theme:Japanese low residential theme") {
                 Affect = Factor.Other,
                 Authors = "TOKACHI269",
                 Catalog = catalog,
@@ -112,7 +112,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // collection: https://steamcommunity.com/workshop/filedetails/?id=1182157494
-            AddMod(new Item(1222415977u, "Christmas Village Building Theme") {
+            AddMod(new Review(1222415977u, "Christmas Village Building Theme") {
                 Affect = Factor.Other,
                 Authors = "MrMiyagi",
                 Catalog = catalog,

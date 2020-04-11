@@ -3,6 +3,7 @@ namespace AutoRepair.Catalogs {
     using AutoRepair.Enums;
     using AutoRepair.Lists;
     using AutoRepair.Util;
+    using ColossalFramework.PlatformServices;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
@@ -10,11 +11,17 @@ namespace AutoRepair.Catalogs {
     using System.Globalization;
     using System.Linq;
     using System.Text;
+    using static ColossalFramework.Plugins.PluginManager;
 
     /// <summary>
     /// The main catalog of items.
     /// </summary>
     public partial class Catalog {
+
+        /// <summary>
+        /// Culture used for the <see cref="WorkshopDate(string)"/> method.
+        /// </summary>
+        private static readonly CultureInfo WorkshopCulture = new CultureInfo("en-GB");
 
         /// <summary>
         /// Internal reference to active instance.
@@ -31,17 +38,10 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         public Catalog() {
             Log.Info("Catalog Opened\n");
-            Items = new Dictionary<ulong, Item>();
-            AddCatalogs();
+            Reviews = new Dictionary<ulong, Review>();
+            AddReviews();
             Validate();
             LogTally();
-        }
-
-        /// <summary>
-        /// Finalizes an instance of the <see cref="Catalog"/> class.
-        /// </summary>
-        ~Catalog() {
-            Items = null;
         }
 
         /// <summary>
@@ -61,67 +61,113 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Gets the number of items currently defined in the catalog.
         /// </summary>
-        public int Count => Items == null ? 0 : Items.Count;
+        public int Count => Reviews == null ? 0 : Reviews.Count;
 
         /// <summary>
-        /// Gets or sets the list of workshop items, keyed by Steam Workshop ID.
+        /// Gets the list of reviewed Steam Workshop items.
         /// </summary>
-        private Dictionary<ulong, Item> Items { get; set; }
+        public Dictionary<ulong, Review> Reviews { get; private set; }
+
+        /// <summary>
+        /// Opens the catalog (creates instance).
+        /// </summary>
+        /// 
+        /// <returns>Returns the catalog instance.</returns>
+        public static Catalog Open() {
+            return Instance;
+        }
 
         /// <summary>
         /// Closes the catalog to allow gc to recover used RAM.
         /// </summary>
         public static void Close() {
             Log.Info("Catalog Closed\n");
-            if (instance?.Items != null) {
-                instance.Items.Clear();
+            if (instance?.Reviews != null) {
+                instance.Reviews.Clear();
             }
             instance = null;
         }
 
         /// <summary>
-        /// Test if an item is in the main catalog.
+        /// Check if a Steam Workshop item has a review in the catalog.
         /// </summary>
         /// 
         /// <param name="workshopId">The Steam Workshop id for the item.</param>
         /// 
-        /// <returns>Returns <c>true</c> if present, otherwise <c>false</c>.</returns>
+        /// <returns>Returns <c>true</c> if reviewed, otherwise <c>false</c>.</returns>
         public bool Has(ulong workshopId) {
-            return Items.ContainsKey(workshopId);
+            return Reviews.ContainsKey(workshopId);
         }
 
         /// <summary>
-        /// Tries to get an item from the catalog.
+        /// Retrieve a review for the specified item.
         /// </summary>
-        /// 
-        /// <param name="workshopId">The Steam Workshop id of the item.</param>
-        /// <param name="item">The item, if found.</param>
+        ///
+        /// <param name="plugin">The <see cref="PluginInfo"/> to review.</param>
+        /// <param name="review">The assessment, if found.</param>
         /// 
         /// <returns>Returns <c>true</c> if the item was found, otherwise <c>false</c>.</returns>
-        public bool TryGetValue(ulong workshopId, out Item item) {
-            if (Items.TryGetValue(workshopId, out var result)) {
-                item = result;
+        public bool GetReview(PluginInfo plugin, out Review review) {
+
+            if (Reviews.TryGetValue(plugin.publishedFileID.AsUInt64, out var value)) {
+                review = value;
                 return true;
-            } else {
-                item = null;
-                return false;
             }
+
+            review = null;
+            return false;
         }
 
         /// <summary>
-        /// Adds a mod item to the list.
+        /// Retrieve a review for the specified item.
         /// </summary>
         /// 
-        /// <param name="item">The item to add.</param>
-        ///
-        /// <returns>Returns the item.</returns>
-        private Item AddMod(Item item) {
-            item.ItemType = ItemTypes.Mod;
+        /// <param name="publishedFileId">The <see cref="PublishedFileId"/> to review.</param>
+        /// <param name="review">The assessment, if found.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if the item was found, otherwise <c>false</c>.</returns>
+        public bool GetReview(PublishedFileId publishedFileId, out Review review) {
 
-            if (Has(item.WorkshopId)) {
-                Log.Info($"### ERROR: AddMod() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
-                return item;
+            if (Reviews.TryGetValue(publishedFileId.AsUInt64, out var value)) {
+                review = value;
+                return true;
             }
+
+            review = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Retrieve a review for the specified item.
+        /// </summary>
+        /// 
+        /// <param name="workshopId">The Steam Workshop ID to review.</param>
+        /// <param name="review">The assessment, if found.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if the item was found, otherwise <c>false</c>.</returns>
+        public bool GetReview(ulong workshopId, out Review review) {
+
+            if (Reviews.TryGetValue(workshopId, out var value)) {
+                review = value;
+                return true;
+            }
+
+            review = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Add a mod review to the catalog.
+        /// </summary>
+        /// 
+        /// <param name="review">The review of the mod.</param>
+        private void AddMod(Review review) {
+            if (Has(review.WorkshopId)) {
+                Log.Info($"### ERROR: AddMod() already in list:\n- Existing: {Reviews[review.WorkshopId]}\n- Duplicate: {review}\n");
+                return;
+            }
+
+            review.ItemType = ItemTypes.Mod;
 
             // to help track down which item is failing:
             // uncomment following and edit catalog if you are getting duplicate key errors
@@ -131,33 +177,27 @@ namespace AutoRepair.Catalogs {
             }
             /**/
 
-            item.Validate();
+            review.Validate();
 
-            Items.Add(item.WorkshopId, item);
-
-            return item;
+            Reviews.Add(review.WorkshopId, review);
         }
 
         /// <summary>
-        /// Adds an asset item to the list.
+        /// Add an asset review to the catalog.
         /// </summary>
         /// 
-        /// <param name="item">The item to add.</param>
-        ///
-        /// <returns>Returns the item.</returns>
-        private Item AddAsset(Item item) {
+        /// <param name="item">The review of the asset.</param>
+        private void AddAsset(Review item) {
             item.ItemType = ItemTypes.Asset;
 
             if (Has(item.WorkshopId)) {
-                Log.Info($"### ERROR: AddAsset() already in list:\n- Existing: {Items[item.WorkshopId]}\n- Duplicate: {item}\n");
-                return item;
+                Log.Info($"### ERROR: AddAsset() already in list:\n- Existing: {Reviews[item.WorkshopId]}\n- Duplicate: {item}\n");
+                return;
             }
 
             //item.Validate();
 
-            Items.Add(item.WorkshopId, item);
-
-            return item;
+            Reviews.Add(item.WorkshopId, item);
         }
 
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
@@ -206,7 +246,7 @@ namespace AutoRepair.Catalogs {
 
             log.Append("\nCATALOG:\n");
 
-            foreach (KeyValuePair<ulong, Item> entry in Items) {
+            foreach (KeyValuePair<ulong, Review> entry in Reviews) {
                 log.AppendFormat("- {0}\n", entry.Value);
             }
 
@@ -220,55 +260,57 @@ namespace AutoRepair.Catalogs {
             Log.Info(log.ToString());
         }
 
-        private void AddCatalogs() {
+        private void AddReviews() {
             Stopwatch timer = Stopwatch.StartNew();
 
             try {
-                VanillaCatalog(); // mods bundled with base game
-                UnsortedCatalog(); // currently uncategorised items
+                VanillaMods(); // mods bundled with base game
+                UnsortedMods(); // currently uncategorised items
 
                 AssetsCatalog(); // actual assets, not mods
 
-                AudioEffectsCatalog();
-                BalanceCatalog();
-                BuildingLevelCatalog();
-                BulldozeCatalog();
-                CameraCatalog();
-                ContentManagerCatalog();
-                ConvertersCatalog();
-                DiagnosticCatalog();
-                DisastersCatalog();
-                EditorCatalog();
-                EmptyingCatalog();
-                HideCatalog();
-                LoadSaveCatalog();
-                MoneyCatalog();
-                MultiplayerCatalog();
-                MusicCatalog();
-                NetworksCatalog();
-                PaintCatalog();
-                PlaceAndMoveCatalog();
-                PollutionCatalog();
-                ProceduralCatalog();
-                PublicTransportCatalog();
-                RepairCatalog();
-                ServicesCatalog();
-                SkinBuildingsCatalog();
-                SkinEnvironmentCatalog();
-                SkinFlagsCatalog();
-                SkinRoadsCatalog();
-                SkinRoadsUnitedCatalog();
-                SkinTrafficLightsCatalog();
-                StatsCatalog();
-                ToolbarCatalog();
-                TrafficCatalog();
-                TranslationsCatalog();
-                TreesCatalog();
-                UnlimitersCatalog();
-                UnlockersCatalog();
-                VehicleEffectsCatalog();
-                VehiclesCatalog();
-                VisualEffectsCatalog();
+                AudioEffectMods();
+                BalanceMods();
+                BuildingLevelMods();
+                BulldozeMods();
+                CameraMods();
+                ContentManagerMods();
+                ConverterMods();
+                DiagnosticMods();
+                DisasterMods();
+                EditorMods();
+                EmptyingMods();
+                HideMods();
+                LoadSaveMods();
+                MoneyMods();
+                MultiplayerMods();
+                MusicMods();
+                NetworkMods();
+                OutsideConnectionMods();
+                PaintMods();
+                PlaceAndMoveMods();
+                PollutionMods();
+                ProceduralMods();
+                PublicTransportMods();
+                RepairMods();
+                ServiceMods();
+                SkinBuildingMods();
+                SkinEnvironmentMods();
+                SkinFlagsMods();
+                SkinNetworkMods();
+                SkinRoadsUnitedMods();
+                SkinTrafficLightsMods();
+                SkinUIMods();
+                StatsMods();
+                ToolbarMods();
+                TrafficMods();
+                TranslationMods();
+                TreeMods();
+                UnlimiterMods();
+                UnlockerMods();
+                VehicleEffectMods();
+                VehicleMods();
+                VisualEffectMods();
 
                 CatalogAddendum(); // items affected by recent update + temporary kludges
             }
@@ -277,13 +319,8 @@ namespace AutoRepair.Catalogs {
             }
 
             timer.Stop();
-            Log.Info($"AutoRepair catalog initialisation took {timer.ElapsedMilliseconds}ms");
+            Log.Info($"Catalog initialisation took {timer.ElapsedMilliseconds}ms");
         }
-
-        /// <summary>
-        /// Culture used for the <see cref="WorkshopDate(string)"/> method.
-        /// </summary>
-        private static CultureInfo workshopCulture = new CultureInfo("en-GB");
 
         /// <summary>
         /// Tries to parse a date string from Steam Workshop page in to a <see cref="DateTime"/> instance.
@@ -296,9 +333,9 @@ namespace AutoRepair.Catalogs {
         /// <returns>A <see cref="DateTime"/> instance.</returns>
         public DateTime WorkshopDate(string dateStr) {
             try {
-                return DateTime.ParseExact(dateStr, "d MMM, yyyy", workshopCulture);
+                return DateTime.ParseExact(dateStr, "d MMM, yyyy", WorkshopCulture);
             } catch {
-                Log.Info($"Invlaid date format '{dateStr}'; last added item was {Items.Last().Key}");
+                Log.Info($"Invlaid date format '{dateStr}'; last added item was {Reviews.Last().Key}");
                 return default;
             }
         }
@@ -316,9 +353,9 @@ namespace AutoRepair.Catalogs {
 
             StringBuilder log = new StringBuilder(1024 * 100);
 
-            foreach (KeyValuePair<ulong, Item> record in Items) {
+            foreach (KeyValuePair<ulong, Review> record in Reviews) {
 
-                Item item = record.Value;
+                Review item = record.Value;
 
                 bool itemProblems = false;
 
@@ -354,7 +391,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="itemLog">The item log string builder.</param>
         /// 
         /// <returns>Returns <c>true</c> if there are problems, otherwise <c>false</c>.</returns>
-        private bool HasBasicProblems(Item item, bool extendedReporting, ref StringBuilder itemLog) {
+        private bool HasBasicProblems(Review item, bool extendedReporting, ref StringBuilder itemLog) {
 
             bool basicProblems = false;
 
@@ -388,7 +425,7 @@ namespace AutoRepair.Catalogs {
             // todo: check for unrecognised locales in Languages list if present
 
             // check ReplaceWith - in catalog? recursive? unsquised chain?
-            Item target = item;
+            Review target = item;
             ulong nextTarget = target.ReplaceWith;
             List<ulong> chain = new List<ulong>() { nextTarget };
             bool recursion = false;
@@ -421,7 +458,7 @@ namespace AutoRepair.Catalogs {
                         itemLog.Append($" Debug: Has(nextTarget) = true\n");
                     }
 
-                    target = Items[nextTarget];
+                    target = Reviews[nextTarget];
                     nextTarget = target.ReplaceWith;
 
                     if (debug) {
@@ -491,7 +528,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="itemLog">The item log string builder.</param>
         /// 
         /// <returns>Returns <c>true</c> if there are problems, otherwise <c>false</c>.</returns>
-        private bool HasCompatibilityProblems(Item item, bool extendedReporting, ref StringBuilder itemLog) {
+        private bool HasCompatibilityProblems(Review item, bool extendedReporting, ref StringBuilder itemLog) {
 
             if (item.Compatibility == null || item.Compatibility.Count == 0 || item.Catalog == "Addendum") {
                 return false;
@@ -515,7 +552,7 @@ namespace AutoRepair.Catalogs {
 
                 Tally[targetStatus] += 1;
 
-                if (Items.TryGetValue(targetId, out var target) && target.Catalog != "Addendum") {
+                if (Reviews.TryGetValue(targetId, out var target) && target.Catalog != "Addendum") {
 
                     // skip reciprocal checks for required/recommended targets
                     // (could maybe add in later, requiring compatible reciprocate, but too much work for now)

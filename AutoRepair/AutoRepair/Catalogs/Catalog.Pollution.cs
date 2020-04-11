@@ -14,17 +14,49 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void PollutionCatalog() {
+        private void PollutionMods() {
 
             string catalog = "Pollution";
 
-            AddMod(new Item(666425898u, "No Radioactive Desert And More!") {
+            AddMod(new Review(1263262833u, "Pollution Solution") {
+                Affect = Factor.Pollution,
+                Authors = "Shadow Link",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1176756723u, Status.Compatible   }, // Increased Pollution Radius
+                    { 666425898u , Status.Compatible   }, // No Radioactive Desert And More!
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("9 Jan, 2018"),
+                SourceURL = "https://github.com/rkanter/PollutionSolution/",
+                Updated = WorkshopDate("17 Jan, 2018"),
+            });
+
+            AddMod(new Review(1176756723u, "Increased Pollution Radius") {
+                Affect = Factor.Pollution,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1263262833u, Status.Compatible   }, // Pollution Solution
+                    { 666425898u , Status.Compatible   }, // No Radioactive Desert And More!
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("21 Oct, 2017"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-IncreasedPollutionRadius",
+                Updated = WorkshopDate("21 Oct, 2017"),
+            });
+
+            AddMod(new Review(666425898u, "No Radioactive Desert And More!") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1176756723u, Status.Compatible   }, // Increased Pollution Radius
                     { 1591417160u, Status.Incompatible }, // Hide It!
+                    { 1263262833u, Status.Compatible   }, // Pollution Solution
                     { 791968744u , Status.Incompatible }, // Dynamic Foliage // overrides the same codepaths
                     { 666425898u , Status.Incompatible }, // No Radioactive Desert And More!
                     { 482360157u , Status.Incompatible }, // No More Purple [Radioactive Green Grass]
@@ -39,6 +71,7 @@ namespace AutoRepair.Catalogs {
                     { 407795371u , Status.Incompatible }, // No More Purple Pollution [Brown Grass]
                     { 407270433u , Status.Incompatible }, // No More Purple Pollution
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 1591417160u, "[Mod: Hide It!] Conflcits with No Radioactive Desert; causes terrain textures to disappear from map." },
@@ -56,7 +89,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(482360157u, "No More Purple [Radioactive Green Grass]") {
+            AddMod(new Review(482360157u, "No More Purple [Radioactive Green Grass]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -91,7 +124,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("16 Jul, 2015"),
             });
 
-            AddMod(new Item(408190203u, "No More Purple Pollution [Muddy Water]") {
+            AddMod(new Review(408190203u, "No More Purple Pollution [Muddy Water]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -126,7 +159,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("15 Mar, 2015"),
             });
 
-            AddMod(new Item(408189919u, "No More Purple Pollution [Silty Water]") {
+            AddMod(new Review(408189919u, "No More Purple Pollution [Silty Water]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -161,7 +194,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 
-            AddMod(new Item(408167727u, "No More Purple Pollution [Radioactive Green Water]") {
+            AddMod(new Review(408167727u, "No More Purple Pollution [Radioactive Green Water]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -196,7 +229,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("15 Mar, 2015"),
             });
 
-            AddMod(new Item(408126282u, "No More Purple Pollution [Green Water]") {
+            AddMod(new Review(408126282u, "No More Purple Pollution [Green Water]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -231,7 +264,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("15 Mar, 2015"),
             });
 
-            AddMod(new Item(408126080u, "No More Purple Pollution [Brown Water]") {
+            AddMod(new Review(408126080u, "No More Purple Pollution [Brown Water]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -266,7 +299,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("15 Mar, 2015"),
             });
 
-            AddMod(new Item(407890452u, "No More Purple Pollution [Grey Grass]") {
+            AddMod(new Review(407890452u, "No More Purple Pollution [Grey Grass]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -301,7 +334,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 
-            AddMod(new Item(407842191u, "No More Purple Pollution [Red-Brown Grass]") {
+            AddMod(new Review(407842191u, "No More Purple Pollution [Red-Brown Grass]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -336,7 +369,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 
-            AddMod(new Item(407810495u, "No More Purple Pollution [Tan Grass]") {
+            AddMod(new Review(407810495u, "No More Purple Pollution [Tan Grass]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -371,7 +404,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 
-            AddMod(new Item(407795371u, "No More Purple Pollution [Brown Grass]") {
+            AddMod(new Review(407795371u, "No More Purple Pollution [Brown Grass]") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",
@@ -406,7 +439,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 
-            AddMod(new Item(407270433u, "No More Purple Pollution") {
+            AddMod(new Review(407270433u, "No More Purple Pollution") {
                 Affect = Factor.Pollution
                        | Factor.Textures,
                 Authors = "Jeb Bush but super communist",

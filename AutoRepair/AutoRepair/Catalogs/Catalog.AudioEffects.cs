@@ -16,7 +16,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void AudioEffectsCatalog() {
+        private void AudioEffectMods() {
 
             string catalog = "AudioEffects";
 
@@ -28,7 +28,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
-            AddMod(new Item(818641631u, "Ambient Sounds Tuner 2.0") {
+            AddMod(new Review(818641631u, "Ambient Sounds Tuner 2.0") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "BloodyPenguin",
@@ -58,32 +58,60 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1719979486u, "Philippines Realistic Sound Mod: Return!") {
+            AddMod(new Review(1719979486u, "Philippines Realistic Sound Mod: Return!") {
                 Affect = Factor.Audio,
                 Authors = "Corn Starchia",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053925580u, Status.Incompatible }, // Philippines Sound MOD 2K20 (PSM)
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
                     { 435167188u , Status.Incompatible }, // V10Siren
                 },
-                Flags = ItemFlags.GameBreaking
-                      | ItemFlags.Abandonware
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                Locale = "tl-ph",
                 Published = WorkshopDate("22 Apr, 2019"),
+                ReplaceWith = 2053925580u, // Philippines Sound MOD 2K20 (PSM)
+                Tags = new[] {
+                    "Sounds", "Audio", "Ambient",
+                    "Philippines", "Pulis", "Mobil", "Pilipinas", "Filipinas", "Manila",
+                    "Vehicles", "Sirens", "Police", "Fire", "Ambulance",
+                    "Buildings", "Trains", "Stations",
+                },
                 Updated = WorkshopDate("22 Apr, 2019"),
             });
 
             // original mod (obsolete)
-            AddMod(new Item(455958878u, "Ambient Sounds Tuner") {
+            AddMod(new Review(455958878u, "Ambient Sounds Tuner") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "Archomeda",
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053925580u, Status.Incompatible }, // Philippines Sound MOD 2K20 (PSM)
+                    { 1999271351u, Status.Incompatible }, // 0xyl0nSoundPackUSA
+                    { 1982045897u, Status.Incompatible }, // (for backup)TwotoolusFLY's Siren mod
+                    { 1979269356u, Status.Incompatible }, // Swedish Emergency Vehicle Sirens - Sound Pack
+                    { 1977435537u, Status.Incompatible }, // OxylonEuroSoundpackSWE
+                    { 1974722022u, Status.Incompatible }, // Grand Theft Auto Mission Passed On Upgrade
+                    { 1969438995u, Status.Incompatible }, // OxylonEuroSoundpackITA
+                    { 1969435641u, Status.Incompatible }, // OxylonEuroSoundpackFRA
+                    { 1969432061u, Status.Incompatible }, // OxylonEuroSoundpackNED
+                    { 1969428208u, Status.Incompatible }, // OxylonEuroSoundpackAUT
+                    { 1969411916u, Status.Incompatible }, // OxylonEuroSoundpackGER
+                    { 1764439209u, Status.Incompatible }, // DB Announcer
                     { 1719979486u, Status.Incompatible }, // Philippines Realistic Sound Mod: Return!
+                    { 1636310959u, Status.Incompatible }, // NS Sound Pack for Ambient Sounds Tuner
+                    { 1629745074u, Status.Incompatible }, // ÖBB Sound Pack for Ambient Sounds Tuner
+                    { 1628985258u, Status.Incompatible }, // CFF Sound Pack for Ambient Sounds Tuner
+                    { 1624184698u, Status.Incompatible }, // SBB Sound Pack for Ambient Sounds Tune
                     { 1541828679u, Status.Incompatible }, // CNSoundPack V0.2.2
+                    { 1436056719u, Status.Incompatible }, // Kaguki's Realistic Akihabara Sounds
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
                     // incompat: [ARIS] Remove Cows
@@ -108,14 +136,31 @@ namespace AutoRepair.Catalogs {
             });
 
             // obsolete
-            AddMod(new Item(435167188u, "V10Siren") {
+            AddMod(new Review(435167188u, "V10Siren") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "V10lator",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053925580u, Status.Incompatible }, // Philippines Sound MOD 2K20 (PSM)
+                    { 1999271351u, Status.Incompatible }, // 0xyl0nSoundPackUSA
+                    { 1982045897u, Status.Incompatible }, // (for backup)TwotoolusFLY's Siren mod
+                    { 1979269356u, Status.Incompatible }, // Swedish Emergency Vehicle Sirens - Sound Pack
+                    { 1977435537u, Status.Incompatible }, // OxylonEuroSoundpackSWE
+                    { 1974722022u, Status.Incompatible }, // Grand Theft Auto Mission Passed On Upgrade
+                    { 1969438995u, Status.Incompatible }, // OxylonEuroSoundpackITA
+                    { 1969435641u, Status.Incompatible }, // OxylonEuroSoundpackFRA
+                    { 1969432061u, Status.Incompatible }, // OxylonEuroSoundpackNED
+                    { 1969428208u, Status.Incompatible }, // OxylonEuroSoundpackAUT
+                    { 1969411916u, Status.Incompatible }, // OxylonEuroSoundpackGER
+                    { 1764439209u, Status.Incompatible }, // DB Announcer
                     { 1719979486u, Status.Incompatible }, // Philippines Realistic Sound Mod: Return!
+                    { 1636310959u, Status.Incompatible }, // NS Sound Pack for Ambient Sounds Tuner
+                    { 1629745074u, Status.Incompatible }, // ÖBB Sound Pack for Ambient Sounds Tuner
+                    { 1628985258u, Status.Incompatible }, // CFF Sound Pack for Ambient Sounds Tuner
+                    { 1624184698u, Status.Incompatible }, // SBB Sound Pack for Ambient Sounds Tune
                     { 1541828679u, Status.Incompatible }, // CNSoundPack V0.2.2
+                    { 1436056719u, Status.Incompatible }, // Kaguki's Realistic Akihabara Sounds
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
                     { 455958878u , Status.Compatible   }, // Ambient Sounds Tuner
@@ -138,34 +183,74 @@ namespace AutoRepair.Catalogs {
             # ██      ██   ██  ██████ ██   ██ ███████
             */
 
-            AddMod(new Item(1999271351u, "0xyl0nSoundPackUSA") {
+            AddMusic(new Review(2053925580u, "Philippines Sound MOD 2K20 (PSM)") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
+                Authors = "Corn Starchia",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1952822305u, Status.Recommended  }, // Pulis Mobil Philippines
+                    { 1719979486u, Status.Incompatible }, // Philippines Realistic Sound Mod: Return!
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 1719979486u, // Philippines Realistic Sound Mod: Return!
+                Flags = ItemFlags.SourceUnavailable,
+                Locale = "tl-ph",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
+                Published = WorkshopDate("9 Apr, 2020"),
+                Tags = new[] {
+                    "Sounds", "Audio", "Ambient",
+                    "Philippines", "Pulis", "Mobil", "Pilipinas", "Filipinas", "Manila",
+                    "Vehicles", "Sirens", "Police", "Fire", "Ambulance",
+                    "Buildings", "Trains", "Stations",
+                },
+                Updated = WorkshopDate("9 Apr, 2020"),
+            });
+
+            AddMod(new Review(1999271351u, "0xyl0nSoundPackUSA") {
+                Affect = Factor.Audio
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required    }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 76 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
+                Published = WorkshopDate("16 Feb, 2020"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "USA", "America", "United", "States",
                     "Vehicles", "Sirens", "Police", "Fire", "Ambulance",
                     "Buildings", "Trains", "Stations",
                 },
+                Updated = WorkshopDate("19 Feb, 2020"),
             });
 
-            AddMod(new Item(1982045897u, "(for backup)TwotoolusFLY's Siren mod") {
+            AddMod(new Review(1982045897u, "(for backup)TwotoolusFLY's Siren mod") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "TwotoolusFLY LSh.st",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
@@ -175,13 +260,15 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1979269356u, "Swedish Emergency Vehicle Sirens - Sound Pack") {
+            AddMod(new Review(1979269356u, "Swedish Emergency Vehicle Sirens - Sound Pack") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "JCity",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
@@ -193,19 +280,25 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1977435537u, "OxylonEuroSoundpackSWE") {
+            AddMod(new Review(1977435537u, "OxylonEuroSoundpackSWE") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 64 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "sv-se",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Sweden", "Swedish", "European",
@@ -214,13 +307,15 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1974722022u, "Grand Theft Auto Mission Passed On Upgrade") {
+            AddMod(new Review(1974722022u, "Grand Theft Auto Mission Passed On Upgrade") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "Marty Stonks",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
@@ -229,19 +324,25 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1969438995u, "OxylonEuroSoundpackITA") {
+            AddMod(new Review(1969438995u, "OxylonEuroSoundpackITA") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 72 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "it",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Italy", "Italian", "European",
@@ -250,19 +351,25 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1969435641u, "OxylonEuroSoundpackFRA") {
+            AddMod(new Review(1969435641u, "OxylonEuroSoundpackFRA") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 73 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "fr",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "France", "French", "European",
@@ -271,19 +378,25 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1969432061u, "OxylonEuroSoundpackNED") {
+            AddMod(new Review(1969432061u, "OxylonEuroSoundpackNED") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 70 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "nl",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Holland", "Dutch", "Nederlands", "European",
@@ -292,19 +405,25 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1969428208u, "OxylonEuroSoundpackAUT") {
+            AddMod(new Review(1969428208u, "OxylonEuroSoundpackAUT") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 67 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "de-at",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Austria", "German", "Österreich", "European",
@@ -313,19 +432,25 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1969411916u, "OxylonEuroSoundpackGER") {
+            AddMod(new Review(1969411916u, "OxylonEuroSoundpackGER") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 62 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "de",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Germany", "Deutschland", "European",
@@ -334,9 +459,9 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1961235713u, "Grand Theft Auto Sirens") {
+            AddMod(new Review(1961235713u, "Grand Theft Auto Sirens") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "Marty Stonks",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -351,18 +476,23 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1764439209u, "DB Announcer") {
+            AddMod(new Review(1764439209u, "DB Announcer") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "Retch | Mushr00mhat",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "de",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
                     "Germany", "Deutschland", "European", "Düsseldorf", "Hbf",
@@ -370,9 +500,9 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1729946947u, "Austrian Sirens") {
+            AddMod(new Review(1729946947u, "Austrian Sirens") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "X00LA",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -388,9 +518,9 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1660065880u, "Pre-War Sirens") {
+            AddMod(new Review(1660065880u, "Pre-War Sirens") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "Destructulus",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -407,19 +537,24 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1636310959u, "NS Sound Pack for Ambient Sounds Tuner") {
+            AddMod(new Review(1636310959u, "NS Sound Pack for Ambient Sounds Tuner") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "ralphzug",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Languages = new[] { "nl", "en", "fr", },
                 Locale = "nl",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Published = WorkshopDate("26 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
@@ -429,19 +564,24 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Jan, 2019"),
             });
 
-            AddMod(new Item(1629745074u, "ÖBB Sound Pack for Ambient Sounds Tuner") {
+            AddMod(new Review(1629745074u, "ÖBB Sound Pack for Ambient Sounds Tuner") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "ralphzug",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Languages = new[] { "de-at", "en" },
                 Locale = "de-at",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Published = WorkshopDate("19 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
@@ -451,19 +591,24 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("19 Jan, 2019"),
             });
 
-            AddMod(new Item(1628985258u, "CFF Sound Pack for Ambient Sounds Tuner") {
+            AddMod(new Review(1628985258u, "CFF Sound Pack for Ambient Sounds Tuner") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "ralphzug",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Languages = new[] { "fr-ch", "en" },
                 Locale = "fr-ch",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Published = WorkshopDate("19 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
@@ -473,19 +618,24 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("19 Jan, 2019"),
             });
 
-            AddMod(new Item(1624184698u, "SBB Sound Pack for Ambient Sounds Tune") {
+            AddMod(new Review(1624184698u, "SBB Sound Pack for Ambient Sounds Tune") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "ralphzug",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 818641631u, Status.Required }, // Ambient Sounds Tuner 2.0
-                    { 815103125u, Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Languages = new[] { "de-ch", "en", "fr-ch", "it-ch", },
                 Locale = "de-ch",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Published = WorkshopDate("13 Jan, 2019"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
@@ -495,9 +645,10 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 Jan, 2019"),
             });
 
-            AddMod(new Item(1480332470u, "Polish Sirens Pack [V2.2]") {
+            AddMod(new Review(1480332470u, "Polish Sirens Pack [V2.2]") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Environment
+                       | Factor.Vehicles,
                 Authors = "Miętaa",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -513,28 +664,33 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1436056719u, "Kaguki's Realistic Akihabara Sounds") {
+            AddMod(new Review(1436056719u, "Kaguki's Realistic Akihabara Sounds") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "Corn Starchia",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1431909554u, Status.Recommended }, // Kaguki JPN Realistic Sounds v6 (TESTING)
-                    { 818641631u , Status.Required    }, // Ambient Sounds Tuner 2.0
-                    { 815103125u , Status.MinorIssues }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "ja",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient", "Metro",
                     "Akihabara", "Otaku", "Anime", "Manga",
                 },
             });
 
-            AddMod(new Item(1398060749u, "Evo's Korean Sound Overhaul [v0.1d]") {
+            AddMod(new Review(1398060749u, "Evo's Korean Sound Overhaul [v0.1d]") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "Evo",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -550,9 +706,9 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1327734238u, "Deutsche Martinshörner für Ambient Sounds Tuner 2.0") {
+            AddMod(new Review(1327734238u, "Deutsche Martinshörner für Ambient Sounds Tuner 2.0") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "Viss Valdyr",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -568,9 +724,9 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1316748022u, "Martinshorn/ vormals V10 Siren") {
+            AddMod(new Review(1316748022u, "Martinshorn/ vormals V10 Siren") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "Kwengie",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -586,9 +742,9 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(939566479u, "Bee's North America Sound Pack") {
+            AddMod(new Review(939566479u, "Bee's North America Sound Pack") {
                 Affect = Factor.Audio
-                       | Factor.Environment,
+                       | Factor.Vehicles,
                 Authors = "imabusybee",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -602,6 +758,26 @@ namespace AutoRepair.Catalogs {
                     "USA", "America", "United", "States",
                     "Vehicles", "Sirens", "Police", "Fire", "Ambulance", "Rumbler", "Howler",
                 },
+            });
+
+            AddMod(new Review(925211833u, "K's Old Siren Pack") {
+                Affect = Factor.Audio
+                       | Factor.Vehicles,
+                Authors = "Lieutenant A.Kouassi",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SourceUnavailable,
+                Locale = "en-us",
+                Published = WorkshopDate("13 May, 2017"),
+                Tags = new[] {
+                    "Sounds", "Audio", "Ambient",
+                    "USA", "America", "United", "States", "1950s", "1960s", "1970s", "1980s",
+                    "Vehicles", "Sirens", "Police", "Fire", "Ambulance", "Rumbler", "Howler",
+                },
+                Updated = WorkshopDate("26 Jun, 2017"),
             });
         }
     }

@@ -15,7 +15,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void UnlimitersCatalog() {
+        private void UnlimiterMods() {
 
             string catalog = "Unlimiters";
 
@@ -68,7 +68,7 @@ namespace AutoRepair.Catalogs {
                 [463845891u ] = Status.MinorIssues , // No Pillars
             };
 
-            AddMod(new Item(1764208250u, "More Vehicles") {
+            AddMod(new Review(1764208250u, "More Vehicles") {
                 Affect = Factor.VehicleLimit // mods which don't properly check vehicle limits will break
                        | Factor.TileLimit // incompat with 81 tiles
                        | Factor.Toolbar, // date/event display can be broken by toolbar & quartz/sapphire mods
@@ -132,14 +132,14 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.SaveChanging,
+                      | ItemFlags.SaveAltering,
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/dymanoid/MoreVehicles",
                 Tags = new[] { "Vehicles", "Parked", "Parking", "Limits", "Unlimiter" },
             });
 
             // 25 tiles - with extra features
-            AddMod(new Item(1612287735u, "Purchase It!") {
+            AddMod(new Review(1612287735u, "Purchase It!") {
                 Affect = Factor.TileLimit,
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -147,7 +147,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
+                      | ItemFlags.MinorIssues, // harmony patch management could be better
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://github.com/keallu/CSL-PurchaseIt",
             });
@@ -156,7 +156,7 @@ namespace AutoRepair.Catalogs {
             // Using this as main replacement for legions of abandonned 25 tile mods
             // primarily because it has good instructions for users and author provides
             // good responses to comments.
-            AddMod(new Item(1270675750u, "BigCity (25 tiles mod)") {
+            AddMod(new Review(1270675750u, "BigCity (25 tiles mod)") {
                 Affect = Factor.TileLimit,
                 Authors = "frostblue",
                 Catalog = catalog,
@@ -167,7 +167,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 81 tiles
-            AddMod(new Item(576327847u, "81 Tiles (Fixed for 1.2+)") {
+            AddMod(new Review(576327847u, "81 Tiles (Fixed for 1.2+)") {
                 Affect = Factor.Construction
                        | Factor.PlaceAndMove
                        | Factor.Rendering
@@ -181,8 +181,8 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 422554572u, // 81 Tiles (original version by emf)
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Laggy // each purchased tile adds additional rendering and simulation workload
-                      | ItemFlags.MinorBugs // some glitches with various services built outside central 25 tile area
-                      | ItemFlags.SaveChanging // can be removed, but stuff outside central 25 tiles will glitch
+                      | ItemFlags.MinorIssues // some glitches with various services built outside central 25 tile area
+                      | ItemFlags.SaveAltering // can be removed, but stuff outside central 25 tiles will glitch
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "IMPORTANT: If your save game became corrupt due to Sunset Harbor update, use the recovery mode in 81 Tiles mod options." },
@@ -199,7 +199,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles - author still active
-            AddMod(new Item(413498678u, "All Spaces Unlockable - With Right Price") {
+            AddMod(new Review(413498678u, "All Spaces Unlockable - With Right Price") {
                 Affect = Factor.TileLimit,
                 Authors = "Klyte45",
                 Catalog = catalog,
@@ -210,14 +210,14 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles - author still active
-            AddMod(new Item(403798635u, "All Spaces Unlockable") {
+            AddMod(new Review(403798635u, "All Spaces Unlockable") {
                 Affect = Factor.TileLimit,
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.MinorBugs, // doesn't increase purchase price after first 9 tiles
+                      | ItemFlags.MinorIssues, // doesn't increase purchase price after first 9 tiles
                 ReleasedDuring = GameVersion.InitialRelease,
             });
 
@@ -230,7 +230,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // 25 tiles
-            AddMod(new Item(2035564927u, "25parts_su") {
+            AddMod(new Review(2035564927u, "25parts_su") {
                 Affect = Factor.TileLimit,
                 Authors = "915962083",
                 Catalog = catalog,
@@ -242,7 +242,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1978555062u, "AllSpacesUnlockable") {
+            AddMod(new Review(1978555062u, "AllSpacesUnlockable") {
                 Affect = Factor.TileLimit,
                 Authors = "(unknown)",
                 Catalog = catalog,
@@ -257,7 +257,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1891302645u, "UnlockAreaCountLimitAndFree") {
+            AddMod(new Review(1891302645u, "UnlockAreaCountLimitAndFree") {
                 Affect = Factor.TileLimit,
                 Authors = "enroban",
                 Catalog = catalog,
@@ -269,7 +269,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1878659195u, "UnlockAreaCountLimitAndFree") {
+            AddMod(new Review(1878659195u, "UnlockAreaCountLimitAndFree") {
                 Affect = Factor.TileLimit,
                 Authors = "KiDDOT",
                 Catalog = catalog,
@@ -281,7 +281,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1830615215u, "All 25 Areas purchaseable") {
+            AddMod(new Review(1830615215u, "All 25 Areas purchaseable") {
                 Affect = Factor.TileLimit,
                 Authors = "gendows",
                 Catalog = catalog,
@@ -293,7 +293,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1778652879u, "MaxArea") {
+            AddMod(new Review(1778652879u, "MaxArea") {
                 Affect = Factor.TileLimit,
                 Authors = "MMP",
                 Catalog = catalog,
@@ -305,7 +305,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1723162741u, "UnlockAreaCountLimitAndFree") {
+            AddMod(new Review(1723162741u, "UnlockAreaCountLimitAndFree") {
                 Affect = Factor.TileLimit,
                 Authors = "奥利弗·奎恩",
                 Catalog = catalog,
@@ -317,7 +317,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 81 tiles
-            AddMod(new Item(1575247594u, "576327847 81 Tiles (Fixed for 1") {
+            AddMod(new Review(1575247594u, "576327847 81 Tiles (Fixed for 1") {
                 Affect = Factor.TileLimit,
                 Authors = "1061303312",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -326,7 +326,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
-                      | ItemFlags.SaveChanging
+                      | ItemFlags.SaveAltering
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
@@ -335,7 +335,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 81 tiles
-            AddMod(new Item(1560122066u, "81MOD") {
+            AddMod(new Review(1560122066u, "81MOD") {
                 Affect = Factor.TileLimit,
                 Authors = "116060166",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -344,7 +344,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
-                      | ItemFlags.SaveChanging
+                      | ItemFlags.SaveAltering
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
@@ -353,7 +353,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1457742795u, "403798635 All Spaces Unlockable") {
+            AddMod(new Review(1457742795u, "403798635 All Spaces Unlockable") {
                 Affect = Factor.TileLimit,
                 Authors = "exedoronexe",
                 Catalog = catalog,
@@ -367,7 +367,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1449194984u, "25格汉化版") {
+            AddMod(new Review(1449194984u, "25格汉化版") {
                 Affect = Factor.TileLimit,
                 Authors = "TIMIYANG",
                 Catalog = catalog,
@@ -382,7 +382,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 81 tiles
-            AddMod(new Item(1361478243u, "81 Tiles") {
+            AddMod(new Review(1361478243u, "81 Tiles") {
                 Affect = Factor.TileLimit,
                 Authors = "限量版好男人",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -391,7 +391,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
-                      | ItemFlags.SaveChanging
+                      | ItemFlags.SaveAltering
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
@@ -400,7 +400,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1314938052u, "UnlockAreaCountLimit") {
+            AddMod(new Review(1314938052u, "UnlockAreaCountLimit") {
                 Affect = Factor.TileLimit,
                 Authors = "angelleng",
                 Catalog = catalog,
@@ -412,7 +412,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1268806334u, "UnlockAreaCountLimitAndFree") {
+            AddMod(new Review(1268806334u, "UnlockAreaCountLimitAndFree") {
                 Affect = Factor.TileLimit,
                 Authors = "YFGG",
                 Catalog = catalog,
@@ -423,7 +423,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1265292380u, "UnlockAreaCountLimit") {
+            AddMod(new Review(1265292380u, "UnlockAreaCountLimit") {
                 Affect = Factor.TileLimit,
                 Authors = "binbck-y",
                 Catalog = catalog,
@@ -434,7 +434,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1225712804u, "406218372") {
+            AddMod(new Review(1225712804u, "406218372") {
                 Affect = Factor.TileLimit,
                 Authors = "丿CK独狼灬",
                 BrokenBy = GameVersion.EuropeBiome, // when the IUserMod changed
@@ -456,7 +456,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 81 tiles
-            AddMod(new Item(1223738434u, "422554572") {
+            AddMod(new Review(1223738434u, "422554572") {
                 Affect = Factor.TileLimit,
                 Authors = "Pride",
                 BrokenBy = GameVersion.AfterDark,
@@ -479,7 +479,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(1138679561u, "AllSpacesUnlock") {
+            AddMod(new Review(1138679561u, "AllSpacesUnlock") {
                 Authors = "The700",
                 Affect = Factor.TileLimit,
                 Catalog = catalog,
@@ -495,7 +495,7 @@ namespace AutoRepair.Catalogs {
             // eg. if no other tile mods, will unlock 9 tiles. If a 25 tile mod
             // is active, it will unlock 25 tiles. Incompatible with more advanced mods
             // such as 81 Tiles and Purchase It.
-            AddMod(new Item(616078328u, "All Tile Start") {
+            AddMod(new Review(616078328u, "All Tile Start") {
                 Affect = Factor.Other,
                 Authors = "johnrom",
                 BrokenBy = GameVersion.Campus, // breaks milestones, issues with vehicle spawning, etc.
@@ -515,7 +515,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // the original 81 tiles mod by emf
-            AddMod(new Item(422554572u, "81 Tiles Updated") {
+            AddMod(new Review(422554572u, "81 Tiles Updated") {
                 Affect = Factor.TileLimit,
                 Authors = "emf",
                 BrokenBy = GameVersion.AfterDark,
@@ -535,7 +535,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // 25 tiles
-            AddMod(new Item(406218372u, "All Spaces Unlockable") { // in-game name: 25 Spaces
+            AddMod(new Review(406218372u, "All Spaces Unlockable") { // in-game name: 25 Spaces
                 Affect = Factor.TileLimit,
                 Authors = "(unknown)",
                 BrokenBy = GameVersion.EuropeBiome, // when the IUserMod changed

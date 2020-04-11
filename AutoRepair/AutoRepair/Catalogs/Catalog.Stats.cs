@@ -14,12 +14,55 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void StatsCatalog() {
+        private void StatsMods() {
 
             string catalog = "Stats";
 
+            AddMod(new Review(2051693155u, "Building Vehicle Manager") {
+                Affect = Factor.BuildingInfo
+                       | Factor.Despawn
+                       | Factor.UI,
+                Authors = "kx36",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Currently only works on Industries DLC buildings." },
+                },
+                Published = WorkshopDate("7 Apr, 2020"),
+                Updated = WorkshopDate("7 Apr, 2020"),
+            });
+
+            // likely incompat with any mod that alters:
+            // * Levels info panel
+            // * building/vehicle color
+            // * building stats
+            AddMod(new Review(2048266761u, "Building Usage") {
+                Affect = Factor.BuildingCapacity
+                       | Factor.BuildingLevel
+                       | Factor.StorageCapacity
+                       | Factor.VehicleCapacity
+                       | Factor.Vehicles,
+                Authors = "rcav8tr",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1420955187u, Status.MinorIssues }, // Real Time
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.EditorBreaking
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1420955187u, "[Mod: Real Time] Building Usage mod does not account for worker variations due to Real Time shifts." },
+                },
+                Published = WorkshopDate("4 Apr, 2020"),
+                SourceURL = "https://github.com/rcav8tr/BuildingUsage",
+                Updated = WorkshopDate("4 Apr, 2020"),
+            });
+
             // economy stats
-            AddMod(new Item(1994342199u, "Eco Stats Mod") {
+            AddMod(new Review(1994342199u, "Eco Stats Mod") {
                 Affect = Factor.Budget
                        | Factor.Money,
                 Authors = "alfoirazabal",
@@ -28,12 +71,13 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.ParadoxLauncher,
+                Published = WorkshopDate("10 Feb, 2020"),
                 SourceURL = "https://github.com/alfoirazabal/ecostatsmod",
+                Updated = WorkshopDate("11 Feb, 2020"),
             });
 
             // asset counter
-            AddMod(new Item(1956926733u, "Asset Information") {
+            AddMod(new Review(1956926733u, "Asset Information") {
                 Affect = Factor.Other,
                 Authors = "Boaz",
                 Catalog = catalog,
@@ -44,7 +88,19 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.ParadoxLauncher,
             });
 
-            AddMod(new Item(1904439843u, "Mayoral City Service Info") {
+            AddMod(new Review(1927186256u, "Problem Info") {
+                Affect = Factor.Other,
+                Authors = "live627",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // no known issues
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.SourceUnavailable,
+                ReleasedDuring = GameVersion.Campus,
+            });
+
+            AddMod(new Review(1904439843u, "Mayoral City Service Info") {
                 Affect = Factor.Other,
                 Authors = "live627",
                 Catalog = catalog,
@@ -62,7 +118,7 @@ namespace AutoRepair.Catalogs {
             // * City Vitals Watch
             // * Watch It
             // * Export Electricity
-            AddMod(new Item(1893036262u, "Mayor's Dashboard v2") {
+            AddMod(new Review(1893036262u, "Mayor's Dashboard v2") {
                 Affect = Factor.Other, // todo: better factors
                 Authors = "Black Defke",
                 Catalog = catalog,
@@ -80,7 +136,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo, incompat with similar mods
-            AddMod(new Item(1875298330u, "Extended Building Info") {
+            AddMod(new Review(1875298330u, "Extended Building Info") {
                 Affect = Factor.BuildingInfo,
                 Authors = "live627",
                 Catalog = catalog,
@@ -106,7 +162,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: make better category for external integration mods?
-            AddMod(new Item(1875697177u, "Integrator: Log Generator") {
+            AddMod(new Review(1875697177u, "Integrator: Log Generator") {
                 Affect = Factor.Other, // todo: better factors
                 Authors = "Lachlan",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -125,14 +181,14 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Campus,
             });
 
-            AddMod(new Item(1804882663u, "Monitor It!") {
+            AddMod(new Review(1804882663u, "Monitor It!") {
                 Affect = Factor.Other,
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs // harmony patch management could be better
+                Flags = ItemFlags.MinorIssues // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Harmony errors in log on game exit; doesn't seem to cause any problems." },
@@ -141,7 +197,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/keallu/CSL-MonitorIt",
             });
 
-            AddMod(new Item(1643902284u, "Watch It!") {
+            AddMod(new Review(1643902284u, "Watch It!") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -154,7 +210,7 @@ namespace AutoRepair.Catalogs {
                     { 576327847u , Status.Incompatible }, // 81 Tiles
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs // harmony patch management could be better
+                Flags = ItemFlags.MinorIssues // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Harmony errors in log on game exit; doesn't seem to cause any problems." },
@@ -166,7 +222,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 Oct, 2019"),
             });
 
-            AddMod(new Item(1556715327u, "Show It!") {
+            AddMod(new Review(1556715327u, "Show It!") {
                 Affect = Factor.BuildingInfo,
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -189,7 +245,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/keallu/CSL-ShowIt",
             });
 
-            AddMod(new Item(1410077595u, "Stats") {
+            AddMod(new Review(1410077595u, "Stats") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "egi",
                 Catalog = catalog,
@@ -204,7 +260,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-Stats",
             });
 
-            AddMod(new Item(1186900508u, "DistrictRCI-continued") {
+            AddMod(new Review(1186900508u, "DistrictRCI-continued") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "cambrium",
                 Catalog = catalog,
@@ -217,7 +273,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 943410067u, // DistrictRCI fix
-                Flags = ItemFlags.MinorBugs // Stats sometimes incorrect (based on user comments)
+                Flags = ItemFlags.MinorIssues // Stats sometimes incorrect (based on user comments)
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Some bugs with the text captions, but the graphs seem more or less correct." },
@@ -226,7 +282,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/TheDogKSP/DistrictRCI",
             });
 
-            AddMod(new Item(1186889659u, "DistrictStats") {
+            AddMod(new Review(1186889659u, "DistrictStats") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "cambrium",
                 Catalog = catalog,
@@ -238,7 +294,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/TheDogKSP/DistrictStats",
             });
 
-            AddMod(new Item(944936527u, "Resources for Districts") {
+            AddMod(new Review(944936527u, "Resources for Districts") {
                 Affect = Factor.Consumption // todo: district factor?
                        | Factor.Production,
                 Authors = "Sherban",
@@ -248,7 +304,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.GreenCities,
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // doesn't cover industries dlc resources
+                      | ItemFlags.MinorIssues // doesn't cover industries dlc resources
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.MassTransit,
                 SourceURL = "https://github.com/Sherbanm/RID/",
@@ -262,7 +318,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(2039486691u, "1133108993 Extended Building Information (1") {
+            AddMod(new Review(2039486691u, "1133108993 Extended Building Information (1") {
                 Affect = Factor.BuildingInfo,
                 Authors = "Tykrane",
                 Catalog = catalog,
@@ -287,7 +343,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/AmaroqOkami/Cities-Skylines-Extended-Building-Info",
             });
 
-            AddMod(new Item(1785774902u, "Transfer Info (beta)") {
+            AddMod(new Review(1785774902u, "Transfer Info (beta)") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "vpoteryaev",
                 Catalog = catalog,
@@ -310,7 +366,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Oct, 2019"),
             });
 
-            AddMod(new Item(1739993783u, "Cargo Info (Fix)") {
+            AddMod(new Review(1739993783u, "Cargo Info (Fix)") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "vpoteryaev",
                 Catalog = catalog,
@@ -335,7 +391,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: warn about network traffic
-            AddMod(new Item(1725845818u, "Mayor´s report for android") {
+            AddMod(new Review(1725845818u, "Mayor´s report for android") {
                 Affect = Factor.Other,
                 Authors = "gadjou",
                 Catalog = catalog,
@@ -352,7 +408,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: likely translation mod
-            AddMod(new Item(1915645035u, "DistrictRCI-continued") {
+            AddMod(new Review(1915645035u, "DistrictRCI-continued") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "xmastoridis",
                 Catalog = catalog,
@@ -366,7 +422,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // Stats sometimes incorrect (based on user comments)
+                      | ItemFlags.MinorIssues // Stats sometimes incorrect (based on user comments)
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Some bugs with the text captions, but the graphs seem more or less correct." },
@@ -375,7 +431,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: likely translation mod
-            AddMod(new Item(1908236993u, "DistrictRCI-continued") {
+            AddMod(new Review(1908236993u, "DistrictRCI-continued") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "xmastoridis",
                 Catalog = catalog,
@@ -389,7 +445,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // Stats sometimes incorrect (based on user comments)
+                      | ItemFlags.MinorIssues // Stats sometimes incorrect (based on user comments)
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Some bugs with the text captions, but the graphs seem more or less correct." },
@@ -397,7 +453,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Campus,
             });
 
-            AddMod(new Item(1133108993u, "Extended Building Information (1.10+)") {
+            AddMod(new Review(1133108993u, "Extended Building Information (1.10+)") {
                 Affect = Factor.BuildingInfo,
                 Authors = "Ellie",
                 Catalog = catalog,
@@ -422,7 +478,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/AmaroqOkami/Cities-Skylines-Extended-Building-Info",
             });
 
-            AddMod(new Item(1072157697u, "Cargo Info") {
+            AddMod(new Review(1072157697u, "Cargo Info") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "Dr. Nya",
                 Catalog = catalog,
@@ -445,7 +501,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/rumkex/Skylines-CargoInfoMod",
             });
 
-            AddMod(new Item(943410067u, "DistrictRCI fix") {
+            AddMod(new Review(943410067u, "DistrictRCI fix") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "billw",
                 Catalog = catalog,
@@ -465,6 +521,35 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 ReplaceWith = 1186900508u, // DistrictRCI-continued
                 SourceURL = "https://github.com/billw2012/DistrictRCI",
+            });
+
+            AddMod(new Review(928988785u, "Extended Building Information") {
+                Affect = Factor.BuildingInfo,
+                Authors = "billw",
+                BrokenBy = GameVersion.Patch_1_7_2_f1,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
+                    { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
+                    { 1556715327u, Status.Incompatible }, // Show It!
+                    { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
+                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 928988785u , Status.Incompatible }, // Extended Building Information (billw)
+                    { 670422128u , Status.Incompatible }, // Extended Building Information (Hedgehog)
+                    { 414469593u , Status.Incompatible }, // Extended Building Information (emf)
+                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                },
+                CompatibleWith = GameVersion.MassTransit,
+                ContinuationOf = 414469593, // Extended Building Information
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking // multiple users report 'object ref not set' errors
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("20 May, 2017"),
+                ReplaceWith = 1875298330u, // Extended Building Info
+                SourceURL = "https://github.com/billw2012/Cities-Skylines-Extended-Building-Info",
+                Updated = WorkshopDate("20 May, 2017"),
             });
         }
     }

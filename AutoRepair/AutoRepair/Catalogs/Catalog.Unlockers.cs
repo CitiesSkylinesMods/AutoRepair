@@ -15,11 +15,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void UnlockersCatalog() {
+        private void UnlockerMods() {
 
             string catalog = "Unlockers";
 
-            AddMod(new Item(1614062928u, "Unlock LandScaping") {
+            AddMod(new Review(1614062928u, "Unlock LandScaping") {
                 Affect = Factor.Unlockers,
                 Authors = "pcfantasy",
                 Catalog = catalog,
@@ -38,7 +38,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("15 Jan, 2019"),
             });
 
-            AddMod(new Item(1567569285u, "Achieve It!") {
+            AddMod(new Review(1567569285u, "Achieve It!") {
                 Affect = Factor.Achievements,
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -59,7 +59,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Mar, 2020"),
             });
             
-            AddMod(new Item(1498036881u, "UltimateMod 2.6 ( Higher Income and More Options )") {
+            AddMod(new Review(1498036881u, "UltimateMod 2.6 ( Higher Income and More Options )") {
                 Affect = Factor.Achievements
                        | Factor.Budget
                        | Factor.Bulldoze
@@ -109,7 +109,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("31 Mar, 2020"),
             });
 
-            AddMod(new Item(1444491969u, "Achievements with Mods") {
+            AddMod(new Review(1444491969u, "Achievements with Mods") {
                 Affect = Factor.Achievements,
                 Authors = "TianBao",
                 Catalog = catalog,
@@ -124,7 +124,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 407055819u, // Mod Achievement Enabler
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // trophy icon doesn't get updated (makes some users think it's not working)
+                      | ItemFlags.MinorIssues // trophy icon doesn't get updated (makes some users think it's not working)
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
@@ -135,7 +135,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // unlocks specific buildings/services, not milestones
-            AddMod(new Item(1424264814u, "YAFU - Yet Another Feature Unlocker") {
+            AddMod(new Review(1424264814u, "YAFU - Yet Another Feature Unlocker") {
                 Affect = Factor.Unlockers,
                 Authors = "C#",
                 Catalog = catalog,
@@ -158,7 +158,7 @@ namespace AutoRepair.Catalogs {
             // This mod is based on and extends the mods:
             // -"EarlyUnlock" https://steamcommunity.com/sharedfiles/filedetails/?id=410614868
             // -"All basic unlocks at the start" https://steamcommunity.com/sharedfiles/filedetails/?id=407162294
-            AddMod(new Item(1242879105u, "Unlock Any Milestone") {
+            AddMod(new Review(1242879105u, "Unlock Any Milestone") {
                 Affect = Factor.Unlockers,
                 Authors = "Ilion",
                 Catalog = catalog,
@@ -182,7 +182,7 @@ namespace AutoRepair.Catalogs {
 
             // Several reported issues with this mod (based on user comment):
             // * laggy (multiple users are reporting this - lots of code running on recurring events!)
-            AddMod(new Item(1237383751u, "Extended Game Options") {
+            AddMod(new Review(1237383751u, "Extended Game Options") {
                 Affect = Factor.Achievements
                        | Factor.Disasters
                        | Factor.Production
@@ -258,7 +258,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // allows uniques to be placed multiple times
-            AddMod(new Item(466834228u, "Not So Unique Buildings") {
+            AddMod(new Review(466834228u, "Not So Unique Buildings") {
                 Affect = Factor.Unlockers,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -273,7 +273,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 Oct, 2018"),
             });
 
-            AddMod(new Item(458519223u, "Unlock All + Wonders & Landmarks") {
+            AddMod(new Review(458519223u, "Unlock All + Wonders & Landmarks") {
                 Affect = Factor.Unlockers,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -295,7 +295,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Apr, 2020"),
             });
 
-            AddMod(new Item(407055819u, "Mod Achievement Enabler") {
+            AddMod(new Review(407055819u, "Mod Achievement Enabler") {
                 Affect = Factor.Achievements,
                 Authors = "extra bad",
                 Catalog = catalog,
@@ -308,7 +308,7 @@ namespace AutoRepair.Catalogs {
                     { 407055819u , Status.Incompatible }, // Mod Achievement Enabler
                 },
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs // trophy icon doesn't get updated (makes some users think it's not working)
+                      | ItemFlags.MinorIssues // trophy icon doesn't get updated (makes some users think it's not working)
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
@@ -330,7 +330,7 @@ namespace AutoRepair.Catalogs {
             // "Repeated construction of landmark buildings"
             // An unaltered clone of Not So Unique Buildings
             // It's not even translated!
-            AddMod(new Item(1137224650u, "重复建设地标建筑") {
+            AddMod(new Review(1137224650u, "重复建设地标建筑") {
                 Affect = Factor.Unlockers,
                 Authors = "回忆时光℡",
                 Catalog = catalog,

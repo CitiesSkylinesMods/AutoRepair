@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void ToolbarCatalog() {
+        private void ToolbarMods() {
 
             string catalog = "Toolbar";
 
-            AddMod(new Item(1597852915u, "More Advanced Toolbar") {
+            AddMod(new Review(1597852915u, "More Advanced Toolbar") {
                 Affect = Factor.Toolbar,
                 Catalog = catalog,
                 Authors = "Dendraspis",
@@ -38,7 +38,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1577882296u, "Resize It!") {
+            AddMod(new Review(1577882296u, "Resize It!") {
                 Affect = Factor.Toolbar,
                 Catalog = catalog,
                 Authors = "Keallu",
@@ -57,7 +57,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
+                      | ItemFlags.MinorIssues, // harmony patch management could be better
                 SourceURL = "https://github.com/keallu/CSL-ResizeIt",
             });
         }

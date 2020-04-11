@@ -16,11 +16,77 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
-        private void UnsortedCatalog() {
+        private void UnsortedMods() {
 
             string catalog = "Unsorted";
 
-            AddMod(new Item(2044145894u, "Dropouts Sunset Fix") {
+            AddMod(new Review(932490392u, "Track My Time") {
+                Affect = Factor.Other,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("25 May, 2017"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-TrackMyTime",
+                Updated = WorkshopDate("25 May, 2017"),
+            });
+
+            AddMod(new Review(2055972178u, "Custom Zone Mixer") {
+                Affect = Factor.Zoning,
+                Authors = "Klyte45",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2055972178u, Status.Incompatible }, // Custom Zone Mixer
+                    { 1800844556u, Status.Incompatible }, // Zone Mixer 0 (Beta)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 1800844556u, // Zone Mixer 0 (Beta)
+                Flags = ItemFlags.SaveAltering
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Tutorial video explains how to use it, and also how to safely remove it without breaking save game: https://www.youtube.com/watch?v=_MAeV4mkAV8" },
+                },
+                Published = WorkshopDate("10 Apr, 2020"),
+                SourceURL = "https://github.com/klyte45/ZoneMixer",
+                Updated = WorkshopDate("11 Apr, 2020"),
+                UserModInspected = true,
+            });
+
+            AddMod(new Review(1800844556u, "Zone Mixer 0 (Beta)") {
+                Affect = Factor.Zoning,
+                Authors = "Klyte45",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2055972178u, Status.Incompatible }, // Custom Zone Mixer
+                    { 1800844556u, Status.Incompatible }, // Zone Mixer 0 (Beta)
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop // removed ~10 Apr 2020
+                      | ItemFlags.Obsolete // replacement version available
+                      | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("14 Jul, 2019"), // guess based on git repo creation date
+                ReplaceWith = 2055972178u, // Custom Zone Mixer
+                SourceURL = "https://github.com/klyte45/ZoneMixer",
+                Updated = WorkshopDate("Jul 16, 2019"), // guess based on github commits
+                UserModInspected = true,
+            });
+
+            AddMod(new Review(2053655383u, "Pretty Pixel's Trump Tweets") {
+                Affect = Factor.UI,
+                Authors = "Gerald",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // incompat with any chirper removers
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("9 Apr, 2020"),
+                Updated = WorkshopDate("9 Apr, 2020"),
+            });
+
+            AddMod(new Review(2044145894u, "Dropouts Sunset Fix") {
                 Authors = "Bobinator The Destroyer!",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -37,7 +103,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("1 Apr, 2020"),
             });
 
-            AddMod(new Item(2040656402u, "Harmony") {
+            AddMod(new Review(2040656402u, "Harmony") {
                 Affect = Factor.Other,
                 Authors = "boformer",
                 Catalog = catalog,
@@ -53,92 +119,9 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("31 Mar, 2020"),
             });
 
-            AddMod(new Item(2040218778u, "ScaleUI") {
-                Affect = Factor.Other, // todo
-                Authors = "*",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // likely incompatible with TMPE
-                    { 2040218778u, Status.Incompatible }, // ScaleUI
-                    { 2009172305u, Status.Incompatible }, // EPTUI TLM Integration (Beta)
-                    { 802489150u , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
-                    { 419090722u , Status.Incompatible }, // Mod Corral
-                    { 411164732u , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
-                    { 409338401u , Status.Incompatible }, // ScaleUI (beta)
-                    { 407225523u , Status.Incompatible }, // TextScaleMod
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 409338401u, // ScaleUI (beta)
-                Flags = ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Can break UI of other mods during scaling (close buttons move, panels go off-screen, etc.)" },
-                    { NOTE, "Breaks UI of all versions of Extended Public Transport UI mods." },
-                },
-                ReleasedDuring = GameVersion.SunsetHarbor,
-                SourceURL = "https://github.com/joeyjojojunior/skylines-scaleui",
-            });
-
-            AddMod(new Item(409338401u, "ScaleUI (beta)") {
-                Affect = Factor.Other, // todo
-                Authors = "permutation",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 2040218778u, Status.Incompatible }, // ScaleUI
-                    { 2009172305u, Status.Incompatible }, // EPTUI TLM Integration (Beta)
-                    { 802489150u , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
-                    { 419090722u , Status.Compatible   }, // Mod Corral
-                    { 411164732u , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
-                    { 409338401u , Status.Incompatible }, // ScaleUI (beta)
-                    { 407225523u , Status.Incompatible }, // TextScaleMod
-                },
-                ContinuationOf = 407225523u, // TextScaleMod
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.Obsolete // new ver avail
-                      | ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "To reset scale to default, hit Ctrl+0 (zero)." },
-                },
-                ReplaceWith = 2040218778u, // ScaleUI
-                SourceURL = "https://github.com/githubpermutation/skylines-scaleui",
-            });
-
-            AddMod(new Item(419090722u, "Mod Corral") {
-                Affect = Factor.Other, // todo
-                Authors = "(unknown)",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 2040218778u, Status.Incompatible }, // ScaleUI
-                    { 409338401u , Status.Compatible   }, // ScaleUI (beta)
-                    { 407225523u , Status.Incompatible }, // TextScaleMod
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.SourceUnavailable,
-            });
-
-            AddMod(new Item(407225523u, "TextScaleMod") {
-                Affect = Factor.Other, // todo
-                Authors = "(unknown)",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 2040218778u, Status.Incompatible }, // ScaleUI
-                    { 2009172305u, Status.Incompatible }, // EPTUI TLM Integration (Beta)
-                    { 419090722u , Status.Incompatible }, // Mod Corral
-                    { 412149127u , Status.Incompatible }, // Font Selector
-                    { 409338401u , Status.Incompatible }, // ScaleUI (beta)
-                    { 407225523u , Status.Incompatible }, // TextScaleMod
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.SourceUnavailable,
-            });
 
             // looks like translated clone of Favorite Cims mod
-            AddMod(new Item(1985556066u, "4546") {
+            AddMod(new Review(1985556066u, "4546") {
                 Affect = Factor.Other,
                 Authors = "暮",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -154,20 +137,8 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 426460372u, // Favorite Cims
             });
 
-            AddMod(new Item(1927186256u, "Problem Info") {
-                Affect = Factor.Other,
-                Authors = "live627",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // no known issues
-                },
-                CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.Campus,
-            });
-
             // likely incompat with Customize It Extended
-            AddMod(new Item(1865667356u, "Twitch Citizens") {
+            AddMod(new Review(1865667356u, "Twitch Citizens") {
                 Affect = Factor.Naming,
                 Authors = "μohnytoxic™",
                 Catalog = catalog,
@@ -184,7 +155,7 @@ namespace AutoRepair.Catalogs {
 
             // Apparently creates some sort of biogas harvesting building that's
             // dependent on the number of plants in close proximity.
-            AddMod(new Item(1920431318u, "Biogas-pw") {
+            AddMod(new Review(1920431318u, "Biogas-pw") {
                 Affect = Factor.Other,
                 Authors = "dolaritar",
                 Catalog = catalog,
@@ -197,12 +168,12 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.EditorBreaking
                       | ItemFlags.GameBreaking
-                      | ItemFlags.SaveChanging
+                      | ItemFlags.SaveAltering
                       | ItemFlags.SourceUnavailable,
             });
 
             // replaces bus shelters, likely incompat with similar mods
-            AddMod(new Item(1900151000u, "替换为不锈钢公交候车亭") {
+            AddMod(new Review(1900151000u, "替换为不锈钢公交候车亭") {
                 Affect = Factor.HideRemove
                        | Factor.Props,
                 Authors = "ZEIR",
@@ -215,7 +186,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gist.github.com/OwiHH-NC/4cefbd1fbc7ff7135c59",
             });
 
-            AddMod(new Item(1899943042u, "No Scaffolding Animation") {
+            AddMod(new Review(1899943042u, "No Scaffolding Animation") {
                 Affect = Factor.Construction,
                 Authors = "mshsheng",
                 Catalog = catalog,
@@ -231,7 +202,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // mesures performance based on time it takes for a game day, and fps
-            AddMod(new Item(1899449152, "Game Day Timer") {
+            AddMod(new Review(1899449152, "Game Day Timer") {
                 Affect = Factor.Other,
                 Authors = "rcav8tr",
                 Catalog = catalog,
@@ -244,7 +215,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/rcav8tr/GameDayTimer",
             });
 
-            AddMod(new Item(1859100867u, "Klyte's Framework 1.1") {
+            AddMod(new Review(1859100867u, "Klyte's Framework 1.1") {
                 Affect = Factor.Textures,
                 Authors = "Klyte45",
                 Catalog = catalog,
@@ -256,7 +227,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Bundle of Chinese localised mods - will break your game
-            AddMod(new Item(1812384654u, "(no name specified)") {
+            AddMod(new Review(1812384654u, "(no name specified)") {
                 Affect = Factor.Other,
                 Authors = "打的好不如排的好",
                 BrokenBy = GameVersion.DefaultRelease,
@@ -268,63 +239,7 @@ namespace AutoRepair.Catalogs {
                 SuppressVersionWarnings = true,
             });
 
-            AddMod(new Item(1800844556u, "Zone Mixer 0 (Beta)") {
-                Affect = Factor.Zoning,
-                Authors = "Klyte45",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/klyte45/ZoneMixer",
-            });
-
-            AddMod(new Item(1799667916u, "UX Mod - OSD & Keybinds") {
-                Affect = Factor.Other,
-                Authors = "kvakvs",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() { },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/kvakvs/Skylines-UX",
-            });
-
-            // sounds like bit of a nightmare
-            AddMod(new Item(1769420886u, "Panel Hook (beta) for modders") {
-                Affect = Factor.BuildingInfo
-                       | Factor.VehicleInfo,
-                Authors = "vpoteryaev",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // tmpe?
-                    // snooper?
-                    // klyte mods?
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Author states they no longer play C:SL; this mod will not be updated." },
-                },
-                Published = WorkshopDate("14 Jun, 2019"),
-                SourceURL = "https://github.com/vpoteryaev-cs-mods/PanelHook",
-                Updated = WorkshopDate("11 Jul, 2019"),
-            });
-
-            AddMod(new Item(1768810491u, "Measure It!") {
-                Affect = Factor.Other,
-                Authors = "Keallu",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs // harmony patch management could be better
-                      | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Campus,
-                SourceURL = "https://github.com/keallu/CSL-MeasureIt",
-            });
-
-
-
-            AddMod(new Item(1749971558u, "Real Time Offline") {
+            AddMod(new Review(1749971558u, "Real Time Offline") {
                 Affect = Factor.Aging
                        | Factor.Boredom
                        | Factor.Construction
@@ -397,7 +312,7 @@ namespace AutoRepair.Catalogs {
                 SuppressOlderReplacementWarning = true,
             });
 
-            AddMod(new Item(1706703944u, "More Outside Interaction") {
+            AddMod(new Review(1706703944u, "More Outside Interaction") {
                 Affect = Factor.Employment
                        | Factor.Service,
                 Authors = "pcfantasy",
@@ -417,7 +332,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/pcfantasy/MoreOutsideInteraction",
             });
 
-            AddMod(new Item(1614061108u, "Real Construction") {
+            AddMod(new Review(1614061108u, "Real Construction") {
                 Affect = Factor.Construction
                        | Factor.Consumption
                        | Factor.DemandRCI
@@ -447,7 +362,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/pcfantasy/RealConstruction",
             });
 
-            AddMod(new Item(1383456057u, "Shicho") {
+            AddMod(new Review(1383456057u, "Shicho") {
                 Affect = Factor.BuildingInfo
                        | Factor.Camera
                        | Factor.Health
@@ -587,7 +502,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/SETNAHQ/Shicho",
             });
 
-            AddMod(new Item(1420955187u, "Real Time") {
+            AddMod(new Review(1420955187u, "Real Time") {
                 Affect = Factor.Aging
                        | Factor.Boredom
                        | Factor.Construction
@@ -650,6 +565,7 @@ namespace AutoRepair.Catalogs {
                     { 466158459u , Status.Compatible   }, // Building Themes
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                     // other
+                    { 2048266761u, Status.MinorIssues  }, // Building Usage
                     { 1801953480u, Status.MinorIssues  }, // Natural Disasters Overhaul (endless thunderstorms)
                     { 1412844620u, Status.Compatible   }, // Realistic Walking Speed
                     { 927293560u , Status.Compatible   }, // Geli-Districts v3.0
@@ -661,6 +577,7 @@ namespace AutoRepair.Catalogs {
                 Languages = new[] { "de", "en", "es", "fr", "it", "ja", "ko", "pl", "pt", "ru", "zh" },
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The 'Better citizen aging' option has a big influence on how education works." },
+                    { 2048266761u, "[Mod: Building Usage] Building Usage mod does not account for worker variations due to Real Time shifts." },
                     { 1911736890u, "[Mod: District Service Limit] Disable its citizen-limiting options to make compatible with Real Time." },
                     { 1801953480u, "[Mod: Natural Disasters Overhaul] Real Time changes time flow, causuing excessive thunder storms." },
                     { 1204126182u, "[Mod: Ploppable RICO] Old versions of the mod sometimes report zero construction time which crashes Real Time." },
@@ -675,7 +592,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/dymanoid/RealTime",
             });
 
-            AddMod(new Item(1386697922u, "Garbage Bin Controller") {
+            AddMod(new Review(1386697922u, "Garbage Bin Controller") {
                 Affect = Factor.Props
                        | Factor.Emptying,
                 Authors = "Arnold J. Rimmer, TPB",
@@ -700,7 +617,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // runs a load of code in OnUpdate = lag.
-            AddMod(new Item(878991312u, "Prop it Up! 1.4.4") {
+            AddMod(new Review(878991312u, "Prop it Up! 1.4.4") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Props
                        | Factor.Trees,
@@ -724,37 +641,22 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Judazzz/CitiesSkylines-PropItUp",
             });
 
-            AddMod(new Item(1263262833u, "Pollution Solution") {
-                Affect = Factor.Pollution,
-                Authors = "Shadow Link",
-                Catalog = catalog,
-                Flags = ItemFlags.SourceAvailable,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo
-                },
-                SourceURL = "https://github.com/rkanter/PollutionSolution/",
-            });
-
             // Known issues (based on author comment):
             // * Cannot see values that you set the offsets for
             // * Unable to save/load option settings
             // * Does not update visual budget panel, but does update budget in the background
             // Was previously named "Water and Electricity Controller".
-            AddMod(new Item(1239683428u, "Budget Controller") {
+            AddMod(new Review(1239683428u, "Budget Controller") {
                 Affect = Factor.Budget,
                 Authors = "wboler05",
                 Catalog = catalog,
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // todo
                 },
                 SourceURL = "https://github.com/wboler05/CS-BudgetController",
             });
-
-
-
-
         }
     }
 }

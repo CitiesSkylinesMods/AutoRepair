@@ -14,11 +14,25 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void SkinEnvironmentCatalog() {
+        private void SkinEnvironmentMods() {
 
             string catalog = "Skin.Environment";
 
-            AddMod(new Item(1899640536u, "Theme Mixer 2") {
+            AddMod(new Review(2053637074u, "Swinden-Map Theme Mix") {
+                Affect = Factor.Environment
+                       | Factor.Textures,
+                Authors = "rlas",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1899640536u, Status.Required    }, // Theme Mixer 2
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceBundled,
+                Published = WorkshopDate("9 Apr, 2020"),
+                Updated = WorkshopDate("9 Apr, 2020"),
+            });
+
+            AddMod(new Review(1899640536u, "Theme Mixer 2") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "TPB",
@@ -68,7 +82,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1445375997u, "Theme Mixer 汉化版2的") {
+            AddMod(new Review(1445375997u, "Theme Mixer 汉化版2的") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "TIMIYANG",
@@ -114,7 +128,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("19 Jul, 2018"),
             });
 
-            AddMod(new Item(1283010953u, "TerrainTextureReplacer Reupload") {
+            AddMod(new Review(1283010953u, "TerrainTextureReplacer Reupload") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "Patrick Bateman",
@@ -141,7 +155,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Jan, 2018"),
             });
 
-            AddMod(new Item(920832749u, "TerrainTextureReplacer") {
+            AddMod(new Review(920832749u, "TerrainTextureReplacer") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "奴はやつはし",
@@ -170,7 +184,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("7 May, 2017"),
             });
 
-            AddMod(new Item(877394445u, "TerrainTextureReplacer") {
+            AddMod(new Review(877394445u, "TerrainTextureReplacer") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "Roenzi",
@@ -198,7 +212,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Apparently a rewrite, but still game breaking. Suspect it might just be a clone.
-            AddMod(new Item(811664974u, "TTR - Terrain Texture Replacer") {
+            AddMod(new Review(811664974u, "TTR - Terrain Texture Replacer") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "Penrose",
@@ -226,7 +240,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Original "Theme Mixer" mod
-            AddMod(new Item(775021554u, "Theme Mixer [OBSOLETE (Use Theme Mixer 2)]") {
+            AddMod(new Review(775021554u, "Theme Mixer [OBSOLETE (Use Theme Mixer 2)]") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "TPB",
@@ -261,7 +275,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Jun, 2018"),
             });
 
-            AddMod(new Item(574674741u, "Terrain Themes Mod [OBSOLETE]") {
+            AddMod(new Review(574674741u, "Terrain Themes Mod [OBSOLETE]") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "boformer, TPB",
@@ -300,7 +314,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Jun, 2018"),
             });
 
-            AddMod(new Item(416966387u, "Terrain Texture Replacer") {
+            AddMod(new Review(416966387u, "Terrain Texture Replacer") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "hyperdrive_engage",
@@ -338,7 +352,7 @@ namespace AutoRepair.Catalogs {
             // All of these are obsolete as base game introduced map themes.
             // TODO: Try and find replacements if time permits.
 
-            AddMod(new Item(612385904u, "Tatra Mountains Terrain Theme") {
+            AddMod(new Review(612385904u, "Tatra Mountains Terrain Theme") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "Ennedi, TPB",
@@ -355,7 +369,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("31 Jan, 2016"),
             });
 
-            AddMod(new Item(612120528u, "Basalt Rock Terrain Theme") {
+            AddMod(new Review(612120528u, "Basalt Rock Terrain Theme") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "Ennedi, TPB",
@@ -372,7 +386,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("30 Jan, 2016"),
             });
 
-            AddMod(new Item(583748068u, "Terrain Theme 'Sand as Snow' for partially snowy maps") {
+            AddMod(new Review(583748068u, "Terrain Theme 'Sand as Snow' for partially snowy maps") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "TPB",
@@ -388,7 +402,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1522846208u, // Eastern Tundra Theme
             });
 
-            AddMod(new Item(582425905u, "Terrain Theme: Heavy Snow for Ski, Arctic, and Glacier Maps") {
+            AddMod(new Review(582425905u, "Terrain Theme: Heavy Snow for Ski, Arctic, and Glacier Maps") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "TPB",
@@ -404,7 +418,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 782343087u, // Väterchen Frost - Winter theme
             });
 
-            AddMod(new Item(576787837u, "Celtic Moorlands Terrain Theme") {
+            AddMod(new Review(576787837u, "Celtic Moorlands Terrain Theme") {
                 Affect = Factor.Environment
                        | Factor.Textures,
                 Authors = "TPB",

@@ -41,10 +41,12 @@
     <Compile Include="Catalogs\Catalog.Converters.cs" />
     <Compile Include="Catalogs\Catalog.Disasters.cs" />
     <Compile Include="Catalogs\Catalog.Editor.cs" />
+    <Compile Include="Catalogs\Catalog.OutsideConnections.cs" />
     <Compile Include="Catalogs\Catalog.Pollution.cs" />
     <Compile Include="Catalogs\Catalog.Services.cs" />
-    <Compile Include="Catalogs\Catalog.Skin.Roads.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.Networks.cs" />
     <Compile Include="Catalogs\Catalog.Stats.cs" />
+    <Compile Include="Catalogs\Catalog.Skin.UI.cs" />
     <Compile Include="Catalogs\Catalog.Unlimiters.cs" />
     <Compile Include="Catalogs\Catalog.Unlockers.cs" />
     <Compile Include="Catalogs\Vanilla.cs" />
@@ -85,7 +87,8 @@
     <Compile Include="Catalogs\Catalog.Repair.cs" />
     <Compile Include="Catalogs\Catalog.VehicleEffects.cs" />
     <Compile Include="Catalogs\_Catalog.DumpToCSV.cs" />
-    <Compile Include="Descriptors\Item.cs" />
+    <Compile Include="Descriptors\Review.cs" />
+    <Compile Include="Descriptors\Subscription.cs" />
     <Compile Include="Enums\DLCs.cs" />
     <Compile Include="Enums\Factor.cs" />
     <Compile Include="Enums\ItemFlags.cs" />

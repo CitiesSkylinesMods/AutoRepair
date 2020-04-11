@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void VanillaCatalog() {
+        private void VanillaMods() {
 
             string catalog = "Vanilla";
 
-            AddMod(new Item(Vanilla.HardMode, "Hard Mode (bundled with Cities: Skylines)") {
+            AddMod(new Review(Vanilla.HardMode, "Hard Mode (bundled with Cities: Skylines)") {
                 Affect = Factor.Construction
                        | Factor.BuildingLevel
                        | Factor.DemandRCI
@@ -50,7 +50,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Active,
             });
 
-            AddMod(new Item(Vanilla.UnlimitedMoney, "Unlimited Money (bundled with Cities: Skylines)") {
+            AddMod(new Review(Vanilla.UnlimitedMoney, "Unlimited Money (bundled with Cities: Skylines)") {
                 Affect = Factor.Budget
                        | Factor.Construction
                        | Factor.MaintenanceCost
@@ -87,7 +87,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Active,
             });
 
-            AddMod(new Item(Vanilla.UnlimitedOilAndOre, "Unlimited Oil and Ore (bundled with Cities: Skylines)") {
+            AddMod(new Review(Vanilla.UnlimitedOilAndOre, "Unlimited Oil and Ore (bundled with Cities: Skylines)") {
                 Affect = Factor.Consumption
                        | Factor.Production,
                 Authors = "ColossalOrder",
@@ -101,7 +101,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Active,
             });
 
-            AddMod(new Item(Vanilla.UnlimitedSoil, "Unlimited Soil (bundled with Cities: Skylines)") {
+            AddMod(new Review(Vanilla.UnlimitedSoil, "Unlimited Soil (bundled with Cities: Skylines)") {
                 Affect = Factor.Environment,
                 Authors = "ColossalOrder",
                 Catalog = catalog,
@@ -113,7 +113,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Active,
             });
 
-            AddMod(new Item(Vanilla.UnlockAll, "Unlock All (bundled with Cities: Skylines)") {
+            AddMod(new Review(Vanilla.UnlockAll, "Unlock All (bundled with Cities: Skylines)") {
                 Affect = Factor.Environment,
                 Authors = "ColossalOrder",
                 Catalog = catalog,

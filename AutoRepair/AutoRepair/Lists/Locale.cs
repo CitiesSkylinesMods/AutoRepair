@@ -44,6 +44,7 @@ namespace AutoRepair.Lists {
             { "ru"   , "Русский язык" }, // russian
             { "sv-se", "svenska" }, // swedish
             { "th"   , "ภาษาไทย" }, // thai
+            { "tl-ph", "Wikang Filipino" }, // wikang filipino
             { "tr"   , "Türkçe" }, // turkish
             { "tw"   , "國語" }, // taiwanese
             { "uk"   , "Українська" }, // ukrainian

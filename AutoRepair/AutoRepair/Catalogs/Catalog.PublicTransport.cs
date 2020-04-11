@@ -15,12 +15,12 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void PublicTransportCatalog() {
+        private void PublicTransportMods() {
 
             string catalog = "PublicTransport";
 
             // looks like update to Extended Public Transport UI, that's compatibile or merged with TLM
-            AddMod(new Item(2009172305u, "EPTUI TLM Integration (Beta)") {
+            AddMod(new Review(2009172305u, "EPTUI TLM Integration (Beta)") {
                 Affect = Factor.TransportLines,
                 Authors = "Arturj07",
                 Catalog = catalog,
@@ -42,7 +42,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: check if this causes stuck cims
-            AddMod(new Item(1776052533u, "Stops & Stations") {
+            AddMod(new Review(1776052533u, "Stops & Stations") {
                 Affect = Factor.Boredom
                        | Factor.TransportLines
                        | Factor.TransportPreference,
@@ -67,7 +67,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/dymanoid/StopsAndStations",
             });
 
-            AddMod(new Item(1766839841u, "Anxiety Reducer") {
+            AddMod(new Review(1766839841u, "Anxiety Reducer") {
                 Affect = Factor.Boredom
                        | Factor.TransportLines
                        | Factor.TransportPreference,
@@ -89,7 +89,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1394468624u, "Advanced Stop Selection (ex MTSE)") {
+            AddMod(new Review(1394468624u, "Advanced Stop Selection (ex MTSE)") {
                 Affect = Factor.TransportLines,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -104,7 +104,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/bloodypenguin/Skylines-ImprovedStopSelection",
             });
 
-            AddMod(new Item(1393820309u, "Ticket Price Customizer") {
+            AddMod(new Review(1393820309u, "Ticket Price Customizer") {
                 Affect = Factor.Revenue
                        | Factor.TransportLines
                        | Factor.TransportPreference,
@@ -126,7 +126,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/bloodypenguin/Skylines-TicketPriceCustomizer",
             });
 
-            AddMod(new Item(1312767991u, "Transport Lines Manager 13.1") {
+            AddMod(new Review(1312767991u, "Transport Lines Manager 13.1") {
                 Affect = Factor.Boredom
                        | Factor.Naming
                        | Factor.TransportLines
@@ -183,7 +183,7 @@ namespace AutoRepair.Catalogs {
             // Based on user comments some major bugs with this:
             // * Causes problems with route creation
             // * Often adds too many vehicles (even after waiting for it to settle after few day/night cycles)
-            AddMod(new Item(1218121337u, "Automatic Vehicle Numbers Adjuster") {
+            AddMod(new Review(1218121337u, "Automatic Vehicle Numbers Adjuster") {
                 Affect = Factor.TransportLines,
                 Authors = "Overhatted",
                 Catalog = catalog,
@@ -195,7 +195,7 @@ namespace AutoRepair.Catalogs {
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Notes = new Dictionary<ulong, string>() {
@@ -205,7 +205,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://cld.pt/dl/download/0d0cc60b-6568-4618-90f5-ed687b9d8eed/AutomaticVehicleNumbersAdjuster.zip",
             });
 
-            AddMod(new Item(928128676, "Improved Public Transport 2") {
+            AddMod(new Review(928128676, "Improved Public Transport 2") {
                 Affect = Factor.Boredom
                        | Factor.Naming
                        | Factor.TransportLines
@@ -250,9 +250,11 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 1312767991u, "[Mod: Transport Lines Manager] Massive lag when IPT and TLM are used together. Unsubscribe one of them." },
+                    { 472128528u , "[Mod: Larger Footprints] Causes 'Depot not found' errors." },
                 },
-                ReleasedDuring = GameVersion.MassTransit,
+                Published = WorkshopDate("18 May, 2017"),
                 SourceURL = "https://github.com/bloodypenguin/ImprovedPublicTransport",
+                Updated = WorkshopDate("1 Apr, 2020"),
             });
 
             /*
@@ -264,7 +266,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // old version
-            AddMod(new Item(929654063u, "Transport Lines Manager Reborn 8.0.3") {
+            AddMod(new Review(929654063u, "Transport Lines Manager Reborn 8.0.3") {
                 Affect = Factor.Boredom
                        | Factor.Naming
                        | Factor.TransportLines
@@ -324,13 +326,14 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/klyte45/TransportLinesManager",
             });
 
-            AddMod(new Item(714056356u, "Transport Line Rendering Fix") {
+            AddMod(new Review(714056356u, "Transport Line Rendering Fix") {
                 Affect = Factor.TransportLines
                        | Factor.Rendering,
                 Authors = "BloodyPenguin",
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
@@ -344,7 +347,7 @@ namespace AutoRepair.Catalogs {
 
 
             // old version
-            AddMod(new Item(424106600u, "Improved Public Transport (IPT)") {
+            AddMod(new Review(424106600u, "Improved Public Transport (IPT)") {
                 Affect = Factor.Boredom
                        | Factor.Naming
                        | Factor.TransportLines
@@ -399,7 +402,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // old version
-            AddMod(new Item(408875519u, "Transport Lines Manager") {
+            AddMod(new Review(408875519u, "Transport Lines Manager") {
                 Affect = Factor.Boredom
                        | Factor.Naming
                        | Factor.TransportLines

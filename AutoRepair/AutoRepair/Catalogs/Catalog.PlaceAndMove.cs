@@ -15,11 +15,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
-        private void PlaceAndMoveCatalog() {
+        private void PlaceAndMoveMods() {
 
             string catalog = "PlaceAndMove";
 
-            AddMod(new Item(2030755273u, "Automatic Pedestrian Bridge Builder [PRE ALPHA]") {
+            AddMod(new Review(2030755273u, "Automatic Pedestrian Bridge Builder [PRE ALPHA]") {
                 Affect = Factor.Tools
                        | Factor.Toolbar,
                 Authors = "kian.zarrin",
@@ -33,7 +33,7 @@ namespace AutoRepair.Catalogs {
 
             // for creating intersections
             // No detours used!! Compat with basically everything.
-            AddMod(new Item(1925527132u, "Advanced Road Tools") {
+            AddMod(new Review(1925527132u, "Advanced Road Tools") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "amamlya, VictoriaCity, pcfantasy",
                 Catalog = catalog,
@@ -45,7 +45,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/pcfantasy/AdvancedRoadTools",
             });
 
-            AddMod(new Item(1902022083u, "TerrainRiverTool") {
+            AddMod(new Review(1902022083u, "TerrainRiverTool") {
                 Affect = Factor.PlaceAndMove, // todo: add terrain factor
                 Authors = "eelcobaas",
                 Catalog = catalog,
@@ -56,7 +56,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // map editor mod, also works in-game
-            AddMod(new Item(1894371878u, "TotalTerrainTool") {
+            AddMod(new Review(1894371878u, "TotalTerrainTool") {
                 Affect = Factor.PlaceAndMove, // todo: add terrain factor
                 Authors = "eelcobaas",
                 Catalog = catalog,
@@ -66,7 +66,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1890830956u, "Undo It!") {
+            AddMod(new Review(1890830956u, "Undo It!") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Strad",
                 Catalog = catalog,
@@ -87,7 +87,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Strdate/UndoMod",
             });
 
-            AddMod(new Item(1844442251u, "Fine Road Tool 2.0.3") {
+            AddMod(new Review(1844442251u, "Fine Road Tool 2.0.3") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Klyte45",
                 Catalog = catalog,
@@ -114,7 +114,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/klyte45/CS-FineRoadTool",
             });
 
-            AddMod(new Item(1844440354u, "Fine Road Anarchy 2") {
+            AddMod(new Review(1844440354u, "Fine Road Anarchy 2") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Klyte45",
                 Catalog = catalog,
@@ -143,7 +143,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/klyte45/CS-FineRoadAnarchy",
             });
 
-            AddMod(new Item(1783307723u, "Zone It!") {
+            AddMod(new Review(1783307723u, "Zone It!") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Zoning,
                 Authors = "Keallu",
@@ -159,7 +159,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: check if source still obfu
-            AddMod(new Item(1761648213u, "More Advanced District Snapping") {
+            AddMod(new Review(1761648213u, "More Advanced District Snapping") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Dendraspis",
                 Catalog = catalog,
@@ -170,7 +170,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1691909129u, "Rotate Brush") {
+            AddMod(new Review(1691909129u, "Rotate Brush") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "TPB",
                 Catalog = catalog,
@@ -185,7 +185,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1677913611u, "Smart Intersection Builder") {
+            AddMod(new Review(1677913611u, "Smart Intersection Builder") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Strad",
                 Catalog = catalog,
@@ -210,7 +210,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Strdate/SmartIntersections",
             });
 
-            AddMod(new Item(1645781000u, "Elektrix's Road Tools 2.91") {
+            AddMod(new Review(1645781000u, "Elektrix's Road Tools 2.91") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Elektrix",
                 Catalog = catalog,
@@ -228,7 +228,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1625704117u, "Roundabout Builder") {
+            AddMod(new Review(1625704117u, "Roundabout Builder") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Strad",
                 Catalog = catalog,
@@ -253,7 +253,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Strdate/AutomaticRoundaboutBuilder",
             });
 
-            AddMod(new Item(1619685021u, "Move It 2.7.0") {
+            AddMod(new Review(1619685021u, "Move It 2.7.0") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Quboid",
                 Catalog = catalog,
@@ -271,10 +271,12 @@ namespace AutoRepair.Catalogs {
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 924884948u , Status.Compatible   }, // Plop the Growables
                     { 787611845u , Status.Recommended  }, // Prop Snapping
                     { 766190099u , Status.Incompatible }, // Move It (original)
                     { 658653260u , Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 553184329u , Status.Incompatible }, // Sharp Junction Angles
+                    { 503147777u , Status.Compatible   }, // Moledozer
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -284,7 +286,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Quboid/CS-MoveIt",
             });
 
-            AddMod(new Item(1612012531u, "Net Picker 2.0") {
+            AddMod(new Review(1612012531u, "Net Picker 2.0") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Toolbar, // toolbar altering mods can adversely affect it
                 Authors = "Elektrix",
@@ -311,7 +313,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Might cause issues with TM:PE - short segments entering junctions causes AI issues
-            AddMod(new Item(1586027591u, "Tiny Segments") {
+            AddMod(new Review(1586027591u, "Tiny Segments") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Quboid",
                 Catalog = catalog,
@@ -333,7 +335,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1440928803u, "Parallel Road Tool") {
+            AddMod(new Review(1440928803u, "Parallel Road Tool") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "S__T",
                 Catalog = catalog,
@@ -357,7 +359,7 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 1400711138u, // [BETA] Parallel Road Tool
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Languages = new[] { "zh-cn", "nl", "en", "fr", "de", "it", "ja", "pt", "ru", "es", },
@@ -365,7 +367,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
             });
 
-            AddMod(new Item(1400711138u, "[BETA] Parallel Road Tool") {
+            AddMod(new Review(1400711138u, "[BETA] Parallel Road Tool") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "S__T",
                 Catalog = catalog,
@@ -388,7 +390,7 @@ namespace AutoRepair.Catalogs {
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Languages = new[] { "zh-cn", "nl", "en", "fr", "de", "it", "ja", "pt", "ru", "es", },
@@ -397,7 +399,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
             });
 
-            AddMod(new Item(1393797695u, "Touch This! Tool 3") {
+            AddMod(new Review(1393797695u, "Touch This! Tool 3") {
                 Affect = Factor.Pathfinder // may chance how pathfinder relates to buildings
                        | Factor.PlaceAndMove
                        | Factor.TransportLines, // can break transport lines
@@ -433,7 +435,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(2045014295u, "Move It! 移动它 中文版") {
+            AddMod(new Review(2045014295u, "Move It! 移动它 中文版") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Yuuki",
                 Catalog = catalog,
@@ -466,7 +468,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("2 Apr, 2020"),
             });
 
-            AddMod(new Item(2043038271u, "Fine Road Anarchy") {
+            AddMod(new Review(2043038271u, "Fine Road Anarchy") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "jorgesatoor",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -510,7 +512,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("1 Apr, 2020"),
             });
 
-            AddMod(new Item(1895443005u, "Fine Road Anarchy 2 汉化版") {
+            AddMod(new Review(1895443005u, "Fine Road Anarchy 2 汉化版") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Catnip.",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -538,7 +540,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1844440354u, // Fine Road Anarchy 2
             });
 
-            AddMod(new Item(1895440521u, "Fine Road Tool 2 汉化版") {
+            AddMod(new Review(1895440521u, "Fine Road Tool 2 汉化版") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Catnip.",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -566,7 +568,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1844442251u, // Fine Road Tool 2.0.3
             });
 
-            AddMod(new Item(1892174866u, "MoveIt2.6汉化版") {
+            AddMod(new Review(1892174866u, "MoveIt2.6汉化版") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Catnip.",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -595,7 +597,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1619685021u, // Move It 2.7.1
             });
 
-            AddMod(new Item(1866239503u, "MOVE IT Sakuya16个人汉化版") {
+            AddMod(new Review(1866239503u, "MOVE IT Sakuya16个人汉化版") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Izayoi _Sakuya16",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -624,7 +626,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1619685021u, // Move It 2.7.1
             });
 
-            AddMod(new Item(1857894421u, "766190099_Move_It_") {
+            AddMod(new Review(1857894421u, "766190099_Move_It_") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "r.heikens",
                 BrokenBy = GameVersion.Industries,
@@ -655,7 +657,7 @@ namespace AutoRepair.Catalogs {
                 SuppressVersionWarnings = true,
             });
 
-            AddMod(new Item(1856282754u, "MoveIt 汉化版") {
+            AddMod(new Review(1856282754u, "MoveIt 汉化版") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "TIMIYANG",
                 Catalog = catalog,
@@ -681,7 +683,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1619685021u, // Move It (current stable release)
             });
 
-            AddMod(new Item(1622545887u, "Move It! 2.3.0 (Updated for Industries patch)") {
+            AddMod(new Review(1622545887u, "Move It! 2.3.0 (Updated for Industries patch)") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "RudRecciah",
                 Catalog = catalog,
@@ -706,7 +708,7 @@ namespace AutoRepair.Catalogs {
                 SuppressOlderReplacementWarning = true,
             });
 
-            AddMod(new Item(1597198847u, "[Legacy] Segment Slope Smoother") {
+            AddMod(new Review(1597198847u, "[Legacy] Segment Slope Smoother") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Elektrix",
                 Catalog = catalog,
@@ -720,7 +722,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1645781000u, // Elektrix's Road Tools 2.91
             });
 
-            AddMod(new Item(1436255148u, "Fine Road Anarchy 汉化版1.3.5") {
+            AddMod(new Review(1436255148u, "Fine Road Anarchy 汉化版1.3.5") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "TIMIYANG",
                 Catalog = catalog,
@@ -751,14 +753,14 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
-                      | ItemFlags.MinorBugs // Breaks tooling of other mods
+                      | ItemFlags.MinorIssues // Breaks tooling of other mods
                       | ItemFlags.Obsolete // Fixed mods available
                       | ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
                 ReplaceWith = 1844440354u, // Fine Road Anarchy 2
             });
 
-            AddMod(new Item(1362508329u, "TC01 - FineRoadAnarchy! (2018)") {
+            AddMod(new Review(1362508329u, "TC01 - FineRoadAnarchy! (2018)") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Fatih ÇELİK",
                 Catalog = catalog,
@@ -797,7 +799,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1844440354u, // Fine Road Anarchy 2
             });
 
-            AddMod(new Item(1120637951u, "[OUTDATED] Move It! Extra Filters") {
+            AddMod(new Review(1120637951u, "[OUTDATED] Move It! Extra Filters") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Simon Ryr",
                 Catalog = catalog,
@@ -822,7 +824,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gist.github.com/simon56modder/46b2d593e0364fb5386c80c3c97ae396",
             });
 
-            AddMod(new Item(802066100u, "Fine Road Anarchy") {
+            AddMod(new Review(802066100u, "Fine Road Anarchy") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Boogieman Sam",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -868,7 +870,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // original version
-            AddMod(new Item(766190099u, "Move It") {
+            AddMod(new Review(766190099u, "Move It") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Boogieman Sam",
                 BrokenBy = GameVersion.Industries,
@@ -884,6 +886,7 @@ namespace AutoRepair.Catalogs {
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Compatible   }, // [OUTDATED] Move It! Extra Filters
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 924884948u , Status.Incompatible }, // Plop the Growables
                     { 912329352u,  Status.Incompatible }, // Building Anarchy (just sick of seeing this break games!)
                     { 766190099u , Status.Incompatible }, // Move It (original)
                     { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
@@ -904,7 +907,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // original mod
-            AddMod(new Item(651322972u, "Fine Road Tool") {
+            AddMod(new Review(651322972u, "Fine Road Tool") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Boogieman Sam",
                 BrokenBy = GameVersion.SunsetHarbor,

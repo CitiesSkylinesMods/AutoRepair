@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
-        private void PaintCatalog() {
+        private void PaintMods() {
 
             string catalog = "Paint";
 
-            AddMod(new Item(1818462177u, "Vehicle Color Expander") {
+            AddMod(new Review(1818462177u, "Vehicle Color Expander") {
                 Affect = Factor.Textures,
                 Authors = "Klyte45",
                 Catalog = catalog,
@@ -31,7 +31,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/klyte45/VehicleColorExpander",
             });
 
-            AddMod(new Item(1869561285u, "Prop Painter 2.6.0") {
+            AddMod(new Review(1869561285u, "Prop Painter 2.6.0") {
                 Affect = Factor.Textures
                        | Factor.TileLimit, // 81 tiles mod sometimes breaks it
                 Authors = "Elektrix",
@@ -54,7 +54,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // editor mod
-            AddMod(new Item(1288816430u, "Hex Colors") {
+            AddMod(new Review(1288816430u, "Hex Colors") {
                 Authors = "targa",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -99,7 +99,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/targettius/cs-hex-colors",
             });
 
-            AddMod(new Item(689937287u, "Surface Painter") {
+            AddMod(new Review(689937287u, "Surface Painter") {
                 Affect = Factor.Textures,
                 Authors = "BloodyPenguin",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -131,7 +131,7 @@ namespace AutoRepair.Catalogs {
 
             // seems broken by one of the game updates, but needs some extra testing
             // possibly also conflict with prop painter
-            AddMod(new Item(1442713872u, "Detail") {
+            AddMod(new Review(1442713872u, "Detail") {
                 Affect = Factor.Textures,
                 Authors = "Ronyx69",
                 Catalog = catalog,

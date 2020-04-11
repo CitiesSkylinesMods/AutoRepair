@@ -17,7 +17,7 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void VisualEffectsCatalog() {
+        private void VisualEffectMods() {
 
             string catalog = "VisualEffects";
 
@@ -29,7 +29,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
-            AddMod(new Item(1886877404u, "Custom Effect Loader") {
+            AddMod(new Review(1886877404u, "Custom Effect Loader") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
                 Authors = "boformer",
@@ -43,7 +43,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.EditorMod // assets created with it require it
-                      | ItemFlags.MinorBugs // can become hard dependency for vehicle assets if Extended Asset Editor active
+                      | ItemFlags.MinorIssues // can become hard dependency for vehicle assets if Extended Asset Editor active
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
                 Notes = new Dictionary<ulong, string>() {
@@ -53,7 +53,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/boformer/CustomEffectLoader",
             });
 
-            AddMod(new Item(1883101331u, "Persistent Fog Adjuster") {
+            AddMod(new Review(1883101331u, "Persistent Fog Adjuster") {
                 Affect = Factor.Environment,
                 Authors = "Cgameworld",
                 Catalog = catalog,
@@ -66,7 +66,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Fog", "Mist", "Cloud", "Weather", "Eyecandy" },
             });
 
-            AddMod(new Item(1794015399u, "Render It!") {
+            AddMod(new Review(1794015399u, "Render It!") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 Authors = "Keallu",
@@ -82,14 +82,14 @@ namespace AutoRepair.Catalogs {
                     { 408648436u , Status.Incompatible }, // More Options
                     { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
                 },
-                Flags = ItemFlags.MinorBugs // harmony patch management could be better, TAA is shit
+                Flags = ItemFlags.MinorIssues // harmony patch management could be better, TAA is shit
                       | ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-RenderIt",
                 Tags = new[] { "Effects", "Visual", "Graphics", "Eyecandy" },
             });
 
             // todo: check if source still obfu
-            AddMod(new Item(1760945529u, "Terrain Level Of Detail (TLOD)") {
+            AddMod(new Review(1760945529u, "Terrain Level Of Detail (TLOD)") {
                 Affect = Factor.Environment
                        | Factor.Rendering
                        | Factor.Textures,
@@ -104,7 +104,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // LOD toggler has conflicting shortcut, and is also obsoleted by ULOD
-            AddMod(new Item(1680642819u, "Ultimate Level Of Detail (ULOD)") {
+            AddMod(new Review(1680642819u, "Ultimate Level Of Detail (ULOD)") {
                 Affect = Factor.Rendering
                        | Factor.Textures
                        | Factor.Trees,
@@ -125,7 +125,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "LODs", "Detail", "Graphics", "Eyecandy", "Trees", "Props", "Buildings", "Networks", "Decals" },
             });
 
-            AddMod(new Item(1664509314u, "Custom Animation Loader (CAL)") {
+            AddMod(new Review(1664509314u, "Custom Animation Loader (CAL)") {
                 Affect = Factor.Rendering,
                 Authors = "boformer",
                 Catalog = catalog,
@@ -147,7 +147,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Mar, 2019"),
             });
 
-            AddMod(new Item(1410003347u, "Additive Shader") {
+            AddMod(new Review(1410003347u, "Additive Shader") {
                 Affect = Factor.Rendering,
                 Authors = "Ronyx69, Simon Ryr",
                 Catalog = catalog,
@@ -162,7 +162,30 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
             });
 
-            AddMod(new Item(1274199764u, "Network Tiling") {
+            AddMod(new Review(1304997689u, "Light Trail") {
+                Affect = Factor.Camera
+                       | Factor.Rendering,
+                Authors = "sqrl",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("18 Feb, 2018"),
+                Updated = WorkshopDate("3 Dec, 2018"),
+            });
+
+            AddMod(new Review(1300411488u, "Dynamic Fireworks") {
+                Affect = Factor.Rendering,
+                Authors = "sqrl",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("13 Feb, 2018"),
+                Updated = WorkshopDate("16 Feb, 2018"),
+            });
+
+            AddMod(new Review(1274199764u, "Network Tiling") {
                 Affect = Factor.Rendering,
                 Authors = "Ronyx69",
                 Catalog = catalog,
@@ -177,7 +200,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Game engine issues: Shadow acne vs. Shadow detachment
-            AddMod(new Item(1209581656u, "Relight") {
+            AddMod(new Review(1209581656u, "Relight") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 Authors = "Ronyx69, TPB, Simon Ryr",
@@ -204,7 +227,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Brightness", "Gamma", "Contrast", "Temperature", "Tint", "Sun", "Sky", "Moon", "Tonemapping" },
             });
 
-            AddMod(new Item(1183931915u, "Cubemap Replacer") {
+            AddMod(new Review(1183931915u, "Cubemap Replacer") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 Authors = "BloodyPenguin",
@@ -226,7 +249,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "Sky", "Environment", "Stars", "Clouds" },
             });
 
-            AddMod(new Item(1138510774u, "PostProcessFX - Multi-platform") {
+            AddMod(new Review(1138510774u, "PostProcessFX - Multi-platform") {
                 Affect = Factor.Rendering,
                 Authors = "cor3ntin",
                 Catalog = catalog,
@@ -246,7 +269,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 412146081u, // PostProcessFX v1.9.0
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.EditorBreaking
-                      | ItemFlags.MinorBugs // some users have problems opening GUI
+                      | ItemFlags.MinorIssues // some users have problems opening GUI
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // some users say it stopped working
                 Notes = new Dictionary<ulong, string>() {
@@ -256,7 +279,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "TAA", "Ambient Occlusion", "Grain", "Sun shafts" },
             });
 
-            AddMod(new Item(940299505u, "AnimUV Params") {
+            AddMod(new Review(940299505u, "AnimUV Params") {
                 Affect = Factor.Props
                        | Factor.Rendering,
                 Authors = "Ronyx69",
@@ -270,7 +293,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(933513277u, "Sun Shafts") {
+            AddMod(new Review(933513277u, "Sun Shafts") {
                 Affect = Factor.Rendering,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -295,13 +318,30 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("30 Oct, 2017"),
             });
 
-            AddMod(new Item(812713438u, "Dynamic Resolution (Fixed for 1.9!)") {
+            AddMod(new Review(929295695u, "Panorama") {
+                Affect = Factor.Camera,
+                Authors = "sqrl",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press Ctrl + Alt + P to open the settings panel. Shortcut can be customised in 'Cities_Skylines/ScreenShotP/hotkey.txt'." },
+                },
+                Published = WorkshopDate("20 May, 2017"),
+                SourceURL = "https://github.com/xdedss/Panorama",
+                Updated = WorkshopDate("20 May, 2017"),
+            });
+
+            AddMod(new Review(812713438u, "Dynamic Resolution (Fixed for 1.9!)") {
                 Affect = Factor.Rendering,
                 Authors = "Gradius Twin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
                     { 1138510774u, Status.MinorIssues  }, // PostProcessFX - Multi-platform
+                    { 926945709u , Status.Incompatible }, // Adjustable FOV
                     { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
                     { 602077938u , Status.Incompatible }, // TotalyFree Camera
                     { 409359952u , Status.Incompatible }, // Isometric Camera
@@ -311,7 +351,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 406629464u, // Dynamic Resolution
                 Flags = ItemFlags.Laggy
-                      | ItemFlags.MinorBugs
+                      | ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press F10, or Left Ctrl + R, to open the slider panel." },
@@ -326,14 +366,14 @@ namespace AutoRepair.Catalogs {
             // app notes for Dynamic Resolution
             switch (Application.platform) {
                 case RuntimePlatform.WindowsPlayer:
-                    Items[812713438u].Notes.Add(NOTE, "Windows Users: This mod requires a big page file on high resolutions: https://steamcommunity.com/sharedfiles/filedetails/?id=465790009");
+                    Reviews[812713438u].Notes.Add(NOTE, "Windows Users: This mod requires a big page file on high resolutions: https://steamcommunity.com/sharedfiles/filedetails/?id=465790009");
                     break;
                 case RuntimePlatform.OSXPlayer:
-                    Items[812713438u].Notes.Add(NOTE, "Mac Users: This mod causes blank sky on OS/X; unsubscribing the mod will fix it.");
+                    Reviews[812713438u].Notes.Add(NOTE, "Mac Users: This mod causes blank sky on OS/X; unsubscribing the mod will fix it.");
                     break;
             }
 
-            AddMod(new Item(412146081u, "PostProcessFX v1.9.0") {
+            AddMod(new Review(412146081u, "PostProcessFX v1.9.0") {
                 Affect = Factor.Rendering,
                 Authors = "MazK",
                 Catalog = catalog,
@@ -350,7 +390,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.EditorBreaking
                       | ItemFlags.Obsolete // newer version available: 1138510774u
-                      | ItemFlags.MinorBugs // some users have problems displaying the GUI
+                      | ItemFlags.MinorIssues // some users have problems displaying the GUI
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
@@ -369,7 +409,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // translation
-            AddMod(new Item(1870740367u, "Dynamic Resolution 动态分辨率 Sakuya16个人汉化版") {
+            AddMod(new Review(1870740367u, "Dynamic Resolution 动态分辨率 Sakuya16个人汉化版") {
                 Affect = Factor.Rendering,
                 Authors = "Izayoi _Sakuya16",
                 Catalog = catalog,
@@ -394,7 +434,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // broken
-            AddMod(new Item(959894658u, "Custom Light Effects") {
+            AddMod(new Review(959894658u, "Custom Light Effects") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
                 Authors = "Ronyx69, vasimr22",
@@ -421,7 +461,7 @@ namespace AutoRepair.Catalogs {
             // Old Sun Shafts page confirms it was called Ambinet Occlusion
             // User on old AO page also linked to it, so it's a continuation of old AO.
             // WBM: https://web.archive.org/web/20170715133852/http://steamcommunity.com/sharedfiles/filedetails/?id=934825735
-            AddMod(new Item(934825735u, "Ambient Occlusion") {
+            AddMod(new Review(934825735u, "Ambient Occlusion") {
                 Affect = Factor.Rendering,
                 Authors = "TPB, BloodyPenguin",
                 Catalog = catalog,
@@ -455,9 +495,26 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("30 May, 2017"),
             });
 
+            AddMod(new Review(926945709u, "Adjustable FOV") {
+                Affect = Factor.Camera,
+                Authors = "sqrl",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Move mouse while pressing Ctrl + O to change FOV. Reset by pressing Ctrl + Shift + O" },
+                },
+                Published = WorkshopDate("16 May, 2017"),
+                Updated = WorkshopDate("16 May, 2017"),
+            });
+
             // old
             // wbm: https://web.archive.org/web/20150415011651/http://steamcommunity.com/sharedfiles/filedetails/?id=415732693
-            AddMod(new Item(415732693u, "Disable Clouds") {
+            AddMod(new Review(415732693u, "Disable Clouds") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 Authors = "Obelisk",
@@ -480,7 +537,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // old
-            AddMod(new Item(410805639u, "Sun Shafts") {
+            AddMod(new Review(410805639u, "Sun Shafts") {
                 Affect = Factor.Rendering,
                 Authors = "Ulysius",
                 BrokenBy = GameVersion.AfterDark,
@@ -508,7 +565,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // old
-            AddMod(new Item(410329674u, "Ambient Occlusion") {
+            AddMod(new Review(410329674u, "Ambient Occlusion") {
                 Affect = Factor.Rendering,
                 Authors = "Ulysius",
                 BrokenBy = GameVersion.AfterDark,
@@ -543,7 +600,7 @@ namespace AutoRepair.Catalogs {
             // discovered via: https://steamcommunity.com/workshop/filedetails/discussion/410329674/611701360830851903/
             // wbm: https://web.archive.org/web/20150415010910/http://steamcommunity.com/sharedfiles/filedetails/?id=408648436
             // looks very much like an early version of Ultimate Eye Candy or Relight.. fog, bloom, tone mapping...
-            AddMod(new Item(408648436u, "More Options") {
+            AddMod(new Review(408648436u, "More Options") {
                 Affect = Factor.Rendering,
                 Authors = "Quget",
                 Catalog = catalog,
@@ -579,7 +636,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // WBM: https://web.archive.org/web/20150326014836/http://steamcommunity.com/id/Quget/myworkshopfiles/?appid=255710
-            AddMod(new Item(407358867u, "Quget's Day & Night Prototype") {
+            AddMod(new Review(407358867u, "Quget's Day & Night Prototype") {
                 Affect = Factor.Rendering,
                 Authors = "Quget",
                 BrokenBy = GameVersion.AfterDark,
@@ -601,7 +658,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // old
-            AddMod(new Item(406629464u, "Dynamic Resolution") {
+            AddMod(new Review(406629464u, "Dynamic Resolution") {
                 Affect = Factor.Rendering,
                 Authors = "nlight",
                 BrokenBy = GameVersion.GreenCities,
@@ -640,7 +697,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██   ██  ██████ ██   ██ ███████
             */
 
-            AddMod(new Item(1980656676u, "MARS Sky - Cubemap Replacer Pack") {
+            AddMod(new Review(1980656676u, "MARS Sky - Cubemap Replacer Pack") {
                 Affect = Factor.Environment,
                 Authors = "citywokcitywall",
                 Catalog = catalog,
@@ -653,7 +710,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "4K", "Sky", "Mars", "Environment" },
             });
 
-            AddMod(new Item(1771841274u, "HDRI Haven Cubemap Pack 2") {
+            AddMod(new Review(1771841274u, "HDRI Haven Cubemap Pack 2") {
                 Affect = Factor.Environment,
                 Authors = "Ronyx69",
                 Catalog = catalog,
@@ -667,7 +724,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "2K", "Sky", "Earth", "Day", "Sunny", "Dusk", "Night", "Sunset", "Weather", "Environment" },
             });
 
-            AddMod(new Item(1591584836u, "HDRI 2K Cubemap Pack") {
+            AddMod(new Review(1591584836u, "HDRI 2K Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "Sparks",
                 Catalog = catalog,
@@ -681,7 +738,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "2K", "Sky", "Earth", "Day", "Sunny", "Sunset", "Weather", "Environment" },
             });
 
-            AddMod(new Item(1585691173u, "HDRI Haven Cubemap Pack") {
+            AddMod(new Review(1585691173u, "HDRI Haven Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "Ronyx69",
                 Catalog = catalog,
@@ -694,7 +751,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "1K", "Sky", "Earth", "Sunset", "Weather", "Environment" },
             });
 
-            AddMod(new Item(1186800787u, "Pastel Cubemap Pack") {
+            AddMod(new Review(1186800787u, "Pastel Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,

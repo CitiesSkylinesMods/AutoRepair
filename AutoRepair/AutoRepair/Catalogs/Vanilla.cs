@@ -7,26 +7,26 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Bundled hard mode mod.
         /// </summary>
-        public static readonly ulong HardMode = 2u;
+        public static readonly ulong HardMode = 2uL;
 
         /// <summary>
         /// Bundled unlimited money mod.
         /// </summary>
-        public static readonly ulong UnlimitedMoney = 3u;
+        public static readonly ulong UnlimitedMoney = 3uL;
 
         /// <summary>
         /// Bundled unlimited oil and ore mod.
         /// </summary>
-        public static readonly ulong UnlimitedOilAndOre = 4u;
+        public static readonly ulong UnlimitedOilAndOre = 4uL;
 
         /// <summary>
         /// Bundled unlimited soil mod.
         /// </summary>
-        public static readonly ulong UnlimitedSoil = 5u;
+        public static readonly ulong UnlimitedSoil = 5uL;
 
         /// <summary>
         /// Bundled unlock all mod.
         /// </summary>
-        public static readonly ulong UnlockAll = 6u;
+        public static readonly ulong UnlockAll = 6uL;
     }
 }

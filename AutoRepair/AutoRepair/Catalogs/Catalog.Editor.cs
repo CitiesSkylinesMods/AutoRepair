@@ -14,12 +14,12 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void EditorCatalog() {
+        private void EditorMods() {
 
             string catalog = "Editor";
 
             // todo: move to converter cat?
-            AddMod(new Item(1552053911u, "TrailerVariation Loader") {
+            AddMod(new Review(1552053911u, "TrailerVariation Loader") {
                 Affect = Factor.Vehicles,
                 Authors = "Acc3ss Violation",
                 Catalog = catalog,
@@ -39,7 +39,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("30 Oct, 2018"),
             });
 
-            AddMod(new Item(1518485094u, "Mesh Import Rotation Tangents Fix") {
+            AddMod(new Review(1518485094u, "Mesh Import Rotation Tangents Fix") {
                 Affect = Factor.Other,
                 Authors = "egi, Ronyx69",
                 Catalog = catalog,
@@ -56,7 +56,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("21 Sep, 2018"),
             });
 
-            AddMod(new Item(1406275125u, "Asset DLC flags Editor") {
+            AddMod(new Review(1406275125u, "Asset DLC flags Editor") {
                 Affect = Factor.Other,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -72,7 +72,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Aug, 2019"),
             });
 
-            AddMod(new Item(1393831156u, "Sub Mesh Flags") {
+            AddMod(new Review(1393831156u, "Sub Mesh Flags") {
                 Affect = Factor.Other,
                 Authors = "TP​​​B",
                 Catalog = catalog,
@@ -90,7 +90,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("25 May, 2018"),
             });
 
-            AddMod(new Item(1364044386u, "Theme Editor Maps") {
+            AddMod(new Review(1364044386u, "Theme Editor Maps") {
                 Affect = Factor.MapThemes
                        | Factor.Textures,
                 Authors = "TPB",
@@ -108,7 +108,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("24 May, 2018"),
             });
 
-            AddMod(new Item(1361644472u, "Precise Prop Positioning for Asset Creators") {
+            AddMod(new Review(1361644472u, "Precise Prop Positioning for Asset Creators") {
                 Affect = Factor.Props,
                 Authors = "TPB",
                 Catalog = catalog,
@@ -125,7 +125,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // not really editor mod, but is designed for creators
-            AddMod(new Item(1122189715u, "Realtime") {
+            AddMod(new Review(1122189715u, "Realtime") {
                 Affect = Factor.Textures,
                 Authors = "Ronyx69, Simon Ryr",
                 Catalog = catalog,
@@ -133,7 +133,7 @@ namespace AutoRepair.Catalogs {
 
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Users: This mod assists with content creation; if you don't create content, you probably don't need this mod." },
@@ -144,7 +144,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 Aug, 2017"),
             });
 
-            AddMod(new Item(954067599u, "PropRotating Params") {
+            AddMod(new Review(954067599u, "PropRotating Params") {
                 Affect = Factor.Props,
                 Authors = "Ronyx69",
                 Catalog = catalog,

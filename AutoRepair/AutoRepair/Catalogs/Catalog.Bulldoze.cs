@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void BulldozeCatalog() {
+        private void BulldozeMods() {
 
             string catalog = "Bulldoze";
 
-            AddMod(new Item(1656549865u, "Rebuild It!") {
+            AddMod(new Review(1656549865u, "Rebuild It!") {
                 Affect = Factor.Bulldoze, // well, not really, but only affect that seems remotely relevant
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -34,12 +34,11 @@ namespace AutoRepair.Catalogs {
                     { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
                     { 406132323u , Status.Incompatible }, // Automatic Bulldoze
                 },
-                Flags = ItemFlags.MinorBugs // harmony patch management could be better
-                      | ItemFlags.SourceAvailable,
+                Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-RebuildIt",
             });
 
-            AddMod(new Item(1628521230u, "Bulldoze Everything *Campus Compatible*") {
+            AddMod(new Review(1628521230u, "Bulldoze Everything *Campus Compatible*") {
                 Affect = Factor.Bulldoze,
                 Authors = "THE CHOSEN ONE[FIN]",
                 Catalog = catalog,
@@ -60,7 +59,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/yakka34/AutomaticBulldoze",
             });
 
-            AddMod(new Item(1627986403u, "Bulldoze It!") {
+            AddMod(new Review(1627986403u, "Bulldoze It!") {
                 Affect = Factor.Bulldoze,
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -77,12 +76,11 @@ namespace AutoRepair.Catalogs {
                     { 406132323u , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.MinorBugs // harmony patch management could be better
-                      | ItemFlags.SourceAvailable,
+                Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/keallu/CSL-BulldozeIt",
             });
 
-            AddMod(new Item(1507233911u, "Automatic Bulldoze *Campus Compatible*") {
+            AddMod(new Review(1507233911u, "Automatic Bulldoze *Campus Compatible*") {
                 Affect = Factor.Bulldoze,
                 Authors = "THE CHOSEN ONE[FIN]",
                 Catalog = catalog,
@@ -110,7 +108,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Item(1894296637u, "Bulldoze It! 汉化版") {
+            AddMod(new Review(1894296637u, "Bulldoze It! 汉化版") {
                 Affect = Factor.Bulldoze,
                 Authors = "Catnip.",
                 Catalog = catalog,
@@ -134,7 +132,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1627986403u, // Bulldoze It!
             });
 
-            AddMod(new Item(1875698406u, "406132323") {
+            AddMod(new Review(1875698406u, "406132323") {
                 Affect = Factor.Bulldoze,
                 Authors = "Aliliang",
                 BrokenBy = GameVersion.NaturalDisasters,
@@ -164,7 +162,7 @@ namespace AutoRepair.Catalogs {
                 SuppressVersionWarnings = true, // author uploaded already-broken mod to workshop lol
             });
 
-            AddMod(new Item(1759514242u, "639486063 Automatic Bulldoze v2") {
+            AddMod(new Review(1759514242u, "639486063 Automatic Bulldoze v2") {
                 Affect = Factor.Bulldoze,
                 Authors = "☯Quebec ツ",
                 Catalog = catalog,
@@ -186,7 +184,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 639486063u, // Automatic Bulldoze v2
             });
 
-            AddMod(new Item(1393966192u, "Automatic Bulldoze Simple Edition v1.1.3") {
+            AddMod(new Review(1393966192u, "Automatic Bulldoze Simple Edition v1.1.3") {
                 Affect = Factor.Bulldoze,
                 Authors = "MaZy",
                 BrokenBy = new System.Version(1, 11, 1), // Holiday Surprise Patch (lol!!)
@@ -213,7 +211,7 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1507233911u, // Automatic Bulldoze * Campus Compatible *
             });
 
-            AddMod(new Item(639486063u, "Automatic Bulldoze v2") {
+            AddMod(new Review(639486063u, "Automatic Bulldoze v2") {
                 Affect = Factor.Bulldoze,
                 Authors = "mexahuk",
                 BrokenBy = GameVersion.Campus,
@@ -246,7 +244,32 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/YuryScherbakov/AutomaticBulldozeV2",
             });
 
-            AddMod(new Item(406132323u, "Automatic Bulldoze") {
+            AddMod(new Review(503147777u, "Moledozer") {
+                Affect = Factor.Bulldoze,
+                Authors = "fadster",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1619685021u, Status.Compatible }, // Move It! (current stable)
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: User reports say it's breaking bulldozing of ship and aircraft routes." },
+                    { NOTE, "Try 'Move It!' mod which has filterable marquee selection for its bulldoze tool." },
+                },
+                Published = WorkshopDate("20 Aug, 2015"),
+                ReplaceWith = 1619685021u, // Move It
+                SourceURL = "https://github.com/fadster/Moledozer",
+                Updated = WorkshopDate("20 Aug, 2015"),
+            });
+
+            AddMod(new Review(406132323u, "Automatic Bulldoze") {
                 Affect = Factor.Bulldoze,
                 Authors = "Sadler",
                 BrokenBy = GameVersion.NaturalDisasters,

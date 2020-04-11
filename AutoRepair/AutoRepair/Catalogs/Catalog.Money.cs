@@ -16,11 +16,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void MoneyCatalog() {
+        private void MoneyMods() {
 
             string catalog = "Money";
 
-            AddMod(new Item(2036484892u, "AutoMoney") {
+            AddMod(new Review(2036484892u, "AutoMoney") {
                 Affect = Factor.Money,
                 Authors = "bansz",
                 Catalog = catalog,
@@ -47,7 +47,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.SunsetHarbor,
             });
 
-            AddMod(new Item(2030216556u, "GrantMeMoney: get cash / money unconditionally") {
+            AddMod(new Review(2030216556u, "GrantMeMoney: get cash / money unconditionally") {
                 Affect = Factor.Money,
                 Authors = "the weatherman",
                 Catalog = catalog,
@@ -73,7 +73,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: conflict with vanilla
-            AddMod(new Item(1949192313u, "UnlimitedMoney") {
+            AddMod(new Review(1949192313u, "UnlimitedMoney") {
                 Affect = Factor.Money,
                 Authors = "j.a.pasterkamp",
                 Catalog = catalog,
@@ -99,7 +99,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1673480325u, "£5 Million Starting Money") {
+            AddMod(new Review(1673480325u, "£5 Million Starting Money") {
                 Affect = Factor.Money,
                 Authors = "Mister Doctor",
                 Catalog = catalog,
@@ -124,7 +124,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1671542319u, "£2.5 Million Starting Money") {
+            AddMod(new Review(1671542319u, "£2.5 Million Starting Money") {
                 Affect = Factor.Money,
                 Authors = "Mister Doctor",
                 Catalog = catalog,
@@ -148,7 +148,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1367444256u, "Cash/Money On Demand 500k") {
+            AddMod(new Review(1367444256u, "Cash/Money On Demand 500k") {
                 Affect = Factor.Money,
                 Authors = "Jay",
                 Catalog = catalog,
@@ -177,7 +177,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Also has limits display but people really only use it to add money on demand
-            AddMod(new Item(1330289236u, "CS-Utils") {
+            AddMod(new Review(1330289236u, "CS-Utils") {
                 Affect = Factor.Money,
                 Authors = "kartoffelx86",
                 Catalog = catalog,
@@ -199,7 +199,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            AddMod(new Item(1232451940u, "调整金钱") {
+            AddMod(new Review(1232451940u, "调整金钱") {
                 Affect = Factor.Money,
                 Authors = "TIMIYANG",
                 Catalog = catalog,
@@ -230,7 +230,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(409171141u, "Cash on Demand") {
+            AddMod(new Review(409171141u, "Cash on Demand") {
                 Affect = Factor.Money,
                 Authors = "UndergroundHero",
                 Catalog = catalog,

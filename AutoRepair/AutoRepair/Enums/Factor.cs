@@ -291,6 +291,11 @@ namespace AutoRepair.Enums {
         Trees = 1UL << 54,
 
         /// <summary>
+        /// Affects user interface.
+        /// </summary>
+        UI = 1UL << 21,
+
+        /// <summary>
         /// Vehicle passenger or cargo capacity.
         /// </summary>
         VehicleCapacity = 1UL << 55,

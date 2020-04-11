@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void DisastersCatalog() {
+        private void DisasterMods() {
 
             string catalog = "Disasters";
 
-            AddMod(new Item(1801953480u, "Natural Disasters Overhaul") {
+            AddMod(new Review(1801953480u, "Natural Disasters Overhaul") {
                 Affect = Factor.Disasters
                        | Factor.Environment,
                 Authors = "Zenya",
@@ -39,7 +39,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Enhanced-Disasters",
             });
 
-            AddMod(new Item(1499486217u, "Ragnarok EXTREME EDITION") {
+            AddMod(new Review(1499486217u, "Ragnarok EXTREME EDITION") {
                 Affect = Factor.Disasters
                        | Factor.Environment,
                 Authors = "SpikeViper",
@@ -59,7 +59,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("2 Sep, 2018"),
             });
 
-            AddMod(new Item(811352708u, "Ragnarok - More disaster controls") {
+            AddMod(new Review(811352708u, "Ragnarok - More disaster controls") {
                 Affect = Factor.Disasters
                        | Factor.Environment,
                 Authors = "Asser", // formerly sexyfishhorse

@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void EmptyingCatalog() {
+        private void EmptyingMods() {
 
             string catalog = "Emptying";
 
-            AddMod(new Item(1661072176u, "Empty It!") {
+            AddMod(new Review(1661072176u, "Empty It!") {
                 Affect = Factor.Emptying,
                 Authors = "Keallu",
                 Catalog = catalog,
@@ -31,13 +31,12 @@ namespace AutoRepair.Catalogs {
                     { 407873631u , Status.Incompatible }, // Automatic Emptying
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceAvailable
-                      | ItemFlags.MinorBugs, // harmony patch management could be better
+                Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Industries,
                 SourceURL = "https://github.com/keallu/CSL-EmptyIt",
             });
 
-            AddMod(new Item(1456061226u, "Better Cemetery AI") {
+            AddMod(new Review(1456061226u, "Better Cemetery AI") {
                 Affect = Factor.Emptying,
                 Authors = "Sean",
                 Catalog = catalog,
@@ -61,7 +60,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/seanke/BetterCemeteryAI",
             });
 
-            AddMod(new Item(1182722930u, "Automatic Empty") {
+            AddMod(new Review(1182722930u, "Automatic Empty") {
                 Affect = Factor.Emptying,
                 Authors = "Sottam",
                 Catalog = catalog,
@@ -94,7 +93,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // possibly a translation
-            AddMod(new Item(896806060u, "407873631 Automatic Emptying") {
+            AddMod(new Review(896806060u, "407873631 Automatic Emptying") {
                 Affect = Factor.Emptying,
                 Authors = "mexahuk",
                 BrokenBy = GameVersion.NaturalDisasters,
@@ -120,7 +119,7 @@ namespace AutoRepair.Catalogs {
                 SuppressVersionWarnings = true,
             });
 
-            AddMod(new Item(686588890u, "Automatic Emptying: Extended") {
+            AddMod(new Review(686588890u, "Automatic Emptying: Extended") {
                 Affect = Factor.Emptying,
                 Authors = "mexahuk",
                 BrokenBy = GameVersion.Industries,
@@ -146,7 +145,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/YuryScherbakov/AutoEmptyingExtended",
             });
 
-            AddMod(new Item(407873631u, "Automatic Emptying") {
+            AddMod(new Review(407873631u, "Automatic Emptying") {
                 Affect = Factor.Emptying,
                 Authors = "Sadler",
                 BrokenBy = GameVersion.NaturalDisasters,

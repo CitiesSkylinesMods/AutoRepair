@@ -14,11 +14,11 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void ProceduralCatalog() {
+        private void ProceduralMods() {
 
             string catalog = "Procedural";
 
-            AddMod(new Item(1831805509, "Dynamic Text Props 2.3.1") {
+            AddMod(new Review(1831805509, "Dynamic Text Props 2.3.1") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Props,
                 Authors = "Klyte45",
@@ -47,7 +47,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Text", "Font", "Procedural", "Signs", "Signage", "Props", "Custom", "Editable" },
             });
 
-            AddMod(new Item(1824757296u, "Procedural Objects Fonts: Montburgh Highways Signage: Highway Shields") {
+            AddMod(new Review(1824757296u, "Procedural Objects Fonts: Montburgh Highways Signage: Highway Shields") {
                 Affect = Factor.Props,
                 Authors = "BobGrey",
                 Catalog = catalog,
@@ -58,7 +58,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Text", "Font", "Procedural", "Signs", "Signage", "Props", "Colorado", "USA", },
             });
 
-            AddMod(new Item(1824749264u, "Procedural Objects Fonts: Montburgh Highway Signage: Arrows") {
+            AddMod(new Review(1824749264u, "Procedural Objects Fonts: Montburgh Highway Signage: Arrows") {
                 Affect = Factor.Props,
                 Authors = "BobGrey",
                 Catalog = catalog,
@@ -69,7 +69,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Text", "Font", "Procedural", "Lane", "Arrows", "Signs", "Signage", "Props", "Colorado", "USA", },
             });
 
-            AddMod(new Item(1789133988u, "Route Shields for PO") {
+            AddMod(new Review(1789133988u, "Route Shields for PO") {
                 Affect = Factor.Props,
                 Authors = "Elektrix",
                 Catalog = catalog,
@@ -88,7 +88,7 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Item(1094334744u, "Procedural Objects") {
+            AddMod(new Review(1094334744u, "Procedural Objects") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Props,
                 Authors = "Simon Ryr",
