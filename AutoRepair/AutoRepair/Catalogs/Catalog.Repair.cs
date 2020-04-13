@@ -3,6 +3,7 @@ namespace AutoRepair.Catalogs {
     using AutoRepair.Enums;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Mods that help detect and/or repair issues with the game.
@@ -12,6 +13,8 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
         private void RepairMods() {
 
             string catalog = "Repair";
@@ -57,7 +60,10 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "aubergine18",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() { },
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.ParadoxLauncher,
@@ -68,7 +74,10 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "Krzychu1245",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() { },
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceUnavailable,

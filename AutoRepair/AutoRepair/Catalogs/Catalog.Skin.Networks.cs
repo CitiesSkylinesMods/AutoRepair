@@ -242,6 +242,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1758376843u, Status.Compatible   }, // Network Skins 2
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 816260433u , Status.Incompatible }, // Metro Overhaul Mod
                     { 774449380u , Status.Incompatible }, // Catenary Replacer
                 },

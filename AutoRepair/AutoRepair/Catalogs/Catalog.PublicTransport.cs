@@ -225,6 +225,8 @@ namespace AutoRepair.Catalogs {
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
                     { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options AVO (Industries DLC ready)
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1

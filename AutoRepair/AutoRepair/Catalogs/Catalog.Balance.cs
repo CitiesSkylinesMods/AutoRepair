@@ -181,6 +181,8 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1865667356u, Status.Unknown      }, // Twitch Citizens
                     { 1562650024u, Status.Compatible   }, // Rebalanced Industries
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1369729955u, Status.Incompatible }, // Customize It (original mod)
                     { 946550801u , Status.Incompatible }, // Park Rebalance
                 },
@@ -296,6 +298,8 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1806759255u, Status.Compatible   }, // Customize It Extended
                     { 1553517176u, Status.Incompatible }, // Specialized Industry Fix Redux
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1369729955u, Status.Incompatible }, // Customize It!
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,

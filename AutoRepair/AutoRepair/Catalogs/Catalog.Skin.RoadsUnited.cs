@@ -90,7 +90,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Author stated further development is unlikely." },
+                    { NOTE, "Author stated further development is unlikely. The mod sometimes causes problems with road colors." },
                     { NOTE, "Asset creators, see: https://github.com/Killface1980/RoadsUnited_Custom_Theme_Template" },
                     { 1806963141u, "[Mod: TM:PE] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                     { 1637663252u, "[Mod: TM:PE] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },

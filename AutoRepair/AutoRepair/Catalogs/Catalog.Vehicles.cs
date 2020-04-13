@@ -26,6 +26,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2053661585u, Status.Incompatible }, // Emergency Lights Manager V2
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1192250578u, Status.Incompatible }, // Emergency Lights Manager
                     { 863909323u , Status.Incompatible }, // Emergency Lights Changer Plus
                     { 559172768u , Status.Incompatible }, // Emergency Light Changer
@@ -90,8 +92,10 @@ namespace AutoRepair.Catalogs {
                     { 1764208250u, Status.Compatible   }, // More Vehicles (from AVO 1.9.0 onwards)
                     { 1550281302u, Status.Incompatible }, // TransportCapacity
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options AVO (current stable)
-                    { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1312767991u, Status.Compatible   }, // Transport Lines Manager 13.1
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车
                     { 934994075u , Status.Compatible   }, // Service Vehicle Selector 2

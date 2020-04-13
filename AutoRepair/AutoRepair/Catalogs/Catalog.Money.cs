@@ -250,6 +250,10 @@ namespace AutoRepair.Catalogs {
                     { 1673480325u, Status.Compatible   }, // £5 Million Starting Money
                     { 1671542319u, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236u, Status.Compatible   }, // CS-Utils
+
+                    // other:
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,

@@ -25,6 +25,8 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1661072176u, Status.Incompatible }, // Empty It!
                     { 1456061226u, Status.Incompatible }, // Better Cemetery AI
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1182722930u, Status.Incompatible }, // Automatic Empty
                     { 896806060u , Status.Incompatible }, // 407873631 Automatic Emptying
                     { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended

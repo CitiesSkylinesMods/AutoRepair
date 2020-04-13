@@ -130,8 +130,10 @@ namespace AutoRepair.Catalogs {
                 Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1706978404u, Status.Recommended }, // Animated Excavator アニメーションユンボ
-                    { 2010704792u, Status.Recommended }, // Animated Excavator CAT 365C L
+                    { 2010704792u, Status.Recommended  }, // Animated Excavator CAT 365C L
+                    { 1706978404u, Status.Recommended  }, // Animated Excavator アニメーションユンボ
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod

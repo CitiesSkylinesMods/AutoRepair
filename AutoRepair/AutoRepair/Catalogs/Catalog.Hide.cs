@@ -169,6 +169,8 @@ namespace AutoRepair.Catalogs {
                     { 421041154u , Status.Incompatible }, // [ARIS] Remove Seagulls
                     { 417145328u , Status.Incompatible }, // [Deprecated] Kill the Seagulls!
                     // other
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho (Harmony clash)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,

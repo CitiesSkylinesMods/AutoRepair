@@ -76,6 +76,8 @@ namespace AutoRepair.Catalogs {
                     { 1756089251u, Status.Compatible   }, // Zoom It!
                     { 1721824249u, Status.Compatible   }, // Joystick Camera Control
                     { 1721823173u, Status.Compatible   }, // NoOffScreenScroll
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
                     { 410227672u , Status.Incompatible }, // Farther Zoom
                 },

@@ -40,6 +40,8 @@ namespace AutoRepair.Catalogs {
                     { 1706703944u, Status.Incompatible }, // More Outside Interaction
                     { 1680840913u, Status.Incompatible }, // More Effective Transfer Manager
                     { 1632320836u, Status.Incompatible }, // Service Vehicles Manager 2.0.1
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
                     { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
                     { 927293560u , Status.Incompatible }, // Geli-Districts v3.0

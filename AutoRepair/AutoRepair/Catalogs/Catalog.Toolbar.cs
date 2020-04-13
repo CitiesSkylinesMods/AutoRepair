@@ -46,6 +46,8 @@ namespace AutoRepair.Catalogs {
                     { 2016920607u, Status.Compatible   }, // RICO revisited
                     { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
                     { 1577882296u, Status.Incompatible }, // Resize It!
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
                     { 1204126182u, Status.Compatible   }, // Ploppable Rico High Density Fix
                     { 586012417u , Status.Compatible   }, // Ploppable RICO

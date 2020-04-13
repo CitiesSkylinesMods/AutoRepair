@@ -67,6 +67,8 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1801953480u, Status.Unknown      }, // Natural Disasters Overhaul
                     { 1499486217u, Status.Incompatible }, // Ragnarok EXTREME EDITION
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 811352708u , Status.Incompatible }, // Ragnarok - More disaster controls
                     // based on mod called 'LessRandomDisasters' (can't find it in workshop) https://github.com/yenyang/lessRandomDisasters
                 },

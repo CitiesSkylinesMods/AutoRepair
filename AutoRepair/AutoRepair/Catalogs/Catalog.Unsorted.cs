@@ -108,6 +108,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceAvailable,

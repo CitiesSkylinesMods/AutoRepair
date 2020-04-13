@@ -143,7 +143,10 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.TileLimit,
                 Authors = "Keallu",
                 Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(tile25compatibility),
+                Compatibility = new Dictionary<ulong, Status>(tile25compatibility) {
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable

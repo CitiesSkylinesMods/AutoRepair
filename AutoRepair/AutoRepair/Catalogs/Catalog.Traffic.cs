@@ -111,7 +111,7 @@ namespace AutoRepair.Catalogs {
                     { 512341354u , Status.Incompatible }, // Central Services Dispatcher (WtM)
                     { 413847191u , Status.Incompatible }, // SOM - Services Optimisation Module
                     // Reported to cause lane usage issues in TM:PE
-                    { 810858473u , Status.Incompatible }, // Traffic Report Mod: Updated
+                    { 810858473u , Status.Compatible   }, // Traffic Report Mod: Updated
                     { 408092246u , Status.Incompatible }, // Traffic Report Tool 2.0
                     // Other breaking mods
                     { 1767246646u, Status.Incompatible }, // AutoLineBudget (PropVehCount errors, using .Net Framework 2, published as camera script?!!)
@@ -155,6 +155,8 @@ namespace AutoRepair.Catalogs {
                     { 1633580257u, Status.Compatible   }, // Vehicle Wealthizer 2
                     { 1586774819u, Status.Compatible   }, // Other Rail Track Speed Increaser
                     { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
@@ -180,7 +182,7 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Sunset Harbor: Updated, but might be some issues with pedestrian pathfinding (investigating)." },
                     { NOTE, "[Mod: CSM - Cities Skylines Multiplayer] Some users report it's incompatible with TM:PE" },
                     { 1586027591u, "[Mod: Tiny Segments] Very short road segments entering junctions may cause traffic to ignore customisations." },
-                    { 949504539u , "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc)." },
+                    { 949504539u , "[SingleTrainTrackAI] Breaks rail junction customisations (traffic lights, priority signs, etc): https://github.com/CitiesSkylinesMods/TMPE/issues/787" },
                     { 726005715u , "[Mod: Roads United: Core+] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                     { 633547552u , "[Mod: Roads United Core 2.0] Minor issues - see: https://github.com/CitiesSkylinesMods/TMPE/wiki/Roads-United-Core" },
                 },
@@ -263,7 +265,7 @@ namespace AutoRepair.Catalogs {
                     { 512341354u , Status.Incompatible }, // Central Services Dispatcher (WtM)
                     { 413847191u , Status.Incompatible }, // SOM - Services Optimisation Module
                     // Reported to cause lane usage issues in TM:PE
-                    { 810858473u , Status.Incompatible }, // Traffic Report Mod: Updated
+                    { 810858473u , Status.Compatible   }, // Traffic Report Mod: Updated
                     { 408092246u , Status.Incompatible }, // Traffic Report Tool 2.0
                     // Other breaking mods
                     { 1767246646u, Status.Incompatible }, // AutoLineBudget (PropVehCount errors, using .Net Framework 2, published as camera script?!!)
@@ -307,6 +309,8 @@ namespace AutoRepair.Catalogs {
                     { 1633580257u, Status.Compatible   }, // Vehicle Wealthizer 2
                     { 1586774819u, Status.Compatible   }, // Other Rail Track Speed Increaser
                     { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     //{ 1383456057u, Status.Incompatible }, // Shicho
                     { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 949504539u , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787

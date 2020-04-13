@@ -43,6 +43,8 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1928787248u, Status.Recommended  }, // Weeds
                     { 1654658173u, Status.Incompatible }, // Random Tree Brush
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 963853793u , Status.Recommended  }, // Ultra low tri trees
                 },
                 Flags = ItemFlags.SourceAvailable,
@@ -91,6 +93,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "saki7, TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
                     { 842981708u , Status.Incompatible }, // Random Tree Rotation
                 },

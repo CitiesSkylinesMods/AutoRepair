@@ -35,6 +35,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1719979486u, Status.Incompatible }, // Philippines Realistic Sound Mod: Return!
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)

@@ -203,6 +203,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1893036262u, Status.MinorIssues  }, // Mayor's Dashboard v2
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
                     // https://github.com/keallu/CSL-WatchIt/issues/3 :
                     { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options (latest)
@@ -230,6 +232,8 @@ namespace AutoRepair.Catalogs {
                     { 2039486691u, Status.Incompatible }, // 1133108993 Extended Building Information (1
                     { 1875298330u, Status.Incompatible }, // Extended Building Info (live627)
                     { 1556715327u, Status.Incompatible }, // Show It!
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1133108993u, Status.Incompatible }, // Extended Building Information (1.10+)
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed

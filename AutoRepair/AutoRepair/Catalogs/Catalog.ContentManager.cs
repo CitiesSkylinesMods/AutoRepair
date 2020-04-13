@@ -96,6 +96,8 @@ namespace AutoRepair.Catalogs {
                     { 1838385855u, Status.Incompatible }, // SwitchMAD
                     { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings
                 },
                 Flags = ItemFlags.SourceAvailable,

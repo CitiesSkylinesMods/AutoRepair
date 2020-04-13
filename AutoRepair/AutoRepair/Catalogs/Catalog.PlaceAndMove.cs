@@ -77,6 +77,7 @@ namespace AutoRepair.Catalogs {
                     { 1619685021u, Status.MinorIssues  }, // Move It (compatible, but can't undo)
                     { 694512541u , Status.MinorIssues  }, // Prop Line Tool (compatible, but can't undo)
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Notes = new Dictionary<ulong, string>() {
                     { 1677913611u, "[Mod: Smart Intersection Builder] Can't undo intersections made with Smart Intersection Builder (use it's own undo tool instead)." },
                     { 1625704117u, "[Mod: Roundabout Builder] Can't undo roundabouts made with Roundabout Builder (use it's own undo tool instead)." },
@@ -95,10 +96,13 @@ namespace AutoRepair.Catalogs {
                     { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
                     { 1895443005u, Status.Incompatible }, // Fine Road Anarchy 2 汉化版
                     { 1895440521u, Status.Incompatible }, // Fine Road Tool 2 汉化版
+                    { 1844442251u, Status.Recommended  }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Recommended  }, // Fine Road Anarchy 2
                     { 1831805509u, Status.Compatible   }, // Dynamic Text Props
                     { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1440928803u, Status.Incompatible }, // Parallel Road Tool
                     { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
+                    { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool
                     { 1393797695u, Status.Compatible   }, // Touch This Tool
                     { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
@@ -111,6 +115,10 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 651322972u, // Fine Road Tool
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1440928803u, "[Mod: Parallel Road Tool] Currently incompatible; temporarily disable Fine Road Tool when you need to use Parallel Road Tool." },
+                    { 1400711138u, "[Mod: Parallel Road Tool] Currently incompatible; temporarily disable Fine Road Tool when you need to use Parallel Road Tool." },
+                },
                 SourceURL = "https://github.com/klyte45/CS-FineRoadTool",
             });
 
@@ -151,6 +159,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
 
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Error when exiting game; doesn't seem to cause any problems though: https://github.com/keallu/CSL-ZoneIt/issues/1" },
@@ -203,6 +212,7 @@ namespace AutoRepair.Catalogs {
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 1890830956u, "[Mod: Undo It!] Doesn't undo roundabouts. Use the undo feature of Smart Intersections instead." },
@@ -247,6 +257,7 @@ namespace AutoRepair.Catalogs {
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Notes = new Dictionary<ulong, string>() {
                     { 1890830956u, "[Mod: Undo It!] Doesn't undo roundabouts. Use undo feature of Roundabout Builder instead." },
                 },
@@ -267,6 +278,8 @@ namespace AutoRepair.Catalogs {
                     { 1622545887u, Status.Incompatible }, // Move It! 2.3.0 (Updated for Industries patch)
                     { 1619685021u, Status.Incompatible }, // Move It 2.7.0
                     { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1393797695u, Status.Compatible   }, // Touch This! Tool 3
                     { 1383456057u, Status.Incompatible }, // Shicho
                     { 1120637951u, Status.Incompatible }, // [OUTDATED] Move It! Extra Filters
@@ -340,30 +353,97 @@ namespace AutoRepair.Catalogs {
                 Authors = "S__T",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
+                    { 2053661585u, Status.Compatible   }, // Emergency Lights Manager V2
+                    { 2043038271u, Status.Incompatible }, // Fine Road Anarchy (clone)
+                    { 2040656402u, Status.Compatible   }, // Harmony 2.0.0.9
+                    { 2034713132u, Status.Compatible   }, // Auto Repair
                     { 1959183067u, Status.Unknown      }, // CSUR Loader
+                    { 1938493221u, Status.Compatible   }, // Mini FPS Booster 1.0
+                    { 1922400472u, Status.Compatible   }, // Enhanced District Services 1.0.18
+                    { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
+                    { 1806963141u, Status.Compatible   }, // TM:PE 11 LABS
+                    { 1806759255u, Status.Compatible   }, // Customize It! Extended
                     { 1758376843u, Status.Compatible   }, // Network Skins 2
-                    { 1645781000u, Status.Compatible   }, // Elektrix's Road Tools 2.91
+                    { 1756089251u, Status.Compatible   }, // Zoom It!
+                    { 1721492498u, Status.Compatible   }, // Optimised Outside Connections
+                    { 1664509314u, Status.Compatible   }, // Custom Animation Loader (CAL)
+                    { 1661072176u, Status.Compatible   }, // Empty It!
+                    { 1658679290u, Status.Compatible   }, // Forest Brush
+                    { 1656549865u, Status.Compatible   }, // Rebuild It!
+                    { 1645781000u, Status.Compatible   }, // Elektrix's Road Tools
+                    { 1643902284u, Status.Compatible   }, // Watch It!
+                    { 1637663252u, Status.Compatible   }, // TM:PE 11 STABLE
+                    { 1627986403u, Status.Compatible   }, // Bulldoze It!
+                    { 1619685021u, Status.Compatible   }, // Move It 2.7.1
+                    { 1612287735u, Status.Compatible   }, // Purchase It!
+                    { 1591417160u, Status.Compatible   }, // Hide It!
+                    { 1577882296u, Status.Compatible   }, // Resize It!
+                    { 1567569285u, Status.Compatible   }, // Achieve It!
+                    { 1562650024u, Status.Compatible   }, // Rebalanced Industries
+                    { 1556715327u, Status.Compatible   }, // Show It!
+                    { 1552053911u, Status.Compatible   }, // Trailer Variation Loader
+                    { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options (v1.9 or above)
+                    { 1530376523u, Status.Compatible   }, // Railway Replacer
                     { 1440928803u, Status.Incompatible }, // Parallel Road Tool
                     { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
+                    { 1415090282u, Status.Compatible   }, // AutoLineColor Redux
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool
+                    { 1393797695u, Status.Compatible   }, // Touch This! Tool 3
+                    { 1393452031u, Status.Compatible   }, // Parkify r1.0.3
+                    { 1388613752u, Status.Compatible   }, // Tree Movement Control
                     { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                    { 973512634u , Status.Compatible   }, // Sort Mod Settings
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2 [r5.0.3]
+                    { 922939393u , Status.Compatible   }, // Transparency LOD Fix + Cloud Assets Enabler
+                    { 837734529u , Status.Compatible   }, // Find It! 1.5.4
+                    { 818641631u , Status.Compatible   }, // Ambient Sounds Tuner
+                    { 815103125u , Status.Compatible   }, // Extra Vehicle Effects
+                    { 814498849u , Status.Compatible   }, // Improved Content Manager
+                    { 811352708u , Status.Compatible   }, // Ragnarok
                     { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                    { 787611845u , Status.Compatible   }, // Prop Snapping
+                    { 780720853u , Status.Compatible   }, // Vehicle Effects 1.8.1b
+                    { 767233815u , Status.Compatible   }, // Decal Prop Fix
+                    { 707497031u , Status.Compatible   }, // Tram Station Track
+                    { 694123443u , Status.Compatible   }, // American Traffic Lights
+                    { 690066392u , Status.Compatible   }, // American Roadsigns 2.2.0
+                    { 667342976u , Status.Compatible   }, // Loading Screen Mod
                     { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 651322972u , Status.Compatible   }, // Fine Road Tool
-                    { 543722850u , Status.Unknown      }, // Network Skins (Park Life compatible)
+                    { 645390478u , Status.Compatible   }, // Map Editor Tunnels Enabler
+                    { 627096876u , Status.Compatible   }, // Improved Wind Simulation
+                    { 618536610u , Status.Compatible   }, // AST: KRA Sound Pack
+                    { 608517757u , Status.Compatible   }, // Sub-Buildings Tabs
+                    { 593588108u , Status.Compatible   }, // Prop & Tree Anarchy
+                    { 591137516u , Status.Compatible   }, // Redcomet's Municipal Sound Pack
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 543722850u , Status.Unknown      }, // Network Skins (Park Life compatible)
+                    { 530871278u , Status.Compatible   }, // Daylight Classic
+                    { 530771650u , Status.Compatible   }, // Prefab Hook
+                    { 515489008u , Status.Compatible   }, // Extra Train Station Tracks
+                    { 512314255u , Status.Compatible   }, // More Network Stuff
+                    { 502750307u , Status.Compatible   }, // Extra Landscaping Tools
+                    { 465127441u , Status.Compatible   }, // Airport Roads 1.3.7
+                    { 455403039u , Status.Compatible   }, // Unlimited Trees Mod
+                    { 445589127u , Status.Compatible   }, // Precision Engineering
+                    { 427258853u , Status.Compatible   }, // Pedestrian Crossings
                     { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 409776678u , Status.Compatible   }, // Demand Master
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1400711138u, // [BETA] Parallel Road Tool
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorIssues
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Languages = new[] { "zh-cn", "nl", "en", "fr", "de", "it", "ja", "pt", "ru", "es", },
                 Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { 1844442251u, "[Mod: Fine Road Tool] Since Sunset Harbor, Fine Road Tool (FRT) is incompatible with Parallel Road Tool (PRT).\n" +
+                                 "  You can temporarily disable FRT if you need to use PRT, but don't have them both enabled at same time."},
+                },
                 SourceURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
             });
 
@@ -372,29 +452,96 @@ namespace AutoRepair.Catalogs {
                 Authors = "S__T",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2043038271u, Status.Incompatible }, // Fine Road Anarchy
+                    { 2053661585u, Status.Compatible   }, // Emergency Lights Manager V2
+                    { 2043038271u, Status.Incompatible }, // Fine Road Anarchy (clone)
+                    { 2040656402u, Status.Compatible   }, // Harmony 2.0.0.9
+                    { 2034713132u, Status.Compatible   }, // Auto Repair
                     { 1959183067u, Status.Unknown      }, // CSUR Loader
+                    { 1938493221u, Status.Compatible   }, // Mini FPS Booster 1.0
+                    { 1922400472u, Status.Compatible   }, // Enhanced District Services 1.0.18
+                    { 1844442251u, Status.Incompatible }, // Fine Road Tool 2.0.3
                     { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
+                    { 1806963141u, Status.Compatible   }, // TM:PE 11 LABS
+                    { 1806759255u, Status.Compatible   }, // Customize It! Extended
                     { 1758376843u, Status.Compatible   }, // Network Skins 2
-                    { 1645781000u, Status.Compatible   }, // Elektrix's Road Tools 2.91
+                    { 1756089251u, Status.Compatible   }, // Zoom It!
+                    { 1721492498u, Status.Compatible   }, // Optimised Outside Connections
+                    { 1664509314u, Status.Compatible   }, // Custom Animation Loader (CAL)
+                    { 1661072176u, Status.Compatible   }, // Empty It!
+                    { 1658679290u, Status.Compatible   }, // Forest Brush
+                    { 1656549865u, Status.Compatible   }, // Rebuild It!
+                    { 1645781000u, Status.Compatible   }, // Elektrix's Road Tools
+                    { 1643902284u, Status.Compatible   }, // Watch It!
+                    { 1637663252u, Status.Compatible   }, // TM:PE 11 STABLE
+                    { 1627986403u, Status.Compatible   }, // Bulldoze It!
+                    { 1619685021u, Status.Compatible   }, // Move It 2.7.1
+                    { 1612287735u, Status.Compatible   }, // Purchase It!
+                    { 1591417160u, Status.Compatible   }, // Hide It!
+                    { 1577882296u, Status.Compatible   }, // Resize It!
+                    { 1567569285u, Status.Compatible   }, // Achieve It!
+                    { 1562650024u, Status.Compatible   }, // Rebalanced Industries
+                    { 1556715327u, Status.Compatible   }, // Show It!
+                    { 1552053911u, Status.Compatible   }, // Trailer Variation Loader
+                    { 1548831935u, Status.Compatible   }, // Advanced Vehicle Options (v1.9 or above)
+                    { 1530376523u, Status.Compatible   }, // Railway Replacer
                     { 1440928803u, Status.Incompatible }, // Parallel Road Tool
                     { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
+                    { 1415090282u, Status.Compatible   }, // AutoLineColor Redux
                     { 1400711138u, Status.Incompatible }, // [BETA] Parallel Road Tool
+                    { 1393797695u, Status.Compatible   }, // Touch This! Tool 3
+                    { 1393452031u, Status.Compatible   }, // Parkify r1.0.3
+                    { 1388613752u, Status.Compatible   }, // Tree Movement Control
                     { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
+                    { 973512634u , Status.Compatible   }, // Sort Mod Settings
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
+                    { 928128676u , Status.Compatible   }, // Improved Public Transport 2 [r5.0.3]
+                    { 922939393u , Status.Compatible   }, // Transparency LOD Fix + Cloud Assets Enabler
+                    { 837734529u , Status.Compatible   }, // Find It! 1.5.4
+                    { 818641631u , Status.Compatible   }, // Ambient Sounds Tuner
+                    { 815103125u , Status.Compatible   }, // Extra Vehicle Effects
+                    { 814498849u , Status.Compatible   }, // Improved Content Manager
+                    { 811352708u , Status.Compatible   }, // Ragnarok
                     { 802066100u , Status.Compatible   }, // Fine Road Anarchy
+                    { 787611845u , Status.Compatible   }, // Prop Snapping
+                    { 780720853u , Status.Compatible   }, // Vehicle Effects 1.8.1b
+                    { 767233815u , Status.Compatible   }, // Decal Prop Fix
+                    { 707497031u , Status.Compatible   }, // Tram Station Track
+                    { 694123443u , Status.Compatible   }, // American Traffic Lights
+                    { 690066392u , Status.Compatible   }, // American Roadsigns 2.2.0
+                    { 667342976u , Status.Compatible   }, // Loading Screen Mod
                     { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 651322972u , Status.Compatible   }, // Fine Road Tool
-                    { 543722850u , Status.Unknown      }, // Network Skins (Park Life compatible)
+                    { 645390478u , Status.Compatible   }, // Map Editor Tunnels Enabler
+                    { 627096876u , Status.Compatible   }, // Improved Wind Simulation
+                    { 618536610u , Status.Compatible   }, // AST: KRA Sound Pack
+                    { 608517757u , Status.Compatible   }, // Sub-Buildings Tabs
+                    { 593588108u , Status.Compatible   }, // Prop & Tree Anarchy
+                    { 591137516u , Status.Compatible   }, // Redcomet's Municipal Sound Pack
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 543722850u , Status.Unknown      }, // Network Skins (Park Life compatible)
+                    { 530871278u , Status.Compatible   }, // Daylight Classic
+                    { 530771650u , Status.Compatible   }, // Prefab Hook
+                    { 515489008u , Status.Compatible   }, // Extra Train Station Tracks
+                    { 512314255u , Status.Compatible   }, // More Network Stuff
+                    { 502750307u , Status.Compatible   }, // Extra Landscaping Tools
+                    { 465127441u , Status.Compatible   }, // Airport Roads 1.3.7
+                    { 455403039u , Status.Compatible   }, // Unlimited Trees Mod
+                    { 445589127u , Status.Compatible   }, // Precision Engineering
+                    { 427258853u , Status.Compatible   }, // Pedestrian Crossings
                     { 418556522u , Status.Incompatible }, // Road Anarchy
+                    { 409776678u , Status.Compatible   }, // Demand Master
+                    { 409171141u , Status.Compatible   }, // Cash on Demand
                 },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorIssues
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Languages = new[] { "zh-cn", "nl", "en", "fr", "de", "it", "ja", "pt", "ru", "es", },
                 Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { 1844442251u, "[Mod: Fine Road Tool] Since Sunset Harbor, Fine Road Tool (FRT) is incompatible with Parallel Road Tool (PRT).\n" +
+                                 "  You can temporarily disable FRT if you need to use PRT, but don't have them both enabled at same time."},
+                },
                 ReplaceWith = 1440928803u, // Parallel Road Tool
                 SourceURL = "https://github.com/ST-Apps/CS-ParallelRoadTool",
             });
@@ -414,7 +561,9 @@ namespace AutoRepair.Catalogs {
                     { 1844440354u, Status.Compatible   }, // Fine Road Anarchy 2
                     { 1619685021u, Status.Compatible   }, // Move It 2.7.0
                     { 1612012531u, Status.Compatible   }, // Net Picker 2.0
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
                     { 1436255148u, Status.Incompatible }, // Fine Road Anarchy 汉化版1.3.5
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1362508329u, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
                     { 954034590u , Status.Incompatible }, // Road Anarchy V2
                     { 802066100u , Status.Incompatible }, // Fine Road Anarchy
@@ -502,11 +651,11 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop // on or before 13/Apr/2020
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("1 Apr, 2020"),
                 ReplaceWith = 1844440354u, // Fine Road Anarchy 2
-                ReleasedDuring = GameVersion.SunsetHarbor,
                 SuppressOlderReplacementWarning = true,
                 SuppressVersionWarnings = true,
                 Updated = WorkshopDate("1 Apr, 2020"),

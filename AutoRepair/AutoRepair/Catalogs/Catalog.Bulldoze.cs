@@ -30,6 +30,8 @@ namespace AutoRepair.Catalogs {
                     { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
                     { 1627986403u, Status.Recommended  }, // Bulldoze It!
                     { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
                     { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
                     { 406132323u , Status.Incompatible }, // Automatic Bulldoze
@@ -71,6 +73,8 @@ namespace AutoRepair.Catalogs {
                     { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
                     { 1627986403u, Status.Incompatible }, // Bulldoze It!
                     { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
                     { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
                     { 406132323u , Status.Incompatible }, // Automatic Bulldoze

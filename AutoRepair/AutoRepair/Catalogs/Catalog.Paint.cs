@@ -109,14 +109,14 @@ namespace AutoRepair.Catalogs {
                     { 576327847u , Status.MinorIssues  }, // 81 Tiles (BP version)
                     { 502750307u , Status.Required     }, // Extra Landscaping Tools
                 },
-                CompatibleWith = GameVersion.ParadoxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Sunset Harbor: Users reporting 'Array index is out of range' errors." },
-                    { NOTE, "Sunset Harbor: Users reporting that the painted textures look strange." },
+                    { NOTE, "Sunset Harbor: Users reporting 'Array index is out of range' errors - but might be mod conflict." },
+                    { NOTE, "Sunset Harbor: Users reporting that the painted textures look strange - might be Procedural Objects mod?" },
                     { 672248733u, "[Mod: Ultimate Eye Candy] May cause Surface Painer customisations to reset (unconfirmed reports)." },
-                    { 576327847u, "[Mod: 81 Tiles] Surface Painter customisations sometimes reset if 81 Tiles active." },
+                    { 576327847u, "[Mod: 81 Tiles] Surface Painter customisations sometimes reset if 81 Tiles active - might be due to Ultimate Eye Candy mod?" },
                 },
                 SourceURL = "https://github.com/bloodypenguin/Skylines-SurfacePainter",
             });

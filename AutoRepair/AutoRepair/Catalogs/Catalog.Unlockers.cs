@@ -47,6 +47,8 @@ namespace AutoRepair.Catalogs {
                     { 1567569285u, Status.Incompatible }, // Achieve It!
                     { 1498036881u, Status.Incompatible }, // UltimateMod 2.6
                     { 1444491969u, Status.Incompatible }, // Achievements with Mods
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1237383751u, Status.Incompatible }, // Extended Game Options
                     { 407055819u , Status.Incompatible }, // Mod Achievement Enabler
                     // Harmony conflicts:
