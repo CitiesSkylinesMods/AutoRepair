@@ -121,6 +121,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // removed on or around 12/Mar/2020
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                SuppressArchiveWarning = true,
             });
 
             AddMod(new Review(1985701540u, "CSM") {

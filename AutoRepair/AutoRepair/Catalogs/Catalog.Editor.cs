@@ -18,6 +18,19 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Editor";
 
+            AddMod(new Review(2060128290u, "Feature: No Binary") {
+                Affect = Factor.Other,
+                Authors = "Elektrix",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.EditorMod
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("13 Apr, 2020"),
+                Updated = WorkshopDate("13 Apr, 2020"),
+            });
+
             // todo: move to converter cat?
             AddMod(new Review(1552053911u, "TrailerVariation Loader") {
                 Affect = Factor.Vehicles,

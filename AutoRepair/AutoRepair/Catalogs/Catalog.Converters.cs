@@ -284,6 +284,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 2016920607u, // RICO revisited
+                SuppressArchiveWarning = true,
             });
 
             AddMod(new Review(586012417u, "Ploppable RICO") {
@@ -294,6 +295,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Customize
                        | Factor.DemandRCI
                        | Factor.Employment,
+                ArchiveURL = "https://web.archive.org/web/20200412231453/https://steamcommunity.com/sharedfiles/filedetails/?id=586012417",
                 Authors = "AJ3D, BloodyPenguin, boformer, Tailgunner",
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
@@ -321,12 +323,13 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
+                      | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: Causes residential buildings to have 0/0 households, collapsing your economy." },
                 },
                 Published = WorkshopDate("28 Dec, 2015"),
                 ReplaceWith = 2016920607u, // Ploppable RICO revisited
+                SourceURL = "https://github.com/AJ3D/Ploppable-RICO",
                 Updated = WorkshopDate("26 Oct, 2018"),
             });
         }

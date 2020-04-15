@@ -19,6 +19,19 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "PlaceAndMove";
 
+            AddMod(new Review(2060132379u, "Feature: Path Snapping") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "Elektrix",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 912329352u , Status.Unknown      }, // Building Anarchy
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("13 Apr, 2020"),
+                Updated = WorkshopDate("13 Apr, 2020"),
+            });
+
             AddMod(new Review(2030755273u, "Automatic Pedestrian Bridge Builder [PRE ALPHA]") {
                 Affect = Factor.Tools
                        | Factor.Toolbar,
@@ -345,6 +358,7 @@ namespace AutoRepair.Catalogs {
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
             });
 
@@ -571,9 +585,35 @@ namespace AutoRepair.Catalogs {
                     { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/TouchThisTool",
                 // todo: incompat with older touch tool no longer in workshop
+            });
+
+            AddMod(new Review(912329352u, "Building Anarchy") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.UI, // construction tooltips
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2060132379u, Status.Unknown }, // Path Snapping
+                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 766190099u , Status.Incompatible }, // Move It
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have problem with building placement, try deleting 'BuildingAnarchy.xml' from\n  'C:\\Users\\YOURUSER\\AppData\\Local\\Colossal Order\\Cities_Skylines'" },
+                    { NOTE, "Incorrect use of this mod can seriously mess up your city; buildings further than 2 zoning squares from road cannot be reached! Use with caution!" },
+                    { NOTE, "Usage notes: https://steamcommunity.com/workshop/filedetails/discussion/912329352/1326718197216147348/" },
+                    { NOTE, "A somewhat safer alternative is 'Path Snapping' mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2060132379" },
+                },
+                Published = WorkshopDate("24 Apr, 2017"),
+                SourceURL = "https://github.com/TPBCS/BuildingAnarchy",
+                Updated = WorkshopDate("13 Nov, 2018"),
             });
 
             /*
@@ -656,6 +696,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("1 Apr, 2020"),
                 ReplaceWith = 1844440354u, // Fine Road Anarchy 2
+                SuppressArchiveWarning = true,
                 SuppressOlderReplacementWarning = true,
                 SuppressVersionWarnings = true,
                 Updated = WorkshopDate("1 Apr, 2020"),
@@ -1021,6 +1062,7 @@ namespace AutoRepair.Catalogs {
             // original version
             AddMod(new Review(766190099u, "Move It") {
                 Affect = Factor.PlaceAndMove,
+                ArchiveURL = "https://web.archive.org/web/20190109162233/https://steamcommunity.com/sharedfiles/filedetails/?id=766190099",
                 Authors = "Boogieman Sam",
                 BrokenBy = GameVersion.Industries,
                 Catalog = catalog,
@@ -1043,7 +1085,7 @@ namespace AutoRepair.Catalogs {
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                     { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                 },
-                CompatibleWith = GameVersion.ParkLife,
+                CompatibleWith = GameVersion.Patch_1_10_1_3,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // Industries
                       | ItemFlags.ForceMigration
@@ -1051,8 +1093,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // Removed some time around Feb 2019
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("18 Sep, 2016"),
                 ReplaceWith = 1619685021u, // Move It (curent stable release)
                 SourceURL = "https://github.com/SamsamTS/CS-MoveIt",
+                Updated = WorkshopDate("26 Aug, 2018"),
             });
 
             // original mod

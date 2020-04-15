@@ -74,6 +74,12 @@ namespace AutoRepair.Catalogs {
             # ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ███████
             */
 
+            AddMusic(new Review(2057429333u, "City Life (2006) Music Pack") {
+                Authors = "Autokratao",
+                Published = WorkshopDate("11 Apr, 2020"),
+                Updated = WorkshopDate("11 Apr, 2020"),
+            });
+
             AddMusic(new Review(2056024655u, "VAMorgans FM Radio") {
                 Authors = "ViceAdmiral Morgan",
                 Published = WorkshopDate("10 Apr, 2020"),

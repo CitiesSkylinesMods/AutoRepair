@@ -65,12 +65,15 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
@@ -122,12 +125,15 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 86 MB
@@ -187,12 +193,15 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 120 MB
@@ -252,12 +261,15 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 284 MB
@@ -317,12 +329,15 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.LargeFileWarning // 395 MB
@@ -362,14 +377,18 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 1251396095u, // Taiwanese Traffic Lights (Right Hand Traffic)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.LargeFileWarning // 53 MB
                       | ItemFlags.SourceAvailable,
@@ -404,12 +423,15 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
@@ -427,6 +449,88 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("31 Dec, 2017"),
             });
 
+            AddMod(new Review(890420060u, "S. Korea Traffic Lights (LHT)") {
+                Affect = Factor.Props
+                       | Factor.TrafficLights,
+                Authors = "Zuben",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // minor issues with NExt2 roads
+                    { 2044086131u, Status.Compatible   }, // NExt2 (temp bugfix)
+                    { 812125426u , Status.Compatible   }, // NExt2 (original)
+                    // traffic light - junctions
+                    { 1812157090u, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Incompatible }, // New American Traffic Lights
+                    { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
+                    { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
+                    { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
+                    // traffic light - level crossings
+                    { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
+                    { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
+                },
+                CompatibleWith = GameVersion.ParkLife,
+                ContinuationOf = 888671987u, // S. Korea Traffic Lights (RHT)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Locale = "ko",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "A right-hand traffic version is available: https://steamcommunity.com/sharedfiles/filedetails/?id=888671987" },
+                    { NOTE, "Based on source code of similar mod: https://github.com/ako-ako/Japanese-Traffic-Lights-V1.7" },
+                },
+                Published = WorkshopDate("24 Mar, 2017"),
+                Updated = WorkshopDate("24 Mar, 2017"),
+            });
+
+            AddMod(new Review(888671987u, "S. Korea Traffic Lights (RHT)") {
+                Affect = Factor.Props
+                       | Factor.TrafficLights,
+                Authors = "Zuben",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // minor issues with NExt2 roads
+                    { 2044086131u, Status.Compatible   }, // NExt2 (temp bugfix)
+                    { 812125426u , Status.Compatible   }, // NExt2 (original)
+                    // traffic light - junctions
+                    { 1812157090u, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Incompatible }, // New American Traffic Lights
+                    { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
+                    { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
+                    { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
+                    // traffic light - level crossings
+                    { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
+                    { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
+                },
+                CompatibleWith = GameVersion.ParkLife,
+                ContinuationOf = 810355214u, // Japanese Traffic Lights (RHT)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Locale = "ko",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "A left-hand traffic version is available: http://steamcommunity.com/sharedfiles/filedetails/?id=890420060" },
+                    { NOTE, "Based on source code of similar mod: https://github.com/ako-ako/Japanese-Traffic-Lights-V1.7" },
+                },
+                Published = WorkshopDate("22 Mar, 2017"),
+                Updated = WorkshopDate("19 Jul, 2018"),
+            });
+
             /*
             #  ██████ ██████   ██████  ███████ ███████ ██ ███    ██  ██████  ███████
             # ██      ██   ██ ██    ██ ██      ██      ██ ████   ██ ██       ██
@@ -434,7 +538,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██   ██ ██    ██      ██      ██ ██ ██  ██ ██ ██    ██      ██
             #  ██████ ██   ██  ██████  ███████ ███████ ██ ██   ████  ██████  ███████
             */
- 
+
             // these lights are _compatible_ with the junction light packs
 
             // has minor bugs
@@ -456,6 +560,8 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Compatible   }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Compatible   }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Compatible   }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Incompatible }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Incompatible }, // Japanese Railway Crossings 日本風踏切MOD
@@ -463,6 +569,7 @@ namespace AutoRepair.Catalogs {
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
                     { 1117087491u, Status.MinorIssues  }, // Remove Road Props
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                     { 418637762u , Status.MinorIssues  }, // American Roads
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -498,6 +605,8 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Compatible   }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Compatible   }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Compatible   }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Incompatible }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Incompatible }, // Japanese Railway Crossings 日本風踏切MOD
@@ -505,6 +614,7 @@ namespace AutoRepair.Catalogs {
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
                     { 1117087491u, Status.MinorIssues  }, // Remove Road Props
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                     { 418637762u , Status.MinorIssues  }, // American Roads
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -551,12 +661,15 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
                     // other:
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1320575938u, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                 },
                 CompatibleWith = GameVersion.GreenCities,
                 Flags = ItemFlags.Abandonware

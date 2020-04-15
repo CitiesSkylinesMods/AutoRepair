@@ -20,6 +20,78 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Unsorted";
 
+            AddMod(new Review(895061550u, "Theme Decals") {
+                Affect = Factor.MapThemes
+                       | Factor.Props,
+                Authors = "Ronyx69",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1899640536u, Status.Unknown      }, // Theme Mixer 2
+                    { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
+                    { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
+                    { 793346248u , Status.Recommended  }, // Decal Hover Area
+                    { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
+                    { 767233815u , Status.Required     }, // Decal Prop Fix
+                    { 574674741u , Status.Incompatible }, // Terrain Themes Mod
+                    { 416966387u , Status.Incompatible }, // Terrain Texture Replacer
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorIssues
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you see 'If you see this then the mod didn't work' the mod is either disabled or failed to initialise." },
+                    { NOTE, "Changes to prop or distance, theme textures or graphics detail will likely require game restart for the decals to update." },
+                    { NOTE, "Asset creators, script for creating decals: https://gist.github.com/ronyx69/69130ffd46ab3573f0968aedd11c88eb" },
+                    { NOTE, "Asset creators, logo for asset icon: https://drive.google.com/open?id=0B6Ccf1N5h5f7ZE9laHg3cVY0aHM" },
+                },
+                Published = WorkshopDate("31 Mar, 2017"),
+                SourceURL = "https://gist.github.com/ronyx69/a3fff79130e59fd5b7210ed5228ab812",
+                Updated = WorkshopDate("21 Aug, 2017"),
+            });
+
+            AddMod(new Review(911295408u, "Prop Scaling 0.3 [Experimental ALPHA]") {
+                Affect = Factor.Props,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The mod takes effect whilst placing props on the map:" },
+                    { NOTE, "Press Ctrl + Up/Down to incease/decrease min scale." },
+                    { NOTE, "Press Alt + Up/Down to incease/decrease max scale." },
+                    { NOTE, "Press Ctrl + Alt + Up/Down to incease/decrease both min and max scale." },
+                    { NOTE, "With shortcuts above, pressing Right arrow will increase/decrease faster." },
+                    { NOTE, "Press Home to reset to default." },
+                },
+                Published = WorkshopDate("23 Apr, 2017"),
+                Updated = WorkshopDate("5 May, 2017"),
+            });
+
+            AddMod(new Review(903347963u, "Transparent Selectors") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.UI,
+                Authors = "Ronyx69, TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1764637396u, Status.Incompatible }, // Toggle It!
+                    { 1540147921u, Status.Compatible   }, // Grid be Gone
+                    { 1536223783u, Status.Compatible   }, // Hide Selectors
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("11 Apr, 2017"),
+                SourceURL = "https://gist.github.com/ronyx69/e556609f78efd918aa5895261d38d78e",
+                Updated = WorkshopDate("12 Apr, 2017"),
+            });
+
             AddMod(new Review(932490392u, "Track My Time") {
                 Affect = Factor.Other,
                 Authors = "BloodyPenguin",
@@ -70,7 +142,8 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("14 Jul, 2019"), // guess based on git repo creation date
                 ReplaceWith = 2055972178u, // Custom Zone Mixer
                 SourceURL = "https://github.com/klyte45/ZoneMixer",
-                Updated = WorkshopDate("Jul 16, 2019"), // guess based on github commits
+                SuppressArchiveWarning = true,
+                Updated = WorkshopDate("16 Jul, 2019"), // guess based on github commits
                 UserModInspected = true,
             });
 

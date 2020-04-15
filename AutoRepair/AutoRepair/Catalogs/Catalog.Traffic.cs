@@ -27,17 +27,31 @@ namespace AutoRepair.Catalogs {
                 Authors = "Strad",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1953042839u, Status.Incompatible }, // Unified Railway System
+                    // current TM:PE
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
                     { 1637663252u, Status.Compatible   }, // TM:PE v11 STABLE
+                    // Old/rogue versions of TM:PE
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
-                    { 1829496988u, Status.Incompatible }, // Adjust Pathfinding
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1581695572u, Status.Incompatible }, // Traffic Manager: President Edition (no longer in workshop)
                     { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
-                    { 949504539u , Status.Unknown      }, // SingleTrainTrackAI
-                    { 583429740u , Status.MinorIssues  }, // Traffic Manager: President Edition (LinuxFan)
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    // Traffic Manager + Traffic++ AI (obsolete; game breaking)
+                    { 563720449u , Status.Incompatible }, // Traffic Manager + Improved AI (Japanese Ver.)
+                    { 498363759u , Status.Incompatible }, // Traffic Manager + Improved AI
+                    // Traffic++ (obsolete; game breaking)
+                    { 626024868u , Status.Incompatible }, // Traffic++ V2
+                    { 492391912u , Status.Incompatible }, // Improved AI (Traffic++)
+                    { 409184143u , Status.Incompatible }, // Traffic++
+                    // Extremely old verisons of Traffic Manager (obsolete; game breaking)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 481786333u , Status.Incompatible }, // Traffic Manager Plus
+                    { 427585724u , Status.Incompatible }, // Traffic Manager (where it all started!!)
+                    // other
+                    { 1953042839u, Status.Incompatible }, // Unified Railway System
+                    { 1829496988u, Status.Incompatible }, // Adjust Pathfinding
+                    { 949504539u , Status.Unknown      }, // SingleTrainTrackAI
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/Strdate/AdjustPathfinding",
@@ -143,6 +157,7 @@ namespace AutoRepair.Catalogs {
                     { 1627469414u, Status.Compatible   }, // No Parking
                     { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
                     { 956707300u , Status.Compatible   }, // Remove Street Arrows
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                     // Other mods
                     { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
@@ -297,6 +312,7 @@ namespace AutoRepair.Catalogs {
                     { 1627469414u, Status.Compatible   }, // No Parking
                     { 1320575938u, Status.Compatible   }, // Hide Traffic Lights
                     { 956707300u , Status.Compatible   }, // Remove Street Arrows
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                     // Other mods
                     { 2019097300u, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Compatible   }, // CSUR ToolBox
@@ -612,6 +628,7 @@ namespace AutoRepair.Catalogs {
                 Locale = "en",
                 ReleasedDuring = GameVersion.Industries,
                 ReplaceWith = 1637663252u, // TM:PE V11 STABLE
+                SuppressArchiveWarning = true,
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
                     "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
@@ -702,6 +719,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.VehicleInfo
                        | Factor.VehicleLimit
                        | Factor.Velocity,
+                ArchiveURL = "https://web.archive.org/web/20200317042008/http://steamcommunity.com/sharedfiles/filedetails/?id=583429740",
                 Authors = "LinuxFan",
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
@@ -733,6 +751,7 @@ namespace AutoRepair.Catalogs {
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
                     { 927293560u , Status.Incompatible }, // Geli-Districts v3.0
+                    { 919020932u , Status.Compatible   }, // Stop Remover
                     { 844180955u , Status.Incompatible }, // City Drive
                     { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)

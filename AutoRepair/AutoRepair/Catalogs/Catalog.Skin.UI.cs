@@ -182,9 +182,9 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Sep, 2018"),
             });
 
-            // https://web.archive.org/web/20150415205521/http://steamcommunity.com/sharedfiles/filedetails/?id=419090722
             AddMod(new Review(419090722u, "Mod Corral") {
                 Affect = Factor.UI,
+                ArchiveURL = "https://web.archive.org/web/20150415205521/http://steamcommunity.com/sharedfiles/filedetails/?id=419090722",
                 Authors = "brittany",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -201,9 +201,9 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("12 Apr, 2015"),
             });
 
-            // https://web.archive.org/web/20150415230208/http://steamcommunity.com/sharedfiles/filedetails/?id=413584409
             AddMod(new Review(413584409u, "BetterLoadPanel") {
                 Affect = Factor.UI,
+                ArchiveURL = "https://web.archive.org/web/20150415230208/http://steamcommunity.com/sharedfiles/filedetails/?id=413584409",
                 Authors = "brittany",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -277,9 +277,9 @@ namespace AutoRepair.Catalogs {
                 UserModInspected = true,
             });
 
-            // https://web.archive.org/web/20150703140007/http://steamcommunity.com/sharedfiles/filedetails/?id=407225523
             AddMod(new Review(407225523u, "TextScaleMod") {
                 Affect = Factor.UI,
+                ArchiveURL = "https://web.archive.org/web/20150703140007/http://steamcommunity.com/sharedfiles/filedetails/?id=407225523",
                 Authors = "alex3305",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -300,10 +300,10 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 
-            // https://web.archive.org/web/20151122135431/http://steamcommunity.com/sharedfiles/filedetails/?id=406623071
             // Compatible with Reddit for Chirpy mod by 'mabako' and Chirp Filter mod by 'Zuppi' 
             AddMod(new Review(406623071u, "Chirpy Banner") {
                 Affect = Factor.UI,
+                ArchiveURL = "https://web.archive.org/web/20151122135431/http://steamcommunity.com/sharedfiles/filedetails/?id=406623071",
                 Authors = "brittany",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {

@@ -280,7 +280,7 @@ namespace AutoRepair.Catalogs {
                 DisasterMods();
                 EditorMods();
                 EmptyingMods();
-                HideMods();
+                HideRemoveMods();
                 LoadSaveMods();
                 MoneyMods();
                 MultiplayerMods();

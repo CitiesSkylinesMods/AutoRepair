@@ -29,6 +29,7 @@ namespace AutoRepair.Catalogs {
                     { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings
+                    { 903285221u , Status.Incompatible }, // Auto-Enable Mods
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
@@ -46,6 +47,7 @@ namespace AutoRepair.Catalogs {
                     { 1773106708u, Status.Incompatible }, // More Advanced OptionsPanel
                     { 1762394554u, Status.Incompatible }, // Wider Options Panel
                     { 973512634u , Status.Incompatible }, // Sort Mod Settings
+                    { 903285221u , Status.Incompatible }, // Auto-Enable Mods
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
@@ -103,6 +105,21 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-SortModSettings",
                 Tags = new[] { "Options", "UI", "Settings", },
+            });
+
+            AddMod(new Review(903285221u, "Auto-Enable Mods") {
+                Affect = Factor.Other,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1842879635u, Status.Incompatible }, // SwitchMAD_light
+                    { 1838385855u, Status.Incompatible }, // SwitchMAD
+                    { 903285221u , Status.Incompatible }, // Auto-Enable Mods
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("11 Apr, 2017"),
+                Updated = WorkshopDate("18 Nov, 2018"),
             });
         }
     }

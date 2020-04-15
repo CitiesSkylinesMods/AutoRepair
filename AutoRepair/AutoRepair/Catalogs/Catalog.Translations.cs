@@ -98,6 +98,8 @@ namespace AutoRepair.Catalogs {
             { 928628465u , Status.Incompatible },
             { 928477022u , Status.Incompatible },
             { 926909781u , Status.Incompatible },
+            { 914688845u , Status.Incompatible },
+            { 903794180u , Status.Incompatible },
         };
 
         /// <summary>
@@ -110,6 +112,22 @@ namespace AutoRepair.Catalogs {
             string catalog = "Translations";
 
             ulong latestAliMod = 1988319487u; // ali213_mod_01
+
+            AddMod(new Review(2060345623u, "CSLTranslationComparisonTable") {
+                Affect = Factor.Other,
+                Authors = "ibotaro",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceBundled,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "See workshop page for detailed usage information." },
+                    { NOTE, "The html doc it creates connects to external servers (they look OK, just normal stuff like jquery, etc)." },
+                },
+                Published = WorkshopDate("14 Apr, 2020"),
+                Updated = WorkshopDate("14 Apr, 2020"),
+            });
 
             AddMod(new Review(1231957400u, "Custom Namelists") {
                 Affect = Factor.Other, // todo
@@ -468,6 +486,10 @@ namespace AutoRepair.Catalogs {
 
             string aliDetails = "Details of mod: https://forum.paradoxplaza.com/forum/index.php?threads/get-steam-to-remove-this-item-from-the-workshop.975808/#post-21997231";
 
+            Dictionary<ulong, string> aliNotes = new Dictionary<ulong, string>() {
+                    { NOTE, aliDetails },
+            };
+
             // currently most recent one
             AddMod(new Review(1988319487u, "ali213_mod_01") {
                 Affect = Factor.Other, // todo
@@ -479,9 +501,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("4 Feb, 2020"),
                 Updated = WorkshopDate("4 Feb, 2020"),
             });
@@ -553,9 +573,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("22 Dec, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("22 Dec, 2019"),
@@ -572,9 +590,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("18 Dec, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("18 Dec, 2019"),
@@ -591,9 +607,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("3 Oct, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("3 Oct, 2019"),
@@ -610,9 +624,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("23 Aug, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("23 Aug, 2019"),
@@ -629,9 +641,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("23 Aug, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("23 Aug, 2019"),
@@ -648,9 +658,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("1 Apr, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("1 Apr, 2019"),
@@ -667,9 +675,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("16 Mar, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("16 Mar, 2019"),
@@ -686,9 +692,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("12 Mar, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("12 Mar, 2019"),
@@ -705,9 +709,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("15 Jan, 2019"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("15 Jan, 2019"),
@@ -724,9 +726,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("27 Oct, 2018"),
                 ReplaceWith = latestAliMod,
                 SourceURL = "https://gist.github.com/anonymous/4e9b615e04366fbba1c10eff57387eab",
@@ -744,9 +744,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("24 Oct, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("24 Oct, 2018"),
@@ -763,9 +761,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("24 Oct, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("24 Oct, 2018"),
@@ -782,9 +778,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("10 Jun, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("10 Jun, 2018"),
@@ -801,9 +795,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("28 May, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("28 May, 2018"),
@@ -820,9 +812,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("25 May, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("25 May, 2018"),
@@ -839,9 +829,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("9 Apr, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("9 Apr, 2018"),
@@ -858,9 +846,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("9 Apr, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("9 Apr, 2018"),
@@ -877,9 +863,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("18 Mar, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("18 Mar, 2018"),
@@ -896,9 +880,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("18 Mar, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("18 Mar, 2018"),
@@ -915,9 +897,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("6 Mar, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("6 Mar, 2018"),
@@ -934,9 +914,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("3 Feb, 2018"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("3 Feb, 2018"),
@@ -953,9 +931,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("2 Dec, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("2 Dec, 2017"),
@@ -972,9 +948,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("30 Nov, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("26 Aug, 2018"),
@@ -991,9 +965,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("6 Jul, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("6 Jul, 2017"),
@@ -1010,9 +982,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("5 Jul, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("5 Jul, 2017"),
@@ -1029,9 +999,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("5 Jul, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("5 Jul, 2017"),
@@ -1048,9 +1016,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("18 Jun, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("18 Jun, 2017"),
@@ -1067,9 +1033,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("5 Jun, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("5 Jun, 2017"),
@@ -1086,9 +1050,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("20 May, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("20 May, 2017"),
@@ -1105,9 +1067,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("20 May, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("20 May, 2017"),
@@ -1124,9 +1084,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("19 May, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("19 May, 2017"),
@@ -1143,9 +1101,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("19 May, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("19 May, 2017"),
@@ -1162,12 +1118,44 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, aliDetails },
-                },
+                Notes = aliNotes,
                 Published = WorkshopDate("16 May, 2017"),
                 ReplaceWith = latestAliMod,
                 Updated = WorkshopDate("16 May, 2017"),
+            });
+
+            AddMod(new Review(914688845u, "ali213_mod_01") {
+                Affect = Factor.Other, // todo
+                Authors = "327899396",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Locale = "zh-cn",
+                Notes = aliNotes,
+                Published = WorkshopDate("16 May, 2017"),
+                ReplaceWith = latestAliMod,
+                Updated = WorkshopDate("16 May, 2017"),
+            });
+
+            AddMod(new Review(903794180, "ali213_mod_01") {
+                Affect = Factor.Other, // todo
+                Authors = "xieshudan1",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Localised,
+                Locale = "zh-cn",
+                Notes = aliNotes,
+                Published = WorkshopDate("12 Apr, 2017"),
+                ReplaceWith = latestAliMod,
+                Updated = WorkshopDate("12 Apr, 2017"),
             });
         }
     }

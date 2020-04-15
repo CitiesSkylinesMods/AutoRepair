@@ -212,15 +212,15 @@ namespace AutoRepair {
                     review.Authors);
             }
 
-            if (review.HasFlag(ItemFlags.GameBreaking)) {
-
-                log.Append("\n - Broken. Unsubscribe it.\n");
-
-            } else if (review.BrokenBy != null && gameVersion >= review.BrokenBy) {
+            if (review.BrokenBy != null && gameVersion >= review.BrokenBy) {
 
                 log.AppendFormat(
                     "\n - Broken by the Cities: Skylines {0} update.\n",
                     GameVersion.GetVersionString(review.BrokenBy));
+
+            } else if (review.HasFlag(ItemFlags.GameBreaking)) {
+
+                    log.Append("\n - Broken. Unsubscribe it.\n");
 
             } else if (review.CompatibleWith != null && GameVersion.LatestMilestone <= review.CompatibleWith) {
 
@@ -236,7 +236,9 @@ namespace AutoRepair {
             }
 
             if (Options.Instance.LogWorkshopURLs) {
-                if (review.HasFlag(ItemFlags.NoWorkshop)) {
+                if (!string.IsNullOrEmpty(review.ArchiveURL)) {
+                    log.AppendFormat("\n - Archive of removed workshop page: {0}\n", review.ArchiveURL);
+                } else if (review.HasFlag(ItemFlags.NoWorkshop)) {
                     log.Append("\n - Removed from Steam Workshop; it is probably obsolete or game breaking.\n");
                 } else {
                     log.AppendFormat("\n - Workshop page: {0}\n", subscription.WorkshopURL);

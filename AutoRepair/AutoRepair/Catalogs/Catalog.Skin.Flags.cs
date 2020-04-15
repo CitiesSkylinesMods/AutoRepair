@@ -284,6 +284,53 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
+            AddMod(new Review(912789280u, "F.A.L.G.S.C Flag") {
+                Affect = Factor.Props,
+                Authors = "Winter",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 595017353u, Status.Required }, // Flags Replacer
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("25 Apr, 2017"),
+                Tags = new[] {
+                    "Flags", "Replacer", "Luxury", "Fully", "Automated", "Gay", "Space", "Communism",
+                },
+                Updated = WorkshopDate("25 Apr, 2017"),
+            });
+
+            AddMod(new Review(910129741u, "ROK(South Korea) Flag Replacer") {
+                Affect = Factor.Props,
+                Authors = "PARAdoxiBLE",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 595017353u, Status.Required }, // Flags Replacer
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("21 Apr, 2017"),
+                Tags = new[] {
+                    "Flags", "Replacer",
+                },
+                Updated = WorkshopDate("21 Apr, 2017"),
+            });
+
+            AddMod(new Review(894085281u, "German flag replacer mod") {
+                Affect = Factor.Props,
+                Authors = "zar",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 595017353u, Status.Required }, // Flags Replacer
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sometimes shows a LOD error while loading; ignore it, the flag should still work." },
+                },
+                Published = WorkshopDate("29 Mar, 2017"),
+                Tags = new[] {
+                    "Flags", "Replacer",
+                },
+                Updated = WorkshopDate("29 Mar, 2017"),
+            });
         }
     }
 }

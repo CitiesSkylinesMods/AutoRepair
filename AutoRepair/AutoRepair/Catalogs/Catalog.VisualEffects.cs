@@ -336,6 +336,25 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 May, 2017"),
             });
 
+            AddMod(new Review(922939393u, "Transparency LODs Fix") {
+                Affect = Factor.Rendering,
+                Authors = "TPB, Ronyx69",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Laggy
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "May cause lag on older computers or graphics cards due to increased rendering workload." },
+                },
+                Published = WorkshopDate("10 May, 2017"),
+                Updated = WorkshopDate("1 Apr, 2018"),
+            });
+
             AddMod(new Review(812713438u, "Dynamic Resolution (Fixed for 1.9!)") {
                 Affect = Factor.Rendering,
                 Authors = "Gradius Twin",
@@ -462,9 +481,9 @@ namespace AutoRepair.Catalogs {
             // No workshop page, but Sun Shafts (BP ver) says it's something about AO
             // Old Sun Shafts page confirms it was called Ambinet Occlusion
             // User on old AO page also linked to it, so it's a continuation of old AO.
-            // WBM: https://web.archive.org/web/20170715133852/http://steamcommunity.com/sharedfiles/filedetails/?id=934825735
             AddMod(new Review(934825735u, "Ambient Occlusion") {
                 Affect = Factor.Rendering,
+                ArchiveURL = "https://web.archive.org/web/20170715133852/http://steamcommunity.com/sharedfiles/filedetails/?id=934825735",
                 Authors = "TPB, BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -515,10 +534,10 @@ namespace AutoRepair.Catalogs {
             });
 
             // old
-            // wbm: https://web.archive.org/web/20150415011651/http://steamcommunity.com/sharedfiles/filedetails/?id=415732693
             AddMod(new Review(415732693u, "Disable Clouds") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
+                ArchiveURL = "https://web.archive.org/web/20150415011651/http://steamcommunity.com/sharedfiles/filedetails/?id=415732693",
                 Authors = "Obelisk",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -600,10 +619,10 @@ namespace AutoRepair.Catalogs {
             });
 
             // discovered via: https://steamcommunity.com/workshop/filedetails/discussion/410329674/611701360830851903/
-            // wbm: https://web.archive.org/web/20150415010910/http://steamcommunity.com/sharedfiles/filedetails/?id=408648436
             // looks very much like an early version of Ultimate Eye Candy or Relight.. fog, bloom, tone mapping...
             AddMod(new Review(408648436u, "More Options") {
                 Affect = Factor.Rendering,
+                ArchiveURL = "https://web.archive.org/web/20150415010910/http://steamcommunity.com/sharedfiles/filedetails/?id=408648436",
                 Authors = "Quget",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -637,9 +656,9 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("21 Mar, 2015"), // WBM says 4 change notes but doesn't show updated date
             });
 
-            // WBM: https://web.archive.org/web/20150326014836/http://steamcommunity.com/id/Quget/myworkshopfiles/?appid=255710
             AddMod(new Review(407358867u, "Quget's Day & Night Prototype") {
                 Affect = Factor.Rendering,
+                ArchiveURL = "https://web.archive.org/web/20150326014836/http://steamcommunity.com/id/Quget/myworkshopfiles/?appid=255710",
                 Authors = "Quget",
                 BrokenBy = GameVersion.AfterDark,
                 Catalog = catalog,

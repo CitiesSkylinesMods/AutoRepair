@@ -123,6 +123,26 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Trees", "Forest", "Landscape", "LODs", "Graphics", "Environment", "Detailing", },
             });
 
+            AddMod(new Review(910440715u, "Plant Scaling") {
+                Affect = Factor.Trees,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The mod takes effect whilst placing trees on the map:" },
+                    { NOTE, "Press Ctrl + Up/Down to incease/decrease min scale." },
+                    { NOTE, "Press Alt + Up/Down to incease/decrease max scale." },
+                    { NOTE, "Press Ctrl + Alt + Up/Down to incease/decrease both min and max scale." },
+                    { NOTE, "With shortcuts above, pressing Right arrow will increase/decrease faster." },
+                    { NOTE, "Press Home to reset to default." },
+                },
+                Published = WorkshopDate("22 Apr, 2017"),
+                Updated = WorkshopDate("13 Nov, 2018"),
+            });
+
             AddMod(new Review(406723376u, "Tree Brush") {
                 Affect = Factor.Environment
                        | Factor.PlaceAndMove

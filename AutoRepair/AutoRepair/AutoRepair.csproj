@@ -54,7 +54,7 @@
     <Compile Include="Catalogs\Catalog.BuildingLevel.cs" />
     <Compile Include="Catalogs\Catalog.ContentManager.cs" />
     <Compile Include="Catalogs\Catalog.Emptying.cs" />
-    <Compile Include="Catalogs\Catalog.Hide.cs" />
+    <Compile Include="Catalogs\Catalog.HideRemove.cs" />
     <Compile Include="Catalogs\Catalog.PublicTransport.cs" />
     <Compile Include="Catalogs\Catalog.Skin.Flags.cs" />
     <Compile Include="Catalogs\Catalog.Unsorted.cs" />

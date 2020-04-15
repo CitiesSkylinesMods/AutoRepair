@@ -186,6 +186,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 908700552u , Status.Incompatible }, // Simulation Speed Benchmark
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues // harmony patch management could be better
@@ -206,17 +207,13 @@ namespace AutoRepair.Catalogs {
                     { 1440928803u, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho
-                    // https://github.com/keallu/CSL-WatchIt/issues/3 :
-                    { 1548831935u, Status.Incompatible }, // Advanced Vehicle Options (latest)
-                    { 1764208250u, Status.Incompatible }, // More Vehicles
-                    { 576327847u , Status.Incompatible }, // 81 Tiles
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Harmony errors in log on game exit; doesn't seem to cause any problems." },
-                    { NOTE, "Watch It may crash if used with More Vehicles / 81 Tiles / AVO mods. See: https://github.com/keallu/CSL-WatchIt/issues/3" },
+                    { NOTE, "One report that it's incompatible with More Vehicles / 81 Tiles / AVO mods. See: https://github.com/keallu/CSL-WatchIt/issues/3" },
                     { 1893036262u, "[Mod: Mayors Dashboard] Has same functionality as Watch It; consider unsubscribing one of these mods." },
                 },
                 Published = WorkshopDate("3 Feb, 2019"),
@@ -312,6 +309,26 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.MassTransit,
                 SourceURL = "https://github.com/Sherbanm/RID/",
+            });
+
+            AddMod(new Review(908700552u, "Simulation Speed Benchmark") {
+                Affect = Factor.Other,
+                Authors = "Overhatted",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1804882663u, Status.Incompatible }, // Monitor It!
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "There are reports this mod causes 'Object reference not set to an instance of an object' errors" },
+                },
+                Published = WorkshopDate("19 Apr, 2017"),
+                ReplaceWith = 1804882663u, // Monitor It!
+                SourceURL = "https://cld.pt/dl/download/b2583bc8-2fc9-4124-96e7-195c554c6991/SimulationSpeedBenchmark.zip",
+                Updated = WorkshopDate("19 Apr, 2017"),
             });
 
             /*

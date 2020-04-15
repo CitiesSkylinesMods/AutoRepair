@@ -41,6 +41,11 @@ namespace AutoRepair.Descriptors {
         public Factor Affect { get; set; } = Factor.None;
 
         /// <summary>
+        /// Gets or sets the web archive URL, if known, for items that are no longer in the Steam Workshop.
+        /// </summary>
+        public string ArchiveURL { get; set; }
+
+        /// <summary>
         /// Gets or sets the authors who developed the item. Comma-separated list.
         /// </summary>
         public string Authors { get; set; }
@@ -145,6 +150,13 @@ namespace AutoRepair.Descriptors {
         /// Gets or sets URL to source code.
         /// </summary>
         public string SourceURL { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to suppress warnings about missing archive URLs.
+        ///
+        /// Use this when there's no archive of the workshop page anywhere.
+        /// </summary>
+        public bool SuppressArchiveWarning { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to validate ReplaceWith property.
@@ -279,6 +291,14 @@ namespace AutoRepair.Descriptors {
             if (Affect == Factor.None) {
                 problems = true;
                 log.Append("- Affect missing\n");
+            }
+
+            if (!SuppressArchiveWarning && HasFlag(ItemFlags.NoWorkshop) && string.IsNullOrEmpty(ArchiveURL)) {
+                problems = true;
+                log.Append("- Archive URL missing\n");
+            } else if (!string.IsNullOrEmpty(ArchiveURL) && !HasFlag(ItemFlags.NoWorkshop)) {
+                problems = true;
+                log.Append("- Add ItemFlags.NoWorkshop to flags ?\n");
             }
 
             // authors should always be set

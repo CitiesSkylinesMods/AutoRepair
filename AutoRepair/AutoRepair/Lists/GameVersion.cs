@@ -303,7 +303,18 @@ namespace AutoRepair {
         /// <summary>
         /// 2018-05-24 Park Life expansion.
         /// </summary>
-        public static readonly Version ParkLife = new Version(1, 10, 0);
+        public static readonly Version ParkLife = new Version(1, 10, 0, 3);
+
+        /// <summary>
+        /// 2018-05-24 Trees reduce noise pollition, submesh modding, cinematic camera, menu filtering,
+        /// new rocks/trees/etc, tourism info view, changes to some menus/info views, bug fixes.
+        /// </summary>
+        public static readonly Version Patch_1_10_0_3 = new Version(1, 10, 0, 3);
+
+        /// <summary>
+        /// 2018-07-05 Bug fixes.
+        /// </summary>
+        public static readonly Version Patch_1_10_1_3 = new Version(1, 10, 1, 3);
 
         // ----------------------------------------------------------------------
 

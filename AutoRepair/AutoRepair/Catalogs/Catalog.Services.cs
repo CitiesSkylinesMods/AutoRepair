@@ -251,7 +251,9 @@ namespace AutoRepair.Catalogs {
             // old version
             AddMod(new Review(519691655u, "Service Vehicle Selector") {
                 Affect = Factor.Other,
+                ArchiveURL = "https://web.archive.org/web/20170330013917/http://steamcommunity.com/sharedfiles/filedetails/?id=519691655",
                 Authors = "DontCryJustDie",
+                BrokenBy = GameVersion.MassTransit,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
@@ -269,6 +271,7 @@ namespace AutoRepair.Catalogs {
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                 },
+                CompatibleWith = GameVersion.NaturalDisasters,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
@@ -276,7 +279,12 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // removed jan 2018?
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The mod fell in to disrepair when Natural Disasters was released, due to helicopters spawning from road-vehicle buildings." },
+                },
+                Published = WorkshopDate("17 Sep, 2015"),
                 ReplaceWith = 934994075u, // Service Vehicle Selector 2
+                Updated = WorkshopDate("9 Jun, 2016"),
             });
 
         }

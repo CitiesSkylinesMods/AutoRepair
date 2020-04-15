@@ -34,8 +34,9 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Industries,
+                Published = WorkshopDate("19 Feb, 2019"),
                 SourceURL = "https://github.com/keallu/CSL-EmptyIt",
+                Updated = WorkshopDate("20 Mar, 2019"),
             });
 
             AddMod(new Review(1456061226u, "Better Cemetery AI") {
@@ -57,9 +58,10 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Possibly incompatible with TM:PE and/or Real Time mods (further testing required)." },
                 },
-                ReleasedDuring = GameVersion.ParkLife,
+                Published = WorkshopDate("28 Jul, 2018"),
                 ReplaceWith = 1661072176u, // Empty It
                 SourceURL = "https://github.com/seanke/BetterCemeteryAI",
+                Updated = WorkshopDate("30 Jul, 2018"),
             });
 
             AddMod(new Review(1182722930u, "Automatic Empty") {
@@ -81,9 +83,10 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Doesn't empty snow dumps." },
                 },
-                ReleasedDuring = GameVersion.GreenCities,
+                Published = WorkshopDate("28 Oct, 2017"),
                 ReplaceWith = 1661072176u, // Empty It
                 SourceURL = "https://github.com/sottam/AutoEmpty",
+                Updated = WorkshopDate("28 Oct, 2017"),
             });
 
             /*
@@ -97,7 +100,7 @@ namespace AutoRepair.Catalogs {
             // possibly a translation
             AddMod(new Review(896806060u, "407873631 Automatic Emptying") {
                 Affect = Factor.Emptying,
-                Authors = "mexahuk",
+                Authors = "Ozhunter",
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 CloneOf = 407873631u, // Automatic Emptying
@@ -116,9 +119,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.NaturalDisasters, // lol
+                Published = WorkshopDate("2 Apr, 2017"),
                 ReplaceWith = 1661072176u, // Empty It
                 SuppressVersionWarnings = true,
+                Updated = WorkshopDate("2 Apr, 2017"),
             });
 
             AddMod(new Review(686588890u, "Automatic Emptying: Extended") {
@@ -140,11 +144,16 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
+                      | ItemFlags.Laggy
+                      | ItemFlags.Localised
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Snowfall,
+                Languages = new[] { "en", "pt", "ru" },
+                Locale = "en",
+                Published = WorkshopDate("18 May, 2016"),
                 ReplaceWith = 1661072176u, // Empty It
                 SourceURL = "https://github.com/YuryScherbakov/AutoEmptyingExtended",
+                Updated = WorkshopDate("19 May, 2018"),
             });
 
             AddMod(new Review(407873631u, "Automatic Emptying") {
@@ -172,8 +181,9 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Unreliable, sometimes doesn't work, other times causes lots of lag, doesn't empty snow dumps." },
                 },
-                ReleasedDuring = GameVersion.InitialRelease,
+                Published = WorkshopDate("14 Mar, 2015"),
                 ReplaceWith = 1661072176u, // Empty It
+                Updated = WorkshopDate("15 Mar, 2015"),
             });
         }
     }

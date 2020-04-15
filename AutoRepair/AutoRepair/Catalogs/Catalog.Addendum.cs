@@ -47,10 +47,6 @@ namespace AutoRepair.Catalogs {
             Fixed(502750307u, "Extra Landscaping Tools"); // menu wont close
             Broken(442167376u, "Advanced Vehicle Options (AVO)"); // technically not but long overdue to get people over to new ver
             Dead(414618382u, "Rotate Brush");
-            // credit to AquilaSol/Avanya for compiling these lists in google docs
-            //Log.Info($"Game update {LatestUpdate.ToString()} has affected following items:");
-            Fixed(912329352u, "Building Anarchy"); // breaks placement mode
-            Note(912329352u, "Building Anarchy", "Placement mode problems? Find and delete 'BuildingAnarchy.xml' to fix (thanks Avanya for info!)");
 
             Fixed(515489008u, "Extra Train Station Tracks");
             Fixed(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
@@ -169,7 +165,6 @@ namespace AutoRepair.Catalogs {
             Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
             Incompatible(667342976u , "Loading Screen Mod",                      833779378u, "Loading Screen Mod [Test]");
             Incompatible(837734529u , "Find It!",                                540758804u, "Search Box Mod");
-            Incompatible(917543381u , "No Problem [BETA]",                       561293123u, "Hide Problems AKA Politician's Mod");
 
             // breaks editor
             BreaksEditor(672248733u, "Ultimate Eyecandy");

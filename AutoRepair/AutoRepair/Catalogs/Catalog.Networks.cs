@@ -42,7 +42,6 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { 2044086131u, "[Mod: Network Extensions 2] Breaks NExt2 road zoning position and Zone Adjuster (Shift+Click)" },
                     { 812125426u , "[Mod: Network Extensions 2] Breaks NExt2 road zoning position and Zone Adjuster (Shift+Click)" },
                 },
                 ReleasedDuring = GameVersion.ParadoxLauncher,

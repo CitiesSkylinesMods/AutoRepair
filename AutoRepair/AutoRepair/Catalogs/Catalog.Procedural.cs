@@ -105,9 +105,10 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Fonts for Procedural Objects: https://steamcommunity.com/workshop/filedetails/?id=1897915526" },
                     { 1442713872u, "[Mod: Detail] PO Ploppable Asphalt props might disappear when Detail mod is active: http://proceduralobjects.shoutwiki.com/wiki/Known_Issues" },
                 },
-                ReleasedDuring = GameVersion.MassTransit,
+                Published = WorkshopDate("29 Jul, 2017"),
                 SourceURL = "https://github.com/simon56modder/ProceduralObjects",
                 Tags = new[] { "Text", "Font", "Procedural", "Signs", "Signage", "Props", "Buildings", "Editor", "Dynamic", },
+                Updated = WorkshopDate("14 Apr, 2020"),
             });
         }
     }

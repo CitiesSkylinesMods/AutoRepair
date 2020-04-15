@@ -57,6 +57,8 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.MinorIssues  }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.MinorIssues  }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.MinorIssues  }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
                     // level crossing lights mods struggle with NExt2 roads:
                     { 1519049273u, Status.MinorIssues  }, // American Railroad Signal Replacer
                     { 1249000709u, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
@@ -74,9 +76,9 @@ namespace AutoRepair.Catalogs {
                     { 1959342332u, "[Mod: CSUR ToolBox] Breaks road zoning position and Zone Adjuster (Shift+Click)" },
                 },
                 Published = WorkshopDate("1 Apr, 2020"),
-                ReleasedDuring = GameVersion.SunsetHarbor,
                 ReplaceWith = 812125426u, // Network Extensions 2
                 SourceURL = "https://github.com/andreharv/NetworkExtensions",
+                SuppressArchiveWarning = true,
                 SuppressOlderReplacementWarning = true,
                 Updated = WorkshopDate("1 Apr, 2020"),
             });
@@ -392,7 +394,6 @@ namespace AutoRepair.Catalogs {
                        | Factor.RoadMarkings
                        | Factor.Textures,
                 Authors = "TPB",
-                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067u, Status.Incompatible }, // CSUR Loader
@@ -410,6 +411,7 @@ namespace AutoRepair.Catalogs {
                     { 478820060u , Status.Incompatible }, // Network Extensions Project
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 651610627u, // [DISCONTINUED] Road Color Changer Continued
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
@@ -444,7 +446,8 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
-                Authors = "vukica",
+                Authors = "vukica", // formerly cylon33
+                BrokenBy = GameVersion.MassTransit, // based on user comments (and also when TPB started working on his continuation)
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067u, Status.Incompatible }, // CSUR Loader
@@ -468,8 +471,11 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking // yellow bar in workshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
-                      | ItemFlags.SourceUnavailable,
+                      | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("24 Mar, 2016"),
                 ReplaceWith = 1758376843u, // Network Skins 2
+                SourceURL = "https://github.com/vukivan/RoadColorChanger",
+                Updated = WorkshopDate("19 May, 2017"),
             });
 
             AddMod(new Review(543722850u, "Network Skins (Park Life compatible)") {
@@ -523,11 +529,47 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/boformer/NetworkSkins",
             });
 
+            // could remove optional lane arrows (left/right)
+            // change pavement texture
+            AddMod(new Review(418637762u, "American Roads") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                ArchiveURL = "https://web.archive.org/web/20160806030718/https://steamcommunity.com/sharedfiles/filedetails/?id=418637762",
+                Authors = "hyperdrive_engage, che_bacca",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // other mods that can hide road props:
+                    { 1591417160u, Status.MinorIssues  }, // Hide It!
+                    { 1117087491u, Status.Incompatible }, // Remove Road Props
+                    { 690066392u , Status.Incompatible }, // American RoadSigns v2.2.0
+                    { 418637762u , Status.Incompatible }, // American Roads
+                    // traffic light - level crossings:
+                    { 1519049273u, Status.MinorIssues  }, // American Railroad Signal Replacer
+                    { 1249000709u, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other
+                    { 417585852u , Status.Compatible   }, // Road Color Changer (original)
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete // use American RoadSigns v2.2.0
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1591417160u, "[Mod: Hide It!] Both mods can remove road markings/props. Use one, unsubscribe the other." },
+                },
+                Published = WorkshopDate("15 Apr, 2015"),
+                ReplaceWith = 690066392u, // American RoadSigns v2.2.0
+                Updated = WorkshopDate("18 Feb, 2016"),
+            });
+
             // original mod
             AddMod(new Review(417585852u, "Road Color Changer") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
+                ArchiveURL = "https://web.archive.org/web/20161130171223/http://steamcommunity.com/sharedfiles/filedetails/?id=417585852",
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -553,7 +595,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("13 Apr, 2015"),
                 ReplaceWith = 1758376843u, // Network Skins 2
+                Updated = WorkshopDate("18 Feb, 2016"), // may be subsequent updates, but that's as much as I could find via web archive
             });
         }
     }

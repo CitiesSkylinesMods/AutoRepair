@@ -18,20 +18,6 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Skin.Environment";
 
-            AddMod(new Review(2053637074u, "Swinden-Map Theme Mix") {
-                Affect = Factor.Environment
-                       | Factor.Textures,
-                Authors = "rlas",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1899640536u, Status.Required    }, // Theme Mixer 2
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceBundled,
-                Published = WorkshopDate("9 Apr, 2020"),
-                Updated = WorkshopDate("9 Apr, 2020"),
-            });
-
             AddMod(new Review(1899640536u, "Theme Mixer 2") {
                 Affect = Factor.Environment
                        | Factor.Textures,
@@ -45,6 +31,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Unknown      }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -75,6 +62,42 @@ namespace AutoRepair.Catalogs {
             });
 
             /*
+            # ██████   █████   ██████ ██   ██ ███████
+            # ██   ██ ██   ██ ██      ██  ██  ██
+            # ██████  ███████ ██      █████   ███████
+            # ██      ██   ██ ██      ██  ██       ██
+            # ██      ██   ██  ██████ ██   ██ ███████
+            */
+
+            AddMod(new Review(2057906517u, "dool") {
+                Affect = Factor.Environment
+                       | Factor.Textures,
+                Authors = "wsd2004",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1899640536u, Status.Required    }, // Theme Mixer 2
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceBundled,
+                Published = WorkshopDate("12 Apr, 2020"),
+                Updated = WorkshopDate("12 Apr, 2020"),
+            });
+
+            AddMod(new Review(2053637074u, "Swinden-Map Theme Mix") {
+                Affect = Factor.Environment
+                       | Factor.Textures,
+                Authors = "rlas",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1899640536u, Status.Required    }, // Theme Mixer 2
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceBundled,
+                Published = WorkshopDate("9 Apr, 2020"),
+                Updated = WorkshopDate("9 Apr, 2020"),
+            });
+
+            /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
             # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
@@ -94,6 +117,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -139,6 +163,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的 
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -166,6 +191,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的 
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -195,6 +221,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的 
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -227,6 +254,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的 
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -253,6 +281,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的 
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -290,6 +319,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的 
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -330,6 +360,7 @@ namespace AutoRepair.Catalogs {
                     { 1445375997u, Status.Incompatible }, // Theme Mixer 汉化版2的 
                     { 1283010953u, Status.Incompatible }, // TerrainTextureReplacer Reupload
                     { 920832749u , Status.Incompatible }, // TerrainTextureReplacer
+                    { 895061550u , Status.Incompatible }, // Theme Decals
                     { 877394445u , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974u , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554u , Status.Incompatible }, // Theme Mixer (original by TPB)
@@ -338,6 +369,7 @@ namespace AutoRepair.Catalogs {
                 },
                 //Published = WorkshopDate(""),
                 ReplaceWith = 1899640536u, // Theme Mixer 2
+                SuppressArchiveWarning = true,
                 Updated = WorkshopDate("15 Apr, 2015"), // guesstimate based on note here: 811664974u
             });
 
@@ -400,6 +432,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1522846208u, // Eastern Tundra Theme
+                SuppressArchiveWarning = true,
             });
 
             AddMod(new Review(582425905u, "Terrain Theme: Heavy Snow for Ski, Arctic, and Glacier Maps") {
@@ -416,6 +449,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 782343087u, // Väterchen Frost - Winter theme
+                SuppressArchiveWarning = true,
             });
 
             AddMod(new Review(576787837u, "Celtic Moorlands Terrain Theme") {
@@ -432,6 +466,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1546100254u, // Celtic Coast map theme w names
+                SuppressArchiveWarning = true,
             });
 
         }

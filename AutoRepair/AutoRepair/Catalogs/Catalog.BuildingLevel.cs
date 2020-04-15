@@ -299,12 +299,10 @@ namespace AutoRepair.Catalogs {
                        | Factor.Education
                        | Factor.Employment
                        | Factor.Happiness,
+                ArchiveURL = "https://web.archive.org/web/20160620100049/http://steamcommunity.com/sharedfiles/filedetails/?id=409654587",
                 Authors = "Nohealforu",
+                BrokenBy = GameVersion.ParkLife,
                 Catalog = catalog,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.GameBreaking // Broke sometime in 2018
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1806881627u, Status.Incompatible }, // Altering History Fix
                     { 1658773932u, Status.Incompatible }, // Historical Districts
@@ -319,6 +317,13 @@ namespace AutoRepair.Catalogs {
                     { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
                     { 409654587u , Status.Incompatible }, // Level Up Balance Mod
                 },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.GameBreaking // Broke sometime in 2018
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("31 Mar, 2015"),
+                Updated = WorkshopDate("24 Sep, 2015"), // might be later updates, that's as far as I could get on wayback machine
             });
         }
     }

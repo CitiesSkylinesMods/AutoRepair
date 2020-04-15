@@ -274,6 +274,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.TransportLines
                        | Factor.TransportPreference
                        | Factor.VehicleCapacity,
+                ArchiveURL = "https://web.archive.org/web/20180128030931/http://steamcommunity.com/sharedfiles/filedetails/?id=929654063",
                 Authors = "Klyte45",
                 BrokenBy = GameVersion.ParkLife, // was already replaced by new mod by then
                 Catalog = catalog,
@@ -323,9 +324,13 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable, // same repo as new version
                 Languages = new[] { "en", "de", "zh-cn", "pl", "pt", "ko", },
                 Locale = "en",
-                ReleasedDuring = GameVersion.MassTransit,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Required a UI dependency mod, which I can not find in workshop. Source is: https://github.com/klyte45/UIHelper" },
+                },
+                Published = WorkshopDate("20 May, 2017"),
                 ReplaceWith = 1312767991u, // Transport Lines Manager 13.1
                 SourceURL = "https://github.com/klyte45/TransportLinesManager",
+                Updated = WorkshopDate("20 Jan, 2018"),
             });
 
             AddMod(new Review(714056356u, "Transport Line Rendering Fix") {
@@ -355,6 +360,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.TransportLines
                        | Factor.TransportPreference
                        | Factor.VehicleCapacity,
+                ArchiveURL = "https://web.archive.org/web/20171230215005/http://steamcommunity.com/sharedfiles/filedetails/?id=424106600",
                 Authors = "DontCryJustDie",
                 BrokenBy = GameVersion.MassTransit,
                 Catalog = catalog,
@@ -399,8 +405,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 Languages = new[] { "en", "de", "es", "zh-cn", "pl", "it", "pt", "zh", "ru", "fr", "ko", },
                 Locale = "en",
-                ReleasedDuring = new Version(1, 0, 7), // before European buildings were added
+                Published = WorkshopDate("14 Apr, 2015"),
                 ReplaceWith = 928128676u, // Improved Public Transport 2
+                Updated = WorkshopDate("29 Nov, 2016"),
             });
 
             // old version
@@ -410,6 +417,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.TransportLines
                        | Factor.TransportPreference
                        | Factor.VehicleCapacity,
+                ArchiveURL = "https://web.archive.org/web/20180201010016/http://steamcommunity.com/sharedfiles/filedetails/?id=408875519",
                 Authors = "Klyte45",
                 BrokenBy = GameVersion.MassTransit,
                 Catalog = catalog,
@@ -454,9 +462,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // jan 2018?
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable, // same repo as new version
-                ReleasedDuring = new Version(1, 0, 7), // before European buildings were added
+                Published = WorkshopDate("8 Apr, 2015"),
                 ReplaceWith = 1312767991u, // Transport Lines Manager 13.1
                 SourceURL = "https://github.com/klyte45/TransportLinesManager",
+                Updated = WorkshopDate("17 May, 2017"),
             });
         }
     }

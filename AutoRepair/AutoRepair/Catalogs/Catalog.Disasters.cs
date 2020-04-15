@@ -59,6 +59,19 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("2 Sep, 2018"),
             });
 
+            AddMod(new Review(912484109u, "Flood Damage Control [BETA]") {
+                Affect = Factor.Disasters,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // no problem mod? toggle it?
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("24 Apr, 2017"),
+                Updated = WorkshopDate("2 May, 2017"),
+            });
+
             AddMod(new Review(811352708u, "Ragnarok - More disaster controls") {
                 Affect = Factor.Disasters
                        | Factor.Environment,

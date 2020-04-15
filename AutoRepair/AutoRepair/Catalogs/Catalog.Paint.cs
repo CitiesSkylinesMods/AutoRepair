@@ -102,7 +102,6 @@ namespace AutoRepair.Catalogs {
             AddMod(new Review(689937287u, "Surface Painter") {
                 Affect = Factor.Textures,
                 Authors = "BloodyPenguin",
-                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1383456057u, Status.Incompatible }, // Shicho

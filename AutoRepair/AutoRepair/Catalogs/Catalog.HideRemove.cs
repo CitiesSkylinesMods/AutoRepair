@@ -14,9 +14,9 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void HideMods() {
+        private void HideRemoveMods() {
 
-            string catalog = "Hide";
+            string catalog = "HideRemove";
 
             AddMod(new Review(1962752152u, "Busstop Prop Remover") {
                 Affect = Factor.HideRemove
@@ -43,6 +43,8 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Compatible   }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Compatible   }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Compatible   }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
                     // traffic light skins - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -156,6 +158,7 @@ namespace AutoRepair.Catalogs {
                     { 956707300u , Status.MinorIssues  }, // Remove Street Arrows
                     { 952542692u , Status.MinorIssues  }, // Airport Road Light Remover
                     { 949061920u , Status.MinorIssues  }, // No Buoys Mod
+                    { 919020932u , Status.MinorIssues  }, // Stop Remover
                     { 418637762u , Status.MinorIssues  }, // American Roads
                     // terrain sprites
                     { 1899640536u, Status.MinorIssues  }, // Theme Mixer 2 (both can toggle terrain sprites)
@@ -177,12 +180,14 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 2009708489u, "[Mod: Road Arrows Replacer] If you remove road arrows with Hide It, the Road Arrows Replacer can't replace them." },
-                    { 1706704781u, "[Mod: Remove All Animals] Both mods can remove animals. Use one, unsubscribe the other." },
+                    { 1962752152u, "[Mod: Busstop Prop Remover] Both mods can remove stops. Use one, unsubscribe the other." },
                     { 1899640536u, "[Mod: Theme Mixer 2] Terrain sprites affected by both mods; modify sprite settings in both to ensure same effect." },
+                    { 1706704781u, "[Mod: Remove All Animals] Both mods can remove animals. Use one, unsubscribe the other." },
                     { 1117087491u, "[Mod: Remove Road Props] Both mods can remove road props. Use one, unsubscribe the other." },
                     { 956707300u , "[Mod: Remove Street Arrows] Both mods can remove street arrows. Use one, unsubscribe the other." },
                     { 952542692u , "[Mod: Airport Road Light Remover] Both mods can remove runway/taxiway lights. Use one, unsubscribe the other." },
                     { 949061920u , "[Mod: No Buoys Mod] Both mods can remove buoys. Use one, unsubscribe the other." },
+                    { 919020932u , "[Mod: Stop Remover] Both mods can remove stops. Use one, unsubscribe the other." },
                     { 666425898u , "[Mod: No Radioactive Desert] Conflcits with Hide It!; causes terrain textures to disappear from map." },
                     { 564141599u , "[Mod: No Seagulls] Both mods can remove seagulls. Use one, unsubscribe the other." },
                     { 418637762u , "[Mod: American Roads] Both mods can remove road markings/props. Use one, unsubscribe the other." },
@@ -256,6 +261,8 @@ namespace AutoRepair.Catalogs {
                     { 1259628682u, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
                     { 1251396095u, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
                     { 1108278552u, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     // traffic light - level crossings
                     { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -390,6 +397,67 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("28 May, 2017"),
             });
 
+            AddMod(new Review(919020932u, "Stop Remover") {
+                Affect = Factor.HideRemove
+                       | Factor.Props,
+                Authors = "Lost Lime, boformer",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // similar mods:
+                    { 1962752152u, Status.Incompatible }, // Busstop Prop Remover
+                    { 1591417160u, Status.MinorIssues  }, // Hide It (has same feature)
+                    { 919020932u , Status.Incompatible }, // Stop Remover
+                    // compat with tmpe:
+                    { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
+                    { 1637663252u, Status.Compatible   }, // TM:PE v11 STABLE
+                    { 583429740u , Status.Compatible   }, // Traffic Manager: President Edition (LinuxFan)
+                    // bus stop skins
+                    { 545878277u , Status.Incompatible }, // [GBS] German Bus Stop Mod [NC]
+                    // traffic light skins - junctions
+                    { 1812157090u, Status.Compatible   }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Compatible   }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Compatible   }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Compatible   }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Compatible   }, // New American Traffic Lights
+                    { 1259628682u, Status.Compatible   }, // Taiwanese Traffic Lights (Left Hand Traffic)
+                    { 1251396095u, Status.Compatible   }, // Taiwanese Traffic Lights (Right Hand Traffic)
+                    { 1108278552u, Status.Compatible   }, // Horizontal Traffic Lights
+                    { 890420060u , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
+                    { 888671987u , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    // traffic light skins - level crossings
+                    { 1519049273u, Status.Compatible   }, // American Railroad Signal Replacer
+                    { 1249000709u, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1591417160u, "[Mod: Hide It] Both mods can remove transport stop props. Use one, unsubscribe the other." },
+                },
+                Published = WorkshopDate("4 May, 2017"),
+                SourceURL = "https://gist.github.com/boformer/dfbc524d40e0e73fab5f45755ed8d9db",
+                Updated = WorkshopDate("19 May, 2017"),
+            });
+
+            AddMod(new Review(917543381u, "No Problem Notifications") {
+                Affect = Factor.HideRemove
+                       | Factor.UI,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1764637396u, Status.MinorIssues  }, // Toggle It!
+                    { 561293123u , Status.Incompatible }, // Hide Problems AKA Politician's Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The mod doesn't remove the problems, it just hides the notifications." },
+                    { NOTE, "Some notifications added in Campus and Sunset Harbor are not currently supported." },
+                    { 1764637396u, "[Mod: Toggle It!] Both mods can hide notifications and they get a bit confused when used at same time." },
+                },
+                Published = WorkshopDate("2 May, 2017"),
+                Updated = WorkshopDate("10 Nov, 2018"),
+            });
+
             AddMod(new Review(564141599u, "No Seagulls") {
                 Affect = Factor.HideRemove,
                 Authors = "thale5",
@@ -420,33 +488,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Review(418637762u, "American Roads") {
-                Affect = Factor.HideRemove
-                       | Factor.Props
-                       | Factor.RoadMarkings,
-                Authors = "hyperdrive_engage",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // other mods that can hide road props:
-                    { 1591417160u, Status.MinorIssues  }, // Hide It!
-                    { 1117087491u, Status.Incompatible }, // Remove Road Props
-                    { 690066392u , Status.Incompatible }, // American RoadSigns v2.2.0
-                    { 418637762u , Status.Incompatible }, // American Roads
-                    // traffic light - level crossings:
-                    { 1519049273u, Status.MinorIssues  }, // American Railroad Signal Replacer
-                    { 1249000709u, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.Obsolete // use American RoadSigns v2.2.0
-                      | ItemFlags.SourceUnavailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { 1591417160u, "[Mod: Hide It!] Both mods can remove road markings/props. Use one, unsubscribe the other." },
-                },
-                ReplaceWith = 690066392u, // American RoadSigns v2.2.0
-            });
+
         }
     }
 }

@@ -256,6 +256,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressArchiveWarning = true,
                 SuppressOlderReplacementWarning = true,
             });
 
@@ -455,6 +456,7 @@ namespace AutoRepair.Catalogs {
                 Locale = "zh-cn",
                 ReleasedDuring = GameVersion.GreenCities, // lolol
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressArchiveWarning = true,
                 SuppressVersionWarnings = true,
             });
 
@@ -554,6 +556,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.InitialRelease,
                 ReplaceWith = 1270675750u, // BigCity (25 tiles mod)
+                SuppressArchiveWarning = true,
             });
         }
     }

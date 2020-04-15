@@ -743,6 +743,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Health
                        | Factor.Immigrants
                        | Factor.TransportPreference,
+                ArchiveURL = "https://web.archive.org/web/20190806010838/https://steamcommunity.com/sharedfiles/filedetails/?id=654707599",
                 Authors = "Whitefang Greytail",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -766,7 +767,9 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
                       | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("28 Mar, 2016"),
                 SourceURL = "https://github.com/WhitefangGreytail/WG_CitizenEdit",
+                Updated = WorkshopDate("31 Oct, 2018"),
             });
 
             AddMod(new Review(643642403u, "Lifespan multiplier v1.1") {
@@ -826,6 +829,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Review(541673195u, "Resident Travel Rebalance v1.1") {
                 Affect = Factor.TransportPreference,
                 Authors = "Whitefang Greytail",
+                ArchiveURL = "https://web.archive.org/web/20160222120305/http://steamcommunity.com/sharedfiles/filedetails/?id=541673195",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2027161563u, Status.Incompatible }, // Lifecycle Rebalance Revisited
@@ -840,6 +844,8 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
                       | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("25 Oct, 2015"),
+                Updated = WorkshopDate("30 Oct, 2015"),
             });
 
             // Incompatible with any mod which changes:
@@ -857,6 +863,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Production
                        | Factor.Revenue
                        | Factor.TransportPreference,
+                ArchiveURL = "https://web.archive.org/web/20190806010923/https://steamcommunity.com/sharedfiles/filedetails/?id=426163185",
                 Authors = "Whitefang Greytail",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -883,8 +890,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // Made hidden around March 2020
                       | ItemFlags.Obsolete // new version available
                       | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("16 Apr, 2015"),
                 ReplaceWith = 2025147082u, // Realistic Population revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_RealisticCitySkylines",
+                Updated = WorkshopDate("25 Oct, 2018"),
             });
 
             AddMod(new Review(410344523u, "PopBalanceMod") {
@@ -927,8 +936,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete // replaced by WG's pop & consumption mod, which itself has now been replaced
                       | ItemFlags.SourceBundled,
-                ReleasedDuring = GameVersion.InitialRelease,
+                Published = WorkshopDate("19 Mar, 2015"),
                 ReplaceWith = 2025147082u, // Realistic Population revisited
+                Updated = WorkshopDate("26 Mar, 2015"),
             });
 
             AddMod(new Review(409071509u, "Slow Citizen Aging Configurable") {
