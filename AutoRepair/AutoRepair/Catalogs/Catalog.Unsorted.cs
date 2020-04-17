@@ -563,6 +563,7 @@ namespace AutoRepair.Catalogs {
                     { 422554572u , Status.Incompatible }, // 81 Tiles (original by emf)
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
                     { 413498678u , Status.Compatible   }, // All Spaces Unlockable - With Right Price
+                    { 411821214u , Status.Incompatible }, // Pause on no focus/Alt-Tab
                     { 408905948u , Status.Incompatible }, // Pause on load
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager
                     { 406218372u , Status.Compatible   }, // All Spaces Unlockable
@@ -610,12 +611,14 @@ namespace AutoRepair.Catalogs {
                     // conceptual conflict: boredom
                     { 1776052533u, Status.Compatible   }, // Stops & Stations
                     { 1766839841u, Status.MinorIssues  }, // Anxiety Reducer (still testing)
+                    // possibly optimised outside connections which increases time until bored
                     // conceptual conflict: time
                     { 1899449152u, Status.Compatible   }, // Game Day Timer (switches to different mode for Real Time)
                     { 1729576238u, Status.Incompatible }, // Date Changer
                     { 814698320u , Status.MinorIssues  }, // TimeWarp Fix
                     { 672248733u , Status.MinorIssues  }, // Ultimate Eyecandy v1.5.2
                     { 629713122u , Status.Incompatible }, // Climate Control
+                    { 781767563u , Status.MinorIssues  }, // Extended InfoPanel - has options to set time, also replaces time progress bar
                     // conceptual coflict: aging
                     { 2027161563u, Status.Compatible   }, // Lifecycle Rebalance Revisited
                     { 1196714522u, Status.Incompatible }, // 居民衰老变十六分之一
@@ -639,6 +642,10 @@ namespace AutoRepair.Catalogs {
                     { 523818382u , Status.MinorIssues  }, // Force Level Up
                     { 466158459u , Status.Compatible   }, // Building Themes
                     { 408706691u , Status.Incompatible }, // Proper Hardness
+                    // toolbar (time bar):
+                    { 888017364u , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.MinorIssues  }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.MinorIssues  }, // Sapphire - UI skin framework
                     // other
                     { 2048266761u, Status.MinorIssues  }, // Building Usage
                     { 1801953480u, Status.MinorIssues  }, // Natural Disasters Overhaul (endless thunderstorms)

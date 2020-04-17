@@ -731,7 +731,7 @@ namespace AutoRepair.Catalogs {
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
                     { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
-                    { 1829496988u, Status.MinorIssues  }, // Adjust Pathfinding
+                    { 1829496988u, Status.Incompatible }, // Adjust Pathfinding
                     { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1764208250u, Status.Incompatible }, // More Vehicles
                     { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE

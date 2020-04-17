@@ -52,6 +52,20 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-SkipIntro",
             });
 
+            AddMod(new Review(411821214u, "Pause on no focus/Alt-Tab") {
+                Affect = Factor.LoadSaveExit,
+                Authors = "MrLawbreaker",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("22 Mar, 2015"),
+                SourceURL = "https://github.com/MrLawbreaker/SkylinesMod_PauseOnNoFocus/",
+                Updated = WorkshopDate("22 Mar, 2015"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -116,8 +130,9 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: The base game now has pause on load feature, you can unsubscribe this mod." },
                 },
-                ReleasedDuring = GameVersion.InitialRelease,
+                Published = WorkshopDate("16 Mar, 2015"),
                 SourceURL = "https://github.com/MrLawbreaker/SkylinesMod_PauseOnLoad",
+                Updated = WorkshopDate("16 Mar, 2015"),
             });
         }
     }

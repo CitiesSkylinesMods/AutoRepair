@@ -432,7 +432,7 @@ namespace AutoRepair.Catalogs {
                     { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
                     { 411016892u , Status.Incompatible }, // Enhanced Zoom
                 },
-                CompatibleWith = GameVersion.Patch_1_10_1_3,
+                CompatibleWith = GameVersion.Patch_1_10_1_f3,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {

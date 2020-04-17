@@ -47,6 +47,7 @@ namespace AutoRepair.Catalogs {
                     { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
                     { 435167188u , Status.Incompatible }, // V10Siren
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 455958878u, // Ambient Sounds Tuner
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/bloodypenguin/csl-ambient-sounds-tuner",
@@ -74,7 +75,7 @@ namespace AutoRepair.Catalogs {
                     { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
                     { 435167188u , Status.Incompatible }, // V10Siren
                 },
-                CompatibleWith = GameVersion.SunsetHarbor,
+                CompatibleWith = GameVersion.Active,
                 ContinuationOf = 1719979486u, // Philippines Realistic Sound Mod: Return!
                 Flags = ItemFlags.SourceBundled,
                 Locale = "tl-ph",
@@ -744,6 +745,7 @@ namespace AutoRepair.Catalogs {
                     { 435167188u , Status.Incompatible }, // V10Siren
                 },
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete

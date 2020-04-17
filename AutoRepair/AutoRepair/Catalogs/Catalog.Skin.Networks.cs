@@ -110,9 +110,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.ParadoxLauncher,
+                Published = WorkshopDate("10 Mar, 2020"),
                 SourceURL = "https://github.com/kianzarrin/HideUnconnectedTracks",
                 Tags = new[] { "TMPE", "TM:PE", "Tram", "Train", "Network", "Skins", "Junctions", "Tracks" },
+                Updated = WorkshopDate("11 Apr, 2020"),
             });
 
             AddMod(new Review(2009708489u, "Road Arrows Replacer [Spain]") {
@@ -162,11 +163,17 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1934023593u, // Hide TMPE crosswalks V2.5 [BETA]
-                Flags = ItemFlags.SlowLoad
+                Flags = ItemFlags.MinorIssues
+                      | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.ParadoxLauncher,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Can use lots of RAM if you have lots of different roads that have crossings removed." },
+                    { NOTE, "[Railway Replacer] and [Catenary Replacer] mods are suspected to be incompatible." },
+                },
+                Published = WorkshopDate("17 Dec, 2019"),
                 SourceURL = "https://github.com/kianzarrin/HideTMPECrosswalks",
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
+                Updated = WorkshopDate("11 Apr, 2020"),
             });
 
             // Requires either TM:PE and/or Network Skins 2
@@ -196,11 +203,17 @@ namespace AutoRepair.Catalogs {
                     { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SlowLoad
+                Flags = ItemFlags.MinorIssues
+                      | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Campus,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Can use lots of RAM if you have lots of different roads that have crossings removed." },
+                    { NOTE, "[Railway Replacer] and [Catenary Replacer] mods are suspected to be incompatible." },
+                },
+                Published = WorkshopDate("11 Dec, 2019"),
                 SourceURL = "https://github.com/kianzarrin/HideTMPECrosswalks",
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
+                Updated = WorkshopDate("11 Apr, 2020"),
             });
 
             AddMod(new Review(1758376843u, "Network Skins 2") {
@@ -586,6 +599,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552u , Status.Incompatible }, // Roads United Core 2.0
                     { 543722850u , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060u , Status.Compatible   }, // Network Extensions Project
+                    { 418637762u , Status.Compatible   }, // American Roads
                     { 417585852u , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 Flags = ItemFlags.Abandonware

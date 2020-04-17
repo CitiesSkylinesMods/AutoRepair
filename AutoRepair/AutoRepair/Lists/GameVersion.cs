@@ -258,7 +258,9 @@ namespace AutoRepair {
         public static readonly Version EuropeanSuburbia = new Version(1, 9, 0, 5);
 
         /// <summary>
-        /// 2017-10-19 Unity 5.6.3, new commerical/residentail/office specialisations, new service buildings,
+        /// 2017-10-19 Free game update.
+        ///
+        /// Unity 5.6.3, new commerical/residentail/office specialisations, new service buildings,
         /// electric cars, noise pollution overhaul, moddable roads, train track intersection rules...
         /// </summary>
         public static readonly Version Patch_1_9_0_f5 = new Version(1, 9, 0, 5);
@@ -306,22 +308,51 @@ namespace AutoRepair {
         public static readonly Version ParkLife = new Version(1, 10, 0, 3);
 
         /// <summary>
-        /// 2018-05-24 Trees reduce noise pollition, submesh modding, cinematic camera, menu filtering,
+        /// 2018-05-24 Free update.
+        ///
+        /// Trees reduce noise pollition, submesh modding, cinematic camera, menu filtering,
         /// new rocks/trees/etc, tourism info view, changes to some menus/info views, bug fixes.
         /// </summary>
-        public static readonly Version Patch_1_10_0_3 = new Version(1, 10, 0, 3);
+        public static readonly Version Patch_1_10_0_f3 = new Version(1, 10, 0, 3);
 
         /// <summary>
         /// 2018-07-05 Bug fixes.
         /// </summary>
-        public static readonly Version Patch_1_10_1_3 = new Version(1, 10, 1, 3);
+        public static readonly Version Patch_1_10_1_f3 = new Version(1, 10, 1, 3);
 
         // ----------------------------------------------------------------------
 
         /// <summary>
         /// 2018-10-23 Industries expansion.
+        ///
+        /// Industry areas for farming, forestry, oil and ore. Post office service.
+        /// Warehouses and storage, unique factories, new industry vehicles, workers.
+        /// Cargo airport and aircraft. Auxilliary buildings. New animals.
         /// </summary>
-        public static readonly Version Industries = new Version(1, 11, 0);
+        public static readonly Version Industries = new Version(1, 11, 0, 3);
+
+        /// <summary>
+        /// 2018-10-23 Synthetic Dawn radio station.
+        /// </summary>
+        public static readonly Version SyntheticDawnRadio = new Version(1, 11, 0, 3);
+
+        /// <summary>
+        /// 2018-10-23 Free game update.
+        ///
+        /// Toll booths, new industry train wagons, new trees, dust/ore/sand debris markers,
+        /// custom names, new light colors, new assets now have DLC requirements set, historic buildings.
+        /// </summary>
+        public static readonly Version Patch_1_11_0_f3 = new Version(1, 11, 0, 3);
+
+        /// <summary>
+        /// 2018-12-13 Bug fixes. Winter Market asset added.
+        /// </summary>
+        public static readonly Version Patch_1_11_1_f2 = new Version(1, 11, 1, 2);
+
+        /// <summary>
+        /// 2019-02-27 Remove duplicate 'Snowy Hills' map.
+        /// </summary>
+        public static readonly Version Patch_1_11_1_f4 = new Version(1, 11, 1, 4);
 
         // ----------------------------------------------------------------------
 

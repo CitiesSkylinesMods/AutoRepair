@@ -111,19 +111,16 @@ namespace AutoRepair.Catalogs {
                     { 934994075u , Status.Unknown      }, // Service Vehicle Selector 2
                     { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2
-                    { 888017364u , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
                     { 816260433u , Status.Compatible   }, // Metro Overhaul Mod
                     { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
                     { 616078328u , Status.Incompatible }, // All Tile Start
                     { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
-                    { 576970398u , Status.MinorIssues  }, // Quartz (former Sapphire) - UI skin framework
                     { 576327847u , Status.Compatible   }, // 81 Tiles (BP version)
                     { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655u , Status.Incompatible }, // Service Vehicle Selector
                     { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 422554572u , Status.Incompatible }, // 81 Tiles (original version)
                     { 442167376u , Status.Incompatible }, // Advanced Vehicle Options (original)
-                    { 421770876u , Status.MinorIssues  }, // Sapphire - UI skin framework
                     { 414326578u , Status.Incompatible }, // Configurable Transport Capacity
                     { 413498678u , Status.Compatible   }, // All Spaces Unlockable - With Right Price
                     { 408875519u , Status.Incompatible }, // Transport Lines Manager

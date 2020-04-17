@@ -9,6 +9,7 @@ namespace AutoRepair.Catalogs {
 
     public partial class Catalog {
 
+#if DEBUG
         public void DumpToCSV() {
             Log.Reset();
 
@@ -131,6 +132,11 @@ namespace AutoRepair.Catalogs {
             }
         }
 
+        private string GetWorkshopURL(ulong workshopId) {
+            return $"https://steamcommunity.com/sharedfiles/filedetails/?id={workshopId}";
+        }
+#endif
+
         private string GetNameFromId(ulong workshopId) {
             if (Reviews.TryGetValue(workshopId, out Review item)) {
                 return item.WorkshopName;
@@ -138,10 +144,5 @@ namespace AutoRepair.Catalogs {
                 return string.Empty;
             }
         }
-
-        private string GetWorkshopURL(ulong workshopId) {
-            return $"https://steamcommunity.com/sharedfiles/filedetails/?id={workshopId}";
-        }
-
     }
 }

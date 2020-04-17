@@ -1085,7 +1085,7 @@ namespace AutoRepair.Catalogs {
                     { 418556522u , Status.Incompatible }, // Road Anarchy
                     { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
                 },
-                CompatibleWith = GameVersion.Patch_1_10_1_3,
+                CompatibleWith = GameVersion.Patch_1_10_1_f3,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate // Industries
                       | ItemFlags.ForceMigration

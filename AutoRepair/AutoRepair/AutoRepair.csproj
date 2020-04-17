@@ -56,7 +56,7 @@
     <Compile Include="Catalogs\Catalog.Emptying.cs" />
     <Compile Include="Catalogs\Catalog.HideRemove.cs" />
     <Compile Include="Catalogs\Catalog.PublicTransport.cs" />
-    <Compile Include="Catalogs\Catalog.Skin.Flags.cs" />
+    <Compile Include="Catalogs\Catalog.Skycloths.cs" />
     <Compile Include="Catalogs\Catalog.Unsorted.cs" />
     <Compile Include="Catalogs\Catalog.Vanilla.cs" />
     <Compile Include="Catalogs\Catalog.Vehicles.cs" />
@@ -77,13 +77,10 @@
     <Compile Include="Catalogs\Catalog.Music.cs" />
     <Compile Include="Catalogs\Catalog.Paint.cs" />
     <Compile Include="Catalogs\Catalog.Skin.RoadsUnited.cs" />
-    <Compile Include="Catalogs\Skins.cs" />
-    <Compile Include="Catalogs\Catalog.Skin.Environment.cs" />
+    <Compile Include="Catalogs\Catalog.MapThemes.cs" />
     <Compile Include="Catalogs\Catalog.Networks.cs" />
-    <Compile Include="Catalogs\Stats.Mods.cs" />
     <Compile Include="Catalogs\Catalog.Traffic.cs" />
     <Compile Include="Catalogs\Catalog.Skin.TrafficLights.cs" />
-    <Compile Include="Catalogs\TrafficLight.Packs.cs" />
     <Compile Include="Catalogs\Catalog.Repair.cs" />
     <Compile Include="Catalogs\Catalog.VehicleEffects.cs" />
     <Compile Include="Catalogs\_Catalog.DumpToCSV.cs" />

@@ -82,8 +82,11 @@ namespace AutoRepair.Catalogs {
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 927293560u , Status.Compatible   }, // Geli-Districts v3.0
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
@@ -269,8 +272,11 @@ namespace AutoRepair.Catalogs {
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
@@ -311,8 +317,11 @@ namespace AutoRepair.Catalogs {
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
                     { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                     { 410344523u , Status.Incompatible }, // PopBalanceMod
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },

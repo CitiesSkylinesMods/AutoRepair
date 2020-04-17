@@ -14,9 +14,9 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void SkinEnvironmentMods() {
+        private void MapThemesMods() {
 
-            string catalog = "Skin.Environment";
+            string catalog = "MapThemes";
 
             AddMod(new Review(1899640536u, "Theme Mixer 2") {
                 Affect = Factor.Environment

@@ -282,6 +282,7 @@ namespace AutoRepair.Catalogs {
                 EmptyingMods();
                 HideRemoveMods();
                 LoadSaveMods();
+                MapThemesMods();
                 MoneyMods();
                 MultiplayerMods();
                 MusicMods();
@@ -295,12 +296,11 @@ namespace AutoRepair.Catalogs {
                 RepairMods();
                 ServiceMods();
                 SkinBuildingMods();
-                SkinEnvironmentMods();
-                SkinFlagsMods();
                 SkinNetworkMods();
                 SkinRoadsUnitedMods();
                 SkinTrafficLightsMods();
                 SkinUIMods();
+                SkyclothsMods();
                 StatsMods();
                 ToolbarMods();
                 TrafficMods();

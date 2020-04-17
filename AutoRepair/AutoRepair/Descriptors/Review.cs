@@ -121,7 +121,7 @@ namespace AutoRepair.Descriptors {
         /// <summary>
         /// Gets or sets the date when the item was published to Steam Workshop.
         /// </summary>
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         /// <summary>
         /// Gets or sets the game version at time when item was first published to workshop, if known.
@@ -180,7 +180,7 @@ namespace AutoRepair.Descriptors {
         /// <summary>
         /// Gets or sets the date when the item was last updated in Steam Workshop.
         /// </summary>
-        public DateTime Updated { get; set; }
+        public DateTime? Updated { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the IUserMod class for this mod has been

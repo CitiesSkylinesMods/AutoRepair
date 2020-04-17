@@ -28,11 +28,14 @@ namespace AutoRepair.Catalogs {
                     { 1577882296u, Status.Incompatible }, // Resize It!
                     { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
                     { 586012417u , Status.Incompatible }, // Ploppable RICO
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 563229150u , Status.Incompatible }, // Advanced Toolbar
                     { 540758804u , Status.Incompatible }, // Search Box Mod
                     { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
                     { 451700838u , Status.Incompatible }, // Extended Toolbar
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                 },
                 Flags = ItemFlags.SourceObfuscated // checked 12/Mar/2020
                       | ItemFlags.SourceUnavailable,
@@ -50,11 +53,14 @@ namespace AutoRepair.Catalogs {
                     { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
                     { 1204126182u, Status.Compatible   }, // Ploppable Rico High Density Fix
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
                     { 586012417u , Status.Compatible   }, // Ploppable RICO
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 563229150u , Status.Incompatible }, // Advanced Toolbar
                     { 540758804u , Status.Incompatible }, // Search Box Mod
                     { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
                     { 451700838u , Status.Incompatible }, // Extended Toolbar
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware

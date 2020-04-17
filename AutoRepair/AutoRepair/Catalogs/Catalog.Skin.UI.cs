@@ -201,6 +201,165 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("12 Apr, 2015"),
             });
 
+            // treating as obsolete as it's not been updated since forever and there's loads of UI changes in game since then
+            AddMod(new Review(888017364u, "Quartz (Sapphire) - Fixed 1.11") {
+                Affect = Factor.UI,
+                Authors = "AlexM",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 593987954u , Status.Compatible   }, // Triple-Screen UI Skin
+                    { 578482272u , Status.Compatible   }, // [FIXED][LEGACY] Emerald UI (16:9)
+                    { 577230299u , Status.Compatible   }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                    { 511029270u , Status.Compatible   }, // Sapphire - Triple Screen Centered
+                    { 450453336u , Status.Compatible   }, // Hello UI [Fixed 1.7]
+                    { 428457597u , Status.Compatible   }, // ClearUI - Quartz Skin 16:9 / 16:10
+                    { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
+                    { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                    { 423910890u , Status.Compatible   }, // Blue UI - Quartz Skin
+                    { 422251153u , Status.Incompatible }, // Emerald UI (16:9)
+                    // toolbar altering mods:
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
+                    { 1577882296u, Status.Incompatible }, // Resize It!
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 837734529u , Status.Compatible   }, // Find It (boogieman sam)
+                    { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO
+                    { 563229150u , Status.Incompatible }, // Advanced Toolbar
+                    { 540758804u , Status.Incompatible }, // Search Box Mod
+                    { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
+                    { 451700838u , Status.Incompatible }, // Extended Toolbar
+                    // other:
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 1224627683u, Status.Incompatible }, // Fudged Population Enhanced
+                },
+                CompatibleWith = GameVersion.Patch_1_11_1_f4,
+                ContinuationOf = 576970398u, // Quartz (former Sapphire) - UI skin framework
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Laggy
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://github.com/AlexanderDzhoganov/Skylines-Sapphire/wiki/" },
+                    { 1420955187u, "[Mod: Real Time] Quartz prevents display of events on the time bar." },
+                },
+                Published = WorkshopDate("20 Mar, 2017"),
+                Updated = WorkshopDate("6 Nov, 2018"),
+            });
+
+            AddMod(new Review(576970398u, "Quartz (former Sapphire) - UI skin framework") {
+                Affect = Factor.UI,
+                Authors = "TheOne",
+                BrokenBy = GameVersion.Industries,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 593987954u , Status.Compatible   }, // Triple-Screen UI Skin
+                    { 578482272u , Status.Compatible   }, // [FIXED][LEGACY] Emerald UI (16:9)
+                    { 577230299u , Status.Compatible   }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                    { 511029270u , Status.Compatible   }, // Sapphire - Triple Screen Centered
+                    { 450453336u , Status.Compatible   }, // Hello UI [Fixed 1.7]
+                    { 428457597u , Status.Compatible   }, // ClearUI - Quartz Skin 16:9 / 16:10
+                    { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
+                    { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                    { 423910890u , Status.Compatible   }, // Blue UI - Quartz Skin
+                    { 422251153u , Status.Incompatible }, // Emerald UI (16:9)
+                    // toolbar altering mods:
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
+                    { 1577882296u, Status.Incompatible }, // Resize It!
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 837734529u , Status.Compatible   }, // Find It (boogieman sam)
+                    { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO
+                    { 563229150u , Status.Incompatible }, // Advanced Toolbar
+                    { 540758804u , Status.Incompatible }, // Search Box Mod
+                    { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
+                    { 451700838u , Status.Incompatible }, // Extended Toolbar
+                    // other:
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 1224627683u, Status.Incompatible }, // Fudged Population Enhanced
+                },
+                CompatibleWith = GameVersion.Patch_1_10_1_f3,
+                ContinuationOf = 421770876u, // Sapphire - UI skin framework
+                Flags = ItemFlags.Abandonware
+                      //| ItemFlags.BrokenByUpdate
+                      | ItemFlags.Laggy
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://github.com/AlexanderDzhoganov/Skylines-Sapphire/wiki/" },
+                    { 1420955187u, "[Mod: Real Time] Quartz prevents display of events on the time bar." },
+                },
+                Published = WorkshopDate("16 Dec, 2015"),
+                ReplaceWith = 888017364u, // Quartz (Sapphire) - Fixed 1.11
+                SourceURL = "https://github.com/bnm12/Skylines-Sapphire",
+                Updated = WorkshopDate("28 Dec, 2015"),
+            });
+
+            AddMod(new Review(421770876u, "Sapphire - UI skin framework") {
+                Affect = Factor.UI,
+                Authors = "nlight",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 593987954u , Status.Incompatible }, // Triple-Screen UI Skin
+                    { 578482272u , Status.Incompatible }, // [FIXED][LEGACY] Emerald UI (16:9)
+                    { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                    { 511029270u , Status.Incompatible }, // Sapphire - Triple Screen Centered
+                    { 450453336u , Status.Incompatible }, // Hello UI [Fixed 1.7]
+                    { 428457597u , Status.Incompatible }, // ClearUI - Quartz Skin 16:9 / 16:10
+                    { 428298776u , Status.Compatible   }, // [UI] Silicon Skin (21:9) V1.0
+                    { 424995783u , Status.Compatible   }, // [UI] Silicon Skin V1.0
+                    { 423910890u , Status.Incompatible }, // Blue UI - Quartz Skin
+                    { 422251153u , Status.Compatible   }, // Emerald UI (16:9)
+                    // toolbar altering mods:
+                    { 2016920607u, Status.Incompatible }, // RICO revisited
+                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
+                    { 1577882296u, Status.Incompatible }, // Resize It!
+                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 837734529u , Status.Compatible   }, // Find It (boogieman sam)
+                    { 781767563u , Status.MinorIssues  }, // Extended InfoPanel
+                    { 586012417u , Status.Incompatible }, // Ploppable RICO
+                    { 563229150u , Status.Incompatible }, // Advanced Toolbar
+                    { 540758804u , Status.Incompatible }, // Search Box Mod
+                    { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
+                    { 451700838u , Status.Incompatible }, // Extended Toolbar
+                    // other:
+                    { 1420955187u, Status.MinorIssues  }, // Real Time
+                    { 1224627683u, Status.Incompatible }, // Fudged Population Enhanced
+                },
+                CompatibleWith = GameVersion.Patch_1_1_1,
+                ContinuationOf = 576970398u, // Quartz (former Sapphire) - UI skin framework
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://github.com/AlexanderDzhoganov/Skylines-Sapphire/wiki/" },
+                    { 1420955187u, "[Mod: Real Time] Sapphire prevents display of events on the time bar." },
+                },
+                Published = WorkshopDate("8 Apr, 2015"),
+                ReplaceWith = 888017364u, // Quartz (Sapphire) - Fixed 1.11
+                SourceURL = "https://github.com/AlexanderDzhoganov/Skylines-Sapphire/",
+                Updated = WorkshopDate("16 Apr, 2015"),
+            });
+
             AddMod(new Review(413584409u, "BetterLoadPanel") {
                 Affect = Factor.UI,
                 ArchiveURL = "https://web.archive.org/web/20150415230208/http://steamcommunity.com/sharedfiles/filedetails/?id=413584409",
@@ -316,6 +475,318 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("14 Mar, 2015"), // guessing based on github initial commit
                 SourceURL = "https://github.com/brittanygh/CS-ChirpBanner",
                 Updated = WorkshopDate("8 Apr, 2015"),
+            });
+
+            AddMod(new Review(405963579u, "Chirper Position Changer/Mover") {
+                Affect = Factor.UI,
+                Authors = "MrLawbreaker",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // incompat with other chirper mods
+                },
+                CompatibleWith = GameVersion.Patch_1_11_1_f4,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "To reset position, press Ctrl + O (letter 'o')." },
+                },
+                Published = WorkshopDate("10 Mar, 2015"),
+                SourceURL = "https://github.com/MrLawbreaker/SkylinesMod_FreeMoveChirper",
+                Updated = WorkshopDate("18 Mar, 2015"),
+            });
+
+            /*
+            # ███████ ██   ██ ██ ███    ██ ███████
+            # ██      ██  ██  ██ ████   ██ ██
+            # ███████ █████   ██ ██ ██  ██ ███████
+            #      ██ ██  ██  ██ ██  ██ ██      ██
+            # ███████ ██   ██ ██ ██   ████ ███████
+            */
+
+            // continuation of:
+            // 511029270u, "Sapphire - Triple Screen Centered"
+            AddMod(new Review(593987954u, "Triple-Screen UI Skin") {
+                Affect = Factor.UI,
+                Authors = "Snacko",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Required     }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 593987954u , Status.Incompatible }, // Triple-Screen UI Skin
+                    { 511029270u , Status.Incompatible }, // Sapphire - Triple Screen Centered
+                },
+                CompatibleWith = GameVersion.Patch_1_11_1_f4,
+                ContinuationOf = 511029270u, // Sapphire - Triple Screen Centered
+                Flags = ItemFlags.Laggy
+                      | ItemFlags.SourceBundled,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "Only tested on triple 1920 x 1080 monitors (total resolution of 5760 x 1080). Other setups unlikely to work without modification."},
+                },
+                Published = WorkshopDate("6 Jan, 2016"),
+                Updated = WorkshopDate("12 Mar, 2016"),
+                UserModInspected = true,
+            });
+
+            // update
+            AddMod(new Review(578482272u, "[FIXED][LEGACY] Emerald UI (16:9)") {
+                Affect = Factor.UI,
+                Authors = "TheOne",
+                //BrokenBy = GameVersion.GreenCities,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Required     }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 578482272u , Status.Incompatible }, // [FIXED][LEGACY] Emerald UI (16:9)
+                    { 422251153u , Status.Incompatible }, // Emerald UI (16:9)
+                },
+                ContinuationOf = 422251153u, // Emerald UI (16:9)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceBundled,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                },
+                Published = WorkshopDate("18 Dec, 2015"),
+                Updated = WorkshopDate("19 Dec, 2015"),
+                UserModInspected = true,
+            });
+
+            // update
+            AddMod(new Review(577230299u, "[LEGACY][FIXED][UI] Silicon Skin V1.0") {
+                Affect = Factor.UI,
+                Authors = "TheOne",
+                BrokenBy = GameVersion.GreenCities,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Required     }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                    { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
+                    { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                },
+                ContinuationOf = 424995783u, // [UI] Silicon Skin V1.0
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.SourceBundled,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "Very susceptible to changes in vanilla game UI, likely to be broken by each game update." },
+                    { NOTE, "Green Cities: Road buttons are broken." },
+                },
+                Published = WorkshopDate("17 Dec, 2015"),
+                Updated = WorkshopDate("28 Dec, 2015"),
+                UserModInspected = true,
+            });
+
+            // original - updated for quartz
+            AddMod(new Review(511029270u, "Sapphire - Triple Screen Centered") {
+                Affect = Factor.UI,
+                Authors = "Snacko",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Required     }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 593987954u , Status.Incompatible }, // Triple-Screen UI Skin
+                    { 511029270u , Status.Incompatible }, // Sapphire - Triple Screen Centered
+                },
+                CompatibleWith = GameVersion.Patch_1_2_2_f2,
+                Flags = ItemFlags.Abandonware // author states this version will no longer be updated
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.Laggy
+                      | ItemFlags.Obsolete // use newer version
+                      | ItemFlags.SourceBundled,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "Only tested on triple 1920 x 1080 monitors (total resolution of 5760 x 1080). Other setups unlikely to work without modification."},
+                },
+                Published = WorkshopDate("2 Sep, 2015"), // sapphire version
+                ReplaceWith = 593987954u, // Triple-Screen UI Skin
+                Updated = WorkshopDate("6 Jan, 2016"), // update to quartz
+                UserModInspected = true,
+            });
+
+            // original - updated to quartz
+            AddMod(new Review(450453336u, "Hello UI [Fixed 1.7]") {
+                Affect = Factor.UI,
+                Authors = "hellodave",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Required     }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                },
+                CompatibleWith = GameVersion.MassTransit,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Laggy
+                      | ItemFlags.SourceBundled,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                },
+                Published = WorkshopDate("27 May, 2015"),
+                Updated = WorkshopDate("23 Jun, 2017"),
+                UserModInspected = true,
+            });
+
+            // original - updated to quartz
+            AddMod(new Review(428457597u, "ClearUI - Quartz Skin 16:9 / 16:10") {
+                Affect = Factor.UI,
+                Authors = "s i c",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Required     }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceBundled, // Source folder
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                },
+                Published = WorkshopDate("19 Apr, 2015"),
+                Updated = WorkshopDate("4 Feb, 2016"),
+                UserModInspected = true,
+            });
+
+            // continuation
+            AddMod(new Review(428298776u, "[UI] Silicon Skin (21:9) V1.0") {
+                Affect = Factor.UI,
+                Authors = "kokonut",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Required     }, // Sapphire - UI skin framework
+                    // skins:
+                    { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                    { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
+                    { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                },
+                CompatibleWith = GameVersion.Patch_1_1_1,
+                ContinuationOf = 424995783u, // [UI] Silicon Skin V1.0
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "Very susceptible to changes in vanilla game UI, likely to be broken by each game update." },
+                },
+                Published = WorkshopDate("19 Apr, 2015"),
+                ReplaceWith = 577230299u, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                SourceURL = "https://github.com/kokonut0802/Silicon-Skin-21-9",
+                Updated = WorkshopDate("23 Apr, 2015"),
+                UserModInspected = true,
+            });
+
+            // original
+            AddMod(new Review(424995783u, "[UI] Silicon Skin V1.0") {
+                Affect = Factor.UI,
+                Authors = "kokonut",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Required     }, // Sapphire - UI skin framework
+                    // skins:
+                    { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                    { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
+                    { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                },
+                CompatibleWith = GameVersion.Patch_1_1_1,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "Very susceptible to changes in vanilla game UI, likely to be broken by each game update." },
+                },
+                Published = WorkshopDate("14 Apr, 2015"),
+                ReplaceWith = 577230299u, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                SourceURL = "https://github.com/kokonut0802/Silicon-Skin",
+                Updated = WorkshopDate("23 Apr, 2015"),
+                UserModInspected = true,
+            });
+
+            // original - updated to quartz
+            AddMod(new Review(423910890u, "Blue UI - Quartz Skin") {
+                Affect = Factor.UI,
+                Authors = "Unknown Soldier",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Required     }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                },
+                Published = WorkshopDate("12 Apr, 2015"),
+                Updated = WorkshopDate("18 Dec, 2015"),
+                UserModInspected = true,
+            });
+
+            // update
+            AddMod(new Review(422251153u, "Emerald UI (16:9)") {
+                Affect = Factor.UI,
+                Authors = "nlight",
+                BrokenBy = GameVersion.AfterDark,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // frameworks:
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Required     }, // Sapphire - UI skin framework
+                    // skins:
+                    { 578482272u , Status.Incompatible }, // [FIXED][LEGACY] Emerald UI (16:9)
+                    { 422251153u , Status.Incompatible }, // Emerald UI (16:9)
+                },
+                CompatibleWith = GameVersion.Patch_1_1_1,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.SourceBundled, // Source folder
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                },
+                Published = WorkshopDate("9 Apr, 2015"),
+                ReplaceWith = 578482272u, // [FIXED][LEGACY] Emerald UI (16:9)
+                SourceURL = "https://github.com/AlexanderDzhoganov/Skylines-Sapphire/tree/master/Skins/Emerald",
+                Updated = WorkshopDate("12 Apr, 2015"),
+                UserModInspected = true,
             });
         }
     }
