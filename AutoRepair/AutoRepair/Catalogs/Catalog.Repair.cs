@@ -41,21 +41,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Cgameworld/InstantReturnToDesktop",
             });
 
-            AddMod(new Review(2037862156u, "IsIntercity Fix") {
-                Affect = Factor.Other,
-                Authors = "Elektrix, aubergine18",
-                BrokenBy = new Version(1, 13, 0, 8),
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceUnavailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "The bug in vanilla game is now fixed; you can unsubscribe this mod." },
-                },
-                ReleasedDuring = GameVersion.SunsetHarbor,
-            });
-
             AddMod(new Review(2034713132u, "AutoRepair") {
                 Affect = Factor.Other,
                 Authors = "aubergine18",
@@ -115,6 +100,30 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RoadRemovalTool",
             });
 
+            /*
+            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
+            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
+            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
+            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
+            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
+            */
+
+            AddMod(new Review(2037862156u, "IsIntercity Fix") {
+                Affect = Factor.Other,
+                Authors = "Elektrix, aubergine18",
+                BrokenBy = GameVersion.Patch_1_13_0_f8,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Unsubscribe; the bug in vanilla game is now fixed!" },
+                },
+                Published = WorkshopDate("28 Mar, 2020"),
+                Updated = WorkshopDate("28 Mar, 2020"),
+            });
+
             AddMod(new Review(558661484u, "Building Panel Already Exists Icons Fix") {
                 Affect = Factor.Toolbar,
                 Authors = "BloodyPenguin",
@@ -123,12 +132,15 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Sunset Harbor: Causes 'already built' icons to appear on any service building that's already built (you can still build more though)." },
+                    { NOTE, "Unsubscribe; the bug in vanilla game is now fixed!" },
                 },
-                ReleasedDuring = GameVersion.AfterDark,
+                Published = WorkshopDate("20 Nov, 2015"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-AlreadyBuiltFix",
+                Updated = WorkshopDate("20 Nov, 2015"),
             });
         }
     }

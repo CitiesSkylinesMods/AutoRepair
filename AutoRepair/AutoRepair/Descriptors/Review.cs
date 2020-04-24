@@ -205,7 +205,22 @@ namespace AutoRepair.Descriptors {
         /// 
         /// <returns>String representation.</returns>
         public override string ToString() {
-            return $"{WorkshopId} <{Catalog}> \"{WorkshopName}\"";
+            return $"[ID: {WorkshopId}] <{Catalog}> \"{WorkshopName}\"";
+        }
+
+        /// <summary>
+        /// Returns a string representation of the item.
+        /// </summary>
+        /// 
+        /// <param name="brief">If <c>true</c>, reduce verbosity. Defaults to <c>false</c>.</param>
+        /// 
+        /// <returns>String representation.</returns>
+        public string ToString(bool brief) {
+            return brief
+                ? HasFlag(ItemFlags.Vanilla)
+                    ? $"{WorkshopName}"
+                    : $"[ID: {WorkshopId}] \"{WorkshopName}\""
+                : $"[ID: {WorkshopId}] <{Catalog}> \"{WorkshopName}\"";
         }
 
         /// <summary>
@@ -371,7 +386,7 @@ namespace AutoRepair.Descriptors {
             if (CloneOf != 0u && IsCompatibleWith(CloneOf)) {
                 problems = true;
                 log.AppendFormat(
-                    "- Must be incompatible with cloned item: {0}\n",
+                    "- Must be incompatible with cloned item: {0}uL\n",
                     CloneOf);
             }
 
@@ -379,7 +394,7 @@ namespace AutoRepair.Descriptors {
             if (ContinuationOf != 0u && IsCompatibleWith(ContinuationOf)) {
                 problems = true;
                 log.AppendFormat(
-                    "- Must be incompatible with continued item: {0}\n",
+                    "- Must be incompatible with continued item: {0}uL\n",
                     ContinuationOf);
             }
 
@@ -389,12 +404,12 @@ namespace AutoRepair.Descriptors {
                 if (extendedReporting && IsCompatibleWith(ReplaceWith)) {
                     problems = true;
                     log.AppendFormat(
-                        "- Should (usually) be incompatible with replacement item: {0}\n",
+                        "- Should (usually) be incompatible with replacement item: {0}uL\n",
                         ReplaceWith);
                 } else if (Compatibility != null && !Compatibility.ContainsKey(ReplaceWith)) {
                     problems = true;
                     log.AppendFormat(
-                        "- Must specify (in)compatibility with replacement item: {0}\n",
+                        "- Must specify (in)compatibility with replacement item: {0}uL\n",
                         ReplaceWith);
                 }
             }

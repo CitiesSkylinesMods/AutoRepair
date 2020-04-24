@@ -16,6 +16,8 @@ namespace AutoRepair.Catalogs {
     /// <summary>
     /// The main catalog of items.
     /// </summary>
+    [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
+    [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
     public partial class Catalog {
 
         /// <summary>
@@ -107,7 +109,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="review">The assessment, if found.</param>
         /// 
         /// <returns>Returns <c>true</c> if the item was found, otherwise <c>false</c>.</returns>
-        public bool GetReview(PluginInfo plugin, out Review review) {
+        public bool TryGetReview(PluginInfo plugin, out Review review) {
 
             if (Reviews.TryGetValue(plugin.publishedFileID.AsUInt64, out var value)) {
                 review = value;
@@ -126,7 +128,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="review">The assessment, if found.</param>
         /// 
         /// <returns>Returns <c>true</c> if the item was found, otherwise <c>false</c>.</returns>
-        public bool GetReview(PublishedFileId publishedFileId, out Review review) {
+        public bool TryGetReview(PublishedFileId publishedFileId, out Review review) {
 
             if (Reviews.TryGetValue(publishedFileId.AsUInt64, out var value)) {
                 review = value;
@@ -145,7 +147,7 @@ namespace AutoRepair.Catalogs {
         /// <param name="review">The assessment, if found.</param>
         /// 
         /// <returns>Returns <c>true</c> if the item was found, otherwise <c>false</c>.</returns>
-        public bool GetReview(ulong workshopId, out Review review) {
+        public bool TryGetReview(ulong workshopId, out Review review) {
 
             if (Reviews.TryGetValue(workshopId, out var value)) {
                 review = value;
@@ -195,7 +197,7 @@ namespace AutoRepair.Catalogs {
                 return;
             }
 
-            //item.Validate();
+            //review.Validate();
 
             Reviews.Add(item.WorkshopId, item);
         }
@@ -436,19 +438,20 @@ namespace AutoRepair.Catalogs {
                 itemLog.Append($" Debugging...\n");
             }
 
-            while (nextTarget != 0u) {
+            while (nextTarget != 0uL) {
 
                 if (debug) {
                     itemLog.Append($" Debug: nextTarget = {nextTarget}\n");
                 }
 
                 if (!target.SuppressOlderReplacementWarning &&
-                    nextTarget < item.WorkshopId &&
-                    item.CloneOf == 0u) {
-
+                    nextTarget > 1000 && // ie. not a vanilla mod
+                    nextTarget < item.WorkshopId && // older replacement
+                    item.CloneOf == 0uL) // and not a clone
+                {
                     basicProblems = true;
                     itemLog.AppendFormat(
-                        "- Caution: ReplaceWith is older mod: {0}\n",
+                        "- Caution: ReplaceWith is older mod: {0}uL\n",
                         nextTarget);
                 }
 
@@ -465,7 +468,7 @@ namespace AutoRepair.Catalogs {
                         itemLog.Append($" Debug: Queue nextTarget = {nextTarget}\n");
                     }
 
-                    if (nextTarget != 0u) {
+                    if (nextTarget != 0uL) {
                         if (chain.Contains(nextTarget)) {
                             recursion = true;
 
@@ -496,7 +499,7 @@ namespace AutoRepair.Catalogs {
                     if (extendedReporting) {
                         basicProblems = true;
                         itemLog.AppendFormat(
-                            "- ReplaceWith not in Catalog.Items: {0}\n",
+                            "- ReplaceWith not in Catalog.Items: {0}uL\n",
                             target.ReplaceWith);
                     }
 
@@ -570,8 +573,8 @@ namespace AutoRepair.Catalogs {
                                 compatProblems = true;
                                 itemLog.AppendFormat("- Reciprocate mismatch from: {0}\n", target);
                                 itemLog.AppendFormat(
-                                    "  - Change to: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
-                                    $"{item.WorkshopId}u",
+                                    "  - Change to: {{ {0,-12}, Status.{1,-12} }}, // {2}\n",
+                                    $"{item.WorkshopId}uL",
                                     targetStatus,
                                     item.WorkshopName);
                             }
@@ -581,8 +584,8 @@ namespace AutoRepair.Catalogs {
                             compatProblems = true;
                             itemLog.AppendFormat("- No reciprocation from: {0}\n", target);
                             itemLog.AppendFormat(
-                                "  - Add: {{ {0,-11}, Status.{1,-12} }}, // {2}\n",
-                                $"{item.WorkshopId}u",
+                                "  - Add: {{ {0,-12}, Status.{1,-12} }}, // {2}\n",
+                                $"{item.WorkshopId}uL",
                                 targetStatus,
                                 item.WorkshopName);
                         }

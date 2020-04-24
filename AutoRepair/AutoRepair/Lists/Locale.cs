@@ -15,18 +15,23 @@ namespace AutoRepair.Lists {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         public static readonly Dictionary<string, string> FromId = new Dictionary<string, string>() {
             { "*"    , "Suitable for all languages" },
+            { "cz"   , "Czech" }, // czech
+            { "da"   , "Dansk"}, // danish
             { "de"   , "Deutsch" }, // german
             { "de-at", "Wiener" }, // vienesse
             { "de-ch", "Schweiz" }, // german (swiss)
             { "el"   , "Ελληνικά" }, // greek
             { "el-gr", "Ελληνικά" }, // greek (greece)
             { "en"   , "English" },
+            { "en-ca", "Canadian" },
             { "en-gb", "British" },
             { "en-us", "American" },
             { "es"   , "Español" }, // spanish
+            { "eu"   , "Europe" }, // probably not a real locale, but useful for road mods heh
             { "fa"   , "فارسی" }, // farsi
             { "fa-af", "دری" }, // dari
             { "fr"   , "Français" }, // french
+            { "fr-ca", "Français (Canada)" }, // french (canadian)
             { "fr-ch", "Suisse" }, // french (swiss)
             { "hu"   , "Magyar" }, // hungarian
             { "hy"   , "հայերեն" }, // armenian
@@ -38,10 +43,12 @@ namespace AutoRepair.Lists {
             { "kr"   , "Yekgirtú" }, // kurdish
             { "ms-my", "بهاس مليسيا‎" }, // bahasa malaysia
             { "nl"   , "Nederlands" }, // dutch
+            { "no"   , "Norsk" }, // norwegian
             { "pl"   , "Polski" }, // polish
             { "ps"   , "پښتو" }, // pashto
             { "pt"   , "Português" }, // portuguese
             { "ru"   , "Русский язык" }, // russian
+            { "sk"   , "Slovenčina" }, // slovak
             { "sv-se", "svenska" }, // swedish
             { "th"   , "ภาษาไทย" }, // thai
             { "tl-ph", "Wikang Filipino" }, // wikang filipino

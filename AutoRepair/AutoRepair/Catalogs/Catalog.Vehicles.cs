@@ -64,6 +64,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
                     { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
@@ -156,6 +157,23 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Vehicles", "Rocket", "Spaceship", "ChirpX", "Mars", "Launcher" },
             });
 
+            AddMod(new Review(870291141uL, "Random Train Trailers 2.1.2") {
+                Affect = Factor.Customize
+                       | Factor.Vehicles,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Tutorial: https://steamcommunity.com/workshop/filedetails/discussion/870291141/2183537632748656364/" },
+                    { NOTE, "Asset creators, see 'Cargo' section: https://steamcommunity.com/workshop/filedetails/discussion/870291141/133258092236504318/" },
+                    { NOTE, "Cargo mappings: https://github.com/Acc3ssViolation/RandomTrainTrailers/blob/master/Cargo%20Transfer%20Reasons.txt" },
+                },
+                Published = WorkshopDate("23 Feb, 2017"),
+                SourceURL = "https://github.com/Acc3ssViolation/RandomTrainTrailers",
+                Updated = WorkshopDate("23 Oct, 2019"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -209,6 +227,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "bzimage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS (aubergine18)
@@ -252,6 +271,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 //CloneOf = ??,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS (aubergine18)

@@ -19,26 +19,18 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
-            Fixed(881161181u, "More Asset Tags");
             Broken(506982407u, "Dropouts");
             Note(506982407u, "Dropouts", "[Sunset Harbor] Error: Field '.Citizen.m_age' not found.");
             Fixed(810858473u, "Traffic Report Tool");
             Fixed(426460372u, "Favorite Cims");
             Broken(554232266u, "Nursing Homes for Senior Citizens");
             Note(554232266u, "Nursing Homes for Senior Citizens", "Breaks if any DLCs are added due to changes in toolbar.");
-            Fixed(556784825u, "Random Tree Rotation");
-            Broken(842981708u, "Random Tree Rotation for Natural Disasters");
-            Note(842981708u, "Random Tree Rotation for Natural Disasters", "Use the other version: https://steamcommunity.com/sharedfiles/filedetails/?id=556784825");
-            Fixed(667342976u, "Loading Screen Mod");
-            Fixed(833779378u, "Loading Screen Mod [Test]");
-            Fixed(877950833u, "Vanilla Trees Remover");
             Fixed(632951976u, "Improved Mod Upload Panel");
             Fixed(762520291u, "Shadow Strenght Adjuster");
             Fixed(643364914u, "Softer Shadows");
             Fixed(611254368u, "Environment Changer");
             Fixed(530771650u, "Prefab Hook");
             Fixed(1435741602u, "Snooper");
-            Fixed(445589127u, "Precision Engineering");
             Fixed(405810376u, "All 25 Areas purchasable");
             Fixed(1721492498u, "Optimised Outside Connections");
             Fixed(629850626u, "Workshop RICO Settings");
@@ -136,7 +128,6 @@ namespace AutoRepair.Catalogs {
             Dead(418556522u , "Road Anarchy", 1844440354u);
             Dead(954034590u , "Road Anarchy V2", 1844440354u);
             Dead(417926819u , "Road Assistant - BROKEN");
-            Dead(436253779u , "Road Protractor", 445589127u);
             Dead(605590542u , "Rush Hour II - Formerly Rush Hour [Beta]", 1420955187u);
             Dead(1432430887u, "Rush Hour II [Development]", 1420955187u);
             Dead(540758804u , "Search Box Mod", 837734529u);
@@ -161,10 +152,7 @@ namespace AutoRepair.Catalogs {
 
             // incompatible mods
             Incompatible(451700838u , "Extended Toolbar",                        563229150u , "Advanced Toolbar");
-            Incompatible(455403039u , "Unlimited Trees Mod",                     869134690u, "Tree Snapping");
             Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
-            Incompatible(667342976u , "Loading Screen Mod",                      833779378u, "Loading Screen Mod [Test]");
-            Incompatible(837734529u , "Find It!",                                540758804u, "Search Box Mod");
 
             // breaks editor
             BreaksEditor(672248733u, "Ultimate Eyecandy");

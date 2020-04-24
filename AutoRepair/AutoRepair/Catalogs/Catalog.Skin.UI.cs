@@ -95,6 +95,30 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("29 Sep, 2018"),
             });
 
+            AddMod(new Review(877748783u, "Topographic Lines Toggle") {
+                Affect = Factor.UI,
+                Authors = "Komb",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1764637396u, Status.MinorIssues  }, // Toggle It
+                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 507225392u , Status.MinorIssues  }, // Topographic Info View
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorIssues
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press Alt + T to toggle the lines. Shortcut can be changed in mod options." },
+                    { NOTE, "Doesn't work very well when info views are active (white map mode); you will have to re-toggle when exiting info views." },
+                    { NOTE, "Toggle button has issues in map editor, but seems functional." },
+                    { 1764637396u, "[Mod: Toggle It!] Both mods can toggle topographic lines; use one and unsubscribe the other." },
+                    { 507225392u , "[Mod: Topographic Info View] Both mods provide similar functionality; choose one and remove the other." },
+                },
+                Published = WorkshopDate("5 Mar, 2017"),
+                Updated = WorkshopDate("16 Mar, 2017"),
+            });
+
             AddMod(new Review(412149127u, "Font Selector") {
                 Affect = Factor.UI,
                 Authors = "hippo",
@@ -421,7 +445,7 @@ namespace AutoRepair.Catalogs {
                     { 408286108u , Status.Incompatible }, // SkylinesFont
                     { 407225523u , Status.Incompatible }, // TextScaleMod
                 },
-                CompatibleWith = GameVersion.Patch_1_1_0,
+                CompatibleWith = GameVersion.Patch_1_1_0b,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BadStartup
                       | ItemFlags.BrokenByUpdate

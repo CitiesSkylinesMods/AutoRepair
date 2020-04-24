@@ -31,6 +31,24 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("13 Apr, 2020"),
             });
 
+            // todo: move to editor cat
+            AddMod(new Review(1845697704u, "Network Dump Tools") {
+                Affect = Factor.Textures,
+                Authors = "Cgameworld",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.EditorMod
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "In Graphics Settings, set 'Texture Quality' to 'High' before dumping to get best quality." },
+                },
+                Published = WorkshopDate("26 Aug, 2019"),
+                SourceURL = "https://github.com/Cgameworld/NetworkDumpTools",
+                Updated = WorkshopDate("1 Dec, 2019"),
+            });
+
             // todo: move to converter cat?
             AddMod(new Review(1552053911u, "TrailerVariation Loader") {
                 Affect = Factor.Vehicles,
@@ -176,6 +194,23 @@ namespace AutoRepair.Catalogs {
                 },
                 Published = WorkshopDate("24 Jun, 2017"),
                 Updated = WorkshopDate("24 Sep, 2018"),
+            });
+
+            AddMod(new Review(881161181u, "More Asset Tags") {
+                Affect = Factor.UI,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.EditorMod
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "List of asset tags: http://steamcommunity.com/workshop/filedetails/discussion/881161181/133259227524945380/" },
+                },
+                Published = WorkshopDate("11 Mar, 2017"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-MoreAssetTags",
+                Updated = WorkshopDate("28 Mar, 2020"),
             });
         }
     }

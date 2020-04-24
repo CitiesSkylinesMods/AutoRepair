@@ -31,6 +31,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
                     { 1637663252u, Status.Compatible   }, // TM:PE v11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -75,6 +76,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager (11.0-alpha6 clone)
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -230,6 +232,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager (11.0-alpha6 clone)
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -391,6 +394,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "CoarzFlovv",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
                     { 1829496988u, Status.Unknown      }, // Adjust Pathfinding
@@ -419,6 +423,78 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
+            // clone of 11.0-alpha6 - already game breaking lol
+            AddMod(new Review(2064509439u, "TrafficManager") {
+                Affect = Factor.Despawn
+                       | Factor.OutsideConnection
+                       | Factor.PlaceAndMove // can be affected by other mods which affect that factor
+                       | Factor.Pathfinder
+                       | Factor.TrafficLights
+                       | Factor.TransportLines
+                       | Factor.TransportPreference
+                       | Factor.VehicleInfo
+                       | Factor.VehicleLimit
+                       | Factor.Velocity,
+                Authors = "doido",
+                BrokenBy = GameVersion.ParadoxLauncher,
+                Catalog = catalog,
+                CloneOf = 1806963141u, // TM:PE v11.1.2 LABS
+                CompatibleWith = GameVersion.Campus,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
+                    { 1959342332u, Status.Incompatible }, // CSUR ToolBox
+                    { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1953042839u, Status.Incompatible }, // Unified Railway System
+                    { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                    { 1934023593u, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
+                    { 1829496988u, Status.Incompatible }, // Adjust Pathfinding
+                    { 1806963141u, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1764208250u, Status.Incompatible }, // More Vehicles
+                    { 1637663252u, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1633580257u, Status.Incompatible }, // Vehicle Wealthizer 2
+                    { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1586027591u, Status.MinorIssues  }, // Tiny Segments (issues with short roads at junctions)
+                    { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1348361731u, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1312767991u, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 1228424498u, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1196714055u, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 949504539u , Status.Incompatible }, // SingleTrainTrackAI
+                    { 934994075u , Status.Incompatible }, // Service Vehicle Selector 2
+                    { 929654063u , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676u , Status.Incompatible }, // Improved Public Transport 2
+                    { 927293560u , Status.Incompatible }, // Geli-Districts v3.0
+                    { 631930385u , Status.Incompatible }, // Realistic Vehicle Speed
+                    { 583429740u , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446u , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 519691655u , Status.Incompatible }, // Service Vehicle Selector
+                    { 424106600u , Status.Incompatible }, // Improved Public Transport (IPT)
+                    { 408875519u , Status.Incompatible }, // Transport Lines Manager
+                    // Traffic lights
+                    { 1812157090u, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600u, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573u, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608u, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168u, Status.Incompatible }, // New American Traffic Lights
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Laggy
+                      | ItemFlags.Localised
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                Languages = v10languages,
+                Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Old alpha release of TM:PE; not compatible with current game version." },
+                },
+                Published = WorkshopDate("17 Apr, 2020"),
+                ReplaceWith = 1637663252u, // TM:PE V11 STABLE
+                Updated = WorkshopDate("17 Apr, 2020"),
+            });
+
             AddMod(new Review(1957033250u, "TrafficManager Fixed for industry DLC") {
                 Affect = Factor.Despawn
                        | Factor.OutsideConnection
@@ -435,6 +511,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CompatibleWith = GameVersion.Industries,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -508,6 +585,7 @@ namespace AutoRepair.Catalogs {
                 CloneOf = 498363759u, // Traffic Manager + Improved AI
                 CompatibleWith = GameVersion.MassTransit,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -578,6 +656,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CompatibleWith = GameVersion.Industries,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -652,6 +731,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CompatibleWith = GameVersion.ChirpX,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332u, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -724,6 +804,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1962752152u, Status.Compatible   }, // Busstop Prop Remover
                     { 1959342332u, Status.Incompatible }, // CSUR ToolBox

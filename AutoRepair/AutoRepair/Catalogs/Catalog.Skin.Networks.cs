@@ -90,6 +90,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "kian.zarrin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
@@ -142,6 +143,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "kian.zarrin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
@@ -183,6 +185,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "kian.zarrin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1953042839u, Status.Incompatible }, // Unified Railway System
@@ -225,6 +228,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // todo: incompat with roads color changer
+                    { 877950833u , Status.MinorIssues  }, // Vanilla Trees Remover
                     { 2019097300u, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
                     { 1959183067u, Status.MinorIssues  }, // CSUR Loader
                     { 1826488681u, Status.Recommended  }, // Modern Lighting Pack: Liberated!
@@ -246,6 +250,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { 1959183067u, "[Mod: CSUR Loader] Network Skins replaces the CSUR road colors." },
+                    { 877950833u, "[Mod: Vanilla Trees Remover] Disable it's road tree removal for best compatibility with Network Skins." },
                 },
                 ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/boformer/NetworkSkins2",
@@ -500,6 +505,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 877950833u , Status.MinorIssues  }, // Vanilla Trees Remover
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959183067u, Status.Incompatible }, // CSUR Loader
                     { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
@@ -535,6 +541,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
+                    { 877950833u, "[Mod: Vanilla Trees Remover] Disable it's road tree removal for best compatibility with Network Skins." },
                     { 576327847u, "[Mod: 81 Tiles] Network Skins settings may occasionally reset outside central 25 tile area." },
                 },
                 ReleasedDuring = GameVersion.AfterDark,

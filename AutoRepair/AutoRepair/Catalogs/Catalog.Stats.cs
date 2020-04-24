@@ -311,26 +311,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Sherbanm/RID/",
             });
 
-            AddMod(new Review(908700552u, "Simulation Speed Benchmark") {
-                Affect = Factor.Other,
-                Authors = "Overhatted",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1804882663u, Status.Incompatible }, // Monitor It!
-                },
-                CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "There are reports this mod causes 'Object reference not set to an instance of an object' errors" },
-                },
-                Published = WorkshopDate("19 Apr, 2017"),
-                ReplaceWith = 1804882663u, // Monitor It!
-                SourceURL = "https://cld.pt/dl/download/b2583bc8-2fc9-4124-96e7-195c554c6991/SimulationSpeedBenchmark.zip",
-                Updated = WorkshopDate("19 Apr, 2017"),
-            });
-
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -571,6 +551,31 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1875298330u, // Extended Building Info
                 SourceURL = "https://github.com/billw2012/Cities-Skylines-Extended-Building-Info",
                 Updated = WorkshopDate("20 May, 2017"),
+            });
+
+            AddMod(new Review(908700552u, "Simulation Speed Benchmark") {
+                Affect = Factor.UI,
+                Authors = "Overhatted",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1804882663u, Status.Incompatible }, // Monitor It!
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This mod breaks the UI of other mods. Unsubscribe." },
+                    { NOTE, "This mod causes 'Object reference not set to an instance of an object' errors." },
+                },
+                Published = WorkshopDate("19 Apr, 2017"),
+                ReplaceWith = 1804882663u, // Monitor It!
+                SourceURL = "https://cld.pt/dl/download/b2583bc8-2fc9-4124-96e7-195c554c6991/SimulationSpeedBenchmark.zip",
+                Updated = WorkshopDate("19 Apr, 2017"),
             });
         }
     }

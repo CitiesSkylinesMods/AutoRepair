@@ -39,6 +39,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -99,6 +100,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.MinorIssues  }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.MinorIssues  }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -167,6 +169,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.MinorIssues  }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.MinorIssues  }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -235,6 +238,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.MinorIssues  }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.MinorIssues  }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -303,6 +307,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.MinorIssues  }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.MinorIssues  }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC

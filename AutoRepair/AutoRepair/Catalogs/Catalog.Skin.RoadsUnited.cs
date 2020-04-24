@@ -78,6 +78,8 @@ namespace AutoRepair.Catalogs {
                     { 1128766708u, Status.Incompatible }, // Remove Road Textures - Blank Roads
                     { 935747460u , Status.Incompatible }, // Roads United: US Edition - Concrete Only Highways
                     { 932192868u , Status.Incompatible }, // Road Options (Road Colors Changer ++)
+                    { 848896702uL , Status.Incompatible }, // Roads United: US Edition - Reworked
+                    { 837112310uL , Status.Incompatible }, // Roads United: Europe
                     { 726005715u , Status.Incompatible }, // Roads United: Core+
                     { 651610627u , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 633547552u , Status.Incompatible }, // Roads United Core 2.0
@@ -164,7 +166,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552u, Status.Required }, // Roads United Core 2.0
                 },
                 CompatibleWith = GameVersion.Active,
-                Flags = ItemFlags.LargeFileWarning // 503.136 MB
+                Flags = ItemFlags.LargeFileWarning // 503 MB
                       | ItemFlags.MinorIssues // some textures not working, and mirroring of highway textures
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
@@ -186,9 +188,54 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.LargeFileWarning // 547.958 MB
+                      | ItemFlags.LargeFileWarning // 548 MB
                       | ItemFlags.SourceUnavailable,
                 Locale = "en-us",
+            });
+
+            AddMod(new Review(848896702uL, "Roads United: US Edition - Reworked") {
+                Affect = Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "Pres, Unlawful Enemy Combatant",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 726005715u, Status.Required     }, // Roads United: Core+
+                    { 633547552u, Status.Incompatible }, // Roads United Core 2.0
+                },
+                CompatibleWith = GameVersion.Active,
+                ContinuationOf = 726004927uL, // Roads United: US Edition
+                Flags = ItemFlags.Abandonware // description states it will not be updated
+                      | ItemFlags.LargeFileWarning // 367 MB
+                      | ItemFlags.MinorIssues
+                      | ItemFlags.SourceUnavailable,
+                Locale = "en-us",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "[Mod: Network Extensions 2] Some issues with elevated roads and tunnels." },
+                },
+                Published = WorkshopDate("23 Jan, 2017"),
+                Updated = WorkshopDate("2 May, 2017"),
+            });
+
+            AddMod(new Review(837112310uL, "Roads United: Europe") {
+                Affect = Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "Meow",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 726005715u, Status.Required     }, // Roads United: Core+
+                    { 633547552u, Status.Incompatible }, // Roads United Core 2.0
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.Abandonware // description states it will not be updated
+                      | ItemFlags.LargeFileWarning // 445 MB
+                      | ItemFlags.MinorIssues
+                      | ItemFlags.SourceUnavailable,
+                Locale = "eu",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The texture pack often needs selecting twice in RU Core before it will work." },
+                },
+                Published = WorkshopDate("7 Jan, 2017"),
+                Updated = WorkshopDate("7 Jan, 2017"),
             });
         }
     }

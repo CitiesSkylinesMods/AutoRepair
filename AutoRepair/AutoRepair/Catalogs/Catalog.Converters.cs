@@ -220,6 +220,52 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("12 Oct, 2019"),
             });
 
+            AddMod(new Review(881291183u, "Ploppable Asphalt +") {
+                Affect = Factor.Props,
+                Authors = "Ronyx69, TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // incompat: aris
+                    { 1619685021u, Status.Required      }, // Move It!
+                    { 1258124059u, Status.Recommended   }, // Ploppable Pavement (asset)
+                    { 1258123334u, Status.Recommended   }, // Ploppable Asphalt (asset)
+                    { 837734529u , Status.Required      }, // Find It!
+                    { 793346248u , Status.Recommended   }, // Decal Hover Area
+                    { 791221322u , Status.Recommended   }, // Prop Precision
+                    { 767233815u , Status.Recommended   }, // Decal Prop Fix
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Users: Recommended asset collection: https://steamcommunity.com/workshop/filedetails/?id=1258162457" },
+                    { NOTE, "Asset creators, see: https://cslmodding.info/mod/ploppable-asphalt/" },
+                    { NOTE, "Asset creators, also see: https://gist.github.com/ronyx69/2f4b08a45f3a14c585597c848a594150" },
+                },
+                Published = WorkshopDate("11 Mar, 2017"),
+                SourceURL = "https://gist.github.com/ronyx69/db8c09005e295d6021da08e62a5ed321",
+                Updated = WorkshopDate("22 Jul, 2018"),
+            });
+
+            AddMod(new Review(871859856u, "RiverCargoHarborMod") {
+                Affect = Factor.Other,
+                Authors = "yole.karif",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Any cargo harbor with 'River' in the asset name will be converted to a 'river cargo harbor'." },
+                    { NOTE, "Any cargo ships with 'River' in the asset name will be converted to a 'river cargo ship'."},
+                    { NOTE, "Any cargo delivered to, or exported from, a 'river cargo harbor' will use a 'river cargo ship'." },
+                    { NOTE, "Collection of some assets for this mod: https://steamcommunity.com/workshop/filedetails/?id=862755837" },
+                },
+                Published = WorkshopDate("25 Feb, 2017"),
+                Updated = WorkshopDate("25 Feb, 2017"),
+            });
+
             AddMod(new Review(795514116u, "Train Converter") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,

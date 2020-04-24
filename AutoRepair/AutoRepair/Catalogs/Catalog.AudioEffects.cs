@@ -62,7 +62,7 @@ namespace AutoRepair.Catalogs {
             # ██      ██   ██  ██████ ██   ██ ███████
             */
 
-            AddMusic(new Review(2053925580u, "Philippines Sound MOD 2K20 (PSM)") {
+            AddMusicMod(new Review(2053925580u, "Philippines Sound MOD 2K20 (PSM)") {
                 Affect = Factor.Audio
                        | Factor.Environment
                        | Factor.Vehicles,
@@ -726,6 +726,38 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("5 Apr, 2017"),
             });
 
+            // Author states:
+            // If you save while applying this sound mod, and delete the mod, when the game loads
+            // an error will occur and you will not be able to play.
+            AddMod(new Review(887588790u, "Japanese Sound MOD") {
+                Affect = Factor.Audio
+                       | Factor.Environment
+                       | Factor.Vehicles,
+                Authors = "alborzka",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 818641631u , Status.Required     }, // Ambient Sounds Tuner 2.0
+                    { 815103125u , Status.MinorIssues  }, // Extra Vehicle Effects (disable rail service sounds)
+                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188u , Status.Incompatible }, // V10Siren
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SaveAltering // according to author
+                      | ItemFlags.SourceBundled,
+                Locale = "ja",
+                Notes = new Dictionary<ulong, string>() {
+                    { 815103125u, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
+                },
+                Published = WorkshopDate("20 Mar, 2017"),
+                Tags = new[] {
+                    "Sounds", "Audio", "Ambient",
+                    "Japanese",
+                    "Buildings", "Trains", "Stations", "Announcement",
+                    "Vehicles", "Sirens", "Police", "Fire", "Ambulance",
+                },
+                Updated = WorkshopDate("20 Mar, 2017"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -835,6 +867,7 @@ namespace AutoRepair.Catalogs {
                     { 925211833u , Status.Incompatible }, // K's Old Siren Pack
                     { 917009851u , Status.Incompatible }, // Swedish 1970 Siren Mod
                     { 899063611u , Status.Incompatible }, // UK Sound Pack -- Updated 2.0
+                    { 887588790u , Status.Incompatible }, // Japanese Sound MOD
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     { 555026832u , Status.Compatible   }, // UK Sound Pack
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
@@ -898,6 +931,7 @@ namespace AutoRepair.Catalogs {
                     { 925211833u , Status.Incompatible }, // K's Old Siren Pack
                     { 917009851u , Status.Incompatible }, // Swedish 1970 Siren Mod
                     { 899063611u , Status.Incompatible }, // UK Sound Pack -- Updated 2.0
+                    { 887588790u , Status.Incompatible }, // Japanese Sound MOD
                     { 818641631u , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     { 555026832u , Status.Incompatible }, // UK Sound Pack
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)

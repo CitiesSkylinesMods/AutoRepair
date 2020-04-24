@@ -55,6 +55,7 @@ namespace AutoRepair.Catalogs {
 
             // editor mod
             AddMod(new Review(1288816430u, "Hex Colors") {
+                Affect = Factor.UI,
                 Authors = "targa",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -87,7 +88,6 @@ namespace AutoRepair.Catalogs {
                     { 2016920607u, Status.Incompatible }, // RICO revisited
                     { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 586012417u , Status.Incompatible }, // Ploppable RICO
-                    // RICO Revisited?
                 },
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,

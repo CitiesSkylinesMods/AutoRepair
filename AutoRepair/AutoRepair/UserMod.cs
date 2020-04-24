@@ -39,10 +39,16 @@ namespace AutoRepair {
         public void OnSettingsUI(UIHelperBase helper) {
             string scene = SceneManager.GetActiveScene().name;
 
-            SettingsUI.Render(helper, scene);
+            try {
+                SettingsUI.Render(helper, scene);
 
-            if (scene != "Game") {
-                Scanner.PerformScan();
+                if (scene != "Game") {
+                    Scanner.PerformScan();
+                }
+            }
+            catch (Exception e) {
+                Log.Info("It looks like there's something wrong with your game install; try common fixes:\n https://steamcommunity.com/sharedfiles/filedetails/?id=467110757 \n\n");
+                Log.Error(e.ToString());
             }
         }
 

@@ -26,6 +26,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "amamlya, pcfantasy, VictoriaCity",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2044086131u, Status.Incompatible }, // Network Extensions 2 - Sunset Harbour Build / Fix
                     { 1959183067u, Status.Required     }, // CSUR Loader
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -111,6 +112,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // todo: probably incompatible with TMPE, MOM, etc
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 2019097300u, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1939169189u, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
@@ -136,26 +138,27 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Campus,
             });
 
-            // todo: move to editor cat
-            AddMod(new Review(1845697704u, "Network Dump Tools") {
-                Affect = Factor.Textures,
-                Authors = "Cgameworld",
+            AddMod(new Review(883332136u, "Any Road Outside Connections") {
+                Affect = Factor.OutsideConnection, // todo; add network factor
+                Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 530771650u , Status.Required     }, // Prefab Hook
+                    { 497033453u , Status.Required     }, // Unlimited Outside Connections (Beta)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.EditorMod
-                      | ItemFlags.SourceAvailable,
+                Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "In game Graphics Settings, set 'Texture Quality' to 'High' before dumping for best quality." },
+                    { NOTE, "If the road has zoning, you will need to disable its zoning where it reaches edge of map (use a zoning mod to do that)." },
                 },
-                Published = WorkshopDate("26 Aug, 2019"),
-                SourceURL = "https://github.com/Cgameworld/NetworkDumpTools",
-                Updated = WorkshopDate("1 Dec, 2019"),
+                Published = WorkshopDate("14 Mar, 2017"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-AnyRoadOutsideConnections",
+                Updated = WorkshopDate("18 May, 2017"),
             });
 
             AddMod(new Review(816260433u, "Metro Overhaul Mod") {
-                Affect = Factor.Other, // todo; add network factor
+                Affect = Factor.TransportLines
+                       | Factor.TransportPreference, // todo; add network factor
                 Authors = "Lazarus*Man, BloodyPenguin, bsquiklehausen, Tim The Terrible, BadPeanut",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -176,6 +179,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/bloodypenguin/Skylines-MetroOverhaulMod",
                 Updated = WorkshopDate("4 Apr, 2020"),
             });
+
         }
     }
 }

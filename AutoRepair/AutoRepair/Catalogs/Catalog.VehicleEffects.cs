@@ -7,7 +7,7 @@ namespace AutoRepair.Catalogs {
     /// <summary>
     /// Defines vehicle effect packs.
     ///
-    /// See also: <c>Catalog.AudioEffects</c>.
+    /// See also: <c>Catalog.AudioEffects</c> - some of those packs additionally contain vehicle effects.
     /// </summary>
     public partial class Catalog {
 
@@ -58,6 +58,7 @@ namespace AutoRepair.Catalogs {
                     { 815103125u , Status.Required    }, // Extra Vehicle Effects
                     { 780720853u , Status.Required    }, // Vehicle Effects
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "de",
                 Tags = new[] {
@@ -80,6 +81,7 @@ namespace AutoRepair.Catalogs {
                     { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
                     { 435167188u , Status.Incompatible }, // V10Siren
                 },
+                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
                 Tags = new[] {
@@ -89,6 +91,46 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
+            AddMod(new Review(843220538uL, "Vehicle Effects Definition Pack (IC3, Y2)") {
+                Affect = Factor.Audio,
+                Authors = "Von Roth",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 815103125uL , Status.Recommended  }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Required     }, // Vehicle Effects
+                    // supported vehicles:
+                    { 629739002uL , Status.Recommended  }, // DSB IC3 Gray/Blue - 3 cars
+                    { 629740314uL , Status.Recommended  }, // DSB IC3 Gray/Blue - 6 cars
+                    { 607442454uL , Status.Recommended  }, // IC3 - DSB 3 cars Red/White
+                    { 607467264uL , Status.Recommended  }, // IC3 - DSB 6 cars Red/White
+                    { 607456665uL , Status.Recommended  }, // Y2 - Kustpilen 3 cars (old livery)
+                    { 607471160uL , Status.Recommended  }, // Y2 - Kustpilen 6 cars (old livery)
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SourceUnavailable,
+                Languages = new[] { "en", "da", "no", "sv-se" },
+                Locale = "en",
+                Published = WorkshopDate("15 Jan, 2017"),
+                Updated = WorkshopDate("15 Jan, 2017"),
+            });
+
+            AddMod(new Review(833784103uL, "Vehicle Effect Definitions for BR Class 43 (aka Intercity 125 / HST)") {
+                Affect = Factor.Audio,
+                Authors = "Thaok",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 815103125uL , Status.Recommended  }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Required     }, // Vehicle Effects
+                    // supported vehicles:
+                    { 472472119uL , Status.Recommended  }, // British Rail Class 43 Trainset (Intercity 125 Livery)
+                    { 473701384uL , Status.Recommended  }, // British Rail Class 43 Trainset (Swallow Livery)
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SourceUnavailable,
+                Locale = "en-gb",
+                Published = WorkshopDate("3 Jan, 2017"),
+                Updated = WorkshopDate("3 Jan, 2017"),
+            });
         }
     }
 }

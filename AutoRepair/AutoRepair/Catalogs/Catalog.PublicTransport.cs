@@ -137,6 +137,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
                     { 1776052533u, Status.Compatible   }, // Stops & Stations
@@ -214,6 +215,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
                     { 1776052533u, Status.Compatible   }, // Stops & Stations
@@ -280,6 +282,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // incompat with overwatch/aris mods
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
                     { 1776052533u, Status.Incompatible }, // Stops & Stations
@@ -345,7 +348,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "The vanilla game now includes this fix; you can unsubscribe this mod." },
+                    { NOTE, "The vanilla game now includes this fix; unsubscribe this mod." },
                 },
                 Published = WorkshopDate("30 Jun, 2016"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-TransportLineRenderingFix",
@@ -367,6 +370,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     // was compat with ancient versions of TMPE, but they all changed after mass transit
                     // was also compat with t++ v2 (now obsolete)
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
                     { 1776052533u, Status.Incompatible }, // Stops & Stations
@@ -422,6 +426,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.MassTransit,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
                     { 1776052533u, Status.Incompatible }, // Stops & Stations

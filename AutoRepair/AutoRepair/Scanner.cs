@@ -84,9 +84,11 @@ namespace AutoRepair {
                 log.Append("\nGeneral Announcements:\n");
 
                 foreach (var entry in Announcements.Notes) {
-                    log.AppendFormat("\n* {0} - {1}\n",
-                    entry.Value,
-                    GetWorkshopURL(entry.Key));
+                    if (IsAlwaysNote(entry.Key)) {
+                        log.AppendFormat("\n* {0}\n", entry.Value);
+                    } else {
+                        log.AppendFormat("\n* {0} - {1}\n", entry.Value, GetWorkshopURL(entry.Key));
+                    }
                 }
             }
         }
@@ -299,6 +301,10 @@ namespace AutoRepair {
                     if (!string.IsNullOrEmpty(review.SourceURL)) {
                         log.AppendFormat("\n - Source available: {0}\n", review.SourceURL);
                     }
+
+                    if (review.HasFlag(ItemFlags.SourceOudated)) {
+                        log.Append("\n - The available source code hasn't been kept up-to-date with recent mod updates.\n");
+                    }
                 } else if (review.HasFlag(ItemFlags.SourceBundled)) {
                     log.Append("\n - Source is bundled in its 'Source' folder.\n");
 
@@ -328,7 +334,51 @@ namespace AutoRepair {
             }
 
             if (review.ReplaceWith != 0u) {
-                log.AppendFormat("\n - Newer version/replacement: {0}\n", GetWorkshopURL(review.ReplaceWith));
+                SuggestReplacement(review, ref log);
+            }
+        }
+
+        /// <summary>
+        /// Given a review with non-zero <see cref="Review.ReplaceWith"/>, logs details of the replacement.
+        /// </summary>
+        /// 
+        /// <param name="review">The item descriptor to inspect.</param>
+        /// <param name="log">The log file where results are sent.</param>
+        private static void SuggestReplacement(Review review, ref StringBuilder log) {
+            if (!Catalog.Instance.TryGetReview(review.ReplaceWith, out var replacement)) {
+
+                if (review.HasFlag(ItemFlags.ForceMigration)) {
+                    log.AppendFormat(
+                        "\n - Replace with: {0}\n",
+                        GetWorkshopURL(review.ReplaceWith));
+
+                } else {
+                    log.AppendFormat(
+                        "\n - Suitable alternative: {0}\n",
+                        GetWorkshopURL(review.ReplaceWith));
+                }
+
+                return;
+            }
+
+            // we can be more descriptive when we have descriptor for replacement...
+
+            if (replacement.HasFlag(ItemFlags.Vanilla)) {
+                log.AppendFormat(
+                    "\n - Replace with: {0}\n",
+                    replacement.ToString(true));
+
+            } else if (review.HasFlag(ItemFlags.ForceMigration)) {
+                log.AppendFormat(
+                    "\n - Replace with: {0}\n   {1}\n",
+                    replacement.ToString(true),
+                    GetWorkshopURL(replacement.WorkshopId));
+
+            } else {
+                log.AppendFormat(
+                    "\n - Suitable alternative: {0}\n   {1}\n",
+                    replacement.ToString(true),
+                    GetWorkshopURL(replacement.WorkshopId));
             }
         }
 

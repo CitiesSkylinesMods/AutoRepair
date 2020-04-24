@@ -52,6 +52,68 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-SkipIntro",
             });
 
+            AddMod(new Review(833779378uL, "Loading Screen Mod [Test]") {
+                Affect = Factor.LoadSaveExit,
+                Authors = "thale5",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
+                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    { 833779378uL , Status.Incompatible }, // Loading Screen Mod [Test]
+                    { 667342976uL , Status.Incompatible }, // Loading Screen Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 667342976uL, // Loading Screen Mod
+                Flags = ItemFlags.Localised
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.SourceOudated,
+                Languages = new[] { "en", "zh-cn" },
+                Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This is the test verison of the mod, where new features are beta tested." },
+                    { NOTE, "If you need maximum reliability, use the other verison of the mod instead." },
+                    { NOTE, "How to find & fix broken/bloated assets: https://steamcommunity.com/sharedfiles/filedetails/?id=1846793796" },
+                    { NOTE, "Asset creators, see: https://steamcommunity.com/workshop/filedetails/discussion/667342976/1636416951459546732" },
+                },
+                Published = WorkshopDate("3 Jan, 2017"),
+                ReplaceWith = 667342976uL, // Loading Screen Mod
+                SourceURL = "https://github.com/thale5/LSM",
+                SuppressOlderReplacementWarning = true,
+                Updated = WorkshopDate("26 Mar, 2020"),
+            });
+
+            AddMod(new Review(667342976uL, "Loading Screen Mod") {
+                Affect = Factor.LoadSaveExit,
+                Authors = "thale5",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
+                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    { 833779378uL , Status.Incompatible }, // Loading Screen Mod [Test]
+                    { 667342976uL , Status.Incompatible }, // Loading Screen Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Localised
+                      | ItemFlags.Recommended
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.SourceOudated,
+                Languages = new[] { "en", "zh-cn" },
+                Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "To fix broken savegames: https://steamcommunity.com/workshop/filedetails/discussion/667342976/1626286205707786286/" },
+                    { NOTE, "Find & fix broken/bloated assets: https://steamcommunity.com/sharedfiles/filedetails/?id=1846793796" },
+                    { NOTE, "Asset creators, see: https://steamcommunity.com/workshop/filedetails/discussion/667342976/1636416951459546732" },
+                    { NOTE, "More guides here: https://steamcommunity.com/sharedfiles/filedetails/discussions/667342976" },
+                },
+                Published = WorkshopDate("17 Apr, 2016"),
+                SourceURL = "https://github.com/thale5/LSM",
+                Updated = WorkshopDate("26 Mar, 2020"),
+            });
+
             AddMod(new Review(411821214u, "Pause on no focus/Alt-Tab") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "MrLawbreaker",
@@ -128,7 +190,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Sunset Harbor: The base game now has pause on load feature, you can unsubscribe this mod." },
+                    { NOTE, "Sunset Harbor: The base game now has pause on load feature; unsubscribe this mod." },
                 },
                 Published = WorkshopDate("16 Mar, 2015"),
                 SourceURL = "https://github.com/MrLawbreaker/SkylinesMod_PauseOnLoad",

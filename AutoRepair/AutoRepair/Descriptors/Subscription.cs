@@ -30,7 +30,7 @@ namespace AutoRepair.Descriptors {
             IsOffline = plugin.publishedFileID == PublishedFileId.invalid;
             IsValid = true;
 
-            if (Catalog.Instance.GetReview(plugin, out var review)) {
+            if (Catalog.Instance.TryGetReview(plugin, out var review)) {
                 Review = review;
                 IsReviewed = true;
                 Name = review.HasFlag(ItemFlags.BadStartup)

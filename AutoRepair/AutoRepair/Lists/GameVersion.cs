@@ -78,12 +78,12 @@ namespace AutoRepair {
         /// <summary>
         /// 2015-05-19 European biome and buildings added.
         /// </summary>
-        public static readonly Version EuropeBiome = new Version(1, 1, 0, 0);
+        public static readonly Version EuropeBiome = new Version(1, 1, 0, 2);
 
         /// <summary>
         /// 2015-05-19 Tunnels and European themed buildings and maps added.
         /// </summary>
-        public static readonly Version Patch_1_1_0 = new Version(1, 1, 0, 0);
+        public static readonly Version Patch_1_1_0b = new Version(1, 1, 0, 2);
 
         /// <summary>
         /// 2015-07-01 IUserMod changed. Any mod older than this is toast.

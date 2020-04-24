@@ -87,7 +87,9 @@ namespace AutoRepair.Catalogs {
                     { 1237383751u, Status.Incompatible }, // Extended Game Options
                     { 407055819u , Status.Incompatible }, // Mod Achievement Enabler
                     // Chirper removers:
+
                     // Disable abandonment:
+
                     // Milestone unlockers:
                     { Vanilla.UnlockAll, Status.Incompatible }, //Unlock All (bundled with Cities: Skylines)
                     { 1242879105u, Status.Incompatible }, // Unlock Any Milestone
@@ -96,8 +98,12 @@ namespace AutoRepair.Catalogs {
                     { 410614868u , Status.Incompatible }, // EarlyUnlock
                     { 407162294u , Status.Incompatible }, // All basic unlocks at the start
                     // Remove pollution (various types):
+
                     // Unlimited resources:
+                    { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                     // Costs/refunds:
+
                     // Income multipliers:
                     { 1487849798u, Status.Incompatible }, // Higher Income Mod 1.2a
                     // Land value alterations:
@@ -235,6 +241,7 @@ namespace AutoRepair.Catalogs {
                     { 1225712804u, Status.Incompatible }, // 406218372
                     { 1223738434u, Status.Incompatible }, // 422554572 (81 tiles)
                     { 1138679561u, Status.Incompatible }, // AllSpacesUnlock
+                    { 839931599uL , Status.Incompatible }, // UnlockAreaCountLimit
                     { 616078328u , Status.Incompatible }, // All Tile Start -- not a tile mod, incompat with 81 tiles
                     { 576327847u , Status.Incompatible }, // 81 Tiles (current ver by BP)
                     { 422554572u , Status.Incompatible }, // 81 Tiles (original by emf)
@@ -244,6 +251,8 @@ namespace AutoRepair.Catalogs {
                     { 403798635u , Status.Incompatible }, // All Spaces Unlockable
                     // resource depletion
                     { Vanilla.UnlimitedOilAndOre, Status.Incompatible }, // Unlimited Oil and Ore (bundled with Cities: Skylines)
+                    { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Laggy

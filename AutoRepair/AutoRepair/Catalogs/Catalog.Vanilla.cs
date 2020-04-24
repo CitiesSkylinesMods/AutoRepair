@@ -39,6 +39,7 @@ namespace AutoRepair.Catalogs {
                     { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
                     { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 838095079uL , Status.Incompatible }, // Cheaper Hydro Electric Power
                     { 408706691u , Status.Incompatible }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.Active,
@@ -74,6 +75,8 @@ namespace AutoRepair.Catalogs {
                     { 1237383751u, Status.MinorIssues  }, // Extended Game Options
                     { 1232451940u, Status.MinorIssues  }, // 调整金钱
                     { 1227735337u, Status.MinorIssues  }, // Full Refund Cost[Industries Compatible]
+                    { 855704599uL , Status.MinorIssues  }, // Set your own Start Money amount
+                    { 838095079uL , Status.MinorIssues  }, // Cheaper Hydro Electric Power
                     { 938049744u , Status.MinorIssues  }, // Proper Hardness Fixed
                     { 409171141u , Status.MinorIssues  }, // Cash on Demand
                     { 408706691u , Status.MinorIssues  }, // Proper Hardness
@@ -94,6 +97,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1237383751u, Status.Incompatible }, // Extended Game Options
+                    { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled

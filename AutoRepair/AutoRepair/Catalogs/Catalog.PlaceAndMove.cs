@@ -309,6 +309,9 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 766190099u, // Move It (original)
                 Flags = ItemFlags.Recommended // rare accolade
                       | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://steamcommunity.com/sharedfiles/filedetails/?id=1999726060" },
+                },
                 SourceURL = "https://github.com/Quboid/CS-MoveIt",
             });
 
@@ -340,10 +343,11 @@ namespace AutoRepair.Catalogs {
 
             // Might cause issues with TM:PE - short segments entering junctions causes AI issues
             AddMod(new Review(1586027591u, "Tiny Segments") {
-                Affect = Factor.PlaceAndMove,
+                Affect = Factor.PlaceAndMove, // todo; networks factor
                 Authors = "Quboid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.MinorIssues  }, // TrafficManager
                     { 1957033250u, Status.MinorIssues  }, // TrafficManager Fixed for industry DLC
                     { 1844440354u, Status.Required     }, // Fine Road Anarchy 2
                     { 1806963141u, Status.MinorIssues  }, // TMPE v11 LABS (issues at junctions)
@@ -360,6 +364,12 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { 1806963141u, "[Mod: TM:PE v11 LABS] Small segements at junctions can make vehicles misbehave." },
+                    { 1637663252u, "[Mod: TM:PE v11 STABLE] Small segements at junctions can make vehicles misbehave." },
+                },
+                Published = WorkshopDate("8 Dec, 2018"),
+                Updated = WorkshopDate("14 Sep, 2019"),
             });
 
             AddMod(new Review(1440928803u, "Parallel Road Tool") {
@@ -412,6 +422,7 @@ namespace AutoRepair.Catalogs {
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2 [r5.0.3]
                     { 922939393u , Status.Compatible   }, // Transparency LOD Fix + Cloud Assets Enabler
                     { 837734529u , Status.Compatible   }, // Find It! 1.5.4
+                    { 833779378uL , Status.Compatible   }, // Loading Screen Mod [Test]
                     { 818641631u , Status.Compatible   }, // Ambient Sounds Tuner
                     { 815103125u , Status.Compatible   }, // Extra Vehicle Effects
                     { 814498849u , Status.Compatible   }, // Improved Content Manager
@@ -511,6 +522,7 @@ namespace AutoRepair.Catalogs {
                     { 928128676u , Status.Compatible   }, // Improved Public Transport 2 [r5.0.3]
                     { 922939393u , Status.Compatible   }, // Transparency LOD Fix + Cloud Assets Enabler
                     { 837734529u , Status.Compatible   }, // Find It! 1.5.4
+                    { 833779378uL , Status.Compatible   }, // Loading Screen Mod [Test]
                     { 818641631u , Status.Compatible   }, // Ambient Sounds Tuner
                     { 815103125u , Status.Compatible   }, // Extra Vehicle Effects
                     { 814498849u , Status.Compatible   }, // Improved Content Manager
@@ -614,6 +626,31 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("24 Apr, 2017"),
                 SourceURL = "https://github.com/TPBCS/BuildingAnarchy",
                 Updated = WorkshopDate("13 Nov, 2018"),
+            });
+
+            AddMod(new Review(445589127uL, "Precision Engineering") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "Simie",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    { 876444259uL , Status.Incompatible }, // PrecisionEngineering测量工具
+                    { 445589127uL , Status.Incompatible }, // Precision Engineering
+                    { 436253779uL , Status.Incompatible }, // Road Protractor
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Hold Ctrl while placing roads/rails to enable angle snapping (5 degree increments)." },
+                    { NOTE, "Hold Alt while placing roads/rails to enable snapping to guidelines." },
+                    { NOTE, "Hold Shift while placing roads/rails to show additional information." },
+                },
+                Published = WorkshopDate("19 May, 2015"),
+                SourceURL = "https://github.com/Simie/PrecisionEngineering",
+                Updated = WorkshopDate("29 Mar, 2016"),
             });
 
             /*
@@ -1014,6 +1051,27 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gist.github.com/simon56modder/46b2d593e0364fb5386c80c3c97ae396",
             });
 
+            AddMod(new Review(876444259uL, "PrecisionEngineering测量工具") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "可乐楠",
+                Catalog = catalog,
+                CloneOf = 445589127uL, // Precision Engineering
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 876444259uL , Status.Incompatible }, // PrecisionEngineering测量工具
+                    { 445589127uL , Status.Incompatible }, // Precision Engineering
+                    { 436253779uL , Status.Incompatible }, // Road Protractor
+                },
+                CompatibleWith = GameVersion.Patch_1_6_3_f1,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Localised
+                      | ItemFlags.SourceUnavailable,
+                Locale = "zh-cn",
+                Published = WorkshopDate("4 Mar, 2017"),
+                ReplaceWith = 445589127uL, // Precision Engineering
+                SuppressOlderReplacementWarning = true,
+                Updated = WorkshopDate("4 Mar, 2017"),
+            });
+
             AddMod(new Review(802066100u, "Fine Road Anarchy") {
                 Affect = Factor.PlaceAndMove,
                 Authors = "Boogieman Sam",
@@ -1139,6 +1197,32 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Snowfall,
                 ReplaceWith = 1844442251u, // Fine Road Tool 2
                 SourceURL = "https://github.com/SamsamTS/CS-FineRoadTool",
+            });
+
+            AddMod(new Review(436253779uL, "Road Protractor") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "Oelderoth",
+                BrokenBy = GameVersion.Snowfall, // users starting reporting lag and crashes after Snowfall release
+                Catalog = catalog,
+                CloneOf = 445589127uL, // Precision Engineering
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 876444259uL , Status.Incompatible }, // PrecisionEngineering测量工具
+                    { 445589127uL , Status.Incompatible }, // Precision Engineering
+                    { 436253779uL , Status.Incompatible }, // Road Protractor
+                },
+                CompatibleWith = GameVersion.EuropeBiome,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Laggy
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("2 May, 2015"),
+                ReplaceWith = 445589127uL, // Precision Engineering
+                Updated = WorkshopDate("20 May, 2015"),
             });
         }
     }

@@ -118,6 +118,9 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you install a broken mod, this mod will still try and auto-enable it. So beware!" },
+                },
                 Published = WorkshopDate("11 Apr, 2017"),
                 Updated = WorkshopDate("18 Nov, 2018"),
             });

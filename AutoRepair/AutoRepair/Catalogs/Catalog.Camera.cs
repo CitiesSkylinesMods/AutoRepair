@@ -5,7 +5,7 @@ namespace AutoRepair.Catalogs {
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// Camera mods.
+    /// Camera mods and first person cameras.
     ///
     /// Note: Not same as Catalog.CameraScripts!.
     /// </summary>
@@ -20,18 +20,6 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Camera";
 
-            // todo: move to driving category
-            AddMod(new Review(1518296436u, "Driving Mod") {
-                Affect = Factor.Camera
-                       | Factor.Vehicles,
-                Authors = "WULF1045",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo: test with TMPE
-                },
-                Flags = ItemFlags.SourceUnavailable,
-            });
-
             // Camera control via SpaceMouse
             AddMod(new Review(2021361606u, "SpaceMouse for CSL") {
                 Affect = Factor.Camera,
@@ -45,8 +33,9 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Campus,
+                Published = WorkshopDate("13 Mar, 2020"),
                 SourceURL = "https://github.com/graealex/CSL-SpaceMouse",
+                Updated = WorkshopDate("13 Mar, 2020"),
             });
 
             // Stereoscopic camera (split screen)
@@ -63,8 +52,15 @@ namespace AutoRepair.Catalogs {
                     //{ 411016892u , Status.Incompatible }, // Enhanced Zoom (no longer in workshop)
                     //{ 406255342u , Status.Incompatible }, // First-person camera
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues // mouse pointer and underground view borked
                       | ItemFlags.SourceBundled,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press left Ctr + T to toggle the stereoscopic camera view." },
+                },
+                Published = WorkshopDate("8 Aug, 2019"),
+                Updated = WorkshopDate("25 Aug, 2019"),
+                UserModInspected = true,
             });
 
             AddMod(new Review(1756089251u, "Zoom It!") {
@@ -81,10 +77,11 @@ namespace AutoRepair.Catalogs {
                     { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
                     { 410227672u , Status.Incompatible }, // Farther Zoom
                 },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorIssues // harmony patch management could be better
-                      | ItemFlags.SourceAvailable,
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("30 May, 2019"),
                 SourceURL = "https://github.com/keallu/CSL-ZoomIt",
+                Updated = WorkshopDate("3 Jul, 2019"),
             });
 
             // Camera control by joystick
@@ -98,8 +95,11 @@ namespace AutoRepair.Catalogs {
                     { 1721824249u, Status.Compatible }, // Joystick Camera Control
                     { 1721823173u, Status.Compatible }, // NoOffScreenScroll
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("24 Apr, 2019"),
                 SourceURL = "https://github.com/RenaKunisaki/CSL-JoystickCameraControl",
+                Updated = WorkshopDate("24 Mar, 2020"),
             });
 
             AddMod(new Review(1721823173u, "NoOffScreenScroll") {
@@ -113,7 +113,23 @@ namespace AutoRepair.Catalogs {
                     { 1721823173u, Status.Compatible }, // NoOffScreenScroll
                 },
                 Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("24 Apr, 2019"),
                 SourceURL = "https://github.com/RenaKunisaki/CSL-NoOffScreenScroll",
+                Updated = WorkshopDate("24 Apr, 2019"),
+            });
+
+            // todo: move to driving category
+            AddMod(new Review(1518296436u, "Driving Mod") {
+                Affect = Factor.Camera
+                       | Factor.Vehicles,
+                Authors = "WULF1045",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // todo: test with TMPE
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("21 Sep, 2018"),
+                Updated = WorkshopDate("21 Sep, 2018"),
             });
 
             AddMod(new Review(1406625743u, "EnhancedZoomContinued") {
@@ -133,7 +149,12 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 651056665u, // Enhanced Zoom Continued
                 Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://steamcommunity.com/workshop/filedetails/discussion/1406625743/1728711392724061143/" },
+                },
+                Published = WorkshopDate("9 Jun, 2018"),
                 SourceURL = "https://drive.google.com/file/d/1n9Bga69WamgKPk8rsWDjdJOSEJBTLNId",
+                Updated = WorkshopDate("9 Jun, 2018"),
             });
 
             AddMod(new Review(898480258u, "Camera Positions Utility") {
@@ -168,6 +189,33 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Apr, 2018"),
             });
 
+            AddMod(new Review(844180955u, "City Drive") {
+                Affect = Factor.Camera
+                       | Factor.Vehicles,
+                Authors = "yole.karif",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1492317158uL, Status.Incompatible }, // 第一人称视角
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 1317859996uL, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 650805785uL , Status.Incompatible }, // First Person Camera: Updated
+                    { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition [STABLE]
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
+                    { 406255342uL , Status.Incompatible }, // First-person camera
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://steamcommunity.com/workshop/filedetails/discussion/844180955/1479857071252874461/" },
+                    { NOTE, "A few 'HD' car assets: https://steamcommunity.com/sharedfiles/filedetails/?id=1182824413" },
+                },
+                Published = WorkshopDate("17 Jan, 2017"),
+                Updated = WorkshopDate("26 Oct, 2017"),
+            });
+
             AddMod(new Review(650805785u, "First Person Camera: Updated") {
                 Affect = Factor.Camera,
                 Authors = "tony56a",
@@ -179,9 +227,12 @@ namespace AutoRepair.Catalogs {
                     { 650805785u , Status.Incompatible }, // First Person Camera: Updated
                     { 406255342u , Status.Incompatible }, // First-person camera
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 406255342u, // First-person camera
                 Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("23 Mar, 2016"),
                 SourceURL = "https://github.com/tony56a/Skylines-FPSCamera/tree/1.4.0-fix",
+                Updated = WorkshopDate("16 Apr, 2020"),
             });
 
             AddMod(new Review(602077938u, "TotalyFree Camera") {
@@ -402,7 +453,7 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press F8 to open the options panel." },
                 },
-                Published = WorkshopDate("23 Mar, 2015"),
+                Published = WorkshopDate("17 Mar, 2015"), // guessed from 409359950 (NSFW!!)
                 Updated = WorkshopDate("23 Mar, 2015"), // WBM shows 11 updates, but steam did not show updated date back then
             });
 

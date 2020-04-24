@@ -145,6 +145,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1922400472u, Status.Incompatible }, // Enhanced District Services
                     { 1806963141u, Status.Compatible   }, // TM:PE v11 LABS
@@ -211,6 +212,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
                     { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
                     // Old/rogue versions of TM:PE
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1957033250u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1604291910u, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472u, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -256,6 +258,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.MassTransit,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439u, Status.Incompatible }, // TrafficManager
                     { 1806963141u, Status.Incompatible }, // TM:PE v11 LABS
                     { 1764208250u, Status.Incompatible }, // More Vehicles
                     { 1637663252u, Status.Incompatible }, // TM:PE v11 STABLE
