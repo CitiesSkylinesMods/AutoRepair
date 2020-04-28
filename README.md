@@ -3,6 +3,8 @@ The incompatible mods list, in a mod!
 
 > Note to modders: Create issues rather than pull requests please; this mod is still undergoing regular mass-refactorings and PRs will just clog up with merge conflicts.
 
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/aubergine18)
+
 ## Current status
 
 The mod contains almost 800 descriptors and almost 5,000 compatibility vectors.
