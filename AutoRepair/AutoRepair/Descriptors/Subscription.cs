@@ -40,7 +40,7 @@ namespace AutoRepair.Descriptors {
                 Name = GetPluginName(plugin);
             }
 
-            LastUpdated = PackageEntry.GetLocalModTimeUpdated(plugin.modPath).ToLocalTime();
+            LastDownloaded = PackageEntry.GetLocalModTimeUpdated(plugin.modPath).ToLocalTime();
 
             if (!IsOffline) {
                 WorkshopId = plugin.publishedFileID.AsUInt64;
@@ -78,7 +78,7 @@ namespace AutoRepair.Descriptors {
         /// <summary>
         /// Gets the date/time the files on disk were last updated.
         /// </summary>
-        public DateTime LastUpdated { get; private set; }
+        public DateTime LastDownloaded { get; private set; }
 
         /// <summary>
         /// Gets the name of the item.

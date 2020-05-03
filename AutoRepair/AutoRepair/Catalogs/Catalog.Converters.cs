@@ -18,14 +18,14 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Converters";
 
-            AddMod(new Review(2039036102u, "Metro Station Converter") {
+            AddMod(new Review(2039036102uL, "Metro Station Converter") {
                 Affect = Factor.Customize,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 816260433u, Status.Incompatible }, // Metro Overhaul Mod (MOM)
-                    { 795514116u, Status.Recommended  }, // Train Converter
-                    { 530771650u, Status.Required     }, // Prefab Hook
+                    { 816260433uL, Status.Incompatible }, // Metro Overhaul Mod (MOM)
+                    { 795514116uL, Status.Recommended  }, // Train Converter
+                    { 530771650uL, Status.Required     }, // Prefab Hook
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
@@ -37,7 +37,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.SunsetHarbor,
             });
 
-            AddMod(new Review(2033714682u, "Tree and Vehicle Props") {
+            AddMod(new Review(2033714682uL, "Tree and Vehicle Props") {
                 Affect = Factor.LoadSaveExit
                        | Factor.Props
                        | Factor.Trees
@@ -45,10 +45,10 @@ namespace AutoRepair.Catalogs {
                 Authors = "Elektrix",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 787611845u , Status.Recommended  }, // Prop Snapping
-                    { 791221322u , Status.Recommended  }, // Prop Precision
-                    { 593588108u , Status.Recommended  }, // Prop & Tree Anarchy
-                    { 1094334744u, Status.Compatible   }, // Procedural Objects
+                    { 787611845uL , Status.Recommended  }, // Prop Snapping
+                    { 791221322uL , Status.Recommended  }, // Prop Precision
+                    { 593588108uL , Status.Recommended  }, // Prop & Tree Anarchy
+                    { 1094334744uL, Status.Compatible   }, // Procedural Objects
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SlowLoad
@@ -59,7 +59,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.ParadoxLauncher,
             });
 
-            AddMod(new Review(2016920607u, "Ploppable RICO revisited") {
+            AddMod(new Review(2016920607uL, "Ploppable RICO revisited") {
                 Affect = Factor.Naming
                        | Factor.BuildingCapacity
                        | Factor.BuildingLevel
@@ -70,25 +70,27 @@ namespace AutoRepair.Catalogs {
                 Authors = "algernon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2025147082u, Status.Compatible   }, // Realistic Population revisited
-                    { 2016920607u, Status.Incompatible }, // RICO revisited
-                    { 1749971558u, Status.Incompatible }, // Real Time Offline
-                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
-                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1577882296u, Status.Compatible   }, // Resize It!
-                    { 1420955187u, Status.Compatible   }, // Real Time
-                    { 1288816430u, Status.Incompatible }, // Hex Colors
-                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
-                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
-                    { 927293560u , Status.Compatible   }, // Geli-Districts v3.0
-                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
-                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
-                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
-                    { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
-                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
-                    { 410344523u , Status.Incompatible }, // PopBalanceMod
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                    { 2025147082uL, Status.Compatible   }, // Realistic Population revisited
+                    { 2016920607uL, Status.Incompatible }, // RICO revisited
+                    { 1749971558uL, Status.Incompatible }, // Real Time Offline
+                    { 1597852915uL, Status.Incompatible }, // More Advanced Toolbar
+                    { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1577882296uL, Status.Compatible   }, // Resize It!
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1420955187uL, Status.Compatible   }, // Real Time
+                    { 1288816430uL, Status.Incompatible }, // Hex Colors
+                    { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 927293560uL , Status.Compatible   }, // Geli-Districts v3.0
+                    { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
+                    { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 426163185uL , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 421770876uL , Status.Incompatible }, // Sapphire - UI skin framework
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
+                    { 410344523uL , Status.Incompatible }, // PopBalanceMod
+                    { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -102,13 +104,13 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: requires Campus DLC
-            AddMod(new Review(1824254667u, "Campus Parks") {
+            AddMod(new Review(1824254667uL, "Campus Parks") {
                 Affect = Factor.Customize
                        | Factor.PlaceAndMove,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1393452031u, Status.Required      }, // Parkify
+                    { 1393452031uL, Status.Required      }, // Parkify
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -122,13 +124,13 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Aug, 2019"),
             });
 
-            AddMod(new Review(1546357276u, "Industries Vehicle Converter") {
+            AddMod(new Review(1546357276uL, "Industries Vehicle Converter") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 530771650u, Status.Required }, // Prefab Hook (Mod Dependency)
+                    { 530771650uL, Status.Required }, // Prefab Hook (Mod Dependency)
                     // todo: suggested assets
                 },
                 CompatibleWith = GameVersion.Campus,
@@ -145,13 +147,14 @@ namespace AutoRepair.Catalogs {
             });
 
             // require dlc: park life
-            AddMod(new Review(1393452031u, "Parkify") {
+            AddMod(new Review(1393452031uL, "Parkify") {
                 Affect = Factor.Customize,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
@@ -164,14 +167,13 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("8 Jun, 2018"),
             });
 
-            AddMod(new Review(928103306u, "Ship Converter") {
+            AddMod(new Review(928103306uL, "Ship Converter") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 530771650u , Status.Required     }, // Prefab Hook (Mod Dependency)
+                    { 530771650uL , Status.Required     }, // Prefab Hook (Mod Dependency)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -186,53 +188,53 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 May, 2017"),
             });
 
-            AddMod(new Review(924884948u, "Plop the Growables") {
+            AddMod(new Review(924884948uL, "Plop the Growables") {
                 Affect = Factor.Customize
                        | Factor.PlaceAndMove,
                 Authors = "TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806881627u, Status.Unknown      }, // Altering History Fix
-                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline
-                    { 1658773932u, Status.MinorIssues  }, // Historical Districts
-                    { 1647722503u, Status.Unknown      }, // Level
-                    { 1619685021u, Status.Compatible   }, // Move It 2.7.0
-                    { 1420955187u, Status.MinorIssues  }, // Real Time
-                    { 1403136223u, Status.Unknown      }, // Control Building Level Up v0.5 (Industries)
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 1330381737u, Status.Incompatible }, // Historic Buildings (Make Historical)
-                    { 1275678215u, Status.Incompatible }, // Force Building Level
-                    { 1196714353u, Status.Unknown      }, // 建筑升级平衡MOD
-                    { 837734529u , Status.Required     }, // Find It!
-                    { 821539759u , Status.Incompatible }, // Disable Zone Check
-                    { 766190099u , Status.Incompatible }, // Move It (original ver)
-                    { 523818382u , Status.Compatible   }, // Force Level Up
-                    { 410535198u , Status.Incompatible }, // Control Building Level Up v0.4
-                    { 409654587u , Status.Incompatible }, // Level Up Balance Mod
+                    { 1806881627uL, Status.Unknown      }, // Altering History Fix
+                    { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
+                    { 1658773932uL, Status.MinorIssues  }, // Historical Districts
+                    { 1647722503uL, Status.Unknown      }, // Level
+                    { 1619685021uL, Status.Compatible   }, // Move It 2.7.0
+                    { 1420955187uL, Status.MinorIssues  }, // Real Time
+                    { 1403136223uL, Status.Unknown      }, // Control Building Level Up v0.5 (Industries)
+                    { 1330381737uL, Status.Incompatible }, // Historic Buildings (Make Historical)
+                    { 1275678215uL, Status.Incompatible }, // Force Building Level
+                    { 1196714353uL, Status.Unknown      }, // 建筑升级平衡MOD
+                    { 837734529uL , Status.Required     }, // Find It!
+                    { 821539759uL , Status.Incompatible }, // Disable Zone Check
+                    { 820547325uL , Status.Incompatible }, // Resilient Owners (Make Historical)
+                    { 766190099uL , Status.Incompatible }, // Move It (original ver)
+                    { 523818382uL , Status.Compatible   }, // Force Level Up
+                    { 410535198uL , Status.Incompatible }, // Control Building Level Up v0.4
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { 821539759u, "[Mod: Disable Zone Check] Causes buildings that were placed with Plop the Growables to despawn." },
+                    { 821539759uL, "[Mod: Disable Zone Check] Causes buildings that were placed with Plop the Growables to despawn." },
                 },
                 Published = WorkshopDate("13 May, 2017"),
                 SourceURL = "https://github.com/TPBCS/PlopTheGrowables",
                 Updated = WorkshopDate("12 Oct, 2019"),
             });
 
-            AddMod(new Review(881291183u, "Ploppable Asphalt +") {
+            AddMod(new Review(881291183uL, "Ploppable Asphalt +") {
                 Affect = Factor.Props,
                 Authors = "Ronyx69, TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // incompat: aris
-                    { 1619685021u, Status.Required      }, // Move It!
-                    { 1258124059u, Status.Recommended   }, // Ploppable Pavement (asset)
-                    { 1258123334u, Status.Recommended   }, // Ploppable Asphalt (asset)
-                    { 837734529u , Status.Required      }, // Find It!
-                    { 793346248u , Status.Recommended   }, // Decal Hover Area
-                    { 791221322u , Status.Recommended   }, // Prop Precision
-                    { 767233815u , Status.Recommended   }, // Decal Prop Fix
+                    { 1619685021uL, Status.Required      }, // Move It!
+                    { 1258124059uL, Status.Recommended   }, // Ploppable Pavement (asset)
+                    { 1258123334uL, Status.Recommended   }, // Ploppable Asphalt (asset)
+                    { 837734529uL , Status.Required      }, // Find It!
+                    { 793346248uL , Status.Recommended   }, // Decal Hover Area
+                    { 791221322uL , Status.Recommended   }, // Prop Precision
+                    { 767233815uL , Status.Recommended   }, // Decal Prop Fix
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -246,7 +248,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("22 Jul, 2018"),
             });
 
-            AddMod(new Review(871859856u, "RiverCargoHarborMod") {
+            AddMod(new Review(871859856uL, "RiverCargoHarborMod") {
                 Affect = Factor.Other,
                 Authors = "yole.karif",
                 Catalog = catalog,
@@ -266,15 +268,15 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("25 Feb, 2017"),
             });
 
-            AddMod(new Review(795514116u, "Train Converter") {
+            AddMod(new Review(795514116uL, "Train Converter") {
                 Affect = Factor.Customize
                        | Factor.Vehicles,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2039036102u, Status.Recommended  }, // Metro Station Converter
-                    { 1383456057u, Status.Incompatible }, // Shicho
-                    { 530771650u , Status.Required     }, // Prefab Hook
+                    { 2039036102uL, Status.Recommended  }, // Metro Station Converter
+                    { 818785393uL , Status.Incompatible }, // Convert Sprague-Thomson to Metro (MOM)
+                    { 530771650uL , Status.Required     }, // Prefab Hook
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -296,7 +298,7 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Review(1204126182u, "Ploppable Rico High Density Fix") {
+            AddMod(new Review(1204126182uL, "Ploppable Rico High Density Fix") {
                 Affect = Factor.Naming
                        | Factor.BuildingCapacity
                        | Factor.BuildingLevel
@@ -307,26 +309,28 @@ namespace AutoRepair.Catalogs {
                 Authors = "(unknown)",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2025147082u, Status.Incompatible }, // Realistic Population revisited
-                    { 2016920607u, Status.Incompatible }, // Ploppable RICO revisited
-                    { 1749971558u, Status.Incompatible }, // Real Time Offline
-                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
-                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1577882296u, Status.Compatible   }, // Resize It!
-                    { 1420955187u, Status.MinorIssues  }, // Real Time
-                    { 1288816430u, Status.Incompatible }, // Hex Colors
-                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
-                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
-                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
-                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
-                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
-                    { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
-                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
-                    { 410344523u , Status.Incompatible }, // PopBalanceMod
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                    { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607uL, Status.Incompatible }, // Ploppable RICO revisited
+                    { 1749971558uL, Status.Incompatible }, // Real Time Offline
+                    { 1597852915uL, Status.Incompatible }, // More Advanced Toolbar
+                    { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1577882296uL, Status.Compatible   }, // Resize It!
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1420955187uL, Status.MinorIssues  }, // Real Time
+                    { 1288816430uL, Status.Incompatible }, // Hex Colors
+                    { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
+                    { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 426163185uL , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 421770876uL , Status.Incompatible }, // Sapphire - UI skin framework
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
+                    { 410344523uL , Status.Incompatible }, // PopBalanceMod
+                    { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
-                ContinuationOf = 586012417u, // Ploppable RICO (original)
+                ContinuationOf = 586012417uL, // Ploppable RICO (original)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.EditorBreaking
@@ -335,11 +339,34 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
-                ReplaceWith = 2016920607u, // RICO revisited
-                SuppressArchiveWarning = true,
+                ReplaceWith = 2016920607uL, // RICO revisited
+                Suppress = Warning.MissingArchiveURL,
             });
 
-            AddMod(new Review(586012417u, "Ploppable RICO") {
+            AddMod(new Review(818785393uL, "Convert Sprague-Thomson to Metro (MOM)") {
+                Affect = Factor.Vehicles,
+                Authors = "Thaok",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 816260433uL , Status.Required     }, // Metro Overhaul Mod
+                    { 795514116uL , Status.Incompatible }, // Train Converter
+                },
+                CompatibleWith = GameVersion.Patch_1_6_1_f2,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sprague-Thomson train assets: https://steamcommunity.com/sharedfiles/filedetails/?id=818783509" },
+                    { NOTE, "This mod no longer does anything; unsubscribe it and use 'Train Converter' instead." },
+                },
+                Published = WorkshopDate("15 Dec, 2016"),
+                ReplaceWith = 795514116uL, // Train Converter
+                Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("17 Dec, 2016"),
+            });
+
+            AddMod(new Review(586012417uL, "Ploppable RICO") {
                 Affect = Factor.Naming
                        | Factor.BuildingCapacity
                        | Factor.BuildingLevel
@@ -352,24 +379,26 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2025147082u, Status.Incompatible }, // Realistic Population revisited
-                    { 2016920607u, Status.Incompatible }, // Ploppable RICO revisited
-                    { 1749971558u, Status.Incompatible }, // Real Time Offline
-                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
-                    { 1587482024u, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1577882296u, Status.Compatible   }, // Resize It!
-                    { 1420955187u, Status.MinorIssues  }, // Real Time
-                    { 1288816430u, Status.Incompatible }, // Hex Colors
-                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
-                    { 931330091u , Status.Incompatible }, // 410344523 PopBalanceMod
-                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
-                    { 586012417u , Status.Incompatible }, // Ploppable RICO (original)
-                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
-                    { 426163185u , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
-                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
-                    { 410344523u , Status.Incompatible }, // PopBalanceMod
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                    { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607uL, Status.Incompatible }, // Ploppable RICO revisited
+                    { 1749971558uL, Status.Incompatible }, // Real Time Offline
+                    { 1597852915uL, Status.Incompatible }, // More Advanced Toolbar
+                    { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1577882296uL, Status.Compatible   }, // Resize It!
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1420955187uL, Status.MinorIssues  }, // Real Time
+                    { 1288816430uL, Status.Incompatible }, // Hex Colors
+                    { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
+                    { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 426163185uL , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
+                    { 421770876uL , Status.Incompatible }, // Sapphire - UI skin framework
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
+                    { 410344523uL , Status.Incompatible }, // PopBalanceMod
+                    { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -383,7 +412,7 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Sunset Harbor: Causes residential buildings to have 0/0 households, collapsing your economy." },
                 },
                 Published = WorkshopDate("28 Dec, 2015"),
-                ReplaceWith = 2016920607u, // Ploppable RICO revisited
+                ReplaceWith = 2016920607uL, // Ploppable RICO revisited
                 SourceURL = "https://github.com/AJ3D/Ploppable-RICO",
                 Updated = WorkshopDate("26 Oct, 2018"),
             });

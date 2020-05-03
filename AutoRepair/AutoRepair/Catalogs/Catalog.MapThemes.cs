@@ -369,7 +369,7 @@ namespace AutoRepair.Catalogs {
                 },
                 //Published = WorkshopDate(""),
                 ReplaceWith = 1899640536uL, // Theme Mixer 2
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
                 Updated = WorkshopDate("15 Apr, 2015"), // guesstimate based on note here: 811664974u
             });
 
@@ -432,7 +432,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1522846208uL, // Eastern Tundra Theme
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
             });
 
             AddMod(new Review(582425905uL, "Terrain Theme: Heavy Snow for Ski, Arctic, and Glacier Maps") {
@@ -449,7 +449,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 782343087uL, // Väterchen Frost - Winter theme
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
             });
 
             AddMod(new Review(576787837uL, "Celtic Moorlands Terrain Theme") {
@@ -466,7 +466,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1546100254uL, // Celtic Coast map theme w names
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
             });
 
             AddMod(new Review(848163552uL, "Las Venturas theme") {
@@ -483,7 +483,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("22 Jan, 2017"),
                 ReplaceWith = 768219242uL, // Arrowhead Valley (Official Map Theme)
-                SuppressOlderReplacementWarning = true,
+                Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("22 Jan, 2017"),
             });
 

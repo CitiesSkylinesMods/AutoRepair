@@ -77,6 +77,32 @@ namespace AutoRepair.Catalogs {
             # ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ███████
             */
 
+            AddMusicMod(new Review(2071736375uL, "Pokemon 3rd Gen Soundtrack") {
+                Authors = "Consumedgrub2",
+                Published = WorkshopDate("23 Apr, 2020"),
+                Updated = WorkshopDate("23 Apr, 2020"),
+            });
+
+            AddMusicMod(new Review(2066240106uL, "The Legend of Zelda: Phantom Hourglass Music Pack") {
+                Authors = "Consumedgrub2",
+                Published = WorkshopDate("19 Apr, 2020"),
+                Updated = WorkshopDate("19 Apr, 2020"),
+            });
+
+            AddMusicMod(new Review(2065332413uL, "Crash FM Radio Station") {
+                Authors = "johnyTahn",
+                Flags = ItemFlags.LargeFileWarning, // 108 MB
+                Published = WorkshopDate("18 Apr, 2020"),
+                Updated = WorkshopDate("18 Apr, 2020"),
+            });
+
+            AddMusicMod(new Review(2062757387uL, "Locomotion Radio") {
+                Authors = "samsonite",
+                Published = WorkshopDate("16 Apr, 2020"),
+                Updated = WorkshopDate("16 Apr, 2020"),
+            });
+
+
             AddMusicMod(new Review(2057429333uL, "City Life (2006) Music Pack") {
                 Authors = "Autokratao",
                 Published = WorkshopDate("11 Apr, 2020"),
@@ -173,7 +199,7 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("29 Mar, 2020"), // based on 2039485212
                 ReplaceWith = 2048519799uL, // The Legend Of Zelda: Spirit Tracks Music Pack [IMPROVED]
                 Updated = WorkshopDate("5 Apr, 2020"), // guesstimate based on replacement item by same author
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
             });
 
             AddMusicMod(new Review(2037555938uL, "Neon Genesis Evangelion Music Pack") {
@@ -497,7 +523,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.NoWorkshop, // removed between 26 Mar, 2020 - 24 Apr, 2020
                 Locale = "*",
                 Published = WorkshopDate("8 Jun, 2019"), // based on 1764430170
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
                 Updated = WorkshopDate("8 Jun, 2019"),
             });
 

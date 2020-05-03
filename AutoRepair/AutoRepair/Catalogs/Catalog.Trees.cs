@@ -18,7 +18,7 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Trees";
 
-            AddMod(new Review(1803209875u, "Trees' Respiration 1.0.1") {
+            AddMod(new Review(1803209875uL, "Trees' Respiration 1.0.1") {
                 Affect = Factor.Environment
                        | Factor.Health
                        | Factor.Pollution
@@ -26,26 +26,27 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
-                    { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
+                    { 1806963141uL, Status.Compatible   }, // TM:PE v11.1.2 LABS
+                    { 1637663252uL, Status.Compatible   }, // TM:PE V11 STABLE
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/TreesRespiration",
                 Tags = new[] { "Trees", "Pollution", "Environment", "Noise", "Health" },
             });
 
-            AddMod(new Review(1658679290u, "Forest Brush v1.3") {
+            AddMod(new Review(1658679290uL, "Forest Brush v1.3") {
                 Affect = Factor.Environment
                        | Factor.PlaceAndMove
                        | Factor.Trees,
                 Authors = "TPB, egi",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1928787248u, Status.Recommended  }, // Weeds
-                    { 1654658173u, Status.Incompatible }, // Random Tree Brush
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 963853793u , Status.Recommended  }, // Ultra low tri trees
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1928787248uL, Status.Recommended  }, // Weeds
+                    { 1654658173uL, Status.Incompatible }, // Random Tree Brush
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 963853793uL , Status.Recommended  }, // Ultra low tri trees
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -53,16 +54,16 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Trees", "Brush", "Forest", "Landscape", "Random", "Paint", "Environment", "Detailing", },
             });
 
-            AddMod(new Review(1654658173u, "Random Tree Brush") {
+            AddMod(new Review(1654658173uL, "Random Tree Brush") {
                 Affect = Factor.Environment
                        | Factor.PlaceAndMove
                        | Factor.Trees,
                 Authors = "toster.",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1928787248u, Status.Recommended  }, // Weeds
-                    { 1658679290u, Status.Incompatible }, // Forest Brush v1.3
-                    { 963853793u , Status.Recommended  }, // Ultra low tri trees
+                    { 1928787248uL, Status.Recommended  }, // Weeds
+                    { 1658679290uL, Status.Incompatible }, // Forest Brush v1.3
+                    { 963853793uL , Status.Recommended  }, // Ultra low tri trees
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
@@ -70,7 +71,7 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Trees", "Brush", "Forest", "Landscape", "Random", "Paint", "Environment", "Detailing", },
             });
 
-            AddMod(new Review(1637106958u, "Lock Forestry") {
+            AddMod(new Review(1637106958uL, "Lock Forestry") {
                 Affect = Factor.Environment
                        | Factor.HideRemove
                        | Factor.PlaceAndMove
@@ -81,23 +82,23 @@ namespace AutoRepair.Catalogs {
                 Authors = "Quboid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 593588108u, Status.Recommended }, // Prop & Tree Anarchy
+                    { 593588108uL, Status.Recommended }, // Prop & Tree Anarchy
                 },
                 Flags = ItemFlags.SourceUnavailable,
                 Tags = new[] { "Trees", "Forest", "Landscape", "Farming", "Forestry", "Environment", "Detailing", "Industry", },
             });
 
-            AddMod(new Review(1388613752u, "Tree Movement Control") {
+            AddMod(new Review(1388613752uL, "Tree Movement Control") {
                 Affect = Factor.Environment
                        | Factor.Rendering
                        | Factor.Trees,
                 Authors = "saki7, TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1388613752uL, Status.Incompatible }, // Tree Movement Control
-                    { 1383456057uL, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
                     { 842981708uL , Status.Incompatible }, // Random Tree Rotation for Natural Disasters
                     { 556784825uL , Status.Incompatible }, // Random Tree Rotation (original, now fixed)
                 },
@@ -122,7 +123,7 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: An error sometimes appears on startup, but it seems to work properly after that." },
                     { NOTE, "This mod improves quality of tree LODs with almost no impact on performance." },
-                    { 1680642819uL, "[Mod: ULOD] If Tree LOD Fix enabled, try setting tree LOD range lower for faster performance." }, 
+                    { 1680642819uL, "[Mod: ULOD] If Tree LOD Fix enabled, try setting tree LOD range lower for faster performance." },
                 },
                 Published = WorkshopDate("2 Apr, 2018"),
                 Tags = new[] { "Trees", "Forest", "Landscape", "LODs", "Graphics", "Environment", "Detailing", },
@@ -214,12 +215,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "DRen72, knighthawkGP, BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1928787248uL, Status.Recommended  }, // Weeds
                     { 1658679290uL, Status.Recommended  }, // Forest Brush
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1388613752uL, Status.Recommended  }, // Tree Movement Control
-                    { 1383456057uL, Status.Incompatible }, // Shicho
                     { 1349895184uL, Status.Recommended  }, // Tree LOD Fix
                     { 963853793uL , Status.Recommended  }, // Ultra low tri trees
                     { 869134690uL , Status.Incompatible }, // Tree Snapping
@@ -272,8 +273,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Published = WorkshopDate("15 Jan, 2017"),
                 ReplaceWith = 556784825uL, // Random Tree Rotation
-                SuppressOlderReplacementWarning = true, // original mod updated at least up to 2019
-                SuppressVersionWarnings = true,
+                Suppress = Warning.InvalidVersionSequence | Warning.OlderReplacement,
                 Updated = WorkshopDate("15 Jan, 2017"),
             });
 
@@ -310,7 +310,7 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("24 Mar, 2015"), // based on workshop id 413502248 :)
                 ReplaceWith = 455403039uL, // Unlimited Trees Mod v1.12
                 SourceURL = "https://github.com/Knighth/TreeUnlimiter", // note: not by original author; but close enough
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
                 Updated = WorkshopDate("24 Mar, 2015"), // no idea if there were any updates
                 UserModInspected = true,
             });

@@ -81,8 +81,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceAvailable,
             });
 
-
-
             Add(new Review(1751039059u, "Taxes Helper Mod") {
                 Flags = ItemFlags.SourceAvailable,
             });
@@ -298,11 +296,6 @@ namespace AutoRepair {
                 // possibly incompat with rainfall / other water mods?
             });
 
-            // opposite of no abandonment lol
-            Add(new Review(1330378440u, "Building States") {
-                Authors = "CoarzFlovv",
-                Flags = ItemFlags.SourceUnavailable,
-            });
 
 
 

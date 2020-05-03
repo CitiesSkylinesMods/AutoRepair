@@ -18,19 +18,20 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Emptying";
 
-            AddMod(new Review(1661072176u, "Empty It!") {
+            AddMod(new Review(1661072176uL, "Empty It!") {
                 Affect = Factor.Emptying,
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1661072176u, Status.Incompatible }, // Empty It!
-                    { 1456061226u, Status.Incompatible }, // Better Cemetery AI
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1182722930u, Status.Incompatible }, // Automatic Empty
-                    { 896806060u , Status.Incompatible }, // 407873631 Automatic Emptying
-                    { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
-                    { 407873631u , Status.Incompatible }, // Automatic Emptying
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1661072176uL, Status.Incompatible }, // Empty It!
+                    { 1456061226uL, Status.Incompatible }, // Better Cemetery AI
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1182722930uL, Status.Incompatible }, // Automatic Empty
+                    { 896806060uL , Status.Incompatible }, // 407873631 Automatic Emptying
+                    { 686588890uL , Status.Incompatible }, // Automatic Emptying: Extended
+                    { 407873631uL , Status.Incompatible }, // Automatic Emptying
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -39,17 +40,17 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 Mar, 2019"),
             });
 
-            AddMod(new Review(1456061226u, "Better Cemetery AI") {
+            AddMod(new Review(1456061226uL, "Better Cemetery AI") {
                 Affect = Factor.Emptying,
                 Authors = "Sean",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1661072176u, Status.Incompatible }, // Empty It!
-                    { 1456061226u, Status.Incompatible }, // Better Cemetery AI
-                    { 1182722930u, Status.Incompatible }, // Automatic Empty
-                    { 896806060u , Status.Incompatible }, // 407873631 Automatic Emptying
-                    { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
-                    { 407873631u , Status.Incompatible }, // Automatic Emptying
+                    { 1661072176uL, Status.Incompatible }, // Empty It!
+                    { 1456061226uL, Status.Incompatible }, // Better Cemetery AI
+                    { 1182722930uL, Status.Incompatible }, // Automatic Empty
+                    { 896806060uL , Status.Incompatible }, // 407873631 Automatic Emptying
+                    { 686588890uL , Status.Incompatible }, // Automatic Emptying: Extended
+                    { 407873631uL , Status.Incompatible }, // Automatic Emptying
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
@@ -59,22 +60,22 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Possibly incompatible with TM:PE and/or Real Time mods (further testing required)." },
                 },
                 Published = WorkshopDate("28 Jul, 2018"),
-                ReplaceWith = 1661072176u, // Empty It
+                ReplaceWith = 1661072176uL, // Empty It
                 SourceURL = "https://github.com/seanke/BetterCemeteryAI",
                 Updated = WorkshopDate("30 Jul, 2018"),
             });
 
-            AddMod(new Review(1182722930u, "Automatic Empty") {
+            AddMod(new Review(1182722930uL, "Automatic Empty") {
                 Affect = Factor.Emptying,
                 Authors = "Sottam",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1661072176u, Status.Incompatible }, // Empty It!
-                    { 1456061226u, Status.Incompatible }, // Better Cemetery AI
-                    { 1182722930u, Status.Incompatible }, // Automatic Empty
-                    { 896806060u , Status.Incompatible }, // 407873631 Automatic Emptying
-                    { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
-                    { 407873631u , Status.Incompatible }, // Automatic Emptying
+                    { 1661072176uL, Status.Incompatible }, // Empty It!
+                    { 1456061226uL, Status.Incompatible }, // Better Cemetery AI
+                    { 1182722930uL, Status.Incompatible }, // Automatic Empty
+                    { 896806060uL , Status.Incompatible }, // 407873631 Automatic Emptying
+                    { 686588890uL , Status.Incompatible }, // Automatic Emptying: Extended
+                    { 407873631uL , Status.Incompatible }, // Automatic Emptying
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
@@ -84,7 +85,7 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Doesn't empty snow dumps." },
                 },
                 Published = WorkshopDate("28 Oct, 2017"),
-                ReplaceWith = 1661072176u, // Empty It
+                ReplaceWith = 1661072176uL, // Empty It
                 SourceURL = "https://github.com/sottam/AutoEmpty",
                 Updated = WorkshopDate("28 Oct, 2017"),
             });
@@ -98,19 +99,19 @@ namespace AutoRepair.Catalogs {
             */
 
             // possibly a translation
-            AddMod(new Review(896806060u, "407873631 Automatic Emptying") {
+            AddMod(new Review(896806060uL, "407873631 Automatic Emptying") {
                 Affect = Factor.Emptying,
                 Authors = "Ozhunter",
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
-                CloneOf = 407873631u, // Automatic Emptying
+                CloneOf = 407873631uL, // Automatic Emptying
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1661072176u, Status.Incompatible }, // Empty It!
-                    { 1456061226u, Status.Incompatible }, // Better Cemetery AI
-                    { 1182722930u, Status.Incompatible }, // Automatic Empty
-                    { 896806060u , Status.Incompatible }, // 407873631 Automatic Emptying
-                    { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
-                    { 407873631u , Status.Incompatible }, // Automatic Emptying
+                    { 1661072176uL, Status.Incompatible }, // Empty It!
+                    { 1456061226uL, Status.Incompatible }, // Better Cemetery AI
+                    { 1182722930uL, Status.Incompatible }, // Automatic Empty
+                    { 896806060uL , Status.Incompatible }, // 407873631 Automatic Emptying
+                    { 686588890uL , Status.Incompatible }, // Automatic Emptying: Extended
+                    { 407873631uL , Status.Incompatible }, // Automatic Emptying
                 },
                 CompatibleWith = GameVersion.Snowfall,
                 Flags = ItemFlags.Abandonware
@@ -120,26 +121,26 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("2 Apr, 2017"),
-                ReplaceWith = 1661072176u, // Empty It
-                SuppressVersionWarnings = true,
+                ReplaceWith = 1661072176uL, // Empty It
+                Suppress = Warning.InvalidVersionSequence,
                 Updated = WorkshopDate("2 Apr, 2017"),
             });
 
-            AddMod(new Review(686588890u, "Automatic Emptying: Extended") {
+            AddMod(new Review(686588890uL, "Automatic Emptying: Extended") {
                 Affect = Factor.Emptying,
                 Authors = "mexahuk",
                 BrokenBy = GameVersion.Industries,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1661072176u, Status.Incompatible }, // Empty It!
-                    { 1456061226u, Status.Incompatible }, // Better Cemetery AI
-                    { 1182722930u, Status.Incompatible }, // Automatic Empty
-                    { 896806060u , Status.Incompatible }, // 407873631 Automatic Emptying
-                    { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
-                    { 407873631u , Status.Incompatible }, // Automatic Emptying
+                    { 1661072176uL, Status.Incompatible }, // Empty It!
+                    { 1456061226uL, Status.Incompatible }, // Better Cemetery AI
+                    { 1182722930uL, Status.Incompatible }, // Automatic Empty
+                    { 896806060uL , Status.Incompatible }, // 407873631 Automatic Emptying
+                    { 686588890uL , Status.Incompatible }, // Automatic Emptying: Extended
+                    { 407873631uL , Status.Incompatible }, // Automatic Emptying
                 },
                 CompatibleWith = GameVersion.ParkLife,
-                ContinuationOf = 407873631u, // Automatic Emptying
+                ContinuationOf = 407873631uL, // Automatic Emptying
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
@@ -151,23 +152,23 @@ namespace AutoRepair.Catalogs {
                 Languages = new[] { "en", "pt", "ru" },
                 Locale = "en",
                 Published = WorkshopDate("18 May, 2016"),
-                ReplaceWith = 1661072176u, // Empty It
+                ReplaceWith = 1661072176uL, // Empty It
                 SourceURL = "https://github.com/YuryScherbakov/AutoEmptyingExtended",
                 Updated = WorkshopDate("19 May, 2018"),
             });
 
-            AddMod(new Review(407873631u, "Automatic Emptying") {
+            AddMod(new Review(407873631uL, "Automatic Emptying") {
                 Affect = Factor.Emptying,
                 Authors = "Sadler",
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1661072176u, Status.Incompatible }, // Empty It!
-                    { 1456061226u, Status.Incompatible }, // Better Cemetery AI
-                    { 1182722930u, Status.Incompatible }, // Automatic Empty
-                    { 896806060u , Status.Incompatible }, // 407873631 Automatic Emptying
-                    { 686588890u , Status.Incompatible }, // Automatic Emptying: Extended
-                    { 407873631u , Status.Incompatible }, // Automatic Emptying
+                    { 1661072176uL, Status.Incompatible }, // Empty It!
+                    { 1456061226uL, Status.Incompatible }, // Better Cemetery AI
+                    { 1182722930uL, Status.Incompatible }, // Automatic Empty
+                    { 896806060uL , Status.Incompatible }, // 407873631 Automatic Emptying
+                    { 686588890uL , Status.Incompatible }, // Automatic Emptying: Extended
+                    { 407873631uL , Status.Incompatible }, // Automatic Emptying
                 },
                 CompatibleWith = GameVersion.Snowfall,
                 Flags = ItemFlags.Abandonware
@@ -182,7 +183,7 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Unreliable, sometimes doesn't work, other times causes lots of lag, doesn't empty snow dumps." },
                 },
                 Published = WorkshopDate("14 Mar, 2015"),
-                ReplaceWith = 1661072176u, // Empty It
+                ReplaceWith = 1661072176uL, // Empty It
                 Updated = WorkshopDate("15 Mar, 2015"),
             });
         }

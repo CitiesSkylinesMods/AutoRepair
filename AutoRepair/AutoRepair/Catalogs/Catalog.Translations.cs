@@ -38,7 +38,6 @@ namespace AutoRepair.Catalogs {
     AddClone(1869777403uL, "TimeWarp Fix 时间光照控制 Sakuya16个人汉化", 814698320uL, "zh-cn");
     AddClone(1869743962uL, "Clouds & Fog Toggler 去云雾开关 Sakuya16个人汉化版", 523824395uL, "zh-cn");
     AddClone(1866904568uL, "Ploppable RICO 自由放置建筑 Sakuya16个人汉化版", 586012417uL, "zh-cn");
-    AddClone(1860379049uL, "加载优化 Loading Screen", 667342976uL, "zh-cn");
     AddClone(1859589059uL, "Roundabout Builder 汉化版", 1625704117uL, "zh-cn");
     AddClone(1841047653uL, "Network Extensions 2 汉化版", 812125426uL, "zh-cn");
     AddGameBreakingClone(1840448750uL, "FineRoadTool 汉化版", 651322972uL, "zh-cn");
@@ -108,6 +107,11 @@ namespace AutoRepair.Catalogs {
             { 846218733uL , Status.Incompatible },
             { 842155271uL , Status.Incompatible },
             { 842154595uL , Status.Incompatible },
+            { 817060520uL , Status.Incompatible },
+            { 815690119uL , Status.Incompatible },
+            { 815555292uL , Status.Incompatible },
+            { 813860002uL , Status.Incompatible },
+            { 812206041uL , Status.Incompatible },
         };
 
         internal ulong latestAliMod = 1988319487uL; // ali213_mod_01
@@ -917,6 +921,36 @@ namespace AutoRepair.Catalogs {
                 Authors = "名字取什么好呢",
                 Published = WorkshopDate("14 Jan, 2017"),
                 Updated = WorkshopDate("14 Jan, 2017"),
+            });
+
+            AddAliMod(new Review(817060520uL, "ali213_mod_01") {
+                Authors = "Manitoba",
+                Published = WorkshopDate("12 Dec, 2016"),
+                Updated = WorkshopDate("12 Dec, 2016"),
+            });
+
+            AddAliMod(new Review(815690119uL, "ali213_mod_01") {
+                Authors = "zhang27818",
+                Published = WorkshopDate("10 Dec, 2016"),
+                Updated = WorkshopDate("10 Dec, 2016"),
+            });
+
+            AddAliMod(new Review(815555292uL, "ali213_mod_01") {
+                Authors = "DY.(2)",
+                Published = WorkshopDate("10 Dec, 2016"),
+                Updated = WorkshopDate("10 Dec, 2016"),
+            });
+
+            AddAliMod(new Review(813860002uL, "ali213_mod_01") {
+                Authors = "皇甫家人",
+                Published = WorkshopDate("7 Dec, 2016"),
+                Updated = WorkshopDate("7 Dec, 2016"),
+            });
+
+            AddAliMod(new Review(812206041uL, "ali213_mod_01") {
+                Authors = "Li",
+                Published = WorkshopDate("4 Dec, 2016"),
+                Updated = WorkshopDate("4 Dec, 2016"),
             });
 
             // todo: set each ali mod as continuation of previous one

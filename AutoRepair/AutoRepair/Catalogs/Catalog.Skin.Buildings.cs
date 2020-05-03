@@ -63,6 +63,21 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Buildings", "Colors", "Colours", "Painter", "Customise", "Customize", "Textures", },
             });
 
+            // opposite of no abandonment lol
+            AddMod(new Review(1330378440u, "Building States") {
+                Affect = Factor.Textures,
+                Authors = "CoarzFlovv",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("14 Mar, 2018"),
+                Tags = new[] { "Buildings", "States", "Abandonned", "Abandonment", "Derelict", "Destroyed", "Collapsed", "Burnt", },
+                Updated = WorkshopDate("5 Apr, 2018"),
+            });
+
+
             /*
             # ████████ ██   ██ ███████ ███    ███ ███████ ███████
             #    ██    ██   ██ ██      ████  ████ ██      ██
@@ -125,7 +140,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1182123078u, // Chalet District Style (Vanilla)
-                SuppressOlderReplacementWarning = true,
+                Suppress = Warning.OlderReplacement,
             });
         }
     }

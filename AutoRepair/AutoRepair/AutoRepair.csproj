@@ -95,6 +95,7 @@
     <Compile Include="Catalogs\Roads.cs" />
     <Compile Include="Enums\Status.cs" />
     <Compile Include="Catalogs\Catalog.Addendum.cs" />
+    <Compile Include="Enums\Warning.cs" />
     <Compile Include="Lists\Announcements.cs" />
     <Compile Include="Lists\GameVersion.cs" />
     <Compile Include="Lists\Locale.cs" />

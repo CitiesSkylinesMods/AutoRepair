@@ -104,6 +104,13 @@ namespace AutoRepair.Descriptors {
         public string[] Languages { get; set; }
 
         /// <summary>
+        /// Gets or sets the date on which the item was last seen in the workshop.
+        ///
+        /// Used to display 'vapour bar' in timeline view.
+        /// </summary>
+        public DateTime? LastSeen { get; set; }
+
+        /// <summary>
         /// Gets or sets the item's primary language id. Defaults to <c>"en"</c>.
         /// </summary>
         public string Locale { get; set; } = "en";
@@ -130,6 +137,11 @@ namespace AutoRepair.Descriptors {
         public Version ReleasedDuring { get; set; } = GameVersion.DefaultRelease;
 
         /// <summary>
+        /// Gets or sets the date on which the item was confirmed as being removed from the workshop.
+        /// </summary>
+        public DateTime? Removed { get; set; }
+
+        /// <summary>
         /// Gets or sets recommended replacement Steam Workshop ID.
         ///
         /// Use this to help users upgrade to most recent/reliable version of something.
@@ -152,25 +164,9 @@ namespace AutoRepair.Descriptors {
         public string SourceURL { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to suppress warnings about missing archive URLs.
-        ///
-        /// Use this when there's no archive of the workshop page anywhere.
+        /// Gets or sets flags which can suppress descriptor verification warnings (use with care).
         /// </summary>
-        public bool SuppressArchiveWarning { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to validate ReplaceWith property.
-        ///
-        /// Use this where a replacement is intentionally an older item.
-        /// </summary>
-        public bool SuppressOlderReplacementWarning { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to perform game version validation.
-        ///
-        /// Use this where someone uploaded an already-broken item to workshop.
-        /// </summary>
-        public bool SuppressVersionWarnings { get; set; }
+        public Warning Suppress { get; set; }
 
         /// <summary>
         /// Gets or sets tags (labels, keywords) for the item.
@@ -235,6 +231,17 @@ namespace AutoRepair.Descriptors {
             return all
                 ? (Flags & flags) == flags
                 : (Flags & flags) != ItemFlags.None;
+        }
+
+        /// <summary>
+        /// Determine whether the item suppresses the specified warning.
+        /// </summary>
+        /// 
+        /// <param name="warning">The <see cref="Warning"/> being checked.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if <see cref="Suppress"/> contains the <paramref name="warning"/> flag, otherwise <c>false</c>.</returns>
+        public bool Suppresses(Warning warning) {
+            return (Suppress & warning) != 0;
         }
 
         /// <summary>
@@ -308,7 +315,7 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Affect missing\n");
             }
 
-            if (!SuppressArchiveWarning && HasFlag(ItemFlags.NoWorkshop) && string.IsNullOrEmpty(ArchiveURL)) {
+            if (!Suppresses(Warning.MissingArchiveURL) && HasFlag(ItemFlags.NoWorkshop) && string.IsNullOrEmpty(ArchiveURL)) {
                 problems = true;
                 log.Append("- Archive URL missing\n");
             } else if (!string.IsNullOrEmpty(ArchiveURL) && !HasFlag(ItemFlags.NoWorkshop)) {
@@ -348,7 +355,7 @@ namespace AutoRepair.Descriptors {
             }
 
             // sometimes already long-broken mods are reuploaded to workshop (hence ability to skip these checks)
-            if (!SuppressVersionWarnings) {
+            if (!Suppresses(Warning.InvalidVersionSequence)) {
 
                 // game version at release must be <= checked compatible version
                 if (CompatibleWith < ReleasedDuring) {

@@ -21,8 +21,6 @@ namespace AutoRepair.Catalogs {
 
             CsvDumpGameUpdate(GameVersion.SunsetHarbor, ref csv);
 
-            CsvDumpShicho(ref csv);
-
             Log.Info(csv.ToString());
         }
 
@@ -49,7 +47,7 @@ namespace AutoRepair.Catalogs {
                 Review item = entry.Value;
 
                 if (item.WorkshopId == 1383456057u) {
-                    continue; // Shicho gets its own section lol
+                    continue; // Shi cho gets its own section lol
                 }
 
                 if (item.Compatibility == null) {
@@ -62,12 +60,6 @@ namespace AutoRepair.Catalogs {
 
                 CsvDumpItemCompatibilityByStatus(item, Status.Incompatible, ref csv);
             }
-        }
-
-        private void CsvDumpShicho(ref StringBuilder csv) {
-            csv.Append("\n\nSHICHO MOD INCOMPATIBLE ITEMS:\n\n");
-            Review item = Reviews[1383456057u]; // Shicho
-            CsvDumpItemCompatibilityByStatus(item, Status.Incompatible, ref csv);
         }
 
         private void CsvDumpItemCompatibilityByStatus(Review item, Status status, ref StringBuilder csv) {

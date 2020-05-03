@@ -101,7 +101,6 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1764637396u, Status.MinorIssues  }, // Toggle It
-                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 507225392u , Status.MinorIssues  }, // Topographic Info View
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,

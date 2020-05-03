@@ -18,26 +18,25 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Toolbar";
 
-            AddMod(new Review(1597852915u, "More Advanced Toolbar") {
+            AddMod(new Review(1597852915uL, "More Advanced Toolbar") {
                 Affect = Factor.Toolbar
                        | Factor.UI,
                 Authors = "Dendraspis",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2016920607u, Status.Incompatible }, // RICO revisited
-                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
-                    { 1577882296u, Status.Incompatible }, // Resize It!
-                    { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
-                    { 1204126182u, Status.Incompatible }, // Ploppable Rico High Density Fix
-                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 2016920607uL, Status.Incompatible }, // RICO revisited
+                    { 1597852915uL, Status.Incompatible }, // More Advanced Toolbar
+                    { 1577882296uL, Status.Incompatible }, // Resize It!
+                    { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
                     { 837734529uL , Status.MinorIssues  }, // Find It!
-                    { 586012417u , Status.Incompatible }, // Ploppable RICO
-                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
-                    { 563229150u , Status.Incompatible }, // Advanced Toolbar
-                    { 540758804u , Status.Incompatible }, // Search Box Mod
-                    { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
-                    { 451700838u , Status.Incompatible }, // Extended Toolbar
-                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    { 586012417uL , Status.Incompatible }, // Ploppable RICO
+                    { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 563229150uL , Status.Incompatible }, // Advanced Toolbar
+                    { 540758804uL , Status.Incompatible }, // Search Box Mod
+                    { 451906822uL , Status.Incompatible }, // Enhanced Build Panel (WIP)
+                    { 451700838uL , Status.Incompatible }, // Extended Toolbar
+                    { 421770876uL , Status.Incompatible }, // Sapphire - UI skin framework
                 },
                 Flags = ItemFlags.SourceObfuscated // checked 12/Mar/2020
                       | ItemFlags.SourceUnavailable,
@@ -48,33 +47,35 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 Jun, 2019"),
             });
 
-            AddMod(new Review(1577882296u, "Resize It!") {
+            AddMod(new Review(1577882296uL, "Resize It!") {
                 Affect = Factor.Toolbar
                        | Factor.UI,
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2016920607u, Status.Compatible   }, // RICO revisited
-                    { 1597852915u, Status.Incompatible }, // More Advanced Toolbar
-                    { 1577882296u, Status.Incompatible }, // Resize It!
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1383456057u, Status.Incompatible }, // Shicho - Fundamental support mod for hardcore builders
-                    { 1204126182u, Status.Compatible   }, // Ploppable Rico High Density Fix
-                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
-                    { 586012417u , Status.Compatible   }, // Ploppable RICO
-                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
-                    { 563229150u , Status.Incompatible }, // Advanced Toolbar
-                    { 540758804u , Status.Incompatible }, // Search Box Mod
-                    { 451906822u , Status.Incompatible }, // Enhanced Build Panel (WIP)
-                    { 451700838u , Status.Incompatible }, // Extended Toolbar
-                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 2016920607uL, Status.Compatible   }, // RICO revisited
+                    { 1597852915uL, Status.Incompatible }, // More Advanced Toolbar
+                    { 1577882296uL, Status.Incompatible }, // Resize It!
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1204126182uL, Status.Compatible   }, // Ploppable Rico High Density Fix
+                    { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 586012417uL , Status.Compatible   }, // Ploppable RICO
+                    { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 563229150uL , Status.Incompatible }, // Advanced Toolbar
+                    { 540758804uL , Status.Incompatible }, // Search Box Mod
+                    { 451906822uL , Status.Incompatible }, // Enhanced Build Panel (WIP)
+                    { 451700838uL , Status.Incompatible }, // Extended Toolbar
+                    { 421770876uL , Status.Incompatible }, // Sapphire - UI skin framework
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.MinorIssues, // harmony patch management could be better
+                Published = WorkshopDate("29 Nov, 2018"),
                 SourceURL = "https://github.com/keallu/CSL-ResizeIt",
+                Updated = WorkshopDate("27 Mar, 2020"),
             });
 
             AddMod(new Review(837734529uL, "Find It!") {
@@ -84,10 +85,10 @@ namespace AutoRepair.Catalogs {
                 Authors = "Boogieman Sam",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1597852915uL, Status.MinorIssues  }, // More Advanced Toolbar
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1383456057uL, Status.Incompatible }, // Shicho
                     { 888017364uL , Status.Compatible   }, // Quartz (Sapphire) - Fixed 1.11
                     { 576970398uL , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
                     { 540758804uL , Status.Incompatible }, // Search Box Mod

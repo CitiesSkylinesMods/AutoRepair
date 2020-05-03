@@ -19,7 +19,7 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Repair";
 
-            AddMod(new Review(2041457644u, "Patch Loader Mod") {
+            AddMod(new Review(2041457644uL, "Patch Loader Mod") {
                 Affect = Factor.Other,
                 Authors = "Krzychu1245, egi",
                 Catalog = catalog,
@@ -30,7 +30,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Apr, 2020"),
             });
 
-            AddMod(new Review(2037888659u, "Instant Return To Desktop") {
+            AddMod(new Review(2037888659uL, "Instant Return To Desktop") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "Cgameworld",
                 Catalog = catalog,
@@ -41,13 +41,14 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Cgameworld/InstantReturnToDesktop",
             });
 
-            AddMod(new Review(2034713132u, "AutoRepair") {
+            AddMod(new Review(2034713132uL, "AutoRepair") {
                 Affect = Factor.Other,
                 Authors = "aubergine18",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -55,13 +56,14 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/CitiesSkylinesMods/AutoRepair",
             });
 
-            AddMod(new Review(1938493221u, "Mini FPS Booster") {
+            AddMod(new Review(1938493221uL, "Mini FPS Booster") {
                 Affect = Factor.Other,
                 Authors = "Krzychu1245",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
@@ -69,7 +71,7 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Campus,
             });
 
-            AddMod(new Review(1777173984u, "Broken Nodes Detector") {
+            AddMod(new Review(1777173984uL, "Broken Nodes Detector") {
                 Affect = Factor.Other,
                 Authors = "krzychu1245",
                 Catalog = catalog,
@@ -79,7 +81,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/CitiesSkylinesMods/BrokenNodeDetector",
             });
 
-            AddMod(new Review(1620588636u, "Safenets") {
+            AddMod(new Review(1620588636uL, "Safenets") {
                 Affect = Factor.Other,
                 Authors = "thale5",
                 Catalog = catalog,
@@ -90,7 +92,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/thale5/Safenets",
             });
 
-            AddMod(new Review(1243740191u, "Road Removal Tool") {
+            AddMod(new Review(1243740191uL, "Road Removal Tool") {
                 Affect = Factor.Other,
                 Authors = "egi",
                 Catalog = catalog,
@@ -98,6 +100,25 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RoadRemovalTool",
+            });
+
+            AddMod(new Review(820157360uL, "Spawn Points Fix") {
+                Affect = Factor.Other
+                       | Factor.Pathfinder,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 816260433uL , Status.Compatible    }, // Metro Overhaul Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "(Asset creators) You can edit spawn points with 'Advanced Buildings Editor' mod: https://steamcommunity.com/sharedfiles/filedetails/?id=790347696" },
+                    { 816260433uL , "[Mod: Metro Overhaul Mod] Both mods have spawn point fix; 'Spawn Points Fix' mod will deactivate if MOM is active." },
+                },
+                Published = WorkshopDate("17 Dec, 2016"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-SpawnPointsFix",
+                Updated = WorkshopDate("27 May, 2017"),
             });
 
             /*
@@ -108,39 +129,66 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Review(2037862156u, "IsIntercity Fix") {
+            AddMod(new Review(2037862156uL, "IsIntercity Fix") {
                 Affect = Factor.Other,
                 Authors = "Elektrix, aubergine18",
-                BrokenBy = GameVersion.Patch_1_13_0_f8,
+                BrokenBy = GameVersion.Patch_1_13_0_f8, // incorporated in to vanilla game
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.Obsolete // vanilla fixed in SH
+                      | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Unsubscribe; the bug in vanilla game is now fixed!" },
+                    { NOTE, "Unsubscribe; the bug in vanilla game is now fixed since 1.13.0-f8 release!" },
                 },
                 Published = WorkshopDate("28 Mar, 2020"),
                 Updated = WorkshopDate("28 Mar, 2020"),
             });
 
-            AddMod(new Review(558661484u, "Building Panel Already Exists Icons Fix") {
+            AddMod(new Review(558661484uL, "Building Panel Already Exists Icons Fix") {
                 Affect = Factor.Toolbar,
                 Authors = "BloodyPenguin",
-                BrokenBy = GameVersion.SunsetHarbor,
+                BrokenBy = GameVersion.SunsetHarbor, // incorporated in to vanilla game
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking
-                      | ItemFlags.Obsolete
+                      | ItemFlags.Obsolete // vanilla fixed in SH
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Unsubscribe; the bug in vanilla game is now fixed!" },
+                    { NOTE, "Incorrectly shows 'already built' icon for all service buildings." },
+                    { NOTE, "Unsubscribe; the bug in vanilla game is now fixed since Sunset Harbor release!" },
                 },
                 Published = WorkshopDate("20 Nov, 2015"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-AlreadyBuiltFix",
                 Updated = WorkshopDate("20 Nov, 2015"),
+            });
+
+            AddMod(new Review(409068574uL, "Commercial Demand Fix - No Longer Needed!") {
+                Affect = Factor.Consumption
+                       | Factor.DemandRCI,
+                ArchiveURL = "https://web.archive.org/web/20150415153041/http://steamcommunity.com/sharedfiles/filedetails/?id=409068574",
+                Authors = "Nohealforu",
+                BrokenBy = GameVersion.Patch_1_0_6b, // incorportated in to vanilla game
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.Patch_1_0_5,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete // vanilla fixed in patch 1.06b
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("15 Apr, 2015"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Unsubscribe; the bug in vanilla game is fixed since 1.06b release!" },
+                },
+                Published = WorkshopDate("16 Mar, 2015"), // based on 409068575
+                Removed = WorkshopDate("22 Dec, 2018"), // rough guesstimate based on web archive
+                Updated = WorkshopDate("19 Mar, 2015"), // based on webarchive
             });
         }
     }

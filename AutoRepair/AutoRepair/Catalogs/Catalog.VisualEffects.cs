@@ -29,17 +29,17 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
-            AddMod(new Review(1886877404u, "Custom Effect Loader") {
+            AddMod(new Review(1886877404uL, "Custom Effect Loader") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
                 Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1889349343u, Status.Recommended  },
-                    { 1886961495u, Status.Recommended  },
-                    { 959894658u , Status.Compatible   }, // Custom Light Effects
+                    { 1889349343uL, Status.Recommended  },
+                    { 1886961495uL, Status.Recommended  },
+                    { 959894658uL , Status.Compatible   }, // Custom Light Effects
                     // If active, some vehicles will get hard-dependency for Custom Effect Loader:
-                    { 800820816u , Status.MinorIssues  }, // Extended Asset Editor
+                    { 800820816uL , Status.MinorIssues  }, // Extended Asset Editor
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.EditorMod // assets created with it require it
@@ -48,39 +48,39 @@ namespace AutoRepair.Catalogs {
                 ReleasedDuring = GameVersion.Campus,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Asset creators: See https://gist.github.com/boformer/a9c5935a9752dcaa68d67e3a611ada26" },
-                    { 800820816u, "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL." },
+                    { 800820816uL, "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL." },
                 },
                 SourceURL = "https://github.com/boformer/CustomEffectLoader",
             });
 
-            AddMod(new Review(1883101331u, "Persistent Fog Adjuster") {
+            AddMod(new Review(1883101331uL, "Persistent Fog Adjuster") {
                 Affect = Factor.Environment,
                 Authors = "Cgameworld",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 672248733u, Status.MinorIssues }, // Ultimate Eyecandy v1.5.2 (UE setting overriden by PFA setting)
-                    { 415732693u , Status.Incompatible }, // Disable Clouds
+                    { 672248733uL, Status.MinorIssues }, // Ultimate Eyecandy v1.5.2 (UE setting overriden by PFA setting)
+                    { 415732693uL , Status.Incompatible }, // Disable Clouds
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/Cgameworld/PersistentFogAdjuster",
                 Tags = new[] { "Fog", "Mist", "Cloud", "Weather", "Eyecandy" },
             });
 
-            AddMod(new Review(1794015399u, "Render It!") {
+            AddMod(new Review(1794015399uL, "Render It!") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    { 410805639u , Status.Incompatible }, // Sun Shafts (old)
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
-                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion
+                    { 412146081uL , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410805639uL , Status.Incompatible }, // Sun Shafts (old)
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
+                    { 406629464uL , Status.Incompatible }, // Dynamic Resolution (old)
                 },
                 Flags = ItemFlags.MinorIssues // harmony patch management could be better, TAA is shit
                       | ItemFlags.SourceAvailable,
@@ -89,14 +89,14 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: check if source still obfu
-            AddMod(new Review(1760945529u, "Terrain Level Of Detail (TLOD)") {
+            AddMod(new Review(1760945529uL, "Terrain Level Of Detail (TLOD)") {
                 Affect = Factor.Environment
                        | Factor.Rendering
                        | Factor.Textures,
                 Authors = "Dendraspis",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1680642819u, Status.Required }, // Ultimate Level Of Detail (ULOD)
+                    { 1680642819uL, Status.Required }, // Ultimate Level Of Detail (ULOD)
                 },
                 Flags = ItemFlags.SourceObfuscated // big warning sign
                       | ItemFlags.SourceUnavailable,
@@ -104,36 +104,37 @@ namespace AutoRepair.Catalogs {
             });
 
             // LOD toggler has conflicting shortcut, and is also obsoleted by ULOD
-            AddMod(new Review(1680642819u, "Ultimate Level Of Detail (ULOD)") {
+            AddMod(new Review(1680642819uL, "Ultimate Level Of Detail (ULOD)") {
                 Affect = Factor.Rendering
                        | Factor.Textures
                        | Factor.Trees,
                 Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1349895184u, Status.Compatible   }, // Tree LOD Fix
-                    { 898480258u , Status.Recommended  }, // Camera Positions Utility
-                    { 812713438u , Status.Recommended  }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 625608461u , Status.Recommended  }, // Adaptive Prop Visibility Distance
-                    { 561888259u , Status.Incompatible }, // LOD Toggler (deprecated)
-                    { 556784825u , Status.Recommended  }, // Random Tree Rotation
+                    { 1349895184uL, Status.Compatible   }, // Tree LOD Fix
+                    { 898480258uL , Status.Recommended  }, // Camera Positions Utility
+                    { 812713438uL , Status.Recommended  }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 625608461uL , Status.Recommended  }, // Adaptive Prop Visibility Distance
+                    { 561888259uL , Status.Incompatible }, // LOD Toggler (deprecated)
+                    { 556784825uL , Status.Recommended  }, // Random Tree Rotation
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 561888259u, // LOD Toggler (deprecated)
+                ContinuationOf = 561888259uL, // LOD Toggler (deprecated)
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/boformer/UltimateLevelOfDetail",
                 Tags = new[] { "LODs", "Detail", "Graphics", "Eyecandy", "Trees", "Props", "Buildings", "Networks", "Decals" },
             });
 
-            AddMod(new Review(1664509314u, "Custom Animation Loader (CAL)") {
+            AddMod(new Review(1664509314uL, "Custom Animation Loader (CAL)") {
                 Affect = Factor.Rendering,
                 Authors = "boformer",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2010704792u, Status.Recommended  }, // Animated Excavator CAT 365C L
-                    { 1706978404u, Status.Recommended  }, // Animated Excavator アニメーションユンボ
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 2010704792uL, Status.Recommended  }, // Animated Excavator CAT 365C L
+                    { 1706978404uL, Status.Recommended  }, // Animated Excavator アニメーションユンボ
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
@@ -149,7 +150,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Mar, 2019"),
             });
 
-            AddMod(new Review(1410003347u, "Additive Shader") {
+            AddMod(new Review(1410003347uL, "Additive Shader") {
                 Affect = Factor.Rendering,
                 Authors = "Ronyx69, Simon Ryr",
                 Catalog = catalog,
@@ -164,7 +165,7 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://gist.github.com/ronyx69/41d2368485b4eea89958c368fab878b8",
             });
 
-            AddMod(new Review(1304997689u, "Light Trail") {
+            AddMod(new Review(1304997689uL, "Light Trail") {
                 Affect = Factor.Camera
                        | Factor.Rendering,
                 Authors = "sqrl",
@@ -176,7 +177,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Dec, 2018"),
             });
 
-            AddMod(new Review(1300411488u, "Dynamic Fireworks") {
+            AddMod(new Review(1300411488uL, "Dynamic Fireworks") {
                 Affect = Factor.Rendering,
                 Authors = "sqrl",
                 Catalog = catalog,
@@ -187,7 +188,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("16 Feb, 2018"),
             });
 
-            AddMod(new Review(1274199764u, "Network Tiling") {
+            AddMod(new Review(1274199764uL, "Network Tiling") {
                 Affect = Factor.Rendering,
                 Authors = "Ronyx69",
                 Catalog = catalog,
@@ -202,44 +203,44 @@ namespace AutoRepair.Catalogs {
             });
 
             // Game engine issues: Shadow acne vs. Shadow detachment
-            AddMod(new Review(1209581656u, "Relight") {
+            AddMod(new Review(1209581656uL, "Relight") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 Authors = "Ronyx69, TPB, Simon Ryr",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1889738001u, Status.Recommended  }, // Real Neutral LUT - for Relight, Daylight Classic and Vanilla
-                    { 1539183804u, Status.Recommended  }, // Testing LUTs (for asset creators)
-                    { 1539181199u, Status.Recommended  }, // More Relight LUTs
-                    { 1414802020u, Status.Recommended  }, // Color & Material Test Charts
-                    { 1122189715u, Status.Recommended  }, // Realtime (for asset creators)
-                    { 762520291u , Status.Recommended  }, // Shadow Strength Adjuster
-                    { 672248733u , Status.Recommended  }, // Ultimate Eye Candy
-                    { 643364914u , Status.Incompatible }, // Softer Shadows
-                    { 530871278u , Status.MinorIssues  }, // Daylight Classic
-                    { 408648436u , Status.Incompatible }, // More Options
+                    { 1889738001uL, Status.Recommended  }, // Real Neutral LUT - for Relight, Daylight Classic and Vanilla
+                    { 1539183804uL, Status.Recommended  }, // Testing LUTs (for asset creators)
+                    { 1539181199uL, Status.Recommended  }, // More Relight LUTs
+                    { 1414802020uL, Status.Recommended  }, // Color & Material Test Charts
+                    { 1122189715uL, Status.Recommended  }, // Realtime (for asset creators)
+                    { 762520291uL , Status.Recommended  }, // Shadow Strength Adjuster
+                    { 672248733uL , Status.Recommended  }, // Ultimate Eye Candy
+                    { 643364914uL , Status.Incompatible }, // Softer Shadows
+                    { 530871278uL , Status.MinorIssues  }, // Daylight Classic
+                    { 408648436uL , Status.Incompatible }, // More Options
                 },
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Read the workshop page for important details on how to properly set-up your system for Relight." },
-                    { 530871278u, "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight." },
-                    { 762520291u, "[Mod: Shadow Strength Adjuster] Set it's 'Shadow Strength' to maximum for best results with Relight." },
+                    { 530871278uL, "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight." },
+                    { 762520291uL, "[Mod: Shadow Strength Adjuster] Set it's 'Shadow Strength' to maximum for best results with Relight." },
                 },
                 SourceURL = "https://gist.github.com/ronyx69/a75400389e7561164bacabadf0095a2b",
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Brightness", "Gamma", "Contrast", "Temperature", "Tint", "Sun", "Sky", "Moon", "Tonemapping" },
             });
 
-            AddMod(new Review(1183931915u, "Cubemap Replacer") {
+            AddMod(new Review(1183931915uL, "Cubemap Replacer") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1209581656u, Status.Recommended }, // Relight
-                    { 1183931915u, Status.Compatible  }, // Cubemap Replacer
-                    { 1138510774u, Status.Recommended }, // PostProcessFX - Multi-platform
-                    { 530871278u , Status.Required    }, // Daylight classic
-                    { 412146081u , Status.Compatible  }, // PostProcessFX v1.9.0
+                    { 1209581656uL, Status.Recommended }, // Relight
+                    { 1183931915uL, Status.Compatible  }, // Cubemap Replacer
+                    { 1138510774uL, Status.Recommended }, // PostProcessFX - Multi-platform
+                    { 530871278uL , Status.Required    }, // Daylight classic
+                    { 412146081uL , Status.Compatible  }, // PostProcessFX v1.9.0
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -251,24 +252,24 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "Sky", "Environment", "Stars", "Clouds" },
             });
 
-            AddMod(new Review(1138510774u, "PostProcessFX - Multi-platform") {
+            AddMod(new Review(1138510774uL, "PostProcessFX - Multi-platform") {
                 Affect = Factor.Rendering,
                 Authors = "cor3ntin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion
-                    { 933513277u , Status.Recommended  }, // Sun Shafts
-                    { 812713438u , Status.MinorIssues  }, // Dynamic Resolution (Fixed for 1.9)
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    { 410805639u , Status.Incompatible }, // Sun Shafts (old)
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1183931915uL, Status.Compatible   }, // Cubemap Replacer
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion
+                    { 933513277uL , Status.Recommended  }, // Sun Shafts
+                    { 812713438uL , Status.MinorIssues  }, // Dynamic Resolution (Fixed for 1.9)
+                    { 412146081uL , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410805639uL , Status.Incompatible }, // Sun Shafts (old)
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
                 },
-                ContinuationOf = 412146081u, // PostProcessFX v1.9.0
+                ContinuationOf = 412146081uL, // PostProcessFX v1.9.0
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.EditorBreaking
                       | ItemFlags.MinorIssues // some users have problems opening GUI
@@ -276,18 +277,17 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Unreliable, // some users say it stopped working
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
-                    { 812713438u, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
+                    { 812713438uL, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
                 },
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "TAA", "Ambient Occlusion", "Grain", "Sun shafts" },
             });
 
-            AddMod(new Review(940299505u, "AnimUV Params") {
+            AddMod(new Review(940299505uL, "AnimUV Params") {
                 Affect = Factor.Props
                        | Factor.Rendering,
                 Authors = "Ronyx69",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 Flags = ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
@@ -295,21 +295,21 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Review(933513277u, "Sun Shafts") {
+            AddMod(new Review(933513277uL, "Sun Shafts") {
                 Affect = Factor.Rendering,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 934825735u , Status.Compatible   }, // Ambinet Occlusion? (no longer in workshop)
-                    { 933513277u , Status.Incompatible }, // Sun Shafts (BP ver)
-                    { 530871278u , Status.Recommended  }, // Daylight classic
-                    { 410805639u , Status.Incompatible }, // Sun Shafts (orig)
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
+                    { 934825735uL , Status.Compatible   }, // Ambinet Occlusion? (no longer in workshop)
+                    { 933513277uL , Status.Incompatible }, // Sun Shafts (BP ver)
+                    { 530871278uL , Status.Recommended  }, // Daylight classic
+                    { 410805639uL , Status.Incompatible }, // Sun Shafts (orig)
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 410805639u, // Sun Shafts
+                ContinuationOf = 410805639uL, // Sun Shafts
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
@@ -320,7 +320,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("30 Oct, 2017"),
             });
 
-            AddMod(new Review(929295695u, "Panorama") {
+            AddMod(new Review(929295695uL, "Panorama") {
                 Affect = Factor.Camera,
                 Authors = "sqrl",
                 Catalog = catalog,
@@ -336,14 +336,14 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 May, 2017"),
             });
 
-            AddMod(new Review(922939393u, "Transparency LODs Fix") {
+            AddMod(new Review(922939393uL, "Transparency LODs Fix") {
                 Affect = Factor.Rendering,
                 Authors = "TPB, Ronyx69",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1383456057u, Status.Incompatible }, // Shicho
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Laggy
@@ -355,29 +355,29 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("1 Apr, 2018"),
             });
 
-            AddMod(new Review(812713438u, "Dynamic Resolution (Fixed for 1.9!)") {
+            AddMod(new Review(812713438uL, "Dynamic Resolution (Fixed for 1.9!)") {
                 Affect = Factor.Rendering,
                 Authors = "Gradius Twin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
-                    { 1138510774u, Status.MinorIssues  }, // PostProcessFX - Multi-platform
-                    { 926945709u , Status.Incompatible }, // Adjustable FOV
-                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 602077938u , Status.Incompatible }, // TotalyFree Camera
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
-                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
+                    { 1870740367uL, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 1138510774uL, Status.MinorIssues  }, // PostProcessFX - Multi-platform
+                    { 926945709uL , Status.Incompatible }, // Adjustable FOV
+                    { 812713438uL , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 602077938uL , Status.Incompatible }, // TotalyFree Camera
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
+                    { 406629464uL , Status.Incompatible }, // Dynamic Resolution (old)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 406629464u, // Dynamic Resolution
+                ContinuationOf = 406629464uL, // Dynamic Resolution
                 Flags = ItemFlags.Laggy
                       | ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press F10, or Left Ctrl + R, to open the slider panel." },
                     { NOTE, "Can cause extreme lag on older graphics cards. Make sure your GPU has good cooling." },
-                    { 1138510774u, "[PostProcessFX] PostProcessFX breaks SSAO, and might also cause blue or pink screen on load." },
+                    { 1138510774uL, "[PostProcessFX] PostProcessFX breaks SSAO, and might also cause blue or pink screen on load." },
                 },
                 Published = WorkshopDate("5 Dec, 2016"),
                 SourceURL = "https://github.com/dremelofdeath/Skylines-DynamicResolution",
@@ -390,22 +390,22 @@ namespace AutoRepair.Catalogs {
                     Reviews[812713438u].Notes.Add(NOTE, "Windows Users: This mod requires a big page file on high resolutions: https://steamcommunity.com/sharedfiles/filedetails/?id=465790009");
                     break;
                 case RuntimePlatform.OSXPlayer:
-                    Reviews[812713438u].Notes.Add(NOTE, "Mac Users: This mod causes blank sky on OS/X; unsubscribing the mod will fix it.");
+                    Reviews[812713438u].Notes.Add(NOTE, "Mac Users: This mod causes blank sky on OS/X; unsubscribing the mod will fix it. https://steamcommunity.com/workshop/filedetails/discussion/812713438/1649919326328550651/");
                     break;
             }
 
-            AddMod(new Review(412146081u, "PostProcessFX v1.9.0") {
+            AddMod(new Review(412146081uL, "PostProcessFX v1.9.0") {
                 Affect = Factor.Rendering,
                 Authors = "MazK",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1183931915u, Status.Compatible   }, // Cubemap Replacer
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion
-                    { 933513277u , Status.Recommended  }, // Sun Shafts (BP ver)
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1183931915uL, Status.Compatible   }, // Cubemap Replacer
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion
+                    { 933513277uL , Status.Recommended  }, // Sun Shafts (BP ver)
+                    { 412146081uL , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion
                     // recommend: dynamic resolution
                 },
                 Flags = ItemFlags.Abandonware
@@ -415,9 +415,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
-                    { 812713438u, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
+                    { 812713438uL, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
                 },
-                //ReplaceWith = 1138510774u, // PostProcessFX - Multi-platform
+                //ReplaceWith = 1138510774uL, // PostProcessFX - Multi-platform
                 Tags = new[] { "Render", "Lighting", "Eyecandy", "Bloom", "Lensflare", "FXAA", "SMAA", "Ambient Occlusion" },
             });
 
@@ -430,17 +430,17 @@ namespace AutoRepair.Catalogs {
             */
 
             // translation
-            AddMod(new Review(1870740367u, "Dynamic Resolution 动态分辨率 Sakuya16个人汉化版") {
+            AddMod(new Review(1870740367uL, "Dynamic Resolution 动态分辨率 Sakuya16个人汉化版") {
                 Affect = Factor.Rendering,
                 Authors = "Izayoi _Sakuya16",
                 Catalog = catalog,
-                CloneOf = 812713438u, // Dynamic Resolution (Fixed for 1.9!)
+                CloneOf = 812713438uL, // Dynamic Resolution (Fixed for 1.9!)
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
-                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
-                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
+                    { 1870740367uL, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 812713438uL , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
+                    { 406629464uL , Status.Incompatible }, // Dynamic Resolution (old)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Laggy
@@ -450,18 +450,19 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Can cause extreme lag on older graphics cards. Make sure your GPU has good cooling." },
                 },
                 Published = WorkshopDate("23 Sep, 2019"),
-                ReplaceWith = 812713438u, // Dynamic Resolution (Fixed for 1.9!)
+                ReplaceWith = 812713438uL, // Dynamic Resolution (Fixed for 1.9!)
+                Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("23 Sep, 2019"),
             });
 
             // broken
-            AddMod(new Review(959894658u, "Custom Light Effects") {
+            AddMod(new Review(959894658uL, "Custom Light Effects") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
                 Authors = "Ronyx69, vasimr22",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1886877404u, Status.Compatible }, // Custom Effects Loader
+                    { 1886877404uL, Status.Compatible }, // Custom Effects Loader
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -474,32 +475,32 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Asset creators: Use Custom Effect Loader mod instead (see replacement link)." },
                 },
                 Published = WorkshopDate("30 Jun, 2017"),
-                ReplaceWith = 1886877404u, // Custom Effects Loader
+                ReplaceWith = 1886877404uL, // Custom Effects Loader
                 Updated = WorkshopDate("21 Aug, 2017"),
             });
 
             // No workshop page, but Sun Shafts (BP ver) says it's something about AO
             // Old Sun Shafts page confirms it was called Ambinet Occlusion
             // User on old AO page also linked to it, so it's a continuation of old AO.
-            AddMod(new Review(934825735u, "Ambient Occlusion") {
+            AddMod(new Review(934825735uL, "Ambient Occlusion") {
                 Affect = Factor.Rendering,
                 ArchiveURL = "https://web.archive.org/web/20170715133852/http://steamcommunity.com/sharedfiles/filedetails/?id=934825735",
                 Authors = "TPB, BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 933513277u , Status.Compatible   }, // Sun Shafts (current)
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    { 410805639u , Status.Incompatible }, // Sun Shafts (old)
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion (orig)
-                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
-                    { 406629464u , Status.Compatible   }, // Dynamic Resolution
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 933513277uL , Status.Compatible   }, // Sun Shafts (current)
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 412146081uL , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410805639uL , Status.Incompatible }, // Sun Shafts (old)
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion (orig)
+                    { 410196151uL , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
+                    { 406629464uL , Status.Compatible   }, // Dynamic Resolution
                 },
-                ContinuationOf = 410329674u, // Ambient Occlusion
+                ContinuationOf = 410329674uL, // Ambient Occlusion
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
@@ -510,18 +511,18 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Press F8 to show the sliders." },
                 },
                 Published = WorkshopDate("28 May, 2017"),
-                ReplaceWith = 412146081u, // PostProcessFX v1.9.0
+                ReplaceWith = 412146081uL, // PostProcessFX v1.9.0
                 SourceURL = "https://github.com/bloodypenguin/Skylines-AmbientOcclusion",
-                SuppressOlderReplacementWarning = true,
+                Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("30 May, 2017"),
             });
 
-            AddMod(new Review(926945709u, "Adjustable FOV") {
+            AddMod(new Review(926945709uL, "Adjustable FOV") {
                 Affect = Factor.Camera,
                 Authors = "sqrl",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 812713438uL , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable
@@ -534,18 +535,18 @@ namespace AutoRepair.Catalogs {
             });
 
             // old
-            AddMod(new Review(415732693u, "Disable Clouds") {
+            AddMod(new Review(415732693uL, "Disable Clouds") {
                 Affect = Factor.Environment
                        | Factor.Rendering,
                 ArchiveURL = "https://web.archive.org/web/20150415011651/http://steamcommunity.com/sharedfiles/filedetails/?id=415732693",
                 Authors = "Obelisk",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1883101331u, Status.Incompatible }, // Persistent Fog Adjuster
-                    { 523824395u , Status.Incompatible }, // Clouds & Fog Toggler
-                    { 408648436u , Status.Incompatible }, // More Options (Quget)
+                    { 1883101331uL, Status.Incompatible }, // Persistent Fog Adjuster
+                    { 523824395uL , Status.Incompatible }, // Clouds & Fog Toggler
+                    { 408648436uL , Status.Incompatible }, // More Options (Quget)
                 },
-                ContinuationOf = 408648436u, // More Options (Quget)
+                ContinuationOf = 408648436uL, // More Options (Quget)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
@@ -553,26 +554,26 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("28 Mar, 2015"),
-                ReplaceWith = 523824395u, // Clouds & Fog Toggler
+                ReplaceWith = 523824395uL, // Clouds & Fog Toggler
                 Updated = WorkshopDate("28 Mar, 2015"), // no evidence of any updates
             });
 
             // old
-            AddMod(new Review(410805639u, "Sun Shafts") {
+            AddMod(new Review(410805639uL, "Sun Shafts") {
                 Affect = Factor.Rendering,
                 Authors = "Ulysius",
                 BrokenBy = GameVersion.AfterDark,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 933513277u , Status.Incompatible }, // Sun Shafts (current)
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
-                    { 410329674u , Status.Compatible   }, // Ambient Occlusion (orig)
-                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
-                    { 409359952u , Status.Compatible   }, // Isometric Camera
-                    { 408648436u , Status.Compatible   }, // More Options
-                    { 406629464u , Status.Compatible   }, // Dynamic Resolution
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 933513277uL , Status.Incompatible }, // Sun Shafts (current)
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 410329674uL , Status.Compatible   }, // Ambient Occlusion (orig)
+                    { 410196151uL , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952uL , Status.Compatible   }, // Isometric Camera
+                    { 408648436uL , Status.Compatible   }, // More Options
+                    { 406629464uL , Status.Compatible   }, // Dynamic Resolution
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -581,28 +582,28 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("25 Mar, 2015"),
-                ReplaceWith = 933513277u, // Sun Shafts
+                ReplaceWith = 933513277uL, // Sun Shafts
                 Updated = WorkshopDate("25 Mar, 2015"),
             });
 
             // old
-            AddMod(new Review(410329674u, "Ambient Occlusion") {
+            AddMod(new Review(410329674uL, "Ambient Occlusion") {
                 Affect = Factor.Rendering,
                 Authors = "Ulysius",
                 BrokenBy = GameVersion.AfterDark,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 933513277u , Status.Incompatible }, // Sun Shafts (current)
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
-                    { 412146081u , Status.Incompatible }, // PostProcessFX v1.9.0
-                    { 410805639u , Status.Compatible   }, // Sun Shafts (old)
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion (orig)
-                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
-                    { 406629464u , Status.Compatible   }, // Dynamic Resolution
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 933513277uL , Status.Incompatible }, // Sun Shafts (current)
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 412146081uL , Status.Incompatible }, // PostProcessFX v1.9.0
+                    { 410805639uL , Status.Compatible   }, // Sun Shafts (old)
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion (orig)
+                    { 410196151uL , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
+                    { 406629464uL , Status.Compatible   }, // Dynamic Resolution
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -614,32 +615,32 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Press F8 to show the sliders." },
                 },
                 Published = WorkshopDate("25 Mar, 2015"),
-                ReplaceWith = 412146081u, // PostProcessFX v1.9.0
+                ReplaceWith = 412146081uL, // PostProcessFX v1.9.0
                 Updated = WorkshopDate("25 Mar, 2015"),
             });
 
             // discovered via: https://steamcommunity.com/workshop/filedetails/discussion/410329674/611701360830851903/
             // looks very much like an early version of Ultimate Eye Candy or Relight.. fog, bloom, tone mapping...
-            AddMod(new Review(408648436u, "More Options") {
+            AddMod(new Review(408648436uL, "More Options") {
                 Affect = Factor.Rendering,
                 ArchiveURL = "https://web.archive.org/web/20150415010910/http://steamcommunity.com/sharedfiles/filedetails/?id=408648436",
                 Authors = "Quget",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1209581656u, Status.Incompatible }, // Relight
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
-                    { 933513277u , Status.Incompatible }, // Sun Shafts (current)
-                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 415732693u , Status.Incompatible }, // Disable Clouds
-                    { 410805639u , Status.Compatible   }, // Sun Shafts (old)
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion (orig)
-                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
-                    { 409359952u , Status.Compatible   }, // Isometric Camera
-                    { 408648436u , Status.Incompatible }, // More Options
-                    { 406629464u , Status.Compatible   }, // Dynamic Resolution (old)
+                    { 1870740367uL, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1209581656uL, Status.Incompatible }, // Relight
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 933513277uL , Status.Incompatible }, // Sun Shafts (current)
+                    { 812713438uL , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 415732693uL , Status.Incompatible }, // Disable Clouds
+                    { 410805639uL , Status.Compatible   }, // Sun Shafts (old)
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion (orig)
+                    { 410196151uL , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952uL , Status.Compatible   }, // Isometric Camera
+                    { 408648436uL , Status.Incompatible }, // More Options
+                    { 406629464uL , Status.Compatible   }, // Dynamic Resolution (old)
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
@@ -652,11 +653,11 @@ namespace AutoRepair.Catalogs {
                 // existed March 26, 2015
                 // existed April 15, 2015
                 Published = WorkshopDate("21 Mar, 2015"),
-                ReplaceWith = 1209581656u, // Relight
+                ReplaceWith = 1209581656uL, // Relight
                 Updated = WorkshopDate("21 Mar, 2015"), // WBM says 4 change notes but doesn't show updated date
             });
 
-            AddMod(new Review(407358867u, "Quget's Day & Night Prototype") {
+            AddMod(new Review(407358867uL, "Quget's Day & Night Prototype") {
                 Affect = Factor.Rendering,
                 ArchiveURL = "https://web.archive.org/web/20150326014836/http://steamcommunity.com/id/Quget/myworkshopfiles/?appid=255710",
                 Authors = "Quget",
@@ -679,22 +680,22 @@ namespace AutoRepair.Catalogs {
             });
 
             // old
-            AddMod(new Review(406629464u, "Dynamic Resolution") {
+            AddMod(new Review(406629464uL, "Dynamic Resolution") {
                 Affect = Factor.Rendering,
                 Authors = "nlight",
                 BrokenBy = GameVersion.GreenCities,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 934825735u , Status.Compatible   }, // Ambient Occlusion
-                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 602077938u , Status.Incompatible }, // TotalyFree Camera
-                    { 410805639u , Status.Compatible   }, // Sun Shafts
-                    { 410329674u , Status.Compatible   }, // Ambient Occlusion
-                    { 409359952u , Status.Compatible   }, // Isometric Camera
-                    { 408648436u , Status.Compatible   }, // More Options
-                    { 406629464u , Status.Incompatible }, // Dynamic Resolution (old)
+                    { 1870740367uL, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 934825735uL , Status.Compatible   }, // Ambient Occlusion
+                    { 812713438uL , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 602077938uL , Status.Incompatible }, // TotalyFree Camera
+                    { 410805639uL , Status.Compatible   }, // Sun Shafts
+                    { 410329674uL , Status.Compatible   }, // Ambient Occlusion
+                    { 409359952uL , Status.Compatible   }, // Isometric Camera
+                    { 408648436uL , Status.Compatible   }, // More Options
+                    { 406629464uL , Status.Incompatible }, // Dynamic Resolution (old)
                 },
                 CompatibleWith = GameVersion.MassTransit,
                 Flags = ItemFlags.Abandonware
@@ -705,7 +706,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Published = WorkshopDate("7 Apr, 2015"),
-                ReplaceWith = 812713438u, // Dynamic Resolution (Fixed for 1.9!)
+                ReplaceWith = 812713438uL, // Dynamic Resolution (Fixed for 1.9!)
                 SourceURL = "https://github.com/AlexanderDzhoganov/Skylines-DynamicResolution",
                 Updated = WorkshopDate("7 Apr, 2015"),
             });
@@ -718,12 +719,12 @@ namespace AutoRepair.Catalogs {
             # ██      ██   ██  ██████ ██   ██ ███████
             */
 
-            AddMod(new Review(1980656676u, "MARS Sky - Cubemap Replacer Pack") {
+            AddMod(new Review(1980656676uL, "MARS Sky - Cubemap Replacer Pack") {
                 Affect = Factor.Environment,
                 Authors = "citywokcitywall",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1183931915u, Status.Required    }, // Cubemap Replacer
+                    { 1183931915uL, Status.Required    }, // Cubemap Replacer
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning
@@ -731,12 +732,12 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "4K", "Sky", "Mars", "Environment" },
             });
 
-            AddMod(new Review(1771841274u, "HDRI Haven Cubemap Pack 2") {
+            AddMod(new Review(1771841274uL, "HDRI Haven Cubemap Pack 2") {
                 Affect = Factor.Environment,
                 Authors = "Ronyx69",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1183931915u, Status.Required }, // Cubemap replacer
+                    { 1183931915uL, Status.Required }, // Cubemap replacer
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning
@@ -745,12 +746,12 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "2K", "Sky", "Earth", "Day", "Sunny", "Dusk", "Night", "Sunset", "Weather", "Environment" },
             });
 
-            AddMod(new Review(1591584836u, "HDRI 2K Cubemap Pack") {
+            AddMod(new Review(1591584836uL, "HDRI 2K Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "Sparks",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1183931915u, Status.Required }, // Cubemap replacer
+                    { 1183931915uL, Status.Required }, // Cubemap replacer
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning
@@ -759,12 +760,12 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "2K", "Sky", "Earth", "Day", "Sunny", "Sunset", "Weather", "Environment" },
             });
 
-            AddMod(new Review(1585691173u, "HDRI Haven Cubemap Pack") {
+            AddMod(new Review(1585691173uL, "HDRI Haven Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "Ronyx69",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1183931915u, Status.Required }, // Cubemap replacer
+                    { 1183931915uL, Status.Required }, // Cubemap replacer
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceAvailable,
@@ -772,12 +773,12 @@ namespace AutoRepair.Catalogs {
                 Tags = new[] { "Cubemap", "1K", "Sky", "Earth", "Sunset", "Weather", "Environment" },
             });
 
-            AddMod(new Review(1186800787u, "Pastel Cubemap Pack") {
+            AddMod(new Review(1186800787uL, "Pastel Cubemap Pack") {
                 Affect = Factor.Environment,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1183931915u, Status.Required }, // Cubemap replacer
+                    { 1183931915uL, Status.Required }, // Cubemap replacer
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceAvailable,

@@ -87,18 +87,17 @@ namespace AutoRepair.Catalogs {
                     { 2025147082uL, Status.Recommended  }, // Realistic Population revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.Compatible   }, // Real Time
-                    { 1383456057uL, Status.Incompatible }, // Shicho
-                    //Randomize Age Cim Move In (incompat)
-                    //Lifespan Changer (incompat)
-                    //Slow Citizen Aging (incompat)
-                    //Very Slow Citizen Aging (incompat)
+                    { 1196714522uL, Status.Incompatible }, // 居民衰老变十六分之一
                     //[ARIS] Early Death (incompat)
                     { 877402994uL , Status.Incompatible }, // Lifespan Changer Fix
                     { 654707599uL , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
                     { 643642403uL , Status.Incompatible }, // Lifespan multiplier v1.1
                     { 573925048uL , Status.Incompatible }, // Lifespan Changer
+                    { 571655171uL , Status.Incompatible }, // Randomize Age Cims Move in
                     { 541673195uL , Status.Incompatible }, // Resident Travel Rebalance v1.1
                     { 409071509uL , Status.Incompatible }, // Slow Citizen Aging Configurable
+                    { 409070739uL , Status.Incompatible }, // Very Slow Citizen Aging
+                    { 409070218uL , Status.Incompatible }, //Slow Citizen Aging
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 654707599uL, // Citizen Lifecycle Rebalance v2.6
@@ -120,15 +119,18 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2027161563uL, Status.Recommended  }, // Lifecycle Rebalance Revisited
+                    { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607uL, Status.Compatible   }, // Ploppable RICO revisited
                     { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption (WG)
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 410344523uL , Status.Incompatible }, // PopBalanceMod
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -184,16 +186,24 @@ namespace AutoRepair.Catalogs {
                 Authors = "C#",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1865667356uL, Status.Unknown      }, // Twitch Citizens
+                    { 1806759255uL, Status.Incompatible }, // Customize It Extended
                     { 1562650024uL, Status.Compatible   }, // Rebalanced Industries
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1548831935uL, Status.Compatible   }, // Advanced Vehicle Options (new ver)
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1369729955uL, Status.Incompatible }, // Customize It (original mod)
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
+                    { 530771650uL , Status.Compatible   }, // Prefab Hook
+                    { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1369729955uL, // Customize It (original mod)
                 Flags = ItemFlags.SourceAvailable,
+                Languages = new[] { "en", "de" },
+                Locale = "en",
                 SourceURL = "https://github.com/Celisuis/CustomizeItExtended",
             });
 
@@ -207,7 +217,7 @@ namespace AutoRepair.Catalogs {
                     { 1915645482uL, Status.Incompatible }, // Citizen Lifecycle Rebalance v2
                 },
                 Flags = ItemFlags.SourceUnavailable
-                      | ItemFlags.MinorIssues // somtimes loses settings
+                      | ItemFlags.MinorIssues // sometimes loses settings
                       | ItemFlags.Abandonware,
             });
 
@@ -252,6 +262,7 @@ namespace AutoRepair.Catalogs {
                     { 1192503086uL, Status.Compatible   }, // Real City V9.0.03.10
                     { 1114249433uL, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
                     { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                 },
                 ContinuationOf = 1114249433uL, // Employ Overeducated Workers (1.10+)
                 Flags = ItemFlags.SourceAvailable
@@ -302,6 +313,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Quboid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1806759255uL, Status.Compatible   }, // Customize It Extended
                     { 1553517176uL, Status.Incompatible }, // Specialized Industry Fix Redux
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
@@ -313,22 +325,35 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Quboid/CSL_RebalancedIndustries",
             });
 
-            // todo: prolly incompat with WG mods
             AddMod(new Review(1551563197uL, "EnhancedBuildingCapacity - Fixed") {
                 Affect = Factor.BuildingCapacity
                        | Factor.Consumption
                        | Factor.Production
                        | Factor.StorageCapacity,
-                Authors = " Flexible Games",
+                Authors = "Flexible Games",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607uL, Status.Incompatible }, // Ploppable RICO revisited
+                    { 1806759255uL, Status.Incompatible }, // Customize It Extended
+                    { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1369729955uL, Status.Incompatible }, // Customize It
+                    { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
+                    { 429238904uL , Status.Incompatible }, // Enhanced Building Capacity
+                    { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption (WG)
                     { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
                     { 410344523uL , Status.Incompatible }, // PopBalanceMod
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
+                ContinuationOf = 429238904uL, // Enhanced Building Capacity
                 Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("29 Oct, 2018"),
+                Updated = WorkshopDate("29 Oct, 2018"),
             });
 
             AddMod(new Review(1522785644uL, "Infinite Demand Mod") {
@@ -338,8 +363,12 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 819155459uL , Status.Incompatible }, // 超级需求
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("25 Sep, 2018"),
+                Updated = WorkshopDate("11 Aug, 2019"),
             });
 
             AddMod(new Review(1412844620uL, "Realistic Walking Speed") {
@@ -443,6 +472,27 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("8 Jan, 2017"),
             });
 
+            // Super demand, housing, commerce, and industrial offices all maintain high demand.
+            AddMod(new Review(819155459uL, "超级需求") {
+                Affect = Factor.DemandRCI
+                       | Factor.Immigrants,
+                Authors = "摇光",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 1522785644uL, Status.Incompatible }, // Infinite Demand Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceUnavailable,
+                Locale = "zh-cn",
+                Published = WorkshopDate("16 Dec, 2016"),
+                ReplaceWith = 1522785644uL, // Infinite Demand Mod
+                Updated = WorkshopDate("16 Dec, 2016"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -460,11 +510,13 @@ namespace AutoRepair.Catalogs {
                     { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607uL, Status.Incompatible }, // Ploppable RICO revisited
                     { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 410344523uL , Status.Incompatible }, // PopBalanceMod
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
@@ -492,7 +544,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Industries,
                 ReplaceWith = 1562650024uL, // Rebalanced Industries
-                SuppressVersionWarnings = true,
+                Suppress = Warning.InvalidVersionSequence,
                 SourceURL = "https://github.com/Vectorial1024/SpecializedIndustryFixRedux",
             }); ;
 
@@ -541,16 +593,25 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1865667356uL, Status.Unknown      }, // Twitch Citizens
                     { 1806759255uL, Status.Incompatible }, // Customize It Extended
                     { 1562650024uL, Status.Incompatible }, // Rebalanced Industries
-                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1548831935uL, Status.Compatible   }, // Advanced Vehicle Options (new ver)
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1369729955uL, Status.Incompatible }, // Customize It (original mod)
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
+                    { 530771650uL , Status.Required     }, // Prefab Hook
+                    { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
                 },
                 Flags = ItemFlags.Obsolete // new version avail
                       | ItemFlags.SourceAvailable,
+                Published = WorkshopDate("25 Apr, 2018"),
                 ReplaceWith = 1806759255uL, // Customize It Extended
                 SourceURL = "https://github.com/TPBCS/CustomizeIt",
+                Updated = WorkshopDate("22 May, 2018"),
             });
 
             // Residents become senile
@@ -561,6 +622,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 409070739uL, // Very Slow Citizen Aging
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
                     { 1420955187uL, Status.Incompatible }, // Real Time
                     { 877402994uL , Status.Incompatible }, // Lifespan Changer Fix
@@ -581,7 +643,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
                 Locale = "zh-cn",
-                ReplaceWith = 654707599uL, // Citizen Lifecycle Rebalance
+                ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
             });
 
             AddMod(new Review(1114249433uL, "Employ Overeducated Workers (1.10+)") {
@@ -597,6 +659,7 @@ namespace AutoRepair.Catalogs {
                     { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.10
                     { 1114249433uL, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
                     { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                 },
                 ContinuationOf = 569008960uL, // Employ Overeducated Workers
                 Flags = ItemFlags.SourceAvailable
@@ -622,6 +685,7 @@ namespace AutoRepair.Catalogs {
                     { 1614061108uL, Status.Incompatible }, // Real Construction
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
 
                     { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
@@ -712,6 +776,7 @@ namespace AutoRepair.Catalogs {
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 414469593uL , Status.Incompatible }, // Extended Building Information (emf)
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 410344523uL , Status.Incompatible }, // PopBalanceMod
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
@@ -782,7 +847,6 @@ namespace AutoRepair.Catalogs {
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
-                    { 1383456057uL, Status.Incompatible }, // Shicho
                     { 1196714522uL, Status.Incompatible }, // 居民衰老变十六分之一
                     { 877402994uL , Status.Incompatible }, // Lifespan Changer Fix
                     { 654707599uL , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
@@ -848,7 +912,6 @@ namespace AutoRepair.Catalogs {
                     { 1765325082uL, Status.Incompatible }, // Customizable Education
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.Compatible   }, // Real Time
-                    { 1383456057uL, Status.Incompatible }, // Shicho
                     { 1196714522uL, Status.Incompatible }, // 居民衰老变十六分之一
                     //Randomize Age Cim Move In (incompat)
                     //Lifespan Changer (incompat)
@@ -867,6 +930,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
                       | ItemFlags.SourceAvailable,
                 Published = WorkshopDate("28 Mar, 2016"),
+                ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_CitizenEdit",
                 Updated = WorkshopDate("31 Oct, 2018"),
             });
@@ -890,6 +954,7 @@ namespace AutoRepair.Catalogs {
                     { 541673195uL , Status.Incompatible }, // Resident Travel Rebalance v1.1
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 421188880uL , Status.Incompatible }, // [ARIS] Early Death
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 409071509uL , Status.Incompatible }, // Slow Citizen Aging Configurable
                     { 409070739uL , Status.Incompatible }, // Very Slow Citizen Aging
                     { 409070218uL , Status.Incompatible }, // Slow Citizen Aging
@@ -900,9 +965,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // Removed around March 2020
                       | ItemFlags.SourceAvailable,
                 Published = WorkshopDate("12 Mar, 2016"),
-                ReplaceWith = 654707599uL, // Citizen Lifecycle Rebalance v2.6
+                ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_Lifespan",
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL,
                 Updated = WorkshopDate("12 Mar, 2016"), // almost certainly wrong, but can't find archive of the page to check
             });
 
@@ -916,7 +981,6 @@ namespace AutoRepair.Catalogs {
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
-                    { 1383456057uL, Status.Incompatible }, // Shicho
                     { 1196714522uL, Status.Incompatible }, // 居民衰老变十六分之一
                     { 877402994uL , Status.Incompatible }, // Lifespan Changer Fix
                     { 654707599uL , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
@@ -951,6 +1015,7 @@ namespace AutoRepair.Catalogs {
                     { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.10
                     { 1114249433uL, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
                     { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                 },
                 Flags = ItemFlags.SourceAvailable
                       | ItemFlags.Obsolete, // use Industry 4.0 city/district policy
@@ -974,6 +1039,7 @@ namespace AutoRepair.Catalogs {
                     { 654707599uL , Status.Incompatible }, // Citizen Lifecycle Rebalance v2.6
                     { 643642403uL , Status.Incompatible }, // Lifespan multiplier v1.1
                     { 426163185uL , Status.Recommended  }, // Realistic Population and Consumption Mod v8.4.0
+                    { 411190402uL , Status.Compatible   }, // Building Simulation Overhaul
                     { 409071509uL , Status.Incompatible }, // Slow Citizen Aging Configurable
                 },
                 Flags = ItemFlags.Abandonware
@@ -1005,7 +1071,7 @@ namespace AutoRepair.Catalogs {
                     { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607uL, Status.Compatible   }, // RICO revisited
                     { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
-                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
                     { 1204126182uL, Status.Compatible   }, // Ploppable Rico High Density Fix
                     { 1108715012uL, Status.Incompatible }, // Adjustable Business Consumption
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
@@ -1013,10 +1079,11 @@ namespace AutoRepair.Catalogs {
                     { 643642403uL , Status.Incompatible }, // Lifespan multiplier v1.1
                     { 586012417uL , Status.Compatible   }, // Ploppable RICO
                     { 541673195uL , Status.Compatible   }, // Resident Travel Rebalance v1.1
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 410344523uL , Status.Incompatible }, // PopBalanceMod
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                     // INCOMPATIBLE:
-                    // Building Simulation Overhaul
                     // Enhanced Building Capacity
                 },
                 ContinuationOf = 410344523uL, // PopBalanceMod
@@ -1031,6 +1098,47 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("25 Oct, 2018"),
             });
 
+            AddMod(new Review(411190402uL, "Building Simulation Overhaul") {
+                Affect = Factor.BuildingCapacity
+                       | Factor.BuildingLevel
+                       | Factor.Immigrants
+                       | Factor.LandValue,
+                ArchiveURL = "https://web.archive.org/web/20160620100139/http://steamcommunity.com/sharedfiles/filedetails/?id=411190402",
+                Authors = "Nohealforu",
+                BrokenBy = GameVersion.Patch_1_2_2_f2, // changes to game limits
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
+                    { 2016920607uL, Status.Incompatible }, // RICO revisited
+                    { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大
+                    { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
+                    { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 1108715012uL, Status.Incompatible }, // Adjustable Business Consumption
+                    { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
+                    { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
+                    { 643642403uL , Status.Incompatible }, // Lifespan multiplier v1.1
+                    { 586012417uL , Status.Incompatible }, // Ploppable RICO
+                    { 541673195uL , Status.Compatible   }, // Resident Travel Rebalance v1.1
+                    { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
+                    { 410344523uL , Status.Incompatible }, // PopBalanceMod
+                    { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
+                    { 408706691uL , Status.Incompatible }, // Proper Hardness
+                    // incompat: fill the houses
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("20 Jun, 2016"),
+                Published = WorkshopDate("21 Mar, 2015"), // based on adjacent workshop ids; web archive shows "10 Apr, 2015"!
+                Removed = WorkshopDate("20 Jun, 2018"), // rough guesstimate
+                ReplaceWith = 2025147082uL, // Realistic Population revisited
+                Updated = WorkshopDate("24 Sep, 2015"), // might be later versions
+            });
+
             AddMod(new Review(410344523uL, "PopBalanceMod") {
                 Affect = Factor.BuildingCapacity
                        | Factor.Consumption,
@@ -1039,7 +1147,6 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // INCOMPATIBLE:
-                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul (no longer in workshop)
                     { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607uL, Status.Incompatible }, // RICO revisited
                     { 1587482024uL, Status.Incompatible }, // 真实人口，低密度只有一户人，高密度人口容量变大 (similar to pop bal mod)
@@ -1050,6 +1157,7 @@ namespace AutoRepair.Catalogs {
                     { 637901778uL , Status.Incompatible }, // Fire Spread [ Fixed for C:S 1.3.2+ ]
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 410344523uL , Status.Incompatible }, // PopBalanceMod
                     { 410234967uL , Status.Incompatible }, // Fire Spread
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
@@ -1082,7 +1190,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Production,
                 ArchiveURL = "https://web.archive.org/web/20181222222153/https://steamcommunity.com/sharedfiles/filedetails/?id=409644467",
                 Authors = "Nohealforu",
-                BrokenBy = GameVersion.MassTransit,
+                BrokenBy = GameVersion.MassTransit, // incorportated in to vanilla game
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // vanilla has this
@@ -1101,12 +1209,14 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Laggy // runs code every frame
                       | ItemFlags.NoWorkshop // removed some time after 22 Dec, 2018
-                      | ItemFlags.Obsolete
+                      | ItemFlags.Obsolete // vanilla mod since Mass Transit
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("22 Dec, 2018"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "This feature is now part of vanilla game; unsubscribe this mod." },
                 },
                 Published = WorkshopDate("17 Mar, 2015"), // based on 409644466uL :)
+                Removed = WorkshopDate("10 Aug, 2019"), // rough guesstimate based on web archive
                 ReplaceWith = Vanilla.UnlimitedOilAndOre,
                 Updated = WorkshopDate("6 Apr, 2015"), // based on webarchive
             });
@@ -1140,7 +1250,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 ReleasedDuring = GameVersion.InitialRelease,
-                ReplaceWith = 643642403uL, // Lifespan multiplier v1.1
+                ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
             });
 
             // note possibly a KnighthawkGP continuation (AD & snowfall compat) of this prior to later Proper Hardness Fixed version
@@ -1203,6 +1313,7 @@ namespace AutoRepair.Catalogs {
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
                     { 414469593uL , Status.Incompatible }, // Extended Building Information (emf)
+                    { 411190402uL , Status.Incompatible }, // Building Simulation Overhaul
                     { 410344523uL , Status.Incompatible }, // PopBalanceMod
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },

@@ -37,7 +37,6 @@ namespace AutoRepair.Catalogs {
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
             Fixed(502750307u, "Extra Landscaping Tools"); // menu wont close
-            Broken(442167376u, "Advanced Vehicle Options (AVO)"); // technically not but long overdue to get people over to new ver
             Dead(414618382u, "Rotate Brush");
 
             Fixed(515489008u, "Extra Train Station Tracks");
@@ -60,7 +59,6 @@ namespace AutoRepair.Catalogs {
             //Dead(932939897u , "5 way Clover Full Capacity Final");
             Dead(412168106u , "Adjustable Demand v2", 409776678u);
             Dead(1647686914u, "Advanced Junction Rule", 1637663252u);
-            Dead(442167376u , "Advanced Vehicle Options (AVO)", 1548831935u);
             Dead(793489846u , "Aedificium");
             Dead(1452259306u, "Aedificium RELOADED");
             Dead(474652684u , "Asset Prefab(+Building) AI Changer");
@@ -93,8 +91,6 @@ namespace AutoRepair.Catalogs {
             Dead(413748580u , "ImageOverlay");
             Dead(1115699323u, "Immersive Water 0.9.0.0 (beta release)");
             Dead(508195208u , "Improved Asset Icons", 747836519u);
-            Dead(417430545u , "Improved Assets Panel", 814498849u);
-            Dead(416033610u , "Improved Mods Panel", 814498849u);
             Dead(580335918u , "Infinite Oil And Ore Redux [DEPRECATED]");
             //Dead(1633845925u, "International Finance Center GuangZhou");
             Dead(635815270u , "IOperateIt");
@@ -124,7 +120,6 @@ namespace AutoRepair.Catalogs {
             Dead(587536931u , "Remove Seagulls [Fixed for v1.4+]", 564141599u);
             Dead(813834836u , "Remove Stuck Vehicles [1.6]", 1548831935u);
             Dead(587530437u , "Remove Stuck Vehicles [Fixed for v1.4+]", 1548831935u);
-            Dead(820547325u , "Resilient Owners (Make Historical)", 1330381737u);
             Dead(418556522u , "Road Anarchy", 1844440354u);
             Dead(954034590u , "Road Anarchy V2", 1844440354u);
             Dead(417926819u , "Road Assistant - BROKEN");

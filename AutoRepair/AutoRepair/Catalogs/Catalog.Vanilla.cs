@@ -26,21 +26,22 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2039606384u, Status.Incompatible }, // Easy Mode: Money Mod
-                    { 2039205403u, Status.Incompatible }, // Free Maintenance by Anvilarse
-                    { 1830455071u, Status.Incompatible }, // EasyMode
-                    { 1744522363u, Status.Incompatible }, // Money Back (Refund)
-                    { 1614061108u, Status.Incompatible }, // Real Construction
-                    { 1598546349u, Status.Incompatible }, // Mary's Mod
-                    { 1522785644u, Status.Incompatible }, // Infinite Demand Mod
-                    { 1403960464u, Status.Incompatible }, // Maintenance Fees (Parklife Ready)
-                    { 1398502258u, Status.Incompatible }, // Dam Upkeep Scaling
-                    { 1237383751u, Status.Incompatible }, // Extended Game Options
-                    { 1227735337u, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
-                    { 1108715012u, Status.Incompatible }, // Adjustable Business Consumption
-                    { 938049744u , Status.Incompatible }, // Proper Hardness Fixed
+                    { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
+                    { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
+                    { 1830455071uL, Status.Incompatible }, // EasyMode
+                    { 1744522363uL, Status.Incompatible }, // Money Back (Refund)
+                    { 1614061108uL, Status.Incompatible }, // Real Construction
+                    { 1598546349uL, Status.Incompatible }, // Mary's Mod
+                    { 1522785644uL, Status.Incompatible }, // Infinite Demand Mod
+                    { 1403960464uL, Status.Incompatible }, // Maintenance Fees (Parklife Ready)
+                    { 1398502258uL, Status.Incompatible }, // Dam Upkeep Scaling
+                    { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 1227735337uL, Status.Incompatible }, // Full Refund Cost[Industries Compatible]
+                    { 1108715012uL, Status.Incompatible }, // Adjustable Business Consumption
+                    { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 838095079uL , Status.Incompatible }, // Cheaper Hydro Electric Power
-                    { 408706691u , Status.Incompatible }, // Proper Hardness
+                    { 819155459uL , Status.Incompatible }, // 超级需求
+                    { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
@@ -59,27 +60,27 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2039606384u, Status.MinorIssues  }, // Easy Mode: Money Mod
-                    { 2039205403u, Status.MinorIssues  }, // Free Maintenance by Anvilarse
-                    { 2036484892u, Status.MinorIssues  }, // AutoMoney
-                    { 2030216556u, Status.MinorIssues  }, // GrantMeMoney: get cash / money unconditionally
-                    { 1949192313u, Status.MinorIssues  }, // UnlimitedMoney
-                    { 1830455071u, Status.MinorIssues  }, // EasyMode
-                    { 1744522363u, Status.MinorIssues  }, // Money Back (Refund)
-                    { 1673480325u, Status.MinorIssues  }, // £5 Million Starting Money
-                    { 1671542319u, Status.MinorIssues  }, // £2.5 Million Starting Money
-                    { 1598546349u, Status.MinorIssues  }, // Mary's Mod
-                    { 1403960464u, Status.MinorIssues  }, // Maintenance Fees (Parklife Ready)
-                    { 1330289236u, Status.MinorIssues  }, // CS-Utils
-                    { 1367444256u, Status.MinorIssues  }, // Cash/Money On Demand 500k
-                    { 1237383751u, Status.MinorIssues  }, // Extended Game Options
-                    { 1232451940u, Status.MinorIssues  }, // 调整金钱
-                    { 1227735337u, Status.MinorIssues  }, // Full Refund Cost[Industries Compatible]
+                    { 2039606384uL, Status.MinorIssues  }, // Easy Mode: Money Mod
+                    { 2039205403uL, Status.MinorIssues  }, // Free Maintenance by Anvilarse
+                    { 2036484892uL, Status.MinorIssues  }, // AutoMoney
+                    { 2030216556uL, Status.MinorIssues  }, // GrantMeMoney: get cash / money unconditionally
+                    { 1949192313uL, Status.MinorIssues  }, // UnlimitedMoney
+                    { 1830455071uL, Status.MinorIssues  }, // EasyMode
+                    { 1744522363uL, Status.MinorIssues  }, // Money Back (Refund)
+                    { 1673480325uL, Status.MinorIssues  }, // £5 Million Starting Money
+                    { 1671542319uL, Status.MinorIssues  }, // £2.5 Million Starting Money
+                    { 1598546349uL, Status.MinorIssues  }, // Mary's Mod
+                    { 1403960464uL, Status.MinorIssues  }, // Maintenance Fees (Parklife Ready)
+                    { 1330289236uL, Status.MinorIssues  }, // CS-Utils
+                    { 1367444256uL, Status.MinorIssues  }, // Cash/Money On Demand 500k
+                    { 1237383751uL, Status.MinorIssues  }, // Extended Game Options
+                    { 1232451940uL, Status.MinorIssues  }, // 调整金钱
+                    { 1227735337uL, Status.MinorIssues  }, // Full Refund Cost[Industries Compatible]
                     { 855704599uL , Status.MinorIssues  }, // Set your own Start Money amount
                     { 838095079uL , Status.MinorIssues  }, // Cheaper Hydro Electric Power
-                    { 938049744u , Status.MinorIssues  }, // Proper Hardness Fixed
-                    { 409171141u , Status.MinorIssues  }, // Cash on Demand
-                    { 408706691u , Status.MinorIssues  }, // Proper Hardness
+                    { 938049744uL , Status.MinorIssues  }, // Proper Hardness Fixed
+                    { 409171141uL , Status.MinorIssues  }, // Cash on Demand
+                    { 408706691uL , Status.MinorIssues  }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
@@ -96,7 +97,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1237383751u, Status.Incompatible }, // Extended Game Options
+                    { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                 },
@@ -123,12 +124,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1614062928u, Status.Incompatible }, // Unlock LandScaping
-                    { 1498036881u, Status.Incompatible }, // UltimateMod 2.6 ( Higher Income and More Options )
-                    { 1424264814u, Status.Incompatible }, // YAFU - Yet Another Feature Unlocker
-                    { 1242879105u, Status.Incompatible }, // Unlock Any Milestone
-                    { 1237383751u, Status.Incompatible }, // Extended Game Options
-                    { 458519223u , Status.Incompatible }, // Unlock All + Wonders & Landmarks
+                    { 1614062928uL, Status.Incompatible }, // Unlock LandScaping
+                    { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6 ( Higher Income and More Options )
+                    { 1424264814uL, Status.Incompatible }, // YAFU - Yet Another Feature Unlocker
+                    { 1242879105uL, Status.Incompatible }, // Unlock Any Milestone
+                    { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 458519223uL , Status.Incompatible }, // Unlock All + Wonders & Landmarks
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled

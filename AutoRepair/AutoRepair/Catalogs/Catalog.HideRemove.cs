@@ -18,6 +18,18 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "HideRemove";
 
+            AddMod(new Review(2062449491uL, "No Vanilla Citizens") {
+                Affect = Factor.Other,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("15 Apr, 2020"),
+                Updated = WorkshopDate("15 Apr, 2020"),
+            });
+
             AddMod(new Review(1962752152uL, "Busstop Prop Remover") {
                 Affect = Factor.HideRemove
                        | Factor.Props,
@@ -83,6 +95,10 @@ namespace AutoRepair.Catalogs {
                     { 433557907uL , Status.Incompatible }, // District UI Tweaks: Hide Names
                     { 421443866uL , Status.Incompatible }, // Zone Colours
                     { 410842044uL , Status.Incompatible }, // Persistent Resource View
+                    // other mods
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -175,9 +191,9 @@ namespace AutoRepair.Catalogs {
                     { 421041154uL , Status.Incompatible }, // [ARIS] Remove Seagulls
                     { 417145328uL , Status.Incompatible }, // [Deprecated] Kill the Seagulls!
                     // other
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1383456057uL, Status.Incompatible }, // Shicho (Harmony clash)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,

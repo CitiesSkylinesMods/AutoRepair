@@ -251,6 +251,18 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("5 Feb, 2017"),
                 Updated = WorkshopDate("5 Feb, 2017"),
             });
+
+            AddFlagMod(new Review(817019068uL, "Danish flag replacer") {
+                Authors = "Jens Møller",
+                Flags = ItemFlags.SourceAvailable,
+                Locale = "da",
+                Published = WorkshopDate("12 Dec, 2016"),
+                SourceURL = "https://github.com/jensz12/Cities-Danish-Flag",
+                Tags = new[] {
+                    "Flags", "Replacer", "Denmark", "Danis", "European", "Nordic", "Dansk",
+                },
+                Updated = WorkshopDate("12 Dec, 2016"),
+            });
         }
     }
 }

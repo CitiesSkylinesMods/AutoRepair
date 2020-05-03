@@ -57,10 +57,14 @@ namespace AutoRepair.Catalogs {
                 Authors = "thale5",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
-                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    // LSM:
+                    { 2045011960uL, Status.Incompatible }, // Loading Screen 中文版
+                    { 1894425170uL, Status.Incompatible }, // Loading Screen Mod 汉化版
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
                     { 833779378uL , Status.Incompatible }, // Loading Screen Mod [Test]
                     { 667342976uL , Status.Incompatible }, // Loading Screen Mod
                 },
@@ -80,7 +84,7 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("3 Jan, 2017"),
                 ReplaceWith = 667342976uL, // Loading Screen Mod
                 SourceURL = "https://github.com/thale5/LSM",
-                SuppressOlderReplacementWarning = true,
+                Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("26 Mar, 2020"),
             });
 
@@ -89,10 +93,14 @@ namespace AutoRepair.Catalogs {
                 Authors = "thale5",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
-                    { 1383456057uL, Status.Incompatible }, // Shicho
+                    // LSM:
+                    { 2045011960uL, Status.Incompatible }, // Loading Screen 中文版
+                    { 1894425170uL, Status.Incompatible }, // Loading Screen Mod 汉化版
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
                     { 833779378uL , Status.Incompatible }, // Loading Screen Mod [Test]
                     { 667342976uL , Status.Incompatible }, // Loading Screen Mod
                 },
@@ -114,12 +122,11 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Mar, 2020"),
             });
 
-            AddMod(new Review(411821214u, "Pause on no focus/Alt-Tab") {
+            AddMod(new Review(411821214uL, "Pause on no focus/Alt-Tab") {
                 Affect = Factor.LoadSaveExit,
                 Authors = "MrLawbreaker",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -135,6 +142,91 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
+
+            AddMod(new Review(2045011960uL, "Loading Screen 中文版") {
+                Affect = Factor.LoadSaveExit,
+                Authors = "Yuuki",
+                Catalog = catalog,
+                CloneOf = 667342976uL, // Loading Screen Mod (main stable release)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
+                    // LSM:
+                    { 2045011960uL, Status.Incompatible }, // Loading Screen 中文版
+                    { 1894425170uL, Status.Incompatible }, // Loading Screen Mod 汉化版
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
+                    { 833779378uL , Status.Incompatible }, // Loading Screen Mod [Test]
+                    { 667342976uL , Status.Incompatible }, // Loading Screen Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Locale = "zh-cn",
+                Published = WorkshopDate("2 Apr, 2020"),
+                ReplaceWith = 667342976uL, // Loading Screen Mod (main stable release)
+                Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("12 Apr, 2020"),
+            });
+
+            AddMod(new Review(1894425170uL, "Loading Screen Mod 汉化版") {
+                Affect = Factor.LoadSaveExit,
+                Authors = "Catnip.",
+                Catalog = catalog,
+                CloneOf = 667342976uL, // Loading Screen Mod (main stable release)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
+                    // LSM:
+                    { 2045011960uL, Status.Incompatible }, // Loading Screen 中文版
+                    { 1894425170uL, Status.Incompatible }, // Loading Screen Mod 汉化版
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
+                    { 833779378uL , Status.Incompatible }, // Loading Screen Mod [Test]
+                    { 667342976uL , Status.Incompatible }, // Loading Screen Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                Locale = "zh-cn",
+                Published = WorkshopDate("20 Oct, 2019"),
+                ReplaceWith = 667342976uL, // Loading Screen Mod (main stable release)
+                Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("3 Apr, 2020"),
+            });
+
+            AddMod(new Review(1860379049uL, "加载优化 Loading Screen") {
+                Affect = Factor.LoadSaveExit,
+                Authors = "TIMIYANG",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                CloneOf = 667342976uL, // Loading Screen Mod (main stable release)
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
+                    // LSM:
+                    { 2045011960uL, Status.Incompatible }, // Loading Screen 中文版
+                    { 1894425170uL, Status.Incompatible }, // Loading Screen Mod 汉化版
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
+                    { 833779378uL , Status.Incompatible }, // Loading Screen Mod [Test]
+                    { 667342976uL , Status.Incompatible }, // Loading Screen Mod
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.SourceUnavailable,
+                Locale = "zh-cn",
+                Published = WorkshopDate("11 Sep, 2019"),
+                ReplaceWith = 667342976uL, // Loading Screen Mod (main stable release)
+                Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("17 Sep, 2019"),
+            });
 
             AddMod(new Review(1733593614u, "Immediate Continue") {
                 Affect = Factor.LoadSaveExit,
@@ -181,7 +273,6 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor, // has native pause on load feature
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware

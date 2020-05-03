@@ -21,15 +21,15 @@ namespace AutoRepair.Catalogs {
             string catalog = "Camera";
 
             // Camera control via SpaceMouse
-            AddMod(new Review(2021361606u, "SpaceMouse for CSL") {
+            AddMod(new Review(2021361606uL, "SpaceMouse for CSL") {
                 Affect = Factor.Camera,
                 Authors = "alex",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2021361606u, Status.Compatible }, // SpaceMouse for CSL
-                    { 1756089251u, Status.Compatible }, // Zoom It!
-                    { 1721824249u, Status.Compatible }, // Joystick Camera Control
-                    { 1721823173u, Status.Compatible }, // NoOffScreenScroll
+                    { 2021361606uL, Status.Compatible }, // SpaceMouse for CSL
+                    { 1756089251uL, Status.Compatible }, // Zoom It!
+                    { 1721824249uL, Status.Compatible }, // Joystick Camera Control
+                    { 1721823173uL, Status.Compatible }, // NoOffScreenScroll
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable,
@@ -39,18 +39,18 @@ namespace AutoRepair.Catalogs {
             });
 
             // Stereoscopic camera (split screen)
-            AddMod(new Review(1828737770u, "StereoscopicView") {
+            AddMod(new Review(1828737770uL, "StereoscopicView") {
                 Affect = Factor.Camera,
                 Authors = "eelcobaas",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    //{ 1828737770u, Status.Incompatible }, // StereoscopicView
-                    //{ 1492317158u, Status.Incompatible }, // 第一人称视角
-                    //{ 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    //{ 651056665u , Status.Incompatible }, // Enhanced Zoom Continued (no longer in workshop)
-                    //{ 650805785u , Status.Incompatible }, // First Person Camera: Updated
-                    //{ 411016892u , Status.Incompatible }, // Enhanced Zoom (no longer in workshop)
-                    //{ 406255342u , Status.Incompatible }, // First-person camera
+                    //{ 1828737770uL, Status.Incompatible }, // StereoscopicView
+                    //{ 1492317158uL, Status.Incompatible }, // 第一人称视角
+                    //{ 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    //{ 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued (no longer in workshop)
+                    //{ 650805785uL , Status.Incompatible }, // First Person Camera: Updated
+                    //{ 411016892uL , Status.Incompatible }, // Enhanced Zoom (no longer in workshop)
+                    //{ 406255342uL , Status.Incompatible }, // First-person camera
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues // mouse pointer and underground view borked
@@ -63,19 +63,20 @@ namespace AutoRepair.Catalogs {
                 UserModInspected = true,
             });
 
-            AddMod(new Review(1756089251u, "Zoom It!") {
+            AddMod(new Review(1756089251uL, "Zoom It!") {
                 Affect = Factor.Camera,
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2021361606u, Status.Compatible   }, // SpaceMouse for CSL
-                    { 1756089251u, Status.Compatible   }, // Zoom It!
-                    { 1721824249u, Status.Compatible   }, // Joystick Camera Control
-                    { 1721823173u, Status.Compatible   }, // NoOffScreenScroll
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
-                    { 410227672u , Status.Incompatible }, // Farther Zoom
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 2021361606uL, Status.Compatible   }, // SpaceMouse for CSL
+                    { 1756089251uL, Status.Compatible   }, // Zoom It!
+                    { 1721824249uL, Status.Compatible   }, // Joystick Camera Control
+                    { 1721823173uL, Status.Compatible   }, // NoOffScreenScroll
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 410610814uL , Status.Incompatible }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Incompatible }, // Farther Zoom
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -85,15 +86,15 @@ namespace AutoRepair.Catalogs {
             });
 
             // Camera control by joystick
-            AddMod(new Review(1721824249u, "Joystick Camera Control") {
+            AddMod(new Review(1721824249uL, "Joystick Camera Control") {
                 Affect = Factor.Camera,
                 Authors = "Rena",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2021361606u, Status.Compatible }, // SpaceMouse for CSL
-                    { 1756089251u, Status.Compatible }, // Zoom It!
-                    { 1721824249u, Status.Compatible }, // Joystick Camera Control
-                    { 1721823173u, Status.Compatible }, // NoOffScreenScroll
+                    { 2021361606uL, Status.Compatible }, // SpaceMouse for CSL
+                    { 1756089251uL, Status.Compatible }, // Zoom It!
+                    { 1721824249uL, Status.Compatible }, // Joystick Camera Control
+                    { 1721823173uL, Status.Compatible }, // NoOffScreenScroll
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -102,15 +103,15 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("24 Mar, 2020"),
             });
 
-            AddMod(new Review(1721823173u, "NoOffScreenScroll") {
+            AddMod(new Review(1721823173uL, "NoOffScreenScroll") {
                 Affect = Factor.Camera,
                 Authors = "Rena",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2021361606u, Status.Compatible }, // SpaceMouse for CSL
-                    { 1756089251u, Status.Compatible }, // Zoom It!
-                    { 1721824249u, Status.Compatible }, // Joystick Camera Control
-                    { 1721823173u, Status.Compatible }, // NoOffScreenScroll
+                    { 2021361606uL, Status.Compatible }, // SpaceMouse for CSL
+                    { 1756089251uL, Status.Compatible }, // Zoom It!
+                    { 1721824249uL, Status.Compatible }, // Joystick Camera Control
+                    { 1721823173uL, Status.Compatible }, // NoOffScreenScroll
                 },
                 Flags = ItemFlags.SourceAvailable,
                 Published = WorkshopDate("24 Apr, 2019"),
@@ -119,7 +120,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: move to driving category
-            AddMod(new Review(1518296436u, "Driving Mod") {
+            AddMod(new Review(1518296436uL, "Driving Mod") {
                 Affect = Factor.Camera
                        | Factor.Vehicles,
                 Authors = "WULF1045",
@@ -132,22 +133,22 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("21 Sep, 2018"),
             });
 
-            AddMod(new Review(1406625743u, "EnhancedZoomContinued") {
+            AddMod(new Review(1406625743uL, "EnhancedZoomContinued") {
                 Affect = Factor.Camera,
                 Authors = "UguuDoki",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 898480258u , Status.Unknown      }, // Camera Positions Utility
-                    { 844180955u , Status.Incompatible }, // City Drive
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom
-                    { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
-                    { 410227672u , Status.Incompatible }, // Farther Zoom
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 406297458u , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 898480258uL , Status.Unknown      }, // Camera Positions Utility
+                    { 844180955uL , Status.Incompatible }, // City Drive
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
+                    { 410610814uL , Status.Incompatible }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Incompatible }, // Farther Zoom
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 406297458uL , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
                 },
-                ContinuationOf = 651056665u, // Enhanced Zoom Continued
+                ContinuationOf = 651056665uL, // Enhanced Zoom Continued
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "User guide: https://steamcommunity.com/workshop/filedetails/discussion/1406625743/1728711392724061143/" },
@@ -157,15 +158,15 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("9 Jun, 2018"),
             });
 
-            AddMod(new Review(898480258u, "Camera Positions Utility") {
+            AddMod(new Review(898480258uL, "Camera Positions Utility") {
                 Affect = Factor.Camera,
                 Authors = "TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1406625743u, Status.Unknown      }, // EnhancedZoomContinued
-                    { 651056665u , Status.Compatible   }, // Enhanced Zoom Continued
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom (orig)
-                    { 406297458u , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
+                    { 1406625743uL, Status.Unknown      }, // EnhancedZoomContinued
+                    { 651056665uL , Status.Compatible   }, // Enhanced Zoom Continued
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom (orig)
+                    { 406297458uL , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
@@ -182,14 +183,14 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Asset editor: Center camera with Ctrl + Shift + C" },
                     { NOTE, "Asset editor: Isometric projection with Ctrl + Shift + I" },
                     { NOTE, "Sunset Harbor: Auto-saved position may act weirdly as vanilla game now has same feature." },
-                    { 1406625743u, "[Mod: Enhanced Zoom Continued] Compatbility is unknown with this version of EZC; let me know if it works." },
-                    { 651056665u , "[Mod: Enhanced Zoom Continued] Compatible, but FOV options in Camera Positions Utility will be disabled." },
+                    { 1406625743uL, "[Mod: Enhanced Zoom Continued] Compatbility is unknown with this version of EZC; let me know if it works." },
+                    { 651056665uL , "[Mod: Enhanced Zoom Continued] Compatible, but FOV options in Camera Positions Utility will be disabled." },
                 },
                 Published = WorkshopDate("4 Apr, 2017"),
                 Updated = WorkshopDate("4 Apr, 2018"),
             });
 
-            AddMod(new Review(844180955u, "City Drive") {
+            AddMod(new Review(844180955uL, "City Drive") {
                 Affect = Factor.Camera
                        | Factor.Vehicles,
                 Authors = "yole.karif",
@@ -216,35 +217,35 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Oct, 2017"),
             });
 
-            AddMod(new Review(650805785u, "First Person Camera: Updated") {
+            AddMod(new Review(650805785uL, "First Person Camera: Updated") {
                 Affect = Factor.Camera,
                 Authors = "tony56a",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1492317158u, Status.Incompatible }, // 第一人称视角
-                    { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
-                    { 844180955u , Status.Incompatible }, // City Drive
-                    { 650805785u , Status.Incompatible }, // First Person Camera: Updated
-                    { 406255342u , Status.Incompatible }, // First-person camera
+                    { 1492317158uL, Status.Incompatible }, // 第一人称视角
+                    { 1317859996uL, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955uL , Status.Incompatible }, // City Drive
+                    { 650805785uL , Status.Incompatible }, // First Person Camera: Updated
+                    { 406255342uL , Status.Incompatible }, // First-person camera
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 406255342u, // First-person camera
+                ContinuationOf = 406255342uL, // First-person camera
                 Flags = ItemFlags.SourceAvailable,
                 Published = WorkshopDate("23 Mar, 2016"),
                 SourceURL = "https://github.com/tony56a/Skylines-FPSCamera/tree/1.4.0-fix",
                 Updated = WorkshopDate("16 Apr, 2020"),
             });
 
-            AddMod(new Review(602077938u, "TotalyFree Camera") {
+            AddMod(new Review(602077938uL, "TotalyFree Camera") {
                 Affect = Factor.Camera,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 411016892u , Status.Compatible   }, // Enhanced Zoom (orig)
-                    { 406629464u , Status.Incompatible }, // Dynamic Resolution
-                    { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
-                    { 410227672u , Status.Incompatible }, // Farther Zoom
+                    { 812713438uL , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 411016892uL , Status.Compatible   }, // Enhanced Zoom (orig)
+                    { 406629464uL , Status.Incompatible }, // Dynamic Resolution
+                    { 410610814uL , Status.Incompatible }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Incompatible }, // Farther Zoom
                 },
                 Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
@@ -261,18 +262,36 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Review(1492317158u, "第一人称视角") {
+            // cross the line
+            AddMod(new Review(2067985055uL, "在地图边界外进行建设") {
+                Affect = Factor.Camera,
+                Authors = "tfuqin",
+                Catalog = catalog,
+                CloneOf = 498386331uL, // Cross the Line
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 498386331uL , Status.Incompatible }, // Cross the Line
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Localised
+                      | ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("20 Apr, 2020"),
+                ReplaceWith = 498386331uL, // Cross the Line
+                Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("20 Apr, 2020"),
+            });
+
+            AddMod(new Review(1492317158uL, "第一人称视角") {
                 Affect = Factor.Camera,
                 Authors = "Ling Youqiang",
                 BrokenBy = GameVersion.Snowfall,
                 Catalog = catalog,
-                CloneOf = 406255342u, // First-person camera
+                CloneOf = 406255342uL, // First-person camera
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1492317158u, Status.Incompatible }, // 第一人称视角
-                    { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
-                    { 844180955u , Status.Incompatible }, // City Drive
-                    { 650805785u , Status.Incompatible }, // First Person Camera: Updated
-                    { 406255342u , Status.Incompatible }, // First-person camera
+                    { 1492317158uL, Status.Incompatible }, // 第一人称视角
+                    { 1317859996uL, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955uL , Status.Incompatible }, // City Drive
+                    { 650805785uL , Status.Incompatible }, // First Person Camera: Updated
+                    { 406255342uL , Status.Incompatible }, // First-person camera
                 },
                 CompatibleWith = GameVersion.AfterDark,
                 Flags = ItemFlags.Abandonware
@@ -283,53 +302,54 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // unable to exit first person cam (Esc not working)
-                Published = WorkshopDate("25 Aug, 2018"),
-                ReplaceWith = 650805785u, // First Person Camera: Updated
-                ReleasedDuring = GameVersion.ParkLife,
                 Locale = "zh-cn",
-                SuppressVersionWarnings = true, // it was long broken when added to workshop lol
+                Published = WorkshopDate("25 Aug, 2018"),
+                ReplaceWith = 650805785uL, // First Person Camera: Updated
+                ReleasedDuring = GameVersion.ParkLife,
+                Suppress = Warning.InvalidVersionSequence | Warning.OlderReplacement,
                 Updated = WorkshopDate("25 Aug, 2018"),
             });
 
             // literally an exact copy of 650805785u
-            AddMod(new Review(1317859996u, "650805785 First Person Camera_ Updated") {
+            AddMod(new Review(1317859996uL, "650805785 First Person Camera_ Updated") {
                 Affect = Factor.Camera,
                 Authors = "KoLoNyAlı MeNdİL",
                 Catalog = catalog,
-                CloneOf = 650805785u, // First Person Camera: Updated
+                CloneOf = 650805785uL, // First Person Camera: Updated
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1492317158u, Status.Incompatible }, // 第一人称视角
-                    { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
-                    { 844180955u , Status.Incompatible }, // City Drive
-                    { 650805785u , Status.Incompatible }, // First Person Camera: Updated
-                    { 406255342u , Status.Incompatible }, // First-person camera
+                    { 1492317158uL, Status.Incompatible }, // 第一人称视角
+                    { 1317859996uL, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955uL , Status.Incompatible }, // City Drive
+                    { 650805785uL , Status.Incompatible }, // First Person Camera: Updated
+                    { 406255342uL , Status.Incompatible }, // First-person camera
                 },
                 Flags = ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // reported by users
                       | ItemFlags.Obsolete // use 650805785u which is maintained
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("2 Mar, 2018"),
-                ReplaceWith = 650805785u, // First Person Camera: Updated
+                ReplaceWith = 650805785uL, // First Person Camera: Updated
+                Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("2 Mar, 2018"),
             });
 
-            AddMod(new Review(651056665u, "Enhanced Zoom Continued") {
+            AddMod(new Review(651056665uL, "Enhanced Zoom Continued") {
                 Affect = Factor.Camera,
                 ArchiveURL = "https://web.archive.org/web/20170406042531/http://steamcommunity.com/sharedfiles/filedetails/?id=651056665",
                 Authors = "cylon33",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 898480258u , Status.Compatible   }, // Camera Positions Utility
-                    { 844180955u , Status.Incompatible }, // City Drive
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom
-                    { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
-                    { 410227672u , Status.Incompatible }, // Farther Zoom
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 406297458u , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 898480258uL , Status.Compatible   }, // Camera Positions Utility
+                    { 844180955uL , Status.Incompatible }, // City Drive
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
+                    { 410610814uL , Status.Incompatible }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Incompatible }, // Farther Zoom
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 406297458uL , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
                 },
-                ContinuationOf = 411016892u, // Enhanced Zoom
+                ContinuationOf = 411016892uL, // Enhanced Zoom
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // broke by game update years ago
@@ -338,29 +358,29 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable
                       | ItemFlags.SourceOudated, // git repo removed
                 Published = WorkshopDate("23 Mar, 2016"),
-                ReplaceWith = 1406625743u, // EnhancedZoomContinued
+                ReplaceWith = 1406625743uL, // EnhancedZoomContinued
                 SourceURL = "https://github.com/vukivan/EnhancedZoomContinued",
                 Updated = WorkshopDate("12 Dec, 2016"),
             });
 
-            AddMod(new Review(411016892u, "Enhanced Zoom") {
+            AddMod(new Review(411016892uL, "Enhanced Zoom") {
                 Affect = Factor.Camera,
                 ArchiveURL = "https://web.archive.org/web/20150325043452/https://steamcommunity.com/sharedfiles/filedetails/?id=411016892",
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 898480258u , Status.Incompatible }, // Camera Positions Utility
-                    { 844180955u , Status.Incompatible }, // City Drive
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
-                    { 602077938u , Status.Compatible   }, // TotalyFree Camera
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom
-                    { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
-                    { 410227672u , Status.Incompatible }, // Farther Zoom
-                    { 409359952u , Status.Incompatible }, // Isometric Camera
-                    { 406297458u , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 898480258uL , Status.Incompatible }, // Camera Positions Utility
+                    { 844180955uL , Status.Incompatible }, // City Drive
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 602077938uL , Status.Compatible   }, // TotalyFree Camera
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
+                    { 410610814uL , Status.Incompatible }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Incompatible }, // Farther Zoom
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera
+                    { 406297458uL , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
                 },
-                ContinuationOf = 410610814u, // Farther Zoom (full zoom in)
+                ContinuationOf = 410610814uL, // Farther Zoom (full zoom in)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // broke by game update years ago
@@ -368,25 +388,25 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer version available
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("24 Mar, 2015"),
-                ReplaceWith = 1406625743u, // EnhancedZoomContinued
+                ReplaceWith = 1406625743uL, // EnhancedZoomContinued
                 Updated = WorkshopDate("26 Sep, 2015"),
             });
 
             // found via wayback machine looking at h_e's profile
-            AddMod(new Review(410610814u, "Farther Zoom (full zoom in)") {
+            AddMod(new Review(410610814uL, "Farther Zoom (full zoom in)") {
                 Affect = Factor.Camera,
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1756089251u, Status.Incompatible }, // Zoom It!
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
-                    { 602077938u , Status.Incompatible }, // TotalyFree Camera
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom
-                    { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
-                    { 410227672u , Status.Incompatible }, // Farther Zoom
+                    { 1756089251uL, Status.Incompatible }, // Zoom It!
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 602077938uL , Status.Incompatible }, // TotalyFree Camera
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
+                    { 410610814uL , Status.Incompatible }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Incompatible }, // Farther Zoom
                 },
-                ContinuationOf = 410227672u, // Farther Zoom
+                ContinuationOf = 410227672uL, // Farther Zoom
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // broke by game update years ago
@@ -394,54 +414,54 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer version available
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("19 Mar, 2015"), // from comments on 410227672u
-                ReplaceWith = 1756089251u, // Zoom It!
-                SuppressArchiveWarning = true,
+                ReplaceWith = 1756089251uL, // Zoom It!
+                Suppress = Warning.MissingArchiveURL,
                 Updated = WorkshopDate("19 Mar, 2015"), // guesstimate
             });
 
-            AddMod(new Review(410227672u, "Farther Zoom") {
+            AddMod(new Review(410227672uL, "Farther Zoom") {
                 Affect = Factor.Camera,
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1756089251u, Status.Incompatible }, // Zoom It!
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
-                    { 602077938u , Status.Incompatible }, // TotalyFree Camera
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom
-                    { 410610814u , Status.Incompatible }, // Farther Zoom (full zoom in)
-                    { 410227672u , Status.Incompatible }, // Farther Zoom
+                    { 1756089251uL, Status.Incompatible }, // Zoom It!
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 602077938uL , Status.Incompatible }, // TotalyFree Camera
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
+                    { 410610814uL , Status.Incompatible }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Incompatible }, // Farther Zoom
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("19 Mar, 2015"),
-                ReplaceWith = 1756089251u, // Zoom It!
+                ReplaceWith = 1756089251uL, // Zoom It!
                 Updated = WorkshopDate("19 Mar, 2015"),
             });
 
             // discovered via: https://steamcommunity.com/workshop/filedetails/discussion/410329674/611701360830851903/
-            AddMod(new Review(409359952u, "Isometric Camera") {
+            AddMod(new Review(409359952uL, "Isometric Camera") {
                 Affect = Factor.Rendering,
                 ArchiveURL = "https://web.archive.org/web/20150415004447/http://steamcommunity.com/sharedfiles/filedetails/?id=409359952",
                 Authors = "Ulysius",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1870740367u, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
-                    { 1794015399u, Status.Incompatible }, // Render It!
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 1138510774u, Status.Incompatible }, // PostProcessFX - Multi-platform
-                    { 934825735u , Status.Incompatible }, // Ambient Occlusion (TBP)
-                    { 933513277u , Status.Incompatible }, // Sun Shafts (current)
-                    { 812713438u , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom
-                    { 410805639u , Status.Compatible   }, // Sun Shafts (old)
-                    { 410329674u , Status.Incompatible }, // Ambient Occlusion (orig)
-                    { 410196151u , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
-                    { 409359952u , Status.Incompatible }, // Isometric Camera (orig)
-                    { 408648436u , Status.Compatible   }, // More Options
-                    { 406629464u , Status.Compatible   }, // Dynamic Resolution (old)
+                    { 1870740367uL, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
+                    { 1794015399uL, Status.Incompatible }, // Render It!
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 1138510774uL, Status.Incompatible }, // PostProcessFX - Multi-platform
+                    { 934825735uL , Status.Incompatible }, // Ambient Occlusion (TBP)
+                    { 933513277uL , Status.Incompatible }, // Sun Shafts (current)
+                    { 812713438uL , Status.Incompatible }, // Dynamic Resolution (Fixed for 1.9!)
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
+                    { 410805639uL , Status.Compatible   }, // Sun Shafts (old)
+                    { 410329674uL , Status.Incompatible }, // Ambient Occlusion (orig)
+                    { 410196151uL , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
+                    { 409359952uL , Status.Incompatible }, // Isometric Camera (orig)
+                    { 408648436uL , Status.Compatible   }, // More Options
+                    { 406629464uL , Status.Compatible   }, // Dynamic Resolution (old)
 
                     // todo: incompatible with first person cameras
                 },
@@ -457,7 +477,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("23 Mar, 2015"), // WBM shows 11 updates, but steam did not show updated date back then
             });
 
-            AddMod(new Review(406940119u, "Camera Buttons") {
+            AddMod(new Review(406940119uL, "Camera Buttons") {
                 Affect = Factor.UI,
                 ArchiveURL = "https://web.archive.org/web/20150329012553/http://steamcommunity.com/profiles/76561198179273381/myworkshopfiles/?appid=255710",
                 Authors = "brittany",
@@ -473,15 +493,15 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("8 Apr, 2015"), // guessing based on other mods by same author
             });
 
-            AddMod(new Review(406297458u, "Camera Additions (Rightclick scroll & save camera positions)") {
+            AddMod(new Review(406297458uL, "Camera Additions (Rightclick scroll & save camera positions)") {
                 Affect = Factor.Camera,
                 Authors = "WalrusPug",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1406625743u, Status.Incompatible }, // EnhancedZoomContinued
-                    { 898480258u , Status.Incompatible }, // Camera Positions Utility
-                    { 651056665u , Status.Incompatible }, // Enhanced Zoom Continued
-                    { 411016892u , Status.Incompatible }, // Enhanced Zoom
+                    { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 898480258uL , Status.Incompatible }, // Camera Positions Utility
+                    { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
+                    { 411016892uL , Status.Incompatible }, // Enhanced Zoom
                 },
                 CompatibleWith = GameVersion.Patch_1_10_1_f3,
                 Flags = ItemFlags.Abandonware
@@ -494,16 +514,16 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Scrolling sensitivity controlled by game options 'Edge Scrolling Sensitivity' slider." },
                 },
                 Published = WorkshopDate("11 Mar, 2015"),
-                ReplaceWith = 898480258u, // Camera Positions Utility
+                ReplaceWith = 898480258uL, // Camera Positions Utility
                 Updated = WorkshopDate("18 Mar, 2015"),
             });
 
-            AddMod(new Review(406326408u, "HideUI") {
+            AddMod(new Review(406326408uL, "HideUI") {
                 Affect = Factor.Camera,
                 Authors = "nlight",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 406255342u , Status.Compatible  }, // First-person camera
+                    { 406255342uL , Status.Compatible  }, // First-person camera
                 },
                 CompatibleWith = GameVersion.MassTransit,
                 Flags = ItemFlags.Abandonware
@@ -518,18 +538,18 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("8 Apr, 2015"),
             });
 
-            AddMod(new Review(406255342u, "First-person camera") {
+            AddMod(new Review(406255342uL, "First-person camera") {
                 Affect = Factor.Camera,
                 Authors = "nlight",
                 BrokenBy = GameVersion.Snowfall,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1492317158u, Status.Incompatible }, // 第一人称视角
-                    { 1317859996u, Status.Incompatible }, // 650805785 First Person Camera_ Updated
-                    { 844180955u , Status.Incompatible }, // City Drive
-                    { 650805785u , Status.Incompatible }, // First Person Camera: Updated
-                    { 406326408u , Status.Compatible   }, // HideUI
-                    { 406255342u , Status.Incompatible }, // First-person camera
+                    { 1492317158uL, Status.Incompatible }, // 第一人称视角
+                    { 1317859996uL, Status.Incompatible }, // 650805785 First Person Camera_ Updated
+                    { 844180955uL , Status.Incompatible }, // City Drive
+                    { 650805785uL , Status.Incompatible }, // First Person Camera: Updated
+                    { 406326408uL , Status.Compatible   }, // HideUI
+                    { 406255342uL , Status.Incompatible }, // First-person camera
                 },
                 CompatibleWith = GameVersion.AfterDark,
                 Flags = ItemFlags.Abandonware
@@ -540,7 +560,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // Many users not able to exit from fp cam view (Esc not working)
                 Published = WorkshopDate("11 Mar, 2015"),
-                ReplaceWith = 650805785u, // First Person Camera: Updated
+                ReplaceWith = 650805785uL, // First Person Camera: Updated
                 ReleasedDuring = GameVersion.EuropeBiome,
                 SourceURL = "https://github.com/AlexanderDzhoganov/Skylines-FPSCamera/",
                 Updated = WorkshopDate("7 Apr, 2015"),

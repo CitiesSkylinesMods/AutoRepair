@@ -96,7 +96,6 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2033714682u, Status.Compatible   }, // Tree and Vehicle Props
                     { 1442713872u, Status.MinorIssues  }, // Detail http://proceduralobjects.shoutwiki.com/wiki/Known_Issues
-                    { 1383456057u, Status.Incompatible }, // Shicho
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable,

@@ -18,7 +18,7 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Editor";
 
-            AddMod(new Review(2060128290u, "Feature: No Binary") {
+            AddMod(new Review(2060128290uL, "Feature: No Binary") {
                 Affect = Factor.Other,
                 Authors = "Elektrix",
                 Catalog = catalog,
@@ -32,7 +32,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: move to editor cat
-            AddMod(new Review(1845697704u, "Network Dump Tools") {
+            AddMod(new Review(1845697704uL, "Network Dump Tools") {
                 Affect = Factor.Textures,
                 Authors = "Cgameworld",
                 Catalog = catalog,
@@ -50,14 +50,15 @@ namespace AutoRepair.Catalogs {
             });
 
             // todo: move to converter cat?
-            AddMod(new Review(1552053911u, "TrailerVariation Loader") {
+            AddMod(new Review(1552053911uL, "TrailerVariation Loader") {
                 Affect = Factor.Vehicles,
                 Authors = "Acc3ss Violation",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 800820816u, Status.Recommended }, // Extended Asset Editor 0.4.11
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 800820816uL , Status.Recommended  }, // Extended Asset Editor 0.4.11
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
@@ -72,7 +73,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("30 Oct, 2018"),
             });
 
-            AddMod(new Review(1518485094u, "Mesh Import Rotation Tangents Fix") {
+            AddMod(new Review(1518485094uL, "Mesh Import Rotation Tangents Fix") {
                 Affect = Factor.Other,
                 Authors = "egi, Ronyx69",
                 Catalog = catalog,
@@ -82,14 +83,14 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users: This mod is for content creation; if you don't use asset editor, you don't need this mod." },
-                    { NOTE, "Asset creators, see: http://cslmodding.info/normal-maps" },
+                    { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
+                    { NOTE, "(Asset creators) See: http://cslmodding.info/normal-maps" },
                 },
                 Published = WorkshopDate("21 Sep, 2018"),
                 Updated = WorkshopDate("21 Sep, 2018"),
             });
 
-            AddMod(new Review(1406275125u, "Asset DLC flags Editor") {
+            AddMod(new Review(1406275125uL, "Asset DLC flags Editor") {
                 Affect = Factor.Other,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
@@ -99,13 +100,13 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users: This mod is for content creation; if you don't use asset editor, you don't need this mod." },
+                    { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                 },
                 Published = WorkshopDate("8 Jun, 2018"),
                 Updated = WorkshopDate("3 Aug, 2019"),
             });
 
-            AddMod(new Review(1393831156u, "Sub Mesh Flags") {
+            AddMod(new Review(1393831156uL, "Sub Mesh Flags") {
                 Affect = Factor.Other,
                 Authors = "TP​​​B",
                 Catalog = catalog,
@@ -115,15 +116,15 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "If this is working, please let aubergine18 know on mod compatbility checker workshop page." },
-                    { NOTE, "Users: This mod is for content creation; if you don't use asset editor, you don't need this mod." },
-                    { NOTE, "Asset creators: See important note in workshop description: https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156u" },
+                    { NOTE, "If this is working, please let aubergine18 know on mod compatibility checker workshop page." },
+                    { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
+                    { NOTE, "(Asset creators) Read workshop description: https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156u" },
                 },
                 Published = WorkshopDate("25 May, 2018"),
                 Updated = WorkshopDate("25 May, 2018"),
             });
 
-            AddMod(new Review(1364044386u, "Theme Editor Maps") {
+            AddMod(new Review(1364044386uL, "Theme Editor Maps") {
                 Affect = Factor.MapThemes
                        | Factor.Textures,
                 Authors = "TPB",
@@ -134,14 +135,14 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users: This mod is for content creation; if you don't use asset editor, you don't need this mod." },
+                    { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                 },
                 Published = WorkshopDate("17 Apr, 2018"),
                 SourceURL = "https://github.com/TPBCS/ThemeEditorMaps",
                 Updated = WorkshopDate("24 May, 2018"),
             });
 
-            AddMod(new Review(1361644472u, "Precise Prop Positioning for Asset Creators") {
+            AddMod(new Review(1361644472uL, "Precise Prop Positioning for Asset Creators") {
                 Affect = Factor.Props,
                 Authors = "TPB",
                 Catalog = catalog,
@@ -151,14 +152,14 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users: This mod is for content creation; if you don't use asset editor, you don't need this mod." },
+                    { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                 },
                 Published = WorkshopDate("15 Apr, 2018"),
                 Updated = WorkshopDate("15 Apr, 2018"),
             });
 
             // not really editor mod, but is designed for creators
-            AddMod(new Review(1122189715u, "Realtime") {
+            AddMod(new Review(1122189715uL, "Realtime") {
                 Affect = Factor.Textures,
                 Authors = "Ronyx69, Simon Ryr",
                 Catalog = catalog,
@@ -169,15 +170,15 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users: This mod assists with content creation; if you don't create content, you probably don't need this mod." },
-                    { NOTE, "Asset creators, don't make your assets too bright: https://steamcommunity.com/workshop/filedetails/?id=1586722178" },
+                    { NOTE, "(Users) This mod assists with content creation; if you don't create content, you probably don't need this mod." },
+                    { NOTE, "(Asset creators) Don't make your assets too bright: https://steamcommunity.com/workshop/filedetails/?id=1586722178" },
                 },
                 Published = WorkshopDate("28 Aug, 2017"),
                 SourceURL = "https://gist.github.com/ronyx69/280e5695b3caeac7ef8b356cc36e0a7c",
                 Updated = WorkshopDate("28 Aug, 2017"),
             });
 
-            AddMod(new Review(954067599u, "PropRotating Params") {
+            AddMod(new Review(954067599uL, "PropRotating Params") {
                 Affect = Factor.Props,
                 Authors = "Ronyx69",
                 Catalog = catalog,
@@ -189,14 +190,14 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users: If a prop lists this mod as requirement, you should still use it." },
-                    { NOTE, "Asset authors, use this instead: https://cslmodding.info/shader/proprotating/" },
+                    { NOTE, "(Users) Some props require this mod to function properly." },
+                    { NOTE, "(Asset creators) Use this instead: https://cslmodding.info/shader/proprotating/" },
                 },
                 Published = WorkshopDate("24 Jun, 2017"),
                 Updated = WorkshopDate("24 Sep, 2018"),
             });
 
-            AddMod(new Review(881161181u, "More Asset Tags") {
+            AddMod(new Review(881161181uL, "More Asset Tags") {
                 Affect = Factor.UI,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,

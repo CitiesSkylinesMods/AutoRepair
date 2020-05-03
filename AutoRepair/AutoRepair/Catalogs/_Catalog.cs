@@ -174,8 +174,8 @@ namespace AutoRepair.Catalogs {
             // to help track down which item is failing:
             // uncomment following and edit catalog if you are getting duplicate key errors
             /*
-            if (item.Catalog == "Unlockers") {
-                Log.Info($"# {item.WorkshopName}");
+            if (review.Catalog == "Balance") {
+                Log.Info($"# {review.WorkshopName}");
             }
             /**/
 
@@ -424,6 +424,17 @@ namespace AutoRepair.Catalogs {
                     item.Locale);
             }
 
+            // older replacement check
+            if (!item.Suppresses(Warning.OlderReplacement)
+                && item.WorkshopId > item.ReplaceWith // older item
+                && item.ReplaceWith > 1000 // that isn't vanilla
+            ) {
+                basicProblems = true;
+                itemLog.AppendFormat(
+                    "- Caution: ReplaceWith is older: {0}uL\n",
+                    item.ReplaceWith);
+            }
+
             // todo: check for unrecognised locales in Languages list if present
 
             // check ReplaceWith - in catalog? recursive? unsquised chain?
@@ -431,8 +442,7 @@ namespace AutoRepair.Catalogs {
             ulong nextTarget = target.ReplaceWith;
             List<ulong> chain = new List<ulong>() { nextTarget };
             bool recursion = false;
-
-            bool debug = false; //  item.WorkshopId == 1393966192u;
+            bool debug = false; // eg: item.WorkshopId == 1393966192u;
 
             if (debug) {
                 itemLog.Append($" Debugging...\n");
@@ -442,17 +452,6 @@ namespace AutoRepair.Catalogs {
 
                 if (debug) {
                     itemLog.Append($" Debug: nextTarget = {nextTarget}\n");
-                }
-
-                if (!target.SuppressOlderReplacementWarning &&
-                    nextTarget > 1000 && // ie. not a vanilla mod
-                    nextTarget < item.WorkshopId && // older replacement
-                    item.CloneOf == 0uL) // and not a clone
-                {
-                    basicProblems = true;
-                    itemLog.AppendFormat(
-                        "- Caution: ReplaceWith is older mod: {0}uL\n",
-                        nextTarget);
                 }
 
                 if (Has(nextTarget)) {

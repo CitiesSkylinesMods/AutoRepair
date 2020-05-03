@@ -18,48 +18,51 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Disasters";
 
-            AddMod(new Review(1801953480u, "Natural Disasters Overhaul") {
+            AddMod(new Review(1801953480uL, "Natural Disasters Overhaul") {
                 Affect = Factor.Disasters
                        | Factor.Environment,
                 Authors = "Zenya",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1420955187u, Status.MinorIssues  }, // Real Time (causes excessive thunderstorms)
-                    { 1749971558u, Status.MinorIssues  }, // Real Time Offline (ditto)
+                    { 1420955187uL, Status.MinorIssues  }, // Real Time (causes excessive thunderstorms)
+                    { 1749971558uL, Status.MinorIssues  }, // Real Time Offline (ditto)
                     // other disaster mods:
-                    { 1499486217u, Status.Unknown      }, // Ragnarok EXTREME EDITION
-                    { 811352708u , Status.Unknown      }, // Ragnarok - More disaster controls
+                    { 1499486217uL, Status.Unknown      }, // Ragnarok EXTREME EDITION
+                    { 811352708uL , Status.Unknown      }, // Ragnarok - More disaster controls
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { 1420955187u, "[Mod: Real Time] Slower time rate results in excessive number of thunderstorms." },
+                    { 1420955187uL, "[Mod: Real Time] Slower time rate results in excessive number of thunderstorms." },
                 },
+                Published = WorkshopDate("13 Jul, 2019"),
                 RequiredDLC = DLCs.NaturalDisasters,
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Enhanced-Disasters",
+                Updated = WorkshopDate("22 Aug, 2019"),
             });
 
-            AddMod(new Review(1499486217u, "Ragnarok EXTREME EDITION") {
+            AddMod(new Review(1499486217uL, "Ragnarok EXTREME EDITION") {
                 Affect = Factor.Disasters
                        | Factor.Environment,
                 Authors = "SpikeViper",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1801953480u, Status.Unknown      }, // Natural Disasters Overhaul
-                    { 1499486217u, Status.Incompatible }, // Ragnarok EXTREME EDITION
-                    { 811352708u , Status.Incompatible }, // Ragnarok - More disaster controls
+                    { 1801953480uL, Status.Unknown      }, // Natural Disasters Overhaul
+                    { 1499486217uL, Status.Incompatible }, // Ragnarok EXTREME EDITION
+                    { 811352708uL , Status.Incompatible }, // Ragnarok - More disaster controls
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
-                ContinuationOf = 811352708u, // Ragnarok - More disaster controls
+                ContinuationOf = 811352708uL, // Ragnarok - More disaster controls
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // many users saying it doesn't work or is broken
                 Published = WorkshopDate("1 Sep, 2018"),
-                ReplaceWith = 811352708u, // Ragnarok - More disaster controls
-                SuppressOlderReplacementWarning = true,
+                ReplaceWith = 811352708uL, // Ragnarok - More disaster controls
+                RequiredDLC = DLCs.NaturalDisasters,
+                Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("2 Sep, 2018"),
             });
 
-            AddMod(new Review(912484109u, "Flood Damage Control [BETA]") {
+            AddMod(new Review(912484109uL, "Flood Damage Control [BETA]") {
                 Affect = Factor.Disasters,
                 Authors = "TPB",
                 Catalog = catalog,
@@ -72,24 +75,42 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("2 May, 2017"),
             });
 
-            AddMod(new Review(811352708u, "Ragnarok - More disaster controls") {
+            AddMod(new Review(811352708uL, "Ragnarok - More disaster controls") {
                 Affect = Factor.Disasters
                        | Factor.Environment,
                 Authors = "Asser", // formerly sexyfishhorse
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1801953480u, Status.Unknown      }, // Natural Disasters Overhaul
-                    { 1499486217u, Status.Incompatible }, // Ragnarok EXTREME EDITION
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 811352708u , Status.Incompatible }, // Ragnarok - More disaster controls
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1801953480uL, Status.Unknown      }, // Natural Disasters Overhaul
+                    { 1499486217uL, Status.Incompatible }, // Ragnarok EXTREME EDITION
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 811352708uL , Status.Incompatible }, // Ragnarok - More disaster controls
                     // based on mod called 'LessRandomDisasters' (can't find it in workshop) https://github.com/yenyang/lessRandomDisasters
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 Published = WorkshopDate("3 Dec, 2016"),
+                RequiredDLC = DLCs.NaturalDisasters,
                 SourceURL = "https://github.com/SexyFishHorse/CitiesSkylines-Ragnarok",
                 Updated = WorkshopDate("1 Nov, 2018"),
+            });
+
+            AddMod(new Review(823348129uL, "Disasters Enabler") {
+                Affect = Factor.Disasters
+                       | Factor.Environment,
+                Authors = "Zenya",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1237383751uL, Status.MinorIssues  }, // Extended Game Options
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Published = WorkshopDate("22 Dec, 2016"),
+                RequiredDLC = DLCs.NaturalDisasters,
+                SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Disasters-Enabler-Mod",
+                Updated = WorkshopDate("25 Dec, 2016"),
             });
         }
     }

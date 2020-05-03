@@ -65,6 +65,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             // looks like yet another clone, waiting for feedback from author
@@ -79,6 +80,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             // waiting for response from author, currently assuming _yet another clone_
@@ -93,6 +95,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             // Struggled to get any meaningful info from author, assuming clone
@@ -107,6 +110,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             AddMod(new Review(2000408250u, "CSM") {
@@ -121,7 +125,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // removed on or around 12/Mar/2020
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
-                SuppressArchiveWarning = true,
+                Suppress = Warning.MissingArchiveURL | Warning.OlderReplacement,
             });
 
             AddMod(new Review(1985701540u, "CSM") {
@@ -135,6 +139,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             AddMod(new Review(1841616225u, "CSM") {
@@ -149,6 +154,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // 1558438291u has since been updated
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             AddMod(new Review(1731754018u, "CSM") {
@@ -163,6 +169,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // 1558438291u has since been updated
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             AddMod(new Review(1598623776u, "CSM - CitySkyline Multiplayer") {
@@ -177,6 +184,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // 1558438291u has since been updated
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             AddMod(new Review(1598622569u, "CSM - CitySkyline Multiplayer") {
@@ -191,6 +199,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // 1558438291u has since been updated
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             AddMod(new Review(1598621063u, "CSM - CitySkyline Multiplayer") {
@@ -205,6 +214,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // 1558438291u has since been updated
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1558438291u, // Cities: Skylines Multiplayer (CSM) [Beta]
+                Suppress = Warning.OlderReplacement,
             });
 
             AddMod(new Review(1556669944u, "CSM") {

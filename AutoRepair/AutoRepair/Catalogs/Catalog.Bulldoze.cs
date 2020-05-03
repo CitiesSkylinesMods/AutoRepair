@@ -18,25 +18,25 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Bulldoze";
 
-            AddMod(new Review(2057780822u, "Automatic Bulldoze v3") {
+            AddMod(new Review(2057780822uL, "Automatic Bulldoze v3") {
                 Affect = Factor.Bulldoze,
                 Authors = "live627",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 639486063u, // Automatic Bulldoze v2
+                ContinuationOf = 639486063uL, // Automatic Bulldoze v2
                 Flags = ItemFlags.SourceUnavailable,
                 Languages = new[] { "en", "ru", "es", "de", "fr", "pt", "zh" },
                 Locale = "en",
@@ -47,24 +47,26 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("12 Apr, 2020"),
             });
 
-            AddMod(new Review(1656549865u, "Rebuild It!") {
-                Affect = Factor.Bulldoze, // well, not really, but only affect that seems remotely relevant
+            AddMod(new Review(1656549865uL, "Rebuild It!") {
+                Affect = Factor.Bulldoze
+                       | Factor.Construction,
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Recommended  }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Recommended  }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -73,49 +75,50 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("13 Oct, 2019"),
             });
 
-            AddMod(new Review(1628521230u, "Bulldoze Everything *Campus Compatible*") {
+            AddMod(new Review(1628521230uL, "Bulldoze Everything *Campus Compatible*") {
                 Affect = Factor.Bulldoze,
                 Authors = "THE CHOSEN ONE[FIN]",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.Campus,
-                ContinuationOf = 1507233911u, // Automatic Bulldoze *Campus Compatible*
+                ContinuationOf = 1507233911uL, // Automatic Bulldoze *Campus Compatible*
                 Flags = ItemFlags.SourceAvailable,
                 Published = WorkshopDate("18 Jan, 2019"),
                 SourceURL = "https://github.com/yakka34/AutomaticBulldoze",
                 Updated = WorkshopDate("18 Jan, 2019"),
             });
 
-            AddMod(new Review(1627986403u, "Bulldoze It!") {
+            AddMod(new Review(1627986403uL, "Bulldoze It!") {
                 Affect = Factor.Bulldoze,
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Recommended  }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1440928803u, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138u, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Recommended  }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -124,22 +127,22 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("19 Feb, 2019"),
             });
 
-            AddMod(new Review(1507233911u, "Automatic Bulldoze *Campus Compatible*") {
+            AddMod(new Review(1507233911uL, "Automatic Bulldoze *Campus Compatible*") {
                 Affect = Factor.Bulldoze,
                 Authors = "THE CHOSEN ONE[FIN]",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable,
@@ -156,51 +159,52 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
-            AddMod(new Review(1894296637u, "Bulldoze It! 汉化版") {
+            AddMod(new Review(1894296637uL, "Bulldoze It! 汉化版") {
                 Affect = Factor.Bulldoze,
                 Authors = "Catnip.",
                 Catalog = catalog,
-                CloneOf = 1627986403u, // Bulldoze It!
+                CloneOf = 1627986403uL, // Bulldoze It!
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
                 Published = WorkshopDate("20 Oct, 2019"),
-                ReplaceWith = 1627986403u, // Bulldoze It!
+                ReplaceWith = 1627986403uL, // Bulldoze It!
+                Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("20 Oct, 2019"),
             });
 
-            AddMod(new Review(1875698406u, "406132323") {
+            AddMod(new Review(1875698406uL, "406132323") {
                 Affect = Factor.Bulldoze,
                 Authors = "Aliliang",
-                BrokenBy = GameVersion.NaturalDisasters,
+                BrokenBy = GameVersion.NaturalDisasters, // author uploaded already-broken mod to workshop lol
                 Catalog = catalog,
-                CloneOf = 406132323u, // Automatic Bulldoze
+                CloneOf = 406132323uL, // Automatic Bulldoze
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.Snowfall,
                 Flags = ItemFlags.Abandonware
@@ -210,53 +214,53 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer versions available
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("29 Sep, 2019"),
-                ReplaceWith = 2057780822u, // Automatic Bulldoze v3
-                SuppressVersionWarnings = true, // author uploaded already-broken mod to workshop lol
+                ReplaceWith = 2057780822uL, // Automatic Bulldoze v3
+                Suppress = Warning.InvalidVersionSequence,
                 Updated = WorkshopDate("29 Sep, 2019"),
             });
 
-            AddMod(new Review(1759514242u, "639486063 Automatic Bulldoze v2") {
+            AddMod(new Review(1759514242uL, "639486063 Automatic Bulldoze v2") {
                 Affect = Factor.Bulldoze,
                 Authors = "☯Quebec ツ",
                 Catalog = catalog,
-                CloneOf = 639486063u, // Automatic Bulldoze v2
+                CloneOf = 639486063uL, // Automatic Bulldoze v2
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("3 Jun, 2019"),
-                ReplaceWith = 2057780822u, // Automatic Bulldoze v3
+                ReplaceWith = 2057780822uL, // Automatic Bulldoze v3
                 Updated = WorkshopDate("3 Jun, 2019"),
             });
 
-            AddMod(new Review(1393966192u, "Automatic Bulldoze Simple Edition v1.1.3") {
+            AddMod(new Review(1393966192uL, "Automatic Bulldoze Simple Edition v1.1.3") {
                 Affect = Factor.Bulldoze,
                 Authors = "MaZy",
                 BrokenBy = new System.Version(1, 11, 1), // Holiday Surprise Patch (lol!!)
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.Industries,
                 Flags = ItemFlags.Abandonware
@@ -265,30 +269,30 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.SourceUnavailable, // null reference errors for lots of users
                 Published = WorkshopDate("25 May, 2018"),
-                ReplaceWith = 1507233911u, // Automatic Bulldoze * Campus Compatible *
+                ReplaceWith = 1507233911uL, // Automatic Bulldoze * Campus Compatible *
                 Updated = WorkshopDate("9 Jun, 2018"),
             });
 
-            AddMod(new Review(639486063u, "Automatic Bulldoze v2") {
+            AddMod(new Review(639486063uL, "Automatic Bulldoze v2") {
                 Affect = Factor.Bulldoze,
                 Authors = "mexahuk",
                 BrokenBy = GameVersion.Campus,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.Industries,
-                ContinuationOf = 406132323u, // Automatic Bulldoze
+                ContinuationOf = 406132323uL, // Automatic Bulldoze
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Localised
                       | ItemFlags.SourceAvailable
@@ -299,18 +303,18 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Seems to have stopped working for many users since Campus update" },
                 },
                 Published = WorkshopDate("6 Mar, 2016"),
-                ReplaceWith = 2057780822u, // Automatic Bulldoze v3
+                ReplaceWith = 2057780822uL, // Automatic Bulldoze v3
                 SourceURL = "https://github.com/YuryScherbakov/AutomaticBulldozeV2",
                 Updated = WorkshopDate("10 Jun, 2017"),
             });
 
-            AddMod(new Review(503147777u, "Moledozer") {
+            AddMod(new Review(503147777uL, "Moledozer") {
                 Affect = Factor.Bulldoze,
                 Authors = "fadster",
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1619685021u, Status.Compatible }, // Move It! (current stable)
+                    { 1619685021uL, Status.Compatible }, // Move It! (current stable)
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
@@ -324,28 +328,28 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Try 'Move It!' mod which has filterable marquee selection for its bulldoze tool." },
                 },
                 Published = WorkshopDate("20 Aug, 2015"),
-                ReplaceWith = 1619685021u, // Move It
+                ReplaceWith = 1619685021uL, // Move It
                 SourceURL = "https://github.com/fadster/Moledozer",
                 Updated = WorkshopDate("20 Aug, 2015"),
             });
 
-            AddMod(new Review(406132323u, "Automatic Bulldoze") {
+            AddMod(new Review(406132323uL, "Automatic Bulldoze") {
                 Affect = Factor.Bulldoze,
                 Authors = "Sadler",
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2057780822u, Status.Incompatible }, // Automatic Bulldoze v3
-                    { 1894296637u, Status.Incompatible }, // Bulldoze It! 汉化版
-                    { 1875698406u, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
-                    { 1759514242u, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
-                    { 1656549865u, Status.Incompatible }, // Rebuild It!
-                    { 1628521230u, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
-                    { 1627986403u, Status.Incompatible }, // Bulldoze It!
-                    { 1507233911u, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
-                    { 1393966192u, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
-                    { 639486063u , Status.Incompatible }, // Automatic Bulldoze v2
-                    { 406132323u , Status.Incompatible }, // Automatic Bulldoze
+                    { 2057780822uL, Status.Incompatible }, // Automatic Bulldoze v3
+                    { 1894296637uL, Status.Incompatible }, // Bulldoze It! 汉化版
+                    { 1875698406uL, Status.Incompatible }, // 406132323 (Automatic Bulldoze)
+                    { 1759514242uL, Status.Incompatible }, // 639486063 Automatic Bulldoze v2
+                    { 1656549865uL, Status.Incompatible }, // Rebuild It!
+                    { 1628521230uL, Status.Incompatible }, // Bulldoze Everything *Campus Compatible*
+                    { 1627986403uL, Status.Incompatible }, // Bulldoze It!
+                    { 1507233911uL, Status.Incompatible }, // Automatic Bulldoze *Campus Compatible*
+                    { 1393966192uL, Status.Incompatible }, // Automatic Bulldoze Simple Edition v1.1.3
+                    { 639486063uL , Status.Incompatible }, // Automatic Bulldoze v2
+                    { 406132323uL , Status.Incompatible }, // Automatic Bulldoze
                 },
                 CompatibleWith = GameVersion.Snowfall,
                 Flags = ItemFlags.Abandonware
@@ -355,7 +359,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer versions available
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("11 Mar, 2015"),
-                ReplaceWith = 2057780822u, // Automatic Bulldoze v3
+                ReplaceWith = 2057780822uL, // Automatic Bulldoze v3
                 Updated = WorkshopDate("22 Mar, 2015"),
             });
         }

@@ -28,16 +28,81 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
-            AddMod(new Review(1649747813, "No Reverb Mod") {
+            AddMod(new Review(1649747813uL, "No Reverb Mod") {
                 Affect = Factor.Audio,
                 Authors = "Acc3ss Violation",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 815103125u, Status.Incompatible }, // Extra Vehicle Effects (has same feature)
+                    { 815103125uL , Status.Incompatible }, // Extra Vehicle Effects (has same feature)
                 },
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://gist.github.com/Acc3ssViolation/67c8b829db76e0a81c02ee18995abb2c",
                 Tags = new[] { "Audio", "Reverb", "Sounds", "Effects", "Vehicles" },
+            });
+
+            AddMod(new Review(815103125uL, "Extra Vehicle Effects (Plugin for Vehicle Effects Mod)") {
+                Affect = Factor.Audio
+                       | Factor.Rendering
+                       | Factor.Vehicles,
+                Authors = "Thaok",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1999271351uL, Status.MinorIssues  }, // 0xyl0nSoundPackUSA
+                    { 1977435537uL, Status.MinorIssues  }, // OxylonEuroSoundpackSWE
+                    { 1969438995uL, Status.MinorIssues  }, // OxylonEuroSoundpackITA
+                    { 1969435641uL, Status.MinorIssues  }, // OxylonEuroSoundpackFRA
+                    { 1969432061uL, Status.MinorIssues  }, // OxylonEuroSoundpackNED
+                    { 1969428208uL, Status.MinorIssues  }, // OxylonEuroSoundpackAUT
+                    { 1969411916uL, Status.MinorIssues  }, // OxylonEuroSoundpackGER
+                    { 1764439209uL, Status.MinorIssues  }, // DB Announcer
+                    { 1649747813uL, Status.Incompatible }, // No Reverb Mod
+                    { 1636310959uL, Status.MinorIssues  }, // NS Sound Pack for Ambient Sounds Tuner
+                    { 1629745074uL, Status.MinorIssues  }, // ÖBB Sound Pack for Ambient Sounds Tuner
+                    { 1628985258uL, Status.MinorIssues  }, // CFF Sound Pack for Ambient Sounds Tuner
+                    { 1624184698uL, Status.MinorIssues  }, // SBB Sound Pack for Ambient Sounds Tune
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1436056719uL, Status.MinorIssues  }, // Kaguki's Realistic Akihabara Sounds
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 887588790uL , Status.MinorIssues  }, // Japanese Sound MOD
+                    { 818641631uL , Status.MinorIssues  }, // Ambinet Sounds Tuner 2.0
+                    { 815103125uL , Status.Incompatible }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Required     }, // Vehicle Effects 1.9.0
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "(Asset creators) Custom effects: https://steamcommunity.com/workshop/filedetails/discussion/815103125/152391285467044728/" },
+                    { 818641631uL , "[Mod: Ambinet Sounds Tuner] If 'Disable rail service sounds' is selected in 'Extra Vehicle Effects' mod, you won't hear the sounds at station." },
+                },
+                Published = WorkshopDate("9 Dec, 2016"),
+                SourceURL = "https://github.com/Thaok/ExtraVehicleEffects",
+                Updated = WorkshopDate("26 Oct, 2017"),
+            });
+
+            AddMod(new Review(780720853uL, "Vehicle Effects 1.9.0") {
+                Affect = Factor.Audio
+                       | Factor.Rendering
+                       | Factor.Vehicles,
+                Authors = "Acc3ss Violation, Thaok",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1548831935uL, Status.Recommended  }, // Advanced Vehicles Options (reduce accel and braking)
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 815103125uL , Status.Recommended  }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Incompatible }, // Vehicle Effects 1.9.0
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "(Asset creators) Custom sound effects: https://steamcommunity.com/workshop/filedetails/discussion/780720853/1620600279667837781/" },
+                    { NOTE, "(Asset creators) Custom particle effects: https://steamcommunity.com/workshop/filedetails/discussion/780720853/1697167355211924591/" },
+                },
+                Published = WorkshopDate("14 Oct, 2016"),
+                SourceURL = "https://github.com/Acc3ssViolation/VehicleEffects/",
+                Updated = WorkshopDate("25 Apr, 2020"),
             });
 
             /*
@@ -49,14 +114,14 @@ namespace AutoRepair.Catalogs {
             */
 
             // https://drive.google.com/file/d/1ATs9XRlt9oCVOazyqFn5h0S517b7BN1L/view
-            AddMod(new Review(2008325200u, "Vehicle Effects Definition Pack DBAG") {
+            AddMod(new Review(2008325200uL, "Vehicle Effects Definition Pack DBAG") {
                 Affect = Factor.Audio,
                 Authors = "Oxylon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1548831935u, Status.Recommended }, // Advanced Vehicles Options (reduce accel and braking)
-                    { 815103125u , Status.Required    }, // Extra Vehicle Effects
-                    { 780720853u , Status.Required    }, // Vehicle Effects
+                    { 1548831935uL, Status.Recommended }, // Advanced Vehicles Options (reduce accel and braking)
+                    { 815103125uL , Status.Required    }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Required    }, // Vehicle Effects
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
@@ -68,18 +133,18 @@ namespace AutoRepair.Catalogs {
                 },
             });
 
-            AddMod(new Review(1541828679u, "CNSoundPack V0.2.2") {
+            AddMod(new Review(1541828679uL, "CNSoundPack V0.2.2") {
                 Affect = Factor.Audio
                        | Factor.Environment,
                 Authors = "言绥",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1548831935u, Status.Recommended  }, // Advanced Vehicles Options (reduce accel and braking)
-                    { 815103125u , Status.Required     }, // Extra Vehicle Effects
-                    { 780720853u , Status.Required     }, // Vehicle Effects
-                    { 818641631u , Status.Recommended  }, // Ambient Sounds Tuner 2.0
-                    { 455958878u , Status.Incompatible }, // Ambient Sounds Tuner
-                    { 435167188u , Status.Incompatible }, // V10Siren
+                    { 1548831935uL, Status.Recommended  }, // Advanced Vehicles Options (reduce accel and braking)
+                    { 815103125uL , Status.Required     }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Required     }, // Vehicle Effects
+                    { 818641631uL , Status.Recommended  }, // Ambient Sounds Tuner 2.0
+                    { 455958878uL , Status.Incompatible }, // Ambient Sounds Tuner
+                    { 435167188uL , Status.Incompatible }, // V10Siren
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
@@ -130,6 +195,26 @@ namespace AutoRepair.Catalogs {
                 Locale = "en-gb",
                 Published = WorkshopDate("3 Jan, 2017"),
                 Updated = WorkshopDate("3 Jan, 2017"),
+            });
+
+            AddMod(new Review(820681113uL, "Vehicle Effects Definition Pack (NS 2200)") {
+                Affect = Factor.Audio,
+                Authors = "Acc3ss Violation",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 815103125uL , Status.Recommended  }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Required     }, // Vehicle Effects
+                    // supported vehicles:
+                    { 558294131uL , Status.Recommended  }, // NS 2200 Tanker Train
+                    { 553702245uL , Status.Recommended  }, // NS 2200 Passenger Train
+                    { 551161964uL , Status.Recommended  }, // NS 2200 Mixed Cargo
+                    { 549655765uL , Status.Recommended  }, // NS 2200 Coal Train
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SourceUnavailable,
+                Locale = "nl",
+                Published = WorkshopDate("18 Dec, 2016"),
+                Updated = WorkshopDate("18 Dec, 2016"),
             });
         }
     }

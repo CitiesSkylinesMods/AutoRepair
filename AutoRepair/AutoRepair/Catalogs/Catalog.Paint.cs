@@ -104,7 +104,6 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1383456057u, Status.Incompatible }, // Shicho
                     { 576327847u , Status.MinorIssues  }, // 81 Tiles (BP version)
                     { 502750307u , Status.Required     }, // Extra Landscaping Tools
                 },

@@ -38,6 +38,11 @@ namespace AutoRepair.Catalogs {
                     { 1232451940uL, Status.Incompatible }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
                     { 409171141uL , Status.Incompatible }, // Cash on Demand
+
+                    // other:
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 409171141uL, // Cash on Demand
@@ -67,6 +72,11 @@ namespace AutoRepair.Catalogs {
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
+
+                    // other:
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
@@ -123,6 +133,11 @@ namespace AutoRepair.Catalogs {
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
+
+                    // other:
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 ContinuationOf = 1671542319uL, // £2.5 Million Starting Money
                 Flags = ItemFlags.SourceUnavailable,
@@ -149,6 +164,11 @@ namespace AutoRepair.Catalogs {
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
+
+                    // other:
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 Flags = ItemFlags.SourceUnavailable,
             });
@@ -174,6 +194,11 @@ namespace AutoRepair.Catalogs {
                     { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236uL, Status.Compatible   }, // CS-Utils
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+
+                    // other:
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
                 ContinuationOf = 409171141uL, // Cash on Demand
                 Flags = ItemFlags.SourceUnavailable,
@@ -261,6 +286,7 @@ namespace AutoRepair.Catalogs {
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
 
                     // other:
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                 },
