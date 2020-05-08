@@ -194,6 +194,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1899943042uL, Status.Incompatible }, // No Scaffolding Animation (changes same code)
                     { 1806881627uL, Status.Unknown      }, // Altering History Fix
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1658773932uL, Status.MinorIssues  }, // Historical Districts
@@ -253,6 +254,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "yole.karif",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                 },
                 CompatibleWith = GameVersion.Campus,

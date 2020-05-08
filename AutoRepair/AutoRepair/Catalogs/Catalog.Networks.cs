@@ -35,6 +35,7 @@ namespace AutoRepair.Catalogs {
                     { 1604291910uL, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1348361731uL, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 950807008uL , Status.Incompatible }, // Network Extensions 2 Fix
                     { 812125426uL , Status.Incompatible }, // Network Extensions 2
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
@@ -76,8 +77,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.ParadoxLauncher,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Published = WorkshopDate("4 Jan, 2020"),
                 SourceURL = "https://github.com/citiesskylines-csur/CSURLoader",
+                Updated = WorkshopDate("25 Feb, 2020"),
             });
 
             // seems to be based on cimtographer
@@ -149,6 +152,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "If the road has zoning, you will need to disable its zoning where it reaches edge of map (use a zoning mod to do that)." },
                 },
@@ -167,7 +171,7 @@ namespace AutoRepair.Catalogs {
                     { 2039036102uL, Status.Incompatible }, // Metro Station Converter
                     { 1953042839uL, Status.Incompatible }, // Unified Railway System
                     { 1764208250uL, Status.Compatible   }, // More Vehicles
-                    { 1530376523uL, Status.Incompatible }, // Railway Replacer
+                    { 1530376523uL, Status.MinorIssues  }, // Railway Replacer
                     { 927293560uL , Status.Compatible   }, // Geli-Districts v3.0
                     { 820157360uL , Status.Compatible   }, // Spawn Points Fix
                     { 816325876uL , Status.Required     }, // Metropolitan Depot
@@ -176,10 +180,13 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "User guide: https://steamcommunity.com/sharedfiles/filedetails/?id=1802098189" },
                     { NOTE, "Collection of required items: https://steamcommunity.com/sharedfiles/filedetails/?id=1798577756" },
                     { NOTE, "Users report 'Array Index' bug: https://github.com/bloodypenguin/Skylines-MetroOverhaulMod/issues/29" },
+                    { 2065380745uL, "[Mod: Metro Replacer] Both mods replace station tracks making them technically incompatible." },
+                    { 1530376523uL, "[Mod: Railway Replacer] The Railway Replacer UI might sometimes appear on MOM stations." },
                 },
                 Published = WorkshopDate("11 Dec, 2016"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-MetroOverhaulMod",

@@ -13,11 +13,55 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void PlaceAndMoveMods() {
 
             string catalog = "PlaceAndMove";
+
+            AddMod(new Review(2085018096uL, "Node Spacer") {
+                Affect = Factor.PlaceAndMove,
+                Authors = "Quboid",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1844442251uL, Status.Required     }, // Fine Road Tool 2.0.4
+                    { 1844440354uL, Status.Recommended  }, // Fine Road Anarchy 2.0.2
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("4 May, 2020"),
+                Updated = WorkshopDate("4 May, 2020"),
+            });
+
+            AddMod(new Review(2083188521uL, "Precision Engineering 2.0") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.UI,
+                Authors = "Tuna",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2083188521uL, Status.Incompatible }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Incompatible }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 876444259uL , Status.Incompatible }, // PrecisionEngineering测量工具
+                    { 445589127uL , Status.Incompatible }, // Precision Engineering
+                    { 436253779uL , Status.Incompatible }, // Road Protractor
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 2082427515uL, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Hold 'Ctrl' while placing roads/rails to enable angle snapping (5 degree increments)." },
+                    { NOTE, "Hold 'Alt' while placing roads/rails to enable snapping to guidelines." },
+                    { NOTE, "Hold 'Shift' while placing roads/rails to show additional information." },
+                },
+                Published = WorkshopDate("3 May, 2020"),
+                SourceURL = "https://github.com/tunaflish/PrecisionEngineering",
+                Updated = WorkshopDate("3 May, 2020"),
+            });
 
             AddMod(new Review(2071210858uL, "[BETA] Quay Upgrade Tool") {
                 Affect = Factor.PlaceAndMove,
@@ -50,6 +94,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "S__T, Tim, resonansER",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2083188521uL, Status.Compatible   }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Compatible   }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
                     { 2065380745uL, Status.Compatible   }, // MetroReplacer
                     { 2059655996uL, Status.Incompatible }, // [Beta] PRT-2
                     { 2053661585uL, Status.Compatible   }, // Emergency Lights Manager V2
@@ -508,6 +555,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "S__T",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2083188521uL, Status.Compatible   }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Compatible   }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
                     { 2065380745uL, Status.Compatible   }, // MetroReplacer
                     { 2059655996uL, Status.Incompatible }, // [Beta] PRT-2
                     { 2053661585uL, Status.Compatible   }, // Emergency Lights Manager V2
@@ -621,6 +671,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "S__T",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2083188521uL, Status.Compatible   }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Compatible   }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
                     { 2065380745uL, Status.Compatible   }, // MetroReplacer
                     { 2059655996uL, Status.Incompatible }, // [Beta] PRT-2
                     { 2053661585uL, Status.Compatible   }, // Emergency Lights Manager V2
@@ -826,11 +879,22 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("16 Jun, 2018"),
             });
 
-            AddMod(new Review(445589127uL, "Precision Engineering") {
-                Affect = Factor.PlaceAndMove,
-                Authors = "Simie",
+            /*
+            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
+            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
+            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
+            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
+            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
+            */
+
+            AddMod(new Review(2082427515uL, "[DEPRECATED ] PrecisionEngineering - Length snapping fix test") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.UI,
+                Authors = "Tuna",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2083188521uL, Status.Incompatible }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Incompatible }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
@@ -839,25 +903,21 @@ namespace AutoRepair.Catalogs {
                     { 436253779uL , Status.Incompatible }, // Road Protractor
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Abandonware
+                ContinuationOf = 445589127uL, // Precision Engineering
+                Flags = ItemFlags.ForceMigration
+                      | ItemFlags.Obsolete // was temp test, now replaced by v2.0
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Hold Ctrl while placing roads/rails to enable angle snapping (5 degree increments)." },
                     { NOTE, "Hold Alt while placing roads/rails to enable snapping to guidelines." },
                     { NOTE, "Hold Shift while placing roads/rails to show additional information." },
                 },
-                Published = WorkshopDate("19 May, 2015"),
-                SourceURL = "https://github.com/Simie/PrecisionEngineering",
-                Updated = WorkshopDate("29 Mar, 2016"),
+                Published = WorkshopDate("2 May, 2020"),
+                ReplaceWith = 2083188521uL, // Precision Engineering 2.0
+                SourceURL = "https://github.com/tunaflish/PrecisionEngineering",
+                Updated = WorkshopDate("2 May, 2020"),
             });
-
-            /*
-            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
-            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
-            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
-            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
-            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
-            */
 
             AddMod(new Review(2045014295uL, "Move It! 移动它 中文版") {
                 Affect = Factor.PlaceAndMove,
@@ -1251,6 +1311,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 445589127uL, // Precision Engineering
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2083188521uL, Status.Incompatible }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Incompatible }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
                     { 876444259uL , Status.Incompatible }, // PrecisionEngineering测量工具
                     { 445589127uL , Status.Incompatible }, // Precision Engineering
                     { 436253779uL , Status.Incompatible }, // Road Protractor
@@ -1417,13 +1479,45 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("1 Mar, 2016"),
             });
 
+            AddMod(new Review(445589127uL, "Precision Engineering") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.UI,
+                Authors = "Simie",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2083188521uL, Status.Incompatible }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Incompatible }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 876444259uL , Status.Incompatible }, // PrecisionEngineering测量工具
+                    { 445589127uL , Status.Incompatible }, // Precision Engineering
+                    { 436253779uL , Status.Incompatible }, // Road Protractor
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Hold Ctrl while placing roads/rails to enable angle snapping (5 degree increments)." },
+                    { NOTE, "Hold Alt while placing roads/rails to enable snapping to guidelines." },
+                    { NOTE, "Hold Shift while placing roads/rails to show additional information." },
+                },
+                Published = WorkshopDate("19 May, 2015"),
+                ReplaceWith = 2083188521uL, // Precision Engineering 2.0
+                SourceURL = "https://github.com/Simie/PrecisionEngineering",
+                Updated = WorkshopDate("29 Mar, 2016"),
+            });
+
             AddMod(new Review(436253779uL, "Road Protractor") {
-                Affect = Factor.PlaceAndMove,
+                Affect = Factor.PlaceAndMove
+                       | Factor.UI,
                 Authors = "Oelderoth",
                 BrokenBy = GameVersion.Snowfall, // users starting reporting lag and crashes after Snowfall release
                 Catalog = catalog,
-                CloneOf = 445589127uL, // Precision Engineering
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2083188521uL, Status.Incompatible }, // Precision Engineering 2.0
+                    { 2082427515uL, Status.Incompatible }, // [DEPRECATED ] PrecisionEngineering - Length snapping fix test
                     { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
                     { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 876444259uL , Status.Incompatible }, // PrecisionEngineering测量工具
@@ -1439,7 +1533,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("2 May, 2015"),
-                ReplaceWith = 445589127uL, // Precision Engineering
+                ReplaceWith = 2083188521uL, // Precision Engineering 2.0
                 Updated = WorkshopDate("20 May, 2015"),
             });
         }

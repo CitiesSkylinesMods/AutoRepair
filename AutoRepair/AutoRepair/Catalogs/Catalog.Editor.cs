@@ -27,6 +27,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Published = WorkshopDate("13 Apr, 2020"),
                 Updated = WorkshopDate("13 Apr, 2020"),
             });
@@ -41,6 +42,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "In Graphics Settings, set 'Texture Quality' to 'High' before dumping to get best quality." },
                 },
@@ -64,9 +66,10 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users: It might increase game loading time if you have lots of vehicles." },
-                    { NOTE, "Asset creators: Do NOT use additive shader on submeshes with non-zero variation mask." },
+                    { NOTE, "(Users) It might increase game loading time if you have lots of vehicles." },
+                    { NOTE, "(Creators) Do NOT use additive shader on submeshes with non-zero variation mask." },
                 },
                 Published = WorkshopDate("30 Oct, 2018"),
                 SourceURL = "https://gist.github.com/Acc3ssViolation/a129c802e7e2eaeb2ef566a0f370afc0",
@@ -82,9 +85,10 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
-                    { NOTE, "(Asset creators) See: http://cslmodding.info/normal-maps" },
+                    { NOTE, "(Creators) See: http://cslmodding.info/normal-maps" },
                 },
                 Published = WorkshopDate("21 Sep, 2018"),
                 Updated = WorkshopDate("21 Sep, 2018"),
@@ -99,6 +103,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParkLife,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                 },
@@ -115,10 +120,11 @@ namespace AutoRepair.Catalogs {
                 //CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "If this is working, please let aubergine18 know on mod compatibility checker workshop page." },
+                    { NOTE, "There are some reports of this mod not working; if it works for you please let aubergine18 know on mod compatibility checker workshop page." },
                     { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
-                    { NOTE, "(Asset creators) Read workshop description: https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156u" },
+                    { NOTE, "(Creators) Flag support depends on vehicle/building type. See workshop page for details." },
                 },
                 Published = WorkshopDate("25 May, 2018"),
                 Updated = WorkshopDate("25 May, 2018"),
@@ -134,6 +140,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                 },
@@ -151,6 +158,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                 },
@@ -169,9 +177,10 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Users) This mod assists with content creation; if you don't create content, you probably don't need this mod." },
-                    { NOTE, "(Asset creators) Don't make your assets too bright: https://steamcommunity.com/workshop/filedetails/?id=1586722178" },
+                    { NOTE, "(Creators) Don't make your assets too bright: https://steamcommunity.com/workshop/filedetails/?id=1586722178" },
                 },
                 Published = WorkshopDate("28 Aug, 2017"),
                 SourceURL = "https://gist.github.com/ronyx69/280e5695b3caeac7ef8b356cc36e0a7c",
@@ -189,9 +198,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.EditorMod
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Users) Some props require this mod to function properly." },
-                    { NOTE, "(Asset creators) Use this instead: https://cslmodding.info/shader/proprotating/" },
+                    { NOTE, "(Creators) Use prop rotating shader instead: https://cslmodding.info/shader/proprotating/" },
                 },
                 Published = WorkshopDate("24 Jun, 2017"),
                 Updated = WorkshopDate("24 Sep, 2018"),
@@ -206,6 +216,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "List of asset tags: http://steamcommunity.com/workshop/filedetails/discussion/881161181/133259227524945380/" },
                 },

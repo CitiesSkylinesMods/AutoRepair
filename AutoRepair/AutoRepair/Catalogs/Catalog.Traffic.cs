@@ -112,15 +112,15 @@ namespace AutoRepair.Catalogs {
                     { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
                     // Old anarchy mods (make a huge mess of networks and terrain!)
                     { 954034590uL , Status.Incompatible }, // Road Anarchy V2
-                    { 912329352u,  Status.Incompatible }, // Building Anarchy
-                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
-                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 912329352uL , Status.Incompatible }, // Building Anarchy
+                    { 658653260uL , Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329uL , Status.Incompatible }, // Sharp Junction Angles
                     { 418556522uL , Status.Incompatible }, // Road Anarchy
-                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
+                    { 411095553uL , Status.Incompatible }, // Terraform Tool v0.9
                     // Obsolete road mods (fix with "Road Removal Tool" and "Safenets" mods)
                     { 929114228uL , Status.Incompatible }, // New Roads for Network Extensions
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project (v1)
-                    { 414702884u,  Status.Incompatible }, // Zoneable Pedestrian Paths
+                    { 414702884uL , Status.Incompatible }, // Zoneable Pedestrian Paths
                     // Incompatible with TM:PE (patch conflicts or does not fire events)
                     { 649522495uL , Status.Incompatible }, // District Service Limit
                     { 844180955uL , Status.Incompatible }, // City Drive
@@ -132,8 +132,8 @@ namespace AutoRepair.Catalogs {
                     // Other breaking mods
                     { 1767246646uL, Status.Incompatible }, // AutoLineBudget (PropVehCount errors, using .Net Framework 2, published as camera script?!!)
                     { 1072157697uL, Status.Incompatible }, // Cargo Info
-                    { 436253779u,  Status.Incompatible }, // Road Protractor
-                    { 417926819u,  Status.Incompatible }, // Road Assistant
+                    { 436253779uL , Status.Incompatible }, // Road Protractor
+                    { 417926819uL , Status.Incompatible }, // Road Assistant
                     // Mods made obsolete by TM:PE (and conflict with TM:PE patches/state)
                     { 1628112268uL, Status.Incompatible }, // RightTurnNoStop
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
@@ -161,6 +161,7 @@ namespace AutoRepair.Catalogs {
                     { 956707300uL , Status.Compatible   }, // Remove Street Arrows
                     { 919020932uL , Status.Compatible   }, // Stop Remover
                     // Other mods
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 2019097300uL, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Compatible   }, // CSUR ToolBox
@@ -268,15 +269,15 @@ namespace AutoRepair.Catalogs {
                     { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
                     // Old anarchy mods (make a huge mess of networks and terrain!)
                     { 954034590uL , Status.Incompatible }, // Road Anarchy V2
-                    { 912329352u,  Status.Incompatible }, // Building Anarchy
-                    { 658653260u,  Status.Incompatible }, // Network Nodes Editor [Experimental]
-                    { 553184329u,  Status.Incompatible }, // Sharp Junction Angles
+                    { 912329352uL , Status.Incompatible }, // Building Anarchy
+                    { 658653260uL , Status.Incompatible }, // Network Nodes Editor [Experimental]
+                    { 553184329uL , Status.Incompatible }, // Sharp Junction Angles
                     { 418556522uL , Status.Incompatible }, // Road Anarchy
-                    { 411095553u,  Status.Incompatible }, // Terraform Tool v0.9
+                    { 411095553uL , Status.Incompatible }, // Terraform Tool v0.9
                     // Obsolete road mods (fix with "Road Removal Tool" and "Safenets" mods)
                     { 929114228uL , Status.Incompatible }, // New Roads for Network Extensions
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project (v1)
-                    { 414702884u,  Status.Incompatible }, // Zoneable Pedestrian Paths
+                    { 414702884uL , Status.Incompatible }, // Zoneable Pedestrian Paths
                     // Incompatible with TM:PE (patch conflicts or does not fire events)
                     { 649522495uL , Status.Incompatible }, // District Service Limit
                     { 844180955uL , Status.Incompatible }, // City Drive
@@ -288,8 +289,8 @@ namespace AutoRepair.Catalogs {
                     // Other breaking mods
                     { 1767246646uL, Status.Incompatible }, // AutoLineBudget (PropVehCount errors, using .Net Framework 2, published as camera script?!!)
                     { 1072157697uL, Status.Incompatible }, // Cargo Info
-                    { 436253779u,  Status.Incompatible }, // Road Protractor
-                    { 417926819u,  Status.Incompatible }, // Road Assistant
+                    { 436253779uL , Status.Incompatible }, // Road Protractor
+                    { 417926819uL , Status.Incompatible }, // Road Assistant
                     // Mods made obsolete by TM:PE (and conflict with TM:PE patches/state)
                     { 1628112268uL, Status.Incompatible }, // RightTurnNoStop
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
@@ -317,6 +318,7 @@ namespace AutoRepair.Catalogs {
                     { 956707300uL , Status.Compatible   }, // Remove Street Arrows
                     { 919020932uL , Status.Compatible   }, // Stop Remover
                     // Other mods
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 2019097300uL, Status.Recommended  }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Compatible   }, // CSUR ToolBox
@@ -441,6 +443,7 @@ namespace AutoRepair.Catalogs {
                 CloneOf = 1806963141uL, // TM:PE v11.1.2 LABS
                 CompatibleWith = GameVersion.Campus,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2019097300uL, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -512,6 +515,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CompatibleWith = GameVersion.Industries,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2019097300uL, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
@@ -586,6 +590,7 @@ namespace AutoRepair.Catalogs {
                 CloneOf = 498363759uL, // Traffic Manager + Improved AI
                 CompatibleWith = GameVersion.MassTransit,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2019097300uL, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
@@ -657,6 +662,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CompatibleWith = GameVersion.Industries,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2019097300uL, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
@@ -732,6 +738,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CompatibleWith = GameVersion.ChirpX,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2019097300uL, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
@@ -805,6 +812,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2019097300uL, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1962752152uL, Status.Compatible   }, // Busstop Prop Remover

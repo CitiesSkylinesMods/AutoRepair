@@ -20,6 +20,23 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Camera";
 
+            // this would be better in an `exporters` category maybe?
+            AddMod(new Review(2082049218uL, "SateliteView") {
+                Affect = Factor.Camera,
+                Authors = "eelcobaas",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 523824395uL , Status.Compatible   }, // Clouds & Fog Toggler
+                    { 410610814uL , Status.Compatible   }, // Farther Zoom (full zoom in)
+                    { 410227672uL , Status.Compatible   }, // Farther Zoom
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Published = WorkshopDate("2 May, 2020"),
+                Updated = WorkshopDate("2 May, 2020"),
+            });
+
             // Camera control via SpaceMouse
             AddMod(new Review(2021361606uL, "SpaceMouse for CSL") {
                 Affect = Factor.Camera,
@@ -33,6 +50,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("13 Mar, 2020"),
                 SourceURL = "https://github.com/graealex/CSL-SpaceMouse",
                 Updated = WorkshopDate("13 Mar, 2020"),
@@ -55,6 +73,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues // mouse pointer and underground view borked
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press left Ctr + T to toggle the stereoscopic camera view." },
                 },
@@ -80,6 +99,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("30 May, 2019"),
                 SourceURL = "https://github.com/keallu/CSL-ZoomIt",
                 Updated = WorkshopDate("3 Jul, 2019"),
@@ -119,7 +139,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("24 Apr, 2019"),
             });
 
-            // todo: move to driving category
+            // todo: move to driving category?
             AddMod(new Review(1518296436uL, "Driving Mod") {
                 Affect = Factor.Camera
                        | Factor.Vehicles,
@@ -150,6 +170,7 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 651056665uL, // Enhanced Zoom Continued
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "User guide: https://steamcommunity.com/workshop/filedetails/discussion/1406625743/1728711392724061143/" },
                 },
@@ -170,6 +191,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Save camera position: Ctrl + Shift + 1-9 or Ctrl + Shift + F1-12" },
                     { NOTE, "Return to position: Ctrl + 1-9 or Ctrl + F1-12" },
@@ -209,6 +231,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "User guide: https://steamcommunity.com/workshop/filedetails/discussion/844180955/1479857071252874461/" },
                     { NOTE, "A few 'HD' car assets: https://steamcommunity.com/sharedfiles/filedetails/?id=1182824413" },
@@ -231,6 +254,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 406255342uL, // First-person camera
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("23 Mar, 2016"),
                 SourceURL = "https://github.com/tony56a/Skylines-FPSCamera/tree/1.4.0-fix",
                 Updated = WorkshopDate("16 Apr, 2020"),
@@ -249,6 +273,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("16 Jan, 2016"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-TotalyFreeCamera",
                 Updated = WorkshopDate("27 May, 2017"),
@@ -274,6 +299,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("20 Apr, 2020"),
                 ReplaceWith = 498386331uL, // Cross the Line
                 Suppress = Warning.OlderReplacement,
@@ -302,10 +328,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // unable to exit first person cam (Esc not working)
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Locale = "zh-cn",
                 Published = WorkshopDate("25 Aug, 2018"),
                 ReplaceWith = 650805785uL, // First Person Camera: Updated
-                ReleasedDuring = GameVersion.ParkLife,
                 Suppress = Warning.InvalidVersionSequence | Warning.OlderReplacement,
                 Updated = WorkshopDate("25 Aug, 2018"),
             });
@@ -327,6 +353,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking // reported by users
                       | ItemFlags.Obsolete // use 650805785u which is maintained
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("2 Mar, 2018"),
                 ReplaceWith = 650805785uL, // First Person Camera: Updated
                 Suppress = Warning.OlderReplacement,
@@ -357,10 +384,12 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer version available
                       | ItemFlags.SourceAvailable
                       | ItemFlags.SourceOudated, // git repo removed
-                Published = WorkshopDate("23 Mar, 2016"),
+                LastSeen = WorkshopDate("6 Apr, 2017"), // web archive
+                Published = WorkshopDate("23 Mar, 2016"), // adjacent workshop item (nsfw!)
+                Removed = WorkshopDate("31 May, 2018"), // web archive
                 ReplaceWith = 1406625743uL, // EnhancedZoomContinued
                 SourceURL = "https://github.com/vukivan/EnhancedZoomContinued",
-                Updated = WorkshopDate("12 Dec, 2016"),
+                Updated = WorkshopDate("12 Dec, 2016"), // web archive
             });
 
             AddMod(new Review(411016892uL, "Enhanced Zoom") {
@@ -387,7 +416,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete // newer version available
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("10 Jul, 2016"),
                 Published = WorkshopDate("24 Mar, 2015"),
+                Removed = WorkshopDate("2 Jun, 2018"),
                 ReplaceWith = 1406625743uL, // EnhancedZoomContinued
                 Updated = WorkshopDate("26 Sep, 2015"),
             });
@@ -398,6 +429,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2082049218uL, Status.Compatible   }, // SateliteView
                     { 1756089251uL, Status.Incompatible }, // Zoom It!
                     { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
                     { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
@@ -413,7 +445,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // existed 21 Dec 2018
                       | ItemFlags.Obsolete // newer version available
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("21 Mar, 2015"),
                 Published = WorkshopDate("19 Mar, 2015"), // from comments on 410227672u
+                Removed = WorkshopDate("21 Dec, 2018"), // web archive
                 ReplaceWith = 1756089251uL, // Zoom It!
                 Suppress = Warning.MissingArchiveURL,
                 Updated = WorkshopDate("19 Mar, 2015"), // guesstimate
@@ -424,6 +458,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "hyperdrive_engage",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2082049218uL, Status.Compatible   }, // SateliteView
                     { 1756089251uL, Status.Incompatible }, // Zoom It!
                     { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
                     { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
@@ -435,6 +470,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Campus,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("19 Mar, 2015"),
                 ReplaceWith = 1756089251uL, // Zoom It!
                 Updated = WorkshopDate("19 Mar, 2015"),
@@ -470,16 +506,18 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("18 Dec, 2015"), // web archive
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press F8 to open the options panel." },
                 },
                 Published = WorkshopDate("17 Mar, 2015"), // guessed from 409359950 (NSFW!!)
+                Removed = WorkshopDate("21 Sep, 2017"), // web archive
                 Updated = WorkshopDate("23 Mar, 2015"), // WBM shows 11 updates, but steam did not show updated date back then
             });
 
             AddMod(new Review(406940119uL, "Camera Buttons") {
                 Affect = Factor.UI,
-                ArchiveURL = "https://web.archive.org/web/20150329012553/http://steamcommunity.com/profiles/76561198179273381/myworkshopfiles/?appid=255710",
+                ArchiveURL = "https://web.archive.org/web/20151221183734/http://steamcommunity.com/profiles/76561198179273381/myworkshopfiles?appid=255710",
                 Authors = "brittany",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -488,7 +526,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("21 Dec, 2015"),
                 Published = WorkshopDate("14 Mar, 2015"), // guessing based on github initial commit
+                //Removed = WorkshopDate(), // latest 24 Apr 2020
                 SourceURL = "https://github.com/brittanygh/CS-CameraButtons",
                 Updated = WorkshopDate("8 Apr, 2015"), // guessing based on other mods by same author
             });
@@ -506,6 +546,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Patch_1_10_1_f3,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Hold right mouse button and drag to scroll the map." },
                     { NOTE, "Map scrolling: Ctrl + Shift + O to toggle on/off, Ctrl + Shift + I to invert direction." },
@@ -529,6 +570,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Obsolete // vanilla
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press F11 to toggle UI." },
                     { NOTE, "Vanilla game now has free camera mode, press Tab in-game to activate it." },
@@ -559,9 +601,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer version available
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable, // Many users not able to exit from fp cam view (Esc not working)
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("11 Mar, 2015"),
                 ReplaceWith = 650805785uL, // First Person Camera: Updated
-                ReleasedDuring = GameVersion.EuropeBiome,
                 SourceURL = "https://github.com/AlexanderDzhoganov/Skylines-FPSCamera/",
                 Updated = WorkshopDate("7 Apr, 2015"),
             });

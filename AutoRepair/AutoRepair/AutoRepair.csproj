@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Attributes\StorageFileAttribute.cs" />
     <Compile Include="Catalogs\Catalog.Assets.cs" />
+    <Compile Include="Catalogs\Catalog.Chirper.cs" />
     <Compile Include="Catalogs\Catalog.Converters.cs" />
     <Compile Include="Catalogs\Catalog.Disasters.cs" />
     <Compile Include="Catalogs\Catalog.Editor.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Catalogs\Catalog.Procedural.cs" />
     <Compile Include="Catalogs\Catalog.Toolbar.cs" />
     <Compile Include="Catalogs\Catalog.Trees.cs" />
+    <Compile Include="Catalogs\_Catalog.CheckForMissing.cs" />
     <Compile Include="Catalogs\_Catalog.cs" />
     <Compile Include="Catalogs\Catalog.Diagnostic.cs" />
     <Compile Include="Catalogs\Catalog.LoadSave.cs" />

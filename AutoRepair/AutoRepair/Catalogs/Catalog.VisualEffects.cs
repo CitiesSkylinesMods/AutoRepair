@@ -29,6 +29,21 @@ namespace AutoRepair.Catalogs {
             # ██      ██  ██████  ██████  ███████
             */
 
+            AddMod(new Review(2077102792uL, "AD Cloud Enabler") {
+                Affect = Factor.Environment
+                       | Factor.Rendering,
+                Authors = "네인 | neinnew",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1183931915uL, Status.Compatible   }, // Cubemap Replacer
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                Published = WorkshopDate("28 Apr, 2020"),
+                LastSeen = WorkshopDate("8 May, 2020"),
+                Updated = WorkshopDate("28 Apr, 2020"),
+            });
+
             AddMod(new Review(1886877404uL, "Custom Effect Loader") {
                 Affect = Factor.Rendering
                        | Factor.Textures,
@@ -46,6 +61,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues // can become hard dependency for vehicle assets if Extended Asset Editor active
                       | ItemFlags.SourceAvailable,
                 ReleasedDuring = GameVersion.Campus,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Asset creators: See https://gist.github.com/boformer/a9c5935a9752dcaa68d67e3a611ada26" },
                     { 800820816uL, "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL." },
@@ -62,6 +78,7 @@ namespace AutoRepair.Catalogs {
                     { 415732693uL , Status.Incompatible }, // Disable Clouds
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 SourceURL = "https://github.com/Cgameworld/PersistentFogAdjuster",
                 Tags = new[] { "Fog", "Mist", "Cloud", "Weather", "Eyecandy" },
             });
@@ -84,6 +101,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.MinorIssues // harmony patch management could be better, TAA is shit
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 SourceURL = "https://github.com/keallu/CSL-RenderIt",
                 Tags = new[] { "Effects", "Visual", "Graphics", "Eyecandy" },
             });
@@ -100,6 +118,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.SourceObfuscated // big warning sign
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Tags = new[] { "LODs", "Detail", "Graphics", "Eyecandy", "Terrain", "Map" },
             });
 
@@ -121,6 +140,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 561888259uL, // LOD Toggler (deprecated)
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 SourceURL = "https://github.com/boformer/UltimateLevelOfDetail",
                 Tags = new[] { "LODs", "Detail", "Graphics", "Eyecandy", "Trees", "Props", "Buildings", "Networks", "Decals" },
             });
@@ -139,6 +159,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Find animated assets here: https://steamcommunity.com/workshop/browse/?appid=255710&section=readytouseitems&requiredtags%5B%5D=custom%20animation" },
                     { NOTE, "Some animations won't work if the building has no power or is disabled." },
@@ -158,6 +179,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Asset creators, see: https://cslmodding.info/mod/additive-shader/" },
                 },
@@ -173,6 +195,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("18 Feb, 2018"),
                 Updated = WorkshopDate("3 Dec, 2018"),
             });
@@ -184,6 +207,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("13 Feb, 2018"),
                 Updated = WorkshopDate("16 Feb, 2018"),
             });
@@ -196,6 +220,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Asset creators, see: https://gist.github.com/ronyx69/db4e7c41fe80020e31d9bd2e1e1196f8" },
                 },
@@ -221,6 +246,7 @@ namespace AutoRepair.Catalogs {
                     { 408648436uL , Status.Incompatible }, // More Options
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Read the workshop page for important details on how to properly set-up your system for Relight." },
                     { 530871278uL, "[Mod: Daylight Classic] Disable 'Classic sunlight color/intensity' and 'classic fog color' to make compatible with Relight." },
@@ -236,6 +262,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077102792uL, Status.Compatible   }, // AD Cloud Enabler
                     { 1209581656uL, Status.Recommended }, // Relight
                     { 1183931915uL, Status.Compatible  }, // Cubemap Replacer
                     { 1138510774uL, Status.Recommended }, // PostProcessFX - Multi-platform
@@ -244,6 +271,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "[Mod: Daylight Classic] 'Classic fog effect' option must be enabled for the cubemap to work!" },
                 },
@@ -275,6 +303,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues // some users have problems opening GUI
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // some users say it stopped working
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
                     { 812713438uL, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },
@@ -290,6 +319,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Asset creators: See https://cslmodding.info/shader/animuv/" },
                 },
@@ -312,6 +342,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 410805639uL, // Sun Shafts
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "May cause fps drop in-game, especially if you have weak graphics card." },
                 },
@@ -328,6 +359,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press Ctrl + Alt + P to open the settings panel. Shortcut can be customised in 'Cities_Skylines/ScreenShotP/hotkey.txt'." },
                 },
@@ -348,6 +380,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "May cause lag on older computers or graphics cards due to increased rendering workload." },
                 },
@@ -374,6 +407,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Laggy
                       | ItemFlags.MinorIssues
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press F10, or Left Ctrl + R, to open the slider panel." },
                     { NOTE, "Can cause extreme lag on older graphics cards. Make sure your GPU has good cooling." },
@@ -383,7 +417,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/dremelofdeath/Skylines-DynamicResolution",
                 Updated = WorkshopDate("28 Oct, 2017"),
             });
-
             // app notes for Dynamic Resolution
             switch (Application.platform) {
                 case RuntimePlatform.WindowsPlayer:
@@ -413,6 +446,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // newer version available: 1138510774u
                       | ItemFlags.MinorIssues // some users have problems displaying the GUI
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Keycodes for shortcut key config: https://pastebin.com/qe5BwdA2" },
                     { 812713438uL, "[Dynamic Resolution] PostProcessFX breaks SSAO. Additionally might cause blue or pink screen on load." },

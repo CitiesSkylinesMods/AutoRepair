@@ -19,6 +19,34 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Services";
 
+            AddMod(new Review(2077426488uL, "Super Hearse AI [Beta]") {
+                Affect = Factor.Pathfinder
+                       | Factor.Service,
+                Authors = "Fox",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
+                    { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
+                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
+                    { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 813833476uL , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 803074771uL , Status.Incompatible }, // No Deathcare
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
+                    { 583538182uL , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
+                    // incompat: Service Vehicle Selector
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("7 May, 2020"),
+                Published = WorkshopDate("28 Apr, 2020"),
+                Updated = WorkshopDate("29 Apr, 2020"),
+            });
+
             // todo: probably incompatible with multiple other district service mods
             // possibly breaks when used on existing saves
             AddMod(new Review(1922400472uL, "Enhanced District Services") {
@@ -35,6 +63,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "chronofanz",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1911736890uL, Status.Incompatible }, // 1181352643 District Service Limit 3
                     { 1721492498uL, Status.Recommended  }, // Optimised Outside Connections
@@ -51,10 +81,18 @@ namespace AutoRepair.Catalogs {
                     { 554232266uL , Status.Incompatible }, // Mod: Nursing Homes for Senior Citizens
                     { 512341354uL , Status.Incompatible }, // Central Services Dispatcher (WtM)
                     { 439582006uL , Status.Incompatible }, // [ARIS] Enhanced Garbage Truck AI
+
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 813833476uL , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
+                    { 583538182uL , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
                     { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { 576327847uL, "[Mod: 81 Tiles] May cause problems with Enhanced District Services mod: https://steamcommunity.com/workshop/filedetails/discussion/576327847/2266942917235315332/" },
                 },
@@ -73,6 +111,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "pcfantasy",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 2076619989uL, Status.Unknown      }, // 934994075 Service Vehicle Selector 2
                     { 1922400472uL, Status.Incompatible }, // Enhanced District Services
                     { 1911736890uL, Status.Incompatible }, // 1181352643 District Service Limit 3
                     { 1674732053uL, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
@@ -81,10 +121,15 @@ namespace AutoRepair.Catalogs {
                     { 1114249433uL, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
                     { 934994075uL , Status.Unknown      }, // Service Vehicle Selector 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
                     { 649522495uL , Status.Incompatible }, // District Service Limit (original)
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
                     { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers (original)
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 SourceURL = "https://github.com/pcfantasy/MoreEffectiveTransfer",
             });
 
@@ -94,6 +139,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 1922400472uL, Status.Incompatible }, // Enhanced District Services
                     { 1911736890uL, Status.Incompatible }, // 1181352643 District Service Limit 3
                     { 1706703944uL, Status.Incompatible }, // More Outside Interaction
@@ -105,6 +151,7 @@ namespace AutoRepair.Catalogs {
                     { 649522495uL , Status.Incompatible }, // District Service Limit (original)
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: Klyte45 is aware of issue but is currently fixing other mods. Check workshop page for progress updates." },
                 },
@@ -119,6 +166,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "cambrium",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 1922400472uL, Status.Incompatible }, // Enhanced District Services
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1706703944uL, Status.Incompatible }, // More Outside Interaction
@@ -127,13 +176,18 @@ namespace AutoRepair.Catalogs {
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
                     { 649522495uL , Status.Incompatible }, // District Service Limit
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
                 },
                 ContinuationOf = 649522495uL, // District Service Limit
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Some users report it breaks deathcare, garbage and other services." },
                     { NOTE, "Campus DLC: Deactivate 'Education in current district' for compatibility." },
@@ -149,6 +203,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1922400472uL, Status.Incompatible }, // Enhanced District Services
@@ -178,6 +234,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 519691655uL, // Service Vehicle Selector
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Published = WorkshopDate("28 May, 2017"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-ServiceVehicleSelector",
                 Updated = WorkshopDate("2 Apr, 2020"),
@@ -189,6 +246,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Geliboy",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
                     { 1922400472uL, Status.Incompatible }, // Enhanced District Services
                     { 1706703944uL, Status.Incompatible }, // More Outside Interaction
                     { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
@@ -239,6 +297,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 649522495uL, // District Service Limit (Witcher)
                 Flags = ItemFlags.Laggy // some users report lag, but could be mod conflict?
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { 554232266uL, "[Mod: Nursing Homes for Senior Citizens] Breaks ambulances and hospitals when used with Geli-Districts." },
                 },
@@ -254,6 +313,165 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
+            AddMod(new Review(2076619989uL, "934994075 Service Vehicle Selector 2") {
+                Affect = Factor.Service
+                       | Factor.Vehicles,
+                Authors = "Bea",
+                Catalog = catalog,
+                CloneOf = 934994075uL, // Service Vehicle Selector 2
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
+                    { 2064509439uL, Status.Incompatible }, // TrafficManager
+                    { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11 LABS
+                    { 1764208250uL, Status.Unknown      }, // More Vehicles
+                    { 1680840913uL, Status.Unknown      }, // More Effective Transfer Manager
+                    { 1637663252uL, Status.Incompatible }, // TM:PE v11 STABLE
+                    { 1632320836uL, Status.Incompatible }, // Service Vehicles Manager 2.0.1
+                    { 1604291910uL, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1548831935uL, Status.Compatible   }, // Advanced Vehicle Options AVO (Industries DLC ready)
+                    { 1546870472uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1348361731uL, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1312767991uL, Status.Incompatible }, // Transport Lines Manager 13.1
+                    { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (alters vehicle AIs)
+                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
+                    { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
+                    { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676uL , Status.Compatible   }, // Improved Public Transport 2
+                    { 871859856uL , Status.Incompatible }, // RiverCargoHarborMod
+                    { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
+                    { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (AVO)
+                    { 424106600uL , Status.Incompatible }, // Improved Public Transport (IPT) - original ver
+                    { 408875519uL , Status.Incompatible }, // Transport Lines Manager
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.ForceMigration
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Published = WorkshopDate("28 Apr, 2020"),
+                ReplaceWith = 934994075uL, // Service Vehicle Selector 2
+                Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("28 Apr, 2020"),
+            });
+
+            // 439582006; [ARIS] Enhanced Garbage Truck AI
+            // 583552152; Enhanced Garbage Truck AI[Fixed for v1.4 +]
+            // 813835391; Enhanced Garbage Truck AI[1.6]
+
+            // last seen:
+            // 3 Mar, 2017 - based on user comment date mentioned in google search results
+            // 6 Nov, 2017 - based on link to workshop here: http://www.citiesmods.com/enhanced-hearse-ai-1-6/
+            AddMod(new Review(813835241uL, "Enhanced Hearse AI [1.6]") {
+                Affect = Factor.Service,
+                Alternatives = new[] {
+                    1922400472uL, // Enhanced District Services
+                    1680840913uL, // More Effective Transfer Manager
+                    1181352643uL, // District Service Limit 3.0
+                    927293560uL , // Geli-Districts v3.0
+                },
+                Authors = "Chryssie", // based on page at citiesmods.com above
+                BrokenBy = GameVersion.Industries, // was listed broken on industries broken mods google sheet; may have broken earlier
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
+                    { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 813833476uL , Status.Required     }, // Skylines Overwatch [1.6]
+                    { 803074771uL , Status.Incompatible }, // No Deathcare
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
+                    { 583538182uL , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
+                },
+                CompatibleWith = GameVersion.Concerts, // it was still being linked to (LastSeen)
+                ContinuationOf = 583556014uL, // Enhanced Hearse AI [Fixed for v1.4 +]
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("6 Nov, 2017"), // based on page at citiesmods.com above
+                Published = WorkshopDate("7 Dec, 2016"), // based on adjacent workshop item
+                Removed = WorkshopDate("21 May, 2019"), // removed from broken mods google sheet (was there for Industries)
+                ReplaceWith = 2077426488uL, // Super Hearse AI [Beta]
+                SourceURL = "https://github.com/Chryssie/CS-EnhancedHearseAI",
+                Suppress = Warning.MissingArchiveURL,
+                Updated = WorkshopDate("7 Dec, 2016"), // based on last commit to git repo
+            });
+
+            // released for csl 1.2
+            AddMod(new Review(583556014uL, "Enhanced Hearse AI [Fixed for v1.4 +]") {
+                Affect = Factor.Service,
+                Alternatives = new[] {
+                    1922400472uL, // Enhanced District Services
+                    1680840913uL, // More Effective Transfer Manager
+                    1181352643uL, // District Service Limit 3.0
+                    927293560uL , // Geli-Districts v3.0
+                },
+                Authors = "Akira Ishizaki",
+                BrokenBy = GameVersion.MatchDay, // based on user comments
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
+                    { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 813833476uL , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 803074771uL , Status.Incompatible }, // No Deathcare
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
+                    { 583538182uL , Status.Required     }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
+                },
+                CompatibleWith = GameVersion.Patch_1_4_0_f3,
+                ContinuationOf = 433249875uL, // [ARIS] Enhanced Hearse AI
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("7 May, 2020"),
+                Published = WorkshopDate("25 Dec, 2015"),
+                ReplaceWith = 2077426488uL, // Super Hearse AI [Beta]
+                SourceURL = "https://github.com/akira-ishizaki/CS-EnhancedHearseAI/tree/develop",
+                Updated = WorkshopDate("27 Mar, 2016"),
+            });
+
+            AddMod(new Review(529979180uL, "CSL Service Reserve") {
+                Affect = Factor.Service,
+                Authors = "knighthawkGP",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("7 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Covers services up to and including Mass Transit. Services added in subsequent game updates are treated as normal vehicles." },
+                    { NOTE, "Settings guide: https://steamcommunity.com/workshop/filedetails/discussion/529979180/483366528917557909/" },
+                },
+                Published = WorkshopDate("4 Oct, 2015"),
+                SourceURL = "https://github.com/Knighth/CSLServiceReserve",
+                Updated = WorkshopDate("18 May, 2017"),
+            });
+
             // old version
             AddMod(new Review(519691655uL, "Service Vehicle Selector") {
                 Affect = Factor.Other,
@@ -262,6 +480,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.MassTransit,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 1806963141uL, Status.Incompatible }, // TM:PE v11 LABS
                     { 1764208250uL, Status.Incompatible }, // More Vehicles
@@ -283,15 +502,101 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop // removed jan 2018?
+                      | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("30 Mar, 2017"), // web archive
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The mod fell in to disrepair when Natural Disasters was released, due to helicopters spawning from road-vehicle buildings." },
                 },
                 Published = WorkshopDate("17 Sep, 2015"),
+                Removed = WorkshopDate("7 Jul, 2018"), // web archive
                 ReplaceWith = 934994075uL, // Service Vehicle Selector 2
                 Updated = WorkshopDate("9 Jun, 2016"),
+            });
+
+            // this was continuation of SOM: https://www.reddit.com/r/CitiesSkylines/comments/3420af/enhanced_hearse_ai_som_services_optimization/
+            AddMod(new Review(433249875uL, "[ARIS] Enhanced Hearse AI") {
+                Affect = Factor.Service,
+                Alternatives = new[] {
+                    1922400472uL, // Enhanced District Services
+                    1680840913uL, // More Effective Transfer Manager
+                    1181352643uL, // District Service Limit 3.0
+                    927293560uL , // Geli-Districts v3.0
+                },
+                Authors = "Soda",
+                BrokenBy = GameVersion.AfterDark, // based on 583556014uL initial release being fixed for 1.2+
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
+                    { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 813833476uL , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 803074771uL , Status.Incompatible }, // No Deathcare
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
+                    { 583538182uL , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 421028969uL , Status.Required     }, // [ARIS] Skylines Overwatch
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
+                },
+                CompatibleWith = GameVersion.Patch_1_1_1,
+                ContinuationOf = 413847191uL, // SOM - Services Optimisation Module
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("7 May, 2020"),
+                Published = WorkshopDate("27 Apr, 2015"),
+                ReplaceWith = 2077426488uL, // Super Hearse AI [Beta]
+                SourceURL = "https://github.com/arislancrescent/CS-EnhancedHearseAI",
+                Updated = WorkshopDate("9 May, 2015"),
+            });
+
+            // 413847191; SOM - Services Optimisation Module
+            AddMod(new Review(413847191uL, "[Deprecated] SOM - Services Optimization Module") {
+                Affect = Factor.Service,
+                Alternatives = new[] {
+                    1922400472uL, // Enhanced District Services
+                    1680840913uL, // More Effective Transfer Manager
+                    1181352643uL, // District Service Limit 3.0
+                    927293560uL , // Geli-Districts v3.0
+                },
+                Authors = "Soda",
+                BrokenBy = GameVersion.EuropeBiome, // guessing; the hearse/garbage ai mods replaced SOM at that point
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
+                    { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 813833476uL , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 803074771uL , Status.Incompatible }, // No Deathcare
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
+                    { 583538182uL , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
+                },
+                CompatibleWith = GameVersion.Patch_1_0_7c,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.SourceUnavailable, // checked git repo (same as advanced hearse ai) but could not find this project
+                LastSeen = WorkshopDate("7 May, 2020"),
+                Published = WorkshopDate("25 Mar, 2015"),
+                ReplaceWith = 1680840913uL, // More Effective Transfer Manager
+                Updated = WorkshopDate("30 Mar, 2015"),
             });
 
         }

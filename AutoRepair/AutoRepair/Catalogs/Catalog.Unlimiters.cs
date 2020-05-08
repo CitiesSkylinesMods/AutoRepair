@@ -74,6 +74,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "dymanoid",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2076619989uL, Status.Unknown      }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2035564927uL, Status.Compatible   }, // 25parts_su
                     { 1978555062uL, Status.Compatible   }, // AllSpacesUnlockable

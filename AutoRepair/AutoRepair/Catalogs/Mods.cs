@@ -320,11 +320,6 @@ namespace AutoRepair {
 
 
 
-            Add(new Review(1312735149u, "Klyte Commons") {
-                Authors = "Klyte45",
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/klyte45/KlyteCommons",
-            });
 
 
 

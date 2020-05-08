@@ -18,6 +18,19 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Stats";
 
+            AddMod(new Review(2074258904uL, "Demographics: Jobs and Employees") {
+                Affect = Factor.UI,
+                Authors = "BOT COMPOT",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Published = WorkshopDate("26 Apr, 2020"),
+                Updated = WorkshopDate("26 Apr, 2020"),
+            });
+
             AddMod(new Review(2051693155uL, "Building Vehicle Manager") {
                 Affect = Factor.BuildingInfo
                        | Factor.Despawn
@@ -28,6 +41,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Currently only works on Industries DLC buildings." },
                 },
@@ -53,6 +67,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorBreaking
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { 1420955187uL, "[Mod: Real Time] Building Usage mod does not account for worker variations due to Real Time shifts." },
                 },
@@ -154,6 +169,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 414469593uL, // Extended Building Information (emf)
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: It works, but doesn't show info for new building types." },
                 },
@@ -191,10 +207,10 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Harmony errors in log on game exit; doesn't seem to cause any problems." },
                 },
-                ReleasedDuring = GameVersion.Campus,
                 SourceURL = "https://github.com/keallu/CSL-MonitorIt",
             });
 

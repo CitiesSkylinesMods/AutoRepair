@@ -27,7 +27,7 @@ namespace AutoRepair.Descriptors {
         /// <param name="workshopId">The Steam Workshop ID for this item.</param>
         /// <param name="workshopName">The name of this item as it appears in Steam Workshop.</param>
         public Review(ulong workshopId, string workshopName) {
-            if (workshopId == 0 || string.IsNullOrEmpty(workshopName)) {
+            if (workshopId == 0uL || string.IsNullOrEmpty(workshopName)) {
                 throw new ArgumentNullException($"All items must specify both workshop ID '{workshopId}' and name '{workshopName}'.");
             }
             WorkshopId = workshopId;
@@ -39,6 +39,12 @@ namespace AutoRepair.Descriptors {
         /// Items that affect or are affected by the same factor are potentially incompatible.
         /// </summary>
         public Factor Affect { get; set; } = Factor.None;
+
+        /// <summary>
+        /// Gets or sets alternative replacement items. Sometimes there is more than one viable replacement;
+        /// in such cases, set <see cref="ReplaceWith"/> to the main one, and list the others as <see cref="Alternatives"/>.
+        /// </summary>
+        public ulong[] Alternatives { get; set; }
 
         /// <summary>
         /// Gets or sets the web archive URL, if known, for items that are no longer in the Steam Workshop.
@@ -315,9 +321,38 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Affect missing\n");
             }
 
-            if (!Suppresses(Warning.MissingArchiveURL) && HasFlag(ItemFlags.NoWorkshop) && string.IsNullOrEmpty(ArchiveURL)) {
+            /*
+            if (Published == null) {
                 problems = true;
-                log.Append("- Archive URL missing\n");
+                log.Append("- Published date missing\n");
+            }
+
+            if (Updated == null) {
+                problems = true;
+                log.Append("- Updated date missing\n");
+            }
+
+            if (LastSeen == null) {
+                problems = true;
+                log.Append("- LastSeen date missing\n");
+            } else if (Updated != null && LastSeen < Updated) {
+                problems = true;
+                log.Append("- LastSeen < Updated\n");
+            }
+            */
+
+            if (HasFlag(ItemFlags.NoWorkshop)) {
+
+                if (Removed == null) {
+                    problems = true;
+                    log.Append("- Removed date missing\n");
+                }
+
+                if (!Suppresses(Warning.MissingArchiveURL) && string.IsNullOrEmpty(ArchiveURL)) {
+                    problems = true;
+                    log.Append("- Archive URL missing\n");
+                }
+
             } else if (!string.IsNullOrEmpty(ArchiveURL) && !HasFlag(ItemFlags.NoWorkshop)) {
                 problems = true;
                 log.Append("- Add ItemFlags.NoWorkshop to flags ?\n");
@@ -380,7 +415,7 @@ namespace AutoRepair.Descriptors {
             if (extendedReporting && HasFlag(ItemFlags.BrokenByUpdate) && BrokenBy == GameVersion.DefaultUntil)
             {
                 problems = true;
-                log.Append("- If BrokenByUpdate flag set, the BrokenBy vesion must be set\n");
+                log.Append("- If BrokenByUpdate flag set, the BrokenBy version must be set\n");
             }
 
             // items can be clone or continuation, not both
@@ -390,7 +425,7 @@ namespace AutoRepair.Descriptors {
             }
 
             // if cloned, must be incompatible with cloned item
-            if (CloneOf != 0u && IsCompatibleWith(CloneOf)) {
+            if (CloneOf != 0uL && IsCompatibleWith(CloneOf)) {
                 problems = true;
                 log.AppendFormat(
                     "- Must be incompatible with cloned item: {0}uL\n",
@@ -398,11 +433,19 @@ namespace AutoRepair.Descriptors {
             }
 
             // if continuation, must be incompatible with continued item
-            if (ContinuationOf != 0u && IsCompatibleWith(ContinuationOf)) {
+            if (ContinuationOf != 0uL && IsCompatibleWith(ContinuationOf)) {
                 problems = true;
                 log.AppendFormat(
                     "- Must be incompatible with continued item: {0}uL\n",
                     ContinuationOf);
+            }
+
+            if (CloneOf == WorkshopId || ContinuationOf == WorkshopId) {
+                problems = true;
+                log.Append("- Must not be a CloneOf/ContinuationOf of itself!\n");
+            } else if (CloneOf > WorkshopId || ContinuationOf > WorkshopId) {
+                problems = true;
+                log.Append("- Can not be a CloneOf/ContinuationOf subsequently released item!\n");
             }
 
             // if replaceable, _should_ be incompatible with replacement item

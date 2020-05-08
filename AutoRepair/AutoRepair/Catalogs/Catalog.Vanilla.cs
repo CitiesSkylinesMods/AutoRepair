@@ -1,6 +1,7 @@
 namespace AutoRepair.Catalogs {
     using AutoRepair.Descriptors;
     using AutoRepair.Enums;
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
@@ -46,10 +47,12 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Vanilla,
+                LastSeen = DateTime.Now,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "When Hard Mode is enabled, mods that make the game easier will conflict with it." },
                 },
-                ReleasedDuring = GameVersion.Active,
+                Published = WorkshopDate("19 May, 2015"), // existed as of May 2015, could be earlier?
+                Updated = GameVersion.Updated,
             });
 
             AddMod(new Review(Vanilla.UnlimitedMoney, "Unlimited Money (bundled with Cities: Skylines)") {
@@ -85,10 +88,12 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Vanilla,
+                LastSeen = DateTime.Now,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "When Unlimited Money is enabled, mods which reduce costs or increase revenues are not required or may be incompatible." },
+                    { NOTE, "When Unlimited Money is enabled, mods which reduce costs or increase revenues are not required." },
                 },
-                ReleasedDuring = GameVersion.Active,
+                Published = WorkshopDate("19 May, 2015"), // existed as of May 2015, could be earlier?
+                Updated = GameVersion.Updated,
             });
 
             AddMod(new Review(Vanilla.UnlimitedOilAndOre, "Unlimited Oil and Ore (bundled with Cities: Skylines)") {
@@ -104,7 +109,9 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Vanilla,
-                ReleasedDuring = GameVersion.Active,
+                LastSeen = DateTime.Now,
+                Published = WorkshopDate("18 May, 2017"), // Mass Transit
+                Updated = GameVersion.Updated,
             });
 
             AddMod(new Review(Vanilla.UnlimitedSoil, "Unlimited Soil (bundled with Cities: Skylines)") {
@@ -116,7 +123,9 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Vanilla,
-                ReleasedDuring = GameVersion.Active,
+                LastSeen = DateTime.Now,
+                Published = WorkshopDate("18 May, 2017"), // Mass Transit
+                Updated = GameVersion.Updated,
             });
 
             AddMod(new Review(Vanilla.UnlockAll, "Unlock All (bundled with Cities: Skylines)") {
@@ -134,7 +143,9 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Vanilla,
-                ReleasedDuring = GameVersion.Active,
+                LastSeen = DateTime.Now,
+                Published = WorkshopDate("19 May, 2015"), // existed as of May 2015, could be earlier?
+                Updated = GameVersion.Updated,
             });
         }
     }

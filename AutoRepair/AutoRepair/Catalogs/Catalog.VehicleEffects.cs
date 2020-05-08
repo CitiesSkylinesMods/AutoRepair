@@ -125,6 +125,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "de",
                 Tags = new[] {
                     "Audio", "Sounds", "Effects", "Vehicles",
@@ -148,6 +149,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "zh-cn",
                 Tags = new[] {
                     "Audio", "Sounds", "Effects", "Vehicles",
@@ -174,6 +176,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
                 Languages = new[] { "en", "da", "no", "sv-se" },
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "en",
                 Published = WorkshopDate("15 Jan, 2017"),
                 Updated = WorkshopDate("15 Jan, 2017"),
@@ -192,6 +195,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "en-gb",
                 Published = WorkshopDate("3 Jan, 2017"),
                 Updated = WorkshopDate("3 Jan, 2017"),
@@ -212,9 +216,38 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "nl",
                 Published = WorkshopDate("18 Dec, 2016"),
                 Updated = WorkshopDate("18 Dec, 2016"),
+            });
+
+            AddMod(new Review(816529586uL, "Vehicle Effects Definition Pack (NS 6400)") {
+                Affect = Factor.Audio,
+                Authors = "Acc3ss Violation",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 815103125uL , Status.Recommended  }, // Extra Vehicle Effects
+                    { 780720853uL , Status.Required     }, // Vehicle Effects
+                    // supported vehicles:
+                    { 1847502920uL, Status.Recommended  }, // Class 6400 (Railion) with SGGRSS (Pack3)
+                    { 1847502295uL, Status.Recommended  }, // Class 6400 (Railpro) with SGGRSS (Pack2)
+                    { 1722070204uL, Status.Recommended  }, // Class 6400 (DB) with ZACENS (11 Trailers)
+                    { 1720372673uL, Status.Recommended  }, // Class 6400 Creator Pack
+                    { 581361285uL , Status.Recommended  }, // LTE 6400 Gas Tanker Train
+                    { 520396381uL , Status.Recommended  }, // LTE 6400 Coal Hopper Train
+                    { 520297024uL , Status.Recommended  }, // DB 6400 Coal Hopper Train (Long)
+                    { 516172560uL , Status.Recommended  }, // DB 6400 Forestry Train
+                    { 501990901uL , Status.Recommended  }, // Railion 6400 Ballast Train
+                    { 500984466uL , Status.Recommended  }, // NS 6400 Coal Train
+                    { 499772720uL , Status.Recommended  }, // NS 6400 Garbage Train
+                },
+                CompatibleWith = GameVersion.Active,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Locale = "nl",
+                Published = WorkshopDate("11 Dec, 2016"),
+                Updated = WorkshopDate("19 Jan, 2018"),
             });
         }
     }

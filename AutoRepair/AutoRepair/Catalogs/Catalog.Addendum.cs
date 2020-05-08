@@ -19,8 +19,6 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
-            Broken(506982407u, "Dropouts");
-            Note(506982407u, "Dropouts", "[Sunset Harbor] Error: Field '.Citizen.m_age' not found.");
             Fixed(810858473u, "Traffic Report Tool");
             Fixed(426460372u, "Favorite Cims");
             Broken(554232266u, "Nursing Homes for Senior Citizens");
@@ -43,14 +41,11 @@ namespace AutoRepair.Catalogs {
             Fixed(512314255u, "More Network Stuff"); // breaks fishing route bulldoze
             Broken(621002682u, "No Questions Asked"); // crash to desktop
             Fixed(650436109u, "Quay Anarchy");
-            Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths    invisible
-            Broken(1312735149u, "Klyte Commons");
-
+            Fixed(465318661u, "Toggleable Whiteness"); // makes fishing paths invisible
 
             // dead mods
             Dead(421188880u , "[ARIS] Early Death");
             Dead(439582006u , "[ARIS] Enhanced Garbage Truck AI");
-            Dead(433249875u , "[ARIS] Enhanced Hearse AI");
             Dead(421050717u , "[ARIS] Remove Cows");
             Dead(421052798u , "[ARIS] Remove Pigs");
             Dead(421041154u , "[ARIS] Remove Seagulls", 564141599u);
@@ -69,14 +64,11 @@ namespace AutoRepair.Catalogs {
             Dead(408613485u , "City Statistics Easy Access");
             Dead(658232246u , "Compass");
             //Dead(420469721u , "Compass Mod"); // https://github.com/CitiesSkylinesMods/AutoRepair/issues/10
-            Dead(529979180u , "CSL Service Reserve");
             Dead(649522495u , "District Service Limit", 927293560u);
             Dead(813835487u , "Early Death [1.6]");
             Dead(587516082u , "Early Death [Fixed for v1.4+]");
             Dead(813835391u , "Enhanced Garbage Truck AI [1.6]");
             Dead(583552152u , "Enhanced Garbage Truck AI [Fixed for v1.4+]");
-            Dead(813835241u , "Enhanced Hearse AI [1.6]");
-            Dead(583556014u , "Enhanced Hearse AI [Fixed for v1.4+]");
             Dead(414469593u , "Extended Building Information", 1556715327u);
             Dead(456408505u , "European Buildings Unlocker");
             Dead(411164732u , "Extended Public Transport UI");
@@ -88,7 +80,6 @@ namespace AutoRepair.Catalogs {
             Dead(636687806u , "Freewalking");
             //Dead(1368078347u, "French Architecture Style (Paris) District Style");
             Dead(406749417u , "Ground Level Camera - Broken by Mass Transit, don't use");
-            Dead(413748580u , "ImageOverlay");
             Dead(1115699323u, "Immersive Water 0.9.0.0 (beta release)");
             Dead(508195208u , "Improved Asset Icons", 747836519u);
             Dead(580335918u , "Infinite Oil And Ore Redux [DEPRECATED]");
@@ -101,11 +92,7 @@ namespace AutoRepair.Catalogs {
             Dead(1588340989u, "Move It Tool Extensions");
             Dead(420230361u , "Moving Sun");
             Dead(532863263u , "Multi-Track Station Enabler 1.2.0", 1394468624u);
-            Dead(950807008u , "Network Extensions 2 Fix", 812125426u);
-            Dead(478820060u , "Network Extensions Project", 812125426u);
             Dead(658653260u , "Network Nodes Editor [Experimental]", 1619685021u);
-            Dead(929114228u , "New Roads For NE 2");
-            Dead(409073164u , "NoPillars", 463845891u);
             Dead(635815270u , "Operate It");
             Dead(771161159u , "OSM Import");
             Dead(418352365u , "Pedestrian Suspension Bridge");
@@ -133,7 +120,6 @@ namespace AutoRepair.Catalogs {
             //Dead(438937962u , "Small Hanger no Reqs");
             //Dead(667891104u , "Small Ship");
             //Dead(931760630u , "Small Ship");
-            Dead(413847191u , "SOM - Services Optimization Module");
             Dead(556416380u , "Telemetry Control");
             Dead(411095553u , "Terraform tool 0.9", 502750307u);
             Dead(510802741u , "Toggle District Snapping");

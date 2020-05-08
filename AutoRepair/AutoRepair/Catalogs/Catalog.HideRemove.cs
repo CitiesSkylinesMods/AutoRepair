@@ -45,6 +45,7 @@ namespace AutoRepair.Catalogs {
                     { 1637663252uL, Status.Compatible   }, // TM:PE v11 STABLE
                     { 583429740uL , Status.Compatible   }, // Traffic Manager: President Edition (LinuxFan)
                     // bus stop skins
+                    { 1900151000uL, Status.Incompatible }, // 替换为不锈钢公交候车亭
                     { 545878277uL , Status.Incompatible }, // [GBS] German Bus Stop Mod [NC]
                     // traffic light skins - junctions
                     { 1812157090uL, Status.Compatible   }, // [NL] Dutch Traffic Lights
@@ -185,15 +186,42 @@ namespace AutoRepair.Catalogs {
                     // pollution
                     { 666425898uL , Status.Incompatible }, // No Radioactive Desert And More!
                     // animals
-                    { 1706704781 , Status.MinorIssues }, // Remove All Animals
+                    { 1706704781uL, Status.MinorIssues  }, // Remove All Animals
                     { 587536931uL , Status.Incompatible }, // Remove Seagulls [Fixed for v1.4+]
                     { 564141599uL , Status.MinorIssues  }, // No Seagulls
                     { 421041154uL , Status.Incompatible }, // [ARIS] Remove Seagulls
                     { 417145328uL , Status.Incompatible }, // [Deprecated] Kill the Seagulls!
+                    // chirper
+                    { 2053655383uL, Status.MinorIssues  }, // Pretty Pixel's Trump Tweets
+                    { 1498036881uL, Status.MinorIssues  }, // UltimateMod 2.8 ( Higher Income and More Options )
+                    { 819797131uL , Status.MinorIssues  }, // Reddit For Chirpy: Updated
+                    { 810373922uL , Status.Incompatible }, // Remove Chirper
+                    { 649147853uL , Status.MinorIssues  }, // Birdcage - More Chirper controls
+                    { 628399273uL , Status.MinorIssues  }, // ChirpBanner+
+                    { 577655208uL , Status.MinorIssues  }, // 2ch for Chirpy
+                    { 462946934uL , Status.MinorIssues  }, // News de SimCity 3000 : Téléscripteur 3K
+                    { 462969497uL , Status.MinorIssues  }, // SimCity 3000 News: News Ticker 3K
+                    { 423936348uL , Status.MinorIssues  }, // Chirper-Nachrichten
+                    { 422603366uL , Status.Incompatible }, // Disable Chirper
+                    { 414730498uL , Status.MinorIssues  }, // Twitch Chirper Chat
+                    { 412019683uL , Status.MinorIssues  }, // Chitter
+                    { 411307025uL , Status.Incompatible }, // Chirp Remover
+                    { 409924305uL , Status.MinorIssues  }, // SC3K Ticker
+                    { 409392231uL , Status.MinorIssues  }, // SuperChirper
+                    { 408705348uL , Status.MinorIssues  }, // Reddit For Chirpy
+                    { 407871375uL , Status.MinorIssues  }, // ChirpFilter
+                    { 406623071uL , Status.MinorIssues  }, // Chirpy Banner
+                    { 406506125uL , Status.Incompatible }, // ByeByeBirdie
+                    { 406412894uL , Status.MinorIssues  }, // Chirpy Maid
+                    { 405963579uL , Status.MinorIssues  }, // Chirper Position Changer/Mover
+                    { 405791507uL , Status.Incompatible }, // Chirpy Exterminator
                     // other
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1869777403uL, Status.MinorIssues  }, // TimeWarp Fix 时间光照控制 Sakuya16个人汉化
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 814698320uL , Status.MinorIssues  }, // TimeWarp Fix
+                    { 524021335uL , Status.MinorIssues  }, // Time Warp
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -201,16 +229,24 @@ namespace AutoRepair.Catalogs {
                     { 2009708489uL, "[Mod: Road Arrows Replacer] If you remove road arrows with Hide It, the Road Arrows Replacer can't replace them." },
                     { 1962752152uL, "[Mod: Busstop Prop Remover] Both mods can remove stops. Use one, unsubscribe the other." },
                     { 1899640536uL, "[Mod: Theme Mixer 2] Terrain sprites affected by both mods; modify sprite settings in both to ensure same effect." },
+                    { 1498036881uL, "[Mod: UltimateMod] Both mods can hide chirper; for compatibility only use Hide It to do that." },
                     { 1706704781uL, "[Mod: Remove All Animals] Both mods can remove animals. Use one, unsubscribe the other." },
                     { 1117087491uL, "[Mod: Remove Road Props] Both mods can remove road props. Use one, unsubscribe the other." },
-                    { 956707300u , "[Mod: Remove Street Arrows] Both mods can remove street arrows. Use one, unsubscribe the other." },
-                    { 952542692u , "[Mod: Airport Road Light Remover] Both mods can remove runway/taxiway lights. Use one, unsubscribe the other." },
-                    { 949061920u , "[Mod: No Buoys Mod] Both mods can remove buoys. Use one, unsubscribe the other." },
-                    { 919020932u , "[Mod: Stop Remover] Both mods can remove stops. Use one, unsubscribe the other." },
-                    { 666425898u , "[Mod: No Radioactive Desert] Conflcits with Hide It!; causes terrain textures to disappear from map." },
-                    { 564141599u , "[Mod: No Seagulls] Both mods can remove seagulls. Use one, unsubscribe the other." },
+                    { 956707300uL , "[Mod: Remove Street Arrows] Both mods can remove street arrows. Use one, unsubscribe the other." },
+                    { 952542692uL , "[Mod: Airport Road Light Remover] Both mods can remove runway/taxiway lights. Use one, unsubscribe the other." },
+                    { 949061920uL , "[Mod: No Buoys Mod] Both mods can remove buoys. Use one, unsubscribe the other." },
+                    { 919020932uL , "[Mod: Stop Remover] Both mods can remove stops. Use one, unsubscribe the other." },
+                    { 819797131uL , "[Mod: Reddit for Chirpy] For compatibility, do not hide the 'Chirper Button' in Hide It mod." },
+                    { 814698320uL , "[Mod: Time Warp] For compatibility, do not hide the 'Zoom Button' in Hide It mod." },
+                    { 666425898uL , "[Mod: No Radioactive Desert] Conflcits with Hide It!; causes terrain textures to disappear from map." },
+                    { 649147853uL , "[Mod: Birdcage] Both mods can hide chirper; for compatibility only use Hide It to do that." },
+                    { 628399273uL , "[Mod: ChirpBanner+] Both mods can hide chirper; for compatibility only use Hide It to do that." },
+                    { 564141599uL , "[Mod: No Seagulls] Both mods can remove seagulls. Use one, unsubscribe the other." },
                     { 548149310uL , "[Mod: Remove Dirt (Trees and Props)] Use Hide It instead as it's more reliable; unsubscribe Remove Dirt." },
-                    { 418637762u , "[Mod: American Roads] Both mods can remove road markings/props. Use one, unsubscribe the other." },
+                    { 418637762uL , "[Mod: American Roads] Both mods can remove road markings/props. Use one, unsubscribe the other." },
+                    { 414730498uL , "[Mod: Twitch Chirper Chat] For compatibility, do not hide the 'Chirper Button' in Hide It mod." },
+                    { 412019683uL , "[Mod: Chitter] For compatibility, do not hide the 'Chirper Button' in Hide It mod." },
+                    { 409392231uL , "[Mod: SuperChirper] Both mods can hide chirper; for compatibility only use Hide It to do that." },
                 },
                 Published = WorkshopDate("15 Dec, 2018"),
                 SourceURL = "https://github.com/keallu/CSL-HideIt",
@@ -478,6 +514,29 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("10 Nov, 2018"),
             });
 
+            AddMod(new Review(803074771uL, "No Deathcare") {
+                Affect = Factor.HideRemove
+                       | Factor.Service,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
+                    { 813833476uL , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
+                    { 583538182uL , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
+                    { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
+                    { 421028969uL , Status.Incompatible }, // [ARIS] Skylines Overwatch
+                    { 413847191uL , Status.Incompatible }, // [Deprecated] SOM - Services Optimization Module
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("6 May, 2020"),
+                Published = WorkshopDate("20 Nov, 2016"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-NoDeathcare",
+                Updated = WorkshopDate("20 Nov, 2016"),
+            });
+
             AddMod(new Review(564141599uL, "No Seagulls") {
                 Affect = Factor.HideRemove,
                 Authors = "thale5",
@@ -549,7 +608,6 @@ namespace AutoRepair.Catalogs {
                     { 417593730uL , Status.Incompatible }, // No Tree Dirt
                 },
                 CompatibleWith = GameVersion.EuropeBiome,
-                ContinuationOf = 417593730uL, // No Tree Dirt
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration

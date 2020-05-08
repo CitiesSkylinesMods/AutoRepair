@@ -367,7 +367,6 @@ namespace AutoRepair.Catalogs {
                     { 1224627683u, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 CompatibleWith = GameVersion.Patch_1_1_1,
-                ContinuationOf = 576970398u, // Quartz (former Sapphire) - UI skin framework
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
@@ -482,41 +481,6 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 
-            // Compatible with Reddit for Chirpy mod by 'mabako' and Chirp Filter mod by 'Zuppi' 
-            AddMod(new Review(406623071u, "Chirpy Banner") {
-                Affect = Factor.UI,
-                ArchiveURL = "https://web.archive.org/web/20151122135431/http://steamcommunity.com/sharedfiles/filedetails/?id=406623071",
-                Authors = "brittany",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 419090722u , Status.Required     }, // Mod Corral
-                },
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop // avail Nov 2015, gone by Jun 2016
-                      | ItemFlags.SourceAvailable,
-                Published = WorkshopDate("14 Mar, 2015"), // guessing based on github initial commit
-                SourceURL = "https://github.com/brittanygh/CS-ChirpBanner",
-                Updated = WorkshopDate("8 Apr, 2015"),
-            });
-
-            AddMod(new Review(405963579u, "Chirper Position Changer/Mover") {
-                Affect = Factor.UI,
-                Authors = "MrLawbreaker",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // incompat with other chirper mods
-                },
-                CompatibleWith = GameVersion.Patch_1_11_1_f4,
-                Flags = ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "To reset position, press Ctrl + O (letter 'o')." },
-                },
-                Published = WorkshopDate("10 Mar, 2015"),
-                SourceURL = "https://github.com/MrLawbreaker/SkylinesMod_FreeMoveChirper",
-                Updated = WorkshopDate("18 Mar, 2015"),
-            });
-
             /*
             # ███████ ██   ██ ██ ███    ██ ███████
             # ██      ██  ██  ██ ████   ██ ██
@@ -539,13 +503,15 @@ namespace AutoRepair.Catalogs {
                     // skins:
                     { 593987954u , Status.Incompatible }, // Triple-Screen UI Skin
                     { 511029270u , Status.Incompatible }, // Sapphire - Triple Screen Centered
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 CompatibleWith = GameVersion.Patch_1_11_1_f4,
                 ContinuationOf = 511029270u, // Sapphire - Triple Screen Centered
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceBundled,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                     { NOTE, "Only tested on triple 1920 x 1080 monitors (total resolution of 5760 x 1080). Other setups unlikely to work without modification."},
                 },
                 Published = WorkshopDate("6 Jan, 2016"),
@@ -567,12 +533,14 @@ namespace AutoRepair.Catalogs {
                     // skins:
                     { 578482272u , Status.Incompatible }, // [FIXED][LEGACY] Emerald UI (16:9)
                     { 422251153u , Status.Incompatible }, // Emerald UI (16:9)
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 ContinuationOf = 422251153u, // Emerald UI (16:9)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceBundled,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                 },
                 Published = WorkshopDate("18 Dec, 2015"),
                 Updated = WorkshopDate("19 Dec, 2015"),
@@ -594,6 +562,8 @@ namespace AutoRepair.Catalogs {
                     { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
                     { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
                     { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 ContinuationOf = 424995783u, // [UI] Silicon Skin V1.0
                 Flags = ItemFlags.Abandonware
@@ -601,7 +571,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.SourceBundled,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                     { NOTE, "Very susceptible to changes in vanilla game UI, likely to be broken by each game update." },
                     { NOTE, "Green Cities: Road buttons are broken." },
                 },
@@ -623,6 +593,8 @@ namespace AutoRepair.Catalogs {
                     // skins:
                     { 593987954u , Status.Incompatible }, // Triple-Screen UI Skin
                     { 511029270u , Status.Incompatible }, // Sapphire - Triple Screen Centered
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 CompatibleWith = GameVersion.Patch_1_2_2_f2,
                 Flags = ItemFlags.Abandonware // author states this version will no longer be updated
@@ -631,7 +603,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete // use newer version
                       | ItemFlags.SourceBundled,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                     { NOTE, "Only tested on triple 1920 x 1080 monitors (total resolution of 5760 x 1080). Other setups unlikely to work without modification."},
                 },
                 Published = WorkshopDate("2 Sep, 2015"), // sapphire version
@@ -651,6 +623,8 @@ namespace AutoRepair.Catalogs {
                     { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
                     { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                     // skins:
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 CompatibleWith = GameVersion.MassTransit,
                 Flags = ItemFlags.Abandonware
@@ -659,7 +633,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Laggy
                       | ItemFlags.SourceBundled,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                 },
                 Published = WorkshopDate("27 May, 2015"),
                 Updated = WorkshopDate("23 Jun, 2017"),
@@ -677,11 +651,13 @@ namespace AutoRepair.Catalogs {
                     { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
                     { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                     // skins:
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceBundled, // Source folder
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                 },
                 Published = WorkshopDate("19 Apr, 2015"),
                 Updated = WorkshopDate("4 Feb, 2016"),
@@ -703,6 +679,8 @@ namespace AutoRepair.Catalogs {
                     { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
                     { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
                     { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 CompatibleWith = GameVersion.Patch_1_1_1,
                 ContinuationOf = 424995783u, // [UI] Silicon Skin V1.0
@@ -713,7 +691,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                     { NOTE, "Very susceptible to changes in vanilla game UI, likely to be broken by each game update." },
                 },
                 Published = WorkshopDate("19 Apr, 2015"),
@@ -738,6 +716,8 @@ namespace AutoRepair.Catalogs {
                     { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
                     { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
                     { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 CompatibleWith = GameVersion.Patch_1_1_1,
                 Flags = ItemFlags.Abandonware
@@ -747,7 +727,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                     { NOTE, "Very susceptible to changes in vanilla game UI, likely to be broken by each game update." },
                 },
                 Published = WorkshopDate("14 Apr, 2015"),
@@ -768,11 +748,13 @@ namespace AutoRepair.Catalogs {
                     { 576970398u , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
                     { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
                     // skins:
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                 },
                 Published = WorkshopDate("12 Apr, 2015"),
                 Updated = WorkshopDate("18 Dec, 2015"),
@@ -793,6 +775,8 @@ namespace AutoRepair.Catalogs {
                     // skins:
                     { 578482272u , Status.Incompatible }, // [FIXED][LEGACY] Emerald UI (16:9)
                     { 422251153u , Status.Incompatible }, // Emerald UI (16:9)
+                    // other:
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
                 },
                 CompatibleWith = GameVersion.Patch_1_1_1,
                 Flags = ItemFlags.Abandonware
@@ -803,7 +787,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable
                       | ItemFlags.SourceBundled, // Source folder
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "IUserMod: No OnEnabled() or OnDisabled() methods; might throw errors on app launch." },
+                    { NOTE, "IUserMod: No 'OnEnabled()' or 'OnDisabled()' methods; might throw errors on app launch/exit." },
                 },
                 Published = WorkshopDate("9 Apr, 2015"),
                 ReplaceWith = 578482272u, // [FIXED][LEGACY] Emerald UI (16:9)

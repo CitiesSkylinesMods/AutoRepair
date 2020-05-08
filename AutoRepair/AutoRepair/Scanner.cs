@@ -11,6 +11,7 @@ namespace AutoRepair {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Globalization;
     using System.Text;
     using UnityEngine;
     using static ColossalFramework.Plugins.PluginManager;
@@ -192,13 +193,8 @@ namespace AutoRepair {
             }
 
             if (!subscription.IsReviewed) {
-                log.AppendFormat(
-                    "\n - Probably compatible with Cities: Skylines {0} ?\n",
-                    GameVersion.GetVersionString(gameVersion));
+                log.Append("\n - This mod has not been reviewed yet.\n");
 
-                // best wait until we have mode descriptors otherwise it will result in flood of spam!
-                //log.Append("\n - It would be helpful if you could copy and paste the mod id/name above\n");
-                //log.Append("   to the Compatibility Checker workshop page linked at top of log file.\n");
                 if (Options.Instance.LogWorkshopURLs) {
                     log.AppendFormat("\n - Workshop page: {0}\n", subscription.WorkshopURL);
                 }
@@ -208,10 +204,28 @@ namespace AutoRepair {
 
             if (Options.Instance.LogDescriptorHeaders) {
                 log.AppendFormat(
-                    "\n - [AutoRepair Descriptor] Catalog: '{0}'. Vectors: {1}. Author(s): {2}\n",
+                    "\n - [AutoRepair Descriptor] Catalog: '{0}'. Vectors: {1}. Author(s): {2}\n   ",
                     review.Catalog,
                     review.Compatibility.Count,
                     review.Authors);
+
+                if (review.Published != null) {
+                    log.AppendFormat("Published: {0:d MMM yyyy}. ", review.Published);
+                }
+
+                if (review.Updated != null) {
+                    log.AppendFormat("Updated: {0:d MMM yyyy}. ", review.Updated);
+                }
+
+                if (review.LastSeen != null) {
+                    log.AppendFormat("Checked: {0:d MMM yyyy}. ", review.LastSeen);
+                }
+
+                if (review.Removed != null) {
+                    log.AppendFormat("Removed: {0:d MMM yyyy}. ", review.Removed);
+                }
+
+                log.AppendFormat("Downloaded: {0:d MMM yyyy}.\n", subscription.Downloaded);
             }
 
             if (review.BrokenBy != null && gameVersion >= review.BrokenBy) {
@@ -252,7 +266,7 @@ namespace AutoRepair {
             }
 
             if (review.HasFlag(ItemFlags.Abandonware)) {
-                log.Append("\n - Author seems unresponsive, updates unlikely.\n");
+                log.Append("\n - Mod seems (or is) abandonned; future updates are unlikely.\n");
             }
 
             if (review.HasFlag(ItemFlags.Streamable)) {
@@ -345,6 +359,9 @@ namespace AutoRepair {
         /// <param name="review">The item descriptor to inspect.</param>
         /// <param name="log">The log file where results are sent.</param>
         private static void SuggestReplacement(Review review, ref StringBuilder log) {
+
+            // TODO: List alternatives too, if defined
+
             if (!Catalog.Instance.TryGetReview(review.ReplaceWith, out var replacement)) {
 
                 if (review.HasFlag(ItemFlags.ForceMigration)) {

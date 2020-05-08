@@ -19,55 +19,302 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Unsorted";
 
-            AddMod(new Review(819797131uL, "Reddit For Chirpy: Updated") {
+            AddMod(new Review(411253368uL, "Steam notification mover") {
                 Affect = Factor.UI,
-                Authors = "tony56a",
-                BrokenBy = GameVersion.Campus,
+                Authors = "(unknown)",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 819797131uL , Status.Incompatible }, // Reddit For Chirpy: Updated
-                    { 408705348uL , Status.Incompatible }, // Reddit For Chirpy
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
                 },
-                CompatibleWith = GameVersion.Patch_1_11_1_f4,
-                ContinuationOf = 408705348uL, // Reddit For Chirpy
-                Flags = ItemFlags.BrokenByUpdate
-                      | ItemFlags.SaveAltering
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Unreliable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Users report this mod is unreliable since Campus game update." },
-                    { NOTE, "To disable this mod: Pause game, delete all chirps in chirper, save game; then you can exit and disable the mod." },
-                    { NOTE, "You might be able to use 'Safe Mode' features of 'Loading Screen Mod' to recover a broken save that used this mod." },
-                },
-                Published = WorkshopDate("17 Dec, 2016"),
-                Updated = WorkshopDate("5 Jul, 2018"),
+                CompatibleWith = GameVersion.Patch_1_0_6b,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 Nov, 2016"), // was linked to from 794268416uL
+                Published = WorkshopDate("21 Mar, 2015"), // based on adjacent item
+                Removed = WorkshopDate("9 Jul, 2018"), // based on wayback showing green redirect
+                ReplaceWith = 794268416uL, // Steamy - More Steam controls
+                Suppress = Warning.MissingArchiveURL,
+                Updated = WorkshopDate("21 Mar, 2015"), // unable to determine if there were any updates
             });
 
-            AddMod(new Review(408705348uL, "Reddit For Chirpy") {
+            AddMod(new Review(814102166uL, "Image Overlay") {
                 Affect = Factor.UI,
-                Authors = "mabako",
+                Authors = "Lanceris",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1864205702uL, Status.Incompatible }, // 地图图片叠加 Image Overlay
+                    { 814102166uL , Status.Incompatible }, // Image Overlay
+                    { 662933818uL , Status.Incompatible }, // OverLayer v2
+                    { 421400880uL , Status.Incompatible }, // BetterImageOverlay
+                    { 413748580uL , Status.Incompatible }, // ImageOverlay
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 421400880uL, // BetterImageOverlay
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Template PNG image with all tiles marked: https://i.imgur.com/12u8Jm7.png" },
+                    { NOTE, "Some users report the keyboard shortcuts no longer work; but it does work for other users." },
+                    { NOTE, "Image must be valid PNG file for the mod to work; try different colour depth and make dimensions 'power of 2' (see wikipedia) for best results." },
+                    { NOTE, "It needs to load image from disk; if you get 'Unauthorized Access' violantion, try running game as Administrator user." },
+                },
+                Published = WorkshopDate("7 Dec, 2016"),
+                SourceURL = "https://github.com/lanceris/EvenBetterImageOverlay",
+                Updated = WorkshopDate("19 Jul, 2018"),
+            });
+
+            AddMod(new Review(421400880uL, "BetterImageOverlay") {
+                Affect = Factor.UI,
+                Authors = "Omegote",
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 819797131uL , Status.Incompatible }, // Reddit For Chirpy: Updated
-                    { 408705348uL , Status.Incompatible }, // Reddit For Chirpy
+                    { 1864205702uL, Status.Incompatible }, // 地图图片叠加 Image Overlay
+                    { 814102166uL , Status.Incompatible }, // Image Overlay
+                    { 662933818uL , Status.Incompatible }, // OverLayer v2
+                    { 421400880uL , Status.Incompatible }, // BetterImageOverlay
+                    { 413748580uL , Status.Incompatible }, // ImageOverlay
+                },
+                CompatibleWith = GameVersion.Stadiums,
+                ContinuationOf = 413748580uL, // ImageOverlay
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("7 Apr, 2015"),
+                ReplaceWith = 814102166uL, // Image Overlay
+                Updated = WorkshopDate("7 Apr, 2015"),
+            });
+
+            AddMod(new Review(413748580uL, "ImageOverlay") {
+                Affect = Factor.UI,
+                Authors = "Play Nicely",
+                BrokenBy = GameVersion.NaturalDisasters, // possibly earlier (1.7.?)
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1864205702uL, Status.Incompatible }, // 地图图片叠加 Image Overlay
+                    { 814102166uL , Status.Incompatible }, // Image Overlay
+                    { 662933818uL , Status.Incompatible }, // OverLayer v2
+                    { 421400880uL , Status.Incompatible }, // BetterImageOverlay
+                    { 413748580uL , Status.Incompatible }, // ImageOverlay
                 },
                 CompatibleWith = GameVersion.Stadiums,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
-                      | ItemFlags.SaveAltering
-                      | ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "To disable this mod: Pause game, delete all chirps in chirper, save game; then you can exit and disable the mod." },
-                    { NOTE, "You might be able to use 'Safe Mode' features of 'Loading Screen Mod' to recover a broken save that used this mod." },
-                },
-                Published = WorkshopDate("15 Mar, 2015"),
-                ReplaceWith = 819797131uL, // Reddit For Chirpy: Updated
-                SourceURL = "https://github.com/mabako/reddit-for-city-skylines",
-                Updated = WorkshopDate("3 Apr, 2015"),
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("26 Mar, 2015"),
+                ReplaceWith = 814102166uL, // Image Overlay
+                Updated = WorkshopDate("26 Mar, 2015"),
             });
+
+            AddMod(new Review(662933818uL, "OverLayer v2") {
+                Affect = Factor.UI,
+                Authors = "princekolt",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1864205702uL, Status.Incompatible }, // 地图图片叠加 Image Overlay
+                    { 814102166uL , Status.Incompatible }, // Image Overlay
+                    { 662933818uL , Status.Incompatible }, // OverLayer v2
+                    { 421400880uL , Status.Incompatible }, // BetterImageOverlay
+                    { 413748580uL , Status.Incompatible }, // ImageOverlay
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Template PNG image with all tiles marked: https://i.imgur.com/12u8Jm7.png" },
+                    { NOTE, "Some users report the keyboard shortcuts no longer work; but it does work for other users." },
+                    { NOTE, "Image must be valid PNG file for the mod to work; try different colour depth and make dimensions 'power of 2' (see wikipedia) for best results." },
+                    { NOTE, "It needs to load image from disk; if you get 'Unauthorized Access' violantion, try running game as Administrator user." },
+                },
+                Published = WorkshopDate("10 Apr, 2016"),
+                SourceURL = "https://github.com/brunophilipe/OverLayer",
+                Updated = WorkshopDate("28 May, 2016"),
+            });
+
+            AddMod(new Review(1864205702uL, "地图图片叠加 Image Overlay") {
+                Affect = Factor.UI,
+                Authors = "TIMIYANG",
+                Catalog = catalog,
+                CloneOf = 814102166uL, // Image Overlay
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1864205702uL, Status.Incompatible }, // 地图图片叠加 Image Overlay
+                    { 814102166uL , Status.Incompatible }, // Image Overlay
+                    { 662933818uL , Status.Incompatible }, // OverLayer v2
+                    { 421400880uL , Status.Incompatible }, // BetterImageOverlay
+                    { 413748580uL , Status.Incompatible }, // ImageOverlay
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("15 Sep, 2019"),
+                Updated = WorkshopDate("15 Sep, 2019"),
+            });
+
+            AddMod(new Review(1869777403uL, "TimeWarp Fix 时间光照控制 Sakuya16个人汉化") {
+                Affect = Factor.Timeflow,
+                Alternatives = new[] {
+                    1870670690uL, // Ultimate Eyecandy 终极眼睛糖果滤镜 Sakuya16个人汉化版
+                    814698320uL , // Time Warp Fix
+                    672248733uL , // Ultimate Eyecandy
+                },
+                Authors = "Izayoi _Sakuya16",
+                Catalog = catalog,
+                CloneOf = 814698320uL, // Time Warp Fix
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1870670690uL, Status.Incompatible }, // Ultimate Eyecandy 终极眼睛糖果滤镜 Sakuya16个人汉化版
+                    { 1869777403uL, Status.Incompatible }, // TimeWarp Fix 时间光照控制 Sakuya16个人汉化
+                    { 1749971558uL, Status.Incompatible }, // Real Time Offline
+                    { 1591417160uL, Status.MinorIssues  }, // Hide It!
+                    { 1420955187uL, Status.Incompatible }, // Real Time
+                    { 814698320uL , Status.Incompatible }, // TimeWarp Fix
+                    { 672248733uL , Status.Incompatible }, // Ultimate Eye Candy (does same thing)
+                    { 524021335uL , Status.Incompatible }, // Time Warp (original)
+                    { 456408505uL , Status.Incompatible }, // European Buildings Unlocker (+vice versa) [ DEPRECATED ]
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorIssues
+                      | ItemFlags.Localised
+                      | ItemFlags.SourceUnavailable,
+                Languages = new[] { "zh-cn", "en", "de", "it", "nl" },
+                LastSeen = WorkshopDate("8 May, 2020"),
+                Locale = "zh-cn",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "To use this mod, the day/night cycle must be enabled in game settings." },
+                    { NOTE, "May cause slight flickering effect on some graphics cards (never noticed it personally, but some users had problems)." },
+                    { NOTE, "May conflict with time slider in asset editor (please let auberine18 know if this is the case via the Mod Compatibility Checker workshop page)." },
+                    { 1591417160uL, "[Mod: Hide It!] Do not hide the 'Zoom button' otherwise it might cause TimeWarp Fix mod to crash." },
+                    { 1870670690uL, "[Mod: Ultimate Eye Candy] Both mods do similar thing; use one, unsubscribe the other." },
+                },
+                Published = WorkshopDate("22 Sep, 2019"),
+                Updated = WorkshopDate("22 Sep, 2019"),
+            });
+
+            AddMod(new Review(814698320uL, "TimeWarp Fix") {
+                Affect = Factor.Timeflow,
+                Alternatives = new[] {
+                    1869777403uL, // TimeWarp Fix 时间光照控制 Sakuya16个人汉化
+                    672248733uL , // Ultimate Eyecandy
+                },
+                Authors = "boldhedgehog",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1870670690uL, Status.Incompatible }, // Ultimate Eyecandy 终极眼睛糖果滤镜 Sakuya16个人汉化版
+                    { 1869777403uL, Status.Incompatible }, // TimeWarp Fix 时间光照控制 Sakuya16个人汉化
+                    { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
+                    { 1591417160uL, Status.MinorIssues  }, // Hide It!
+                    { 1420955187uL, Status.MinorIssues  }, // Real Time
+                    { 814698320uL , Status.Incompatible }, // TimeWarp Fix
+                    { 672248733uL , Status.Incompatible }, // Ultimate Eye Candy (does same thing)
+                    { 524021335uL , Status.Incompatible }, // Time Warp (original)
+                    { 456408505uL , Status.Incompatible }, // European Buildings Unlocker (+vice versa) [ DEPRECATED ]
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 524021335uL, // Time Warp (original)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorIssues
+                      | ItemFlags.Localised
+                      | ItemFlags.SourceAvailable,
+                Languages = new[] { "en", "de", "it", "nl" },
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "To use this mod, the day/night cycle must be enabled in game settings." },
+                    { NOTE, "May cause slight flickering effect on some graphics cards (never noticed it personally, but some users had problems)." },
+                    { NOTE, "May conflict with time slider in asset editor (please let auberine18 know if this is the case via the Mod Compatibility Checker workshop page)." },
+                    { 1591417160uL, "[Mod: Hide It!] Do not hide the 'Zoom button' otherwise it might cause TimeWarp Fix mod to crash." },
+                    { 1420955187uL, "[Mod: Time Warp] The mods are compatible: Real Time will pause game when you Time Warp; when game is unpaused, time will revert to normal." },
+                    { 672248733uL , "[Mod: Ultimate Eye Candy] Both mods do similar thing; use one, unsubscribe the other." },
+                },
+                Published = WorkshopDate("8 Dec, 2016"),
+                SourceURL = "https://github.com/boldhedgehog/TimeWarp",
+                Updated = WorkshopDate("30 May, 2017"),
+            });
+
+            // original
+            // https://web.archive.org/web/20170602224846/http://steamcommunity.com/id/LisaLionheart/myworkshopfiles/?appid=255710
+            AddMod(new Review(524021335uL, "Time Warp") {
+                Affect = Factor.Timeflow,
+                Alternatives = new[] {
+                    672248733uL, // Ultimate Eyecandy
+                },
+                ArchiveURL = "https://web.archive.org/web/20161229200834/http://steamcommunity.com:80/sharedfiles/filedetails/?id=524021335",
+                Authors = "LisaLionheart",
+                BrokenBy = GameVersion.NaturalDisasters,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1870670690uL, Status.Incompatible }, // Ultimate Eyecandy 终极眼睛糖果滤镜 Sakuya16个人汉化版
+                    { 1869777403uL, Status.Incompatible }, // TimeWarp Fix 时间光照控制 Sakuya16个人汉化
+                    { 1591417160uL, Status.MinorIssues  }, // Hide It!
+                    { 814698320uL , Status.Incompatible }, // TimeWarp Fix
+                    { 672248733uL , Status.Incompatible }, // Ultimate Eye Candy (does same thing)
+                    { 524021335uL , Status.Incompatible }, // Time Warp (original)
+                    { 456408505uL , Status.Incompatible }, // European Buildings Unlocker (+vice versa) [ DEPRECATED ]
+                },
+                CompatibleWith = GameVersion.Stadiums,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Localised
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceAvailable,
+                Languages = new[] { "en", "de", "it", "nl" },
+                LastSeen = WorkshopDate("29 Dec, 2016"), // based on comments shown in web archive
+                Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Video of the mod from original author: https://www.youtube.com/watch?v=iYbJyRpNniw" },
+                },
+                Published = WorkshopDate("24 Sep, 2015"), // based on adjacent item and web archive
+                Removed = WorkshopDate("21 Aug, 2017"), // based on web archive
+                ReplaceWith = 814698320uL, // TimeWarp Fix
+                SourceURL = "https://github.com/lisa-lionheart/TimeWarp",
+                Updated = WorkshopDate("30 Oct, 2015"), // based on web archive
+            });
+
+
+            AddMod(new Review(1312735149u, "[OUTDATED] Klyte Commons") {
+                Affect = Factor.Other,
+                Authors = "Klyte45",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1553517176uL, Status.Incompatible }, // Specialized Industry Fix Redux
+                    { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.Obsolete // no longer required for any of Klyte mods
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This mod is no longer required, you can unsubscribe it." },
+                    { NOTE, "This mod causes game to exit to desktop when trying to exit to Main Menu." },
+                },
+                Published = WorkshopDate("25 Feb, 2018"),
+                SourceURL = "https://github.com/klyte45/KlyteCommons",
+                Updated = WorkshopDate("9 Jun, 2019"),
+            });
+
+
 
             AddMod(new Review(845665815uL, "CSL Map View") {
                 Affect = Factor.Other,
@@ -79,6 +326,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 Languages = new[] { "de", "en", "fr", "ja", "ko", "ru", "zh-cn", "zh-tw" },
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "en",
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Command line parameters: https://github.com/gansaku/CSLMapView/wiki/Command-line-parameters" },
@@ -108,6 +356,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Patch_1_11_1_f4,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Double-clicking a building in build menus will center map camera on fist instance of that building." },
                     { NOTE, "This mod is probably incompatible with any mod that changes the toolbars (unconfirmed)." },
@@ -133,6 +382,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Runs a lot of code in OnUpdate() = can cause lag in-game." },
                     { NOTE, "User guide: https://steamcommunity.com/workshop/filedetails/discussion/878991312/133259227529823319/" },
@@ -145,39 +395,6 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Mar, 2018"),
             });
 
-            AddMod(new Review(895061550uL, "Theme Decals") {
-                Affect = Factor.MapThemes
-                       | Factor.Props,
-                Authors = "Ronyx69",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1899640536uL, Status.Unknown      }, // Theme Mixer 2
-                    { 1445375997uL, Status.Incompatible }, // Theme Mixer 汉化版2的
-                    { 1283010953uL, Status.Incompatible }, // TerrainTextureReplacer Reupload
-                    { 920832749uL , Status.Incompatible }, // TerrainTextureReplacer
-                    { 877394445uL , Status.Incompatible }, // TerrainTextureReplacer
-                    { 811664974uL , Status.Incompatible }, // TTR - Terrain Texture Replacer
-                    { 793346248uL , Status.Recommended  }, // Decal Hover Area
-                    { 775021554uL , Status.Incompatible }, // Theme Mixer (original by TPB)
-                    { 767233815uL , Status.Required     }, // Decal Prop Fix
-                    { 574674741uL , Status.Incompatible }, // Terrain Themes Mod
-                    { 416966387uL , Status.Incompatible }, // Terrain Texture Replacer
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorIssues
-                      | ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "If you see 'If you see this then the mod didn't work' the mod is either disabled or failed to initialise." },
-                    { NOTE, "Changes to prop or distance, theme textures or graphics detail will likely require game restart for the decals to update." },
-                    { NOTE, "Asset creators, script for creating decals: https://gist.github.com/ronyx69/69130ffd46ab3573f0968aedd11c88eb" },
-                    { NOTE, "Asset creators, logo for asset icon: https://drive.google.com/open?id=0B6Ccf1N5h5f7ZE9laHg3cVY0aHM" },
-                },
-                Published = WorkshopDate("31 Mar, 2017"),
-                SourceURL = "https://gist.github.com/ronyx69/a3fff79130e59fd5b7210ed5228ab812",
-                Updated = WorkshopDate("21 Aug, 2017"),
-            });
-
             AddMod(new Review(911295408uL, "Prop Scaling 0.3 [Experimental ALPHA]") {
                 Affect = Factor.Props,
                 Authors = "TPB",
@@ -186,6 +403,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The mod takes effect whilst placing props on the map:" },
                     { NOTE, "Press Ctrl + Up/Down to incease/decrease min scale." },
@@ -210,6 +428,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("11 Apr, 2017"),
                 SourceURL = "https://gist.github.com/ronyx69/e556609f78efd918aa5895261d38d78e",
                 Updated = WorkshopDate("12 Apr, 2017"),
@@ -222,6 +441,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("25 May, 2017"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-TrackMyTime",
                 Updated = WorkshopDate("25 May, 2017"),
@@ -239,6 +459,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 1800844556uL, // Zone Mixer 0 (Beta)
                 Flags = ItemFlags.SaveAltering
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Tutorial video explains how to use it, and also how to safely remove it without breaking save game: https://www.youtube.com/watch?v=_MAeV4mkAV8" },
                 },
@@ -262,7 +483,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // removed ~10 Apr 2020
                       | ItemFlags.Obsolete // replacement version available
                       | ItemFlags.SourceAvailable,
-                Published = WorkshopDate("14 Jul, 2019"), // guess based on git repo creation date
+                LastSeen = WorkshopDate("26 Mar, 2020"),
+                Published = WorkshopDate("12 Jul, 2019"), // based on adjacent workshop item
+                Removed = WorkshopDate("10 Apr, 2020"),
                 ReplaceWith = 2055972178uL, // Custom Zone Mixer
                 SourceURL = "https://github.com/klyte45/ZoneMixer",
                 Suppress = Warning.MissingArchiveURL,
@@ -270,33 +493,50 @@ namespace AutoRepair.Catalogs {
                 UserModInspected = true,
             });
 
-            AddMod(new Review(2053655383uL, "Pretty Pixel's Trump Tweets") {
-                Affect = Factor.UI,
-                Authors = "Gerald",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // incompat with any chirper removers
-                },
-                Flags = ItemFlags.SourceUnavailable,
-                Published = WorkshopDate("9 Apr, 2020"),
-                Updated = WorkshopDate("9 Apr, 2020"),
-            });
-
             AddMod(new Review(2044145894uL, "Dropouts Sunset Fix") {
+                Affect = Factor.Education,
                 Authors = "Bobinator The Destroyer!",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 506982407uL, Status.Incompatible }, // Dropouts
+                    { 2044145894uL, Status.Incompatible }, // Dropouts Sunset Fix
+                    { 506982407uL , Status.Incompatible }, // Dropouts
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 506982407uL, // Dropouts
-                Flags = ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "This is a temporary bug fix mod for Dropouts mod." },
+                    { NOTE, "Enacting the 'Education Boost' city/district policy will reduce number of dropouts." },
                 },
                 Published = WorkshopDate("1 Apr, 2020"),
-                ReleasedDuring = GameVersion.SunsetHarbor,
+                SourceURL = "https://github.com/AbitFishy/CitiesSkylinesDropoutsModSunsetHarborFix",
                 Updated = WorkshopDate("1 Apr, 2020"),
+            });
+
+            AddMod(new Review(506982407uL, "Dropouts") {
+                Affect = Factor.Education,
+                Authors = "FrF",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2044145894uL, Status.Incompatible }, // Dropouts Sunset Fix
+                    { 506982407uL , Status.Incompatible }, // Dropouts
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Causes '.Citizen.m_age' errors which break game." },
+                },
+                Published = WorkshopDate("26 Aug, 2015"),
+                ReplaceWith = 2044145894uL, // Dropouts Sunset Fix
+                SourceURL = "https://github.com/markbt/CitiesSkylinesDropoutsMod",
+                Updated = WorkshopDate("26 Aug, 2015"),
             });
 
             AddMod(new Review(2040656402uL, "Harmony") {
@@ -310,12 +550,13 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "This is a dependency for multiple mods, do not remove." },
                 },
                 Published = WorkshopDate("30 Mar, 2020"),
                 SourceURL = "https://github.com/boformer/CitiesHarmony",
-                Updated = WorkshopDate("31 Mar, 2020"),
+                Updated = WorkshopDate("10 Apr, 2020"),
             });
 
 
@@ -332,9 +573,11 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.ParadoxLauncher,
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("1 Feb, 2020"),
                 ReplaceWith = 426460372uL, // Favorite Cims
                 Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("1 Feb, 2020"),
             });
 
             // likely incompat with Customize It Extended
@@ -343,14 +586,18 @@ namespace AutoRepair.Catalogs {
                 Authors = "μohnytoxic™",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1865667356uL, Status.Incompatible }, // Twitch Citizens
                     { 1806759255uL, Status.Unknown      }, // Customize It Extended
                     { 1369729955uL, Status.Unknown      }, // Customize It!
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.Campus,
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("17 Sep, 2019"),
+                Updated = WorkshopDate("17 Sep, 2019"),
             });
 
             // Apparently creates some sort of biogas harvesting building that's
@@ -370,20 +617,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.SaveAltering
                       | ItemFlags.SourceUnavailable,
-            });
-
-            // replaces bus shelters, likely incompat with similar mods
-            AddMod(new Review(1900151000uL, "替换为不锈钢公交候车亭") {
-                Affect = Factor.HideRemove
-                       | Factor.Props,
-                Authors = "ZEIR",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // anything that alters bus stops
-                },
-                CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://gist.github.com/OwiHH-NC/4cefbd1fbc7ff7135c59",
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("24 Nov, 2019"),
+                Updated = WorkshopDate("24 Nov, 2019"),
             });
 
             AddMod(new Review(1899943042uL, "No Scaffolding Animation") {
@@ -392,17 +628,22 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
+                    { 1614061108uL, Status.Incompatible }, // Real Construction
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
-                    // real construciton?
-                    // plop growables?
+                    { 924884948uL , Status.Incompatible }, // Plop the Growables
                     // rico?
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.SourceUnavailable,
+                ContinuationOf = 924884948uL, // Plop the Growables
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("27 Oct, 2019"),
+                Updated = WorkshopDate("27 Oct, 2019"),
             });
 
             // mesures performance based on time it takes for a game day, and fps
-            AddMod(new Review(1899449152, "Game Day Timer") {
+            AddMod(new Review(1899449152uL, "Game Day Timer") {
                 Affect = Factor.Other,
                 Authors = "rcav8tr",
                 Catalog = catalog,
@@ -412,7 +653,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("26 Oct, 2019"),
                 SourceURL = "https://github.com/rcav8tr/GameDayTimer",
+                Updated = WorkshopDate("15 Jan, 2020"),
             });
 
             AddMod(new Review(1859100867uL, "Klyte's Framework 1.1") {
@@ -424,6 +668,9 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 SourceURL = "https://github.com/klyte45/KlyteFramework",
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("10 Sep, 2019"),
+                Updated = WorkshopDate("18 Apr, 2020"),
             });
 
             // Bundle of Chinese localised mods - will break your game
@@ -435,8 +682,15 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() { },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.GameBreaking
+                      | ItemFlags.LargeFileWarning // 165 MB
                       | ItemFlags.SourceUnavailable,
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Unsubscribe. It's a zip of old mods translated to Chinese, most of them don't work." },
+                },
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("10 Sep, 2019"),
                 Suppress = Warning.InvalidVersionSequence,
+                Updated = WorkshopDate("18 Apr, 2020"),
             });
 
             AddMod(new Review(1749971558uL, "Real Time Offline") {
@@ -455,6 +709,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Timerate
                        | Factor.TransportPreference,
                 Authors = "Gness Erquint",
+                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 // NOTE:
                 // The offline version has differenet compatibility vectors than the original online version
@@ -497,20 +752,29 @@ namespace AutoRepair.Catalogs {
                     { 466158459uL , Status.MinorIssues  }, // Building Themes
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                     // time change (daily schedule issues):
+                    { 1869777403uL, Status.Incompatible }, // TimeWarp Fix 时间光照控制 Sakuya16个人汉化
+                    { 1899449152uL, Status.Incompatible }, // Game Day Timer (it can't recognise offline realtime)
                     { 814698320uL , Status.MinorIssues  }, // TimeWarp Fix (game will pause when used, time resets when unpaused)
                     { 672248733uL , Status.MinorIssues  }, // Ultimate Eyecandy v1.5.2 (game will pause when used, time resets when unpaused)
-                    { 1899449152uL, Status.Incompatible }, // Game Day Timer (it can't recognise offline realtime)
                     // other
                     { 1801953480uL, Status.MinorIssues  }, // Natural Disasters Overhaul (endless thunderstorms)
                     { 1766839841uL, Status.Incompatible }, // Anxiety Reducer
                     { 1412844620uL, Status.Compatible   }, // Realistic Walking Speed
                     { 927293560uL , Status.Compatible   }, // Geli-Districts v3.0
                 },
+                CompatibleWith = GameVersion.ParadoxLauncher,
                 ContinuationOf = 1420955187uL, // Real Time (original by dymanoid)
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("24 May, 2019"),
                 ReplaceWith = 1420955187uL, // Real Time (original by dymanoid)
                 Suppress = Warning.OlderReplacement,
+                Updated = WorkshopDate("7 Nov, 2019"),
             });
 
             AddMod(new Review(1706703944uL, "More Outside Interaction") {
@@ -530,7 +794,10 @@ namespace AutoRepair.Catalogs {
                     { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers (original)
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("8 Apr, 2019"),
                 SourceURL = "https://github.com/pcfantasy/MoreOutsideInteraction",
+                Updated = WorkshopDate("3 May, 2020"),
             });
 
             AddMod(new Review(1614061108uL, "Real Construction") {
@@ -543,6 +810,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "pcfantasy",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040656402uL, Status.Required     }, // Harmony 2.0.0.9 (Mod Dependency)
+                    { 1908304237uL, Status.Required     }, // City Resource Building
+                    { 1899943042uL, Status.Incompatible }, // No Scaffolding Animation
                     { 1785774902uL, Status.Compatible   }, // Transfer Info (beta)
                     { 1764208250uL, Status.Incompatible }, // More Vehicles
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
@@ -560,7 +830,13 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("6 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://steamcommunity.com/sharedfiles/filedetails/?id=1756860335" },
+                },
+                Published = WorkshopDate("4 Jan, 2019"),
                 SourceURL = "https://github.com/pcfantasy/RealConstruction",
+                Updated = WorkshopDate("20 Apr, 2020"),
             });
 
             AddMod(new Review(1383456057uL, "Shicho") {
@@ -622,6 +898,7 @@ namespace AutoRepair.Catalogs {
                     { 1766839841uL, Status.MinorIssues  }, // Anxiety Reducer (still testing)
                     // possibly optimised outside connections which increases time until bored
                     // conceptual conflict: time
+                    { 1869777403uL, Status.Incompatible }, // TimeWarp Fix 时间光照控制 Sakuya16个人汉化
                     { 1899449152uL, Status.Compatible   }, // Game Day Timer (switches to different mode for Real Time)
                     { 1729576238uL, Status.Incompatible }, // Date Changer
                     { 814698320uL , Status.MinorIssues  }, // TimeWarp Fix

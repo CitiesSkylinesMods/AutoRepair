@@ -32,6 +32,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { 1420955187uL, "[Mod: Real Time] Slower time rate results in excessive number of thunderstorms." },
                 },
@@ -55,6 +56,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 811352708uL, // Ragnarok - More disaster controls
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable, // many users saying it doesn't work or is broken
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Published = WorkshopDate("1 Sep, 2018"),
                 ReplaceWith = 811352708uL, // Ragnarok - More disaster controls
                 RequiredDLC = DLCs.NaturalDisasters,
@@ -71,6 +73,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Published = WorkshopDate("24 Apr, 2017"),
                 Updated = WorkshopDate("2 May, 2017"),
             });
@@ -78,7 +81,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Review(811352708uL, "Ragnarok - More disaster controls") {
                 Affect = Factor.Disasters
                        | Factor.Environment,
-                Authors = "Asser", // formerly sexyfishhorse
+                Authors = "Asser, [SSU]yenyang", // formerly sexyfishhorse
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
@@ -91,6 +94,11 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Create disasters using the disasters tab in 'Landscaping' menu." },
+                    { NOTE, "Based on an un-released earlier mod called 'LessRandomDisasters': https://github.com/yenyang/lessRandomDisasters" },
+                },
                 Published = WorkshopDate("3 Dec, 2016"),
                 RequiredDLC = DLCs.NaturalDisasters,
                 SourceURL = "https://github.com/SexyFishHorse/CitiesSkylines-Ragnarok",
@@ -107,6 +115,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("04 May, 2020"),
                 Published = WorkshopDate("22 Dec, 2016"),
                 RequiredDLC = DLCs.NaturalDisasters,
                 SourceURL = "https://github.com/ZenyaIse/Cities-Skylines-Disasters-Enabler-Mod",

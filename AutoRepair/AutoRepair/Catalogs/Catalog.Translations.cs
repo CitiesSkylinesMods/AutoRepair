@@ -61,7 +61,8 @@ namespace AutoRepair.Catalogs {
         /// Note: Also incorporated in to Font Selector mod.
         /// </summary>
         internal Dictionary<ulong, Status> aliMods = new Dictionary<ulong, Status>() {
-            { 412149127uL, Status.Incompatible }, // Font Selector
+            { 812789818uL , Status.Incompatible }, // Simplified Chinese (the replacement for all ali mods)
+            { 412149127uL , Status.Incompatible }, // Font Selector
             // ali mods:
             { 1988319487uL, Status.Incompatible }, // latestAliMod
             { 1943193013uL, Status.Incompatible },
@@ -112,6 +113,9 @@ namespace AutoRepair.Catalogs {
             { 815555292uL , Status.Incompatible },
             { 813860002uL , Status.Incompatible },
             { 812206041uL , Status.Incompatible },
+            { 811815834uL , Status.Incompatible },
+            { 811140929uL , Status.Incompatible },
+            { 809550172uL , Status.Incompatible },
         };
 
         internal ulong latestAliMod = 1988319487uL; // ali213_mod_01
@@ -156,7 +160,9 @@ namespace AutoRepair.Catalogs {
 
             item.Notes = aliNotes;
 
-            item.ReplaceWith = latestAliMod;
+            if (item.WorkshopId != latestAliMod) {
+                item.ReplaceWith = latestAliMod;
+            }
 
             AddMod(item);
         }
@@ -178,6 +184,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "See workshop page for detailed usage information." },
                     { NOTE, "The html doc it creates connects to external servers (they look OK, just normal stuff like jquery, etc)." },
@@ -199,8 +206,10 @@ namespace AutoRepair.Catalogs {
                     { 935356978uL , Status.Incompatible }, // CSL Names Pack Example [1.0.0]
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
                     { 933961247uL , Status.Unknown      }, // Russian text fix
+                    { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("15 Dec, 2017"),
                 SourceURL = "https://github.com/markusmitbrille/cities-skylines-custom-namelists",
                 Updated = WorkshopDate("20 Dec, 2017"),
@@ -210,14 +219,15 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.UI,
                 Authors = "TGC",
                 Catalog = catalog,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.Obsolete // use Custom Name Lists mod instead
-                      | ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
                     { 935350530uL , Status.Required     }, // CSL Custom Names [1.0.0]
                     { 933961247uL , Status.Unknown      }, // Russian text fix
                 },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Obsolete // use Custom Name Lists mod instead
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("29 May, 2017"),
                 ReplaceWith = 1231957400uL, // Custom Namelists
                 Updated = WorkshopDate("29 May, 2017"),
@@ -227,9 +237,6 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.UI,
                 Authors = "TGC",
                 Catalog = catalog,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1865667356uL, Status.Incompatible }, // Twitch Citizens
                     { 1322787091uL, Status.Unknown      }, // Addresses & Names Mod 2.0.1
@@ -238,7 +245,12 @@ namespace AutoRepair.Catalogs {
                     { 935356978uL , Status.Compatible   }, // CSL Names Pack Example [1.0.0]
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
                     { 933961247uL , Status.Unknown      }, // Russian text fix
+                    { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("29 May, 2017"),
                 ReplaceWith = 1231957400uL, // Custom Namelists
                 Updated = WorkshopDate("29 May, 2017"),
@@ -259,6 +271,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("27 May, 2017"),
                 Updated = WorkshopDate("27 May, 2017"),
             });
@@ -281,6 +294,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "zh-cn",
                 Published = WorkshopDate("10 Apr, 2020"),
                 Updated = WorkshopDate("10 Apr, 2020"),
@@ -299,6 +313,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 1752699330uL, // Альтернативный русский NamesLists
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "ru",
                 Published = WorkshopDate("27 May, 2019"),
                 Updated = WorkshopDate("27 May, 2019"),
@@ -316,6 +331,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "ru",
                 Published = WorkshopDate("26 May, 2019"),
                 ReplaceWith = 1753697086uL, // Russian Localization Fix - Исправление русской локализации
@@ -332,6 +348,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "de",
                 Published = WorkshopDate("11 Feb, 2019"),
                 Updated = WorkshopDate("11 Feb, 2019"),
@@ -347,6 +364,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "de",
                 Published = WorkshopDate("4 Feb, 2019"),
                 Updated = WorkshopDate("6 Feb, 2019"),
@@ -362,6 +380,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "de",
                 Published = WorkshopDate("11 Mar, 2018"),
                 Updated = WorkshopDate("11 Mar, 2018"),
@@ -378,6 +397,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "ja",
                 Published = WorkshopDate("14 Feb, 2018"),
                 Updated = WorkshopDate("28 Oct, 2018"),
@@ -396,6 +416,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 937334007u, // Japanese Localization RD
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "ja",
                 Published = WorkshopDate("12 Feb, 2018"),
                 Updated = WorkshopDate("28 Oct, 2018"),
@@ -411,6 +432,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "*",  // language agnostic
                 Published = WorkshopDate("11 Feb, 2018"),
                 Updated = WorkshopDate("11 Feb, 2018"),
@@ -426,6 +448,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "de-at",
                 Published = WorkshopDate("7 Jan, 2018"),
                 Updated = WorkshopDate("7 Jan, 2018"),
@@ -441,6 +464,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "*",
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "This is just template for authors; see workshop page for details." },
@@ -459,6 +483,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "de-at",
                 Published = WorkshopDate("15 Dec, 2017"),
                 Updated = WorkshopDate("15 Dec, 2017"),
@@ -478,6 +503,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised,
                 //Languages = new[] { }, // todo
                 Languages = new[] { "ku", "uz", "fa", "fa-af", "ps", },
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "*",
                 Published = WorkshopDate("3 Jan, 2018"),
                 Tags = new[] {
@@ -502,6 +528,7 @@ namespace AutoRepair.Catalogs {
                     { 937334007uL , Status.Incompatible }, // Japanese Localization RD
                     { 935350530uL , Status.Required     }, // CSL Custom Names [1.0.0]
                 },
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "ja",
                 Published = WorkshopDate("18 Jun, 2017"),
                 ReplaceWith = 1299863509uL, // CNL Japanese Localization Name Lists
@@ -524,6 +551,7 @@ namespace AutoRepair.Catalogs {
                     { 950011274uL , Status.Incompatible }, // Japanese Romaji Names [BETA]
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
                 },
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "ja",
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "This is incompatible with all other namelists; use the replacement item instead." },
@@ -543,17 +571,12 @@ namespace AutoRepair.Catalogs {
             */
 
             // currently most recent one
-            AddMod(new Review(latestAliMod, "ali213_mod_01") { // 1988319487uL
-                Affect = Factor.UI,
+            AddAliMod(new Review(1988319487uL, "ali213_mod_01") {
                 Authors = "luotianzhi",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>(aliMods),
-                CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
-                Locale = "zh-cn",
-                Notes = aliNotes,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("4 Feb, 2020"),
                 Updated = WorkshopDate("4 Feb, 2020"),
             });
@@ -570,6 +593,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "th",
                 Published = WorkshopDate("22 Jun, 2018"),
                 Updated = WorkshopDate("22 Jun, 2018"),
@@ -585,6 +609,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "zh-tw",
                 Published = WorkshopDate("3 Jun, 2017"),
                 Updated = WorkshopDate("31 Mar, 2020"),
@@ -600,6 +625,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "tr",
                 Published = WorkshopDate("30 May, 2017"),
                 Updated = WorkshopDate("29 Mar, 2020"),
@@ -615,6 +641,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "cz",
                 Published = WorkshopDate("27 Feb, 2017"),
                 Updated = WorkshopDate("8 Apr, 2020"),
@@ -630,6 +657,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "sk",
                 Published = WorkshopDate("31 Jan, 2017"),
                 Updated = WorkshopDate("12 Apr, 2020"),
@@ -645,11 +673,25 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "th",
                 Published = WorkshopDate("20 Jan, 2017"),
                 Updated = WorkshopDate("20 Jan, 2017"),
             });
 
+            AddMod(new Review(812789818uL, "Simplified Chinese") {
+                Affect = Factor.UI,
+                Authors = "风晓得Ome",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>(aliMods),
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Localised
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Locale = "zh-cn",
+                Published = WorkshopDate("5 Dec, 2016"),
+                Updated = WorkshopDate("23 May, 2019"),
+            });
 
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
@@ -661,54 +703,63 @@ namespace AutoRepair.Catalogs {
 
             AddAliMod(new Review(1943193013uL, "ali213_mod_01") {
                 Authors = "cute",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("22 Dec, 2019"),
                 Updated = WorkshopDate("22 Dec, 2019"),
             });
 
             AddAliMod(new Review(1939503380uL, "ali213_mod_01") {
                 Authors = "382661337",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("18 Dec, 2019"),
                 Updated = WorkshopDate("18 Dec, 2019"),
             });
 
             AddAliMod(new Review(1879010148uL, "ali213_mod_01") {
                 Authors = "喂奶",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("3 Oct, 2019"),
                 Updated = WorkshopDate("3 Oct, 2019"),
             });
 
             AddAliMod(new Review(1842948393uL, "ali213_mod_01") {
                 Authors = "Jony-y",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("23 Aug, 2019"),
                 Updated = WorkshopDate("23 Aug, 2019"),
             });
 
             AddAliMod(new Review(1842940377uL, "ali213_mod_01") {
                 Authors = "qq_q33",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("23 Aug, 2019"),
                 Updated = WorkshopDate("23 Aug, 2019"),
             });
 
             AddAliMod(new Review(1700403881uL, "ali213_mod_01") {
                 Authors = "Lemon",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("1 Apr, 2019"),
                 Updated = WorkshopDate("1 Apr, 2019"),
             });
 
             AddAliMod(new Review(1684556269uL, "ali213_mod_01") {
                 Authors = "1061303312",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("16 Mar, 2019"),
                 Updated = WorkshopDate("16 Mar, 2019"),
             });
 
             AddAliMod(new Review(1680979061uL, "ali213_mod_01") {
                 Authors = "136681275",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("12 Mar, 2019"),
                 Updated = WorkshopDate("12 Mar, 2019"),
             });
 
             AddAliMod(new Review(1625610864uL, "ali213_mod_01") {
                 Authors = "903590283",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("15 Jan, 2019"),
                 Updated = WorkshopDate("15 Jan, 2019"),
             });
@@ -719,6 +770,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("27 Oct, 2018"),
                 SourceURL = "https://gist.github.com/anonymous/4e9b615e04366fbba1c10eff57387eab",
                 Updated = WorkshopDate("27 Oct, 2018"),
@@ -726,186 +778,217 @@ namespace AutoRepair.Catalogs {
 
             AddAliMod(new Review(1546750969uL, "ali213_mod_01") {
                 Authors = "fireangel",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("24 Oct, 2018"),
                 Updated = WorkshopDate("24 Oct, 2018"),
             });
 
             AddAliMod(new Review(1546742761uL, "ali213_mod_01") {
                 Authors = "切斯特威廉尼米兹 海军",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("24 Oct, 2018"),
                 Updated = WorkshopDate("24 Oct, 2018"),
             });
 
             AddAliMod(new Review(1408154706uL, "ali213_mod_01") {
                 Authors = "WSYYY",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("10 Jun, 2018"),
                 Updated = WorkshopDate("10 Jun, 2018"),
             });
 
             AddAliMod(new Review(1396970654uL, "ali213_mod_01") {
                 Authors = "东皇丶沫凪",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("28 May, 2018"),
                 Updated = WorkshopDate("28 May, 2018"),
             });
 
             AddAliMod(new Review(1394163871uL, "ali213_mod_01") {
                 Authors = "丿燃情丶流逝",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("25 May, 2018"),
                 Updated = WorkshopDate("25 May, 2018"),
             });
 
             AddAliMod(new Review(1357099637uL, "ali213_mod_01") {
                 Authors = "jack760826",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("9 Apr, 2018"),
                 Updated = WorkshopDate("9 Apr, 2018"),
             });
 
             AddAliMod(new Review(1357086606uL, "ali213_mod_01") {
                 Authors = "jack760826",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("9 Apr, 2018"),
                 Updated = WorkshopDate("9 Apr, 2018"),
             });
 
             AddAliMod(new Review(1334668143uL, "ali213_mod_01") {
                 Authors = "邓大哥",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("18 Mar, 2018"),
                 Updated = WorkshopDate("18 Mar, 2018"),
             });
 
             AddAliMod(new Review(1334667876uL, "ali213_mod_01") {
                 Authors = "邓大哥",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("18 Mar, 2018"),
                 Updated = WorkshopDate("18 Mar, 2018"),
             });
 
             AddAliMod(new Review(1322239426uL, "ali213_mod_01") {
                 Authors = "希维",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("6 Mar, 2018"),
                 Updated = WorkshopDate("6 Mar, 2018"),
             });
 
             AddAliMod(new Review(1290370842uL, "ali213_mod_01") {
                 Authors = "梦染",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("3 Feb, 2018"),
                 Updated = WorkshopDate("3 Feb, 2018"),
             });
 
             AddAliMod(new Review(1218794439uL, "ali213_mod_01") {
                 Authors = "767068841",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("2 Dec, 2017"),
                 Updated = WorkshopDate("2 Dec, 2017"),
             });
 
             AddAliMod(new Review(1216481923uL, "ali213_mod_01") {
                 Authors = "朱哥",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("30 Nov, 2017"),
                 Updated = WorkshopDate("26 Aug, 2018"),
             });
 
             AddAliMod(new Review(966361998uL, "ali213_mod_01") {
                 Authors = "Migi",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("6 Jul, 2017"),
                 Updated = WorkshopDate("6 Jul, 2017"),
             });
 
             AddAliMod(new Review(965590422uL, "ali213_mod_01") {
                 Authors = "yuhuooo",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("5 Jul, 2017"),
                 Updated = WorkshopDate("5 Jul, 2017"),
             });
 
             AddAliMod(new Review(964727801uL, "ali213_mod_01") {
                 Authors = "Huskos",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("5 Jul, 2017"),
                 Updated = WorkshopDate("5 Jul, 2017"),
             });
 
             AddAliMod(new Review(949461510uL, "ali213_mod_01") {
                 Authors = "丿MX灬神话",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("18 Jun, 2017"),
                 Updated = WorkshopDate("18 Jun, 2017"),
             });
 
             AddAliMod(new Review(940398690uL, "ali213_mod_01") {
                 Authors = "503624885",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("5 Jun, 2017"),
                 Updated = WorkshopDate("5 Jun, 2017"),
             });
 
             AddAliMod(new Review(929222270uL, "ali213_mod_01") {
                 Authors = "anyebuzu",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("20 May, 2017"),
                 Updated = WorkshopDate("20 May, 2017"),
             });
 
             AddAliMod(new Review(929211897uL, "ali213_mod_01") {
                 Authors = "william0903",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("20 May, 2017"),
                 Updated = WorkshopDate("20 May, 2017"),
             });
 
             AddAliMod(new Review(928628465uL, "ali213_mod_01") {
                 Authors = "yuluo",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("19 May, 2017"),
                 Updated = WorkshopDate("19 May, 2017"),
             });
 
             AddAliMod(new Review(928477022uL, "ali213_mod_01") {
                 Authors = "BeiCheng",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("19 May, 2017"),
                 Updated = WorkshopDate("19 May, 2017"),
             });
 
             AddAliMod(new Review(926909781uL, "ali213_mod_01") {
                 Authors = "MCOO",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("16 May, 2017"),
                 Updated = WorkshopDate("16 May, 2017"),
             });
 
             AddAliMod(new Review(914688845uL, "ali213_mod_01") {
                 Authors = "327899396",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("16 May, 2017"),
                 Updated = WorkshopDate("16 May, 2017"),
             });
 
             AddAliMod(new Review(903794180uL, "ali213_mod_01") {
                 Authors = "xieshudan1",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("12 Apr, 2017"),
                 Updated = WorkshopDate("12 Apr, 2017"),
             });
 
             AddAliMod(new Review(876928994uL, "ali213_mod_01") {
                 Authors = "菜鸟也疯狂",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("4 Mar, 2017"),
                 Updated = WorkshopDate("4 Mar, 2017"),
             });
 
             AddAliMod(new Review(871014462uL, "ali213_mod_01") {
                 Authors = "1292543404",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("24 Feb, 2017"),
                 Updated = WorkshopDate("24 Feb, 2017"),
             });
 
             AddAliMod(new Review(863689916uL, "ali213_mod_01") {
                 Authors = "jack-芭比学姐",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("14 Feb, 2017"),
                 Updated = WorkshopDate("14 Feb, 2017"),
             });
 
             AddAliMod(new Review(862313211uL, "ali213_mod_01") {
                 Authors = "法外狂徒",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("12 Feb, 2017"),
                 Updated = WorkshopDate("12 Feb, 2017"),
             });
 
             AddAliMod(new Review(850468043uL, "ali213_mod_01") {
                 Authors = "91刘先生",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("26 Jan, 2017"),
                 Updated = WorkshopDate("26 Jan, 2017"),
             });
 
             AddAliMod(new Review(846218733uL, "ali213_mod_01") {
                 Authors = "FengKuangXQ",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("20 Jan, 2017"),
                 Updated = WorkshopDate("20 Jan, 2017"),
             });
@@ -913,44 +996,72 @@ namespace AutoRepair.Catalogs {
             AddAliMod(new Review(842155271uL, "ali213_mod_01") {
                 Authors = "名字取什么好呢",
                 CloneOf = 842154595uL, // see below
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("14 Jan, 2017"),
                 Updated = WorkshopDate("14 Jan, 2017"),
             });
 
             AddAliMod(new Review(842154595uL, "ali213_mod_01") {
                 Authors = "名字取什么好呢",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("14 Jan, 2017"),
                 Updated = WorkshopDate("14 Jan, 2017"),
             });
 
             AddAliMod(new Review(817060520uL, "ali213_mod_01") {
                 Authors = "Manitoba",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("12 Dec, 2016"),
                 Updated = WorkshopDate("12 Dec, 2016"),
             });
 
             AddAliMod(new Review(815690119uL, "ali213_mod_01") {
                 Authors = "zhang27818",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("10 Dec, 2016"),
                 Updated = WorkshopDate("10 Dec, 2016"),
             });
 
             AddAliMod(new Review(815555292uL, "ali213_mod_01") {
                 Authors = "DY.(2)",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("10 Dec, 2016"),
                 Updated = WorkshopDate("10 Dec, 2016"),
             });
 
             AddAliMod(new Review(813860002uL, "ali213_mod_01") {
                 Authors = "皇甫家人",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("7 Dec, 2016"),
                 Updated = WorkshopDate("7 Dec, 2016"),
             });
 
             AddAliMod(new Review(812206041uL, "ali213_mod_01") {
                 Authors = "Li",
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("4 Dec, 2016"),
                 Updated = WorkshopDate("4 Dec, 2016"),
+            });
+
+            AddAliMod(new Review(811815834uL, "ali213_mod_01") {
+                Authors = "神经病没有好转",
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("4 Dec, 2016"),
+                Updated = WorkshopDate("4 Dec, 2016"),
+            });
+
+            AddAliMod(new Review(811140929uL, "ali213_mod_01") {
+                Authors = "Li",
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("3 Dec, 2016"),
+                Updated = WorkshopDate("3 Dec, 2016"),
+            });
+
+            AddAliMod(new Review(809550172uL, "ali213_mod_01") {
+                Authors = "474529098",
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("30 Nov, 2016"),
+                Updated = WorkshopDate("30 Nov, 2016"),
             });
 
             // todo: set each ali mod as continuation of previous one

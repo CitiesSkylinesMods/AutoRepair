@@ -14,6 +14,8 @@ namespace AutoRepair {
         /// </summary>
         static GameVersion() {
             Active = GetGameVersion();
+            Updated = PatchDate("2020-04-06");
+
             LatestMilestone = GetMilestone(Active);
 
             if (Active.Minor != LatestMilestone.Minor) {
@@ -25,6 +27,11 @@ namespace AutoRepair {
         /// Gets the active game version (Major, minor, patch, build).
         /// </summary>
         public static Version Active { get; private set; }
+
+        /// <summary>
+        /// Gets the date on which game was last updated.
+        /// </summary>
+        public static DateTime Updated { get; private set; }
 
         /// <summary>
         /// Gets version number for latest <c>Major.minor</c> release.

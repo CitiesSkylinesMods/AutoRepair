@@ -137,6 +137,8 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceAvailable,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141uL, Status.Compatible   }, // TM:PE v11 LABS
@@ -215,6 +217,8 @@ namespace AutoRepair.Catalogs {
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2076619989uL, Status.Compatible   }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -283,6 +287,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // incompat with overwatch/aris mods
+                    { 2085902218uL, Status.Incompatible }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141uL, Status.Incompatible }, // TM:PE v11 LABS
@@ -369,6 +375,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     // was compat with ancient versions of TMPE, but they all changed after mass transit
                     // was also compat with t++ v2 (now obsolete)
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141uL, Status.Incompatible }, // TM:PE v11 LABS
@@ -424,6 +431,8 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.MassTransit,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Incompatible }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141uL, Status.Incompatible }, // TM:PE v11 LABS

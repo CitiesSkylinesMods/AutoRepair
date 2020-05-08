@@ -20,6 +20,25 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Skin.Networks";
 
+            AddMod(new Review(2085403475uL, "Node controller [pre release testing]") {
+                Affect = Factor.Other,
+                Authors = "kian.zarrin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1939169189uL, Status.Required     }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                    { 1806963141uL, Status.Required     }, // TM:PE v11.4.0 LABS (Traffic Manager: President Edition)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://github.com/kianzarrin/RoadTransitionManager/wiki" },
+                },
+                Published = WorkshopDate("5 May, 2020"),
+                SourceURL = "https://github.com/kianzarrin/RoadTransitionManager",
+                Updated = WorkshopDate("5 May, 2020"),
+            });
+
             AddMod(new Review(2065380745uL, "MetroReplacer") {
                 Affect = Factor.Props,
                 Authors = "egi, REV0, Ronyx69, Simon Ryr",
@@ -34,10 +53,14 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Compatible assets: https://steamcommunity.com/workshop/filedetails/?id=2065610088" },
                     { NOTE, "User guide: https://steamcommunity.com/sharedfiles/filedetails/?id=1843406895" },
+                    { 816260433uL, "[Mod: Metro Overhaul Mod] Both mods replace station tracks making them technically incompatible." },
                 },
+                Published = WorkshopDate("18 Apr, 2020"),
+                Updated = WorkshopDate("19 Apr, 2020"),
             });
 
             AddMod(new Review(2045625827uL, "Cgameworld’s Railway/BVU Track Customizations") {
@@ -50,56 +73,10 @@ namespace AutoRepair.Catalogs {
                     { 1847646595uL, Status.Recommended  }, // Bienvenüe - Munich U-Bahn Tracks
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Published = WorkshopDate("3 Apr, 2020"),
                 SourceURL = "https://github.com/Cgameworld/CGWRailwayCustomizations",
                 Updated = WorkshopDate("3 Apr, 2020"),
-            });
-
-            AddMod(new Review(2044086131uL, "Network Extensions 2 - Sunset Harbour Build / Fix") {
-                Affect = Factor.Props
-                       | Factor.RoadMarkings
-                       | Factor.Textures,
-                Authors = "DJSADERS",
-                BrokenBy = GameVersion.Patch_1_13_0_f8,
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // other road skin mods:
-                    { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
-                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
-                    // street light mods:
-                    { 547126602uL , Status.Incompatible }, // Street Light Replacer
-                    // traffic light mods struggle with NExt2 roads:
-                    { 1812157090uL, Status.MinorIssues  }, // [NL] Dutch Traffic Lights
-                    { 1550720600uL, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
-                    { 1548117573uL, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
-                    { 1541164608uL, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
-                    { 1535107168uL, Status.MinorIssues  }, // New American Traffic Lights
-                    { 1259628682uL, Status.MinorIssues  }, // Taiwanese Traffic Lights (Left Hand Traffic)
-                    { 1251396095uL, Status.MinorIssues  }, // Taiwanese Traffic Lights (Right Hand Traffic)
-                    { 1108278552uL, Status.MinorIssues  }, // Horizontal Traffic Lights
-                    { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
-                    { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
-                    // level crossing lights mods struggle with NExt2 roads:
-                    { 1519049273uL, Status.MinorIssues  }, // American Railroad Signal Replacer
-                    { 1249000709uL, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 812125426uL, // Network Extensions 2
-                Flags = ItemFlags.NoWorkshop // removed 6th April 2020 due to original mod being fixed
-                      | ItemFlags.Obsolete
-                      | ItemFlags.SaveAltering
-                      | ItemFlags.SlowLoad
-                      | ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "OBSOLETE: The original mod has been fixed, so you can unsubscribe this temporary bug fix version." },
-                    // { NOTE, "More info: https://github.com/andreharv/NetworkExtensions/issues/18" },
-                    { 1959342332uL, "[Mod: CSUR ToolBox] Breaks road zoning position and Zone Adjuster (Shift+Click)" },
-                },
-                Published = WorkshopDate("1 Apr, 2020"),
-                ReplaceWith = 812125426uL, // Network Extensions 2
-                SourceURL = "https://github.com/andreharv/NetworkExtensions",
-                Suppress = Warning.MissingArchiveURL | Warning.OlderReplacement,
-                Updated = WorkshopDate("1 Apr, 2020"),
             });
 
             // Requires TM:PE
@@ -130,6 +107,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Published = WorkshopDate("10 Mar, 2020"),
                 SourceURL = "https://github.com/kianzarrin/HideUnconnectedTracks",
                 Tags = new[] { "TMPE", "TM:PE", "Tram", "Train", "Network", "Skins", "Junctions", "Tracks" },
@@ -187,6 +165,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.MinorIssues
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Can use lots of RAM if you have lots of different roads that have crossings removed." },
                     { NOTE, "[Railway Replacer] and [Catenary Replacer] mods are suspected to be incompatible." },
@@ -228,6 +207,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.MinorIssues
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Can use lots of RAM if you have lots of different roads that have crossings removed." },
                     { NOTE, "[Railway Replacer] and [Catenary Replacer] mods are suspected to be incompatible." },
@@ -236,6 +216,25 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/kianzarrin/HideTMPECrosswalks",
                 Tags = new[] { "TMPE", "TM:PE", "Crosswalks", "Crossings", "Network", "Skins", "Junctions", "Pedestrian" },
                 Updated = WorkshopDate("11 Apr, 2020"),
+            });
+
+            // replaces bus shelters, likely incompat with similar mods
+            AddMod(new Review(1900151000uL, "替换为不锈钢公交候车亭") {
+                Affect = Factor.HideRemove
+                       | Factor.Props,
+                Authors = "ZEIR",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // anything that alters bus stops
+                    { 1962752152uL, Status.Incompatible }, // Busstop Prop Remover
+                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("27 Oct, 2019"),
+                SourceURL = "https://gist.github.com/OwiHH-NC/4cefbd1fbc7ff7135c59",
+                Updated = WorkshopDate("27 Oct, 2019"),
             });
 
             AddMod(new Review(1758376843uL, "Network Skins 2") {
@@ -267,12 +266,14 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { 1959183067uL, "[Mod: CSUR Loader] Network Skins replaces the CSUR road colors." },
                     { 877950833uL, "[Mod: Vanilla Trees Remover] Disable it's road tree removal for best compatibility with Network Skins." },
                 },
-                ReleasedDuring = GameVersion.Campus,
+                Published = WorkshopDate("1 Jun, 2019"),
                 SourceURL = "https://github.com/boformer/NetworkSkins2",
+                Updated = WorkshopDate("25 Apr, 2020"),
             });
 
             AddMod(new Review(1530376523uL, "Railway Replacer") {
@@ -284,18 +285,78 @@ namespace AutoRepair.Catalogs {
                     { 1758376843uL, Status.Compatible   }, // Network Skins 2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 816260433uL , Status.Incompatible }, // Metro Overhaul Mod
+                    { 816260433uL , Status.MinorIssues  }, // Metro Overhaul Mod
                     { 774449380uL , Status.Incompatible }, // Catenary Replacer
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press Shift + Alt + P to show the railway props settings window." },
                     { NOTE, "User guide and related assets: https://steamcommunity.com/sharedfiles/filedetails/?id=1569088356" },
-                    { 816260433uL, "[Mod: Metro Overhaul Mod] Incompatible with Railway Replacer as they both udpate Railway Tracks." },
+                    { 816260433uL, "[Mod: Metro Overhaul Mod] The Railway Replacer UI might sometimes appear on MOM stations." },
                 },
                 Published = WorkshopDate("4 Oct, 2018"),
                 Updated = WorkshopDate("29 Dec, 2019"),
+            });
+
+            AddMod(new Review(812125426uL, "Network Extensions 2") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "Lazarus*Man, GCVos, BadPeanut, #Positivity!",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // road skin mods:
+                    { 2044086131uL, Status.Incompatible }, // Network Extensions 2 Sunset Harbor temp fix
+                    { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
+                    { 1939169189uL, Status.Compatible   }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                    { 1934023593uL, Status.Compatible   }, // Hide TMPE crosswalks V2.5 [BETA]
+                    { 1737575423uL, Status.Compatible   }, // [ Backward Compatibility ]  New Roads For Network Extension 2
+                    { 1449429720uL, Status.Compatible   }, // Road Color 道路颜色修改中文汉化版
+                    { 1189186167uL, Status.Compatible   }, // 道路颜色调整
+                    { 1147015481uL, Status.Compatible   }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708uL, Status.Compatible   }, // Remove Road Textures - Blank Roads
+                    { 950807008uL , Status.Incompatible }, // Network Extensions 2 Fix
+                    { 932192868uL , Status.Compatible   }, // Road Options (Road Colors Changer ++)
+                    { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
+                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
+                    { 651610627uL , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
+                    { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 417585852uL , Status.Incompatible }, // Road Color Changer
+                    { 413687519uL , Status.Incompatible }, // Some Roads
+                    // street lights:
+                    { 547126602uL , Status.Incompatible }, // Street Light Replacer
+                    // traffic lights:
+                    { 1812157090uL, Status.MinorIssues  }, // [NL] Dutch Traffic Lights
+                    { 1550720600uL, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573uL, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
+                    { 1541164608uL, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168uL, Status.MinorIssues  }, // New American Traffic Lights
+                    { 1259628682uL, Status.MinorIssues  }, // Taiwanese Traffic Lights (Left Hand Traffic)
+                    { 1251396095uL, Status.MinorIssues  }, // Taiwanese Traffic Lights (Right Hand Traffic)
+                    { 1108278552uL, Status.MinorIssues  }, // Horizontal Traffic Lights
+                    { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
+                    { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    // level crossing lights:
+                    { 1519049273uL, Status.MinorIssues  }, // American Railroad Signal Replacer
+                    { 1249000709uL, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other props:
+                    { 1900151000uL, Status.Incompatible }, // 替换为不锈钢公交候车亭
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 478820060uL, // Network Extensions Project
+                Flags = ItemFlags.SaveAltering
+                      | ItemFlags.SlowLoad
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have broken saves after removing this mod, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
+                    { 1959342332uL, "[Mod: CSUR ToolBox] Breaks road zoning position and Zone Adjuster (Shift+Click)" },
+                },
+                Published = WorkshopDate("4 Dec, 2016"),
+                SourceURL = "https://github.com/andreharv/NetworkExtensions",
+                Updated = WorkshopDate("6 Apr, 2020"),
             });
 
             /*
@@ -306,11 +367,90 @@ namespace AutoRepair.Catalogs {
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
 
+            AddMod(new Review(2044086131uL, "Network Extensions 2 - Sunset Harbour Build / Fix") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "DJSADERS",
+                BrokenBy = GameVersion.Patch_1_13_0_f8,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // other road skin mods:
+                    { 2044086131uL, Status.Incompatible }, // Network Extensions 2 Sunset Harbor temp fix
+                    { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
+                    { 1737575423uL, Status.Compatible   }, // [ Backward Compatibility ]  New Roads For Network Extension 2
+                    { 950807008uL , Status.Incompatible }, // Network Extensions 2 Fix
+                    { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
+                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
+                    { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 413687519uL , Status.Incompatible }, // Some Roads
+                    // street light mods:
+                    { 547126602uL , Status.Incompatible }, // Street Light Replacer
+                    // traffic light mods struggle with NExt2 roads:
+                    { 1812157090uL, Status.MinorIssues  }, // [NL] Dutch Traffic Lights
+                    { 1550720600uL, Status.MinorIssues  }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573uL, Status.MinorIssues  }, // New American Traffic Lights - Grey Style
+                    { 1541164608uL, Status.MinorIssues  }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168uL, Status.MinorIssues  }, // New American Traffic Lights
+                    { 1259628682uL, Status.MinorIssues  }, // Taiwanese Traffic Lights (Left Hand Traffic)
+                    { 1251396095uL, Status.MinorIssues  }, // Taiwanese Traffic Lights (Right Hand Traffic)
+                    { 1108278552uL, Status.MinorIssues  }, // Horizontal Traffic Lights
+                    { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
+                    { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    // level crossing lights mods struggle with NExt2 roads:
+                    { 1519049273uL, Status.MinorIssues  }, // American Railroad Signal Replacer
+                    { 1249000709uL, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 812125426uL, // Network Extensions 2
+                Flags = ItemFlags.ForceMigration
+                      | ItemFlags.NoWorkshop // removed 6th April 2020 due to original mod being fixed
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SaveAltering
+                      | ItemFlags.SlowLoad
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("6 Apr, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "OBSOLETE: The original mod has been fixed, so you can unsubscribe this temporary bug fix version and use the replacement." },
+                    { NOTE, "If you have broken saves after removing this mod, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
+                },
+                Published = WorkshopDate("1 Apr, 2020"),
+                Removed = WorkshopDate("6 Apr, 2020"),
+                ReplaceWith = 812125426uL, // Network Extensions 2
+                SourceURL = "https://github.com/andreharv/NetworkExtensions",
+                Suppress = Warning.MissingArchiveURL | Warning.OlderReplacement,
+                Updated = WorkshopDate("1 Apr, 2020"),
+            });
+
+            // technically a repair mod, but it actually includes replacement networks hence put in this catalog
+            AddMod(new Review(1737575423uL, "[ Backward Compatibility ]  New Roads For Network Extension 2") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "(gibberish name)",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1243740191uL, Status.Recommended  }, // Road Removal Tool
+                    { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
+                    { 812125426uL , Status.Compatible   }, // Network Extensions 2
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.LargeFileWarning // 59 MB
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Read the mod's Steam Workshop page description for important usage instructions." },
+                },
+                Published = WorkshopDate("10 May, 2019"),
+                RequiredDLC = DLCs.AfterDark,
+                Updated = WorkshopDate("10 May, 2019"),
+            });
+
             AddMod(new Review(1128766708uL, "Remove Road Textures - Blank Roads") {
                 Authors = "Madgemade",
                 Affect = Factor.RoadMarkings,
                 Catalog = catalog,
-                Flags = ItemFlags.SourceUnavailable,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2019097300uL, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
                     { 1959183067uL, Status.Incompatible }, // CSUR Loader
@@ -330,6 +470,10 @@ namespace AutoRepair.Catalogs {
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("5 Sep, 2017"),
+                Updated = WorkshopDate("6 Sep, 2017"),
             });
 
             // translated clone of (assuming) 932192868u
@@ -362,8 +506,11 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Localised,
+                LastSeen = WorkshopDate("3 May, 2020"),
                 Locale = "zh-cn",
+                Published = WorkshopDate("24 Jul, 2018"),
                 ReplaceWith = 1758376843uL, // Network Skins 2
+                Updated = WorkshopDate("24 Jul, 2018"),
             });
 
             // Road Options (Road Colors Changer ++)
@@ -425,6 +572,45 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1934023593uL, // Hide TMPE crosswalks V2.5 [BETA]
             });
 
+            AddMod(new Review(950807008uL, "Network Extensions 2 Fix") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "(unknown)",
+                BrokenBy = GameVersion.Concerts,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // other road skin mods:
+                    { 2044086131uL, Status.Incompatible }, // Network Extensions 2 Sunset Harbor temp fix
+                    { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
+                    { 1737575423uL, Status.Compatible   }, // [ Backward Compatibility ] New Roads For Network Extension 2
+                    { 950807008uL , Status.Incompatible }, // Network Extensions 2 Fix
+                    { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
+                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
+                    { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 413687519uL , Status.Incompatible }, // Some Roads
+                },
+                CompatibleWith = GameVersion.Patch_1_7_2_f1,
+                ContinuationOf = 812125426uL, // Network Extensions 2
+                Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.NoWorkshop // removed 6th April 2020 due to original mod being fixed
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SaveAltering
+                      | ItemFlags.SlowLoad
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("30 Jun, 2017"), // when NExt2 was fixed
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "OBSOLETE: The original mod has been fixed, so you can unsubscribe this temporary bug fix version and use the replacement." },
+                    { NOTE, "If you have broken saves after removing this mod, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
+                },
+                Published = WorkshopDate("19 Jun, 2017"), // based on adjacent item
+                Removed = WorkshopDate("30 Jun, 2017"), // guessing; when NExt2 was fixed
+                ReplaceWith = 812125426uL, // Network Extensions 2
+                Suppress = Warning.MissingArchiveURL | Warning.OlderReplacement,
+                Updated = WorkshopDate("19 Jun, 2017"), // guessing
+            });
+
             // Additional dev work on 651610627u
             // Currently most reliable version but superseded by NS2
             AddMod(new Review(932192868uL, "Road Options (Road Colors Changer ++)") {
@@ -455,6 +641,44 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 1758376843uL, // Network Skins 2
+            });
+
+            AddMod(new Review(929114228uL, "New Roads For Network Extension 2") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "blaremc",
+                BrokenBy = GameVersion.Industries,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2044086131uL, Status.Incompatible }, // Network Extensions 2 Sunset Harbor temp fix
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1737575423uL, Status.Incompatible }, // [ Backward Compatibility ]  New Roads For Network Extension 2
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 950807008uL , Status.Incompatible }, // Network Extensions 2 Fix
+                    { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
+                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
+                    { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 413687519uL , Status.Incompatible }, // Some Roads
+                },
+                CompatibleWith = GameVersion.Patch_1_10_1_f3,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.LargeFileWarning // 58 MB
+                      | ItemFlags.Obsolete // roads are moved in to NExt2
+                      | ItemFlags.SaveAltering
+                      | ItemFlags.SlowLoad
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have broken saves after removing this mod, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
+                },
+                Published = WorkshopDate("20 May, 2017"),
+                ReplaceWith = 1737575423uL, // [ Backward Compatibility ]  New Roads For Network Extension 2
+                RequiredDLC = DLCs.AfterDark,
+                Updated = WorkshopDate("6 Jul, 2017"),
             });
 
             AddMod(new Review(774449380uL, "Catenary Replacer") {
@@ -570,6 +794,60 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/boformer/NetworkSkins",
             });
 
+            AddMod(new Review(478820060uL, "Network Extensions Project") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                Authors = "Katalyst6, GCVos, Lazarus*Man, #Positivity!, samchar00",
+                BrokenBy = GameVersion.MassTransit,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // other road skin mods:
+                    { 2044086131uL, Status.Incompatible }, // Network Extensions 2 Sunset Harbor temp fix
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1737575423uL, Status.Incompatible }, // [ Backward Compatibility ]  New Roads For Network Extension 2
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
+                    { 1189186167uL, Status.Incompatible }, // 道路颜色调整
+                    { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708uL, Status.Incompatible }, // Remove Road Textures - Blank Roads
+                    { 950807008uL , Status.Incompatible }, // Network Extensions 2 Fix
+                    { 932192868uL , Status.Incompatible }, // Road Options (Road Colors Changer ++)
+                    { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
+                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
+                    { 726005715uL , Status.Incompatible }, // Roads United: Core+
+                    { 651610627uL , Status.Compatible   }, // [DISCONTINUED] Road Color Changer Continued
+                    { 633547552uL , Status.Incompatible }, // Roads United Core 2.0
+                    { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 417585852uL , Status.Compatible   }, // Road Color Changer
+                    { 413687519uL , Status.Compatible   }, // Some Roads
+                    // other (compat):
+                    //-Road Color Changer Continued
+                    //-Traffic++ V2
+                    //-NoPillars
+                    //-Traffic Report Tool
+                },
+                CompatibleWith = GameVersion.NaturalDisasters,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.EditorBreaking
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.LargeFileWarning // 84 MB
+                      | ItemFlags.Obsolete // replacement avail
+                      | ItemFlags.SaveAltering
+                      | ItemFlags.SlowLoad
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have broken saves after removing this mod, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
+                },
+                Published = WorkshopDate("10 Jul, 2015"),
+                ReplaceWith = 812125426uL, // Network Extensions 2
+                SourceURL = "https://github.com/Katalyst6/CSL.TransitAddonMod",
+                Updated = WorkshopDate("30 Nov, 2016"),
+            });
+
             // could remove optional lane arrows (left/right)
             // change pavement texture
             AddMod(new Review(418637762uL, "American Roads") {
@@ -634,12 +912,75 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
-                      | ItemFlags.Obsolete
+                      | ItemFlags.Obsolete // new ver available
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable,
                 Published = WorkshopDate("13 Apr, 2015"),
                 ReplaceWith = 1758376843uL, // Network Skins 2
                 Updated = WorkshopDate("18 Feb, 2016"), // may be subsequent updates, but that's as much as I could find via web archive
+            });
+
+            AddMod(new Review(413687519uL, "Some Road") {
+                Affect = Factor.Props
+                       | Factor.RoadMarkings
+                       | Factor.Textures,
+                ArchiveURL = "https://web.archive.org/web/20160620100330/http://steamcommunity.com/sharedfiles/filedetails/?id=413687519",
+                Authors = "some danny",
+                BrokenBy = GameVersion.NaturalDisasters, // guessing
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2044086131uL, Status.Incompatible }, // Network Extensions 2 Sunset Harbor temp fix
+                    { 950807008uL , Status.Incompatible }, // Network Extensions 2 Fix
+                    { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
+                    { 812125426uL , Status.Incompatible }, // Network Extensions 2
+                    { 478820060uL , Status.Compatible   }, // Network Extensions Project
+                    { 413687519uL , Status.Incompatible }, // Some Roads
+                },
+                CompatibleWith = GameVersion.Patch_1_4_1_f2,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SaveAltering
+                      | ItemFlags.SlowLoad
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("20 Jun, 2016"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "If you have broken saves after removing this mod, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
+                },
+                Published = WorkshopDate("25 Mar, 2015"),
+                Removed = WorkshopDate("01 Jul, 2018"),
+                SourceURL = "https://gist.github.com/thatfool/0545ff2641ef46c2cf52",
+                Updated = WorkshopDate("25 Mar, 2015"),
+            });
+
+            // - Build elevated railroad, roads, and pedestrian paths without pillars
+            // - Build elevated roads that use the railroad pillars instead of the clunky concrete ones
+            // - Disable collision detection while building roads
+            // - Build railroad tracks in the asset editor
+            AddMod(new Review(409073164uL, "NoPillars") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.Props,
+                ArchiveURL = "https://web.archive.org/web/20170104001601/http://steamcommunity.com/sharedfiles/filedetails/?id=409073164",
+                Authors = "some danny",
+                BrokenBy = GameVersion.EuropeBiome,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 463845891uL , Status.Incompatible }, // No Pillars (BP ver)
+                    { 409073164uL , Status.Incompatible }, // NoPillars
+                },
+                CompatibleWith = GameVersion.Patch_1_0_7c,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete // new mod avail
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 Jan, 2017"),
+                Published = WorkshopDate("16 Mar, 2015"),
+                Removed = WorkshopDate("14 Mar, 2017"),
+                ReplaceWith = 463845891uL, // No Pillars (BP ver)
+                SourceURL = "https://gist.github.com/thatfool/8b8f90baaa5f62ed6b9d",
+                Updated = WorkshopDate("18 Mar, 2015"),
             });
         }
     }

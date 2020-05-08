@@ -276,6 +276,7 @@ namespace AutoRepair.Catalogs {
                 BuildingLevelMods();
                 BulldozeMods();
                 CameraMods();
+                ChirperMods();
                 ContentManagerMods();
                 ConverterMods();
                 DiagnosticMods();
@@ -350,6 +351,8 @@ namespace AutoRepair.Catalogs {
         /// <param name="extendedReporting">If <c>true</c>, do more extensive validation checks.</param>
         [Conditional("DEBUG")]
         private void Validate(bool extendedReporting = false) {
+
+            VerifyIds();
 
             bool problems = false;
 

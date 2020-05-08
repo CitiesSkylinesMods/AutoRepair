@@ -30,6 +30,7 @@ namespace AutoRepair.Catalogs {
                     { 1637663252uL, Status.Compatible   }, // TM:PE V11 STABLE
                 },
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 SourceURL = "https://github.com/klyte45/TreesRespiration",
                 Tags = new[] { "Trees", "Pollution", "Environment", "Noise", "Health" },
             });
@@ -50,6 +51,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 SourceURL = "https://github.com/TPBCS/ForestBrush",
                 Tags = new[] { "Trees", "Brush", "Forest", "Landscape", "Random", "Paint", "Environment", "Detailing", },
             });
@@ -67,6 +69,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 SourceURL = "https://pastebin.com/8M0gFKZh",
                 Tags = new[] { "Trees", "Brush", "Forest", "Landscape", "Random", "Paint", "Environment", "Detailing", },
             });
@@ -85,6 +88,7 @@ namespace AutoRepair.Catalogs {
                     { 593588108uL, Status.Recommended }, // Prop & Tree Anarchy
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Tags = new[] { "Trees", "Forest", "Landscape", "Farming", "Forestry", "Environment", "Detailing", "Industry", },
             });
 
@@ -103,6 +107,7 @@ namespace AutoRepair.Catalogs {
                     { 556784825uL , Status.Incompatible }, // Random Tree Rotation (original, now fixed)
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Published = WorkshopDate("18 May, 2018"),
                 Tags = new[] { "Trees", "Forest", "Landscape", "Wind", "Swaying", "Environment", "Detailing", },
                 Updated = WorkshopDate("24 May, 2018"),
@@ -120,6 +125,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: An error sometimes appears on startup, but it seems to work properly after that." },
                     { NOTE, "This mod improves quality of tree LODs with almost no impact on performance." },
@@ -138,6 +144,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The mod takes effect whilst placing trees on the map:" },
                     { NOTE, "Press Ctrl + Up/Down to incease/decrease min scale." },
@@ -161,6 +168,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Removing trees from the map is permanent (for that city). However, trees removed from buildings/roads will return if you change mod settings." },
                     { 1758376843uL, "[Mod: Network Skins 2] For best compatibility, disable road tree removal in Vanilla Trees Remover." },
@@ -183,12 +191,45 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { 455403039uL, "[Mod: Unlimited Trees] Causes trees to float in the air when used with Tree Snapping mod." },
                 },
                 Published = WorkshopDate("21 Feb, 2017"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-TreeSnapping",
                 Updated = WorkshopDate("24 May, 2018"),
+            });
+
+            AddMod(new Review(814903880uL, "Tree Fire Control") {
+                Affect = Factor.Disasters
+                       | Factor.Trees,
+                Authors = "knighthawkGP",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1718245521uL, Status.Compatible   }, // No Park Building Fires
+                    { 814903880uL , Status.Incompatible }, // Tree Fire Control
+                    { 637901778uL , Status.Unknown      }, // Fire Spread [ Fixed for C:S 1.3.2+ ]
+                    { 629370088uL , Status.Unknown      }, // Rain Firefighting
+                    { 552324460uL , Status.Compatible   }, // No Fires
+                    { 455403039uL , Status.Unknown      }, // Unlimited Trees Mod v1.12
+                    { 413502249uL , Status.Unknown      }, // Unlimited Trees (original)
+                    { 410234967uL , Status.Unknown      }, // Fire Spread
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Laggy
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The game now has a built-in option to control fire spreading that might be an alternative to this mod." },
+                    { NOTE, "If you want to turn building fires off, try 'No Fires' mod or 'No Park Building Fires' mod." },
+                    { NOTE, "May cause in-game lag if there are huge numbers of trees in your city." },
+                },
+                Published = WorkshopDate("9 Dec, 2016"),
+                RequiredDLC = DLCs.NaturalDisasters,
+                SourceURL = "https://github.com/Knighth/TreeFireControl",
+                Updated = WorkshopDate("18 May, 2017"),
             });
 
             AddMod(new Review(556784825uL, "Random Tree Rotation") {
@@ -203,6 +244,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Published = WorkshopDate("17 Nov, 2015"),
                 ReplaceWith = 1388613752uL, // Tree Movement Control
                 SourceURL = "https://gist.github.com/boformer/5f8e9269b02d5b8809da",
@@ -224,6 +266,7 @@ namespace AutoRepair.Catalogs {
                     { 1349895184uL, Status.Recommended  }, // Tree LOD Fix
                     { 963853793uL , Status.Recommended  }, // Ultra low tri trees
                     { 869134690uL , Status.Incompatible }, // Tree Snapping
+                    { 814903880uL , Status.Unknown      }, // Tree Fire Control
                     { 556784825uL , Status.Recommended  }, // Random Tree Rotation
                     { 455403039uL , Status.Incompatible }, // Unlimited Trees Mod v1.1
                     { 413502249uL , Status.Incompatible }, // Unlimited Trees (original)
@@ -232,6 +275,7 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 413502249uL, // Unlimied Trees by Mabako
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "May cause lag on older computers or old graphics cards (although game is highly optimised for distant trees). May increase RAM consumption." },
                     { 869134690uL, "[Mod: Tree Snapping] Causes trees to float in the air when used with Unlimited Trees mod." },
@@ -288,6 +332,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 869134690uL , Status.Incompatible }, // Tree Snapping
+                    { 814903880uL , Status.Unknown      }, // Tree Fire Control
                     { 455403039uL , Status.Incompatible }, // Unlimited Trees Mod v1.1
                     { 413502249uL , Status.Incompatible }, // Unlimited Trees (original)
                 },
@@ -302,6 +347,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                //LastSeen = WorkshopDate("24 Mar, 2015"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Mod tries to self-enable and runs detours on startup; do NOT use this version of Tree Unlimiter." },
                     { NOTE, "Could not find original source by Mabako, but found archive of decompiled dll (listed as Source URL)." },
@@ -329,6 +375,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The 'Broken and Incompatible Mods' google sheet states this mod is dead, however some users report that it still works." },
                 },

@@ -13,8 +13,8 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Add mods to list.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "Legibility.")]
-        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "Legibility.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
+        [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void RepairMods() {
 
             string catalog = "Repair";
@@ -26,6 +26,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 Apr, 2020"),
                 Published = WorkshopDate("30 Mar, 2020"),
                 Updated = WorkshopDate("4 Apr, 2020"),
             });
@@ -37,6 +38,8 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
+                Locale = "*",
                 ReleasedDuring = GameVersion.SunsetHarbor,
                 SourceURL = "https://github.com/Cgameworld/InstantReturnToDesktop",
             });
@@ -52,6 +55,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/CitiesSkylinesMods/AutoRepair",
             });
@@ -68,6 +72,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 ReleasedDuring = GameVersion.Campus,
             });
 
@@ -78,6 +83,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 SourceURL = "https://github.com/CitiesSkylinesMods/BrokenNodeDetector",
             });
 
@@ -89,6 +95,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 SourceURL = "https://github.com/thale5/Safenets",
             });
 
@@ -99,6 +106,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RoadRemovalTool",
             });
 
@@ -112,6 +120,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Asset creators) You can edit spawn points with 'Advanced Buildings Editor' mod: https://steamcommunity.com/sharedfiles/filedetails/?id=790347696" },
                     { 816260433uL , "[Mod: Metro Overhaul Mod] Both mods have spawn point fix; 'Spawn Points Fix' mod will deactivate if MOM is active." },
@@ -119,6 +128,20 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("17 Dec, 2016"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-SpawnPointsFix",
                 Updated = WorkshopDate("27 May, 2017"),
+            });
+
+            AddMod(new Review(812107110uL, "Less Steam") {
+                Affect = Factor.UI,
+                Authors = "thale5",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("6 May, 2020"),
+                Published = WorkshopDate("4 Dec, 2016"),
+                SourceURL = "https://github.com/thale5/LessSteam",
+                Updated = WorkshopDate("19 Aug, 2017"),
             });
 
             /*
@@ -140,6 +163,7 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.BrokenByUpdate
                       | ItemFlags.Obsolete // vanilla fixed in SH
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Unsubscribe; the bug in vanilla game is now fixed since 1.13.0-f8 release!" },
                 },
@@ -158,6 +182,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete // vanilla fixed in SH
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Incorrectly shows 'already built' icon for all service buildings." },
                     { NOTE, "Unsubscribe; the bug in vanilla game is now fixed since Sunset Harbor release!" },
@@ -184,7 +209,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("15 Apr, 2015"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Unsubscribe; the bug in vanilla game is fixed since 1.06b release!" },
+                    { NOTE, "Unsubscribe; the bug in vanilla game is fixed since game version 1.06b." },
                 },
                 Published = WorkshopDate("16 Mar, 2015"), // based on 409068575
                 Removed = WorkshopDate("22 Dec, 2018"), // rough guesstimate based on web archive

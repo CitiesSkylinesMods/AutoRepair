@@ -48,6 +48,7 @@ namespace AutoRepair.Catalogs {
                     { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                     // other stuff:
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
@@ -61,7 +62,7 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Mar, 2020"),
             });
 
-            AddMod(new Review(1498036881uL, "UltimateMod 2.6 ( Higher Income and More Options )") {
+            AddMod(new Review(1498036881uL, "UltimateMod 2.8 ( Higher Income and More Options )") {
                 Affect = Factor.Achievements
                        | Factor.Budget
                        | Factor.Bulldoze
@@ -85,9 +86,32 @@ namespace AutoRepair.Catalogs {
                     { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
-                    // Chirper removers:
-
+                    // Chirper:
+                    { 2053655383uL, Status.MinorIssues  }, // Pretty Pixel's Trump Tweets
+                    { 1591417160uL, Status.MinorIssues  }, // Hide It!
+                    { 819797131uL , Status.MinorIssues  }, // Reddit For Chirpy: Updated
+                    { 810373922uL , Status.Incompatible }, // Remove Chirper
+                    { 649147853uL , Status.MinorIssues  }, // Birdcage - More Chirper controls
+                    { 628399273uL , Status.MinorIssues  }, // ChirpBanner+
+                    { 577655208uL , Status.MinorIssues  }, // 2ch for Chirpy
+                    { 462946934uL , Status.MinorIssues  }, // News de SimCity 3000 : Téléscripteur 3K
+                    { 462969497uL , Status.MinorIssues  }, // SimCity 3000 News: News Ticker 3K
+                    { 423936348uL , Status.MinorIssues  }, // Chirper-Nachrichten
+                    { 422603366uL , Status.Incompatible }, // Disable Chirper
+                    { 414730498uL , Status.MinorIssues  }, // Twitch Chirper Chat
+                    { 412019683uL , Status.MinorIssues  }, // Chitter
+                    { 411307025uL , Status.Incompatible }, // Chirp Remover
+                    { 409924305uL , Status.MinorIssues  }, // SC3K Ticker
+                    { 409392231uL , Status.MinorIssues  }, // SuperChirper
+                    { 408705348uL , Status.MinorIssues  }, // Reddit For Chirpy
+                    { 407871375uL , Status.MinorIssues  }, // ChirpFilter
+                    { 406623071uL , Status.MinorIssues  }, // Chirpy Banner
+                    { 406506125uL , Status.Incompatible }, // ByeByeBirdie
+                    { 406412894uL , Status.MinorIssues  }, // Chirpy Maid
+                    { 405963579uL , Status.MinorIssues  }, // Chirper Position Changer/Mover
+                    { 405791507uL , Status.Incompatible }, // Chirpy Exterminator
                     // Disable abandonment:
 
                     // Milestone unlockers:
@@ -112,7 +136,17 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 Languages = new[] { "en", "zh-cn", "ru", "ko" },
+                LastSeen = WorkshopDate("6 May, 2020"),
                 Locale = "en",
+                Notes = new Dictionary<ulong, string>() {
+                    { 1591417160uL, "[Mod: Hide It!] Both mods can hide chirper; for compatibility only use Hide It to do that." },
+                    { 819797131uL , "[Mod: Reddit for Chirpy] For compatibility, do not 'Disable Chirper' in UltimateMod." },
+                    { 649147853uL , "[Mod: Birdcage] Both mods can hide chirper; use one, not the other." },
+                    { 628399273uL , "[Mod: ChirpBanner+] Both mods can hide chirper; use one, not the other." },
+                    { 414730498uL , "[Mod: Twitch Chirper Chat] For compatibility, do not 'Disable Chirper' in UltimateMod." },
+                    { 412019683uL , "[Mod: Chitter] For compatibility, do not 'Disable Chirper' in UltimateMod." },
+                    { 409392231uL , "[Mod: SuperChirper] Both mods can hide chirper; use one, not the other." },
+                },
                 Published = WorkshopDate("30 Aug, 2018"),
                 Updated = WorkshopDate("31 Mar, 2020"),
             });
@@ -127,6 +161,7 @@ namespace AutoRepair.Catalogs {
                     { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -204,6 +239,7 @@ namespace AutoRepair.Catalogs {
                     { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                     // milestone unlockers
                     { Vanilla.UnlockAll, Status.Incompatible }, //Unlock All (bundled with Cities: Skylines)
@@ -269,6 +305,33 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("27 Mar, 2020"),
             });
 
+            AddMod(new Review(794268416uL, "Steamy - More Steam controls") {
+                Affect = Factor.Achievements
+                       | Factor.UI,
+                Authors = "Asser", // formerly sexyfishhorse
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // Achievements unlockers:
+                    { 1567569285uL, Status.Incompatible }, // Achieve It!
+                    { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6
+                    { 1444491969uL, Status.Incompatible }, // Achievements with Mods
+                    { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 411253368uL , Status.Incompatible }, // Steam notification mover
+                    { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("6 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Achievements flag was inverted, and this mod hasn't been updated; achievement enabler likely not working." },
+                },
+                Published = WorkshopDate("5 Nov, 2016"),
+                SourceURL = "https://github.com/SexyFishHorse/CitiesSkylines-Steamy",
+                Updated = WorkshopDate("1 Nov, 2018"),
+            });
+
             // allows uniques to be placed multiple times
             AddMod(new Review(466834228uL, "Not So Unique Buildings") {
                 Affect = Factor.Unlockers,
@@ -317,6 +380,7 @@ namespace AutoRepair.Catalogs {
                     { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                 },
                 Flags = ItemFlags.Abandonware
@@ -355,6 +419,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("6 May, 2020"),
                 Published = WorkshopDate("17 Sep, 2017"),
                 ReplaceWith = 466834228uL, // Not So Unique Buildings
                 Suppress = Warning.OlderReplacement,

@@ -186,6 +186,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "C#",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1865667356uL, Status.Unknown      }, // Twitch Citizens
                     { 1806759255uL, Status.Incompatible }, // Customize It Extended
@@ -198,6 +199,7 @@ namespace AutoRepair.Catalogs {
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
                     { 530771650uL , Status.Compatible   }, // Prefab Hook
                     { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
+                    { 414730498uL , Status.Unknown      }, // Twitch Chirper Chat
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1369729955uL, // Customize It (original mod)
@@ -325,6 +327,29 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/Quboid/CSL_RebalancedIndustries",
             });
 
+            AddMod(new Review(1553517176uL, "Specialized Industry Fix Redux") {
+                Affect = Factor.Consumption
+                       | Factor.Production,
+                Authors = "Vectorial1024",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1562650024uL, Status.Incompatible }, // Rebalanced Industries
+                    { 1312735149uL, Status.Incompatible }, // Klyte Commons
+                    { 662386761uL , Status.Incompatible }, // Specialised Industry Fix [BUGFIX for Vanilla]
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 662386761uL, // Specialised Industry Fix [BUGFIX for Vanilla]
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { 1312735149uL, "[Mod: Klyte Commons] Incompatible: https://steamcommunity.com/workshop/filedetails/discussion/1553517176/2479690531125166855/" },
+                },
+                Published = WorkshopDate("1 Nov, 2018"),
+                ReplaceWith = 1562650024uL, // Rebalanced Industries
+                SourceURL = "https://github.com/Vectorial1024/SpecializedIndustryFixRedux",
+                Updated = WorkshopDate("15 Nov, 2018"),
+            });
+
             AddMod(new Review(1551563197uL, "EnhancedBuildingCapacity - Fixed") {
                 Affect = Factor.BuildingCapacity
                        | Factor.Consumption
@@ -352,6 +377,7 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 429238904uL, // Enhanced Building Capacity
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("4 May, 2020"),
                 Published = WorkshopDate("29 Oct, 2018"),
                 Updated = WorkshopDate("29 Oct, 2018"),
             });
@@ -367,6 +393,7 @@ namespace AutoRepair.Catalogs {
                     { 819155459uL , Status.Incompatible }, // 超级需求
                 },
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Published = WorkshopDate("25 Sep, 2018"),
                 Updated = WorkshopDate("11 Aug, 2019"),
             });
@@ -382,8 +409,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.ParkLife,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("15 Jun, 2018"),
                 SourceURL = "https://github.com/DaEgi01/CitiesSkylines-RealisticWalkingSpeed",
+                Updated = WorkshopDate("23 Mar, 2020"),
             });
 
             AddMod(new Review(1403960464uL, "Maintenance Fees (Parklife Ready)") {
@@ -396,11 +425,20 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
 
-                    { 602336261uL, Status.Incompatible }, // Maintenance Fees
+                    { 602336261uL, Status.Incompatible }, // Maintenance Fees (original)
                 },
+                CompatibleWith = GameVersion.Patch_1_10_1_f3,
                 ContinuationOf = 602336261uL, // Maintenance Fees
-                Flags = ItemFlags.SourceAvailable,
+                Flags = ItemFlags.MinorIssues
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Industries: Users report issues since Industries game update." },
+                    { Vanilla.UnlimitedMoney, "[Vanilla Mod: Unlimited Money] If you have unlimited money, Maintenance Fees mod is not much use." },
+                },
+                Published = WorkshopDate("6 Jun, 2018"),
                 SourceURL = "https://github.com/Xial/Maintenancefee",
+                Updated = WorkshopDate("7 Jun, 2018"),
             });
 
             // refund full construction cost when bulldozing
@@ -419,7 +457,9 @@ namespace AutoRepair.Catalogs {
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { Vanilla.UnlimitedMoney, "[Vanilla Mod: Unlimited Money] If you have unlimited money, Full Refund Cost mod is not much use." },
                 },
@@ -434,14 +474,32 @@ namespace AutoRepair.Catalogs {
                 Authors = "khollenbeck",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 888017364uL, Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
-                    { 781767563uL, Status.Incompatible }, // Extended InfoPanel
-                    { 576970398uL, Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    // old mod:
                     { 406841580uL, Status.Incompatible }, // SimCity Fudged Population
-                    { 421770876uL, Status.Incompatible }, // Sapphire - UI skin framework
+                    // UI overhauls:
+                    { 888017364u , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 781767563uL, Status.Incompatible }, // Extended InfoPanel
+                    { 576970398u , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876u , Status.Incompatible }, // Sapphire - UI skin framework
+                    // skins:
+                    { 593987954u , Status.Incompatible }, // Triple-Screen UI Skin
+                    { 578482272u , Status.Incompatible }, // [FIXED][LEGACY] Emerald UI (16:9)
+                    { 577230299u , Status.Incompatible }, // [LEGACY][FIXED][UI] Silicon Skin V1.0
+                    { 511029270u , Status.Incompatible }, // Sapphire - Triple Screen Centered
+                    { 450453336u , Status.Incompatible }, // Hello UI [Fixed 1.7]
+                    { 428457597u , Status.Incompatible }, // ClearUI - Quartz Skin 16:9 / 16:10
+                    { 428298776u , Status.Incompatible }, // [UI] Silicon Skin (21:9) V1.0
+                    { 424995783u , Status.Incompatible }, // [UI] Silicon Skin V1.0
+                    { 423910890u , Status.Incompatible }, // Blue UI - Quartz Skin
+                    { 422251153u , Status.Incompatible }, // Emerald UI (16:9)
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 406841580uL, // SimCity Fudged Population
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Published = WorkshopDate("8 Dec, 2017"),
                 SourceURL = "https://github.com/krishollenbeck/cities_skylines_enhanced_fudged_population_mod",
+                Updated = WorkshopDate("6 Jan, 2018"),
             });
 
             AddMod(new Review(838095079uL, "Cheaper Hydro Electric Power") {
@@ -465,6 +523,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Patch_1_9_1,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { Vanilla.UnlimitedMoney, "[Vanilla Mod: Unlimited Money] If you have unlimited money, this mod is not much use." },
                 },
@@ -487,10 +546,61 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "zh-cn",
                 Published = WorkshopDate("16 Dec, 2016"),
                 ReplaceWith = 1522785644uL, // Infinite Demand Mod
                 Updated = WorkshopDate("16 Dec, 2016"),
+            });
+
+            AddMod(new Review(813725855uL, "No Solar Power At Night") {
+                Affect = Factor.Production,
+                Authors = "informmanuel",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 813725855uL , Status.Incompatible }, // No Solar Power At Night
+                    { 597020110uL , Status.Compatible   }, // Solar Capacitor Mod
+                    { 569879360uL , Status.Compatible   }, // Thermal Solar Rebalance v1.3
+                    { 524433047uL , Status.Incompatible }, // Night Time Solar Power (gives full solar at night)
+                    { 489636701uL , Status.Compatible   }, // Power Balance
+                    { 413301010uL , Status.Incompatible }, // Realistic Power Modification (RPM mod)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The base game reduces solar power to 70 % at night; this mod reduces it to 0 %." },
+                },
+                Published = WorkshopDate("7 Dec, 2016"),
+                Updated = WorkshopDate("7 Dec, 2016"),
+            });
+
+            AddMod(new Review(569879360uL, "Thermal Solar Rebalance v1.3") {
+                Affect = Factor.Production,
+                Authors = "Whitefang Greytail",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 813725855uL , Status.Compatible   }, // No Solar Power At Night
+                    { 597020110uL , Status.Compatible   }, // Solar Capacitor Mod
+                    { 569879360uL , Status.Incompatible }, // Thermal Solar Rebalance v1.3
+                    { 524433047uL , Status.Incompatible }, // Night Time Solar Power (gives full solar at night)
+                    { 489636701uL , Status.Incompatible }, // Power Balance
+                    { 413301010uL , Status.Incompatible }, // Realistic Power Modification (RPM mod)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.NoWorkshop // Made "friends only" around March 2020
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("20 Mar, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The power output can be customised via 'WG_RealisticSolar.xml' file in game folder." },
+                },
+                Published = WorkshopDate("6 Dec, 2015"),
+                Removed = WorkshopDate("26 Mar, 2020"),
+                SourceURL = "https://github.com/WhitefangGreytail/ImprovedSolar",
+                Suppress = Warning.MissingArchiveURL,
+                Updated = WorkshopDate("30 Dec, 2016"),
             });
 
             /*
@@ -524,29 +634,6 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceUnavailable,
                 ReplaceWith = 2025147082uL, // Realistic Population revisited
             });
-
-            AddMod(new Review(1553517176uL, "Specialized Industry Fix Redux") {
-                Affect = Factor.Consumption
-                       | Factor.Production,
-                Authors = "Vectorial1024",
-                BrokenBy = GameVersion.Industries, // lol
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1562650024uL, Status.Incompatible }, // Rebalanced Industries
-                    { 662386761uL , Status.Incompatible }, // Specialised Industry Fix [BUGFIX for Vanilla]
-                },
-                CompatibleWith = GameVersion.Industries,
-                ContinuationOf = 662386761uL, // Specialised Industry Fix [BUGFIX for Vanilla]
-                Flags = ItemFlags.Obsolete
-                      | ItemFlags.BrokenByUpdate // broken since Industries DLC (lol)
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Industries,
-                ReplaceWith = 1562650024uL, // Rebalanced Industries
-                Suppress = Warning.InvalidVersionSequence,
-                SourceURL = "https://github.com/Vectorial1024/SpecializedIndustryFixRedux",
-            }); ;
 
             AddMod(new Review(1487849798uL, "Higher Income Mod 1.2a") {
                 Affect = Factor.Revenue,
@@ -593,6 +680,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1865667356uL, Status.Unknown      }, // Twitch Citizens
                     { 1806759255uL, Status.Incompatible }, // Customize It Extended
@@ -605,6 +693,7 @@ namespace AutoRepair.Catalogs {
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
                     { 530771650uL , Status.Required     }, // Prefab Hook
                     { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
+                    { 414730498uL , Status.Compatible   }, // Twitch Chirper Chat
                 },
                 Flags = ItemFlags.Obsolete // new version avail
                       | ItemFlags.SourceAvailable,
@@ -929,7 +1018,9 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("26 Apr, 2020"),
                 Published = WorkshopDate("28 Mar, 2016"),
+                Removed = WorkshopDate("1 Mar, 2020"),
                 ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_CitizenEdit",
                 Updated = WorkshopDate("31 Oct, 2018"),
@@ -964,7 +1055,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.NoWorkshop // Removed around March 2020
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("26 Apr, 2020"),
                 Published = WorkshopDate("12 Mar, 2016"),
+                Removed = WorkshopDate("1 Mar, 2020"),
                 ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_Lifespan",
                 Suppress = Warning.MissingArchiveURL,
@@ -1045,7 +1138,9 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("26 Apr, 2020"),
                 Published = WorkshopDate("25 Oct, 2015"),
+                Removed = WorkshopDate("1 Mar, 2020"),
                 Updated = WorkshopDate("30 Oct, 2015"),
             });
 
@@ -1092,7 +1187,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // Made hidden around March 2020
                       | ItemFlags.Obsolete // new version available
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("26 Apr, 2020"),
                 Published = WorkshopDate("16 Apr, 2015"),
+                Removed = WorkshopDate("1 Mar, 2020"),
                 ReplaceWith = 2025147082uL, // Realistic Population revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_RealisticCitySkylines",
                 Updated = WorkshopDate("25 Oct, 2018"),

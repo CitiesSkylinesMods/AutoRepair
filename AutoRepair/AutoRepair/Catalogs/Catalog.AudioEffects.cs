@@ -51,6 +51,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 455958878uL, // Ambient Sounds Tuner
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Documentation: https://github.com/Archomeda/csl-ambient-sounds-tuner/wiki" },
                 },
@@ -84,6 +85,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 ContinuationOf = 1719979486uL, // Philippines Realistic Sound Mod: Return!
                 Flags = ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "tl-ph",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -113,6 +115,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 76 MB
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "en-us",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -157,6 +160,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "sv-se",
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient",
@@ -180,6 +184,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 64 MB
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "sv-se",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -204,6 +209,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Tags = new[] {
                     "Sounds", "Audio", "Ambient", "Building", "Upgrade", "GTA",
                 },
@@ -224,6 +230,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 72 MB
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "it",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -251,6 +258,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 73 MB
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "fr",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -278,6 +286,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 70 MB
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "nl",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -305,6 +314,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 67 MB
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "de-at",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -332,6 +342,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.LargeFileWarning // 62 MB
                       | ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "de",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -376,6 +387,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled,
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "de",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -442,6 +454,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled,
                 Languages = new[] { "nl", "en", "fr", },
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "nl",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -469,6 +482,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled,
                 Languages = new[] { "de-at", "en" },
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "de-at",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -496,6 +510,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled,
                 Languages = new[] { "fr-ch", "en" },
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "fr-ch",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -523,6 +538,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Active,
                 Flags = ItemFlags.SourceBundled,
                 Languages = new[] { "de-ch", "en", "fr-ch", "it-ch", },
+                LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "de-ch",
                 Notes = new Dictionary<ulong, string>() {
                     { 815103125uL, "[Mod: Extra Vehicle Effects] If 'Disable rail service sounds' is selected, you won't hear the sounds at station." },
@@ -788,8 +804,10 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("30 Mar, 2020"),
                 Locale = "tl-ph",
                 Published = WorkshopDate("22 Apr, 2019"),
+                Removed = WorkshopDate("15 Apr, 2020"),
                 ReplaceWith = 2053925580uL, // Philippines Sound MOD 2K20 (PSM)
                 Suppress = Warning.MissingArchiveURL,
                 Tags = new[] {
@@ -890,14 +908,16 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // approx Jan 2017
                       | ItemFlags.Obsolete // replacement mod available
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("3 Jul, 2015"), // web archive
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Creating sound packs (outdated): https://github.com/Archomeda/csl-ambient-sounds-tuner/wiki/Creating%20Sound%20Packs" },
                 },
                 Published = WorkshopDate("5 Jun, 2015"),
+                Removed = WorkshopDate("4 Sep, 2018"), // web archive
                 ReplaceWith = 818641631uL, // Ambient Sounds Tuner 2.0
                 SourceURL = "https://github.com/Archomeda/csl-ambient-sounds-tuner",
                 Tags = new[] { "Audio", "Sound", "Sirens", "Police", "Fire", "Ambulance" }, // add more
-                Updated = WorkshopDate("1 Jul, 2015"), // prolly more  updates, but that's as far as wayback machine goes
+                Updated = WorkshopDate("30 Sep, 2015"), // based on last github commit
             });
 
             // obsolete
