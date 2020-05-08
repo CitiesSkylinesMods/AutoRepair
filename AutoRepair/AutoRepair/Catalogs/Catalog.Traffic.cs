@@ -417,6 +417,33 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/coarxflow/SingleTrainTrackAI",
             });
 
+            AddMod(new Review(810858473uL, "Traffic Report Mod: Updated") {
+                Affect = Factor.Pathfinder
+                       | Factor.UI,
+                Authors = "tony56a",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1806963141uL, Status.Compatible   }, // TM:PE v11.1.2 LABS
+                    { 1637663252uL, Status.Compatible   }, // TM:PE V11 STABLE
+                    { 810858473uL , Status.Incompatible }, // Traffic Report Mod: Updated
+                    { 408092246uL , Status.Incompatible }, // Traffic Report Tool 2.0
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 408092246uL, // Traffic Report Tool 2.0
+                Flags = ItemFlags.MinorIssues
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Some users report that it causes game to start in traffic info view." },
+                    { NOTE, "Vanilla game now has traffic routes tool built-in: https://skylines.paradoxwikis.com/Info_views#Traffic_Routes" },
+                    { NOTE, "If you only want to see where vehicles are going to from their current position, you won't need this mod." },
+                },
+                Published = WorkshopDate("2 Dec, 2016"),
+                SourceURL = "https://github.com/tony56a/TrafficReport",
+                Updated = WorkshopDate("2 Apr, 2020"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -637,6 +664,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Localised
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
+                Published = WorkshopDate("27 Dec, 2018"),
                 ReleasedDuring = GameVersion.Campus, // yes, really.
                 ReplaceWith = 1637663252uL, // TM:PE V11 STABLE
                 Suppress = Warning.InvalidVersionSequence,
@@ -644,6 +673,7 @@ namespace AutoRepair.Catalogs {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
                     "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
                 },
+                Updated = WorkshopDate("27 Dec, 2018"),
             });
 
             AddMod(new Review(1546870472uL, "TrafficManager Fixed for industry DLC") {
@@ -711,14 +741,17 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Languages = v10languages,
+                LastSeen = WorkshopDate("21 May, 2019"),
                 Locale = "en",
-                ReleasedDuring = GameVersion.Industries,
+                Published = WorkshopDate("24 Oct, 2018"),
+                Removed = WorkshopDate("22 Mar, 2020"),
                 ReplaceWith = 1637663252uL, // TM:PE V11 STABLE
                 Suppress = Warning.MissingArchiveURL,
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
                     "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
                 },
+                Updated = WorkshopDate("24 Oct, 2018"),
             });
 
             // Had a modified Hearse AI
@@ -786,14 +819,16 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Languages = v10languages,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Locale = "en",
-                ReleasedDuring = GameVersion.ChirpX,
+                Published = WorkshopDate("31 Mar, 2018"),
                 ReplaceWith = 1637663252uL, // TM:PE V11 STABLE
                 SourceURL = "https://github.com/thardie/Cities-Skylines-Traffic-Manager-President-Edition",
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
                     "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
                 },
+                Updated = WorkshopDate("1 Apr, 2018"),
             });
 
             AddMod(new Review(583429740uL, "Traffic Manager: President Edition [STABLE]") {
@@ -869,18 +904,21 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Languages = v10languages,
+                LastSeen = WorkshopDate("1 Apr, 2020"), // still there but hidden
                 Locale = "en",
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "THIS VERSION OF TM:PE IS NO LONGER MAINTAINED, PRESS 'F' TO PAY RESPECTS." },
                     { NOTE, "LinuxFan no longer plays the game so this version will NOT be updated; use TM:PE v11 STABLE instead." },
                 },
-                ReleasedDuring = GameVersion.AfterDark,
+                Published = WorkshopDate("25 Dec, 2015"),
+                Removed = WorkshopDate("1 Apr, 2020"),
                 ReplaceWith = 1637663252uL, // TM:PE V11 STABLE
                 SourceURL = "https://github.com/VictorPhilipp/Cities-Skylines-Traffic-Manager-President-Edition",
                 Tags = new[] {
                     "TMPE", "Priority", "Speeds", "Signs", "Traffic", "Lights", "Vehicles",
                     "Restrictions", "Pathfinder", "Pedestrians", "Crossings", "Parking",
                 },
+                Updated = WorkshopDate("21 May, 2019"),
             });
 
             AddMod(new Review(457516262uL, "Rail Track Speed Increaser 2.2.1") {
@@ -902,10 +940,43 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("8 Jun, 2015"),
                 ReplaceWith = 1586774819uL, // Other Rail Track Speed Increaser
                 SourceURL = "https://pastebin.com/QvxKyyN1",
                 Updated = WorkshopDate("20 Mar, 2016"),
+            });
+
+            AddMod(new Review(408092246uL, "Traffic Report Tool 2.0") {
+                Affect = Factor.Pathfinder
+                       | Factor.UI,
+                Authors = "LisaLionheart",
+                BrokenBy = GameVersion.NaturalDisasters,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
+                    { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 810858473uL , Status.Incompatible }, // Traffic Report Mod: Updated
+                    { 408092246uL , Status.Incompatible }, // Traffic Report Tool 2.0
+                },
+                CompatibleWith = GameVersion.Stadiums,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("26 Jun, 2017"), // web archive
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Vanilla game now has traffic routes tool built-in: https://skylines.paradoxwikis.com/Info_views#Traffic_Routes" },
+                    { NOTE, "If you only want to see where vehicles are going to from their current position, you won't need this mod." },
+                },
+                Published = WorkshopDate("15 Mar, 2015"), // based on adjacent items
+                Removed = WorkshopDate("28 Jul, 2017"), // web archive
+                ReplaceWith = 810858473uL, // Traffic Report Mod: Updated
+                SourceURL = "https://github.com/lisa-lionheart/TrafficReport/",
+                Updated = WorkshopDate("31 Mar, 2016"), // web archive
             });
         }
     }

@@ -69,6 +69,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -131,6 +132,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -201,6 +203,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -271,6 +274,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -341,6 +345,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -390,6 +395,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -437,6 +443,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -482,6 +489,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -524,6 +532,7 @@ namespace AutoRepair.Catalogs {
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
                     { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -539,10 +548,94 @@ namespace AutoRepair.Catalogs {
                 Locale = "ko",
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "A left-hand traffic version is available: http://steamcommunity.com/sharedfiles/filedetails/?id=890420060" },
-                    { NOTE, "Based on source code of similar mod: https://github.com/ako-ako/Japanese-Traffic-Lights-V1.7" },
                 },
                 Published = WorkshopDate("22 Mar, 2017"),
                 Updated = WorkshopDate("19 Jul, 2018"),
+            });
+
+            // author still active
+            AddMod(new Review(810355214uL, "Japanese Traffic Lights (RHT)　日本風信号機MOD (右側通行用)") {
+                Affect = Factor.Props
+                       | Factor.TrafficLights,
+                Authors = "ako_ako",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // compat with NExt2 roads
+                    { 2044086131uL, Status.Compatible   }, // NExt2 (temp bugfix)
+                    { 812125426uL , Status.Compatible   }, // NExt2 (original)
+                    // traffic light - junctions
+                    { 1812157090uL, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600uL, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573uL, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608uL, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168uL, Status.Incompatible }, // New American Traffic Lights
+                    { 1259628682uL, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
+                    { 1251396095uL, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
+                    { 1108278552uL, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
+                    // traffic light - level crossings
+                    { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
+                    { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152uL, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938uL, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932uL , Status.Compatible   }, // Stop Remover
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 809633246uL, // Japanese Traffic Lights (LHT)
+                Flags = ItemFlags.SourceAvailable,
+                Locale = "ja",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "A left-hand traffic version is available: http://steamcommunity.com/sharedfiles/filedetails/?id=809633246" },
+                },
+                Published = WorkshopDate("2 Dec, 2016"),
+                SourceURL = "https://github.com/ako-ako/Japanese-Traffic-Lights-V1.7",
+                Updated = WorkshopDate("24 Mar, 2019"),
+            });
+
+            AddMod(new Review(809633246uL, "Japanese Traffic Lights (LHT)　日本風信号機MOD (左側通行用)") {
+                Affect = Factor.Props
+                       | Factor.TrafficLights,
+                Authors = "ako_ako",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // compat with NExt2 roads
+                    { 2044086131uL, Status.Compatible   }, // NExt2 (temp bugfix)
+                    { 812125426uL , Status.Compatible   }, // NExt2 (original)
+                    // traffic light - junctions
+                    { 1812157090uL, Status.Incompatible }, // [NL] Dutch Traffic Lights
+                    { 1550720600uL, Status.Incompatible }, // New American Traffic Lights - NYC/NJ Style
+                    { 1548117573uL, Status.Incompatible }, // New American Traffic Lights - Grey Style
+                    { 1541164608uL, Status.Incompatible }, // New American Traffic Lights - Vanilla Side
+                    { 1535107168uL, Status.Incompatible }, // New American Traffic Lights
+                    { 1259628682uL, Status.Incompatible }, // Taiwanese Traffic Lights (Left Hand Traffic)
+                    { 1251396095uL, Status.Incompatible }, // Taiwanese Traffic Lights (Right Hand Traffic)
+                    { 1108278552uL, Status.Incompatible }, // Horizontal Traffic Lights
+                    { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
+                    { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
+                    // traffic light - level crossings
+                    { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
+                    { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
+                    // other:
+                    { 1962752152uL, Status.Compatible   }, // Busstop Prop Remover
+                    { 1320575938uL, Status.Incompatible }, // Hide Traffic Lights
+                    { 919020932uL , Status.Compatible   }, // Stop Remover
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 694123443uL, // American Traffic Lights
+                Flags = ItemFlags.SourceAvailable,
+                Locale = "ja",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "A right-hand traffic version is available: http://steamcommunity.com/sharedfiles/filedetails/?id=810355214" },
+                },
+                Published = WorkshopDate("30 Nov, 2016"),
+                SourceURL = "https://github.com/ako-ako/Japanese-Traffic-Lights-V1.7",
+                Updated = WorkshopDate("24 Mar, 2019"),
             });
 
             /*
@@ -576,6 +669,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.Compatible   }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Compatible   }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Compatible   }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Incompatible }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Incompatible }, // Japanese Railway Crossings 日本風踏切MOD
@@ -621,6 +716,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.Compatible   }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Compatible   }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Compatible   }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Incompatible }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Incompatible }, // Japanese Railway Crossings 日本風踏切MOD
@@ -677,6 +774,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.Incompatible }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD

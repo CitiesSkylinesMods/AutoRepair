@@ -5,11 +5,10 @@ namespace AutoRepair.Catalogs {
     using JetBrains.Annotations;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Text;
 
     public partial class Catalog {
-
-#if DEBUG
 
         public int numMissing = 0;
 
@@ -21,6 +20,7 @@ namespace AutoRepair.Catalogs {
         }
 
         // Based on this _partial_ list of mods: https://steamcommunity.com/sharedfiles/filedetails/?id=849189511
+        [Conditional("DEBUG")]
         public void VerifyIds() {
             Check(408051079);
             Check(451385013);
@@ -1013,7 +1013,5 @@ namespace AutoRepair.Catalogs {
 
             Log.Info($"\n#### NUM MISSING {numMissing}");
         }
-
-#endif
     }
 }

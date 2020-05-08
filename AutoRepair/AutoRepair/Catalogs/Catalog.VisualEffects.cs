@@ -60,13 +60,14 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.EditorMod // assets created with it require it
                       | ItemFlags.MinorIssues // can become hard dependency for vehicle assets if Extended Asset Editor active
                       | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Campus,
                 LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Asset creators: See https://gist.github.com/boformer/a9c5935a9752dcaa68d67e3a611ada26" },
                     { 800820816uL, "[Mod: Extended Asset Editor] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL." },
                 },
+                Published = WorkshopDate("12 Oct, 2019"),
                 SourceURL = "https://github.com/boformer/CustomEffectLoader",
+                Updated = WorkshopDate("12 Oct, 2019"),
             });
 
             AddMod(new Review(1883101331uL, "Persistent Fog Adjuster") {
@@ -74,13 +75,18 @@ namespace AutoRepair.Catalogs {
                 Authors = "Cgameworld",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 672248733uL, Status.MinorIssues }, // Ultimate Eyecandy v1.5.2 (UE setting overriden by PFA setting)
+                    { 672248733uL , Status.MinorIssues  }, // Ultimate Eyecandy v1.5.2 (UE setting overriden by PFA setting)
                     { 415732693uL , Status.Incompatible }, // Disable Clouds
                 },
                 Flags = ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("8 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { 672248733uL , "[Mod: Ultimate Eye Candy] Both mods change fog effect; Ultimate Eyecandy effect will be overriden by Ultimate Fog Adjuster." },
+                },
+                Published = WorkshopDate("7 Oct, 2019"),
                 SourceURL = "https://github.com/Cgameworld/PersistentFogAdjuster",
                 Tags = new[] { "Fog", "Mist", "Cloud", "Weather", "Eyecandy" },
+                Updated = WorkshopDate("7 Oct, 2019"),
             });
 
             AddMod(new Review(1794015399uL, "Render It!") {
@@ -426,6 +432,21 @@ namespace AutoRepair.Catalogs {
                     Reviews[812713438u].Notes.Add(NOTE, "Mac Users: This mod causes blank sky on OS/X; unsubscribing the mod will fix it. https://steamcommunity.com/workshop/filedetails/discussion/812713438/1649919326328550651/");
                     break;
             }
+
+            AddMod(new Review(793176674uL, "Sharp Textures") {
+                Affect = Factor.Rendering
+                       | Factor.UI,
+                Authors = "Ronyx69, boformer, TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 812713438uL , Status.Recommended   }, // Dynamic Resolutuion
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
+                Published = WorkshopDate("4 Nov, 2016"),
+                Updated = WorkshopDate("4 Nov, 2016"),
+            });
 
             AddMod(new Review(412146081uL, "PostProcessFX v1.9.0") {
                 Affect = Factor.Rendering,

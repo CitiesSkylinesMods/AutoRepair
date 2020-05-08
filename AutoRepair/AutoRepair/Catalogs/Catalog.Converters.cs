@@ -282,14 +282,16 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Now works with vanilla game - no DLC required!" },
                     { NOTE, "Installation: Enable Prefab Hook and Train Converter, then exit to desktop and restart game." },
                     { NOTE, "Default train conversions: https://steamcommunity.com/workshop/filedetails/discussion/795514116/276237094327064093/" },
                     { NOTE, "Trains will revert to their normal state if the mod is removed." },
                 },
-                ReleasedDuring = GameVersion.Stadiums,
+                Published = WorkshopDate("7 Nov, 2016"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-VehicleConverter",
+                Updated = WorkshopDate("28 Mar, 2020"),
             });
 
             /*

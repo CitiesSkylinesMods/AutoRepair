@@ -58,6 +58,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.Compatible   }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Compatible   }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Compatible   }, // Japanese Traffic Lights (LHT)
                     // traffic light skins - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -319,6 +321,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.Incompatible }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Incompatible }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Incompatible }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Incompatible }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Incompatible }, // Japanese Traffic Lights (LHT)
                     // traffic light - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD
@@ -480,6 +484,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.Compatible   }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Compatible   }, // Japanese Traffic Lights (RHT)
+                    { 809633246uL , Status.Compatible   }, // Japanese Traffic Lights (LHT)
                     // traffic light skins - level crossings
                     { 1519049273uL, Status.Compatible   }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.Compatible   }, // Japanese Railway Crossings 日本風踏切MOD

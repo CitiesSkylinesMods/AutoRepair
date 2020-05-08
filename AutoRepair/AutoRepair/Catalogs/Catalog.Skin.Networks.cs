@@ -338,6 +338,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.MinorIssues  }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Compatible   }, // Japanese Traffic Lights (RHT)　日本風信号機MOD (右側通行用)
+                    { 809633246uL , Status.Compatible   }, // Japanese Traffic Lights (LHT)　日本風信号機MOD (左側通行用)
                     // level crossing lights:
                     { 1519049273uL, Status.MinorIssues  }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
@@ -397,6 +399,8 @@ namespace AutoRepair.Catalogs {
                     { 1108278552uL, Status.MinorIssues  }, // Horizontal Traffic Lights
                     { 890420060uL , Status.Compatible   }, // S. Korea Traffic Lights (LHT)
                     { 888671987uL , Status.Compatible   }, // S. Korea Traffic Lights (RHT)
+                    { 810355214uL , Status.Compatible   }, // Japanese Traffic Lights (RHT)　日本風信号機MOD (右側通行用)
+                    { 809633246uL , Status.Compatible   }, // Japanese Traffic Lights (LHT)　日本風信号機MOD (左側通行用)
                     // level crossing lights mods struggle with NExt2 roads:
                     { 1519049273uL, Status.MinorIssues  }, // American Railroad Signal Replacer
                     { 1249000709uL, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
@@ -430,9 +434,12 @@ namespace AutoRepair.Catalogs {
                 Authors = "(gibberish name)",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2044086131uL, Status.Compatible   }, // Network Extensions 2 - Sunset Harbour Build / Fix
                     { 1243740191uL, Status.Recommended  }, // Road Removal Tool
+                    { 950807008uL , Status.Compatible   }, // Network Extensions 2 Fix
                     { 929114228uL , Status.Incompatible }, // New Roads For Network Extension 2
                     { 812125426uL , Status.Compatible   }, // Network Extensions 2
+                    { 478820060uL , Status.Incompatible }, // Network Extensions Project
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware

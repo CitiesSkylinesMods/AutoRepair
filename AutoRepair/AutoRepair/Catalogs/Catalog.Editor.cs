@@ -224,6 +224,32 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/bloodypenguin/Skylines-MoreAssetTags",
                 Updated = WorkshopDate("28 Mar, 2020"),
             });
+
+            AddMod(new Review(800820816uL, "Extended Asset Editor 0.4.11") {
+                Affect = Factor.UI,
+                Authors = "Acc3ss Violation",
+                //BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1886877404uL, Status.MinorIssues  }, // Custom Effect Loader
+                    { 1552053911uL, Status.Required     }, // TrailerVariation Loader
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.EditorMod
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("8 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "(Users) This mod assists with content creation; if you don't create content, you probably don't need this mod." },
+                    { NOTE, "Sunset Harbor: Users report the 'Save Asset' button is unreliable, and tram trailers are not importing." },
+                    { NOTE, "The 'Remove' button sometimes hides the trailer panel. Reselect a trailer using the dropdown to make it show again." },
+                    { NOTE, "List of variations: https://docs.google.com/spreadsheets/d/1XtRwR8cCTLlm6olfzFGhukSO2koaDPt-FJnZgXv73kw/edit#gid=0" },
+                    { 1886877404uL, "[Mod: Custom Effect Loader] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL." },
+                },
+                Published = WorkshopDate("16 Nov, 2016"),
+                SourceURL = "https://github.com/Acc3ssViolation/ExtendedAssetEditor",
+                Updated = WorkshopDate("2 Nov, 2018"),
+            });
         }
     }
 }

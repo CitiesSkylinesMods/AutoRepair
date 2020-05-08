@@ -352,7 +352,7 @@ namespace AutoRepair.Catalogs {
         [Conditional("DEBUG")]
         private void Validate(bool extendedReporting = false) {
 
-            VerifyIds();
+            //VerifyIds();
 
             bool problems = false;
 
