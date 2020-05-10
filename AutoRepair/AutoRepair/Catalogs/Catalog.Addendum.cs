@@ -70,8 +70,6 @@ namespace AutoRepair.Catalogs {
             Dead(583552152u , "Enhanced Garbage Truck AI [Fixed for v1.4+]");
             Dead(414469593u , "Extended Building Information", 1556715327u);
             Dead(456408505u , "European Buildings Unlocker");
-            Dead(411164732u , "Extended Public Transport UI");
-            Dead(802489150u , "Extended Public Transport UI (+DLCs!)");
             Dead(408209297u , "Extended Road Upgrade");
             Dead(451700838u , "Extended Toolbar", 563229150u);
             Dead(410234967u , "Fire Spread");

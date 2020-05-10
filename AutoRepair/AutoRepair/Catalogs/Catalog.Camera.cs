@@ -240,6 +240,24 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Oct, 2017"),
             });
 
+            AddMod(new Review(785528371uL, "Cinematic Camera Extended") {
+                Affect = Factor.Camera,
+                Authors = "Boogieman Sam",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 785528371uL , Status.Incompatible }, // Cinematic Camera Extended
+                    { 409073879uL , Status.Incompatible }, // CinematicCamera
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 409073879uL, // CinematicCamera
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("22 Oct, 2016"),
+                SourceURL = "https://github.com/SamsamTS/CS-CinematicCameraExtended",
+                Updated = WorkshopDate("24 May, 2018"),
+            });
+
             AddMod(new Review(650805785uL, "First Person Camera: Updated") {
                 Affect = Factor.Camera,
                 Authors = "tony56a",
@@ -513,6 +531,23 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("17 Mar, 2015"), // guessed from 409359950 (NSFW!!)
                 Removed = WorkshopDate("21 Sep, 2017"), // web archive
                 Updated = WorkshopDate("23 Mar, 2015"), // WBM shows 11 updates, but steam did not show updated date back then
+            });
+
+            AddMod(new Review(409073879uL, "CinematicCamera") {
+                Affect = Factor.Camera,
+                Authors = "Icob",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 785528371uL , Status.Incompatible }, // Cinematic Camera Extended
+                    { 409073879uL , Status.Incompatible }, // CinematicCamera
+                },
+                CompatibleWith = GameVersion.Industries,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("16 Mar, 2015"),
+                ReplaceWith = 785528371uL, // Cinematic Camera Extended
+                Updated = WorkshopDate("16 Mar, 2015"),
             });
 
             AddMod(new Review(406940119uL, "Camera Buttons") {

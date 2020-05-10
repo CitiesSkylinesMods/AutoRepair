@@ -96,6 +96,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Asset creators) Custom sound effects: https://steamcommunity.com/workshop/filedetails/discussion/780720853/1620600279667837781/" },
                     { NOTE, "(Asset creators) Custom particle effects: https://steamcommunity.com/workshop/filedetails/discussion/780720853/1697167355211924591/" },

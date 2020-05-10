@@ -57,6 +57,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "thale5",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Compatible   }, // Game Speed mod
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
@@ -93,6 +94,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "thale5",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Compatible   }, // Game Speed mod
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
@@ -149,6 +151,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 667342976uL, // Loading Screen Mod (main stable release)
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Compatible   }, // Game Speed mod
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
@@ -161,8 +164,7 @@ namespace AutoRepair.Catalogs {
                     { 667342976uL , Status.Incompatible }, // Loading Screen Mod
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
                 Published = WorkshopDate("2 Apr, 2020"),
                 ReplaceWith = 667342976uL, // Loading Screen Mod (main stable release)
@@ -176,6 +178,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 667342976uL, // Loading Screen Mod (main stable release)
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Compatible   }, // Game Speed mod
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
@@ -188,8 +191,7 @@ namespace AutoRepair.Catalogs {
                     { 667342976uL , Status.Incompatible }, // Loading Screen Mod
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceUnavailable,
+                Flags = ItemFlags.SourceUnavailable,
                 Locale = "zh-cn",
                 Published = WorkshopDate("20 Oct, 2019"),
                 ReplaceWith = 667342976uL, // Loading Screen Mod (main stable release)
@@ -204,10 +206,11 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 667342976uL, // Loading Screen Mod (main stable release)
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
-                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1386697922uL, Status.MinorIssues  }, // Garbage Bin Controller
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
+                    { 2059655996uL, Status.Incompatible }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Incompatible }, // Parallel Road Tool
+                    { 1400711138uL, Status.Incompatible }, // [BETA] Parallel Road Tool
+                    { 1386697922uL, Status.Incompatible }, // Garbage Bin Controller
                     // LSM:
                     { 2045011960uL, Status.Incompatible }, // Loading Screen 中文版
                     { 1894425170uL, Status.Incompatible }, // Loading Screen Mod 汉化版

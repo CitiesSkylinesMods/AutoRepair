@@ -469,7 +469,7 @@ namespace AutoRepair.Catalogs {
                     { 1938493221uL, Status.Compatible   }, // Mini FPS Booster 1.0
                     { 1922400472uL, Status.Compatible   }, // Enhanced District Services 1.0.18
                     { 1894425170uL, Status.Compatible   }, // Loading Screen Mod 汉化版
-                    { 1860379049uL, Status.Compatible   }, // 加载优化 Loading Screen
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
                     { 1844442251uL, Status.Compatible   }, // Fine Road Tool 2.0.3
                     { 1844440354uL, Status.Required     }, // Fine Road Anarchy 2
                     { 1806963141uL, Status.Compatible   }, // TM:PE 11 LABS
@@ -586,7 +586,7 @@ namespace AutoRepair.Catalogs {
                     { 1938493221uL, Status.Compatible   }, // Mini FPS Booster 1.0
                     { 1922400472uL, Status.Compatible   }, // Enhanced District Services 1.0.18
                     { 1894425170uL, Status.Compatible   }, // Loading Screen Mod 汉化版
-                    { 1860379049uL, Status.Compatible   }, // 加载优化 Loading Screen
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
                     { 1844442251uL, Status.Compatible   }, // Fine Road Tool 2.0.3
                     { 1844440354uL, Status.Required     }, // Fine Road Anarchy 2
                     { 1806963141uL, Status.Compatible   }, // TM:PE 11 LABS
@@ -797,6 +797,43 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("15 Aug, 2017"),
             });
 
+            AddMod(new Review(791221322uL, "Prop Precision") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.Props,
+                Authors = "Boogieman Sam",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 787611845uL , Status.Compatible   }, // Prop Snapping
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("1 Nov, 2016"),
+                SourceURL = "https://github.com/SamsamTS/CS-PropPrecision",
+                Updated = WorkshopDate("1 Nov, 2016"),
+            });
+
+            AddMod(new Review(787611845uL, "Prop Snapping") {
+                Affect = Factor.PlaceAndMove
+                       | Factor.Props,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 791221322uL , Status.Compatible   }, // Prop Precision
+                    { 593588108uL , Status.Required     }, // Prop & Tree Anarchy
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("26 Oct, 2016"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-PropSnapping",
+                Updated = WorkshopDate("24 May, 2018"),
+            });
+
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -858,7 +895,7 @@ namespace AutoRepair.Catalogs {
                     { 1938493221uL, Status.Compatible   }, // Mini FPS Booster 1.0
                     { 1922400472uL, Status.Compatible   }, // Enhanced District Services 1.0.18
                     { 1894425170uL, Status.Compatible   }, // Loading Screen Mod 汉化版
-                    { 1860379049uL, Status.Compatible   }, // 加载优化 Loading Screen
+                    { 1860379049uL, Status.Incompatible }, // 加载优化 Loading Screen
                     { 1844442251uL, Status.Recommended  }, // Fine Road Tool 2.0.3
                     { 1844440354uL, Status.Required     }, // Fine Road Anarchy 2
                     { 1806963141uL, Status.Compatible   }, // TM:PE 11 LABS

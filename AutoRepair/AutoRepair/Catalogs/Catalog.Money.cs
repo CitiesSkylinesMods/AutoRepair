@@ -37,6 +37,11 @@ namespace AutoRepair.Catalogs {
                     { 1367444256uL, Status.Incompatible }, // Cash/Money On Demand 500k
                     { 1232451940uL, Status.Incompatible }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
                     { 409171141uL , Status.Incompatible }, // Cash on Demand
 
                     // other:
@@ -71,6 +76,11 @@ namespace AutoRepair.Catalogs {
                     { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
 
                     // other:
@@ -103,12 +113,18 @@ namespace AutoRepair.Catalogs {
                     { 1367444256uL, Status.MinorIssues  }, // Cash/Money On Demand 500k
                     { 1232451940uL, Status.MinorIssues  }, // 调整金钱
                     { 855704599uL , Status.MinorIssues  }, // Set your own Start Money amount
+                    { 787046552uL , Status.MinorIssues  }, // 1M Start Money
+                    { 787044573uL , Status.MinorIssues  }, // 400K Start Money
+                    { 787043202uL , Status.MinorIssues  }, // 300K Start Money
+                    { 787041567uL , Status.MinorIssues  }, // 200k Start Money
+                    { 786676430uL , Status.MinorIssues  }, // 150K Start Money
                     { 409171141uL , Status.MinorIssues  }, // Cash on Demand
                 },
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The base game comes with its own unlimited money mod, use that instead." },
+                    { NOTE, "If you have unlimited money, there is no need for any other money mods." },
                 },
             });
 
@@ -132,6 +148,11 @@ namespace AutoRepair.Catalogs {
                     { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
 
                     // other:
@@ -163,6 +184,11 @@ namespace AutoRepair.Catalogs {
                     { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
 
                     // other:
@@ -194,6 +220,11 @@ namespace AutoRepair.Catalogs {
                     { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236uL, Status.Compatible   }, // CS-Utils
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
 
                     // other:
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
@@ -226,6 +257,11 @@ namespace AutoRepair.Catalogs {
                     { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
                 },
                 Flags = ItemFlags.SourceUnavailable,
@@ -250,6 +286,11 @@ namespace AutoRepair.Catalogs {
                     { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
                     { 1232451940uL, Status.Compatible   }, // 调整金钱
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
                     { 409171141uL , Status.Compatible   }, // Cash on Demand
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -284,6 +325,11 @@ namespace AutoRepair.Catalogs {
                     { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236uL, Status.Compatible   }, // CS-Utils
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
 
                     // other:
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
@@ -296,6 +342,185 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Use Ctrl+Shift+M (Mac users: Cmd+Shift+M) to add cash." },
                 },
                 SourceURL = "https://github.com/rob-williams/CashOnDemandMod/",
+            });
+
+            AddMod(new Review(787046552uL, "1M Start Money") {
+                Affect = Factor.Money,
+                Authors = "uwu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
+                    { 1949192313uL, Status.MinorIssues  }, // UnlimitedMoney
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
+
+                    // same assembly conflicts:
+                    { 787046552uL , Status.Incompatible }, // 1M Start Money
+                    { 787044573uL , Status.Incompatible }, // 400K Start Money
+                    { 787043202uL , Status.Incompatible }, // 300K Start Money
+                    { 787041567uL , Status.Incompatible }, // 200k Start Money
+                    { 786676430uL , Status.Incompatible }, // 150K Start Money
+
+                    // similar but non-conflicting mods:
+                    { 2036484892uL, Status.Compatible   }, // AutoMoney
+                    { 2030216556uL, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325uL, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236uL, Status.Compatible   }, // CS-Utils
+                    { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940uL, Status.Compatible   }, // 调整金钱
+                    { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 409171141uL , Status.Compatible   }, // Cash on Demand
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 787044573uL, // 400K Start Money
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("25 Oct, 2016"),
+                SourceURL = "https://github.com/skymodteam/skymod-startingmoney",
+                Updated = WorkshopDate("25 Oct, 2016"),
+            });
+
+            AddMod(new Review(787044573uL, "400K Start Money") {
+                Affect = Factor.Money,
+                Authors = "uwu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
+                    { 1949192313uL, Status.MinorIssues  }, // UnlimitedMoney
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
+
+                    // same assembly conflicts:
+                    { 787046552uL , Status.Incompatible }, // 1M Start Money
+                    { 787044573uL , Status.Incompatible }, // 400K Start Money
+                    { 787043202uL , Status.Incompatible }, // 300K Start Money
+                    { 787041567uL , Status.Incompatible }, // 200k Start Money
+                    { 786676430uL , Status.Incompatible }, // 150K Start Money
+
+                    // similar but non-conflicting mods:
+                    { 2036484892uL, Status.Compatible   }, // AutoMoney
+                    { 2030216556uL, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325uL, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236uL, Status.Compatible   }, // CS-Utils
+                    { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940uL, Status.Compatible   }, // 调整金钱
+                    { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 409171141uL , Status.Compatible   }, // Cash on Demand
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 787043202uL, // 300K Start Money
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("25 Oct, 2016"),
+                SourceURL = "https://github.com/skymodteam/skymod-startingmoney",
+                Updated = WorkshopDate("25 Oct, 2016"),
+            });
+
+            AddMod(new Review(787043202uL, "300K Start Money") {
+                Affect = Factor.Money,
+                Authors = "uwu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
+                    { 1949192313uL, Status.MinorIssues  }, // UnlimitedMoney
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
+
+                    // same assembly conflicts:
+                    { 787046552uL , Status.Incompatible }, // 1M Start Money
+                    { 787044573uL , Status.Incompatible }, // 400K Start Money
+                    { 787043202uL , Status.Incompatible }, // 300K Start Money
+                    { 787041567uL , Status.Incompatible }, // 200k Start Money
+                    { 786676430uL , Status.Incompatible }, // 150K Start Money
+
+                    // similar but non-conflicting mods:
+                    { 2036484892uL, Status.Compatible   }, // AutoMoney
+                    { 2030216556uL, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325uL, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236uL, Status.Compatible   }, // CS-Utils
+                    { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940uL, Status.Compatible   }, // 调整金钱
+                    { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 409171141uL , Status.Compatible   }, // Cash on Demand
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 787041567uL, // 200k Start Mod
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("25 Oct, 2016"),
+                SourceURL = "https://github.com/skymodteam/skymod-startingmoney",
+                Updated = WorkshopDate("25 Oct, 2016"),
+            });
+
+            AddMod(new Review(787041567uL, "200k Start Mod") {
+                Affect = Factor.Money,
+                Authors = "uwu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
+                    { 1949192313uL, Status.MinorIssues  }, // UnlimitedMoney
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
+
+                    // same assembly conflicts:
+                    { 787046552uL , Status.Incompatible }, // 1M Start Money
+                    { 787044573uL , Status.Incompatible }, // 400K Start Money
+                    { 787043202uL , Status.Incompatible }, // 300K Start Money
+                    { 787041567uL , Status.Incompatible }, // 200k Start Money
+                    { 786676430uL , Status.Incompatible }, // 150K Start Money
+
+                    // similar but non-conflicting mods:
+                    { 2036484892uL, Status.Compatible   }, // AutoMoney
+                    { 2030216556uL, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325uL, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236uL, Status.Compatible   }, // CS-Utils
+                    { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940uL, Status.Compatible   }, // 调整金钱
+                    { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 409171141uL , Status.Compatible   }, // Cash on Demand
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 786676430uL, // 150k Start Money
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("25 Oct, 2016"),
+                SourceURL = "https://github.com/skymodteam/skymod-startingmoney",
+                Updated = WorkshopDate("25 Oct, 2016"),
+            });
+
+            AddMod(new Review(786676430uL, "150k Start Money") {
+                Affect = Factor.Money,
+                Authors = "uwu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // pointless if any of these mods are active:
+                    { 1949192313uL, Status.MinorIssues  }, // UnlimitedMoney
+                    { Vanilla.UnlimitedMoney, Status.MinorIssues },
+
+                    // same assembly conflicts:
+                    { 787046552uL , Status.Incompatible }, // 1M Start Money
+                    { 787044573uL , Status.Incompatible }, // 400K Start Money
+                    { 787043202uL , Status.Incompatible }, // 300K Start Money
+                    { 787041567uL , Status.Incompatible }, // 200k Start Money
+                    { 786676430uL , Status.Incompatible }, // 150K Start Money
+
+                    // similar but non-conflicting mods:
+                    { 2036484892uL, Status.Compatible   }, // AutoMoney
+                    { 2030216556uL, Status.Compatible   }, // GrantMeMoney: get cash / money unconditionally
+                    { 1673480325uL, Status.Compatible   }, // £5 Million Starting Money
+                    { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
+                    { 1330289236uL, Status.Compatible   }, // CS-Utils
+                    { 1367444256uL, Status.Compatible   }, // Cash/Money On Demand 500k
+                    { 1232451940uL, Status.Compatible   }, // 调整金钱
+                    { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 409171141uL , Status.Compatible   }, // Cash on Demand
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("24 Oct, 2016"),
+                SourceURL = "https://github.com/skymodteam/skymod-startingmoney",
+                Updated = WorkshopDate("25 Oct, 2016"),
             });
 
             /*
@@ -328,6 +553,11 @@ namespace AutoRepair.Catalogs {
                     { 1671542319uL, Status.Compatible   }, // £2.5 Million Starting Money
                     { 1330289236uL, Status.Compatible   }, // CS-Utils
                     { 855704599uL , Status.Compatible   }, // Set your own Start Money amount
+                    { 787046552uL , Status.Compatible   }, // 1M Start Money
+                    { 787044573uL , Status.Compatible   }, // 400K Start Money
+                    { 787043202uL , Status.Compatible   }, // 300K Start Money
+                    { 787041567uL , Status.Compatible   }, // 200k Start Money
+                    { 786676430uL , Status.Compatible   }, // 150K Start Money
                 },
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable

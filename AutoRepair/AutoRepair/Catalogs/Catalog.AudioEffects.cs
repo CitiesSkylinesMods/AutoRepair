@@ -908,7 +908,7 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // approx Jan 2017
                       | ItemFlags.Obsolete // replacement mod available
                       | ItemFlags.SourceAvailable,
-                LastSeen = WorkshopDate("3 Jul, 2015"), // web archive
+                LastSeen = WorkshopDate("30 Sep, 2015"), // based on last github commit
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Creating sound packs (outdated): https://github.com/Archomeda/csl-ambient-sounds-tuner/wiki/Creating%20Sound%20Packs" },
                 },

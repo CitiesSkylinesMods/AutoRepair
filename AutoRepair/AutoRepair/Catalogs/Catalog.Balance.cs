@@ -26,6 +26,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
 
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1830455071uL, Status.Incompatible }, // EasyMode
@@ -55,6 +56,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
 
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1830455071uL, Status.Incompatible }, // EasyMode
@@ -83,6 +85,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "algernon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2077426488uL, Status.MinorIssues  }, // Super Hearse AI [Beta]
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 2025147082uL, Status.Recommended  }, // Realistic Population revisited
@@ -160,6 +163,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
 
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1744522363uL, Status.Incompatible }, // Money Back (Refund)
@@ -243,6 +247,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
                     { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
 
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1830455071uL, Status.Incompatible }, // EasyMode
@@ -292,6 +297,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
 
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1830455071uL, Status.Incompatible }, // EasyMode
@@ -436,7 +442,8 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
 
-                    { 602336261uL, Status.Incompatible }, // Maintenance Fees (original)
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
+                    { 602336261uL , Status.Incompatible }, // Maintenance Fees (original)
                 },
                 CompatibleWith = GameVersion.Patch_1_10_1_f3,
                 ContinuationOf = 602336261uL, // Maintenance Fees
@@ -461,6 +468,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  }, // Unlimited Money (bundled with Cities: Skylines)
                     { Vanilla.HardMode      , Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
 
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1830455071uL, Status.Incompatible }, // EasyMode
@@ -524,6 +532,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
 
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1830455071uL, Status.Incompatible }, // EasyMode
@@ -666,6 +675,8 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
+
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                 },
                 CompatibleWith = GameVersion.ParkLife,
                 Flags = ItemFlags.Abandonware
@@ -707,7 +718,9 @@ namespace AutoRepair.Catalogs {
                     { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
                     { 414730498uL , Status.Compatible   }, // Twitch Chirper Chat
                 },
-                Flags = ItemFlags.Obsolete // new version avail
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.Obsolete // new version avail
                       | ItemFlags.SourceAvailable,
                 Published = WorkshopDate("25 Apr, 2018"),
                 ReplaceWith = 1806759255uL, // Customize It Extended
@@ -723,6 +736,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 CloneOf = 409070739uL, // Very Slow Citizen Aging
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
                     { 1420955187uL, Status.Incompatible }, // Real Time
@@ -783,6 +797,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // incompat: Infinite Goods by Googen
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 1614061108uL, Status.Incompatible }, // Real Construction
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 426163185uL , Status.Incompatible }, // Realistic Population and Consumption Mod v8.4.0
@@ -847,6 +862,8 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
+
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039486691uL, Status.Incompatible }, // 1133108993 Extended Building Information (1
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
@@ -945,6 +962,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Aben",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
@@ -1009,6 +1027,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Whitefang Greytail",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1765325082uL, Status.Incompatible }, // Customizable Education
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
@@ -1030,9 +1049,9 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
                       | ItemFlags.SourceAvailable,
-                LastSeen = WorkshopDate("26 Apr, 2020"),
+                LastSeen = WorkshopDate("1 Mar, 2020"),
                 Published = WorkshopDate("28 Mar, 2016"),
-                Removed = WorkshopDate("1 Mar, 2020"),
+                Removed = WorkshopDate("19 Mar, 2020"),
                 ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_CitizenEdit",
                 Updated = WorkshopDate("31 Oct, 2018"),
@@ -1045,6 +1064,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // early death mods (incompat)
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time (by dymanoid)
@@ -1067,9 +1087,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.NoWorkshop // Removed around March 2020
                       | ItemFlags.SourceAvailable,
-                LastSeen = WorkshopDate("26 Apr, 2020"),
+                LastSeen = WorkshopDate("1 Mar, 2020"),
                 Published = WorkshopDate("12 Mar, 2016"),
-                Removed = WorkshopDate("1 Mar, 2020"),
+                Removed = WorkshopDate("19 Mar, 2020"),
                 ReplaceWith = 2027161563uL, // Lifecycle Rebalance Revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_Lifespan",
                 Suppress = Warning.MissingArchiveURL,
@@ -1083,6 +1103,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.NaturalDisasters,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
@@ -1137,6 +1158,7 @@ namespace AutoRepair.Catalogs {
                 ArchiveURL = "https://web.archive.org/web/20160222120305/http://steamcommunity.com/sharedfiles/filedetails/?id=541673195",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
@@ -1150,9 +1172,9 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.NoWorkshop // Made "friends only" around March 2020
                       | ItemFlags.SourceUnavailable,
-                LastSeen = WorkshopDate("26 Apr, 2020"),
+                LastSeen = WorkshopDate("1 Mar, 2020"),
                 Published = WorkshopDate("25 Oct, 2015"),
-                Removed = WorkshopDate("1 Mar, 2020"),
+                Removed = WorkshopDate("19 Mar, 2020"),
                 Updated = WorkshopDate("30 Oct, 2015"),
             });
 
@@ -1199,9 +1221,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // Made hidden around March 2020
                       | ItemFlags.Obsolete // new version available
                       | ItemFlags.SourceAvailable,
-                LastSeen = WorkshopDate("26 Apr, 2020"),
+                LastSeen = WorkshopDate("1 Mar, 2020"),
                 Published = WorkshopDate("16 Apr, 2015"),
-                Removed = WorkshopDate("1 Mar, 2020"),
+                Removed = WorkshopDate("19 Mar, 2020"),
                 ReplaceWith = 2025147082uL, // Realistic Population revisited
                 SourceURL = "https://github.com/WhitefangGreytail/WG_RealisticCitySkylines",
                 Updated = WorkshopDate("25 Oct, 2018"),
@@ -1310,6 +1332,9 @@ namespace AutoRepair.Catalogs {
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
+
+                    // other
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                 },
                 CompatibleWith = GameVersion.Patch_1_6_3_f1,
                 Flags = ItemFlags.Abandonware
@@ -1336,6 +1361,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.Snowfall,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time (by dymanoid)
@@ -1391,7 +1417,9 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { Vanilla.UnlimitedMoney, Status.MinorIssues  },
                     { Vanilla.HardMode      , Status.Incompatible },
+
                     // incompat with t++ & likely other traffic mods
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039486691uL, Status.Incompatible }, // 1133108993 Extended Building Information (1
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse

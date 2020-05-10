@@ -24,6 +24,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Zenya",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Compatible   }, // Game Speed mod
                     { 1420955187uL, Status.MinorIssues  }, // Real Time (causes excessive thunderstorms)
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline (ditto)
                     // other disaster mods:

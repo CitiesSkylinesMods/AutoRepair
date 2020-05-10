@@ -289,6 +289,8 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedOilAndOre, Status.Incompatible }, // Unlimited Oil and Ore (bundled with Cities: Skylines)
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
+                    // other
+                    { 2090425593uL, Status.Compatible   }, // Game Speed mod
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Laggy

@@ -79,7 +79,8 @@ namespace AutoRepair.Catalogs {
             // economy stats
             AddMod(new Review(1994342199uL, "Eco Stats Mod") {
                 Affect = Factor.Budget
-                       | Factor.Money,
+                       | Factor.Money
+                       | Factor.UI,
                 Authors = "alfoirazabal",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -93,7 +94,7 @@ namespace AutoRepair.Catalogs {
 
             // asset counter
             AddMod(new Review(1956926733uL, "Asset Information") {
-                Affect = Factor.Other,
+                Affect = Factor.UI,
                 Authors = "Boaz",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -104,7 +105,7 @@ namespace AutoRepair.Catalogs {
             });
 
             AddMod(new Review(1927186256uL, "Problem Info") {
-                Affect = Factor.Other,
+                Affect = Factor.UI,
                 Authors = "live627",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -116,7 +117,7 @@ namespace AutoRepair.Catalogs {
             });
 
             AddMod(new Review(1904439843uL, "Mayoral City Service Info") {
-                Affect = Factor.Other,
+                Affect = Factor.UI,
                 Authors = "live627",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -134,13 +135,14 @@ namespace AutoRepair.Catalogs {
             // * Watch It
             // * Export Electricity
             AddMod(new Review(1893036262uL, "Mayor's Dashboard v2") {
-                Affect = Factor.Other, // todo: better factors
+                Affect = Factor.UI, // todo: better factors
                 Authors = "Black Defke",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
                     { 1643902284uL, Status.MinorIssues  }, // Watch It!
                     { 1420955187uL, Status.Incompatible }, // Real Time
+                    { 1192503086uL, Status.MinorIssues  }, // Real City V9.0.03.14
                     { 702070768uL , Status.Incompatible }, // Export Electricity
                     { 410151616uL , Status.Incompatible }, // City Vitals Watch
                 },
@@ -181,20 +183,20 @@ namespace AutoRepair.Catalogs {
             AddMod(new Review(1875697177uL, "Integrator: Log Generator") {
                 Affect = Factor.Other, // todo: better factors
                 Authors = "Lachlan",
-                BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 410151616uL, Status.Incompatible }, // City Vitals Watch
                 },
-                CompatibleWith = GameVersion.ParadoxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 410151616uL, // City Vitals Watch
                 Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Will crash if 'C:\\Temp' folder does not exist; but you can change folder in mod settings." },
                     { NOTE, "Not tested on Mac or Linux, let us know if it works!" },
-                    { NOTE, "Sunset Harbor: Seems to be throwing errors since the update." },
                 },
-                ReleasedDuring = GameVersion.Campus,
+                Published = WorkshopDate("29 Sep, 2019"),
+                Updated = WorkshopDate("3 May, 2020"),
             });
 
             AddMod(new Review(1804882663uL, "Monitor It!") {
@@ -338,22 +340,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/TheDogKSP/DistrictStats",
             });
 
-            AddMod(new Review(944936527uL, "Resources for Districts") {
-                Affect = Factor.Consumption // todo: district factor?
-                       | Factor.Production,
-                Authors = "Sherban",
-                Catalog = catalog,
-                BrokenBy = GameVersion.ParkLife,
-                Compatibility = new Dictionary<ulong, Status>() {
-                },
-                CompatibleWith = GameVersion.GreenCities,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.MinorIssues // doesn't cover industries dlc resources
-                      | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.MassTransit,
-                SourceURL = "https://github.com/Sherbanm/RID/",
-            });
-
             /*
             #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
             # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
@@ -414,21 +400,25 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("21 Jun, 2019"),
             });
 
-            // todo: warn about network traffic
-            AddMod(new Review(1725845818uL, "Mayor´s report for android") {
+            AddMod(new Review(1725845818uL, "Mayor's report for android") {
                 Affect = Factor.Other,
                 Authors = "gadjou",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1725845818uL, Status.Incompatible }, // Mayor´s report for android
+                    { 492187003uL , Status.Incompatible }, // Mayor´s report for android (Obsolete)
                 },
                 CompatibleWith = GameVersion.Industries,
+                ContinuationOf = 492187003uL, // Mayor´s report for android (Obsolete)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Requires exteranal mobile app (Andriod only): https://play.google.com/store/apps/details?id=eu.chabod.mayorReport" },
-                    { NOTE, "Looks like it requires changing firewall rules... And source code not available... Mmmm..." },
+                    { NOTE, "Looks like it requires changing firewall rules to access 'radiolinkinternet.com'... And source code not available... Mmmm..." },
                 },
-                ReleasedDuring = GameVersion.Industries,
+                Published = WorkshopDate("28 Apr, 2019"),
+                Updated = WorkshopDate("28 Apr, 2019"),
             });
 
             // todo: likely translation mod
@@ -505,6 +495,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Review(1072157697uL, "Cargo Info") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "Dr. Nya",
+                BrokenBy = GameVersion.Industries,
                 Catalog = catalog,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -523,8 +514,33 @@ namespace AutoRepair.Catalogs {
                     { 1072157697uL, Status.Incompatible }, // Cargo Info (original version)
                 },
                 Languages = new[] { "en", "de", "ru" },
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("16 Jul, 2017"),
                 ReplaceWith = 1785774902uL, // Transfer Info (beta)
                 SourceURL = "https://github.com/rumkex/Skylines-CargoInfoMod",
+                Updated = WorkshopDate("28 Oct, 2018"),
+            });
+
+            AddMod(new Review(944936527uL, "Resources for Districts") {
+                Affect = Factor.Consumption // todo: district factor?
+                       | Factor.Production,
+                Authors = "Sherban",
+                Catalog = catalog,
+                BrokenBy = GameVersion.ParkLife,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.Patch_1_9_3_f1,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.MinorIssues // doesn't cover industries dlc resources
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Doesn't cover any resources added by Industries DLC update or later updates." },
+                },
+                Published = WorkshopDate("11 Jun, 2017"),
+                SourceURL = "https://github.com/Sherbanm/RID/",
+                Updated = WorkshopDate("1 Aug, 2017"),
             });
 
             AddMod(new Review(943410067uL, "DistrictRCI fix") {
@@ -568,6 +584,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.MassTransit,
                 ContinuationOf = 414469593, // Extended Building Information
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // multiple users report 'object ref not set' errors
                       | ItemFlags.Obsolete
@@ -588,6 +605,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
@@ -601,6 +619,30 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 1804882663uL, // Monitor It!
                 SourceURL = "https://cld.pt/dl/download/b2583bc8-2fc9-4124-96e7-195c554c6991/SimulationSpeedBenchmark.zip",
                 Updated = WorkshopDate("19 Apr, 2017"),
+            });
+
+            AddMod(new Review(492187003uL, "Mayor's report for android (Obsolete)") {
+                Affect = Factor.Other,
+                Authors = "gadjou",
+                BrokenBy = GameVersion.MassTransit,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1725845818uL, Status.Incompatible }, // Mayor´s report for android
+                    { 492187003uL , Status.Incompatible }, // Mayor´s report for android (Obsolete)
+                },
+                CompatibleWith = GameVersion.Patch_1_6_0_f4,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.LargeFileWarning // 12 MB wtf?
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Requires exteranal mobile app (Andriod only): https://play.google.com/store/apps/details?id=eu.chabod.mayorReport" },
+                    { NOTE, "Looks like it requires changing firewall rules... And source code not available... Mmmm..." },
+                },
+                Published = WorkshopDate("1 Aug, 2015"),
+                ReplaceWith = 1725845818uL, // Mayor´s report for android
+                Updated = WorkshopDate("1 Aug, 2015"),
             });
         }
     }

@@ -19,8 +19,26 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Services";
 
+            AddMod(new Review(2091238893uL, "Remove Sickness") {
+                Affect = Factor.Health,
+                Authors = "algernon",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Removes sickness each time city is loaded; cims can still get sick afterwards." },
+                },
+                Published = WorkshopDate("10 May, 2020"),
+                SourceURL = "https://github.com/algernon-A/Remove-Sickness",
+                Updated = WorkshopDate("10 May, 2020"),
+            });
+
             AddMod(new Review(2077426488uL, "Super Hearse AI [Beta]") {
-                Affect = Factor.Pathfinder
+                Affect = Factor.Health
+                       | Factor.Pathfinder
                        | Factor.Service,
                 Authors = "Fox",
                 Catalog = catalog,
@@ -308,6 +326,22 @@ namespace AutoRepair.Catalogs {
                 },
                 Published = WorkshopDate("17 May, 2017"),
                 Updated = WorkshopDate("29 Jan, 2019"),
+            });
+
+            AddMod(new Review(785237088uL, "Service Radius Adjuster") {
+                Affect = Factor.Service,
+                Authors = "egi",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
+                    { 927293560uL , Status.Compatible   }, // Geli-Districts v3.0
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("22 Oct, 2016"),
+                SourceURL = "https://github.com/DaEgi01/CitiesSkylines-ServiceRadiusAdjuster",
+                Updated = WorkshopDate("30 May, 2019"),
             });
 
             /*

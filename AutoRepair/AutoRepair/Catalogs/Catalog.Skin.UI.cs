@@ -205,6 +205,33 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("3 Sep, 2018"),
             });
 
+            AddMod(new Review(781767563uL, "Extended InfoPanel") {
+                Affect = Factor.UI,
+                Authors = "iinsnian",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1764208250uL, Status.MinorIssues  }, // More Vehicles
+                    { 1420955187uL, Status.MinorIssues  }, // Real Time
+                    { 1224627683uL, Status.Incompatible }, // Fudged Population Enhanced
+                    { 888017364uL , Status.MinorIssues  }, // Quartz (Sapphire) - Fixed 1.11
+                    { 576970398uL , Status.MinorIssues  }, // Quartz (former Sapphire) - UI skin framework
+                    { 421770876uL , Status.MinorIssues  }, // Sapphire - UI skin framework
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.Laggy
+                      | ItemFlags.Localised
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This mod only supports 16:9 and 16:10 screen aspect ratios." },
+                },
+                Published = WorkshopDate("16 Oct, 2016"),
+                SourceURL = "https://github.com/Nextopening/IINS.ExtendedInfo",
+                Updated = WorkshopDate("31 Dec, 2016"),
+            });
+
             AddMod(new Review(419090722u, "Mod Corral") {
                 Affect = Factor.UI,
                 ArchiveURL = "https://web.archive.org/web/20150415205521/http://steamcommunity.com/sharedfiles/filedetails/?id=419090722",

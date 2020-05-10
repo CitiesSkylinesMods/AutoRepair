@@ -81,9 +81,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceAvailable,
             });
 
-            Add(new Review(1751039059u, "Taxes Helper Mod") {
-                Flags = ItemFlags.SourceAvailable,
-            });
 
             Add(new Review(1741725093u, "Note It!") {
                 Flags = ItemFlags.Abandonware

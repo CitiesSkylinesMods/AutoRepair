@@ -70,6 +70,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "algernon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Unknown      }, // Game Speed mod
                     { 2025147082uL, Status.Compatible   }, // Realistic Population revisited
                     { 2016920607uL, Status.Incompatible }, // RICO revisited
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
@@ -313,6 +314,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "(unknown)",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607uL, Status.Incompatible }, // Ploppable RICO revisited
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
@@ -383,6 +385,7 @@ namespace AutoRepair.Catalogs {
                 BrokenBy = GameVersion.SunsetHarbor,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2025147082uL, Status.Incompatible }, // Realistic Population revisited
                     { 2016920607uL, Status.Incompatible }, // Ploppable RICO revisited
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline

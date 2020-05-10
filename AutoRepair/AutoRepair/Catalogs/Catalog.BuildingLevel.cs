@@ -189,7 +189,8 @@ namespace AutoRepair.Catalogs {
                     { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                 },
                 CompatibleWith = GameVersion.ParkLife,
-                Flags = ItemFlags.Obsolete // vanilla game now has this function
+                Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.Obsolete // vanilla game now has this function
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
                 Notes = new Dictionary<ulong, string>() {
@@ -290,7 +291,8 @@ namespace AutoRepair.Catalogs {
                     { 409654587uL , Status.Incompatible }, // Level Up Balance Mod
                 },
                 CompatibleWith = GameVersion.Patch_1_9_3_f1,
-                Flags = ItemFlags.GameBreaking
+                Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable
                       | ItemFlags.Unreliable,

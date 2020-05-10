@@ -343,10 +343,11 @@ namespace AutoRepair.Catalogs {
                 },
                 Flags = ItemFlags.ForceMigration
                       | ItemFlags.Obsolete
-                      | ItemFlags.SourceUnavailable,
+                      | ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("6 May, 2020"),
                 Published = WorkshopDate("4 Oct, 2016"),
                 ReplaceWith = 1899640536uL, // Theme Mixer 2
+                SourceURL = "https://github.com/TPBCS/ThemeMixer",
                 Updated = WorkshopDate("26 Jun, 2018"),
             });
 

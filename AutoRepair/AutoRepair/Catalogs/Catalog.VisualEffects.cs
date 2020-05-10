@@ -702,15 +702,15 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
-                      | ItemFlags.SourceUnavailable,
+                      | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press Left Alt + O (letter 'o') to open settings panel." },
+                    { NOTE, "This mod apears to be the forerunner to Ultimate Eyecandy and Relight mods." },
                 },
-                // existed March 26, 2015
-                // existed April 15, 2015
-                Published = WorkshopDate("21 Mar, 2015"),
+                Published = WorkshopDate("15 Mar, 2015"), // adjacent workshop item
                 ReplaceWith = 1209581656uL, // Relight
-                Updated = WorkshopDate("21 Mar, 2015"), // WBM says 4 change notes but doesn't show updated date
+                SourceURL = "https://github.com/Quget/More-Options",
+                Updated = WorkshopDate("21 Mar, 2015"), // web archive
             });
 
             AddMod(new Review(407358867uL, "Quget's Day & Night Prototype") {
@@ -723,16 +723,18 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.InitialRelease, // actually 1.1.1 patch
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete // now in vanilla game
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("26 Mar, 2015"), // web archive
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Vanilla game now has day/night cycle. Unsubscribe this mod." },
                 },
-                // released after 7 Apr, 2015
-                // released before 21 Mar, 2015
-                // removed likely after AD was announced/released
+                Published = WorkshopDate("14 Mar, 2015"), // based on adjacent item
+                Removed = GameVersion.PatchDate("2015-09-24"), // complete guess
+                Updated = WorkshopDate("14 Mar, 2015"), // insufficient info
             });
 
             // old

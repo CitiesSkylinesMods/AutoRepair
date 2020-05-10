@@ -119,7 +119,8 @@ namespace AutoRepair.Catalogs {
                 },
                 //CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
-                      | ItemFlags.SourceUnavailable,
+                      | ItemFlags.SourceUnavailable
+                      | ItemFlags.Unreliable,
                 LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "There are some reports of this mod not working; if it works for you please let aubergine18 know on mod compatibility checker workshop page." },
@@ -241,14 +242,63 @@ namespace AutoRepair.Catalogs {
                 LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "(Users) This mod assists with content creation; if you don't create content, you probably don't need this mod." },
-                    { NOTE, "Sunset Harbor: Users report the 'Save Asset' button is unreliable, and tram trailers are not importing." },
                     { NOTE, "The 'Remove' button sometimes hides the trailer panel. Reselect a trailer using the dropdown to make it show again." },
                     { NOTE, "List of variations: https://docs.google.com/spreadsheets/d/1XtRwR8cCTLlm6olfzFGhukSO2koaDPt-FJnZgXv73kw/edit#gid=0" },
+                    { NOTE, "Sunset Harbor: Users report the 'Save Asset' button is unreliable, and tram trailers are not importing." },
                     { 1886877404uL, "[Mod: Custom Effect Loader] Vehicles edited/published while CEL + EAE are active might have hard-dependency on CEL." },
                 },
                 Published = WorkshopDate("16 Nov, 2016"),
                 SourceURL = "https://github.com/Acc3ssViolation/ExtendedAssetEditor",
                 Updated = WorkshopDate("2 Nov, 2018"),
+            });
+
+            AddMod(new Review(790347696uL, "Advanced Buildings Editor") {
+                Affect = Factor.UI,
+                Authors = "BloodyPenguin",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 482851182uL , Status.Incompatible }, // Prop Probability Changer
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Sunset Harbor: Looks like this mod is broken since Sunset Harbor update; check workshop page." },
+                },
+                Published = WorkshopDate("30 Oct, 2016"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-AdvancedBuildingsEdtior",
+                Updated = WorkshopDate("20 May, 2017"),
+            });
+
+            /*
+            #  ██████  ██████  ███████  ██████  ██      ███████ ████████ ███████
+            # ██    ██ ██   ██ ██      ██    ██ ██      ██         ██    ██
+            # ██    ██ ██████  ███████ ██    ██ ██      █████      ██    █████
+            # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
+            #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
+            */
+
+            // https://web.archive.org/web/20170801000000*/http://steamcommunity.com/sharedfiles/filedetails/?id=482851182
+            AddMod(new Review(482851182uL, "Prop Probability Changer") {
+                Affect = Factor.Props,
+                Authors = "boformer", // mendtioned in desc of 502513265uL asset - 19 Aug, 2015
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 790347696uL , Status.Incompatible }, // Advanced Buildings Editor
+                },
+                CompatibleWith = GameVersion.Stadiums, // based on last seen; people were still using it then
+                Flags = ItemFlags.Abandonware
+                      //| ItemFlags.BrokenByUpdate - but no idea which one
+                      | ItemFlags.EditorBreaking
+                      | ItemFlags.EditorMod
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable, // checked boformers github but could not find it
+                LastSeen = WorkshopDate("30 Oct, 2016"), // BP linked to it from 790347696uL
+                Published = WorkshopDate("17 Jul, 2015"), // adjacent workshop item
+                Removed = WorkshopDate("5 Feb, 2017"), // web archive
+                Updated = WorkshopDate("17 Jul, 2015"), // unable to find further info
             });
         }
     }

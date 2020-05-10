@@ -329,6 +329,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
                       | ItemFlags.SaveAltering
@@ -347,6 +348,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
                       | ItemFlags.SaveAltering
@@ -394,6 +396,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>(tile81compatibility),
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // all old 81 tiles mods are game breaking
                       | ItemFlags.SaveAltering

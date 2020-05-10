@@ -48,6 +48,7 @@
     <Compile Include="Catalogs\Catalog.Skin.Networks.cs" />
     <Compile Include="Catalogs\Catalog.Stats.cs" />
     <Compile Include="Catalogs\Catalog.Skin.UI.cs" />
+    <Compile Include="Catalogs\Catalog.Time.cs" />
     <Compile Include="Catalogs\Catalog.Unlimiters.cs" />
     <Compile Include="Catalogs\Catalog.Unlockers.cs" />
     <Compile Include="Catalogs\Vanilla.cs" />

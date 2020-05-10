@@ -342,6 +342,66 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("20 Jan, 2018"),
             });
 
+            AddMod(new Review(802489150uL, "Extended Public Transport UI (+DLCs!)") {
+                Affect = Factor.UI
+                       | Factor.TransportLines,
+                Authors = "gmyx",
+                BrokenBy = GameVersion.GreenCities,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040218778uL, Status.Incompatible }, // ScaleUI
+                    { 2009172305uL, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 802489150uL , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
+                    { 411164732uL , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
+                    { 409338401uL , Status.Incompatible }, // ScaleUI (beta)
+                },
+                CompatibleWith = GameVersion.Concerts,
+                ContinuationOf = 411164732uL, // Extended Public Transport UI(Obsolete)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      //| ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The vanilla game now contains a full transport UI; unsubscribe this mod." },
+                },
+                Published = WorkshopDate("19 Nov, 2016"),
+                SourceURL = "https://github.com/gmyx/Skylines-ExtendedPublicTransport",
+                Updated = WorkshopDate("31 May, 2017"),
+            });
+
+            AddMod(new Review(411164732uL, "Extended Public Transport UI (Obsolete)") {
+                Affect = Factor.UI
+                       | Factor.TransportLines,
+                Authors = "AcidF!re",
+                BrokenBy = GameVersion.Snowfall,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040218778uL, Status.Incompatible }, // ScaleUI
+                    { 2009172305uL, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 802489150uL , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
+                    { 411164732uL , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
+                    { 409338401uL , Status.Incompatible }, // ScaleUI (beta)
+                },
+                CompatibleWith = GameVersion.Patch_1_2_2_f2,
+                ContinuationOf = 411164732uL, // Extended Public Transport UI(Obsolete)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      //| ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The vanilla game now contains a full transport UI; unsubscribe this mod." },
+                },
+                Published = WorkshopDate("29 Mar, 2015"),
+                SourceURL = "https://github.com/justacid/Skylines-ExtendedPublicTransport",
+                Updated = WorkshopDate("9 Aug, 2015"),
+            });
+
             AddMod(new Review(714056356uL, "Transport Line Rendering Fix") {
                 Affect = Factor.TransportLines
                        | Factor.Rendering,
@@ -359,7 +419,6 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/bloodypenguin/Skylines-TransportLineRenderingFix",
                 Updated = WorkshopDate("14 Mar, 2018"),
             });
-
 
             // old version
             AddMod(new Review(424106600uL, "Improved Public Transport (IPT)") {

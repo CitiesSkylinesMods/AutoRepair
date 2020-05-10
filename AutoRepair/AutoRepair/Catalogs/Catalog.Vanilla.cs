@@ -27,6 +27,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.Incompatible }, // Game Speed mod
                     { 2039606384uL, Status.Incompatible }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.Incompatible }, // Free Maintenance by Anvilarse
                     { 1830455071uL, Status.Incompatible }, // EasyMode
@@ -63,6 +64,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2090425593uL, Status.MinorIssues  }, // Game Speed mod
                     { 2039606384uL, Status.MinorIssues  }, // Easy Mode: Money Mod
                     { 2039205403uL, Status.MinorIssues  }, // Free Maintenance by Anvilarse
                     { 2036484892uL, Status.MinorIssues  }, // AutoMoney
@@ -82,6 +84,11 @@ namespace AutoRepair.Catalogs {
                     { 855704599uL , Status.MinorIssues  }, // Set your own Start Money amount
                     { 838095079uL , Status.MinorIssues  }, // Cheaper Hydro Electric Power
                     { 938049744uL , Status.MinorIssues  }, // Proper Hardness Fixed
+                    { 787046552uL , Status.MinorIssues  }, // 1M Start Money
+                    { 787044573uL , Status.MinorIssues  }, // 400K Start Money
+                    { 787043202uL , Status.MinorIssues  }, // 300K Start Money
+                    { 787041567uL , Status.MinorIssues  }, // 200k Start Money
+                    { 786676430uL , Status.MinorIssues  }, // 150K Start Money
                     { 409171141uL , Status.MinorIssues  }, // Cash on Demand
                     { 408706691uL , Status.MinorIssues  }, // Proper Hardness
                 },

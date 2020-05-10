@@ -179,7 +179,7 @@ namespace AutoRepair.Catalogs {
             }
             /**/
 
-            review.Validate();
+            review.Verify();
 
             Reviews.Add(review.WorkshopId, review);
         }
@@ -276,13 +276,12 @@ namespace AutoRepair.Catalogs {
                 BuildingLevelMods();
                 BulldozeMods();
                 CameraMods();
-                SocialMods();
                 ContentManagerMods();
                 ConverterMods();
                 DiagnosticMods();
-                EnvironmentMods();
                 EditorMods();
                 EmptyingMods();
+                EnvironmentMods();
                 HideRemoveMods();
                 LoadSaveMods();
                 MapThemesMods();
@@ -304,7 +303,9 @@ namespace AutoRepair.Catalogs {
                 SkinTrafficLightsMods();
                 SkinUIMods();
                 SkyclothsMods();
+                SocialMods();
                 StatsMods();
+                TimeMods();
                 ToolbarMods();
                 TrafficMods();
                 TranslationMods();

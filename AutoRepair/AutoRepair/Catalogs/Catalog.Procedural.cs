@@ -18,6 +18,21 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Procedural";
 
+            AddMod(new Review(2089538184uL, "Designer Fonts for PO") {
+                Affect = Factor.Props
+                       | Factor.Textures,
+                Authors = "potato24x7",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1094334744uL, Status.Required }, // Procedural Objects
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("8 May, 2020"),
+                Updated = WorkshopDate("8 May, 2020"),
+            });
+
             AddMod(new Review(2086692479uL, "Scoreboard Font") {
                 Affect = Factor.Props
                        | Factor.Textures,

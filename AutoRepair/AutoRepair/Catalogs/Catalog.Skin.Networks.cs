@@ -407,7 +407,9 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 812125426uL, // Network Extensions 2
-                Flags = ItemFlags.ForceMigration
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
                       | ItemFlags.NoWorkshop // removed 6th April 2020 due to original mod being fixed
                       | ItemFlags.Obsolete
                       | ItemFlags.SaveAltering
@@ -509,6 +511,7 @@ namespace AutoRepair.Catalogs {
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable
@@ -546,6 +549,7 @@ namespace AutoRepair.Catalogs {
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
                       | ItemFlags.SourceUnavailable
@@ -599,7 +603,8 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Patch_1_7_2_f1,
                 ContinuationOf = 812125426uL, // Network Extensions 2
-                Flags = ItemFlags.BrokenByUpdate
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.NoWorkshop // removed 6th April 2020 due to original mod being fixed
                       | ItemFlags.Obsolete
@@ -700,10 +705,10 @@ namespace AutoRepair.Catalogs {
                     { 1530376523uL, Status.Incompatible }, // Railway Replacer
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.BrokenByUpdate
-                      | ItemFlags.SourceAvailable,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Sunset Harbor: Users report wires no longer removed when catenaries are removed." },
+                    { NOTE, "Sunset Harbor: Users report wires no longer removed when catenaries are removed, particularly over 1-way tracks." },
                 },
                 Published = WorkshopDate("3 Oct, 2016"),
                 ReplaceWith = 1758376843uL, // Network Skins 2
@@ -737,6 +742,7 @@ namespace AutoRepair.Catalogs {
                 },
                 ContinuationOf = 417585852uL, // Road Color Changer
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking // yellow bar in workshop
                       | ItemFlags.Obsolete
@@ -945,6 +951,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Patch_1_4_1_f2,
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.SaveAltering
@@ -977,6 +984,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.Patch_1_0_7c,
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
