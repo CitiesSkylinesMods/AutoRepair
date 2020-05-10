@@ -273,41 +273,61 @@ namespace AutoRepair.Descriptors {
         }
 
         /// <summary>
-        /// Performs basic validation of the item itself, without checking external data.
+        /// Verifies data in the <see cref="Review"/> descriptor (does not check other reviews).
         /// </summary>
         /// 
         /// <param name="extendedReporting">If <c>true</c>, do more extensive validation.</param>
         [Conditional("DEBUG")]
-        public void Validate(bool extendedReporting = false) {
+        public void Verify(bool extendedReporting = false) {
 
             try {
-                InternalValidate(extendedReporting);
-            } catch (Exception e) {
+
+                if (!string.IsNullOrEmpty(Catalog) && Catalog == "Addendum") {
+                    return;
+                }
+
+                bool problems = false;
+
+                StringBuilder log = new StringBuilder(1000);
+
+                log.AppendFormat(
+                    "\n{0}:\n",
+                    ToString());
+
+                problems = VerifyMandatoryProperties(extendedReporting, ref log) || problems;
+
+                problems = VerifyDateProperties(extendedReporting, ref log) || problems;
+
+                problems = VerifyGameVersionProperties(extendedReporting, ref log) || problems;
+
+                problems = VerifyBranchProperties(extendedReporting, ref log) || problems;
+
+                problems = VerifyUrlProperties(extendedReporting, ref log) || problems;
+
+                problems = VerifyRemainingProperties(extendedReporting, ref log) || problems;
+
+                if (problems) {
+                    Log.Info(log.ToString());
+                }
+
+            }
+            catch (Exception e) {
                 Log.Info($"YOU HAVE FAILED THIS DESCRIPTOR: {this}");
                 Log.Error(e.ToString());
             }
         }
 
         /// <summary>
-        /// Performs basic validation of the item itself, without checking external data.
+        /// Verifies presence of mandatory properties, logging any problems it finds.
         /// </summary>
+        ///
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive verification.</param>
+        /// <param name="log">The log to append.</param>
         /// 
-        /// <param name="extendedReporting">If <c>true</c>, do more extensive validation.</param>
-        [Conditional("DEBUG")]
-        internal void InternalValidate(bool extendedReporting) {
-
-            // always ignore addendum catalog
-            if (!string.IsNullOrEmpty(Catalog) && Catalog == "Addendum") {
-                return;
-            }
+        /// <returns>Returns <c>true</c> if problems found, otherwise <c>false</c>.</returns>
+        internal bool VerifyMandatoryProperties(bool extendedReporting, ref StringBuilder log) {
 
             bool problems = false;
-
-            StringBuilder log = new StringBuilder(1000);
-
-            log.AppendFormat(
-                "\n{0}:\n",
-                ToString());
 
             // item type should always be set (check just in case)
             if (ItemType == ItemTypes.None) {
@@ -321,60 +341,21 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Affect missing\n");
             }
 
-            /*
-            if (Published == null) {
+            // authors should ideally be set
+            if (extendedReporting && string.IsNullOrEmpty(Authors)) {
                 problems = true;
-                log.Append("- Published date missing\n");
-            }
-
-            if (Updated == null) {
-                problems = true;
-                log.Append("- Updated date missing\n");
-            }
-
-            if (LastSeen == null) {
-                problems = true;
-                log.Append("- LastSeen date missing\n");
-            } else if (Updated != null && LastSeen < Updated) {
-                problems = true;
-                log.Append("- LastSeen < Updated\n");
-            }
-            */
-
-            if (HasFlag(ItemFlags.NoWorkshop)) {
-
-                if (Removed == null) {
-                    problems = true;
-                    log.Append("- Removed date missing\n");
-                }
-
-                if (!Suppresses(Warning.MissingArchiveURL) && string.IsNullOrEmpty(ArchiveURL)) {
-                    problems = true;
-                    log.Append("- Archive URL missing\n");
-                }
-
-            } else if (!string.IsNullOrEmpty(ArchiveURL) && !HasFlag(ItemFlags.NoWorkshop)) {
-                problems = true;
-                log.Append("- Add ItemFlags.NoWorkshop to flags ?\n");
-            }
-
-            // authors should always be set
-            if (string.IsNullOrEmpty(Authors)) {
-                //problems = true;
                 log.Append("- Authors missing\n");
             }
 
-            // catalog should always be set
             if (string.IsNullOrEmpty(Catalog)) {
                 problems = true;
                 log.Append("- Catalog missing\n");
             }
 
-            // check compatibility list
             if (Compatibility == null) {
                 problems = true;
                 log.Append("- Compatibility list missing\n");
-            } else if (extendedReporting && Compatibility?.Count == 0) {
+            } else if (extendedReporting && Compatibility.Count == 0) {
                 problems = true;
                 log.Append("- Compatibility list defined, but is empty\n");
             }
@@ -384,59 +365,137 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Flags missing\n");
             }
 
+            return problems;
+        }
+
+        /// <summary>
+        /// Verifies the <see cref="DateTime"/> properties, logging any problems it finds.
+        /// </summary>
+        ///
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive verification.</param>
+        /// <param name="log">The log to append.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if problems found, otherwise <c>false</c>.</returns>
+        internal bool VerifyDateProperties(bool extendedReporting, ref StringBuilder log) {
+
+            bool problems = false;
+
+            // Published and Updated dates should ideally be set
+            if (extendedReporting) { // TODO: always report once most have been defined
+                if (Published == null) {
+                    problems = true;
+                    log.Append("- Published date missing\n");
+                }
+
+                if (Updated == null) {
+                    problems = true;
+                    log.Append("- Updated date missing\n");
+                }
+            }
+
+            if (LastSeen == null) {
+                if (extendedReporting) { // TODO: always report once most have been defined
+                    problems = true;
+                    log.Append("- LastSeen date missing\n");
+                }
+            } else {
+                if (Published != null && LastSeen < Published) {
+                    problems = true;
+                    log.Append("- LastSeen < Published\n");
+                }
+                if (Updated != null && LastSeen < Updated) {
+                    problems = true;
+                    log.Append("- LastSeen < Updated\n");
+                }
+                if (Removed != null && LastSeen > Removed) {
+                    problems = true;
+                    log.Append("- LastSeen > Removed\n");
+                }
+            }
+
+            // must be neither or both
+            if (HasFlag(ItemFlags.NoWorkshop) == (Removed == null)) {
+                problems = true;
+                log.Append("- The NoWorkshop flag and Removed properties must correlate\n");
+            }
+
+            return problems;
+        }
+
+        /// <summary>
+        /// Verifies the <see cref="GameVersion"/> properties, logging any problems it finds.
+        /// </summary>
+        ///
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive verification.</param>
+        /// <param name="log">The log to append.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if problems found, otherwise <c>false</c>.</returns>
+        internal bool VerifyGameVersionProperties(bool extendedReporting, ref StringBuilder log) {
+
+            bool problems = false;
+
             if (extendedReporting && CompatibleWith == GameVersion.DefaultRelease) {
                 problems = true;
                 log.Append("- CompatibleWith missing\n");
             }
 
-            // sometimes already long-broken mods are reuploaded to workshop (hence ability to skip these checks)
             if (!Suppresses(Warning.InvalidVersionSequence)) {
 
-                // game version at release must be <= checked compatible version
+                // TODO: auto-determine ReleasedDuring based on Published date
+
                 if (CompatibleWith < ReleasedDuring) {
                     problems = true;
                     log.Append("- CompatibleWith must be >= ReleasedDuring\n");
                 }
 
-                // game version at release must be <= broken by version
                 if (BrokenBy < ReleasedDuring) {
                     problems = true;
                     log.Append("- BrokenBy must be >= ReleasedDuring\n");
                 }
 
-                // broken version must be >= checked version
                 if (BrokenBy <= CompatibleWith) {
                     problems = true;
                     log.Append("- BrokenBy must be > CompatibleWith\n");
                 }
             }
 
-            // todo: once all of these are sorted, the BrokenByUpdate flag can be removed.
-            if (extendedReporting && HasFlag(ItemFlags.BrokenByUpdate) && BrokenBy == GameVersion.DefaultUntil)
-            {
+            // must be neither or both
+            if (HasFlag(ItemFlags.BrokenByUpdate) == (BrokenBy == GameVersion.DefaultUntil)) {
                 problems = true;
-                log.Append("- If BrokenByUpdate flag set, the BrokenBy version must be set\n");
+                log.Append("- The BrokenByUpdate flag and BrokenBy properties must correlate\n");
             }
 
-            // items can be clone or continuation, not both
+            return problems;
+        }
+
+        /// <summary>
+        /// Verifies the branching properties (CloneOf, ContinuationOf, ReplaceWith), logging any problems it finds.
+        /// </summary>
+        ///
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive verification.</param>
+        /// <param name="log">The log to append.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if problems found, otherwise <c>false</c>.</returns>
+        internal bool VerifyBranchProperties(bool extendedReporting, ref StringBuilder log) {
+
+            bool problems = false;
+
             if (CloneOf != 0u && ContinuationOf != 0u) {
                 problems = true;
-                log.Append("- Item can be clone or continuation, not both\n");
+                log.Append("- Can be CloneOf or ContinuationOf, not both\n");
             }
 
-            // if cloned, must be incompatible with cloned item
             if (CloneOf != 0uL && IsCompatibleWith(CloneOf)) {
                 problems = true;
                 log.AppendFormat(
-                    "- Must be incompatible with cloned item: {0}uL\n",
+                    "- Must be incompatible with CloneOf item: {0}uL\n",
                     CloneOf);
             }
 
-            // if continuation, must be incompatible with continued item
             if (ContinuationOf != 0uL && IsCompatibleWith(ContinuationOf)) {
                 problems = true;
                 log.AppendFormat(
-                    "- Must be incompatible with continued item: {0}uL\n",
+                    "- Must be incompatible with ContinuationOf item: {0}uL\n",
                     ContinuationOf);
             }
 
@@ -445,62 +504,92 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Must not be a CloneOf/ContinuationOf of itself!\n");
             } else if (CloneOf > WorkshopId || ContinuationOf > WorkshopId) {
                 problems = true;
-                log.Append("- Can not be a CloneOf/ContinuationOf subsequently released item!\n");
+                log.Append("- Must not be CloneOf/ContinuationOf a newer item!\n");
             }
 
-            // if replaceable, _should_ be incompatible with replacement item
-            if (ReplaceWith != 0u) {
+            if (ReplaceWith == WorkshopId) {
+                problems = true;
+                log.Append("- Must not ReplaceWith itself!\n");
+
+            } else if (ReplaceWith != 0u) {
 
                 if (extendedReporting && IsCompatibleWith(ReplaceWith)) {
                     problems = true;
                     log.AppendFormat(
                         "- Should (usually) be incompatible with replacement item: {0}uL\n",
                         ReplaceWith);
+
                 } else if (Compatibility != null && !Compatibility.ContainsKey(ReplaceWith)) {
                     problems = true;
                     log.AppendFormat(
                         "- Must specify (in)compatibility with replacement item: {0}uL\n",
                         ReplaceWith);
                 }
-            }
 
-            bool localised = HasFlag(ItemFlags.Localised);
-            bool noLocale = string.IsNullOrEmpty(Locale);
-
-            // if translation flag set, locale must be specified (unless languages specified)
-            if (extendedReporting && localised && (noLocale || (Languages == null && Locale == "en"))) {
-                problems = true;
-                log.Append("- Locale must be specified for translations\n");
-            }
-
-            // if force migration flag set, replacement must be specified
-            if (HasFlag(ItemFlags.ForceMigration) && ReplaceWith == 0u) {
+            } else if (HasFlag(ItemFlags.ForceMigration)) {
                 problems = true;
                 log.Append("- ReplaceWith missing\n");
             }
 
-            // source must be either available or not available, not both
+            return problems;
+        }
+
+        /// <summary>
+        /// Verifies ArchiveURL and SourceURL properties, logging any problems it finds.
+        /// </summary>
+        ///
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive verification.</param>
+        /// <param name="log">The log to append.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if problems found, otherwise <c>false</c>.</returns>
+        internal bool VerifyUrlProperties(bool extendedReporting, ref StringBuilder log) {
+
+            bool problems = false;
+
+            // must be neither or both
+            if (!Suppresses(Warning.MissingArchiveURL) && HasFlag(ItemFlags.NoWorkshop) == string.IsNullOrEmpty(ArchiveURL)) {
+                problems = true;
+                log.Append("- The NoWorkshop flag and ArchiveURL properties must correlate\n");
+            }
+
             if (!HasFlag(SOURCE_DEFINED)) {
                 problems = true;
                 log.Append("- Must specify either SourceAvailable, SourceBundled or SourceUnavailable flag\n");
             }
 
-            // if source available flag set, source url must be specified
-            if (HasFlag(ItemFlags.SourceAvailable) && string.IsNullOrEmpty(SourceURL))
-            {
+            if (HasFlag(ItemFlags.SourceAvailable) && string.IsNullOrEmpty(SourceURL)) {
                 problems = true;
                 log.Append("- SourceURL missing\n");
             }
 
-            // tags should be specified (long-term task)
+            return problems;
+        }
+
+        /// <summary>
+        /// Verifies properties not checked by other verification methods, logging any problems it finds.
+        /// </summary>
+        ///
+        /// <param name="extendedReporting">If <c>true</c>, do more extensive verification.</param>
+        /// <param name="log">The log to append.</param>
+        /// 
+        /// <returns>Returns <c>true</c> if problems found, otherwise <c>false</c>.</returns>
+        internal bool VerifyRemainingProperties(bool extendedReporting, ref StringBuilder log) {
+
+            bool problems = false;
+            bool localised = HasFlag(ItemFlags.Localised);
+            bool noLocale = string.IsNullOrEmpty(Locale);
+
+            if (extendedReporting && localised && (noLocale || (Languages == null && Locale == "en"))) {
+                problems = true;
+                log.Append("- Locale/Languages must be if Localised flag set\n");
+            }
+
             if (extendedReporting && (Tags == null || Tags.Count() == 0)) {
                 problems = true;
                 log.Append("- Tags missing\n");
             }
 
-            if (problems) {
-                Log.Info(log.ToString());
-            }
+            return problems;
         }
     }
 }
