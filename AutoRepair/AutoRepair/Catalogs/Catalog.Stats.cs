@@ -214,6 +214,30 @@ namespace AutoRepair.Catalogs {
                 SourceURL = "https://github.com/keallu/CSL-MonitorIt",
             });
 
+            AddMod(new Review(1785774902uL, "Transfer Info (beta)") {
+                Affect = Factor.UI,
+                Authors = "vpoteryaev",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1769420886uL, Status.Required     }, // Panel Hook (beta) for modders
+                    { 1739993783uL, Status.Incompatible }, // Cargo Info (Fix)
+                    { 1623509958uL, Status.Compatible   }, // Real Gas Station
+                    { 1614061108uL, Status.Compatible   }, // Real Construction
+                    { 1072157697uL, Status.Incompatible }, // Cargo Info (original)
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                ContinuationOf = 1072157697uL, // Cargo Info
+                Flags = ItemFlags.Abandonware // author commented they lost interest in CSL
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Author states they no longer play C:SL; this mod will not be updated." },
+                },
+                Published = WorkshopDate("29 Jun, 2019"),
+                SourceURL = "https://github.com/vpoteryaev-cs-mods/TransferInfo",
+                Updated = WorkshopDate("3 Oct, 2019"),
+            });
+
             AddMod(new Review(1643902284uL, "Watch It!") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "Keallu",
@@ -227,6 +251,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues // harmony patch management could be better
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Harmony errors in log on game exit; doesn't seem to cause any problems." },
                     { NOTE, "One report that it's incompatible with More Vehicles / 81 Tiles / AVO mods. See: https://github.com/keallu/CSL-WatchIt/issues/3" },
@@ -258,8 +283,10 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended // by far the best building info mod
                       | ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Industries,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("4 Nov, 2018"),
                 SourceURL = "https://github.com/keallu/CSL-ShowIt",
+                Updated = WorkshopDate("26 May, 2019"),
             });
 
             AddMod(new Review(1410077595uL, "Stats") {
@@ -361,36 +388,15 @@ namespace AutoRepair.Catalogs {
                 Suppress = Warning.OlderReplacement,
             });
 
-            AddMod(new Review(1785774902uL, "Transfer Info (beta)") {
-                Affect = Factor.Other, // todo: better factor
-                Authors = "vpoteryaev",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1769420886uL, Status.Required     }, // Panel Hook (beta) for modders
-                    { 1739993783uL, Status.Incompatible }, // Cargo Info (Fix)
-                    { 1614061108uL, Status.Compatible   }, // Real Construction
-                    { 1072157697uL, Status.Incompatible }, // Cargo Info (original)
-                },
-                CompatibleWith = GameVersion.ParadoxLauncher,
-                ContinuationOf = 1072157697uL, // Cargo Info
-                Flags = ItemFlags.Abandonware // author commented they lost interest in CSL
-                      | ItemFlags.SourceAvailable,
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Author states they no longer play C:SL; this mod will not be updated." },
-                },
-                Published = WorkshopDate("29 Jun, 2019"),
-                ReleasedDuring = GameVersion.Campus,
-                SourceURL = "https://github.com/vpoteryaev-cs-mods/TransferInfo",
-                Updated = WorkshopDate("3 Oct, 2019"),
-            });
-
             AddMod(new Review(1739993783uL, "Cargo Info (Fix)") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "vpoteryaev",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1785774902uL, Status.Incompatible }, // Transfer Info (beta)
+                    { 1623509958uL, Status.Incompatible }, // Real Gas Station
                     { 1614061108uL, Status.Incompatible }, // Real Construction
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 1072157697uL, Status.Incompatible }, // Cargo Info (original version)
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
@@ -511,7 +517,9 @@ namespace AutoRepair.Catalogs {
                     { 1785774902uL, Status.Incompatible }, // Transfer Info (beta)
                     { 1739993783uL, Status.Incompatible }, // Cargo Info (Fix)
                     { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1623509958uL, Status.Incompatible }, // Real Gas Station
                     { 1614061108uL, Status.Incompatible }, // Real Construction
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 1072157697uL, Status.Incompatible }, // Cargo Info (original version)
                 },
                 Languages = new[] { "en", "de", "ru" },

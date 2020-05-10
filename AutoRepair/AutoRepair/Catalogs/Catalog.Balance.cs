@@ -83,6 +83,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "algernon",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2077426488uL, Status.MinorIssues  }, // Super Hearse AI [Beta]
                     { 2027161563uL, Status.Incompatible }, // Lifecycle Rebalance Revisited
                     { 2025147082uL, Status.Recommended  }, // Realistic Population revisited
                     { 1749971558uL, Status.MinorIssues  }, // Real Time Offline
@@ -102,7 +103,14 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 654707599uL, // Citizen Lifecycle Rebalance v2.6
                 Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { 2077426488uL, "[Mod: Super Hearse AI] If 'Percentage of dead requiring transport' is set to 0 in 'Lifecycle Rebalance', you won't need 'Super Hearse AI'." },
+                    { 803074771uL , "[Mod: No Deathcare] Both mods can disable death; use one and remove the other." },
+                },
+                Published = WorkshopDate("19 Mar, 2020"),
                 SourceURL = "https://github.com/algernon-A/Lifecycle-Rebalance-Revisited",
+                Updated = WorkshopDate("9 May, 2020"),
             });
 
             AddMod(new Review(2025147082uL, "Realistic Population revisited") {
@@ -196,6 +204,7 @@ namespace AutoRepair.Catalogs {
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1369729955uL, Status.Incompatible }, // Customize It (original mod)
+                    { 958161597uL , Status.Unknown      }, // Twitch Viewer Integrator
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
                     { 530771650uL , Status.Compatible   }, // Prefab Hook
                     { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
@@ -321,6 +330,7 @@ namespace AutoRepair.Catalogs {
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1369729955uL, Status.Incompatible }, // Customize It!
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -335,6 +345,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1562650024uL, Status.Incompatible }, // Rebalanced Industries
                     { 1312735149uL, Status.Incompatible }, // Klyte Commons
+                    { 1192503086uL, Status.MinorIssues  }, // Real City V9.0.03.14
                     { 662386761uL , Status.Incompatible }, // Specialised Industry Fix [BUGFIX for Vanilla]
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -690,6 +701,7 @@ namespace AutoRepair.Catalogs {
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1369729955uL, Status.Incompatible }, // Customize It (original mod)
+                    { 958161597uL , Status.Compatible   }, // Twitch Viewer Integrator
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
                     { 530771650uL , Status.Required     }, // Prefab Hook
                     { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)

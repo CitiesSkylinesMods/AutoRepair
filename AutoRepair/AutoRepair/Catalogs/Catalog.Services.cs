@@ -26,6 +26,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 2027161563uL, Status.MinorIssues  }, // Lifecycle Rebalance Revisited
                     { 1922400472uL, Status.Incompatible }, // Enhanced District Services
                     { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
                     { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
@@ -43,6 +44,9 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("7 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { 2027161563uL, "[Mod: Lifecycle Rebalance] If 'Percentage of dead requiring transport' is set to 0 in 'Lifecycle Rebalance', you won't need 'Super Hearse AI'." },
+                },
                 Published = WorkshopDate("28 Apr, 2020"),
                 Updated = WorkshopDate("29 Apr, 2020"),
             });
@@ -174,6 +178,7 @@ namespace AutoRepair.Catalogs {
                     { 1680840913uL, Status.Incompatible }, // More Effective Transfer Manager
                     { 1632320836uL, Status.Incompatible }, // Service Vehicles Manager 2.0.1
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
                     { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]

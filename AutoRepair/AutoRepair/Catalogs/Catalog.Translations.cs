@@ -201,6 +201,7 @@ namespace AutoRepair.Catalogs {
                     { 1865667356uL, Status.Incompatible }, // Twitch Citizens
                     { 1322787091uL, Status.Unknown      }, // Addresses & Names Mod 2.0.1
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
+                    { 958161597uL , Status.Incompatible }, // Twitch Viewer Integrator
                     { 950011274uL , Status.Incompatible }, // Japanese Romaji Names [BETA]
                     { 937334007uL , Status.Incompatible }, // Japanese Localization RD
                     { 935356978uL , Status.Incompatible }, // CSL Names Pack Example [1.0.0]
@@ -241,6 +242,7 @@ namespace AutoRepair.Catalogs {
                     { 1865667356uL, Status.Incompatible }, // Twitch Citizens
                     { 1322787091uL, Status.Unknown      }, // Addresses & Names Mod 2.0.1
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
+                    { 958161597uL , Status.Incompatible }, // Twitch Viewer Integrator
                     { 937334007uL , Status.Incompatible }, // Japanese Localization RD
                     { 935356978uL , Status.Compatible   }, // CSL Names Pack Example [1.0.0]
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]

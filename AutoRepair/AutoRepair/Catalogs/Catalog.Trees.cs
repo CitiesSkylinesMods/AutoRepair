@@ -232,6 +232,25 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("18 May, 2017"),
             });
 
+            AddMod(new Review(791968744uL, "Dynamic Foliage") {
+                Affect = Factor.Environment
+                       | Factor.Trees,
+                Authors = "Chen",
+                BrokenBy = GameVersion.ParkLife,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 666425898uL , Status.Incompatible }, // No Radioactive Desert And More!
+                },
+                CompatibleWith = GameVersion.Patch_1_9_3_f1,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("9 May, 2020"),
+                Published = WorkshopDate("2 Nov, 2016"),
+                SourceURL = "https://github.com/chen-ye/Skylines-Autumn",
+                Updated = WorkshopDate("29 Dec, 2016"),
+            });
+
             AddMod(new Review(556784825uL, "Random Tree Rotation") {
                 Affect = Factor.PlaceAndMove
                        | Factor.Trees,

@@ -145,16 +145,7 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Review(1623509958u, "Real Gas Station") {
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1785774902u, Status.Compatible }, // Transfer Info (beta)
-                    { 1072157697u, Status.Incompatible }, // Cargo Info
-                    { 1739993783u, Status.Incompatible }, // Cargo Info (Fix)
-                    { 1435741602u, Status.Incompatible }, // Snooper
-                },
-                Flags = ItemFlags.SourceAvailable,
-                SourceURL = "https://github.com/pcfantasy/RealGasStation",
-            });
+
 
             Add(new Review(1603319148u, "576997275 Remove Need For Pipes") {
                 Flags = ItemFlags.Abandonware
@@ -165,16 +156,6 @@ namespace AutoRepair {
                 },
                 ReplaceWith = 576997275u, // Remove Need For Pipes
             });
-
-
-
-            Add(new Review(1597285962u, "Stream It!") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorIssues, // harmony patch management could be better
-                SourceURL = "https://github.com/keallu/CSL-StreamIt",
-            });
-
 
             // removes building needs at night
             Add(new Review(1591311030u, "Don't Bulldoze At Night") {
@@ -290,11 +271,6 @@ namespace AutoRepair {
 
             AddDodgey(1379361024u, "bd96432_mod_2"); // likely a translation mod
 
-            Add(new Review(1348627392u, "Tides") {
-                Authors = "TPB",
-                Flags = ItemFlags.SourceUnavailable,
-                // possibly incompat with rainfall / other water mods?
-            });
 
 
 
@@ -345,34 +321,6 @@ namespace AutoRepair {
                 SourceURL = "https://github.com/mrnr1/CS-Profitable-Offices/",
             });
 
-            // https://github.com/pcfantasy/RealCity/blob/master/Resources/incompatible_mods.txt
-            // https://steamcommunity.com/workshop/filedetails/discussion/1192503086/1488866180603720344/
-            Add(new Review(1192503086u, "Real City V9.0.03.14") {
-                Authors = "pcfantasy, Singlewolf",
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1806963141u, Status.Compatible   }, // TM:PE v11.1.2 LABS
-                    { 1674732053u, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
-                    { 1637663252u, Status.Compatible   }, // TM:PE V11 STABLE
-                    { 1562650024u, Status.Incompatible }, // Rebalanced Industries
-                    { 1435741602u, Status.Incompatible }, // Snooper
-                    { 1181352643u, Status.Incompatible }, // District Service Limit 3.0
-                    { 1114249433u, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
-                    { 1072157697u, Status.Incompatible }, // Cargo Info
-                    { 569008960u , Status.Incompatible }, // Employ Overeducated Workers
-                    { 519781146u , Status.Incompatible }, // Difficulty Tuning
-                    { 409240984u , Status.Incompatible }, // Difficulty Options
-                    // todo: minor incompat - list money mods here
-                    { 1553517176u, Status.MinorIssues  }, // Specialized Industry Fix Redux
-                    { 702070768u , Status.MinorIssues  }, // Export Electricity
-                },
-                Affect = Factor.Employment
-                       | Factor.Money,
-                Flags = ItemFlags.Laggy // causes lag on big cities
-                      | ItemFlags.SourceAvailable,
-                Languages = new[] { "en", "ru", "zh", "zh-cn" }, // https://github.com/pcfantasy/RealCity/blob/master/Resources
-                Locale = "en",
-                SourceURL = "https://github.com/pcfantasy/RealCity/",
-            });
 
             Add(new Review(1182174575u, "Export Vehicles Positions") {
                 Authors = "Simon Ryr",
@@ -385,19 +333,6 @@ namespace AutoRepair {
                 Flags = ItemFlags.SourceUnavailable,
             });
 
-            Add(new Review(1115699323u, "Immersive Water 0.9.0.0 (beta release)") {
-                Authors = "Runaurufu",
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SaveAltering // users report broken saves
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable, // lots of users report issues
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // todo
-                },
-                SourceURL = "https://bitbucket.org/Runaurufu/cities-skylines-immersive-water/src",
-            });
-
-
             // Similar thing to Klyte's addresses mod
             // renames based on street/district name
             Add(new Review(1179846541u, "Rename buildings") {
@@ -409,21 +344,7 @@ namespace AutoRepair {
                 },
             });
 
-            Add(new Review(958161597u, "Twitch Viewer Integrator") {
-                Authors = "kiwiploetze",
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.Unreliable, // multiple users state it doesn't work
-                Compatibility = new Dictionary<ulong, Status>() {
-                    // likely conflicts with custom name lists
-                    { 1865667356u, Status.Incompatible }, // Twitch Citizens
-                    { 714711792u, Status.Incompatible }, // TwitchTV Viewers
-                    { 414730498u, Status.Incompatible }, // Twitch Chirper Chat
-                },
-                ReplaceWith = 1865667356u, // Twitch Citizens
-                SourceURL = "https://github.com/kiwiploetze/TwitchIntegrator",
-            });
+
         }
     }
 }

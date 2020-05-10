@@ -39,9 +39,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
-                Published = WorkshopDate("28 Apr, 2020"),
                 LastSeen = WorkshopDate("8 May, 2020"),
+                Published = WorkshopDate("28 Apr, 2020"),
                 Updated = WorkshopDate("28 Apr, 2020"),
+                UserModInspected = true,
             });
 
             AddMod(new Review(1886877404uL, "Custom Effect Loader") {

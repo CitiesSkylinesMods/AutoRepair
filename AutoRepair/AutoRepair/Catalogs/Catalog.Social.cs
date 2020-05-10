@@ -5,7 +5,7 @@ namespace AutoRepair.Catalogs {
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// Anything that primarily relates to Chirper.
+    /// Anything that primarily relates to social media, including Chirper!
     /// </summary>
     public partial class Catalog {
 
@@ -14,9 +14,9 @@ namespace AutoRepair.Catalogs {
         /// </summary>
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
-        private void ChirperMods() {
+        private void SocialMods() {
 
-            string catalog = "Chirper";
+            string catalog = "Social";
 
             // chirps gibberish
             AddMod(new Review(2053655383uL, "Pretty Pixel's Trump Tweets") {
@@ -51,6 +51,37 @@ namespace AutoRepair.Catalogs {
                 },
                 Published = WorkshopDate("9 Apr, 2020"),
                 Updated = WorkshopDate("9 Apr, 2020"),
+            });
+
+            // likely incompat with Customize It Extended
+            AddMod(new Review(1865667356uL, "Twitch Citizens") {
+                Affect = Factor.Naming,
+                Authors = "μohnytoxic™",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1865667356uL, Status.Incompatible }, // Twitch Citizens
+                    { 1806759255uL, Status.Unknown      }, // Customize It Extended
+                    { 1369729955uL, Status.Unknown      }, // Customize It!
+                    { 1231957400uL, Status.Incompatible }, // Custom Namelists
+                    { 958161597uL , Status.Incompatible }, // Twitch Viewer Integrator
+                    { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
+                },
+                CompatibleWith = GameVersion.ParadoxLauncher,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("3 May, 2020"),
+                Published = WorkshopDate("17 Sep, 2019"),
+                Updated = WorkshopDate("17 Sep, 2019"),
+            });
+
+            AddMod(new Review(1597285962u, "Stream It!") {
+                Affect = Factor.UI,
+                Authors = "Keallu",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                Flags = ItemFlags.SourceAvailable,
+                SourceURL = "https://github.com/keallu/CSL-StreamIt",
             });
 
             // hide chirper, make chirper draggable, change transparency, filter non-important
@@ -309,6 +340,28 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
+
+            AddMod(new Review(958161597uL, "Twitch Viewer Integrator") {
+                Affect = Factor.UI,
+                Authors = "kiwiploetze",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // incompat with custom name lists or anything that alters cim names
+                    { 1865667356uL, Status.Incompatible }, // Twitch Citizens
+                    { 1806759255uL, Status.Unknown      }, // Customize It Extended
+                    { 1369729955uL, Status.Compatible   }, // Customize It!
+                    { 1231957400uL, Status.Incompatible }, // Custom Namelists
+                    { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 714711792uL , Status.Incompatible }, // TwitchTV Viewers
+                    { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.SourceAvailable
+                      | ItemFlags.Unreliable, // multiple users state it doesn't work
+                ReplaceWith = 1865667356uL, // Twitch Citizens
+                SourceURL = "https://github.com/kiwiploetze/TwitchIntegrator",
+            });
 
             // probably obsolete; no activity in the linked subreddit
             AddMod(new Review(819797131uL, "Reddit For Chirpy: Updated") {
@@ -618,6 +671,7 @@ namespace AutoRepair.Catalogs {
                     { 1806759255uL, Status.Unknown      }, // Customize It Extended
                     { 1369729955uL, Status.Compatible   }, // Customize It!
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
+                    { 958161597uL , Status.Incompatible }, // Twitch Viewer Integrator
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
                     { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },

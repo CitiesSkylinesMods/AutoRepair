@@ -177,6 +177,7 @@ namespace AutoRepair.Catalogs {
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1192503086uL, Status.Compatible   }, // Real City V9.0.03.14
                     { 949504539uL , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 934994075uL , Status.Compatible   }, // Service Vehicle Selector 2
                     { 927293560uL , Status.Compatible   }, // Geli-Districts v3.0
@@ -334,6 +335,7 @@ namespace AutoRepair.Catalogs {
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1192503086uL, Status.Compatible   }, // Real City V9.0.03.14
                     { 949504539uL , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 934994075uL , Status.Compatible   }, // Service Vehicle Selector 2
                     { 927293560uL , Status.Compatible   }, // Geli-Districts v3.0
@@ -489,6 +491,7 @@ namespace AutoRepair.Catalogs {
                     { 1312767991uL, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 949504539uL , Status.Incompatible }, // SingleTrainTrackAI
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
@@ -562,6 +565,7 @@ namespace AutoRepair.Catalogs {
                     { 1312767991uL, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 949504539uL , Status.Incompatible }, // SingleTrainTrackAI
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
@@ -637,6 +641,7 @@ namespace AutoRepair.Catalogs {
                     { 1312767991uL, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 949504539uL , Status.Incompatible }, // SingleTrainTrackAI
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
@@ -712,6 +717,7 @@ namespace AutoRepair.Catalogs {
                     { 1312767991uL, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 949504539uL , Status.Incompatible }, // SingleTrainTrackAI
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
@@ -791,6 +797,7 @@ namespace AutoRepair.Catalogs {
                     { 1312767991uL, Status.Incompatible }, // Transport Lines Manager 13.1
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 949504539uL , Status.Incompatible }, // SingleTrainTrackAI
                     { 934994075uL , Status.Incompatible }, // Service Vehicle Selector 2
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
@@ -869,6 +876,7 @@ namespace AutoRepair.Catalogs {
                     { 1312767991uL, Status.Compatible   }, // Transport Lines Manager 13.1
                     { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
                     { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车 (changes vehicle speeds in bad ways)
+                    { 1192503086uL, Status.Incompatible }, // Real City V9.0.03.14
                     { 956707300uL , Status.Compatible   }, // Remove Street Arrows
                     { 949504539uL , Status.MinorIssues  }, // SingleTrainTrackAI https://github.com/CitiesSkylinesMods/TMPE/issues/787
                     { 934994075uL , Status.Compatible   }, // Service Vehicle Selector 2

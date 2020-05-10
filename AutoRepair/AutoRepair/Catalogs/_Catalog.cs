@@ -276,11 +276,11 @@ namespace AutoRepair.Catalogs {
                 BuildingLevelMods();
                 BulldozeMods();
                 CameraMods();
-                ChirperMods();
+                SocialMods();
                 ContentManagerMods();
                 ConverterMods();
                 DiagnosticMods();
-                DisasterMods();
+                EnvironmentMods();
                 EditorMods();
                 EmptyingMods();
                 HideRemoveMods();

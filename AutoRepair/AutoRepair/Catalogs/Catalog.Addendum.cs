@@ -19,7 +19,6 @@ namespace AutoRepair.Catalogs {
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1025:Code should not contain multiple whitespace in a row", Justification = "List alignment.")]
         [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:Commas should be spaced correctly", Justification = "List alignment.")]
         private void CatalogAddendum() {
-            Fixed(810858473u, "Traffic Report Tool");
             Fixed(426460372u, "Favorite Cims");
             Broken(554232266u, "Nursing Homes for Senior Citizens");
             Note(554232266u, "Nursing Homes for Senior Citizens", "Breaks if any DLCs are added due to changes in toolbar.");
@@ -80,7 +79,6 @@ namespace AutoRepair.Catalogs {
             Dead(636687806u , "Freewalking");
             //Dead(1368078347u, "French Architecture Style (Paris) District Style");
             Dead(406749417u , "Ground Level Camera - Broken by Mass Transit, don't use");
-            Dead(1115699323u, "Immersive Water 0.9.0.0 (beta release)");
             Dead(508195208u , "Improved Asset Icons", 747836519u);
             Dead(580335918u , "Infinite Oil And Ore Redux [DEPRECATED]");
             //Dead(1633845925u, "International Finance Center GuangZhou");

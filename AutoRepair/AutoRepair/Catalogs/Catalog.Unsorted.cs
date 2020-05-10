@@ -185,11 +185,13 @@ namespace AutoRepair.Catalogs {
                     { 1420955187uL, Status.Incompatible }, // Real Time
                     { 814698320uL , Status.Incompatible }, // TimeWarp Fix
                     { 672248733uL , Status.Incompatible }, // Ultimate Eye Candy (does same thing)
+                    { 629713122uL , Status.MinorIssues  }, // Climate Control 1.2.7.0
                     { 524021335uL , Status.Incompatible }, // Time Warp (original)
                     { 456408505uL , Status.Incompatible }, // European Buildings Unlocker (+vice versa) [ DEPRECATED ]
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.EditorBreaking
                       | ItemFlags.MinorIssues
                       | ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
@@ -201,7 +203,9 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "May cause slight flickering effect on some graphics cards (never noticed it personally, but some users had problems)." },
                     { NOTE, "May conflict with time slider in asset editor (please let auberine18 know if this is the case via the Mod Compatibility Checker workshop page)." },
                     { 1591417160uL, "[Mod: Hide It!] Do not hide the 'Zoom button' otherwise it might cause TimeWarp Fix mod to crash." },
-                    { 1870670690uL, "[Mod: Ultimate Eye Candy] Both mods do similar thing; use one, unsubscribe the other." },
+                    { 1420955187uL, "[Mod: Real Time] The mods are compatible: Real Time will pause game when you Time Warp; when game is unpaused, time will revert to normal." },
+                    { 672248733uL , "[Mod: Ultimate Eye Candy] Both mods do similar thing; use one, unsubscribe the other." },
+                    { 629713122uL , "[Mod: Climate Control] If 'Alter day length' option is enabled, it causes issues with city lighting and day/night cycle." },
                 },
                 Published = WorkshopDate("22 Sep, 2019"),
                 Updated = WorkshopDate("22 Sep, 2019"),
@@ -223,12 +227,14 @@ namespace AutoRepair.Catalogs {
                     { 1420955187uL, Status.MinorIssues  }, // Real Time
                     { 814698320uL , Status.Incompatible }, // TimeWarp Fix
                     { 672248733uL , Status.Incompatible }, // Ultimate Eye Candy (does same thing)
+                    { 629713122uL , Status.MinorIssues  }, // Climate Control 1.2.7.0
                     { 524021335uL , Status.Incompatible }, // Time Warp (original)
                     { 456408505uL , Status.Incompatible }, // European Buildings Unlocker (+vice versa) [ DEPRECATED ]
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 524021335uL, // Time Warp (original)
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.EditorBreaking
                       | ItemFlags.MinorIssues
                       | ItemFlags.Localised
                       | ItemFlags.SourceAvailable,
@@ -236,12 +242,14 @@ namespace AutoRepair.Catalogs {
                 LastSeen = WorkshopDate("5 May, 2020"),
                 Locale = "en",
                 Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Video of the mod from original author: https://www.youtube.com/watch?v=iYbJyRpNniw" },
                     { NOTE, "To use this mod, the day/night cycle must be enabled in game settings." },
                     { NOTE, "May cause slight flickering effect on some graphics cards (never noticed it personally, but some users had problems)." },
                     { NOTE, "May conflict with time slider in asset editor (please let auberine18 know if this is the case via the Mod Compatibility Checker workshop page)." },
                     { 1591417160uL, "[Mod: Hide It!] Do not hide the 'Zoom button' otherwise it might cause TimeWarp Fix mod to crash." },
-                    { 1420955187uL, "[Mod: Time Warp] The mods are compatible: Real Time will pause game when you Time Warp; when game is unpaused, time will revert to normal." },
+                    { 1420955187uL, "[Mod: Real Time] The mods are compatible: Real Time will pause game when you Time Warp; when game is unpaused, time will revert to normal." },
                     { 672248733uL , "[Mod: Ultimate Eye Candy] Both mods do similar thing; use one, unsubscribe the other." },
+                    { 629713122uL , "[Mod: Climate Control] If 'Alter day length' option is enabled, it causes issues with city lighting and day/night cycle." },
                 },
                 Published = WorkshopDate("8 Dec, 2016"),
                 SourceURL = "https://github.com/boldhedgehog/TimeWarp",
@@ -265,6 +273,7 @@ namespace AutoRepair.Catalogs {
                     { 1591417160uL, Status.MinorIssues  }, // Hide It!
                     { 814698320uL , Status.Incompatible }, // TimeWarp Fix
                     { 672248733uL , Status.Incompatible }, // Ultimate Eye Candy (does same thing)
+                    { 629713122uL , Status.Incompatible }, // Climate Control 1.2.7.0
                     { 524021335uL , Status.Incompatible }, // Time Warp (original)
                     { 456408505uL , Status.Incompatible }, // European Buildings Unlocker (+vice versa) [ DEPRECATED ]
                 },
@@ -289,6 +298,72 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("30 Oct, 2015"), // based on web archive
             });
 
+            AddMod(new Review(1623509958uL, "Real Gas Station") {
+                Affect = Factor.Vehicles,
+                Authors = "pcfantasy, Ciar Aon",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040656402uL, Status.Required     }, // Harmony 2.0.0.9 (Mod Dependency)
+                    { 1908304789uL, Status.Required     }, // Gas Station(w/o NE2) - required asset
+                    { 1785774902uL, Status.Compatible   }, // Transfer Info (beta)
+                    { 1739993783uL, Status.Incompatible }, // Cargo Info (Fix)
+                    { 1674732053uL, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
+                    { 1435741602uL, Status.Incompatible }, // Snooper
+                    { 1114249433uL, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
+                    { 1072157697uL, Status.Incompatible }, // Cargo Info
+                    { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Published = WorkshopDate("13 Jan, 2019"),
+                SourceURL = "https://github.com/pcfantasy/RealGasStation",
+                Updated = WorkshopDate("8 May, 2020"),
+            });
+
+            // https://github.com/pcfantasy/RealCity/blob/master/Resources/incompatible_mods.txt
+            // https://steamcommunity.com/workshop/filedetails/discussion/1192503086/1488866180603720344/
+            AddMod(new Review(1192503086uL, "Real City V9.0.03.14") {
+                Affect = Factor.Employment
+                       | Factor.Money,
+                Authors = "pcfantasy, Singlewolf",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439uL, Status.Incompatible }, // TrafficManager
+                    { 2040656402uL, Status.Required     }, // Harmony 2.0.0.9 (Mod Dependency)
+                    { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1893036262uL, Status.MinorIssues  }, // Mayor's Dashboard v2 (includes code from Export Electricity)
+                    { 1806963141uL, Status.Compatible   }, // TM:PE v11.1.2 LABS
+                    { 1739993783uL, Status.Incompatible }, // Cargo Info (Fix)
+                    { 1674732053uL, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
+                    { 1637663252uL, Status.Compatible   }, // TM:PE V11 STABLE
+                    { 1604291910uL, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1562650024uL, Status.Incompatible }, // Rebalanced Industries
+                    { 1553517176uL, Status.MinorIssues  }, // Specialized Industry Fix Redux
+                    { 1546870472uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1435741602uL, Status.Incompatible }, // Snooper
+                    { 1348361731uL, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
+                    { 1114249433uL, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
+                    { 1072157697uL, Status.Incompatible }, // Cargo Info
+                    { 702070768uL , Status.MinorIssues  }, // Export Electricity
+                    { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition [STABLE]
+                    { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers
+                    { 519781146uL , Status.Incompatible }, // Difficulty Tuning
+                    { 409240984uL , Status.Incompatible }, // Difficulty Options
+                    // todo: minor incompat - list money mods here
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.Laggy // causes lag on big cities
+                      | ItemFlags.Localised
+                      | ItemFlags.SourceAvailable,
+                Languages = new[] { "en", "ru", "zh", "zh-cn" }, // https://github.com/pcfantasy/RealCity/blob/master/Resources
+                LastSeen = WorkshopDate("10 May, 2020"),
+                Locale = "en",
+                Published = WorkshopDate("5 Nov, 2017"),
+                SourceURL = "https://github.com/pcfantasy/RealCity/",
+                Updated = WorkshopDate("5 May, 2020"),
+            });
 
             AddMod(new Review(1312735149u, "[OUTDATED] Klyte Commons") {
                 Affect = Factor.Other,
@@ -578,26 +653,6 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 426460372uL, // Favorite Cims
                 Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("1 Feb, 2020"),
-            });
-
-            // likely incompat with Customize It Extended
-            AddMod(new Review(1865667356uL, "Twitch Citizens") {
-                Affect = Factor.Naming,
-                Authors = "μohnytoxic™",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1865667356uL, Status.Incompatible }, // Twitch Citizens
-                    { 1806759255uL, Status.Unknown      }, // Customize It Extended
-                    { 1369729955uL, Status.Unknown      }, // Customize It!
-                    { 1231957400uL, Status.Incompatible }, // Custom Namelists
-                    { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
-                    { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
-                },
-                CompatibleWith = GameVersion.ParadoxLauncher,
-                Flags = ItemFlags.SourceUnavailable,
-                LastSeen = WorkshopDate("3 May, 2020"),
-                Published = WorkshopDate("17 Sep, 2019"),
-                Updated = WorkshopDate("17 Sep, 2019"),
             });
 
             // Apparently creates some sort of biogas harvesting building that's
