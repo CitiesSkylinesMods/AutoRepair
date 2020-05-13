@@ -33,7 +33,7 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Value to use for notes. Access via <see cref="NOTE"/> property to ensure it increments.
         /// </summary>
-        private static ulong note = 100000000u;
+        private static ulong notes = 100000000u;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Catalog"/> class.
@@ -47,13 +47,76 @@ namespace AutoRepair.Catalogs {
         }
 
         /// <summary>
-        /// Gets id to use for "always show" Notes fields in item descriptors.
+        /// Gets id to use for everyone-targeted "always show" Notes fields in item descriptors.
         ///
         /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
         ///
         /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
         /// </summary>
-        public static ulong NOTE => ++note;
+        public static ulong NOTE => ++notes; // TODO: keep track of general note ids
+
+        /// <summary>
+        /// Gets id to use for issue-related "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong ISSUE => ++notes; // TODO: keep track of issue note ids
+
+        /// <summary>
+        /// Gets id to use for tip-related "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong TIP => ++notes; // TODO: keep track of tip note ids
+
+        /// <summary>
+        /// Gets id to use for user-targeted "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong USERS => ++notes; // TODO: keep track of user note ids
+
+        /// <summary>
+        /// Gets id to use for creator-targeted "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong CREATORS => ++notes; // TODO: keep track of creator note ids
+
+        /// <summary>
+        /// Gets id to use for Windows-targeted "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong WINDOWS => ++notes; // TODO: keep track of Windows note ids
+
+        /// <summary>
+        /// Gets id to use for Mac OS/X-targeted "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong MAC => ++notes; // TODO: keep track of Mac note ids
+
+        /// <summary>
+        /// Gets id to use for Linux-targeted "always show" Notes fields in item descriptors.
+        ///
+        /// Values from <c>100000000u</c> to <c>200000000u</c> are treated as "always show".
+        ///
+        /// Values less than <c>100000000u</c> are reserved for vanilla game stuff (DLCs, bundled mods, etc).
+        /// </summary>
+        public static ulong LINUX => ++notes; // TODO: keep track of Linux note ids
 
         /// <summary>
         /// Gets the reference to the catalog instance.
@@ -87,7 +150,6 @@ namespace AutoRepair.Catalogs {
             if (instance?.Reviews != null) {
                 instance.Reviews.Clear();
             }
-            instance = null;
         }
 
         /// <summary>
@@ -329,7 +391,7 @@ namespace AutoRepair.Catalogs {
         /// <summary>
         /// Tries to parse a date string from Steam Workshop page in to a <see cref="DateTime"/> instance.
         ///
-        /// Format it expects is: d MMM, yyyy
+        /// Format it expects is "d MMM, yyyy".
         /// </summary>
         /// 
         /// <param name="dateStr">The string copied from sidebar on item Workshop page.</param>
@@ -339,7 +401,7 @@ namespace AutoRepair.Catalogs {
             try {
                 return DateTime.ParseExact(dateStr, "d MMM, yyyy", WorkshopCulture);
             } catch {
-                Log.Info($"Invlaid date format '{dateStr}'; last added item was {Reviews.Last().Key}");
+                Log.Info($"Invlaid date format '{dateStr}'; last added item was {Reviews.Last().Value}");
                 return default;
             }
         }
