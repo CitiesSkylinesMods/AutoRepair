@@ -352,7 +352,12 @@ namespace AutoRepair {
         public static readonly Version Patch_1_11_0_f3 = new Version(1, 11, 0, 3);
 
         /// <summary>
-        /// 2018-12-13 Bug fixes. Winter Market asset added.
+        /// 2018-12-13 "Holiday Suprise Patch": Winter Market asset added.
+        /// </summary>
+        public static readonly Version HolidaySuprisePatch = new Version(1, 11, 1, 2);
+
+        /// <summary>
+        /// 2018-12-13 "Holiday Suprise Patch": Bug fixes. Winter Market asset added.
         /// </summary>
         public static readonly Version Patch_1_11_1_f2 = new Version(1, 11, 1, 2);
 
@@ -420,14 +425,14 @@ namespace AutoRepair {
         /// <summary>
         /// Parses a date string from the Patches wiki page in to a <see cref="DateTime"/> instance.
         ///
-        /// Format it expects is: <c>yyyy-mm-dd</c>.
+        /// Format it expects is: <c>yyyy-MM-dd</c>.
         /// </summary>
         /// 
         /// <param name="dateStr">The string copied from <see cref="https://skylines.paradoxwikis.com/Patches"/>.</param>
         /// 
         /// <returns>A <see cref="DateTime"/> instance.</returns>
         public static DateTime PatchDate(string dateStr) {
-            return DateTime.ParseExact(dateStr, "yyyy-mm-dd", CultureInfo.InvariantCulture);
+            return DateTime.ParseExact(dateStr, "yyyy-MM-dd", CultureInfo.InvariantCulture);
         }
 
         /// <summary>
