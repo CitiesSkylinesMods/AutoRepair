@@ -29,7 +29,6 @@ namespace AutoRepair.Catalogs {
             Fixed(530771650u, "Prefab Hook");
             Fixed(1435741602u, "Snooper");
             Fixed(405810376u, "All 25 Areas purchasable");
-            Fixed(1721492498u, "Optimised Outside Connections");
             Fixed(629850626u, "Workshop RICO Settings");
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");

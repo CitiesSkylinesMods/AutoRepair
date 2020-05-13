@@ -85,6 +85,7 @@ namespace AutoRepair.Catalogs {
                     { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 927293560uL , Status.Compatible   }, // Geli-Districts v3.0
                     { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 725555912uL , Status.Unknown      }, // Infinite Goods
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
                     { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 426163185uL , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
@@ -328,6 +329,7 @@ namespace AutoRepair.Catalogs {
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 725555912uL , Status.Incompatible }, // Infinite Goods
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
                     { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 426163185uL , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0
@@ -399,6 +401,7 @@ namespace AutoRepair.Catalogs {
                     { 938049744uL , Status.Incompatible }, // Proper Hardness Fixed
                     { 931330091uL , Status.Incompatible }, // 410344523 PopBalanceMod
                     { 888017364uL , Status.Incompatible }, // Quartz (Sapphire) - Fixed 1.11
+                    { 725555912uL , Status.Compatible   }, // Infinite Goods
                     { 586012417uL , Status.Incompatible }, // Ploppable RICO (original)
                     { 576970398uL , Status.Incompatible }, // Quartz (former Sapphire) - UI skin framework
                     { 426163185uL , Status.Compatible   }, // Realistic Population and Consumption Mod v8.4.0

@@ -40,6 +40,7 @@ namespace AutoRepair.Catalogs {
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 818641631uL , Status.Incompatible }, // Ambient Sounds Tuner 2.0
                     { 815103125uL , Status.MinorIssues  }, // Extra Vehicle Effects (Plugin for Vehicle Effects Mod)
+                    { 768213484uL , Status.Incompatible }, // Subtle Bulldozing, Dragging and More!
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
                     // incompat: [ARIS] Remove Cows
                     // incompat: [ARIS] Remove Pigs
@@ -893,6 +894,7 @@ namespace AutoRepair.Catalogs {
                     { 899063611uL , Status.Incompatible }, // UK Sound Pack -- Updated 2.0
                     { 887588790uL , Status.Incompatible }, // Japanese Sound MOD
                     { 818641631uL , Status.Incompatible }, // Ambient Sounds Tuner 2.0
+                    { 768213484uL , Status.Incompatible }, // Subtle Bulldozing, Dragging and More!
                     { 555026832uL , Status.Compatible   }, // UK Sound Pack
                     // incompat: SilenceObnoxiousSirens (no longer in workshop)
                     // incompat: [ARIS] Remove Cows

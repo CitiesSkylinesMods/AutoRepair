@@ -109,11 +109,19 @@ namespace AutoRepair.Catalogs {
                 Authors = "live627",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    // no known issues
+                    { 917543381uL , Status.Unknown      }, // No Problem Notifications
+                    { 803074771uL , Status.Unknown      }, // No Deathcare
+                    { 769744928uL , Status.Unknown      }, // Pollution, Death, Garbage and Crime Remover Mod
+                    { 561293123uL , Status.Unknown      }, // Hide Problems AKA Politician's Mod
                 },
-                CompatibleWith = GameVersion.ParadoxLauncher,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceUnavailable,
-                ReleasedDuring = GameVersion.Campus,
+                LastSeen = WorkshopDate("11 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press Ctrl+Shift+P to display the problem info panel." },
+                },
+                Published = WorkshopDate("3 Dec, 2019"),
+                Updated = WorkshopDate("7 Apr, 2020"),
             });
 
             AddMod(new Review(1904439843uL, "Mayoral City Service Info") {
@@ -321,11 +329,13 @@ namespace AutoRepair.Catalogs {
                 ContinuationOf = 943410067uL, // DistrictRCI fix
                 Flags = ItemFlags.MinorIssues // Stats sometimes incorrect (based on user comments)
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Some bugs with the text captions, but the graphs seem more or less correct." },
                 },
-                ReleasedDuring = GameVersion.GreenCities,
+                Published = WorkshopDate("31 Oct, 2017"),
                 SourceURL = "https://github.com/TheDogKSP/DistrictRCI",
+                Updated = WorkshopDate("25 May, 2018"),
             });
 
             AddMod(new Review(1186889659uL, "DistrictStats") {
@@ -546,6 +556,7 @@ namespace AutoRepair.Catalogs {
             AddMod(new Review(943410067uL, "DistrictRCI fix") {
                 Affect = Factor.Other, // todo: better factor
                 Authors = "billw",
+                BrokenBy = GameVersion.ParkLife,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1915645035uL, Status.Incompatible }, // 1186900508 DistrictRCI-continued
@@ -554,6 +565,7 @@ namespace AutoRepair.Catalogs {
                     { 943410067uL , Status.Incompatible }, // DistrictRCI fix
                     { 486496436uL , Status.Incompatible }, // DistrictRCI (original version)
                 },
+                CompatibleWith = GameVersion.Patch_1_7_2_f1,
                 ContinuationOf = 486496436uL, // DistrictRCI (original version)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
@@ -561,8 +573,11 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.GameBreaking
                       | ItemFlags.Obsolete // newer version available
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
+                Published = WorkshopDate("10 Jun, 2017"),
                 ReplaceWith = 1186900508uL, // DistrictRCI-continued
                 SourceURL = "https://github.com/billw2012/DistrictRCI",
+                Updated = WorkshopDate("10 Jun, 2017"),
             });
 
             AddMod(new Review(928988785uL, "Extended Building Information") {

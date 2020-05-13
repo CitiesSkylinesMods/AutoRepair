@@ -521,11 +521,12 @@ namespace AutoRepair.Catalogs {
                 Languages = v10languages,
                 Locale = "en",
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Old alpha release of TM:PE; not compatible with current game version." },
+                    { NOTE, "Old alpha release of TM:PE; not compatible with current game version. Replace with TM:PE v11 STABLE." },
                 },
                 Published = WorkshopDate("17 Apr, 2020"),
+                ReleasedDuring = GameVersion.SunsetHarbor,
                 ReplaceWith = 1637663252uL, // TM:PE V11 STABLE
-                Suppress = Warning.OlderReplacement,
+                Suppress = Warning.InvalidVersionSequence | Warning.OlderReplacement,
                 Updated = WorkshopDate("17 Apr, 2020"),
             });
 

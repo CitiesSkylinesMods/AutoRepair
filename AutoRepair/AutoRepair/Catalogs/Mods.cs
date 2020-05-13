@@ -65,17 +65,6 @@ namespace AutoRepair {
 
             AddDodgey(1787941751u, "交通"); // "traffic" ?!
 
-            // clone of: Extended Public Transport UI (Obsolete)
-            Add(new Review(1763358249u, "411164732") {
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.GameBreaking
-                      | ItemFlags.SourceUnavailable
-                      | ItemFlags.Obsolete,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 411164732u, Status.Incompatible }, // Extended Public Transport UI (Obsolete)
-                    { 802489150u, Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
-                },
-            });
 
             Add(new Review(1759269367u, "CrazyTouristFix") {
                 Flags = ItemFlags.SourceAvailable,
@@ -121,9 +110,6 @@ namespace AutoRepair {
                 ReplaceWith = 1541897355u, // Total Autobudget
             });
 
-            Add(new Review(1721492498u, "Optimised Outside Connections") {
-                Flags = ItemFlags.SourceUnavailable,
-            });
 
             // todo: requires dlcs
             Add(1718245521u, "No Park Building Fires");

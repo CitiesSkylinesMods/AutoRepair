@@ -111,6 +111,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                 },
                 CompatibleWith = GameVersion.Active,

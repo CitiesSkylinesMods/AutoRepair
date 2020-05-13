@@ -172,8 +172,10 @@ namespace AutoRepair.Catalogs {
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
                     { 649522495uL , Status.Incompatible }, // District Service Limit (original)
                 },
-                Flags = ItemFlags.SourceAvailable,
-                LastSeen = WorkshopDate("4 May, 2020"),
+                Flags = ItemFlags.BrokenByUpdate
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Sunset Harbor: Klyte45 is aware of issue but is currently fixing other mods. Check workshop page for progress updates." },
                 },

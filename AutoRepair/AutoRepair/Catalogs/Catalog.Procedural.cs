@@ -71,7 +71,7 @@ namespace AutoRepair.Catalogs {
                     { 553184329uL , Status.Incompatible }, // Sharp Junction Angles
                     { 418556522uL , Status.Incompatible }, // Road Anarchy
                 },
-                CompatibleWith = GameVersion.Campus,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("8 May, 2020"),
                 Published = WorkshopDate("11 Aug, 2019"),

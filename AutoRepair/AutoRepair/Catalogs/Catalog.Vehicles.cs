@@ -53,7 +53,10 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1548831935uL, // Advanced Vehicle Options AVO (current stable)
-                Flags = ItemFlags.SourceAvailable,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("5 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "User guide: https://github.com/CityGecko/CS-AdvancedVehicleOptions/wiki" },
@@ -62,6 +65,7 @@ namespace AutoRepair.Catalogs {
                     { 928128676uL , "[Mod: Improved Public Transport 2] Red fields in AVO indicate possible conflicts." },
                 },
                 Published = WorkshopDate("5 May, 2020"),
+                Removed = WorkshopDate("11 May, 2020"), // when main AVO was updated to new release
                 SourceURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",
                 Tags = new[] { "Vehicles", "Capacity", "Tilt", "Nod", "Breaking", "Acceleration", "Colors", "Colours", "Speeds", "Despawn" },
                 Updated = WorkshopDate("5 May, 2020"),

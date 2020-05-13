@@ -72,6 +72,7 @@ namespace AutoRepair.Catalogs {
                     { 1779369015uL, Status.Required     }, // Railway Shinkansen Gravel Wireless
                     { 1847646595uL, Status.Recommended  }, // Bienvenüe - Munich U-Bahn Tracks
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("4 May, 2020"),
                 Published = WorkshopDate("3 Apr, 2020"),
@@ -219,7 +220,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // replaces bus shelters, likely incompat with similar mods
-            AddMod(new Review(1900151000uL, "替换为不锈钢公交候车亭") {
+            AddMod(new Review(1900151000uL, "替换为不锈钢公交候车亭 (shelter replacer)") {
                 Affect = Factor.HideRemove
                        | Factor.Props,
                 Authors = "ZEIR",
@@ -497,6 +498,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067uL, Status.Incompatible }, // CSUR Loader
                     { 1758376843uL, Status.Incompatible }, // Network Skins 2
+                    { 1565201461uL, Status.Incompatible }, // Roads United: US Reworked 2018
                     { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167uL, Status.Incompatible }, // 道路颜色调整
                     { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
@@ -524,7 +526,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Road Options (Road Colors Changer ++)
-            AddMod(new Review(1189186167uL, "道路颜色调整") {
+            AddMod(new Review(1189186167uL, "道路颜色调整 (road color changer)") {
                 Affect = Factor.Props
                        | Factor.RoadMarkings
                        | Factor.Textures,
@@ -535,6 +537,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067uL, Status.Incompatible }, // CSUR Loader
                     { 1758376843uL, Status.Incompatible }, // Network Skins 2
+                    { 1565201461uL, Status.Incompatible }, // Roads United: US Reworked 2018
                     { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167uL, Status.Incompatible }, // 道路颜色调整
                     { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
@@ -634,6 +637,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067uL, Status.Incompatible }, // CSUR Loader
                     { 1758376843uL, Status.Incompatible }, // Network Skins 2
+                    { 1565201461uL, Status.MinorIssues  }, // Roads United: US Reworked 2018
                     { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167uL, Status.Incompatible }, // 道路颜色调整
                     { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
@@ -727,6 +731,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067uL, Status.Incompatible }, // CSUR Loader
                     { 1758376843uL, Status.Incompatible }, // Network Skins 2
+                    { 1565201461uL, Status.Incompatible }, // Roads United: US Reworked 2018
                     { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167uL, Status.Incompatible }, // 道路颜色调整
                     { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
@@ -771,6 +776,7 @@ namespace AutoRepair.Catalogs {
                     { 1826488681uL, Status.Incompatible }, // Modern Lighting Pack: Liberated!
                     { 1758376843uL, Status.Incompatible }, // Network Skins 2
                     { 1575247594uL, Status.MinorIssues  }, // 576327847 81 Tiles (Fixed for 1
+                    { 1565201461uL, Status.Incompatible }, // Roads United: US Reworked 2018
                     { 1560122066uL, Status.MinorIssues  }, // 81MOD
                     { 1312735149uL, Status.Incompatible }, // Klyte Commons
                     { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
@@ -820,6 +826,7 @@ namespace AutoRepair.Catalogs {
                     { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1737575423uL, Status.Incompatible }, // [ Backward Compatibility ]  New Roads For Network Extension 2
                     { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1565201461uL, Status.Incompatible }, // Roads United: US Reworked 2018
                     { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167uL, Status.Incompatible }, // 道路颜色调整
                     { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
@@ -907,6 +914,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1959183067uL, Status.Incompatible }, // CSUR Loader
                     { 1758376843uL, Status.Incompatible }, // Network Skins 2
+                    { 1565201461uL, Status.Incompatible }, // Roads United: US Reworked 2018
                     { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
                     { 1189186167uL, Status.Incompatible }, // 道路颜色调整
                     { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets

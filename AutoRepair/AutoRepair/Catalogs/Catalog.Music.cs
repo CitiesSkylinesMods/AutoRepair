@@ -78,6 +78,30 @@ namespace AutoRepair.Catalogs {
             # ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ███████
             */
 
+            AddMusicMod(new Review(2091637451uL, "Radio Dance90's") {
+                Authors = "Manex",
+                Flags = ItemFlags.LargeFileWarning, // 997 MB
+                LastSeen = WorkshopDate("11 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "May cause in-game lag due to large number of UI components in track list." },
+                    { NOTE, "This pack is 1 GB file size." },
+                    { TIP , "The playlist is available: https://www.deezer.com/playlist/2997234882" },
+                },
+                Published = WorkshopDate("10 May, 2020"),
+                Updated = WorkshopDate("10 May, 2020"),
+            });
+
+            AddMusicMod(new Review(2091471405uL, "[CornWorks] Japan Rail Music Radio 日本の鉄道音楽コレクション") {
+                Authors = "Corn Starchia",
+                LastSeen = WorkshopDate("11 May, 2020"),
+                Locale = "ja",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "This music that's played on Japan's real-life trains!" },
+                },
+                Published = WorkshopDate("10 May, 2020"),
+                Updated = WorkshopDate("10 May, 2020"),
+            });
+
             AddMusicMod(new Review(2087941805uL, "Dystopian Radio Public Announcements") {
                 Authors = "Zahav",
                 LastSeen = WorkshopDate("8 May, 2020"),
@@ -1292,6 +1316,18 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("5 Jan, 2017"),
             });
 
+            AddMusicMod(new Review(769222865uL, "World of Warships Music Pack") {
+                Authors = "wladbelsky",
+                Flags = ItemFlags.LargeFileWarning, // 154 MB
+                LastSeen = WorkshopDate("11 May, 2020"),
+                Locale = "*",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Music from the game World of Warships: https://store.steampowered.com/app/552990/World_of_Warships/" },
+                    { TIP , "Available to download in other formats: https://steamcommunity.com/workshop/filedetails/discussion/769222865/1693797713952759435/" },
+                },
+                Published = WorkshopDate("24 Sep, 2016"),
+                Updated = WorkshopDate("26 Nov, 2016"),
+            });
 
 
             AddMusicMod(new Review(634216395uL, "Sim City (2013) Music Pack") {

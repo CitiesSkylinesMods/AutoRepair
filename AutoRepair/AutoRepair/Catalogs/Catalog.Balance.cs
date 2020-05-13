@@ -730,7 +730,7 @@ namespace AutoRepair.Catalogs {
 
             // Residents become senile
             // Actually translated clone of 409070739u - Very Slow Citizen Aging (by Nohealforu)
-            AddMod(new Review(1196714522uL, "居民衰老变十六分之一") {
+            AddMod(new Review(1196714522uL, "居民衰老变十六分之一 (very slow citizen aging)") {
                 Affect = Factor.Aging,
                 Authors = "回忆时光℡",
                 Catalog = catalog,
@@ -999,6 +999,7 @@ namespace AutoRepair.Catalogs {
                     { 1498036881uL, Status.Incompatible }, // UltimateMod 2.4 ( Higher Income and More Options )
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                 },
                 CompatibleWith = GameVersion.Patch_1_6_3_f1,
@@ -1015,6 +1016,55 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("28 Jan, 2017"),
                 ReplaceWith = Vanilla.UnlimitedOilAndOre,
                 Updated = WorkshopDate("28 Jan, 2017"),
+            });
+
+            AddMod(new Review(784378578uL, "Infinite Resources ( Materials for generic industries )") {
+                Affect = Factor.Consumption
+                       | Factor.Production,
+                Authors = "AnEjd",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2053500739uL, Status.Incompatible }, // AdvancedOutsideConnection
+                    // infinite resource mods:
+                    { 1498036881uL, Status.Incompatible }, // UltimateMod 2.4 ( Higher Income and More Options )
+                    { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 725555912uL , Status.Incompatible }, // Infinite Goods
+                    { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { Vanilla.UnlimitedOilAndOre, Status.Incompatible },
+                },
+                CompatibleWith = GameVersion.NaturalDisasters,
+                ContinuationOf = 725555912uL, // Infinite Goods
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Probably broken as there have been lots of industry updates since it was released; if it works or not, please leave a comment!" },
+                },
+                Published = WorkshopDate("21 Oct, 2016"),
+                ReplaceWith = 2053500739uL, // AdvancedOutsideConnection
+                SourceURL = "http://anejd.com/infresmod.rar",
+                Updated = WorkshopDate("21 Oct, 2016"),
+            });
+
+            AddMod(new Review(725555912uL, "Infinite Goods") {
+                Affect = Factor.Consumption
+                       | Factor.Production,
+                Authors = "Googen",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2016920607uL, Status.Unknown      }, // RICO revisited
+                    { 1204126182uL, Status.Incompatible }, // Ploppable Rico High Density Fix
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 586012417uL , Status.Compatible   }, // Ploppable RICO (original)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
+                Published = WorkshopDate("16 Jul, 2016"),
+                SourceURL = "https://github.com/goransh/InfiniteGoodsMod",
+                Updated = WorkshopDate("27 Mar, 2020"),
             });
 
             AddMod(new Review(654707599uL, "Citizen Lifecycle Rebalance v2.6") {
@@ -1331,6 +1381,7 @@ namespace AutoRepair.Catalogs {
                     { 1498036881uL, Status.Incompatible }, // UltimateMod 2.4 ( Higher Income and More Options )
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
 
                     // other

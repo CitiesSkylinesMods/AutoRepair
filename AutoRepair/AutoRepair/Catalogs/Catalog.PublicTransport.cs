@@ -27,6 +27,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2040218778uL, Status.Incompatible }, // ScaleUI
                     { 2009172305uL, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 1763358249uL, Status.Incompatible }, // 411164732 (EPTUI)
                     { 802489150uL , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
                     { 411164732uL , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
                     { 409338401uL , Status.Incompatible }, // ScaleUI (beta)
@@ -351,6 +352,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2040218778uL, Status.Incompatible }, // ScaleUI
                     { 2009172305uL, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 1763358249uL, Status.Incompatible }, // 411164732 (EPTUI)
                     { 802489150uL , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
                     { 411164732uL , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
                     { 409338401uL , Status.Incompatible }, // ScaleUI (beta)
@@ -372,6 +374,37 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("31 May, 2017"),
             });
 
+            // clone of: Extended Public Transport UI (Obsolete)
+            AddMod(new Review(1763358249u, "411164732 (EPTUI)") {
+                Affect = Factor.UI
+                       | Factor.TransportLines,
+                Authors = "catel.pascal",
+                BrokenBy = GameVersion.SunsetHarbor,
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2040218778uL, Status.Incompatible }, // ScaleUI
+                    { 2009172305uL, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 1763358249uL, Status.Incompatible }, // 411164732 (EPTUI clone)
+                    { 802489150uL , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
+                    { 411164732uL , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
+                    { 409338401uL , Status.Incompatible }, // ScaleUI (beta)
+                },
+                CompatibleWith = GameVersion.Campus, // ?
+                ContinuationOf = 411164732uL, // Extended Public Transport UI(Obsolete)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      //| ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.Obsolete
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "The vanilla game now contains a full transport UI; unsubscribe this mod." },
+                },
+                Published = WorkshopDate("7 Jun, 2019"),
+                Updated = WorkshopDate("7 Jun, 2019"),
+            });
+
             AddMod(new Review(411164732uL, "Extended Public Transport UI (Obsolete)") {
                 Affect = Factor.UI
                        | Factor.TransportLines,
@@ -381,12 +414,12 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2040218778uL, Status.Incompatible }, // ScaleUI
                     { 2009172305uL, Status.Incompatible }, // EPTUI TLM Integration (Beta)
+                    { 1763358249uL, Status.Incompatible }, // 411164732 (EPTUI clone)
                     { 802489150uL , Status.Incompatible }, // Extended Public Transport UI (+DLCs!)
                     { 411164732uL , Status.Incompatible }, // Extended Public Transport UI (Obsolete)
                     { 409338401uL , Status.Incompatible }, // ScaleUI (beta)
                 },
                 CompatibleWith = GameVersion.Patch_1_2_2_f2,
-                ContinuationOf = 411164732uL, // Extended Public Transport UI(Obsolete)
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.BrokenByUpdate
                       //| ItemFlags.ForceMigration
@@ -410,7 +443,9 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                Flags = ItemFlags.Obsolete
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "The vanilla game now includes this fix; unsubscribe this mod." },

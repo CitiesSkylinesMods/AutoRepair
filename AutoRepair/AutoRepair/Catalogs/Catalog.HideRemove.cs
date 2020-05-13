@@ -506,7 +506,9 @@ namespace AutoRepair.Catalogs {
                 Authors = "TPB",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1927186256uL, Status.Unknown      }, // Problem Info
                     { 1764637396uL, Status.MinorIssues  }, // Toggle It!
+                    { 769744928uL , Status.Unknown      }, // Pollution, Death, Garbage and Crime Remover Mod
                     { 561293123uL , Status.Incompatible }, // Hide Problems AKA Politician's Mod
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -527,8 +529,10 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2077426488uL, Status.Incompatible }, // Super Hearse AI [Beta]
+                    { 1927186256uL, Status.Unknown      }, // Problem Info
                     { 813835241uL , Status.Incompatible }, // Enhanced Hearse AI [1.6]
                     { 813833476uL , Status.Incompatible }, // Skylines Overwatch [1.6]
+                    { 769744928uL , Status.Unknown      }, // Pollution, Death, Garbage and Crime Remover Mod
                     { 583556014uL , Status.Incompatible }, // Enhanced Hearse AI [Fixed for v1.4 +]
                     { 583538182uL , Status.Incompatible }, // Skylines Overwatch [Fixed for v1.3+]
                     { 433249875uL , Status.Incompatible }, // [ARIS] Enhanced Hearse AI
@@ -541,6 +545,30 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("20 Nov, 2016"),
                 SourceURL = "https://github.com/bloodypenguin/Skylines-NoDeathcare",
                 Updated = WorkshopDate("20 Nov, 2016"),
+            });
+
+            AddMod(new Review(769744928uL, "Pollution, Death, Garbage and Crime Remover Mod") {
+                Affect = Factor.Other,
+                Alternatives = new[] {
+                    917543381uL , // No Problem Notifications
+                    803074771uL , // No Deathcare
+                    561293123uL , // Hide Problems AKA Politician's Mod
+                },
+                Authors = "doctor",
+                Catalog = catalog,
+                CatalogLinks = new[] { "Services", "Services.Deathcare", "Services.Garbage", "Services.Police", "Crime", "Pollution", "Environment" },
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1927186256uL, Status.Unknown      }, // Problem Info
+                    { 917543381uL , Status.Unknown      }, // No Problem Notifications
+                    { 803074771uL , Status.Unknown      }, // No Deathcare
+                    { 561293123uL , Status.Unknown      }, // Hide Problems AKA Politician's Mod
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("11 May, 2020"),
+                Published = WorkshopDate("25 Sep, 2016"),
+                SourceURL = "https://bitbucket.org/KUDr/cs-pollutionremovermod/",
+                Updated = WorkshopDate("1 Oct, 2016"),
             });
 
             AddMod(new Review(564141599uL, "No Seagulls") {

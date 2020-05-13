@@ -116,6 +116,7 @@ namespace AutoRepair.Catalogs {
             { 811815834uL , Status.Incompatible },
             { 811140929uL , Status.Incompatible },
             { 809550172uL , Status.Incompatible },
+            { 724251353uL , Status.Incompatible },
         };
 
         internal ulong latestAliMod = 1988319487uL; // ali213_mod_01
@@ -625,6 +626,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("3 May, 2020"),
@@ -641,6 +643,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("3 May, 2020"),
@@ -657,6 +660,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("3 May, 2020"),
@@ -1064,6 +1068,13 @@ namespace AutoRepair.Catalogs {
                 LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("30 Nov, 2016"),
                 Updated = WorkshopDate("30 Nov, 2016"),
+            });
+
+            AddAliMod(new Review(724251353, "ali213_mod_01") {
+                Authors = "兄弟~你选错队友了！",
+                LastSeen = WorkshopDate("11 May, 2020"),
+                Published = WorkshopDate("14 Jul, 2016"),
+                Updated = WorkshopDate("14 Jul, 2016"),
             });
 
             // todo: set each ali mod as continuation of previous one

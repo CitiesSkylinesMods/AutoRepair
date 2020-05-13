@@ -1063,7 +1063,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop // on or before 13/Apr/2020
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("1 Apr, 2020"),
                 Published = WorkshopDate("1 Apr, 2020"),
+                Removed = WorkshopDate("13 Apr, 2020"), // when i noticed
                 ReplaceWith = 1844440354uL, // Fine Road Anarchy 2
                 Suppress = Warning.InvalidVersionSequence | Warning.MissingArchiveURL | Warning.OlderReplacement,
                 Updated = WorkshopDate("1 Apr, 2020"),

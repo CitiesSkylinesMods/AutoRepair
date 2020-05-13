@@ -40,6 +40,14 @@ namespace AutoRepair.Catalogs {
 
             AddMod(new Review(1567569285uL, "Achieve It!") {
                 Affect = Factor.Achievements,
+                Alternatives = new[] {
+                    1567569285uL, // Achieve It!
+                    1498036881uL, // UltimateMod 2.6
+                    1444491969uL, // Achievements with Mods
+                    1237383751uL, // Extended Game Options
+                    794268416uL , // Steamy - More Steam controls
+                    407055819uL , // Mod Achievement Enabler
+                },
                 Authors = "Keallu",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -49,6 +57,7 @@ namespace AutoRepair.Catalogs {
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 762936969uL , Status.Incompatible }, // 407055819 Mod Achievement Enabler
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                     // other stuff:
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
@@ -87,6 +96,7 @@ namespace AutoRepair.Catalogs {
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 762936969uL , Status.Incompatible }, // 407055819 Mod Achievement Enabler
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                     // Chirper:
                     { 2053655383uL, Status.MinorIssues  }, // Pretty Pixel's Trump Tweets
@@ -125,6 +135,7 @@ namespace AutoRepair.Catalogs {
 
                     // Unlimited resources:
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                     // Costs/refunds:
 
@@ -153,6 +164,14 @@ namespace AutoRepair.Catalogs {
 
             AddMod(new Review(1444491969uL, "Achievements with Mods") {
                 Affect = Factor.Achievements,
+                Alternatives = new[] {
+                    1567569285uL, // Achieve It!
+                    1498036881uL, // UltimateMod 2.6
+                    1444491969uL, // Achievements with Mods
+                    1237383751uL, // Extended Game Options
+                    794268416uL , // Steamy - More Steam controls
+                    407055819uL , // Mod Achievement Enabler
+                },
                 Authors = "TianBao",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -162,6 +181,7 @@ namespace AutoRepair.Catalogs {
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 762936969uL , Status.Incompatible }, // 407055819 Mod Achievement Enabler
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -170,7 +190,8 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.MinorIssues // trophy icon doesn't get updated (makes some users think it's not working)
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
+                    { ISSUE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
+                    { NOTE , "Guide for using achievement unlocker mods: https://steamcommunity.com/sharedfiles/filedetails/?id=1516004098" },
                 },
                 Published = WorkshopDate("18 Jul, 2018"),
                 ReplaceWith = 1567569285uL, // Achieve It!
@@ -240,6 +261,7 @@ namespace AutoRepair.Catalogs {
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 762936969uL , Status.Incompatible }, // 407055819 Mod Achievement Enabler
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                     // milestone unlockers
                     { Vanilla.UnlockAll, Status.Incompatible }, //Unlock All (bundled with Cities: Skylines)
@@ -288,6 +310,7 @@ namespace AutoRepair.Catalogs {
                     // resource depletion
                     { Vanilla.UnlimitedOilAndOre, Status.Incompatible }, // Unlimited Oil and Ore (bundled with Cities: Skylines)
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                     // other
                     { 2090425593uL, Status.Compatible   }, // Game Speed mod
@@ -296,8 +319,8 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Laggy
                       | ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "The mod runs quite a bit of code every frame; it's reported to cause lag in-game." },
-                    { NOTE, "Achievement Unlocker: Icon still has a lock on it (minor bug), but achievements should work." },
+                    { ISSUE, "Achievement Unlocker: Icon still has a lock on it (minor bug), but achievements should work." },
+                    { ISSUE, "The mod runs quite a bit of code every frame; it's reported to cause lag in-game." },
                     { NOTE, "[Tile unlocker mods] Extended Game Options has it's own tile unlocker, so other tile unlocker mods should be disabled or unsubscribed." },
                     { Vanilla.UnlimitedMoney, "[Mod: Unlimited Money] Full refund option in Extened Game Options is not relevant if unlimited money enabled." },
                     { 823348129uL , "[Mod: Disasters Enabler] Extended Game Options has identical feature; you can unsubscribe Disasters Enabler mod." },
@@ -319,6 +342,7 @@ namespace AutoRepair.Catalogs {
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 762936969uL , Status.Incompatible }, // 407055819 Mod Achievement Enabler
                     { 411253368uL , Status.Incompatible }, // Steam notification mover
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                 },
@@ -327,7 +351,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("6 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Sunset Harbor: Achievements flag was inverted, and this mod hasn't been updated; achievement enabler likely not working." },
+                    { ISSUE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
+                    { ISSUE, "Sunset Harbor: Achievements flag was inverted, and this mod hasn't been updated; achievement enabler likely not working." },
+                    { NOTE , "Guide for using achievement unlocker mods: https://steamcommunity.com/sharedfiles/filedetails/?id=1516004098" },
                 },
                 Published = WorkshopDate("5 Nov, 2016"),
                 SourceURL = "https://github.com/SexyFishHorse/CitiesSkylines-Steamy",
@@ -374,6 +400,14 @@ namespace AutoRepair.Catalogs {
 
             AddMod(new Review(407055819uL, "Mod Achievement Enabler") {
                 Affect = Factor.Achievements,
+                Alternatives = new[] {
+                    1567569285uL, // Achieve It!
+                    1498036881uL, // UltimateMod 2.6
+                    1444491969uL, // Achievements with Mods
+                    1237383751uL, // Extended Game Options
+                    794268416uL , // Steamy - More Steam controls
+                    407055819uL , // Mod Achievement Enabler
+                },
                 Authors = "extra bad",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
@@ -383,13 +417,17 @@ namespace AutoRepair.Catalogs {
                     { 1444491969uL, Status.Incompatible }, // Achievements with Mods
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 762936969uL , Status.Incompatible }, // 407055819 Mod Achievement Enabler
                     { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.MinorIssues // trophy icon doesn't get updated (makes some users think it's not working)
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
+                    { ISSUE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
+                    { NOTE , "Guide for using achievement unlocker mods: https://steamcommunity.com/sharedfiles/filedetails/?id=1516004098" },
                 },
                 Published = WorkshopDate("13 Mar, 2015"),
                 ReplaceWith = 1444491969uL, // Achievements with Mods
@@ -418,14 +456,53 @@ namespace AutoRepair.Catalogs {
                     { 466834228uL , Status.Incompatible }, // Not So Unique Buildings
                 },
                 Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("6 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Does not work for unique buildings added by Industries DLC or subsequent game updates; use replacement item for latest version." },
+                },
                 Published = WorkshopDate("17 Sep, 2017"),
                 ReplaceWith = 466834228uL, // Not So Unique Buildings
                 Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("17 Sep, 2017"),
+            });
+
+            AddMod(new Review(762936969uL, "407055819 Mod Achievement Enabler") {
+                Affect = Factor.Achievements
+                       | Factor.Unlockers,
+                Alternatives = new[] {
+                    1567569285uL, // Achieve It!
+                    1498036881uL, // UltimateMod 2.6
+                    1444491969uL, // Achievements with Mods
+                    1237383751uL, // Extended Game Options
+                    794268416uL , // Steamy - More Steam controls
+                    407055819uL , // Mod Achievement Enabler
+                },
+                Authors = "Mustbe_",
+                Catalog = catalog,
+                CatalogLinks = new[] { "Unlock.Achievements" },
+                CloneOf = 407055819, // Mod Achievement Enabler
+                Compatibility = new Dictionary<ulong, Status>() {
+                     // Achievements unlockers:
+                    { 1567569285uL, Status.Incompatible }, // Achieve It!
+                    { 1498036881uL, Status.Incompatible }, // UltimateMod 2.6
+                    { 1444491969uL, Status.Incompatible }, // Achievements with Mods
+                    { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 794268416uL , Status.Incompatible }, // Steamy - More Steam controls
+                    { 762936969uL , Status.Incompatible }, // 407055819 Mod Achievement Enabler
+                    { 407055819uL , Status.Incompatible }, // Mod Achievement Enabler
+                },
+                CompatibleWith = GameVersion.ArtDeco,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { ISSUE, "Minor bug: The lock still appears on trophy icon (achievements should still work)." },
+                    { NOTE , "Guide for using achievement unlocker mods: https://steamcommunity.com/sharedfiles/filedetails/?id=1516004098" },
+                },
+                Published = WorkshopDate("13 Sep, 2016"),
+                ReplaceWith = 1567569285uL, // Achieve It!
+                Updated = WorkshopDate("13 Sep, 2016"),
             });
         }
     }

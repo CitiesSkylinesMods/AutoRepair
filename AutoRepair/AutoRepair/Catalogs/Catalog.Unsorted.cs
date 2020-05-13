@@ -512,7 +512,7 @@ namespace AutoRepair.Catalogs {
 
 
             // looks like translated clone of Favorite Cims mod
-            AddMod(new Review(1985556066uL, "4546") {
+            AddMod(new Review(1985556066uL, "4546 (Fav Cims)") {
                 Affect = Factor.Other,
                 Authors = "暮",
                 BrokenBy = GameVersion.SunsetHarbor,
@@ -523,6 +523,7 @@ namespace AutoRepair.Catalogs {
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("3 May, 2020"),
                 Published = WorkshopDate("1 Feb, 2020"),
@@ -590,7 +591,6 @@ namespace AutoRepair.Catalogs {
             AddMod(new Review(1812384654uL, "(no name specified)") {
                 Affect = Factor.Other,
                 Authors = "打的好不如排的好",
-                BrokenBy = GameVersion.DefaultRelease,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() { },
                 Flags = ItemFlags.Abandonware
@@ -598,36 +598,11 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.LargeFileWarning // 165 MB
                       | ItemFlags.SourceUnavailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "Unsubscribe. It's a zip of old mods translated to Chinese, most of them don't work." },
+                    { NOTE, "Unsubscribe. It's a zip of old mods translated to Chinese, they are all broken by subsequent game updates." },
                 },
-                LastSeen = WorkshopDate("5 May, 2020"),
-                Published = WorkshopDate("10 Sep, 2019"),
-                Suppress = Warning.InvalidVersionSequence,
-                Updated = WorkshopDate("18 Apr, 2020"),
-            });
-
-
-            AddMod(new Review(1706703944uL, "More Outside Interaction") {
-                Affect = Factor.Employment
-                       | Factor.Service,
-                Authors = "pcfantasy",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 1922400472uL, Status.Incompatible }, // Enhanced District Services
-                    { 1911736890uL, Status.Incompatible }, // 1181352643 District Service Limit 3
-                    { 1674732053uL, Status.Compatible   }, // Employ Overeducated Workers V2 (1.11+)
-                    { 1632320836uL, Status.Incompatible }, // Service Vehicles Manager 2.0.1
-                    { 1181352643uL, Status.Incompatible }, // District Service Limit 3.0
-                    { 1114249433uL, Status.Incompatible }, // Employ Overeducated Workers (1.10+)
-                    { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
-                    { 649522495uL , Status.Incompatible }, // District Service Limit (original)
-                    { 569008960uL , Status.Incompatible }, // Employ Overeducated Workers (original)
-                },
-                Flags = ItemFlags.SourceAvailable,
-                LastSeen = WorkshopDate("5 May, 2020"),
-                Published = WorkshopDate("8 Apr, 2019"),
-                SourceURL = "https://github.com/pcfantasy/MoreOutsideInteraction",
-                Updated = WorkshopDate("3 May, 2020"),
+                LastSeen = WorkshopDate("12 May, 2020"),
+                Published = WorkshopDate("22 Jul, 2019"),
+                Updated = WorkshopDate("22 Jul, 2019"),
             });
 
             AddMod(new Review(1614061108uL, "Real Construction") {
@@ -660,6 +635,7 @@ namespace AutoRepair.Catalogs {
 
                     { Vanilla.HardMode, Status.Incompatible }, // Hard Mode (bundled with Cities: Skylines)
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("6 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {

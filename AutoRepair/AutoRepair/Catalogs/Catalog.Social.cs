@@ -40,6 +40,7 @@ namespace AutoRepair.Catalogs {
                     // chirp fitlers:
                     { 407871375uL , Status.Incompatible }, // ChirpFilter
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SaveAltering
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("3 May, 2020"),

@@ -560,17 +560,19 @@ namespace AutoRepair.Catalogs {
                 Flags = ItemFlags.Abandonware
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
-                      | ItemFlags.NoWorkshop // removed between 21-27 Oct 2017
+                      | ItemFlags.NoWorkshop // removed between 21-27 Oct 2017?
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("15 Jul, 2017"), // web archive
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press F8 to show the sliders." },
                 },
-                Published = WorkshopDate("28 May, 2017"),
+                Published = WorkshopDate("28 May, 2017"), // web archive
+                Removed = WorkshopDate("23 Jul, 2018"), // web archive
                 ReplaceWith = 412146081uL, // PostProcessFX v1.9.0
                 SourceURL = "https://github.com/bloodypenguin/Skylines-AmbientOcclusion",
                 Suppress = Warning.OlderReplacement,
-                Updated = WorkshopDate("30 May, 2017"),
+                Updated = WorkshopDate("30 May, 2017"), // web archive
             });
 
             AddMod(new Review(926945709uL, "Adjustable FOV") {
@@ -609,7 +611,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.NoWorkshop
                       | ItemFlags.Obsolete
                       | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("23 Jul, 2015"),
                 Published = WorkshopDate("28 Mar, 2015"),
+                Removed = WorkshopDate("17 Mar, 2016"),
                 ReplaceWith = 523824395uL, // Clouds & Fog Toggler
                 Updated = WorkshopDate("28 Mar, 2015"), // no evidence of any updates
             });
@@ -681,6 +685,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Rendering,
                 ArchiveURL = "https://web.archive.org/web/20150415010910/http://steamcommunity.com/sharedfiles/filedetails/?id=408648436",
                 Authors = "Quget",
+                BrokenBy = GameVersion.Snowfall,
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1870740367uL, Status.Incompatible }, // Dynamic Resolution 动态分辨率 Sakuya16个人汉化版
@@ -696,21 +701,53 @@ namespace AutoRepair.Catalogs {
                     { 410196151uL , Status.Compatible   }, // Bordered Skylines (Fixed for Mass Transit!)
                     { 409359952uL , Status.Compatible   }, // Isometric Camera
                     { 408648436uL , Status.Incompatible }, // More Options
+                    { 407555557uL , Status.Incompatible }, // Camera Effect Remover prototype
                     { 406629464uL , Status.Compatible   }, // Dynamic Resolution (old)
                 },
+                CompatibleWith = GameVersion.Patch_1_2_2_f2,
+                ContinuationOf = 407555557uL, // Camera Effect Remover prototype
                 Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
                       | ItemFlags.ForceMigration
                       | ItemFlags.GameBreaking
                       | ItemFlags.NoWorkshop
                       | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("22 Dec, 2015"), // based on last git commit // mentioned by 415732693uL Disable Clouds mod 23 Jul, 2015
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "Press Left Alt + O (letter 'o') to open settings panel." },
                     { NOTE, "This mod apears to be the forerunner to Ultimate Eyecandy and Relight mods." },
                 },
                 Published = WorkshopDate("15 Mar, 2015"), // adjacent workshop item
+                Removed = WorkshopDate("2 Nov, 2017"), // https://steamcommunity.com/app/255710/discussions/0/1479857071254473642/
                 ReplaceWith = 1209581656uL, // Relight
                 SourceURL = "https://github.com/Quget/More-Options",
-                Updated = WorkshopDate("21 Mar, 2015"), // web archive
+                Updated = WorkshopDate("22 Dec, 2015"), // github
+            });
+
+            AddMod(new Review(407555557uL, "Camera Effect Remover prototype") {
+                Affect = Factor.Rendering,
+                ArchiveURL = "https://steamcommunity.com/app/255710/discussions/0/610575007210963814/#c610575007210987600",
+                Authors = "Quget",
+                BrokenBy = GameVersion.Snowfall, // guess
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 408648436uL , Status.Incompatible }, // More Options
+                },
+                CompatibleWith = GameVersion.Patch_1_2_2_f2,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.BrokenByUpdate
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.GameBreaking
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("14 Mar, 2015"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Press O to use toggles. Gets rid of the fog/clouds." },
+                },
+                Published = WorkshopDate("14 Mar, 2015"), // adjacent workshop item
+                Removed = WorkshopDate("21 Apr, 2015"), // likely replaced by More Options
+                ReplaceWith = 1209581656uL, // Relight
+                Updated = WorkshopDate("14 Mar, 2015"),
             });
 
             AddMod(new Review(407358867uL, "Quget's Day & Night Prototype") {

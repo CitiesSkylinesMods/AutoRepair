@@ -44,7 +44,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.ParadoxLauncher,
                 Flags = ItemFlags.SourceAvailable,
                 Notes = new Dictionary<ulong, string>() {
-                    { 812125426uL , "[Mod: Network Extensions 2] Breaks NExt2 road zoning position and Zone Adjuster (Shift+Click)" },
+                    { 812125426uL , "[Mod: Network Extensions 2] Toolbox breaks NExt2 road zoning position and Zone Adjuster (Shift+Click)" },
                 },
                 ReleasedDuring = GameVersion.ParadoxLauncher,
                 SourceURL = "https://github.com/citiesskylines-csur/CSURToolBox",
@@ -193,6 +193,25 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Apr, 2020"),
             });
 
+            AddMod(new Review(724382534uL, "One-Way Train Tracks") {
+                Affect = Factor.Other,
+                Authors = "BloodyPenguin, Lazarus*Man",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 949504539uL , Status.Recommended   }, // SingleTrainTrackAI
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SaveAltering
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("12 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { TIP , "Vanilla game now includes 1-way tracks since 1.7 (Mass Transit) update. The tracks in this mod are slightly narrower with custom pillars." },
+                    { NOTE, "To remove this mod from existing saves, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
+                },
+                Published = WorkshopDate("14 Jul, 2016"),
+                SourceURL = "https://github.com/bloodypenguin/Skylines-OneWayTrainTracks",
+                Updated = WorkshopDate("27 Jun, 2017"),
+            });
         }
     }
 }

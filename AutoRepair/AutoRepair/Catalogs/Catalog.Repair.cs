@@ -35,6 +35,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.LoadSaveExit,
                 Authors = "Cgameworld",
                 Catalog = catalog,
+                CatalogLinks = new[] { "LoadSave" },
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -80,6 +81,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "krzychu1245",
                 Catalog = catalog,
+                CatalogLinks = new[] { "Networks" },
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -91,6 +93,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "thale5",
                 Catalog = catalog,
+                CatalogLinks = new[] { "Networks" },
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Recommended
@@ -103,6 +106,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.Other,
                 Authors = "egi",
                 Catalog = catalog,
+                CatalogLinks = new[] { "Networks" },
                 Compatibility = new Dictionary<ulong, Status>() { },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -115,6 +119,7 @@ namespace AutoRepair.Catalogs {
                        | Factor.Pathfinder,
                 Authors = "BloodyPenguin",
                 Catalog = catalog,
+                CatalogLinks = new[] { "PublicTransport", "Services" },
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 816260433uL , Status.Compatible    }, // Metro Overhaul Mod
                 },
@@ -134,6 +139,7 @@ namespace AutoRepair.Catalogs {
                 Affect = Factor.UI,
                 Authors = "thale5",
                 Catalog = catalog,
+                CatalogLinks = new[] { "LoadSave" },
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -142,6 +148,30 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("4 Dec, 2016"),
                 SourceURL = "https://github.com/thale5/LessSteam",
                 Updated = WorkshopDate("19 Aug, 2017"),
+            });
+
+            AddMod(new Review(767233815uL, "Decal Prop Fix") {
+                Affect = Factor.Props
+                       | Factor.Rendering,
+                Authors = "boformer, Ronyx69",
+                Catalog = catalog,
+                CatalogLinks = new[] { "VisualEffects" },
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("11 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { TIP     , "Decal collections: https://steamcommunity.com/workshop/filedetails/discussion/767233815/343787283746289706/" },
+                    { CREATORS, "Asset creation guide: http://steamcommunity.com/workshop/filedetails/discussion/767233815/343787283746272981/" },
+                    { CREATORS, "Decal shader guide: https://cslmodding.info/shader/decal/" },
+                },
+                Published = WorkshopDate("20 Sep, 2016"),
+                SourceURL = "https://steamcommunity.com/linkfilter/?url=https://gist.github.com/boformer/1017014acdd9888eab3847272cee9102",
+                Updated = WorkshopDate("20 Sep, 2016"),
             });
 
             /*

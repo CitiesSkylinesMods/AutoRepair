@@ -117,13 +117,12 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                 },
-                //CompatibleWith = GameVersion.SunsetHarbor,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.EditorMod
                       | ItemFlags.SourceUnavailable
                       | ItemFlags.Unreliable,
                 LastSeen = WorkshopDate("04 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "There are some reports of this mod not working; if it works for you please let aubergine18 know on mod compatibility checker workshop page." },
                     { NOTE, "(Users) This mod is for content creation; if you don't use asset editor, you don't need this mod." },
                     { NOTE, "(Creators) Flag support depends on vehicle/building type. See workshop page for details." },
                 },
