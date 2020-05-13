@@ -62,9 +62,16 @@ namespace AutoRepair.Descriptors {
         public Version BrokenBy { get; set; } = GameVersion.DefaultUntil;
 
         /// <summary>
-        /// Gets or sets the name of the catalog that defined this item.
+        /// Gets or sets the name of the main catalog that contains this item.
         /// </summary>
         public string Catalog { get; set; }
+
+        /// <summary>
+        /// Gets or sets the names of additional catalogs that this item should appear in.
+        ///
+        /// Note: Don't include the main catalog; the array should only contain additional catalogs.
+        /// </summary>
+        public string[] CatalogLinks { get; set; }
 
         /// <summary>
         /// Gets or sets the original Steam Workshop ID from which this item was cloned.
@@ -437,6 +444,15 @@ namespace AutoRepair.Descriptors {
             if (extendedReporting && CompatibleWith == GameVersion.DefaultRelease) {
                 problems = true;
                 log.Append("- CompatibleWith missing\n");
+            }
+
+            // TODO: Replace static date with dynamic date when GameVersion class gets improved
+            if (CompatibleWith < GameVersion.SunsetHarbor
+                && (BrokenBy == GameVersion.DefaultUntil || BrokenBy < GameVersion.SunsetHarbor)
+                && Updated != null && Updated.Value >= GameVersion.PatchDate("2020-03-26"))
+            {
+                problems = true;
+                log.Append("> Might be compatible with Sunset Harbor?\n");
             }
 
             if (!Suppresses(Warning.InvalidVersionSequence)) {
