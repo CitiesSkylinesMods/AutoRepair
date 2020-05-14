@@ -604,6 +604,22 @@ namespace AutoRepair.Descriptors {
                 problems = true;
                 log.Append("- Tags missing\n");
             }
+            
+            if ( Updated != null) {
+                bool abandonware = HasFlag(ItemFlags.Abandonware);
+                double daysAgo = DateTime
+                    .Now
+                    .Subtract(Updated.Value)
+                    .TotalDays;
+
+                if (daysAgo < 180 && abandonware) {
+                    problems = true;
+                    log.AppendFormat("- Has Abandonware flag but updated {0:N0} days ago ({1:d MMM, yyyy})\n", daysAgo, Updated);
+                } else if (extendedReporting && !abandonware && daysAgo > 540) {
+                    problems = true;
+                    log.AppendFormat("- Abandoned? Last updated {0:N0} days ago ({1:d MMM, yyyy})\n", daysAgo, Updated);
+                }
+            }
 
             return problems;
         }
