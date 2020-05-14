@@ -610,6 +610,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 412149127uL, Status.Required    }, // Font Selector
                 },
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.Localised
                       | ItemFlags.SourceUnavailable,
                 LastSeen = WorkshopDate("3 May, 2020"),

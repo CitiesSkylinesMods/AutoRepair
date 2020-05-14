@@ -449,6 +449,63 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("4 Nov, 2016"),
             });
 
+            AddMod(new Review(762520291uL, "Shadow Strength Adjuster") {
+                Affect = Factor.Rendering,
+                Authors = "Ronyx69",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("14 May, 2020"),
+                Published = WorkshopDate("12 Sep, 2016"),
+                Updated = WorkshopDate("12 Sep, 2016"),
+            });
+
+            AddMod(new Review(751706914uL, "Moon Phases") {
+                Affect = Factor.Textures
+                       | Factor.Rendering,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // likely incompat with anything that changes cubemap, moon texture (eg. theme mixer), etc
+                    { 1899640536uL, Status.Incompatible }, // Theme Mixer 2
+                    { 1183931915uL, Status.Incompatible }, // Cubemap Replacer
+                    { 751706914uL , Status.Incompatible }, // Moon Phases
+                    { 582725661uL , Status.Incompatible }, // Skyscape 1
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.MinorIssues
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("14 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { ISSUE, "Sometimes has small flickering black square in middle of the Moon." },
+                },
+                Published = WorkshopDate("25 Aug, 2016"),
+                Updated = WorkshopDate("26 Aug, 2016"),
+            });
+
+            AddMod(new Review(582725661uL, "Skyscape 1") {
+                Affect = Factor.Textures
+                       | Factor.Rendering,
+                Authors = "TPB",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    // likely incompat with anything that changes cubemap, moon texture (eg. theme mixer), etc
+                    { 1899640536uL, Status.Incompatible }, // Theme Mixer 2
+                    //{ 1183931915uL, Status.Incompatible }, // Cubemap Replacer // compatible?! wat!
+                    { 751706914uL , Status.Incompatible }, // Moon Phases
+                    { 582725661uL , Status.Incompatible }, // Skyscape 1
+                },
+                CompatibleWith = GameVersion.Campus,
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.MinorIssues
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("14 May, 2020"),
+                Published = WorkshopDate("24 Dec, 2015"),
+                Updated = WorkshopDate("24 Dec, 2015"),
+            });
+
             AddMod(new Review(412146081uL, "PostProcessFX v1.9.0") {
                 Affect = Factor.Rendering,
                 Authors = "MazK",

@@ -20,6 +20,25 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Skin.Networks";
 
+            AddMod(new Review(2092856384uL, "Japanese Road Arrows") {
+                Affect = Factor.RoadMarkings,
+                Authors = "Ryuichi Kaminogi",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1591417160uL, Status.Compatible   }, // Hide It!
+                    // incompat - anything that chances road arrows or markings etc
+                    { 2092856384uL, Status.Incompatible }, // Japanese Road Arrows
+                    { 2009708489uL, Status.Incompatible }, // Road Arrows Replacer [Spain]
+                    { 956707300uL , Status.Incompatible }, // Remove Street Arrows
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("14 May, 2020"),
+                Published = WorkshopDate("11 May, 2020"),
+                SourceURL = "https://github.com/kaminogi/csl-japaneseroadarrows",
+                Updated = WorkshopDate("11 May, 2020"),
+            });
+
             AddMod(new Review(2085403475uL, "Node controller [pre release testing]") {
                 Affect = Factor.Other,
                 Authors = "kian.zarrin",
@@ -120,10 +139,11 @@ namespace AutoRepair.Catalogs {
                 Authors = "Nouvilas",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2008960441uL, Status.Required     }, // Spanish Arrow Decals Pack
                     // hide it - if used to hide street arrows, road arrows replacer won't work
                     { 1591417160uL, Status.MinorIssues  }, // Hide It!
                     // incompat - anything that chances road arrows or markings etc
-                    { 2008960441uL, Status.Required     }, // Spanish Arrow Decals Pack
+                    { 2092856384uL, Status.Incompatible }, // Japanese Road Arrows
                     { 956707300uL , Status.Incompatible }, // Remove Street Arrows
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
@@ -360,6 +380,43 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("4 Dec, 2016"),
                 SourceURL = "https://github.com/andreharv/NetworkExtensions",
                 Updated = WorkshopDate("6 Apr, 2020"),
+            });
+
+            AddMod(new Review(427258853uL, "Crossings") {
+                Affect = Factor.Pathfinder
+                       | Factor.RoadMarkings,
+                Authors = "Spectra",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439uL, Status.Incompatible }, // TrafficManager
+                    { 2019097300uL, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
+                    { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1939169189uL, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
+                    { 1934023593uL, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
+                    { 1806963141uL, Status.Unknown      }, // TM:PE LABS
+                    { 1758376843uL, Status.Unknown      }, // Network Skins 2
+                    { 1680642819uL, Status.Unknown      }, // Ultimate Level of Detail (ULOD)
+                    { 1637663252uL, Status.Unknown      }, // TM:PE STABLE
+                    { 1604291910uL, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1546870472uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1348361731uL, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
+                    { 1128766708uL, Status.Incompatible }, // Remove Road Textures - Blank Roads
+                    { 812125426uL , Status.MinorIssues  }, // Network Extensions 2 // sometimes glitches crossings due to conflicting code
+                    { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
+                    { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
+                    { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                Flags = ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("14 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { 812125426uL, "[Mod: Network Extensions] Sometimes causes double crossings to appear." },
+                },
+                Published = WorkshopDate("18 Apr, 2015"),
+                ReplaceWith = 1934023593uL, // Hide TMPE crosswalks V2.5 [BETA]
+                SourceURL = "https://github.com/bernardd/Crossings",
+                Updated = WorkshopDate("8 Mar, 2020"),
             });
 
             /*

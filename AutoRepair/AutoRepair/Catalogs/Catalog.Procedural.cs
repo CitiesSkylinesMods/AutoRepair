@@ -144,7 +144,7 @@ namespace AutoRepair.Catalogs {
                     { 2033714682uL, Status.Compatible   }, // Tree and Vehicle Props
                     { 1442713872uL, Status.MinorIssues  }, // Detail http://proceduralobjects.shoutwiki.com/wiki/Known_Issues
                 },
-                CompatibleWith = GameVersion.Campus,
+                CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("8 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {

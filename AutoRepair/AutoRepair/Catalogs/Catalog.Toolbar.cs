@@ -70,9 +70,7 @@ namespace AutoRepair.Catalogs {
                     { 421770876uL , Status.Incompatible }, // Sapphire - UI skin framework
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.SourceAvailable
-                      | ItemFlags.MinorIssues, // harmony patch management could be better
+                Flags = ItemFlags.SourceAvailable,
                 Published = WorkshopDate("29 Nov, 2018"),
                 SourceURL = "https://github.com/keallu/CSL-ResizeIt",
                 Updated = WorkshopDate("27 Mar, 2020"),

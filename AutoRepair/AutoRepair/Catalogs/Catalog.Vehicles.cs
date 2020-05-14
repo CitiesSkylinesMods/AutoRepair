@@ -19,58 +19,6 @@ namespace AutoRepair.Catalogs {
 
             string catalog = "Vehicles";
 
-            AddMod(new Review(2085902218uL, "Advanced Vehicle Options 1.9.3 BETA") {
-                Affect = Factor.Customize
-                       | Factor.Despawn // has options to remove vehicles
-                       | Factor.Textures // vehicle colours
-                       | Factor.VehicleCapacity // read: https://github.com/CitiesSkylinesMods/TMPE/wiki/Vanilla-capacities
-                       | Factor.Velocity,
-                Authors = "Tim",
-                Catalog = catalog,
-                Compatibility = new Dictionary<ulong, Status>() {
-                    { 2085902218uL, Status.Incompatible }, // Advanced Vehicle Options 1.9.3 BETA
-                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
-                    { 1818462177uL, Status.Compatible   }, // Vehicle Color Expander (from AVO 1.9.0a onwards)
-                    { 1806759255uL, Status.Compatible   }, // Customize It Extended
-                    { 1764208250uL, Status.Compatible   }, // More Vehicles (from AVO 1.9.0 onwards)
-                    { 1550281302uL, Status.Incompatible }, // TransportCapacity
-                    { 1548831935uL, Status.Incompatible }, // Advanced Vehicle Options AVO (current stable)
-                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
-                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
-                    { 1369729955uL, Status.Compatible   }, // Customize It!
-                    { 1312767991uL, Status.Compatible   }, // Transport Lines Manager 13.1
-                    { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
-                    { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车
-                    { 934994075uL , Status.Compatible   }, // Service Vehicle Selector 2
-                    { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
-                    { 928128676uL , Status.Compatible   }, // Improved Public Transport 2
-                    { 442167376uL , Status.Incompatible }, // Advanced Vehicle Options (AVO)
-                    { 414326578uL , Status.Incompatible }, // Configurable Transport Capacity
-                    { 413170870uL , Status.Incompatible }, // SuperBigTransport 80 v1.1
-                    { 413146544uL , Status.Incompatible }, // SuperBigTransport 60 v1.1
-                    { 413164951uL , Status.Incompatible }, // SuperBigTransport Restore v1.1
-                    { 408875519uL , Status.Incompatible }, // Transport Lines Manager
-                },
-                CompatibleWith = GameVersion.SunsetHarbor,
-                ContinuationOf = 1548831935uL, // Advanced Vehicle Options AVO (current stable)
-                Flags = ItemFlags.Abandonware
-                      | ItemFlags.ForceMigration
-                      | ItemFlags.NoWorkshop
-                      | ItemFlags.SourceAvailable,
-                LastSeen = WorkshopDate("5 May, 2020"),
-                Notes = new Dictionary<ulong, string>() {
-                    { NOTE, "User guide: https://github.com/CityGecko/CS-AdvancedVehicleOptions/wiki" },
-                    { 1818462177uL, "[Mod: Vehicle Color Expander] Red fields in AVO indicate possible conflicts." },
-                    { 1312767991uL, "[Mod: Transport Lines Manager] Red fields in AVO indicate possible conflicts." },
-                    { 928128676uL , "[Mod: Improved Public Transport 2] Red fields in AVO indicate possible conflicts." },
-                },
-                Published = WorkshopDate("5 May, 2020"),
-                Removed = WorkshopDate("11 May, 2020"), // when main AVO was updated to new release
-                SourceURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",
-                Tags = new[] { "Vehicles", "Capacity", "Tilt", "Nod", "Breaking", "Acceleration", "Colors", "Colours", "Speeds", "Despawn" },
-                Updated = WorkshopDate("5 May, 2020"),
-            });
-
             AddMod(new Review(2069057130uL, "NoBigTruck") {
                 Affect = Factor.Consumption
                        | Factor.Vehicles,
@@ -259,6 +207,60 @@ namespace AutoRepair.Catalogs {
             # ██    ██ ██   ██      ██ ██    ██ ██      ██         ██    ██
             #  ██████  ██████  ███████  ██████  ███████ ███████    ██    ███████
             */
+
+            AddMod(new Review(2085902218uL, "Advanced Vehicle Options 1.9.3 BETA") {
+                Affect = Factor.Customize
+                       | Factor.Despawn // has options to remove vehicles
+                       | Factor.Textures // vehicle colours
+                       | Factor.VehicleCapacity // read: https://github.com/CitiesSkylinesMods/TMPE/wiki/Vanilla-capacities
+                       | Factor.Velocity,
+                Authors = "Tim",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 2085902218uL, Status.Incompatible }, // Advanced Vehicle Options 1.9.3 BETA
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
+                    { 1818462177uL, Status.Compatible   }, // Vehicle Color Expander (from AVO 1.9.0a onwards)
+                    { 1806759255uL, Status.Compatible   }, // Customize It Extended
+                    { 1764208250uL, Status.Compatible   }, // More Vehicles (from AVO 1.9.0 onwards)
+                    { 1550281302uL, Status.Incompatible }, // TransportCapacity
+                    { 1548831935uL, Status.Incompatible }, // Advanced Vehicle Options AVO (current stable)
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
+                    { 1369729955uL, Status.Compatible   }, // Customize It!
+                    { 1312767991uL, Status.Compatible   }, // Transport Lines Manager 13.1
+                    { 1228424498uL, Status.Incompatible }, // Bzimage VehicleCapacity
+                    { 1196714055uL, Status.Incompatible }, // 城市：地平线永不堵车
+                    { 934994075uL , Status.Compatible   }, // Service Vehicle Selector 2
+                    { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
+                    { 928128676uL , Status.Compatible   }, // Improved Public Transport 2
+                    { 442167376uL , Status.Incompatible }, // Advanced Vehicle Options (AVO)
+                    { 414326578uL , Status.Incompatible }, // Configurable Transport Capacity
+                    { 413170870uL , Status.Incompatible }, // SuperBigTransport 80 v1.1
+                    { 413146544uL , Status.Incompatible }, // SuperBigTransport 60 v1.1
+                    { 413164951uL , Status.Incompatible }, // SuperBigTransport Restore v1.1
+                    { 408875519uL , Status.Incompatible }, // Transport Lines Manager
+                },
+                CompatibleWith = GameVersion.SunsetHarbor,
+                ContinuationOf = 1548831935uL, // Advanced Vehicle Options AVO (current stable)
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.NoWorkshop
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("5 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "User guide: https://github.com/CityGecko/CS-AdvancedVehicleOptions/wiki" },
+                    { 1818462177uL, "[Mod: Vehicle Color Expander] Red fields in AVO indicate possible conflicts." },
+                    { 1312767991uL, "[Mod: Transport Lines Manager] Red fields in AVO indicate possible conflicts." },
+                    { 928128676uL , "[Mod: Improved Public Transport 2] Red fields in AVO indicate possible conflicts." },
+                },
+                Published = WorkshopDate("5 May, 2020"),
+                Removed = WorkshopDate("11 May, 2020"), // when main AVO was updated to new release
+                ReplaceWith = 1548831935uL, // Advanced Vehicle Options AVO
+                SourceURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",
+                Suppress = Warning.MissingArchiveURL,
+                Tags = new[] { "Vehicles", "Capacity", "Tilt", "Nod", "Breaking", "Acceleration", "Colors", "Colours", "Speeds", "Despawn" },
+                Updated = WorkshopDate("5 May, 2020"),
+            });
 
             // Alters PT vehicle capacities to user defined values
             // Changes vehicle AIs, updates existing vehicles
