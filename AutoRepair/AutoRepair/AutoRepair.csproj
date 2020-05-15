@@ -69,7 +69,7 @@
     <Compile Include="Catalogs\Catalog.Camera.cs" />
     <Compile Include="Catalogs\Catalog.Procedural.cs" />
     <Compile Include="Catalogs\Catalog.Toolbar.cs" />
-    <Compile Include="Catalogs\Catalog.Trees.cs" />
+    <Compile Include="Catalogs\Catalog.Landscaping.cs" />
     <Compile Include="Catalogs\_Catalog.CheckForMissing.cs" />
     <Compile Include="Catalogs\_Catalog.cs" />
     <Compile Include="Catalogs\Catalog.Diagnostic.cs" />

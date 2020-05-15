@@ -31,7 +31,9 @@ namespace AutoRepair.Catalogs {
         private static Catalog instance;
 
         /// <summary>
-        /// Value to use for notes. Access via <see cref="NOTE"/> property to ensure it increments.
+        /// Value to use for notes.
+        ///
+        /// Use NOTES, ISSUE, etc., properties when defining notes.
         /// </summary>
         private static ulong notes = 100000000u;
 
@@ -39,12 +41,23 @@ namespace AutoRepair.Catalogs {
         /// Initializes a new instance of the <see cref="Catalog"/> class.
         /// </summary>
         public Catalog() {
+            Stopwatch timer = Stopwatch.StartNew();
+
             Log.Info("Catalog Opened\n");
             Reviews = new Dictionary<ulong, Review>();
             AddReviews();
             Validate();
             LogTally();
+
+            timer.Stop();
+            StartupTime = timer.ElapsedMilliseconds;
+            Log.Info($"Catalog initialisation took {StartupTime}ms");
         }
+
+        /// <summary>
+        /// Gets the number of milliseconds that it took to open the catalog.
+        /// </summary>
+        public long StartupTime { get; private set; }
 
         /// <summary>
         /// Gets id to use for everyone-targeted "always show" Notes fields in item descriptors.
@@ -324,12 +337,12 @@ namespace AutoRepair.Catalogs {
             Log.Info(log.ToString());
         }
 
+        /// <summary>
+        /// Adds all reviews to the catalog.
+        /// </summary>
         private void AddReviews() {
-            Stopwatch timer = Stopwatch.StartNew();
-
             try {
                 VanillaMods(); // mods bundled with base game
-                UnsortedMods(); // currently uncategorised items
 
                 AssetsCatalog(); // actual assets, not mods
 
@@ -345,6 +358,7 @@ namespace AutoRepair.Catalogs {
                 EmptyingMods();
                 EnvironmentMods();
                 HideRemoveMods();
+                LandscapingMods();
                 LoadSaveMods();
                 MapThemesMods();
                 MoneyMods();
@@ -371,9 +385,9 @@ namespace AutoRepair.Catalogs {
                 ToolbarMods();
                 TrafficMods();
                 TranslationMods();
-                TreeMods();
                 UnlimiterMods();
                 UnlockerMods();
+                UnsortedMods(); // currently uncategorised items
                 VehicleEffectMods();
                 VehicleMods();
                 VisualEffectMods();
@@ -383,9 +397,6 @@ namespace AutoRepair.Catalogs {
             catch (Exception e) {
                 Log.Error(e.ToString());
             }
-
-            timer.Stop();
-            Log.Info($"Catalog initialisation took {timer.ElapsedMilliseconds}ms");
         }
 
         /// <summary>
@@ -415,7 +426,7 @@ namespace AutoRepair.Catalogs {
         [Conditional("DEBUG")]
         private void Validate(bool extendedReporting = false) {
 
-            //VerifyIds();
+            VerifyIds();
 
             bool problems = false;
 
