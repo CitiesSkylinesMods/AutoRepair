@@ -7,7 +7,7 @@ The incompatible mods list, in a mod!
 
 ## Current status
 
-The mod contains almost 800 descriptors and almost 5,000 compatibility vectors.
+The mod contains over 1,100 descriptors and over 10,000 compatibility vectors.
 
 The goal is to get every single mod added, then start enhancing core functionality.
 
