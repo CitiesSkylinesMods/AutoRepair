@@ -257,7 +257,7 @@ namespace AutoRepair.Catalogs {
                 Removed = WorkshopDate("11 May, 2020"), // when main AVO was updated to new release
                 ReplaceWith = 1548831935uL, // Advanced Vehicle Options AVO
                 SourceURL = "https://github.com/CityGecko/CS-AdvancedVehicleOptions",
-                Suppress = Warning.MissingArchiveURL,
+                Suppress = Warning.MissingArchiveURL | Warning.OlderReplacement | Warning.QueryAbandonware,
                 Tags = new[] { "Vehicles", "Capacity", "Tilt", "Nod", "Breaking", "Acceleration", "Colors", "Colours", "Speeds", "Despawn" },
                 Updated = WorkshopDate("5 May, 2020"),
             });

@@ -134,8 +134,10 @@ namespace AutoRepair.Catalogs {
                     // Remove pollution (various types):
 
                     // Unlimited resources:
+                    { Vanilla.UnlimitedOilAndOre, Status.Incompatible },
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 715316103uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                     // Costs/refunds:
 
@@ -311,6 +313,7 @@ namespace AutoRepair.Catalogs {
                     { Vanilla.UnlimitedOilAndOre, Status.Incompatible }, // Unlimited Oil and Ore (bundled with Cities: Skylines)
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 715316103uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                     // other
                     { 2090425593uL, Status.Compatible   }, // Game Speed mod

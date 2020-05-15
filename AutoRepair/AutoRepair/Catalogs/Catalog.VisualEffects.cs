@@ -143,6 +143,7 @@ namespace AutoRepair.Catalogs {
                     { 625608461uL , Status.Recommended  }, // Adaptive Prop Visibility Distance
                     { 561888259uL , Status.Incompatible }, // LOD Toggler (deprecated)
                     { 556784825uL , Status.Recommended  }, // Random Tree Rotation
+                    { 427258853uL , Status.Unknown      }, // Crossings
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 561888259uL, // LOD Toggler (deprecated)
@@ -270,11 +271,12 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2077102792uL, Status.Compatible   }, // AD Cloud Enabler
-                    { 1209581656uL, Status.Recommended }, // Relight
-                    { 1183931915uL, Status.Compatible  }, // Cubemap Replacer
-                    { 1138510774uL, Status.Recommended }, // PostProcessFX - Multi-platform
-                    { 530871278uL , Status.Required    }, // Daylight classic
-                    { 412146081uL , Status.Compatible  }, // PostProcessFX v1.9.0
+                    { 1209581656uL, Status.Recommended  }, // Relight
+                    { 1183931915uL, Status.Compatible   }, // Cubemap Replacer
+                    { 1138510774uL, Status.Recommended  }, // PostProcessFX - Multi-platform
+                    { 751706914uL , Status.Incompatible }, // Moon Phases
+                    { 530871278uL , Status.Required     }, // Daylight classic
+                    { 412146081uL , Status.Compatible   }, // PostProcessFX v1.9.0
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -781,13 +783,16 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("22 Dec, 2015"), // github
             });
 
+            // only toggled fog/clouds, hence landing in this catalog
             AddMod(new Review(407555557uL, "Camera Effect Remover prototype") {
                 Affect = Factor.Rendering,
                 ArchiveURL = "https://steamcommunity.com/app/255710/discussions/0/610575007210963814/#c610575007210987600",
                 Authors = "Quget",
                 BrokenBy = GameVersion.Snowfall, // guess
                 Catalog = catalog,
+                CatalogLinks = new[] { "Camera" },
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 523824395uL , Status.Incompatible }, // Clouds & Fog Toggler
                     { 408648436uL , Status.Incompatible }, // More Options
                 },
                 CompatibleWith = GameVersion.Patch_1_2_2_f2,
@@ -803,7 +808,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Published = WorkshopDate("14 Mar, 2015"), // adjacent workshop item
                 Removed = WorkshopDate("21 Apr, 2015"), // likely replaced by More Options
-                ReplaceWith = 1209581656uL, // Relight
+                ReplaceWith = 523824395uL, // Clouds & Fog Toggler
                 Updated = WorkshopDate("14 Mar, 2015"),
             });
 

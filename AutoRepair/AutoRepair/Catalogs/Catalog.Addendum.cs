@@ -23,7 +23,6 @@ namespace AutoRepair.Catalogs {
             Broken(554232266u, "Nursing Homes for Senior Citizens");
             Note(554232266u, "Nursing Homes for Senior Citizens", "Breaks if any DLCs are added due to changes in toolbar.");
             Fixed(632951976u, "Improved Mod Upload Panel");
-            Fixed(762520291u, "Shadow Strenght Adjuster");
             Fixed(643364914u, "Softer Shadows");
             Fixed(611254368u, "Environment Changer");
             Fixed(530771650u, "Prefab Hook");
@@ -32,7 +31,6 @@ namespace AutoRepair.Catalogs {
             Fixed(629850626u, "Workshop RICO Settings");
             Broken(414469593u, "Extended Building Information");
             Note(414469593u, "Extended Building Information", "Replace with Show It mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1556715327");
-            Fixed(502750307u, "Extra Landscaping Tools"); // menu wont close
             Dead(414618382u, "Rotate Brush");
 
             Fixed(515489008u, "Extra Train Station Tracks");
@@ -116,7 +114,6 @@ namespace AutoRepair.Catalogs {
             //Dead(667891104u , "Small Ship");
             //Dead(931760630u , "Small Ship");
             Dead(556416380u , "Telemetry Control");
-            Dead(411095553u , "Terraform tool 0.9", 502750307u);
             Dead(510802741u , "Toggle District Snapping");
             Dead(415782697u , "Toggle Zoning", 592076973u);
             Dead(755839415u , "Touch This!", 1393797695u);
@@ -128,7 +125,6 @@ namespace AutoRepair.Catalogs {
 
             // incompatible mods
             Incompatible(451700838u , "Extended Toolbar",                        563229150u , "Advanced Toolbar");
-            Incompatible(502750307u , "Extra Landscaping Tools",                 411095553u, "Terraform tool 0.9");
 
             // breaks editor
             BreaksEditor(672248733u, "Ultimate Eyecandy");

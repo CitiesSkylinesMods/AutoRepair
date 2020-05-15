@@ -107,6 +107,7 @@ namespace AutoRepair.Catalogs {
                 },
                 Published = WorkshopDate("27 Feb, 2016"),
                 SourceURL = "https://github.com/Killface1980/Roads_United---DEPRECATED",
+                Suppress = Warning.QueryAbandonware,
                 Updated = WorkshopDate("12 Jan, 2020"),
             });
 

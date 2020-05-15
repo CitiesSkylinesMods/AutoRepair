@@ -185,6 +185,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.MinorIssues  }, // Roads United Core 2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector (old version)
                     { 457516262uL , Status.Compatible   }, // Rail Track Speed Increaser 2.2.1
+                    { 427258853uL , Status.Unknown      }, // Crossings
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1637663252uL, // TM:PE V11 STABLE (Krzychu1245)
@@ -343,6 +344,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.MinorIssues  }, // Roads United Core 2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector (old version)
                     { 457516262uL , Status.Compatible   }, // Rail Track Speed Increaser 2.2.1
+                    { 427258853uL , Status.Unknown      }, // Crossings
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 583429740uL, // TM:PE 10.20 (LinuxFan)
@@ -473,6 +475,7 @@ namespace AutoRepair.Catalogs {
                 CompatibleWith = GameVersion.Campus,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2076619989uL, Status.Incompatible }, // 934994075 Service Vehicle Selector 2
+                    { 2064509439uL, Status.Incompatible }, // TrafficManager
                     { 2019097300uL, Status.Incompatible }, // Hide TM:PE Unconnected Tracks
                     { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
@@ -497,10 +500,13 @@ namespace AutoRepair.Catalogs {
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676uL , Status.Incompatible }, // Improved Public Transport 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 844180955uL , Status.Incompatible }, // City Drive
                     { 631930385uL , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
+                    { 498363759uL , Status.Incompatible }, // Traffic Manager + Improved AI
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 424106600uL , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519uL , Status.Incompatible }, // Transport Lines Manager
                     // Traffic lights
@@ -524,9 +530,9 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Old alpha release of TM:PE; not compatible with current game version. Replace with TM:PE v11 STABLE." },
                 },
                 Published = WorkshopDate("17 Apr, 2020"),
-                ReleasedDuring = GameVersion.SunsetHarbor,
+                ReleasedDuring = GameVersion.SunsetHarbor, // lol
                 ReplaceWith = 1637663252uL, // TM:PE V11 STABLE
-                Suppress = Warning.InvalidVersionSequence | Warning.OlderReplacement,
+                Suppress = Warning.InvalidVersionSequence | Warning.OlderReplacement | Warning.QueryAbandonware,
                 Updated = WorkshopDate("17 Apr, 2020"),
             });
 
@@ -572,10 +578,13 @@ namespace AutoRepair.Catalogs {
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676uL , Status.Incompatible }, // Improved Public Transport 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 844180955uL , Status.Incompatible }, // City Drive
                     { 631930385uL , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
+                    { 498363759uL , Status.Incompatible }, // Traffic Manager + Improved AI
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 424106600uL , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519uL , Status.Incompatible }, // Transport Lines Manager
                     // Traffic lights
@@ -648,11 +657,13 @@ namespace AutoRepair.Catalogs {
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676uL , Status.Incompatible }, // Improved Public Transport 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 844180955uL , Status.Incompatible }, // City Drive
                     { 631930385uL , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
                     { 498363759uL , Status.Incompatible }, // Traffic Manager + Improved AI
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 424106600uL , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519uL , Status.Incompatible }, // Transport Lines Manager
                     // Traffic lights
@@ -724,10 +735,13 @@ namespace AutoRepair.Catalogs {
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676uL , Status.Incompatible }, // Improved Public Transport 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 844180955uL , Status.Incompatible }, // City Drive
                     { 631930385uL , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
+                    { 498363759uL , Status.Incompatible }, // Traffic Manager + Improved AI
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 424106600uL , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519uL , Status.Incompatible }, // Transport Lines Manager
                     // Traffic lights
@@ -804,10 +818,13 @@ namespace AutoRepair.Catalogs {
                     { 929654063uL , Status.Incompatible }, // Transport Lines Manager Reborn 8.0.3
                     { 928128676uL , Status.Incompatible }, // Improved Public Transport 2
                     { 927293560uL , Status.Incompatible }, // Geli-Districts v3.0
+                    { 844180955uL , Status.Incompatible }, // City Drive
                     { 631930385uL , Status.Incompatible }, // Realistic Vehicle Speed
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
+                    { 498363759uL , Status.Incompatible }, // Traffic Manager + Improved AI
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 424106600uL , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519uL , Status.Incompatible }, // Transport Lines Manager
                     // Traffic lights
@@ -890,6 +907,8 @@ namespace AutoRepair.Catalogs {
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 519691655uL , Status.Incompatible }, // Service Vehicle Selector
+                    { 498363759uL , Status.Incompatible }, // Traffic Manager + Improved AI
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 424106600uL , Status.Incompatible }, // Improved Public Transport (IPT)
                     { 408875519uL , Status.Incompatible }, // Transport Lines Manager
                     // Traffic lights

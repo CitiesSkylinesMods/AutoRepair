@@ -54,18 +54,18 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("9 Apr, 2020"),
             });
 
-            // likely incompat with Customize It Extended
             AddMod(new Review(1865667356uL, "Twitch Citizens") {
                 Affect = Factor.Naming,
                 Authors = "μohnytoxic™",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1865667356uL, Status.Incompatible }, // Twitch Citizens
-                    { 1806759255uL, Status.Unknown      }, // Customize It Extended
-                    { 1369729955uL, Status.Unknown      }, // Customize It!
+                    { 1806759255uL, Status.Compatible   }, // Customize It Extended
+                    { 1369729955uL, Status.Compatible   }, // Customize It!
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
                     { 958161597uL , Status.Incompatible }, // Twitch Viewer Integrator
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 714711792uL , Status.Incompatible }, // TwitchTV Viewers
                     { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },
                 CompatibleWith = GameVersion.ParadoxLauncher,
@@ -349,7 +349,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     // incompat with custom name lists or anything that alters cim names
                     { 1865667356uL, Status.Incompatible }, // Twitch Citizens
-                    { 1806759255uL, Status.Unknown      }, // Customize It Extended
+                    { 1806759255uL, Status.Compatible   }, // Customize It Extended
                     { 1369729955uL, Status.Compatible   }, // Customize It!
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
@@ -452,6 +452,30 @@ namespace AutoRepair.Catalogs {
                 ReplaceWith = 649147853uL, // Birdcage
                 Suppress = Warning.OlderReplacement,
                 Updated = WorkshopDate("2 Dec, 2016"),
+            });
+
+            AddMod(new Review(714711792uL, "TwitchTV Viewers") {
+                Affect = Factor.Naming,
+                Authors = "mitterdoo",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { 1865667356uL, Status.Incompatible }, // Twitch Citizens
+                    { 1806759255uL, Status.Compatible   }, // Customize It Extended
+                    { 1369729955uL, Status.Compatible   }, // Customize It!
+                    { 1231957400uL, Status.Incompatible }, // Custom Namelists
+                    { 958161597uL , Status.Incompatible }, // Twitch Viewer Integrator
+                    { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 714711792uL , Status.Incompatible }, // TwitchTV Viewers
+                    { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
+                },
+                Flags = ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("15 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { ISSUE, "Doesn't differentiate between streamer and viewer names; if few veiwers, most cims will be named after streamer." },
+                },
+                Published = WorkshopDate("1 Jul, 2016"),
+                ReplaceWith = 1865667356uL, // Twitch Citizens
+                Updated = WorkshopDate("2 Jul, 2016"),
             });
 
             // probably obsolete; based on the original reddit chirper
@@ -674,6 +698,7 @@ namespace AutoRepair.Catalogs {
                     { 1231957400uL, Status.Incompatible }, // Custom Namelists
                     { 958161597uL , Status.Incompatible }, // Twitch Viewer Integrator
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
+                    { 714711792uL , Status.Incompatible }, // TwitchTV Viewers
                     { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },
                 CompatibleWith = GameVersion.Patch_1_11_1_f4, // based on user comments

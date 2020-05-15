@@ -117,6 +117,7 @@ namespace AutoRepair.Catalogs {
             { 811140929uL , Status.Incompatible },
             { 809550172uL , Status.Incompatible },
             { 724251353uL , Status.Incompatible },
+            { 711844849uL , Status.Incompatible },
         };
 
         internal ulong latestAliMod = 1988319487uL; // ali213_mod_01
@@ -208,6 +209,7 @@ namespace AutoRepair.Catalogs {
                     { 935356978uL , Status.Incompatible }, // CSL Names Pack Example [1.0.0]
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
                     { 933961247uL , Status.Unknown      }, // Russian text fix
+                    { 714711792uL , Status.Incompatible }, // TwitchTV Viewers
                     { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },
                 Flags = ItemFlags.SourceAvailable,
@@ -248,6 +250,7 @@ namespace AutoRepair.Catalogs {
                     { 935356978uL , Status.Compatible   }, // CSL Names Pack Example [1.0.0]
                     { 935350530uL , Status.Incompatible }, // CSL Custom Names [1.0.0]
                     { 933961247uL , Status.Unknown      }, // Russian text fix
+                    { 714711792uL , Status.Incompatible }, // TwitchTV Viewers
                     { 414730498uL , Status.Incompatible }, // Twitch Chirper Chat
                 },
                 Flags = ItemFlags.Abandonware
@@ -1076,6 +1079,13 @@ namespace AutoRepair.Catalogs {
                 LastSeen = WorkshopDate("11 May, 2020"),
                 Published = WorkshopDate("14 Jul, 2016"),
                 Updated = WorkshopDate("14 Jul, 2016"),
+            });
+
+            AddAliMod(new Review(711844849uL, "ali213_mod_01") {
+                Authors = "假桃桃",
+                LastSeen = WorkshopDate("15 May, 2020"),
+                Published = WorkshopDate("27 Jun, 2016"),
+                Updated = WorkshopDate("27 Jun, 2016"),
             });
 
             // todo: set each ali mod as continuation of previous one

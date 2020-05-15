@@ -21,5 +21,10 @@ namespace AutoRepair.Enums {
         /// BrokenBy should be after CompatibleWith which should be after ReleasedDuring.
         /// </summary>
         InvalidVersionSequence = 1 << 2,
+
+        /// <summary>
+        /// Abandonware flag should usually correlate to Updated date.
+        /// </summary>
+        QueryAbandonware = 1 << 3,
     }
 }

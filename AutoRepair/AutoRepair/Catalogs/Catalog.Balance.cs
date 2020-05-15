@@ -200,7 +200,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
-                    { 1865667356uL, Status.Unknown      }, // Twitch Citizens
+                    { 1865667356uL, Status.Compatible   }, // Twitch Citizens
                     { 1806759255uL, Status.Incompatible }, // Customize It Extended
                     { 1562650024uL, Status.Compatible   }, // Rebalanced Industries
                     { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
@@ -208,8 +208,9 @@ namespace AutoRepair.Catalogs {
                     { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
                     { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1369729955uL, Status.Incompatible }, // Customize It (original mod)
-                    { 958161597uL , Status.Unknown      }, // Twitch Viewer Integrator
+                    { 958161597uL , Status.Compatible   }, // Twitch Viewer Integrator
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
+                    { 714711792uL , Status.Compatible   }, // TwitchTV Viewers
                     { 530771650uL , Status.Compatible   }, // Prefab Hook
                     { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
                     { 414730498uL , Status.Unknown      }, // Twitch Chirper Chat
@@ -552,7 +553,7 @@ namespace AutoRepair.Catalogs {
             });
 
             // Super demand, housing, commerce, and industrial offices all maintain high demand.
-            AddMod(new Review(819155459uL, "超级需求") {
+            AddMod(new Review(819155459uL, "超级需求 (super RCI demand)") {
                 Affect = Factor.DemandRCI
                        | Factor.Immigrants,
                 Authors = "摇光",
@@ -632,7 +633,7 @@ namespace AutoRepair.Catalogs {
             */
 
             // Real population, only one household at low density, high density population becomes larger
-            AddMod(new Review(1587482024uL, "真实人口，低密度只有一户人，高密度人口容量变大") {
+            AddMod(new Review(1587482024uL, "真实人口，低密度只有一户人，高密度人口容量变大 (realistic population)") {
                 Affect = Factor.BuildingCapacity,
                 Authors = "changxiuyingjian",
                 Catalog = catalog,
@@ -704,7 +705,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2085902218uL, Status.Compatible   }, // Advanced Vehicle Options 1.9.3 BETA
                     { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
-                    { 1865667356uL, Status.Unknown      }, // Twitch Citizens
+                    { 1865667356uL, Status.Compatible   }, // Twitch Citizens
                     { 1806759255uL, Status.Incompatible }, // Customize It Extended
                     { 1562650024uL, Status.Incompatible }, // Rebalanced Industries
                     { 1551563197uL, Status.Incompatible }, // EnhancedBuildingCapacity - Fixed
@@ -714,6 +715,7 @@ namespace AutoRepair.Catalogs {
                     { 1369729955uL, Status.Incompatible }, // Customize It (original mod)
                     { 958161597uL , Status.Compatible   }, // Twitch Viewer Integrator
                     { 946550801uL , Status.Incompatible }, // Park Rebalance
+                    { 714711792uL , Status.Compatible   }, // TwitchTV Viewers
                     { 530771650uL , Status.Required     }, // Prefab Hook
                     { 442167376uL , Status.Compatible   }, // Advanced Vehicle Options (original)
                     { 414730498uL , Status.Compatible   }, // Twitch Chirper Chat
@@ -1000,6 +1002,7 @@ namespace AutoRepair.Catalogs {
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 715316103uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                 },
                 CompatibleWith = GameVersion.Patch_1_6_3_f1,
@@ -1031,6 +1034,7 @@ namespace AutoRepair.Catalogs {
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
                     { 725555912uL , Status.Incompatible }, // Infinite Goods
+                    { 715316103uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                     { Vanilla.UnlimitedOilAndOre, Status.Incompatible },
                 },
@@ -1065,6 +1069,30 @@ namespace AutoRepair.Catalogs {
                 Published = WorkshopDate("16 Jul, 2016"),
                 SourceURL = "https://github.com/goransh/InfiniteGoodsMod",
                 Updated = WorkshopDate("27 Mar, 2020"),
+            });
+
+            AddMod(new Review(715316103uL, "InfiniteOilAndOre") {
+                Affect = Factor.Consumption
+                       | Factor.Production,
+                Authors = "fmguerreiro",
+                Catalog = catalog,
+                Compatibility = new Dictionary<ulong, Status>() {
+                    { Vanilla.UnlimitedOilAndOre , Status.Incompatible },
+                    { 1498036881uL, Status.Incompatible }, // UltimateMod 2.8 ( Higher Income and More Options )
+                    { 1237383751uL, Status.Incompatible }, // Extended Game Options
+                    { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 715316103uL , Status.Incompatible }, // InfiniteOilAndOre
+                    { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
+                },
+                Flags = ItemFlags.Abandonware
+                      | ItemFlags.ForceMigration
+                      | ItemFlags.Obsolete // vanilla mod
+                      | ItemFlags.SourceUnavailable,
+                LastSeen = WorkshopDate("15 May, 2020"),
+                Published = WorkshopDate("2 Jul, 2016"),
+                ReplaceWith = Vanilla.UnlimitedOilAndOre,
+                Updated = WorkshopDate("2 Jul, 2016"),
             });
 
             AddMod(new Review(654707599uL, "Citizen Lifecycle Rebalance v2.6") {
@@ -1382,6 +1410,7 @@ namespace AutoRepair.Catalogs {
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 715316103uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
 
                     // other

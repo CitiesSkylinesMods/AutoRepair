@@ -171,6 +171,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     // network props/decals
+                    { 2092856384uL, Status.Compatible   }, // Japanese Road Arrows
                     { 2009708489uL, Status.MinorIssues  }, // Road Arrows Replacer [Spain]
                     { 1962752152uL, Status.MinorIssues  }, // Busstop Prop Remover
                     { 1320575938uL, Status.Compatible   }, // Hide Traffic Lights
@@ -376,6 +377,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Simon Ryr",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2092856384uL, Status.Incompatible }, // Japanese Road Arrows
                     { 2009708489uL, Status.Incompatible }, // Road Arrows Replacer [Spain]
                     { 1591417160uL, Status.MinorIssues  }, // Hide It!
                     { 956707300uL , Status.Incompatible }, // Remove Street Arrows

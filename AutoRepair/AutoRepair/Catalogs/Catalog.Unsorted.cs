@@ -35,7 +35,6 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("25 May, 2019"),
             });
 
-
             AddMod(new Review(411253368uL, "Steam notification mover") {
                 Affect = Factor.UI,
                 Authors = "(unknown)",

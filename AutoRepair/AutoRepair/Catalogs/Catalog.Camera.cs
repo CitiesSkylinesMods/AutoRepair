@@ -186,6 +186,7 @@ namespace AutoRepair.Catalogs {
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1406625743uL, Status.Unknown      }, // EnhancedZoomContinued
                     { 651056665uL , Status.Compatible   }, // Enhanced Zoom Continued
+                    { 498386331uL , Status.Incompatible }, // Cross the Line
                     { 411016892uL , Status.Incompatible }, // Enhanced Zoom (orig)
                     { 406297458uL , Status.Incompatible }, // Camera Additions (Rightclick scroll & save camera positions)
                 },
@@ -204,9 +205,10 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "Hold Alt while changing FOV to go in steps of 1 (defult 5)" },
                     { NOTE, "Asset editor: Center camera with Ctrl + Shift + C" },
                     { NOTE, "Asset editor: Isometric projection with Ctrl + Shift + I" },
-                    { NOTE, "Sunset Harbor: Auto-saved position may act weirdly as vanilla game now has same feature." },
+                    { NOTE, "Sunset Harbor: If you disable 'Auto-load' option, it will also disable vanilla camera position auto-load." },
                     { 1406625743uL, "[Mod: Enhanced Zoom Continued] Compatbility is unknown with this version of EZC; let me know if it works." },
                     { 651056665uL , "[Mod: Enhanced Zoom Continued] Compatible, but FOV options in Camera Positions Utility will be disabled." },
+                    { 498386331uL , "[Mod: Cross the Line] Both mods can disable border camera limit; use one, remove the other." },
                 },
                 Published = WorkshopDate("4 Apr, 2017"),
                 Updated = WorkshopDate("4 Apr, 2018"),
@@ -218,10 +220,15 @@ namespace AutoRepair.Catalogs {
                 Authors = "yole.karif",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 2064509439uL, Status.Incompatible }, // TrafficManager
+                    { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1806963141uL, Status.Incompatible }, // TM:PE v11.1.2 LABS
                     { 1637663252uL, Status.Incompatible }, // TM:PE V11 STABLE
+                    { 1604291910uL, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
+                    { 1546870472uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1492317158uL, Status.Incompatible }, // 第一人称视角
                     { 1406625743uL, Status.Incompatible }, // EnhancedZoomContinued
+                    { 1348361731uL, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
                     { 1317859996uL, Status.Incompatible }, // 650805785 First Person Camera_ Updated
                     { 651056665uL , Status.Incompatible }, // Enhanced Zoom Continued
                     { 650805785uL , Status.Incompatible }, // First Person Camera: Updated
@@ -563,9 +570,9 @@ namespace AutoRepair.Catalogs {
                       | ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("21 Dec, 2015"),
                 Published = WorkshopDate("14 Mar, 2015"), // guessing based on github initial commit
-                //Removed = WorkshopDate(), // latest 24 Apr 2020
+                Removed = WorkshopDate("20 Jun, 2016"), // seems account was delete on or before that date (based on other mods which did have web archive)
                 SourceURL = "https://github.com/brittanygh/CS-CameraButtons",
-                Updated = WorkshopDate("8 Apr, 2015"), // guessing based on other mods by same author
+                Updated = WorkshopDate("15 Mar, 2015"), // last commit on github
             });
 
             AddMod(new Review(406297458uL, "Camera Additions (Rightclick scroll & save camera positions)") {

@@ -605,7 +605,7 @@ namespace AutoRepair.Descriptors {
                 log.Append("- Tags missing\n");
             }
             
-            if ( Updated != null) {
+            if (!Suppresses(Warning.QueryAbandonware) && Updated != null) {
                 bool abandonware = HasFlag(ItemFlags.Abandonware);
                 double daysAgo = DateTime
                     .Now

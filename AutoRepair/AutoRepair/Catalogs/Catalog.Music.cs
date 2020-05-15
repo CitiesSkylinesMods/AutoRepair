@@ -1329,6 +1329,26 @@ namespace AutoRepair.Catalogs {
                 Updated = WorkshopDate("26 Nov, 2016"),
             });
 
+            AddMusicMod(new Review(718886717uL, "Anno 2070 Music Pack") {
+                Authors = "goldfishgamer",
+                Flags = ItemFlags.LargeFileWarning, // 102 MB
+                LastSeen = WorkshopDate("14 May, 2020"),
+                Locale = "*",
+                Notes = new Dictionary<ulong, string>() {
+                    { NOTE, "Music from the game Anno 2070: https://store.steampowered.com/app/48240/Anno_2070/" },
+                },
+                Published = WorkshopDate("6 Jul, 2016"),
+                Updated = WorkshopDate("4 Mar, 2017"),
+            });
+
+            AddMusicMod(new Review(718788719uL, "Playstation Sim City 2000 Music Pack") {
+                Authors = "goldfishgamer",
+                LastSeen = WorkshopDate("14 May, 2020"),
+                Locale = "*",
+                Published = WorkshopDate("6 Jul, 2016"),
+                Updated = WorkshopDate("4 Mar, 2017"),
+            });
+
 
             AddMusicMod(new Review(634216395uL, "Sim City (2013) Music Pack") {
                 Authors = "I SUCK",

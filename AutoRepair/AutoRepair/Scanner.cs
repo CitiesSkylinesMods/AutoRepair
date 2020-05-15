@@ -41,8 +41,9 @@ namespace AutoRepair {
                     return;
                 }
 
-                StringBuilder log = new StringBuilder(1024 * 100);
                 Stopwatch timer = Stopwatch.StartNew();
+
+                StringBuilder log = new StringBuilder(1024 * 100);
 
                 Log.Reset();
 
@@ -62,7 +63,8 @@ namespace AutoRepair {
                 AddFooterText(ref log);
 
                 timer.Stop();
-                log.AppendFormat("\nScanned {0} item(s) in {1}ms\n", subscriptions.Count, timer.ElapsedMilliseconds);
+                long timeTaken = timer.ElapsedMilliseconds - Catalog.Instance.StartupTime;
+                log.AppendFormat("\n\nScanned {0} item(s) in {1}ms\n", subscriptions.Count, timeTaken);
 
                 Log.Info(log.ToString());
             }

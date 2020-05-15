@@ -90,6 +90,7 @@ namespace AutoRepair.Catalogs {
                     { 888017364uL , Status.Compatible   }, // Quartz (Sapphire) - Fixed 1.11
                     { 576970398uL , Status.Compatible   }, // Quartz (former Sapphire) - UI skin framework
                     { 540758804uL , Status.Incompatible }, // Search Box Mod
+                    { 502750307uL , Status.MinorIssues  }, // Extra Landscaping Tools
                     { 421770876uL , Status.Compatible   }, // Sapphire - UI skin framework
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -104,6 +105,7 @@ namespace AutoRepair.Catalogs {
                     { NOTE, "[DLC: Campus] The filters don't include some campus buidings, but you can still search for them by name." },
                     { NOTE, "[DLC: Sunset Harbor] The filters don't include some fishing buidings, but you can still search for them by name." },
                     { 1597852915uL, "[Mod: More Advanced Toolbar] Find It has custom toolbar, so More Advanced Toolbar features will not be applied to it." },
+                    { 502750307uL , "[Mod: Extra Landscaping Tools] To ensure compatibility, disable 'Enhance all panels' option in Find It mod options." },
                 },
                 Published = WorkshopDate("8 Jan, 2017"),
                 SourceURL = "https://github.com/SamsamTS/CS-FindIt",

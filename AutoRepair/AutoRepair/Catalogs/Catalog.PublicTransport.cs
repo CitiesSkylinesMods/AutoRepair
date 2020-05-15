@@ -51,7 +51,7 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 1776052533uL, Status.Incompatible }, // Stops & Stations
-                    { 1766839841uL, Status.Incompatible }, // Anxiety Reducer
+                    { 1766839841uL, Status.Compatible   }, // Anxiety Reducer
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
                     { 1420955187uL, Status.Compatible   }, // Real Time
                     { 1312767991uL, Status.Compatible   }, // Transport Lines Manager 13.1
@@ -63,9 +63,14 @@ namespace AutoRepair.Catalogs {
                     { 408706691uL , Status.Incompatible }, // Proper Hardness
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
-                Flags = ItemFlags.SourceAvailable,
-                ReleasedDuring = GameVersion.Campus,
+                Flags = ItemFlags.Localised
+                      | ItemFlags.SourceAvailable,
+                Languages = new[] { "en", "de", "es", "fr", "ko", "pl", "pt", "ru", "tr", "zh" },
+                LastSeen = WorkshopDate("15 May, 2020"),
+                Locale = "en",
+                Published = WorkshopDate("20 Jun, 2019"),
                 SourceURL = "https://github.com/dymanoid/StopsAndStations",
+                Updated = WorkshopDate("11 Apr, 2020"),
             });
 
             AddMod(new Review(1766839841uL, "Anxiety Reducer") {
@@ -75,7 +80,7 @@ namespace AutoRepair.Catalogs {
                 Authors = "Klyte45",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
-                    { 1776052533uL, Status.Incompatible }, // Stops & Stations
+                    { 1776052533uL, Status.Compatible   }, // Stops & Stations
                     { 1766839841uL, Status.Incompatible }, // Anxiety Reducer
                     { 1749971558uL, Status.Incompatible }, // Real Time Offline
                     { 1420955187uL, Status.MinorIssues  }, // Real Time (still investigating)

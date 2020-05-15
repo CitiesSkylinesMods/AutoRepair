@@ -36,6 +36,8 @@ namespace AutoRepair.Catalogs {
                     { 877394445uL , Status.Incompatible }, // TerrainTextureReplacer
                     { 811664974uL , Status.Incompatible }, // TTR - Terrain Texture Replacer
                     { 775021554uL , Status.Incompatible }, // Theme Mixer (original by TPB)
+                    { 751706914uL , Status.Incompatible }, // Moon Phases
+                    { 582725661uL , Status.Incompatible }, // Skyscape 1
                     { 574674741uL , Status.Incompatible }, // Terrain Themes Mod
                     { 482360157uL , Status.Incompatible }, // No More Purple [Radioactive Green Grass]
                     { 416966387uL , Status.Incompatible }, // Terrain Texture Replacer

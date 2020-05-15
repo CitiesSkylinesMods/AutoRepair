@@ -109,9 +109,11 @@ namespace AutoRepair.Catalogs {
                 Authors = "ColossalOrder",
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
+                    { 1498036881uL, Status.Incompatible }, // UltimateMod 2.8 ( Higher Income and More Options )
                     { 1237383751uL, Status.Incompatible }, // Extended Game Options
                     { 852103955uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 784378578uL , Status.Incompatible }, // Infinite Resources ( Materials for generic industries )
+                    { 715316103uL , Status.Incompatible }, // InfiniteOilAndOre
                     { 409644467uL , Status.Incompatible }, // InfiniteOilAndOre
                 },
                 CompatibleWith = GameVersion.Active,

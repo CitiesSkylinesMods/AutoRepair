@@ -217,6 +217,7 @@ namespace AutoRepair.Catalogs {
                     { 1362508329uL, Status.Incompatible }, // TC01 - FineRoadAnarchy! (2018)
                     { 954034590uL , Status.Incompatible }, // Road Anarchy V2
                     { 802066100uL , Status.Incompatible }, // Fine Road Anarchy
+                    { 716977342uL , Status.Incompatible }, // 城市：地平线地形工具MOD (terraform tool)
                     { 658653260uL , Status.Incompatible }, // Network Nodes Editor [Experimental]
                     { 651322972uL , Status.Incompatible }, // Fine Road Tool
                     { 553184329uL , Status.Incompatible }, // Sharp Junction Angles

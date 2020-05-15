@@ -124,6 +124,7 @@ namespace AutoRepair.Catalogs {
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
+                    { 427258853uL , Status.Compatible   }, // Crossings
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
@@ -180,6 +181,7 @@ namespace AutoRepair.Catalogs {
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
+                    { 427258853uL , Status.Incompatible }, // Crossings
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 1934023593uL, // Hide TMPE crosswalks V2.5 [BETA]
@@ -223,6 +225,7 @@ namespace AutoRepair.Catalogs {
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
+                    { 427258853uL , Status.Incompatible }, // Crossings
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.MinorIssues
@@ -283,6 +286,7 @@ namespace AutoRepair.Catalogs {
                     { 774449380uL , Status.Incompatible }, // Catenary Replacer
                     { 651610627uL , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 543722850uL , Status.Incompatible }, // Network Skins (original)
+                    { 427258853uL , Status.Unknown      }, // Crossings
                     { 417585852uL , Status.Incompatible }, // Road Color Changer
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
@@ -366,6 +370,8 @@ namespace AutoRepair.Catalogs {
                     { 1249000709uL, Status.MinorIssues  }, // Japanese Railway Crossings 日本風踏切MOD
                     // other props:
                     { 1900151000uL, Status.Incompatible }, // 替换为不锈钢公交候车亭
+                    // other mods:
+                    { 427258853uL , Status.MinorIssues  }, // Crossings
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 478820060uL, // Network Extensions Project
@@ -376,6 +382,7 @@ namespace AutoRepair.Catalogs {
                 Notes = new Dictionary<ulong, string>() {
                     { NOTE, "If you have broken saves after removing this mod, see: https://github.com/CitiesSkylinesMods/TMPE/wiki/How-to-remove-workshop-networks" },
                     { 1959342332uL, "[Mod: CSUR ToolBox] Breaks road zoning position and Zone Adjuster (Shift+Click)" },
+                    { 427258853uL , "[Mod: Crossings] Double crossings will sometimes appear on NExt2 roads." },
                 },
                 Published = WorkshopDate("4 Dec, 2016"),
                 SourceURL = "https://github.com/andreharv/NetworkExtensions",
@@ -389,7 +396,9 @@ namespace AutoRepair.Catalogs {
                 Catalog = catalog,
                 Compatibility = new Dictionary<ulong, Status>() {
                     { 2064509439uL, Status.Incompatible }, // TrafficManager
+                    { 2059655996uL, Status.Compatible   }, // [Beta] PRT-2
                     { 2019097300uL, Status.Compatible   }, // Hide TM:PE Unconnected Tracks
+                    { 1959342332uL, Status.Incompatible }, // CSUR ToolBox
                     { 1957033250uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
                     { 1939169189uL, Status.Incompatible }, // Hide Crosswalks V3.0 [EXPERIMENTAL]
                     { 1934023593uL, Status.Incompatible }, // Hide TMPE crosswalks V2.5 [BETA]
@@ -399,19 +408,27 @@ namespace AutoRepair.Catalogs {
                     { 1637663252uL, Status.Unknown      }, // TM:PE STABLE
                     { 1604291910uL, Status.Incompatible }, // 498363759 Traffic Manager + Improved AI
                     { 1546870472uL, Status.Incompatible }, // TrafficManager Fixed for industry DLC
+                    { 1449429720uL, Status.Incompatible }, // Road Color 道路颜色修改中文汉化版
+                    { 1440928803uL, Status.Compatible   }, // Parallel Road Tool
+                    { 1400711138uL, Status.Compatible   }, // [BETA] Parallel Road Tool
                     { 1348361731uL, Status.Incompatible }, // Traffic Manager: President Edition ALPHA/DEBUG
+                    { 1189186167uL, Status.Incompatible }, // 道路颜色调整 (road color changer)
                     { 1147015481uL, Status.Incompatible }, // No Crosswalks - Remove Crosswalks/Crossings - Including Road Assets
                     { 1128766708uL, Status.Incompatible }, // Remove Road Textures - Blank Roads
+                    { 932192868uL , Status.MinorIssues  }, // Road Options (Road Colors Changer ++)
                     { 812125426uL , Status.MinorIssues  }, // Network Extensions 2 // sometimes glitches crossings due to conflicting code
+                    { 651610627uL , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 583429740uL , Status.Incompatible }, // Traffic Manager: President Edition (LinuxFan)
                     { 568443446uL , Status.Incompatible }, // Traffic Manager Plus 1.2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
+                    { 417585852uL , Status.Incompatible }, // Road Color Changer
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 Flags = ItemFlags.SourceAvailable,
                 LastSeen = WorkshopDate("14 May, 2020"),
                 Notes = new Dictionary<ulong, string>() {
-                    { 812125426uL, "[Mod: Network Extensions] Sometimes causes double crossings to appear." },
+                    { 932192868uL , "[Mod: Road Options / Color Changer] The mods are compatible, but crossing decals won't appear if removed with Road Options mod." },
+                    { 812125426uL , "[Mod: Network Extensions] Sometimes causes double crossings to appear." },
                 },
                 Published = WorkshopDate("18 Apr, 2015"),
                 ReplaceWith = 1934023593uL, // Hide TMPE crosswalks V2.5 [BETA]
@@ -482,7 +499,7 @@ namespace AutoRepair.Catalogs {
                 Removed = WorkshopDate("6 Apr, 2020"),
                 ReplaceWith = 812125426uL, // Network Extensions 2
                 SourceURL = "https://github.com/andreharv/NetworkExtensions",
-                Suppress = Warning.MissingArchiveURL | Warning.OlderReplacement,
+                Suppress = Warning.MissingArchiveURL | Warning.OlderReplacement | Warning.QueryAbandonware,
                 Updated = WorkshopDate("1 Apr, 2020"),
             });
 
@@ -535,6 +552,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.Incompatible }, // Roads United Core 2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 Flags = ItemFlags.SourceUnavailable,
@@ -567,6 +585,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.Incompatible }, // Roads United Core 2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 Flags = ItemFlags.Abandonware
@@ -606,6 +625,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.Incompatible }, // Roads United Core 2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 Flags = ItemFlags.Abandonware
@@ -635,6 +655,7 @@ namespace AutoRepair.Catalogs {
                     { 812125426uL , Status.Compatible   }, // Network Extensions 2
                     { 651610627uL , Status.Incompatible }, // [DISCONTINUED] Road Color Changer Continued
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 Flags = ItemFlags.SlowLoad
@@ -706,14 +727,22 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.Incompatible }, // Roads United Core 2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060uL , Status.Incompatible }, // Network Extensions Project
+                    { 427258853uL , Status.MinorIssues  }, // Crossings
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 CompatibleWith = GameVersion.SunsetHarbor,
                 ContinuationOf = 651610627uL, // [DISCONTINUED] Road Color Changer Continued
                 Flags = ItemFlags.Obsolete
                       | ItemFlags.SlowLoad
-                      | ItemFlags.SourceUnavailable,
+                      | ItemFlags.SourceAvailable,
+                LastSeen = WorkshopDate("15 May, 2020"),
+                Notes = new Dictionary<ulong, string>() {
+                    { 427258853uL, "[Mod: Crossings] Compatible; but crossing decals won't appear if removed with Road Options mod." },
+                },
+                Published = WorkshopDate("24 May, 2017"),
                 ReplaceWith = 1758376843uL, // Network Skins 2
+                SourceURL = "https://github.com/TPBCS/RoadOptions",
+                Updated = WorkshopDate("10 Jun, 2017"),
             });
 
             AddMod(new Review(929114228uL, "New Roads For Network Extension 2") {
@@ -800,6 +829,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.Incompatible }, // Roads United Core 2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060uL , Status.Compatible   }, // Network Extensions Project
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
                 ContinuationOf = 417585852uL, // Road Color Changer
@@ -849,6 +879,7 @@ namespace AutoRepair.Catalogs {
                     { 616078328uL , Status.MinorIssues  }, // All Tile Start
                     { 576327847uL , Status.MinorIssues  }, // 81 Tiles (Fixed for 1.2+)
                     { 543722850uL , Status.Incompatible }, // Network Skins (original)
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 422554572uL , Status.MinorIssues  }, // 81 Tiles Updated
                     { 417585852uL , Status.Incompatible }, // Road Color Changer
                 },
@@ -983,6 +1014,7 @@ namespace AutoRepair.Catalogs {
                     { 633547552uL , Status.Incompatible }, // Roads United Core 2.0
                     { 543722850uL , Status.Incompatible }, // Network Skins (Park Life compatible)
                     { 478820060uL , Status.Compatible   }, // Network Extensions Project
+                    { 427258853uL , Status.Incompatible }, // Crossings
                     { 418637762uL , Status.Compatible   }, // American Roads
                     { 417585852uL , Status.Incompatible }, // Road Color Changer (original mod)
                 },
